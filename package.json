@@ -23,6 +23,7 @@
     "loop:ovarian": "node --import tsx scripts/run-autoresearch-loop.ts ovarian-tissue",
     "loop:islets": "node --import tsx scripts/run-autoresearch-loop.ts islets",
     "regress:ovarian": "node --import tsx scripts/regress-autoresearch.ts ovarian-tissue",
+    "regress:islets": "node --import tsx scripts/regress-autoresearch.ts islets",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

@@ -9,14 +9,14 @@ All gates passed: yes
 - entries: 53
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
-- set macro F1: species=1 specimen=1 outcomes=0.5 stepPhases=1
+- set macro F1: species=1 specimen=1 outcomes=0.778 stepPhases=1
 - confidence: expectedIncluded=0.828 correctIncluded=0.828 incorrectIncluded=n/a
 
 ## reviewed subset
 - entries: 49
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
-- set macro F1: species=1 specimen=1 outcomes=0 stepPhases=0
+- set macro F1: species=1 specimen=1 outcomes=1 stepPhases=1
 - confidence: expectedIncluded=0.822 correctIncluded=0.822 incorrectIncluded=n/a
 
 ## seeded subset
@@ -42,13 +42,13 @@ All gates passed: yes
 
 ## Baseline vs resolved
 - reviewed inclusion F1 delta: 0.077
-- reviewed protocol family accuracy delta: 1
+- reviewed protocol family accuracy delta: 0.875
 - reviewed paper type accuracy delta: 1
-- reviewed species macro F1 delta: 0.059
-- reviewed specimen macro F1 delta: 0.019
+- reviewed species macro F1 delta: 0.052
+- reviewed specimen macro F1 delta: 0.017
 - gate pass count delta: 3
 
 ## Baseline reviewed subset
 - inclusion: precision=0.857 recall=1 f1=0.923
-- exact: paperType=0 protocolFamily=0
-- set macro F1: species=0.941 specimen=0.981
+- exact: paperType=0 protocolFamily=0.125
+- set macro F1: species=0.948 specimen=0.983

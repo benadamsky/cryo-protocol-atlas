@@ -3,7 +3,7 @@
   "autoApplySafe": true,
   "currentEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-20T21:53:39.760Z",
+    "generatedAt": "2026-03-20T22:03:56.631Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -30,8 +30,8 @@
           },
           "protocolFamily": {
             "field": "protocolFamily",
-            "labeledCount": 32,
-            "exactMatchCount": 32,
+            "labeledCount": 36,
+            "exactMatchCount": 36,
             "accuracy": 1,
             "mismatches": []
           }
@@ -39,8 +39,8 @@
         "setFields": {
           "speciesMentions": {
             "field": "speciesMentions",
-            "labeledCount": 32,
-            "exactMatchCount": 32,
+            "labeledCount": 36,
+            "exactMatchCount": 36,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -48,8 +48,8 @@
           },
           "specimenTypes": {
             "field": "specimenTypes",
-            "labeledCount": 32,
-            "exactMatchCount": 32,
+            "labeledCount": 36,
+            "exactMatchCount": 36,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -57,17 +57,17 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 4,
-            "exactMatchCount": 4,
-            "averageF1": 0.5,
-            "averagePrecision": 0.5,
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 0.778,
+            "averagePrecision": 0.778,
             "averageRecall": 1,
             "mismatches": []
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 4,
-            "exactMatchCount": 4,
+            "labeledCount": 12,
+            "exactMatchCount": 12,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -105,8 +105,8 @@
           },
           "protocolFamily": {
             "field": "protocolFamily",
-            "labeledCount": 28,
-            "exactMatchCount": 28,
+            "labeledCount": 32,
+            "exactMatchCount": 32,
             "accuracy": 1,
             "mismatches": []
           }
@@ -114,8 +114,8 @@
         "setFields": {
           "speciesMentions": {
             "field": "speciesMentions",
-            "labeledCount": 28,
-            "exactMatchCount": 28,
+            "labeledCount": 32,
+            "exactMatchCount": 32,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -123,8 +123,8 @@
           },
           "specimenTypes": {
             "field": "specimenTypes",
-            "labeledCount": 28,
-            "exactMatchCount": 28,
+            "labeledCount": 32,
+            "exactMatchCount": 32,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -132,20 +132,20 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 0,
-            "exactMatchCount": 0,
-            "averageF1": 0,
-            "averagePrecision": 0,
-            "averageRecall": 0,
+            "labeledCount": 5,
+            "exactMatchCount": 5,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
             "mismatches": []
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 0,
-            "exactMatchCount": 0,
-            "averageF1": 0,
-            "averagePrecision": 0,
-            "averageRecall": 0,
+            "labeledCount": 8,
+            "exactMatchCount": 8,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
             "mismatches": []
           }
         },
@@ -290,7 +290,7 @@
   },
   "candidateEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-20T21:53:39.761Z",
+    "generatedAt": "2026-03-20T22:03:56.633Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -317,8 +317,8 @@
           },
           "protocolFamily": {
             "field": "protocolFamily",
-            "labeledCount": 32,
-            "exactMatchCount": 32,
+            "labeledCount": 36,
+            "exactMatchCount": 36,
             "accuracy": 1,
             "mismatches": []
           }
@@ -326,8 +326,8 @@
         "setFields": {
           "speciesMentions": {
             "field": "speciesMentions",
-            "labeledCount": 32,
-            "exactMatchCount": 32,
+            "labeledCount": 36,
+            "exactMatchCount": 36,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -335,8 +335,8 @@
           },
           "specimenTypes": {
             "field": "specimenTypes",
-            "labeledCount": 32,
-            "exactMatchCount": 32,
+            "labeledCount": 36,
+            "exactMatchCount": 36,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -344,17 +344,17 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 4,
-            "exactMatchCount": 4,
-            "averageF1": 0.5,
-            "averagePrecision": 0.5,
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 0.778,
+            "averagePrecision": 0.778,
             "averageRecall": 1,
             "mismatches": []
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 4,
-            "exactMatchCount": 4,
+            "labeledCount": 12,
+            "exactMatchCount": 12,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -392,8 +392,8 @@
           },
           "protocolFamily": {
             "field": "protocolFamily",
-            "labeledCount": 28,
-            "exactMatchCount": 28,
+            "labeledCount": 32,
+            "exactMatchCount": 32,
             "accuracy": 1,
             "mismatches": []
           }
@@ -401,8 +401,8 @@
         "setFields": {
           "speciesMentions": {
             "field": "speciesMentions",
-            "labeledCount": 28,
-            "exactMatchCount": 28,
+            "labeledCount": 32,
+            "exactMatchCount": 32,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -410,8 +410,8 @@
           },
           "specimenTypes": {
             "field": "specimenTypes",
-            "labeledCount": 28,
-            "exactMatchCount": 28,
+            "labeledCount": 32,
+            "exactMatchCount": 32,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -419,20 +419,20 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 0,
-            "exactMatchCount": 0,
-            "averageF1": 0,
-            "averagePrecision": 0,
-            "averageRecall": 0,
+            "labeledCount": 5,
+            "exactMatchCount": 5,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
             "mismatches": []
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 0,
-            "exactMatchCount": 0,
-            "averageF1": 0,
-            "averagePrecision": 0,
-            "averageRecall": 0,
+            "labeledCount": 8,
+            "exactMatchCount": 8,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
             "mismatches": []
           }
         },

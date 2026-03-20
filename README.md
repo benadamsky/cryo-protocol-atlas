@@ -36,6 +36,7 @@ The next scaffolded domain is:
 - `bun run loop:ovarian`
 - `bun run loop:islets`
 - `bun run regress:ovarian`
+- `bun run regress:islets`
 - `bun run typecheck`
 
 ## Current MVP boundary
@@ -80,4 +81,4 @@ This is still not a discovery engine. It is the evaluation scaffold that lets fu
 
 This loop is intentionally conservative. It does not rewrite the benchmark, it does not invent new scientific labels, and it should only auto-apply proposals when the reviewed gates are preserved or improved.
 
-`bun run regress:ovarian` runs deliberate perturbation scenarios against the current ovarian benchmark and verifies that the loop proposes the expected reviewed-paper fixes. This is the main proof that the loop can recover from benchmark regressions instead of only reporting no-ops on a clean slice.
+`bun run regress:<domain>` runs deliberate perturbation scenarios against the current reviewed benchmark and verifies that the loop proposes the expected reviewed-paper fixes. This is the main proof that the loop can recover from benchmark regressions instead of only reporting no-ops on a clean slice.

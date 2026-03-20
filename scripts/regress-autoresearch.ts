@@ -71,72 +71,143 @@ function removeOverride(overrideFile: ProtocolOverrideFile, paperId: string): Pr
   });
 }
 
-const scenarios: Scenario[] = [
-  {
-    id: "reviewed-exclusion-regression",
-    description: "Remove a reviewed exclusion so an out-of-slice paper leaks back into the atlas.",
-    mutate: (overrideFile) => removeOverride(cloneOverrideFile(overrideFile), "e6aaf317-52fc-441c-bac4-5143fbb9e54c"),
-    expectedPaperId: "e6aaf317-52fc-441c-bac4-5143fbb9e54c",
-    expectedFields: ["excludeFromAtlas"],
-    minReviewedInclusionF1Delta: 0.05
-  },
-  {
-    id: "reviewed-family-type-regression",
-    description: "Corrupt reviewed family/type labels for a known vitrification paper.",
-    mutate: (overrideFile) =>
-      replaceOverride(cloneOverrideFile(overrideFile), "f24fdc26-2071-4ae1-86d6-fa70a17a9574", {
-        paperType: "unknown",
-        protocolFamily: "unknown"
-      }),
-    expectedPaperId: "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
-    expectedFields: ["paperType", "protocolFamily"],
-    minReviewedProtocolFamilyAccuracyDelta: 0.1,
-    minReviewedPaperTypeAccuracyDelta: 0.1
-  },
-  {
-    id: "reviewed-specimen-regression",
-    description: "Drop reviewed whole-ovary context from a sheep autotransplantation paper.",
-    mutate: (overrideFile) =>
-      replaceOverride(cloneOverrideFile(overrideFile), "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857", {
-        specimenTypes: ["ovarian tissue"]
-      }),
-    expectedPaperId: "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
-    expectedFields: ["specimenTypes"]
-  },
-  {
-    id: "reviewed-outcome-regression",
-    description: "Corrupt reviewed outcome classes for a human ovarian tissue vitrification paper.",
-    mutate: (overrideFile) =>
-      replaceOverride(cloneOverrideFile(overrideFile), "f24fdc26-2071-4ae1-86d6-fa70a17a9574", {
-        outcomeMentions: []
-      }),
-    expectedPaperId: "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
-    expectedFields: ["outcomeClasses"],
-    minReviewedOutcomeMacroF1Delta: 0.3
-  },
-  {
-    id: "reviewed-step-phase-regression",
-    description: "Corrupt reviewed protocol step phases for a closed-system vitrification paper.",
-    mutate: (overrideFile) =>
-      replaceOverride(cloneOverrideFile(overrideFile), "eb7b902b-87b7-4169-8058-8818dfa71c48", {
-        protocolSteps: [
-          {
-            order: 0,
-            phase: "unknown",
-            summary: "Corrupted regression step",
-            chemicals: [],
-            concentrations: [],
-            temperatures: [],
-            durations: [],
-            evidence: []
-          }
-        ]
-      }),
-    expectedPaperId: "eb7b902b-87b7-4169-8058-8818dfa71c48",
-    expectedFields: ["stepPhases"],
-    minReviewedStepPhaseMacroF1Delta: 0.2
+function buildScenarios(selectedDomain: DomainId): Scenario[] {
+  if (selectedDomain === "islets") {
+    return [
+      {
+        id: "reviewed-exclusion-regression",
+        description: "Remove a reviewed exclusion so a non-primary methods paper leaks back into the islet atlas.",
+      mutate: (overrideFile) => removeOverride(cloneOverrideFile(overrideFile), "beb603fe-8522-4842-99a9-fba1195cc973"),
+      expectedPaperId: "beb603fe-8522-4842-99a9-fba1195cc973",
+      expectedFields: ["excludeFromAtlas"],
+        minReviewedInclusionF1Delta: 0.01
+      },
+      {
+        id: "reviewed-family-type-regression",
+        description: "Corrupt reviewed family/type labels for a known comparative islet preservation paper.",
+        mutate: (overrideFile) =>
+          replaceOverride(cloneOverrideFile(overrideFile), "f557f75c-4101-43d0-8f0e-66ea6a6f0515", {
+            paperType: "unknown",
+            protocolFamily: "unknown"
+          }),
+        expectedPaperId: "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
+        expectedFields: ["paperType", "protocolFamily"],
+        minReviewedProtocolFamilyAccuracyDelta: 0.02,
+        minReviewedPaperTypeAccuracyDelta: 0.02
+      },
+      {
+        id: "reviewed-specimen-regression",
+        description: "Drop reviewed encapsulated-islet context from a graft-function study.",
+        mutate: (overrideFile) =>
+          replaceOverride(cloneOverrideFile(overrideFile), "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff", {
+            specimenTypes: ["islets", "pancreatic islets"]
+          }),
+        expectedPaperId: "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
+        expectedFields: ["specimenTypes"]
+      },
+      {
+        id: "reviewed-outcome-regression",
+        description: "Corrupt reviewed outcome classes for a cryostored encapsulated-islet graft study.",
+        mutate: (overrideFile) =>
+          replaceOverride(cloneOverrideFile(overrideFile), "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff", {
+            outcomeMentions: []
+          }),
+        expectedPaperId: "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
+        expectedFields: ["outcomeClasses"],
+        minReviewedOutcomeMacroF1Delta: 0.15
+      },
+      {
+        id: "reviewed-step-phase-regression",
+        description: "Corrupt reviewed protocol step phases for a vitrification-versus-freezing comparison paper.",
+        mutate: (overrideFile) =>
+          replaceOverride(cloneOverrideFile(overrideFile), "f557f75c-4101-43d0-8f0e-66ea6a6f0515", {
+            protocolSteps: [
+              {
+                order: 0,
+                phase: "unknown",
+                summary: "Corrupted regression step",
+                chemicals: [],
+                concentrations: [],
+                temperatures: [],
+                durations: [],
+                evidence: []
+              }
+            ]
+          }),
+        expectedPaperId: "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
+        expectedFields: ["stepPhases"],
+        minReviewedStepPhaseMacroF1Delta: 0.1
+      }
+    ];
   }
-];
+
+  return [
+    {
+      id: "reviewed-exclusion-regression",
+      description: "Remove a reviewed exclusion so an out-of-slice paper leaks back into the atlas.",
+      mutate: (overrideFile) => removeOverride(cloneOverrideFile(overrideFile), "e6aaf317-52fc-441c-bac4-5143fbb9e54c"),
+      expectedPaperId: "e6aaf317-52fc-441c-bac4-5143fbb9e54c",
+      expectedFields: ["excludeFromAtlas"],
+      minReviewedInclusionF1Delta: 0.05
+    },
+    {
+      id: "reviewed-family-type-regression",
+      description: "Corrupt reviewed family/type labels for a known vitrification paper.",
+      mutate: (overrideFile) =>
+        replaceOverride(cloneOverrideFile(overrideFile), "f24fdc26-2071-4ae1-86d6-fa70a17a9574", {
+          paperType: "unknown",
+          protocolFamily: "unknown"
+        }),
+      expectedPaperId: "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+      expectedFields: ["paperType", "protocolFamily"],
+      minReviewedProtocolFamilyAccuracyDelta: 0.1,
+      minReviewedPaperTypeAccuracyDelta: 0.1
+    },
+    {
+      id: "reviewed-specimen-regression",
+      description: "Drop reviewed whole-ovary context from a sheep autotransplantation paper.",
+      mutate: (overrideFile) =>
+        replaceOverride(cloneOverrideFile(overrideFile), "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857", {
+          specimenTypes: ["ovarian tissue"]
+        }),
+      expectedPaperId: "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+      expectedFields: ["specimenTypes"]
+    },
+    {
+      id: "reviewed-outcome-regression",
+      description: "Corrupt reviewed outcome classes for a human ovarian tissue vitrification paper.",
+      mutate: (overrideFile) =>
+        replaceOverride(cloneOverrideFile(overrideFile), "f24fdc26-2071-4ae1-86d6-fa70a17a9574", {
+          outcomeMentions: []
+        }),
+      expectedPaperId: "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+      expectedFields: ["outcomeClasses"],
+      minReviewedOutcomeMacroF1Delta: 0.3
+    },
+    {
+      id: "reviewed-step-phase-regression",
+      description: "Corrupt reviewed protocol step phases for a closed-system vitrification paper.",
+      mutate: (overrideFile) =>
+        replaceOverride(cloneOverrideFile(overrideFile), "eb7b902b-87b7-4169-8058-8818dfa71c48", {
+          protocolSteps: [
+            {
+              order: 0,
+              phase: "unknown",
+              summary: "Corrupted regression step",
+              chemicals: [],
+              concentrations: [],
+              temperatures: [],
+              durations: [],
+              evidence: []
+            }
+          ]
+        }),
+      expectedPaperId: "eb7b902b-87b7-4169-8058-8818dfa71c48",
+      expectedFields: ["stepPhases"],
+      minReviewedStepPhaseMacroF1Delta: 0.2
+    }
+  ];
+}
 
 function renderMarkdown(results: ScenarioResult[]): string {
   const lines: string[] = [];
@@ -239,7 +310,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
     JSON.parse(await readFile(join(curatedDir, "protocol-overrides.json"), "utf8"))
   );
 
-  const results: ScenarioResult[] = scenarios.map((scenario) => {
+  const results: ScenarioResult[] = buildScenarios(selectedDomain).map((scenario) => {
     const perturbedOverrideFile = scenario.mutate(overrideFile);
     const loopResult = runAutoresearchLoop(extractionSnapshot, benchmark, perturbedOverrideFile);
     const proposal = loopResult.proposalFile.proposals.find((candidate) => candidate.paperId === scenario.expectedPaperId);

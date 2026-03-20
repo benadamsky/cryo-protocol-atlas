@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-20T21:53:39.712Z",
+  "generatedAt": "2026-03-20T21:57:44.578Z",
   "domain": "islets",
   "description": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "entries": [
@@ -38,9 +38,87 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "vitrification",
+      "expectedSpeciesMentions": [
+        "rat"
+      ],
+      "expectedSpecimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "expectedOutcomeClasses": [
+        "function"
+      ],
+      "expectedStepPhases": [
+        "assessment",
+        "loading",
+        "storage",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "f2002bfc-a9e1-45b3-99b7-cff44eee4194",
-        "paperType": "experimental"
+        "paperType": "experimental",
+        "protocolFamily": "vitrification",
+        "speciesMentions": [
+          "rat"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "loading",
+            "summary": "Rat pancreatic islets were prepared with vitrification-compatible CPA conditions before matrix-supported preservation.",
+            "chemicals": [
+              "Ethylene Glycol",
+              "Sucrose"
+            ],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "storage",
+            "summary": "Islets were vitrified before or after seeding onto acellular liver-derived matrix.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "warming",
+            "summary": "Vitrified islets were rewarmed for functional comparison with non-matrix controls.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 3,
+            "phase": "assessment",
+            "summary": "Post-warming islet functionality was compared with and without acellular liver matrix support.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Acellular liver matrix improved the functionality of rat pancreatic islets before or after vitrification.",
+            "evidence": []
+          }
+        ]
       },
       "notes": "Primary rat islet vitrification study with an acellular liver-matrix intervention and functional readouts."
     },
@@ -363,9 +441,108 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "comparative",
+      "expectedSpeciesMentions": [
+        "rat"
+      ],
+      "expectedSpecimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "expectedOutcomeClasses": [
+        "function"
+      ],
+      "expectedStepPhases": [
+        "assessment",
+        "cooling",
+        "loading",
+        "storage"
+      ],
       "expectedOverridePatch": {
         "paperId": "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
-        "paperType": "experimental"
+        "paperType": "experimental",
+        "protocolFamily": "comparative",
+        "speciesMentions": [
+          "rat"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "loading",
+            "summary": "Cryotop vitrification used EG/Me2SO equilibration followed by a higher-concentration vitrification solution with sucrose.",
+            "chemicals": [
+              "Dimethyl Sulfoxide",
+              "Ethylene Glycol",
+              "Sucrose"
+            ],
+            "concentrations": [
+              "7.5 %",
+              "15 %",
+              "0.5 M"
+            ],
+            "temperatures": [
+              "25 °C"
+            ],
+            "durations": [
+              "3 min",
+              "60 s"
+            ],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "cooling",
+            "summary": "Comparator slow freezing used Bicell freezing with 15% Me2SO and controlled cooling before LN2 storage.",
+            "chemicals": [
+              "Dimethyl Sulfoxide"
+            ],
+            "concentrations": [
+              "15 %"
+            ],
+            "temperatures": [
+              "4 °C",
+              "-80 °C"
+            ],
+            "durations": [
+              "15 min"
+            ],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "storage",
+            "summary": "Cryotop and Bicell-preserved samples were transferred into liquid nitrogen storage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [
+              "-196 °C"
+            ],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 3,
+            "phase": "assessment",
+            "summary": "Functional recovery of rat pancreatic islets was compared after Cryotop vitrification versus Bicell freezing.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Functional recovery of rat pancreatic islets was compared directly between Cryotop vitrification and Bicell freezing.",
+            "evidence": []
+          }
+        ]
       },
       "notes": "Head-to-head rat islet study comparing Cryotop vitrification with Bicell freezing."
     },
@@ -488,6 +665,11 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedStepPhases": [
+        "cooling",
+        "loading",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "f68c40d9-4184-4dc8-b527-095353b5c290",
         "paperType": "experimental",
@@ -499,6 +681,56 @@
         "specimenTypes": [
           "islets",
           "pancreatic islets"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "loading",
+            "summary": "Pancreatic islets were loaded stepwise with Me2SO and ethylene glycol combinations before freezing.",
+            "chemicals": [
+              "Dimethyl Sulfoxide",
+              "Ethylene Glycol"
+            ],
+            "concentrations": [
+              "1 M",
+              "0.5 M",
+              "1 M",
+              "2 M"
+            ],
+            "temperatures": [
+              "-7.5 °C"
+            ],
+            "durations": [
+              "5 min"
+            ],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "cooling",
+            "summary": "Samples were nucleated and cooled at a controlled rate to subzero storage temperatures before liquid-nitrogen storage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [
+              "-7.5 °C",
+              "-40 °C",
+              "-196 °C"
+            ],
+            "durations": [
+              "4 weeks"
+            ],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "warming",
+            "summary": "Frozen islets were rewarmed for post-thaw recovery comparisons across CPA combinations.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
         ],
         "extractionConfidence": 0.8
       },
@@ -697,9 +929,75 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "vitrification",
+      "expectedSpeciesMentions": [
+        "rat"
+      ],
+      "expectedSpecimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "expectedStepPhases": [
+        "loading",
+        "storage",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "6c01e238-01b1-444d-ba8c-cbfb77cd7181",
-        "paperType": "experimental"
+        "paperType": "experimental",
+        "protocolFamily": "vitrification",
+        "speciesMentions": [
+          "rat"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "loading",
+            "summary": "Rat pancreatic islets were equilibrated in EG/Me2SO then exposed to a higher-strength vitrification solution containing sucrose on Cryotop or nylon-mesh devices.",
+            "chemicals": [
+              "Dimethyl Sulfoxide",
+              "Ethylene Glycol",
+              "Sucrose"
+            ],
+            "concentrations": [
+              "7.5 %",
+              "15 %",
+              "0.5 M"
+            ],
+            "temperatures": [],
+            "durations": [
+              "3 min",
+              "60 s"
+            ],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "storage",
+            "summary": "Cryotop and nylon-mesh devices were rapidly plunged into liquid nitrogen for vitrified storage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [
+              "-196 °C"
+            ],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "warming",
+            "summary": "Vitrified islets were rewarmed to compare large-quantity preservation performance across devices.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ]
       },
       "notes": "Primary rat islet vitrification device study, not methods-only background."
     },
@@ -728,6 +1026,15 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "transplantation"
+      ],
+      "expectedStepPhases": [
+        "assessment",
+        "cooling",
+        "loading",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "c10110ba-e282-4d66-80f6-bebbfcedbbfa",
         "paperType": "experimental",
@@ -738,6 +1045,63 @@
         "specimenTypes": [
           "islets",
           "pancreatic islets"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "loading",
+            "summary": "Lewis rat islets were prepared in pellet or suspension formats before controlled-rate freezing with sucrose- or step-dilution conditions.",
+            "chemicals": [
+              "Dimethyl Sulfoxide",
+              "Sucrose"
+            ],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "cooling",
+            "summary": "Islets were frozen by controlled-rate or programmed freezing before storage and shipment between centers.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [
+              "-40 °C"
+            ],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "warming",
+            "summary": "Frozen-thawed islets were rewarmed using defined dilution protocols before transplantation.",
+            "chemicals": [
+              "Sucrose"
+            ],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 3,
+            "phase": "assessment",
+            "summary": "Transplant performance of frozen-thawed rat islets transported between centers was assessed after banking.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "transplantation",
+            "strength": "strong",
+            "summary": "Frozen-thawed rat islets remained transplantable after banking and transport between centers.",
+            "evidence": []
+          }
         ],
         "extractionConfidence": 0.84
       },
@@ -818,6 +1182,16 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "transplantation"
+      ],
+      "expectedStepPhases": [
+        "assessment",
+        "cooling",
+        "loading",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
         "paperType": "experimental",
@@ -829,6 +1203,78 @@
           "encapsulated islets",
           "islets",
           "pancreatic islets"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "loading",
+            "summary": "Microencapsulated rat islets were equilibrated with graded DMSO conditions at ambient and 0 °C before freezing.",
+            "chemicals": [
+              "Dimethyl Sulfoxide",
+              "Sucrose"
+            ],
+            "concentrations": [
+              "0.7 M",
+              "1.4 M",
+              "2.0 M",
+              "2.6 M",
+              "3.1 M"
+            ],
+            "temperatures": [
+              "22 °C",
+              "0 °C"
+            ],
+            "durations": [
+              "15 min"
+            ],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "cooling",
+            "summary": "Encapsulated islets were cryostored in defined freezing media after DMSO equilibration.",
+            "chemicals": [
+              "Dimethyl Sulfoxide"
+            ],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "warming",
+            "summary": "Cryostored encapsulated islets were thawed for post-thaw testing.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 3,
+            "phase": "assessment",
+            "summary": "Post-thaw insulin secretion capacity and graft function were evaluated for encapsulated rat islets.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "strong",
+            "summary": "Cryostored encapsulated rat islets preserved insulin secretion capacity after thawing.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "transplantation",
+            "strength": "strong",
+            "summary": "Cryostored encapsulated rat islets retained graft function after transplantation.",
+            "evidence": []
+          }
         ],
         "extractionConfidence": 0.82
       },
@@ -934,9 +1380,75 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "vitrification",
+      "expectedSpeciesMentions": [
+        "rat"
+      ],
+      "expectedSpecimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "expectedStepPhases": [
+        "loading",
+        "storage",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
-        "paperType": "experimental"
+        "paperType": "experimental",
+        "protocolFamily": "vitrification",
+        "speciesMentions": [
+          "rat"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "loading",
+            "summary": "Rat pancreatic islets were equilibrated in half-strength CPA solution before exposure to Cryotop vitrification solutions containing EG, DMSO and/or CPLL plus sucrose.",
+            "chemicals": [
+              "Dimethyl Sulfoxide",
+              "Ethylene Glycol",
+              "Sucrose"
+            ],
+            "concentrations": [
+              "15 %",
+              "30 %",
+              "0.5 M"
+            ],
+            "temperatures": [],
+            "durations": [
+              "3 min",
+              "60 s"
+            ],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "storage",
+            "summary": "Cryotop and nylon-mesh preparations were plunged into liquid nitrogen after CPA exposure.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [
+              "-196 °C"
+            ],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "warming",
+            "summary": "Vitrified rat islets were rewarmed to evaluate the supplementary cryoprotective effect of carboxylated epsilon-poly-L-lysine.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ]
       },
       "notes": "Primary rat-islet vitrification study testing carboxylated epsilon-poly-L-lysine as a supplemental cryoprotectant."
     },
@@ -986,6 +1498,15 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "transplantation"
+      ],
+      "expectedStepPhases": [
+        "assessment",
+        "cooling",
+        "loading",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "68dc5ee9-dd99-4f47-8e58-a59a28089fb7",
         "paperType": "experimental",
@@ -996,6 +1517,67 @@
         "specimenTypes": [
           "islets",
           "pancreatic islets"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "loading",
+            "summary": "Human pancreatic islets were cryoprotected with 2 M DMSO before freezing.",
+            "chemicals": [
+              "Dimethyl Sulfoxide"
+            ],
+            "concentrations": [
+              "2 M"
+            ],
+            "temperatures": [
+              "-7.5 °C"
+            ],
+            "durations": [
+              "5 min"
+            ],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "cooling",
+            "summary": "Supercooled human islets were nucleated and cooled before long-term cryostorage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [
+              "-7.5 °C",
+              "-196 °C"
+            ],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "warming",
+            "summary": "Cryopreserved islets were thawed before implantation into diabetic nude mice.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 3,
+            "phase": "assessment",
+            "summary": "Graft function was evaluated after transplantation of cryopreserved human pancreatic islets.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "transplantation",
+            "strength": "strong",
+            "summary": "Cryopreserved human pancreatic islets retained graft function after transplantation into diabetic nude mice.",
+            "evidence": []
+          }
         ],
         "extractionConfidence": 0.8
       },
