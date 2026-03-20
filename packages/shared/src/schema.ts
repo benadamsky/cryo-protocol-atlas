@@ -52,6 +52,7 @@ export const CryoPaperSchema = z.object({
   doi: z.string().nullable().optional(),
   title: z.string(),
   abstract: z.string().nullable().optional(),
+  paper_url: z.string().nullable().optional(),
   journal: z.string().nullable().optional(),
   published_year: z.number().nullable().optional(),
   published_month: z.number().nullable().optional(),

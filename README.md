@@ -30,8 +30,11 @@ The next scaffolded domain is:
 - `bun run queue:ovarian`
 - `bun run queue:islets`
 - `bun run seed-benchmark:ovarian`
+- `bun run seed-benchmark:islets`
 - `bun run evaluate:ovarian`
+- `bun run evaluate:islets`
 - `bun run loop:ovarian`
+- `bun run loop:islets`
 - `bun run regress:ovarian`
 - `bun run typecheck`
 
@@ -50,30 +53,30 @@ The current repo is a protocol-intelligence MVP, not a discovery engine. It esta
 - next-experiment suggestions
 - manual override hooks for full-text resolution
 - baseline vs resolved atlas impact reporting
-- benchmark seeding for the ovarian slice
+- benchmark seeding for benchmarked slices
 - reviewed-gate evaluation for inclusion/exclusion and field accuracy
 - second-domain scaffold for islet cryopreservation literature
 
 ## Benchmarking model
 
-The repo now has a benchmark layer under `data/benchmarks/ovarian-tissue/gold-set.json`.
+The repo now has a benchmark layer under `data/benchmarks/<domain>/gold-set.json`.
 
 - `reviewed` entries come from explicit curation decisions and are the real gate for future autoresearch loops.
 - `seeded` entries are carried from the current resolved atlas snapshot and are useful for regression coverage, but they should be upgraded to reviewed over time.
-- `bun run evaluate:ovarian` writes `benchmark-summary.json`, `benchmark-analysis.json`, and `benchmark-report.md` under `data/processed/ovarian-tissue/`.
+- `bun run evaluate:<domain>` writes `benchmark-summary.json`, `benchmark-analysis.json`, and `benchmark-report.md` under `data/processed/<domain>/`.
 
 This is still not a discovery engine. It is the evaluation scaffold that lets future autonomous loops optimize toward explicit reviewed targets instead of just making the atlas look cleaner.
 
-`islets` is scaffolded for ingestion/extraction/atlas generation, but it does not yet have a curated benchmark or autoresearch loop. The intended sequence is the same as ovarian tissue: ingest, extract, curate, benchmark, then loop.
+`islets` now follows the same path as ovarian tissue: ingest, extract, curate, benchmark, then loop.
 
 ## Conservative autoresearch loop
 
-`bun run loop:ovarian` runs the first safe loop:
+`bun run loop:<domain>` runs the first safe loop:
 
 - compares the current resolved atlas against the frozen reviewed benchmark
 - generates benchmark-backed override proposals only for reviewed mismatches
 - scores the candidate proposal set before any apply step
-- writes loop artifacts under `data/autoresearch/ovarian-tissue/`
+- writes loop artifacts under `data/autoresearch/<domain>/`
 
 This loop is intentionally conservative. It does not rewrite the benchmark, it does not invent new scientific labels, and it should only auto-apply proposals when the reviewed gates are preserved or improved.
 

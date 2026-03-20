@@ -114,8 +114,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const benchmarkFile = BenchmarkFileSchema.parse({
     generatedAt: new Date().toISOString(),
     domain: selectedDomain,
-    description:
-      "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
+    description: `Seed benchmark for the ${selectedDomain} atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.`,
     entries
   });
 

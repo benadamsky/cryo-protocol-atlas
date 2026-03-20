@@ -17,8 +17,11 @@
     "queue:ovarian": "node --import tsx scripts/build-resolution-queue.ts ovarian-tissue",
     "queue:islets": "node --import tsx scripts/build-resolution-queue.ts islets",
     "seed-benchmark:ovarian": "node --import tsx scripts/seed-benchmark.ts ovarian-tissue",
+    "seed-benchmark:islets": "node --import tsx scripts/seed-benchmark.ts islets",
     "evaluate:ovarian": "node --import tsx scripts/evaluate-domain.ts ovarian-tissue",
+    "evaluate:islets": "node --import tsx scripts/evaluate-domain.ts islets",
     "loop:ovarian": "node --import tsx scripts/run-autoresearch-loop.ts ovarian-tissue",
+    "loop:islets": "node --import tsx scripts/run-autoresearch-loop.ts islets",
     "regress:ovarian": "node --import tsx scripts/regress-autoresearch.ts ovarian-tissue",
     "typecheck": "tsc --noEmit"
   },
