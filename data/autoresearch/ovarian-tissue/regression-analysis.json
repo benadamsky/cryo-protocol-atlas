@@ -1,0 +1,108 @@
+[
+  {
+    "id": "reviewed-exclusion-regression",
+    "description": "Remove a reviewed exclusion so an out-of-slice paper leaks back into the atlas.",
+    "passed": true,
+    "proposalCount": 1,
+    "proposalFound": true,
+    "matchedFields": [
+      "excludeFromAtlas"
+    ],
+    "currentReviewedInclusionF1": 0.933,
+    "candidateReviewedInclusionF1": 1,
+    "currentReviewedProtocolFamilyAccuracy": 1,
+    "candidateReviewedProtocolFamilyAccuracy": 1,
+    "currentReviewedPaperTypeAccuracy": 1,
+    "candidateReviewedPaperTypeAccuracy": 1,
+    "currentReviewedOutcomeMacroF1": 1,
+    "candidateReviewedOutcomeMacroF1": 1,
+    "currentReviewedStepPhaseMacroF1": 1,
+    "candidateReviewedStepPhaseMacroF1": 1,
+    "autoApplySafe": true
+  },
+  {
+    "id": "reviewed-family-type-regression",
+    "description": "Corrupt reviewed family/type labels for a known vitrification paper.",
+    "passed": true,
+    "proposalCount": 1,
+    "proposalFound": true,
+    "matchedFields": [
+      "paperType",
+      "protocolFamily"
+    ],
+    "currentReviewedInclusionF1": 1,
+    "candidateReviewedInclusionF1": 1,
+    "currentReviewedProtocolFamilyAccuracy": 0.857,
+    "candidateReviewedProtocolFamilyAccuracy": 1,
+    "currentReviewedPaperTypeAccuracy": 0.857,
+    "candidateReviewedPaperTypeAccuracy": 1,
+    "currentReviewedOutcomeMacroF1": 1,
+    "candidateReviewedOutcomeMacroF1": 1,
+    "currentReviewedStepPhaseMacroF1": 1,
+    "candidateReviewedStepPhaseMacroF1": 1,
+    "autoApplySafe": true
+  },
+  {
+    "id": "reviewed-specimen-regression",
+    "description": "Drop reviewed whole-ovary context from a sheep autotransplantation paper.",
+    "passed": true,
+    "proposalCount": 1,
+    "proposalFound": true,
+    "matchedFields": [
+      "specimenTypes"
+    ],
+    "currentReviewedInclusionF1": 1,
+    "candidateReviewedInclusionF1": 1,
+    "currentReviewedProtocolFamilyAccuracy": 1,
+    "candidateReviewedProtocolFamilyAccuracy": 1,
+    "currentReviewedPaperTypeAccuracy": 1,
+    "candidateReviewedPaperTypeAccuracy": 1,
+    "currentReviewedOutcomeMacroF1": 1,
+    "candidateReviewedOutcomeMacroF1": 1,
+    "currentReviewedStepPhaseMacroF1": 1,
+    "candidateReviewedStepPhaseMacroF1": 1,
+    "autoApplySafe": true
+  },
+  {
+    "id": "reviewed-outcome-regression",
+    "description": "Corrupt reviewed outcome classes for a human ovarian tissue vitrification paper.",
+    "passed": true,
+    "proposalCount": 1,
+    "proposalFound": true,
+    "matchedFields": [
+      "outcomeClasses"
+    ],
+    "currentReviewedInclusionF1": 1,
+    "candidateReviewedInclusionF1": 1,
+    "currentReviewedProtocolFamilyAccuracy": 1,
+    "candidateReviewedProtocolFamilyAccuracy": 1,
+    "currentReviewedPaperTypeAccuracy": 1,
+    "candidateReviewedPaperTypeAccuracy": 1,
+    "currentReviewedOutcomeMacroF1": 0.667,
+    "candidateReviewedOutcomeMacroF1": 1,
+    "currentReviewedStepPhaseMacroF1": 1,
+    "candidateReviewedStepPhaseMacroF1": 1,
+    "autoApplySafe": true
+  },
+  {
+    "id": "reviewed-step-phase-regression",
+    "description": "Corrupt reviewed protocol step phases for a closed-system vitrification paper.",
+    "passed": true,
+    "proposalCount": 1,
+    "proposalFound": true,
+    "matchedFields": [
+      "stepPhases"
+    ],
+    "currentReviewedInclusionF1": 1,
+    "candidateReviewedInclusionF1": 1,
+    "currentReviewedProtocolFamilyAccuracy": 1,
+    "candidateReviewedProtocolFamilyAccuracy": 1,
+    "currentReviewedPaperTypeAccuracy": 1,
+    "candidateReviewedPaperTypeAccuracy": 1,
+    "currentReviewedOutcomeMacroF1": 1,
+    "candidateReviewedOutcomeMacroF1": 1,
+    "currentReviewedStepPhaseMacroF1": 0.5,
+    "candidateReviewedStepPhaseMacroF1": 1,
+    "autoApplySafe": true
+  }
+]

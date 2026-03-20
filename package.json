@@ -1,0 +1,27 @@
+{
+  "name": "cryo-protocol-atlas",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.2.17",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "ingest:ovarian": "node --import tsx scripts/ingest-domain.ts ovarian-tissue",
+    "extract:ovarian": "node --import tsx scripts/extract-domain.ts ovarian-tissue",
+    "analyze:ovarian": "node --import tsx scripts/analyze-domain.ts ovarian-tissue",
+    "queue:ovarian": "node --import tsx scripts/build-resolution-queue.ts ovarian-tissue",
+    "seed-benchmark:ovarian": "node --import tsx scripts/seed-benchmark.ts ovarian-tissue",
+    "evaluate:ovarian": "node --import tsx scripts/evaluate-domain.ts ovarian-tissue",
+    "loop:ovarian": "node --import tsx scripts/run-autoresearch-loop.ts ovarian-tissue",
+    "regress:ovarian": "node --import tsx scripts/regress-autoresearch.ts ovarian-tissue",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2",
+    "zod": "^3.25.76"
+  }
+}

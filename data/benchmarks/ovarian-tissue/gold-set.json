@@ -1,0 +1,706 @@
+{
+  "generatedAt": "2026-03-20T17:08:16.444Z",
+  "domain": "ovarian-tissue",
+  "description": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
+  "entries": [
+    {
+      "paperId": "f18dbca4-01e4-46da-9416-ec324e26ca55",
+      "title": "Animal Models of Ovarian Transplantation",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "f18dbca4-01e4-46da-9416-ec324e26ca55",
+        "excludeFromAtlas": true
+      },
+      "notes": "Book chapter on ovarian transplantation models and fertility-preservation context; not a primary protocol paper."
+    },
+    {
+      "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+      "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "slow-freezing",
+      "expectedSpeciesMentions": [
+        "sheep"
+      ],
+      "expectedSpecimenTypes": [
+        "ovarian tissue",
+        "whole ovary"
+      ],
+      "expectedStepPhases": [
+        "cooling",
+        "storage",
+        "warming"
+      ],
+      "expectedOverridePatch": {
+        "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+        "paperType": "experimental",
+        "protocolFamily": "slow-freezing",
+        "speciesMentions": [
+          "sheep"
+        ],
+        "specimenTypes": [
+          "ovarian tissue",
+          "whole ovary"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Ovarian cortex fragments and whole sheep ovaries were cryopreserved in a controlled-rate freezer.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "storage",
+            "summary": "Specimens were stored in liquid nitrogen for 7 days.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [
+              "-196°C"
+            ],
+            "durations": [
+              "7 days"
+            ],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "warming",
+            "summary": "Specimens were thawed before autologous transplantation and histological evaluation.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
+        "extractionConfidence": 0.76
+      },
+      "notes": "Sheep ovary transplantation study using a controlled-rate freezer and thawing after liquid nitrogen storage."
+    },
+    {
+      "paperId": "e60a0ee8-afa8-449c-bbab-60f04b2fdf09",
+      "title": "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+      "reviewStatus": "seeded",
+      "expectedInAtlas": true,
+      "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "slow-freezing",
+      "expectedSpeciesMentions": [
+        "cat"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "expectedOutcomeClasses": [
+        "morphology",
+        "viability"
+      ],
+      "expectedStepPhases": [
+        "perfusion",
+        "storage"
+      ],
+      "notes": "Seeded from the current resolved atlas snapshot; upgrade to reviewed as full-text adjudication expands."
+    },
+    {
+      "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+      "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "vitrification",
+      "expectedSpeciesMentions": [
+        "human"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "expectedOutcomeClasses": [
+        "morphology"
+      ],
+      "expectedStepPhases": [
+        "assessment",
+        "loading",
+        "warming"
+      ],
+      "expectedOverridePatch": {
+        "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+        "paperType": "experimental",
+        "protocolFamily": "vitrification",
+        "speciesMentions": [
+          "human"
+        ],
+        "specimenTypes": [
+          "follicles",
+          "ovarian tissue"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "loading",
+            "summary": "Human ovarian tissue was vitrified in cryotubes using dimethyl sulphoxide, 1,2-propanediol, ethylene glycol and polyvinylpyrrolidone in a closed system.",
+            "chemicals": [
+              "Dimethyl Sulfoxide",
+              "Ethylene Glycol",
+              "Propylene Glycol"
+            ],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "warming",
+            "summary": "Warmed vitrified tissue was compared against non-vitrified tissue by light and electron microscopic morphology.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "assessment",
+            "summary": "Follicle and stroma ultrastructure was well preserved in the closed-system vitrified tissue.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "morphology",
+            "strength": "moderate",
+            "summary": "The ultrastructure of follicles within vitrified human ovarian tissue was well preserved in the closed cryotube system.",
+            "evidence": []
+          }
+        ],
+        "extractionConfidence": 0.78
+      },
+      "notes": "Human ovarian tissue vitrification study using a closed cryotube system with morphology-focused ultrastructural readouts."
+    },
+    {
+      "paperId": "e6aaf317-52fc-441c-bac4-5143fbb9e54c",
+      "title": "Clinical utility of freeze-all approach in ART treatment: A mini-review",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "e6aaf317-52fc-441c-bac4-5143fbb9e54c",
+        "excludeFromAtlas": true
+      },
+      "notes": "Embryo-focused freeze-all review; outside the ovarian tissue atlas slice."
+    },
+    {
+      "paperId": "eb9d9be6-4244-4e4b-892e-ba809925613a",
+      "title": "Cryopreservation and in vitro culture of caprine preantral follicles",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "expectedPaperType": "review",
+      "expectedProtocolFamily": "comparative",
+      "expectedSpeciesMentions": [
+        "goat"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "oocytes"
+      ],
+      "expectedOverridePatch": {
+        "paperId": "eb9d9be6-4244-4e4b-892e-ba809925613a",
+        "paperType": "review",
+        "protocolFamily": "comparative",
+        "speciesMentions": [
+          "goat"
+        ],
+        "specimenTypes": [
+          "follicles",
+          "oocytes"
+        ],
+        "extractionConfidence": 0.74
+      },
+      "notes": "Review of caprine preantral follicle cryopreservation and in vitro culture spanning both vitrification and slow freezing."
+    },
+    {
+      "paperId": "fdef775d-8d93-4bdc-a7fe-7f9074ce47fb",
+      "title": "CRYOPRESERVATION OF CANINE OVARIAN AND TESTICULAR FIBROBLASTS",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "fdef775d-8d93-4bdc-a7fe-7f9074ce47fb",
+        "excludeFromAtlas": true
+      },
+      "notes": "Canine fibroblast cryopreservation study from ovarian/testicular tissues; not an ovarian tissue preservation protocol paper."
+    },
+    {
+      "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+      "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "vitrification",
+      "expectedSpeciesMentions": [
+        "human"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "expectedOutcomeClasses": [
+        "morphology",
+        "transplantation",
+        "viability"
+      ],
+      "expectedOverridePatch": {
+        "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+        "paperType": "experimental",
+        "protocolFamily": "vitrification",
+        "speciesMentions": [
+          "human"
+        ],
+        "specimenTypes": [
+          "follicles",
+          "ovarian tissue"
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "morphology",
+            "strength": "moderate",
+            "summary": "The percentages of morphologically normal and viable follicles of DCV2 were significantly higher than DCV1, DCV3 and CV groups.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "The percentages of morphologically normal and viable follicles of DCV2 were significantly higher than DCV1, DCV3 and CV groups.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "transplantation",
+            "strength": "moderate",
+            "summary": "After grafting, the follicle density of DCV2 was greater than DCV1, DCV3 and CV groups.",
+            "evidence": []
+          }
+        ],
+        "extractionConfidence": 0.82
+      },
+      "notes": "Compares direct-cover vitrification against conventional vitrification in human ovarian tissue fragments."
+    },
+    {
+      "paperId": "dc753166-c837-4fe4-af6a-28cd82058473",
+      "title": "Cryopreservation of immature oocytes of the indigeneous Vietnamese Ban Pig",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "dc753166-c837-4fe4-af6a-28cd82058473",
+        "excludeFromAtlas": true
+      },
+      "notes": "Pig immature oocyte vitrification paper; relevant to oocyte workflows, not ovarian tissue preservation."
+    },
+    {
+      "paperId": "e7d80563-9f61-460d-b7da-53f60ef58b50",
+      "title": "Cryopreservation of Whole Murine and Porcine Livers",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "e7d80563-9f61-460d-b7da-53f60ef58b50",
+        "excludeFromAtlas": true
+      },
+      "notes": "Whole-liver cryopreservation paper; ovary mention is background only."
+    },
+    {
+      "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+      "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "slow-freezing",
+      "expectedSpeciesMentions": [
+        "mouse"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "expectedOverridePatch": {
+        "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+        "paperType": "experimental",
+        "protocolFamily": "slow-freezing",
+        "speciesMentions": [
+          "mouse"
+        ],
+        "specimenTypes": [
+          "follicles",
+          "ovarian tissue"
+        ],
+        "extractionConfidence": 0.72
+      },
+      "notes": "Primary study on follicle survival in frozen mouse ovaries; title and context indicate a freezing protocol comparison rather than vitrification."
+    },
+    {
+      "paperId": "e263dbc7-c35b-47ce-8d9b-57e1e6ac34e4",
+      "title": "Effect of sugars on maturation rate of vitriﬁed-thawed immature porcine oocytes",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "e263dbc7-c35b-47ce-8d9b-57e1e6ac34e4",
+        "excludeFromAtlas": true
+      },
+      "notes": "Porcine immature oocyte vitrification paper; relevant to oocytes, not the ovarian tissue atlas slice."
+    },
+    {
+      "paperId": "fea34b3b-4387-4267-bc1c-8bfc5c6d4034",
+      "title": "Evaluation of DNA Damage of Mare Granulosa Cells Before and After Cryopreservation Using a Chromatin Dispersion Test",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "fea34b3b-4387-4267-bc1c-8bfc5c6d4034",
+        "excludeFromAtlas": true
+      },
+      "notes": "Granulosa cell DNA-preservation study using equine oocyte-associated cells, not ovarian tissue protocol optimization."
+    },
+    {
+      "paperId": "f062f014-b946-4592-a58e-cd0633082b85",
+      "title": "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+      "reviewStatus": "seeded",
+      "expectedInAtlas": true,
+      "expectedPaperType": "methods",
+      "expectedProtocolFamily": "comparative",
+      "expectedSpeciesMentions": [
+        "human"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "ovarian cortex",
+        "ovarian tissue"
+      ],
+      "expectedOutcomeClasses": [
+        "morphology"
+      ],
+      "expectedStepPhases": [
+        "culture",
+        "loading",
+        "storage"
+      ],
+      "notes": "Seeded from the current resolved atlas snapshot; upgrade to reviewed as full-text adjudication expands."
+    },
+    {
+      "paperId": "da34cec8-3a6e-460b-ae3b-62afb90c6e4e",
+      "title": "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+      "reviewStatus": "seeded",
+      "expectedInAtlas": true,
+      "expectedPaperType": "methods",
+      "expectedProtocolFamily": "slow-freezing",
+      "expectedSpeciesMentions": [
+        "sheep"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "expectedOutcomeClasses": [
+        "morphology",
+        "viability"
+      ],
+      "expectedStepPhases": [
+        "assessment",
+        "cooling",
+        "equilibration",
+        "unknown"
+      ],
+      "notes": "Seeded from the current resolved atlas snapshot; upgrade to reviewed as full-text adjudication expands."
+    },
+    {
+      "paperId": "fbf690db-1d63-48f7-89cb-afa7bd81b16f",
+      "title": "FSH different regimes affect the developmental capacity and cryotolerance of embryos derived from oocytes collected by ovum pick-up in donor sheep",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "fbf690db-1d63-48f7-89cb-afa7bd81b16f",
+        "excludeFromAtlas": true
+      },
+      "notes": "Embryo/oocyte cryotolerance paper driven by donor stimulation regime, not ovarian tissue cryopreservation protocols."
+    },
+    {
+      "paperId": "d8fa8551-7088-4f7a-ba21-f3a7b113db47",
+      "title": "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+      "reviewStatus": "seeded",
+      "expectedInAtlas": true,
+      "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "comparative",
+      "expectedSpeciesMentions": [
+        "human",
+        "pig",
+        "primate",
+        "sheep"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "oocytes",
+        "ovarian tissue",
+        "whole ovary"
+      ],
+      "expectedOutcomeClasses": [
+        "function",
+        "morphology",
+        "reproductive",
+        "transplantation"
+      ],
+      "expectedStepPhases": [
+        "cooling",
+        "loading",
+        "perfusion",
+        "storage"
+      ],
+      "notes": "Seeded from the current resolved atlas snapshot; upgrade to reviewed as full-text adjudication expands."
+    },
+    {
+      "paperId": "db1f328f-841d-4b71-b786-aaa958133cce",
+      "title": "Intrafollicular transfer of fresh and vitriﬁed immature bovine oocytes",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "db1f328f-841d-4b71-b786-aaa958133cce",
+        "excludeFromAtlas": true
+      },
+      "notes": "Bovine oocyte vitrification and intrafollicular transfer study; outside the ovarian tissue protocol slice."
+    },
+    {
+      "paperId": "fb9f4b85-d77c-49e6-976e-ded1ec242b61",
+      "title": "Me₂SO perfusion time for whole-organ cryopreservation can be shortened: Results of micro-computed tomography monitoring during Me₂SO perfusion of rat hearts",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "fb9f4b85-d77c-49e6-976e-ded1ec242b61",
+        "excludeFromAtlas": true
+      },
+      "notes": "Rat heart perfusion study; ovarian tissue mention is background context, not the specimen under study."
+    },
+    {
+      "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+      "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "expectedPaperType": "methods",
+      "expectedProtocolFamily": "slow-freezing",
+      "expectedSpeciesMentions": [
+        "human"
+      ],
+      "expectedSpecimenTypes": [
+        "ovarian tissue"
+      ],
+      "expectedOutcomeClasses": [
+        "function",
+        "viability"
+      ],
+      "expectedOverridePatch": {
+        "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+        "paperType": "methods",
+        "protocolFamily": "slow-freezing",
+        "speciesMentions": [
+          "human"
+        ],
+        "specimenTypes": [
+          "ovarian tissue"
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Frozen-thawed ovarian tissue had a similar quality to fresh tissue.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Frozen-thawed ovarian tissue could resume folliculogenesis during organotypic culture.",
+            "evidence": []
+          }
+        ],
+        "extractionConfidence": 0.8
+      },
+      "notes": "Programmable-freezer optimization study with seeding, controlled cooling rates, and structured thawing for human ovarian tissue."
+    },
+    {
+      "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+      "title": "Ovarian and oocyte cryopreservation",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "expectedPaperType": "review",
+      "expectedProtocolFamily": "comparative",
+      "expectedSpeciesMentions": [
+        "sheep"
+      ],
+      "expectedSpecimenTypes": [
+        "oocytes",
+        "whole ovary"
+      ],
+      "expectedOverridePatch": {
+        "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+        "paperType": "review",
+        "protocolFamily": "comparative",
+        "speciesMentions": [
+          "sheep"
+        ],
+        "specimenTypes": [
+          "oocytes",
+          "whole ovary"
+        ]
+      },
+      "notes": "Narrative update reviewing both slow cooling and vitrification approaches for ovarian and oocyte cryopreservation."
+    },
+    {
+      "paperId": "e7fe405f-8033-4260-bad8-2041ac9b2ac0",
+      "title": "Studies on ovarian tissues’ cryopreservation in the cyprinid species",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "e7fe405f-8033-4260-bad8-2041ac9b2ac0",
+        "excludeFromAtlas": true
+      },
+      "notes": "Fish ovary cryopreservation paper in a different biological system; outside the current mammalian ovarian tissue atlas slice."
+    },
+    {
+      "paperId": "ef159502-8cd1-433a-9c83-1576490b3a43",
+      "title": "The future potential of cryopreservation for assisted reproduction",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "expectedOverridePatch": {
+        "paperId": "ef159502-8cd1-433a-9c83-1576490b3a43",
+        "excludeFromAtlas": true
+      },
+      "notes": "Broad assisted-reproduction review spanning gonadal tissue and oocytes; not a protocol-focused ovarian tissue paper."
+    },
+    {
+      "paperId": "fd2cabdb-f442-4545-b312-845303c594c5",
+      "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+      "reviewStatus": "seeded",
+      "expectedInAtlas": true,
+      "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "comparative",
+      "expectedSpeciesMentions": [
+        "rat"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles"
+      ],
+      "expectedOutcomeClasses": [
+        "morphology",
+        "viability"
+      ],
+      "expectedStepPhases": [
+        "assessment",
+        "loading",
+        "storage",
+        "unknown",
+        "warming"
+      ],
+      "notes": "Seeded from the current resolved atlas snapshot; upgrade to reviewed as full-text adjudication expands."
+    },
+    {
+      "paperId": "f74836db-46fb-4ca6-b619-a505fc30d0a0",
+      "title": "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants",
+      "reviewStatus": "seeded",
+      "expectedInAtlas": true,
+      "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "vitrification",
+      "expectedSpeciesMentions": [
+        "peccary"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "expectedOutcomeClasses": [
+        "morphology",
+        "viability"
+      ],
+      "expectedStepPhases": [
+        "loading",
+        "warming"
+      ],
+      "notes": "Seeded from the current resolved atlas snapshot; upgrade to reviewed as full-text adjudication expands."
+    },
+    {
+      "paperId": "e94731cb-3b60-464e-b981-2b1d0737dc61",
+      "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+      "reviewStatus": "seeded",
+      "expectedInAtlas": true,
+      "expectedPaperType": "experimental",
+      "expectedProtocolFamily": "vitrification",
+      "expectedSpeciesMentions": [
+        "sheep"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "oocytes",
+        "ovarian tissue"
+      ],
+      "expectedOutcomeClasses": [
+        "morphology",
+        "viability"
+      ],
+      "expectedStepPhases": [
+        "culture",
+        "loading"
+      ],
+      "notes": "Seeded from the current resolved atlas snapshot; upgrade to reviewed as full-text adjudication expands."
+    },
+    {
+      "paperId": "e0ce771b-2f1d-4b37-8c0f-8d0afda3ef26",
+      "title": "Vitrified turkey ovarian tissue cultured and assessed through gene expression patterns: A potential screening tool",
+      "reviewStatus": "seeded",
+      "expectedInAtlas": true,
+      "expectedPaperType": "methods",
+      "expectedProtocolFamily": "vitrification",
+      "expectedSpeciesMentions": [
+        "turkey"
+      ],
+      "expectedSpecimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "expectedOutcomeClasses": [
+        "morphology"
+      ],
+      "expectedStepPhases": [
+        "assessment",
+        "culture",
+        "loading"
+      ],
+      "notes": "Seeded from the current resolved atlas snapshot; upgrade to reviewed as full-text adjudication expands."
+    },
+    {
+      "paperId": "e60a5fab-5db3-49b5-99d8-badd40672abf",
+      "title": "Whole sheep ovary cryopreservation: evaluation of a slow freezing protocol with dimethylsulphoxide",
+      "reviewStatus": "seeded",
+      "expectedInAtlas": true,
+      "expectedPaperType": "methods",
+      "expectedProtocolFamily": "slow-freezing",
+      "expectedSpeciesMentions": [
+        "sheep"
+      ],
+      "expectedSpecimenTypes": [
+        "whole ovary"
+      ],
+      "expectedOutcomeClasses": [
+        "morphology",
+        "viability"
+      ],
+      "expectedStepPhases": [
+        "cooling",
+        "culture",
+        "perfusion"
+      ],
+      "notes": "Seeded from the current resolved atlas snapshot; upgrade to reviewed as full-text adjudication expands."
+    }
+  ]
+}
