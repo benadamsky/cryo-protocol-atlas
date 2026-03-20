@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const DomainIdSchema = z.enum(["ovarian-tissue"]);
+export const DomainIdSchema = z.enum(["ovarian-tissue", "islets"]);
 export type DomainId = z.infer<typeof DomainIdSchema>;
 
 export const ProtocolFamilySchema = z.enum([

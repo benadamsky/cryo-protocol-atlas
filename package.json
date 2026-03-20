@@ -9,9 +9,13 @@
   ],
   "scripts": {
     "ingest:ovarian": "node --import tsx scripts/ingest-domain.ts ovarian-tissue",
+    "ingest:islets": "node --import tsx scripts/ingest-domain.ts islets",
     "extract:ovarian": "node --import tsx scripts/extract-domain.ts ovarian-tissue",
+    "extract:islets": "node --import tsx scripts/extract-domain.ts islets",
     "analyze:ovarian": "node --import tsx scripts/analyze-domain.ts ovarian-tissue",
+    "analyze:islets": "node --import tsx scripts/analyze-domain.ts islets",
     "queue:ovarian": "node --import tsx scripts/build-resolution-queue.ts ovarian-tissue",
+    "queue:islets": "node --import tsx scripts/build-resolution-queue.ts islets",
     "seed-benchmark:ovarian": "node --import tsx scripts/seed-benchmark.ts ovarian-tissue",
     "evaluate:ovarian": "node --import tsx scripts/evaluate-domain.ts ovarian-tissue",
     "loop:ovarian": "node --import tsx scripts/run-autoresearch-loop.ts ovarian-tissue",

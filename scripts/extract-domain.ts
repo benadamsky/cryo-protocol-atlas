@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { extractIsletProtocol } from "../packages/extract/src/islets.js";
 import { extractOvarianProtocol } from "../packages/extract/src/ovarian.js";
 import {
   DomainIdSchema,
@@ -11,16 +12,22 @@ import {
 const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
 
 async function main(selectedDomain: DomainId): Promise<void> {
-  if (selectedDomain !== "ovarian-tissue") {
-    throw new Error(`No extractor implemented yet for domain: ${selectedDomain}`);
-  }
-
   const processedDir = join(process.cwd(), "data", "processed", selectedDomain);
   const snapshotPath = join(processedDir, "domain-snapshot.json");
   const snapshotFile = await readFile(snapshotPath, "utf8");
   const domainSnapshot = DomainSnapshotSchema.parse(JSON.parse(snapshotFile));
 
-  const extractions = domainSnapshot.papers.map((paper) => extractOvarianProtocol(paper));
+  const extractions = domainSnapshot.papers.map((paper) => {
+    if (selectedDomain === "ovarian-tissue") {
+      return extractOvarianProtocol(paper);
+    }
+
+    if (selectedDomain === "islets") {
+      return extractIsletProtocol(paper);
+    }
+
+    throw new Error(`No extractor implemented yet for domain: ${selectedDomain}`);
+  });
   const protocolFamilyCounts = extractions.reduce<Record<string, number>>((counts, extraction) => {
     counts[extraction.protocolFamily] = (counts[extraction.protocolFamily] ?? 0) + 1;
     return counts;

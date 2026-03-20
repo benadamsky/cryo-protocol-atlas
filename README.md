@@ -15,12 +15,20 @@ The first vertical slice focuses on ovarian tissue vitrification literature:
 - freeze a seed benchmark with reviewed vs seeded labels
 - score baseline vs resolved outputs against benchmark gates
 
+The next scaffolded domain is:
+
+- `islets`
+
 ## Scripts
 
 - `bun run ingest:ovarian`
+- `bun run ingest:islets`
 - `bun run extract:ovarian`
+- `bun run extract:islets`
 - `bun run analyze:ovarian`
+- `bun run analyze:islets`
 - `bun run queue:ovarian`
+- `bun run queue:islets`
 - `bun run seed-benchmark:ovarian`
 - `bun run evaluate:ovarian`
 - `bun run loop:ovarian`
@@ -44,6 +52,7 @@ The current repo is a protocol-intelligence MVP, not a discovery engine. It esta
 - baseline vs resolved atlas impact reporting
 - benchmark seeding for the ovarian slice
 - reviewed-gate evaluation for inclusion/exclusion and field accuracy
+- second-domain scaffold for islet cryopreservation literature
 
 ## Benchmarking model
 
@@ -54,6 +63,8 @@ The repo now has a benchmark layer under `data/benchmarks/ovarian-tissue/gold-se
 - `bun run evaluate:ovarian` writes `benchmark-summary.json`, `benchmark-analysis.json`, and `benchmark-report.md` under `data/processed/ovarian-tissue/`.
 
 This is still not a discovery engine. It is the evaluation scaffold that lets future autonomous loops optimize toward explicit reviewed targets instead of just making the atlas look cleaner.
+
+`islets` is scaffolded for ingestion/extraction/atlas generation, but it does not yet have a curated benchmark or autoresearch loop. The intended sequence is the same as ovarian tissue: ingest, extract, curate, benchmark, then loop.
 
 ## Conservative autoresearch loop
 

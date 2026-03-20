@@ -22,6 +22,31 @@ const domainKeywords: Record<DomainId, { anchorKeywords: string[]; supportingKey
       "reproductive tissue",
       "cryopreservation"
     ]
+  },
+  islets: {
+    anchorKeywords: [
+      "islet",
+      "islets",
+      "pancreatic islet",
+      "pancreatic islets",
+      "islet cell",
+      "islet cells",
+      "islet transplantation",
+      "islet graft",
+      "encapsulated islets"
+    ],
+    supportingKeywords: [
+      "pancreatic",
+      "beta cell",
+      "beta cells",
+      "insulin",
+      "glucose",
+      "diabetes",
+      "transplantation",
+      "cryopreservation",
+      "vitrification",
+      "slow freezing"
+    ]
   }
 };
 
