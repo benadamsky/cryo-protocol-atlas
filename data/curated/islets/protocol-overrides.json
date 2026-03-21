@@ -1,26 +1,20 @@
 {
-  "generatedAt": "2026-03-20T18:18:00.000Z",
+  "generatedAt": "2026-03-21T02:44:31.099Z",
   "domain": "islets",
   "overrides": [
     {
-      "paperId": "df288637-aaad-454a-9595-156c7db96495",
-      "excludeFromAtlas": true,
-      "notes": "Membrane transport-parameter paper for golden hamster islet cells; useful cryobiophysics context, but not an islet preservation protocol study for the atlas."
-    },
-    {
-      "paperId": "3fbb6bbb-96a2-48bf-9bd3-53166a7a2250",
-      "excludeFromAtlas": true,
-      "notes": "Broad heart-preservation tooling paper with incidental human islet vitrification context, not a primary islet cryopreservation protocol paper."
-    },
-    {
-      "paperId": "cc7ce88a-94b0-4ca4-97b0-2a31e0bd98c9",
-      "excludeFromAtlas": true,
-      "notes": "Differential scanning calorimetry control-values methods paper; includes islet context for CPA exploration, but not a direct islet preservation protocol study."
-    },
-    {
-      "paperId": "0afd5156-4444-4294-a8de-8c29c35b03a5",
-      "excludeFromAtlas": true,
-      "notes": "Cryo-isolation paper focused on selective destruction of acinar tissue during pancreas processing rather than isolated-islet cryopreservation protocols."
+      "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "mouse"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Curcumin adjunct study built on a DMSO cryopreservation workflow for mouse pancreatic islets."
     },
     {
       "paperId": "02eddb39-be9a-4bbb-b814-5952e78e3145",
@@ -28,657 +22,49 @@
       "notes": "Nonenzymatic cryogenic isolation paper on in situ pancreatic cryopreservation and acinar destruction, outside the isolated-islet protocol slice."
     },
     {
-      "paperId": "8171cfdd-b8b3-488a-ba11-a919b71c1d2c",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.82,
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "loading",
-          "summary": "Rat islets were equilibrated in Me2SO before freezing in programmable or nested-beaker systems.",
-          "chemicals": ["Dimethyl Sulfoxide"],
-          "concentrations": ["1.0 M", "1.4 M"],
-          "temperatures": ["4 °C"],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "cooling",
-          "summary": "Samples were seeded near -6 °C and cooled to -75 °C at multiple controlled rates.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-6 °C", "-75 °C"],
-          "durations": ["20-24 h"],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "storage",
-          "summary": "Frozen rat islets were held at terminal subzero temperatures before thaw and functional comparison.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-75 °C"],
-          "durations": ["20-24 h"],
-          "evidence": []
-        },
-        {
-          "order": 3,
-          "phase": "assessment",
-          "summary": "Post-thaw rat islet function was compared across Me2SO concentrations and cooling systems.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "outcomeMentions": [
-        {
-          "outcomeClass": "function",
-          "strength": "moderate",
-          "summary": "The study compared post-thaw functional performance of rat islets across Me2SO loading and cooling conditions.",
-          "evidence": []
-        }
-      ],
-      "notes": "Programmable-freezer DMSO study on isolated rat islets with controlled cooling and warming."
-    },
-    {
-      "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["chick"],
-      "specimenTypes": ["islets"],
-      "extractionConfidence": 0.8,
-      "notes": "Chick islet cryopreservation study using stepwise DMSO loading and freeze-thaw recovery comparisons."
-    },
-    {
-      "paperId": "c05ceecd-014d-4e09-9dfa-5e095dc5de93",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.8,
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "cooling",
-          "summary": "Fetal rat islets were cooled in 2 M DMSO with ice nucleation at -8 °C and slow descent to -40 °C before liquid-nitrogen transfer.",
-          "chemicals": ["Dimethyl Sulfoxide"],
-          "concentrations": ["2 M"],
-          "temperatures": ["-8 °C", "-40 °C", "-196 °C"],
-          "durations": ["10-15 min"],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "warming",
-          "summary": "Frozen fetal rat islets were rewarmed under fast and slow thawing conditions.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["10 °C/min", "200 °C/min"],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "culture",
-          "summary": "Post-thaw islets were cultured for 24 or 48 hours before comparison.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": ["24 h", "48 h"],
-          "evidence": []
-        },
-        {
-          "order": 3,
-          "phase": "assessment",
-          "summary": "Functional and morphological outcomes were compared across thawing-rate and post-thaw culture conditions.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "outcomeMentions": [
-        {
-          "outcomeClass": "function",
-          "strength": "moderate",
-          "summary": "The study compared post-thaw functional performance across thawing-rate and culture conditions.",
-          "evidence": []
-        },
-        {
-          "outcomeClass": "morphology",
-          "strength": "moderate",
-          "summary": "The study reported morphological correlation after thawing and post-thaw culture.",
-          "evidence": []
-        }
-      ],
-      "notes": "Fetal rat islet cryopreservation study focused on thawing rate and post-thaw culture effects."
-    },
-    {
-      "paperId": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.8,
-      "notes": "Cooling-rate, warming-rate, and CPA-permeation study on rat islet survival under freezing-thawing conditions."
-    },
-    {
-      "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["pig"],
-      "specimenTypes": ["islets", "islet cells"],
-      "extractionConfidence": 0.82,
-      "notes": "Porcine islet-cell cryopreservation study comparing freezing media with DMSO, glycerol, and sucrose."
-    },
-    {
-      "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["human"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.82,
-      "notes": "Programmed-freezing study on human pancreatic islets from non-heart-beating donors using DMSO and HES."
-    },
-    {
-      "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.8,
-      "notes": "Rat islet paper comparing two controlled freezing techniques rather than vitrification."
-    },
-    {
-      "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["mouse"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.8,
-      "notes": "Curcumin adjunct study built on a DMSO cryopreservation workflow for mouse pancreatic islets."
-    },
-    {
-      "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["human"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.8,
-      "notes": "Human islet cryopreservation study testing a p38 MAPK inhibitor within an established freezing workflow."
-    },
-    {
-      "paperId": "b293075d-011c-4c8d-95a6-215ae7952c72",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["pig"],
-      "specimenTypes": ["islets"],
-      "extractionConfidence": 0.82,
-      "notes": "Porcine autotransplantation study using controlled-rate freezing with Me2SO before intraportal grafting."
-    },
-    {
-      "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["mouse", "rat", "pig"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.78,
-      "notes": "Long-term liquid-nitrogen preservation study using 10% DMSO and controlled cooling for rodent and guinea pig islets."
-    },
-    {
-      "paperId": "72b969f2-a34b-439a-9300-511e3309b5d2",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["mouse"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.8,
-      "notes": "Murine islet cryopreservation study assessing corticosteroids within a programmable freezing workflow."
-    },
-    {
-      "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets", "islet cells"],
-      "extractionConfidence": 0.8,
-      "notes": "Rat islet cryopreservation study comparing PVP against standard DMSO and glycerol freezing controls."
-    },
-    {
-      "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["pig"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.82,
-      "notes": "Fetal porcine proislet paper explicitly using slow cooling to -40 C before liquid-nitrogen storage."
-    },
-    {
-      "paperId": "f805778c-f7b5-422e-978a-cf3d986f008c",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["human"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.82,
-      "notes": "Human pancreatic islet cryopreservation study testing trehalose as an adjunct in a long-term freezing workflow."
-    },
-    {
-      "paperId": "1453f932-2e03-42a3-968a-9efaf2b3233e",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["pig"],
-      "specimenTypes": ["islets"],
-      "extractionConfidence": 0.78,
-      "notes": "Porcine islet cryopreservation paper focused on polyethylene glycol within a DMSO freezing-thawing workflow."
-    },
-    {
-      "paperId": "f68c40d9-4184-4dc8-b527-095353b5c290",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["human", "rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.8,
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "loading",
-          "summary": "Pancreatic islets were loaded stepwise with Me2SO and ethylene glycol combinations before freezing.",
-          "chemicals": ["Dimethyl Sulfoxide", "Ethylene Glycol"],
-          "concentrations": ["1 M", "0.5 M", "1 M", "2 M"],
-          "temperatures": ["-7.5 °C"],
-          "durations": ["5 min"],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "cooling",
-          "summary": "Samples were nucleated and cooled at a controlled rate to subzero storage temperatures before liquid-nitrogen storage.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-7.5 °C", "-40 °C", "-196 °C"],
-          "durations": ["4 weeks"],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "warming",
-          "summary": "Frozen islets were rewarmed for post-thaw recovery comparisons across CPA combinations.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "notes": "Study on lower-dose permeable CPA combinations for pancreatic islet cryopreservation using Me2SO and ethylene glycol."
-    },
-    {
-      "paperId": "f91b7060-e698-46e7-8746-3d40eb683357",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["dog"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.8,
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "loading",
-          "summary": "Canine islets were step-loaded in 0.5 M then 2.1 M DMSO with beraprost sodium variants before freezing.",
-          "chemicals": ["Dimethyl Sulfoxide"],
-          "concentrations": ["0.5 M", "2.1 M"],
-          "temperatures": ["0 °C"],
-          "durations": ["15 min", "5 min"],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "cooling",
-          "summary": "Aliquots were nucleated at -6.5 °C and cooled to -50 °C in an automated cryounit.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-6.5 °C", "-50 °C"],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "storage",
-          "summary": "Frozen canine islets were stored in liquid nitrogen for one month.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-196 °C"],
-          "durations": ["1 month"],
-          "evidence": []
-        },
-        {
-          "order": 3,
-          "phase": "warming",
-          "summary": "Cryopreserved canine islets were thawed for post-storage recovery comparisons.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "notes": "Canine islet freezing-thawing study evaluating beraprost sodium within a DMSO cryopreservation workflow."
-    },
-    {
-      "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["pig"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.78,
-      "notes": "Porcine pancreatic islet study using sequential 10% DMSO cryopreservation after non-heart-beating donor procurement."
-    },
-    {
-      "paperId": "b52df02d-5796-4b24-ba2c-e76c9f6ebd93",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["dog"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.82,
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "loading",
-          "summary": "Cultured canine islets were pre-exposed to DMSO with beraprost sodium before cryounit freezing.",
-          "chemicals": ["Dimethyl Sulfoxide"],
-          "concentrations": ["0.5 mmol/L", "2.1 mmol/L"],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "cooling",
-          "summary": "Canine islets were frozen in an automated cryounit under DMSO plus beraprost sodium conditions.",
-          "chemicals": ["Dimethyl Sulfoxide"],
-          "concentrations": ["2.1 mmol/L"],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "storage",
-          "summary": "Frozen canine islets were stored in liquid nitrogen for one month.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": ["1 month"],
-          "evidence": []
-        },
-        {
-          "order": 3,
-          "phase": "assessment",
-          "summary": "Yield and viability were compared across beraprost sodium concentrations after cryopreservation.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "outcomeMentions": [
-        {
-          "outcomeClass": "viability",
-          "strength": "moderate",
-          "summary": "Beraprost sodium improved viability of cryopreserved canine islets.",
-          "evidence": []
-        }
-      ],
-      "notes": "Automated freezing study on canine pancreatic islets assessing beraprost sodium effects on yield and viability."
-    },
-    {
-      "paperId": "c10110ba-e282-4d66-80f6-bebbfcedbbfa",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.84,
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "loading",
-          "summary": "Lewis rat islets were prepared in pellet or suspension formats before controlled-rate freezing with sucrose- or step-dilution conditions.",
-          "chemicals": ["Dimethyl Sulfoxide", "Sucrose"],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "cooling",
-          "summary": "Islets were frozen by controlled-rate or programmed freezing before storage and shipment between centers.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-40 °C"],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "warming",
-          "summary": "Frozen-thawed islets were rewarmed using defined dilution protocols before transplantation.",
-          "chemicals": ["Sucrose"],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 3,
-          "phase": "assessment",
-          "summary": "Transplant performance of frozen-thawed rat islets transported between centers was assessed after banking.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "outcomeMentions": [
-        {
-          "outcomeClass": "transplantation",
-          "strength": "strong",
-          "summary": "Frozen-thawed rat islets remained transplantable after banking and transport between centers.",
-          "evidence": []
-        }
-      ],
-      "notes": "Rat islet banking and transplantation study built around controlled-rate freezing and frozen-thawed transport."
-    },
-    {
-      "paperId": "dae850dd-b5dd-4b24-a326-2dc59a1d0980",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.82,
-      "notes": "Rat islet storage and microencapsulation paper explicitly describing liquid-nitrogen cryotube freezing with 2 M DMSO."
-    },
-    {
-      "paperId": "e8acf4c0-f208-4ee5-ac4e-1fe7221b0a48",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets"],
-      "extractionConfidence": 0.84,
-      "notes": "Rat islet viability study using programmed freezing with DMSO and frozen-thawed recovery assays."
-    },
-    {
-      "paperId": "341ba0bf-982b-48aa-88b0-a8d57ec8199e",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["human"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.78,
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "storage",
-          "summary": "Human pancreatic islets were cryopreserved in 2 M DMSO and stored in liquid nitrogen.",
-          "chemicals": ["Dimethyl Sulfoxide"],
-          "concentrations": ["2 M"],
-          "temperatures": ["-196 °C"],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "warming",
-          "summary": "Cryopreserved human islets were thawed into Edmonton or pre-Edmonton media.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": ["24 h", "3 day", "5 day", "7 day"],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "culture",
-          "summary": "Thawed human islets were maintained in post-thaw culture before comparison.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": ["24 h", "3 day", "5 day", "7 day"],
-          "evidence": []
-        },
-        {
-          "order": 3,
-          "phase": "assessment",
-          "summary": "Post-thaw mass, morphology, and survival were measured under Edmonton-protocol conditions.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "outcomeMentions": [
-        {
-          "outcomeClass": "morphology",
-          "strength": "moderate",
-          "summary": "The study measured post-thaw human islet morphology after Edmonton-protocol cryopreservation.",
-          "evidence": []
-        },
-        {
-          "outcomeClass": "viability",
-          "strength": "moderate",
-          "summary": "The study measured post-thaw human islet survival after cryopreservation.",
-          "evidence": []
-        }
-      ],
-      "notes": "Human islet cryopreservation evaluation study using the Edmonton protocol with post-thaw survival and morphology readouts."
-    },
-    {
-      "paperId": "68dc5ee9-dd99-4f47-8e58-a59a28089fb7",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["human"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.8,
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "loading",
-          "summary": "Human pancreatic islets were cryoprotected with 2 M DMSO before freezing.",
-          "chemicals": ["Dimethyl Sulfoxide"],
-          "concentrations": ["2 M"],
-          "temperatures": ["-7.5 °C"],
-          "durations": ["5 min"],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "cooling",
-          "summary": "Supercooled human islets were nucleated and cooled before long-term cryostorage.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-7.5 °C", "-196 °C"],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "warming",
-          "summary": "Cryopreserved islets were thawed before implantation into diabetic nude mice.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 3,
-          "phase": "assessment",
-          "summary": "Graft function was evaluated after transplantation of cryopreserved human pancreatic islets.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "outcomeMentions": [
-        {
-          "outcomeClass": "transplantation",
-          "strength": "strong",
-          "summary": "Cryopreserved human pancreatic islets retained graft function after transplantation into diabetic nude mice.",
-          "evidence": []
-        }
-      ],
-      "notes": "Human pancreatic islet transplantation paper with explicit 2 M DMSO cryopreservation before grafting into diabetic nude mice."
-    },
-    {
-      "paperId": "12e4333d-e145-4340-ada1-b38751f5f390",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.8,
-      "notes": "Rat pancreatic islet viability paper varying programmable-freezer cooling rates and assessing post-thaw survival by confocal microscopy."
-    },
-    {
-      "paperId": "571357d4-0860-494b-8a6a-23814bacb5a0",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["mouse"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.78,
-      "notes": "Mouse pancreatic islet cryopreservation study testing human-serum conditions within a 2 M DMSO freezing workflow."
-    },
-    {
       "paperId": "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
       "paperType": "experimental",
       "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets", "encapsulated islets"],
-      "extractionConfidence": 0.82,
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets",
+        "encapsulated islets"
+      ],
       "protocolSteps": [
         {
           "order": 0,
           "phase": "loading",
           "summary": "Microencapsulated rat islets were equilibrated with graded DMSO conditions at ambient and 0 °C before freezing.",
-          "chemicals": ["Dimethyl Sulfoxide", "Sucrose"],
-          "concentrations": ["0.7 M", "1.4 M", "2.0 M", "2.6 M", "3.1 M"],
-          "temperatures": ["22 °C", "0 °C"],
-          "durations": ["15 min"],
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Sucrose"
+          ],
+          "concentrations": [
+            "0.7 M",
+            "1.4 M",
+            "2.0 M",
+            "2.6 M",
+            "3.1 M"
+          ],
+          "temperatures": [
+            "22 °C",
+            "0 °C"
+          ],
+          "durations": [
+            "15 min"
+          ],
           "evidence": []
         },
         {
           "order": 1,
           "phase": "cooling",
           "summary": "Encapsulated islets were cryostored in defined freezing media after DMSO equilibration.",
-          "chemicals": ["Dimethyl Sulfoxide"],
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
           "concentrations": [],
           "temperatures": [],
           "durations": [],
@@ -719,12 +105,925 @@
           "evidence": []
         }
       ],
+      "extractionConfidence": 0.82,
       "notes": "Microencapsulated rat islet cryostorage study varying DMSO concentration and equilibration conditions with graft-function outcomes."
     },
     {
-      "paperId": "f826780f-d21c-44df-b0ea-cf0c175038b3",
+      "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
+      "paperType": "experimental",
+      "notes": "Primary study on differential freezing tolerance across rat islet size classes."
+    },
+    {
+      "paperId": "0afd5156-4444-4294-a8de-8c29c35b03a5",
       "excludeFromAtlas": true,
-      "notes": "Kidney-preservation paper falsely matched via incidental rat islet context; outside the islet cryopreservation atlas slice."
+      "notes": "Cryo-isolation paper focused on selective destruction of acinar tissue during pancreas processing rather than isolated-islet cryopreservation protocols."
+    },
+    {
+      "paperId": "12e4333d-e145-4340-ada1-b38751f5f390",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Rat pancreatic islet viability paper varying programmable-freezer cooling rates and assessing post-thaw survival by confocal microscopy."
+    },
+    {
+      "paperId": "1453f932-2e03-42a3-968a-9efaf2b3233e",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "pig"
+      ],
+      "specimenTypes": [
+        "islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "warming",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.78,
+      "notes": "Porcine islet cryopreservation paper focused on polyethylene glycol within a DMSO freezing-thawing workflow."
+    },
+    {
+      "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "chick"
+      ],
+      "specimenTypes": [
+        "islets"
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Chick islet cryopreservation study using stepwise DMSO loading and freeze-thaw recovery comparisons."
+    },
+    {
+      "paperId": "2c3150ae-558a-49b0-b989-676d25c27884",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "loading",
+          "summary": "Rat islets were step-loaded with Me2SO before controlled slow cooling.",
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Sucrose"
+          ],
+          "concentrations": [
+            "1 M",
+            "2 M",
+            "0.75 M"
+          ],
+          "temperatures": [
+            "22 °C",
+            "0 °C"
+          ],
+          "durations": [
+            "30 min",
+            "15 min"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "cooling",
+          "summary": "Samples were seeded, cooled to -40 °C, and transferred to liquid nitrogen.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-7.5 °C",
+            "-10 °C",
+            "-40 °C",
+            "-196 °C"
+          ],
+          "durations": [
+            "5 min",
+            "10 min"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "storage",
+          "summary": "Frozen rat islets were stored in liquid nitrogen for 2 to 12 weeks.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-196 °C"
+          ],
+          "durations": [
+            "2-12 weeks"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 3,
+          "phase": "warming",
+          "summary": "Frozen rat islets were rapidly thawed in sucrose-containing medium before transplantation.",
+          "chemicals": [
+            "Sucrose"
+          ],
+          "concentrations": [
+            "0.75 M"
+          ],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 4,
+          "phase": "assessment",
+          "summary": "Post-thaw transplantation survival was compared after different precryopreservation culture conditions.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "transplantation",
+          "strength": "strong",
+          "summary": "The study compared transplantation survival after slow cooling and rapid thawing.",
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Primary rat islet survival/transplantation study assessing precryopreservation culture before slow cooling and rapid thawing."
+    },
+    {
+      "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
+      "paperType": "experimental",
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "loading",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: loading.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "notes": "Bulk isolated-islet cryopreservation study, not a review or methods-only paper."
+    },
+    {
+      "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "human"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Programmed-freezing study on human pancreatic islets from non-heart-beating donors using DMSO and HES."
+    },
+    {
+      "paperId": "341ba0bf-982b-48aa-88b0-a8d57ec8199e",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "human"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "storage",
+          "summary": "Human pancreatic islets were cryopreserved in 2 M DMSO and stored in liquid nitrogen.",
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "concentrations": [
+            "2 M"
+          ],
+          "temperatures": [
+            "-196 °C"
+          ],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "warming",
+          "summary": "Cryopreserved human islets were thawed into Edmonton or pre-Edmonton media.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [
+            "24 h",
+            "3 day",
+            "5 day",
+            "7 day"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "culture",
+          "summary": "Thawed human islets were maintained in post-thaw culture before comparison.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [
+            "24 h",
+            "3 day",
+            "5 day",
+            "7 day"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 3,
+          "phase": "assessment",
+          "summary": "Post-thaw mass, morphology, and survival were measured under Edmonton-protocol conditions.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "morphology",
+          "strength": "moderate",
+          "summary": "The study measured post-thaw human islet morphology after Edmonton-protocol cryopreservation.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "The study measured post-thaw human islet survival after cryopreservation.",
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.78,
+      "notes": "Human islet cryopreservation evaluation study using the Edmonton protocol with post-thaw survival and morphology readouts."
+    },
+    {
+      "paperId": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
+      "paperType": "experimental",
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "loading",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: loading.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "notes": "Mouse islet paper explicitly comparing vitrification with conventional freezing."
+    },
+    {
+      "paperId": "3fbb6bbb-96a2-48bf-9bd3-53166a7a2250",
+      "excludeFromAtlas": true,
+      "notes": "Broad heart-preservation tooling paper with incidental human islet vitrification context, not a primary islet cryopreservation protocol paper."
+    },
+    {
+      "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets",
+        "islet cells"
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Rat islet cryopreservation study comparing PVP against standard DMSO and glycerol freezing controls."
+    },
+    {
+      "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Rat islet paper comparing two controlled freezing techniques rather than vitrification."
+    },
+    {
+      "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",
+      "paperType": "experimental",
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "notes": "Human pancreatic-islet long-term cryopreservation study with direct preservation outcomes."
+    },
+    {
+      "paperId": "571357d4-0860-494b-8a6a-23814bacb5a0",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "mouse"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.78,
+      "notes": "Mouse pancreatic islet cryopreservation study testing human-serum conditions within a 2 M DMSO freezing workflow."
+    },
+    {
+      "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
+      "paperType": "experimental",
+      "notes": "Primary encapsulated-rat-islet study with in vitro functional outcomes after cryopreservation."
+    },
+    {
+      "paperId": "68dc5ee9-dd99-4f47-8e58-a59a28089fb7",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "human"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "loading",
+          "summary": "Human pancreatic islets were cryoprotected with 2 M DMSO before freezing.",
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "concentrations": [
+            "2 M"
+          ],
+          "temperatures": [
+            "-7.5 °C"
+          ],
+          "durations": [
+            "5 min"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "cooling",
+          "summary": "Supercooled human islets were nucleated and cooled before long-term cryostorage.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-7.5 °C",
+            "-196 °C"
+          ],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "warming",
+          "summary": "Cryopreserved islets were thawed before implantation into diabetic nude mice.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 3,
+          "phase": "assessment",
+          "summary": "Graft function was evaluated after transplantation of cryopreserved human pancreatic islets.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "transplantation",
+          "strength": "strong",
+          "summary": "Cryopreserved human pancreatic islets retained graft function after transplantation into diabetic nude mice.",
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Human pancreatic islet transplantation paper with explicit 2 M DMSO cryopreservation before grafting into diabetic nude mice."
+    },
+    {
+      "paperId": "6c01e238-01b1-444d-ba8c-cbfb77cd7181",
+      "paperType": "experimental",
+      "protocolFamily": "vitrification",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "loading",
+          "summary": "Rat pancreatic islets were equilibrated in EG/Me2SO then exposed to a higher-strength vitrification solution containing sucrose on Cryotop or nylon-mesh devices.",
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol",
+            "Sucrose"
+          ],
+          "concentrations": [
+            "7.5 %",
+            "15 %",
+            "0.5 M"
+          ],
+          "temperatures": [],
+          "durations": [
+            "3 min",
+            "60 s"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "storage",
+          "summary": "Cryotop and nylon-mesh devices were rapidly plunged into liquid nitrogen for vitrified storage.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-196 °C"
+          ],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "warming",
+          "summary": "Vitrified islets were rewarmed to compare large-quantity preservation performance across devices.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "notes": "Primary rat islet vitrification device study, not methods-only background."
+    },
+    {
+      "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "mouse",
+        "rat",
+        "pig"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "extractionConfidence": 0.78,
+      "notes": "Long-term liquid-nitrogen preservation study using 10% DMSO and controlled cooling for rodent and guinea pig islets."
+    },
+    {
+      "paperId": "72b969f2-a34b-439a-9300-511e3309b5d2",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "mouse"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Murine islet cryopreservation study assessing corticosteroids within a programmable freezing workflow."
+    },
+    {
+      "paperId": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Cooling-rate, warming-rate, and CPA-permeation study on rat islet survival under freezing-thawing conditions."
+    },
+    {
+      "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "human"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Human islet cryopreservation study testing a p38 MAPK inhibitor within an established freezing workflow."
+    },
+    {
+      "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+      "paperType": "experimental",
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "notes": "Primary canine islet long-term cryopreservation study."
+    },
+    {
+      "paperId": "8171cfdd-b8b3-488a-ba11-a919b71c1d2c",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "loading",
+          "summary": "Rat islets were equilibrated in Me2SO before freezing in programmable or nested-beaker systems.",
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "concentrations": [
+            "1.0 M",
+            "1.4 M"
+          ],
+          "temperatures": [
+            "4 °C"
+          ],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "cooling",
+          "summary": "Samples were seeded near -6 °C and cooled to -75 °C at multiple controlled rates.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-6 °C",
+            "-75 °C"
+          ],
+          "durations": [
+            "20-24 h"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "storage",
+          "summary": "Frozen rat islets were held at terminal subzero temperatures before thaw and functional comparison.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-75 °C"
+          ],
+          "durations": [
+            "20-24 h"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 3,
+          "phase": "assessment",
+          "summary": "Post-thaw rat islet function was compared across Me2SO concentrations and cooling systems.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "The study compared post-thaw functional performance of rat islets across Me2SO loading and cooling conditions.",
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Programmable-freezer DMSO study on isolated rat islets with controlled cooling and warming."
+    },
+    {
+      "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
+      "paperType": "experimental",
+      "notes": "Primary xenograft-survival study evaluating cryopreserved islets."
+    },
+    {
+      "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "pig"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Fetal porcine proislet paper explicitly using slow cooling to -40 C before liquid-nitrogen storage."
+    },
+    {
+      "paperId": "b293075d-011c-4c8d-95a6-215ae7952c72",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "pig"
+      ],
+      "specimenTypes": [
+        "islets"
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Porcine autotransplantation study using controlled-rate freezing with Me2SO before intraportal grafting."
+    },
+    {
+      "paperId": "b3a4d36a-35fd-4937-9c34-24cf63da3346",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "loading",
+          "summary": "Rat islets were exposed at 0 °C to either 2.0 M DMSO or 2.0 M ethylene glycol before straw loading.",
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol"
+          ],
+          "concentrations": [
+            "2.0 M"
+          ],
+          "temperatures": [
+            "0 °C"
+          ],
+          "durations": [
+            "1 h",
+            "2 min",
+            "10 min"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "cooling",
+          "summary": "Samples were seeded at -6.5 °C, cooled to -40 °C, and plunged into liquid nitrogen.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-6.5 °C",
+            "-40 °C",
+            "-196 °C"
+          ],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "storage",
+          "summary": "Frozen rat islets were stored in liquid nitrogen before thaw and in vitro comparison.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-196 °C"
+          ],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 3,
+          "phase": "assessment",
+          "summary": "Toxicity and subsequent insulin-release behavior were compared after thawing.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "The study evaluated CPA toxicity during rat islet cryopreservation.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "The study compared post-thaw insulin-release patterns in vitro.",
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Direct rat islet cryopreservation toxicity/function study comparing EG and DMSO."
+    },
+    {
+      "paperId": "b52df02d-5796-4b24-ba2c-e76c9f6ebd93",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "dog"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "loading",
+          "summary": "Cultured canine islets were pre-exposed to DMSO with beraprost sodium before cryounit freezing.",
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "concentrations": [
+            "0.5 mmol/L",
+            "2.1 mmol/L"
+          ],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "cooling",
+          "summary": "Canine islets were frozen in an automated cryounit under DMSO plus beraprost sodium conditions.",
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "concentrations": [
+            "2.1 mmol/L"
+          ],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "storage",
+          "summary": "Frozen canine islets were stored in liquid nitrogen for one month.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [
+            "1 month"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 3,
+          "phase": "assessment",
+          "summary": "Yield and viability were compared across beraprost sodium concentrations after cryopreservation.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "Beraprost sodium improved viability of cryopreserved canine islets.",
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Automated freezing study on canine pancreatic islets assessing beraprost sodium effects on yield and viability."
     },
     {
       "paperId": "beb603fe-8522-4842-99a9-fba1195cc973",
@@ -732,17 +1031,310 @@
       "notes": "Chemical-optimization methods paper with incidental islet vitrification context, not a primary islet preservation protocol study."
     },
     {
+      "paperId": "c05ceecd-014d-4e09-9dfa-5e095dc5de93",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Fetal rat islets were cooled in 2 M DMSO with ice nucleation at -8 °C and slow descent to -40 °C before liquid-nitrogen transfer.",
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "concentrations": [
+            "2 M"
+          ],
+          "temperatures": [
+            "-8 °C",
+            "-40 °C",
+            "-196 °C"
+          ],
+          "durations": [
+            "10-15 min"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "warming",
+          "summary": "Frozen fetal rat islets were rewarmed under fast and slow thawing conditions.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "10 °C/min",
+            "200 °C/min"
+          ],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "culture",
+          "summary": "Post-thaw islets were cultured for 24 or 48 hours before comparison.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [
+            "24 h",
+            "48 h"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 3,
+          "phase": "assessment",
+          "summary": "Functional and morphological outcomes were compared across thawing-rate and post-thaw culture conditions.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "The study compared post-thaw functional performance across thawing-rate and culture conditions.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "morphology",
+          "strength": "moderate",
+          "summary": "The study reported morphological correlation after thawing and post-thaw culture.",
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Fetal rat islet cryopreservation study focused on thawing rate and post-thaw culture effects."
+    },
+    {
+      "paperId": "c10110ba-e282-4d66-80f6-bebbfcedbbfa",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "loading",
+          "summary": "Lewis rat islets were prepared in pellet or suspension formats before controlled-rate freezing with sucrose- or step-dilution conditions.",
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Sucrose"
+          ],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "cooling",
+          "summary": "Islets were frozen by controlled-rate or programmed freezing before storage and shipment between centers.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-40 °C"
+          ],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "warming",
+          "summary": "Frozen-thawed islets were rewarmed using defined dilution protocols before transplantation.",
+          "chemicals": [
+            "Sucrose"
+          ],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 3,
+          "phase": "assessment",
+          "summary": "Transplant performance of frozen-thawed rat islets transported between centers was assessed after banking.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "transplantation",
+          "strength": "strong",
+          "summary": "Frozen-thawed rat islets remained transplantable after banking and transport between centers.",
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.84,
+      "notes": "Rat islet banking and transplantation study built around controlled-rate freezing and frozen-thawed transport."
+    },
+    {
+      "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
+      "paperType": "experimental",
+      "notes": "Primary porcine pancreatic-islet cryogenic storage study with direct preservation outcomes."
+    },
+    {
+      "paperId": "cc7ce88a-94b0-4ca4-97b0-2a31e0bd98c9",
+      "excludeFromAtlas": true,
+      "notes": "Differential scanning calorimetry control-values methods paper; includes islet context for CPA exploration, but not a direct islet preservation protocol study."
+    },
+    {
+      "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+      "paperType": "experimental",
+      "protocolFamily": "vitrification",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "loading",
+          "summary": "Rat pancreatic islets were equilibrated in half-strength CPA solution before exposure to Cryotop vitrification solutions containing EG, DMSO and/or CPLL plus sucrose.",
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol",
+            "Sucrose"
+          ],
+          "concentrations": [
+            "15 %",
+            "30 %",
+            "0.5 M"
+          ],
+          "temperatures": [],
+          "durations": [
+            "3 min",
+            "60 s"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "storage",
+          "summary": "Cryotop and nylon-mesh preparations were plunged into liquid nitrogen after CPA exposure.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-196 °C"
+          ],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "warming",
+          "summary": "Vitrified rat islets were rewarmed to evaluate the supplementary cryoprotective effect of carboxylated epsilon-poly-L-lysine.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "notes": "Primary rat-islet vitrification study testing carboxylated epsilon-poly-L-lysine as a supplemental cryoprotectant."
+    },
+    {
+      "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "pig"
+      ],
+      "specimenTypes": [
+        "islets",
+        "islet cells"
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Porcine islet-cell cryopreservation study comparing freezing media with DMSO, glycerol, and sucrose."
+    },
+    {
+      "paperId": "dae850dd-b5dd-4b24-a326-2dc59a1d0980",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Rat islet storage and microencapsulation paper explicitly describing liquid-nitrogen cryotube freezing with 2 M DMSO."
+    },
+    {
+      "paperId": "df288637-aaad-454a-9595-156c7db96495",
+      "excludeFromAtlas": true,
+      "notes": "Membrane transport-parameter paper for golden hamster islet cells; useful cryobiophysics context, but not an islet preservation protocol study for the atlas."
+    },
+    {
+      "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "pig"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "extractionConfidence": 0.78,
+      "notes": "Porcine pancreatic islet study using sequential 10% DMSO cryopreservation after non-heart-beating donor procurement."
+    },
+    {
+      "paperId": "e8acf4c0-f208-4ee5-ac4e-1fe7221b0a48",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets"
+      ],
+      "extractionConfidence": 0.84,
+      "notes": "Rat islet viability study using programmed freezing with DMSO and frozen-thawed recovery assays."
+    },
+    {
       "paperId": "f2002bfc-a9e1-45b3-99b7-cff44eee4194",
       "paperType": "experimental",
       "protocolFamily": "vitrification",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
       "protocolSteps": [
         {
           "order": 0,
           "phase": "loading",
           "summary": "Rat pancreatic islets were prepared with vitrification-compatible CPA conditions before matrix-supported preservation.",
-          "chemicals": ["Ethylene Glycol", "Sucrose"],
+          "chemicals": [
+            "Ethylene Glycol",
+            "Sucrose"
+          ],
           "concentrations": [],
           "temperatures": [],
           "durations": [],
@@ -790,110 +1382,57 @@
       "notes": "Primary rat islet vitrification study with an acellular liver-matrix intervention and functional readouts."
     },
     {
-      "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
-      "paperType": "experimental",
-      "notes": "Bulk isolated-islet cryopreservation study, not a review or methods-only paper."
-    },
-    {
-      "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
-      "paperType": "experimental",
-      "notes": "Primary porcine pancreatic-islet cryogenic storage study with direct preservation outcomes."
-    },
-    {
-      "paperId": "b3a4d36a-35fd-4937-9c34-24cf63da3346",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.82,
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "loading",
-          "summary": "Rat islets were exposed at 0 °C to either 2.0 M DMSO or 2.0 M ethylene glycol before straw loading.",
-          "chemicals": ["Dimethyl Sulfoxide", "Ethylene Glycol"],
-          "concentrations": ["2.0 M"],
-          "temperatures": ["0 °C"],
-          "durations": ["1 h", "2 min", "10 min"],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "cooling",
-          "summary": "Samples were seeded at -6.5 °C, cooled to -40 °C, and plunged into liquid nitrogen.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-6.5 °C", "-40 °C", "-196 °C"],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "storage",
-          "summary": "Frozen rat islets were stored in liquid nitrogen before thaw and in vitro comparison.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-196 °C"],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 3,
-          "phase": "assessment",
-          "summary": "Toxicity and subsequent insulin-release behavior were compared after thawing.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "outcomeMentions": [
-        {
-          "outcomeClass": "viability",
-          "strength": "moderate",
-          "summary": "The study evaluated CPA toxicity during rat islet cryopreservation.",
-          "evidence": []
-        },
-        {
-          "outcomeClass": "function",
-          "strength": "moderate",
-          "summary": "The study compared post-thaw insulin-release patterns in vitro.",
-          "evidence": []
-        }
-      ],
-      "notes": "Direct rat islet cryopreservation toxicity/function study comparing EG and DMSO."
-    },
-    {
-      "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
-      "paperType": "experimental",
-      "notes": "Primary study on differential freezing tolerance across rat islet size classes."
-    },
-    {
       "paperId": "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
       "paperType": "experimental",
       "protocolFamily": "comparative",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
+      "speciesMentions": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
       "protocolSteps": [
         {
           "order": 0,
           "phase": "loading",
           "summary": "Cryotop vitrification used EG/Me2SO equilibration followed by a higher-concentration vitrification solution with sucrose.",
-          "chemicals": ["Dimethyl Sulfoxide", "Ethylene Glycol", "Sucrose"],
-          "concentrations": ["7.5 %", "15 %", "0.5 M"],
-          "temperatures": ["25 °C"],
-          "durations": ["3 min", "60 s"],
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol",
+            "Sucrose"
+          ],
+          "concentrations": [
+            "7.5 %",
+            "15 %",
+            "0.5 M"
+          ],
+          "temperatures": [
+            "25 °C"
+          ],
+          "durations": [
+            "3 min",
+            "60 s"
+          ],
           "evidence": []
         },
         {
           "order": 1,
           "phase": "cooling",
           "summary": "Comparator slow freezing used Bicell freezing with 15% Me2SO and controlled cooling before LN2 storage.",
-          "chemicals": ["Dimethyl Sulfoxide"],
-          "concentrations": ["15 %"],
-          "temperatures": ["4 °C", "-80 °C"],
-          "durations": ["15 min"],
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "concentrations": [
+            "15 %"
+          ],
+          "temperatures": [
+            "4 °C",
+            "-80 °C"
+          ],
+          "durations": [
+            "15 min"
+          ],
           "evidence": []
         },
         {
@@ -902,7 +1441,9 @@
           "summary": "Cryotop and Bicell-preserved samples were transferred into liquid nitrogen storage.",
           "chemicals": [],
           "concentrations": [],
-          "temperatures": ["-196 °C"],
+          "temperatures": [
+            "-196 °C"
+          ],
           "durations": [],
           "evidence": []
         },
@@ -928,162 +1469,152 @@
       "notes": "Head-to-head rat islet study comparing Cryotop vitrification with Bicell freezing."
     },
     {
-      "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
-      "paperType": "experimental",
-      "notes": "Primary encapsulated-rat-islet study with in vitro functional outcomes after cryopreservation."
-    },
-    {
-      "paperId": "6c01e238-01b1-444d-ba8c-cbfb77cd7181",
-      "paperType": "experimental",
-      "protocolFamily": "vitrification",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "loading",
-          "summary": "Rat pancreatic islets were equilibrated in EG/Me2SO then exposed to a higher-strength vitrification solution containing sucrose on Cryotop or nylon-mesh devices.",
-          "chemicals": ["Dimethyl Sulfoxide", "Ethylene Glycol", "Sucrose"],
-          "concentrations": ["7.5 %", "15 %", "0.5 M"],
-          "temperatures": [],
-          "durations": ["3 min", "60 s"],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "storage",
-          "summary": "Cryotop and nylon-mesh devices were rapidly plunged into liquid nitrogen for vitrified storage.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-196 °C"],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "warming",
-          "summary": "Vitrified islets were rewarmed to compare large-quantity preservation performance across devices.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "notes": "Primary rat islet vitrification device study, not methods-only background."
-    },
-    {
-      "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
-      "paperType": "experimental",
-      "notes": "Primary xenograft-survival study evaluating cryopreserved islets."
-    },
-    {
-      "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",
-      "paperType": "experimental",
-      "notes": "Human pancreatic-islet long-term cryopreservation study with direct preservation outcomes."
-    },
-    {
-      "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
-      "paperType": "experimental",
-      "notes": "Primary canine islet long-term cryopreservation study."
-    },
-    {
-      "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
-      "paperType": "experimental",
-      "protocolFamily": "vitrification",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "protocolSteps": [
-        {
-          "order": 0,
-          "phase": "loading",
-          "summary": "Rat pancreatic islets were equilibrated in half-strength CPA solution before exposure to Cryotop vitrification solutions containing EG, DMSO and/or CPLL plus sucrose.",
-          "chemicals": ["Dimethyl Sulfoxide", "Ethylene Glycol", "Sucrose"],
-          "concentrations": ["15 %", "30 %", "0.5 M"],
-          "temperatures": [],
-          "durations": ["3 min", "60 s"],
-          "evidence": []
-        },
-        {
-          "order": 1,
-          "phase": "storage",
-          "summary": "Cryotop and nylon-mesh preparations were plunged into liquid nitrogen after CPA exposure.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": ["-196 °C"],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 2,
-          "phase": "warming",
-          "summary": "Vitrified rat islets were rewarmed to evaluate the supplementary cryoprotective effect of carboxylated epsilon-poly-L-lysine.",
-          "chemicals": [],
-          "concentrations": [],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        }
-      ],
-      "notes": "Primary rat-islet vitrification study testing carboxylated epsilon-poly-L-lysine as a supplemental cryoprotectant."
-    },
-    {
-      "paperId": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
-      "paperType": "experimental",
-      "notes": "Mouse islet paper explicitly comparing vitrification with conventional freezing."
-    },
-    {
-      "paperId": "2c3150ae-558a-49b0-b989-676d25c27884",
+      "paperId": "f68c40d9-4184-4dc8-b527-095353b5c290",
       "paperType": "experimental",
       "protocolFamily": "slow-freezing",
-      "speciesMentions": ["rat"],
-      "specimenTypes": ["islets", "pancreatic islets"],
-      "extractionConfidence": 0.82,
+      "speciesMentions": [
+        "human",
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
       "protocolSteps": [
         {
           "order": 0,
           "phase": "loading",
-          "summary": "Rat islets were step-loaded with Me2SO before controlled slow cooling.",
-          "chemicals": ["Dimethyl Sulfoxide", "Sucrose"],
-          "concentrations": ["1 M", "2 M", "0.75 M"],
-          "temperatures": ["22 °C", "0 °C"],
-          "durations": ["30 min", "15 min"],
+          "summary": "Pancreatic islets were loaded stepwise with Me2SO and ethylene glycol combinations before freezing.",
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol"
+          ],
+          "concentrations": [
+            "1 M",
+            "0.5 M",
+            "1 M",
+            "2 M"
+          ],
+          "temperatures": [
+            "-7.5 °C"
+          ],
+          "durations": [
+            "5 min"
+          ],
           "evidence": []
         },
         {
           "order": 1,
           "phase": "cooling",
-          "summary": "Samples were seeded, cooled to -40 °C, and transferred to liquid nitrogen.",
+          "summary": "Samples were nucleated and cooled at a controlled rate to subzero storage temperatures before liquid-nitrogen storage.",
           "chemicals": [],
           "concentrations": [],
-          "temperatures": ["-7.5 °C", "-10 °C", "-40 °C", "-196 °C"],
-          "durations": ["5 min", "10 min"],
+          "temperatures": [
+            "-7.5 °C",
+            "-40 °C",
+            "-196 °C"
+          ],
+          "durations": [
+            "4 weeks"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "warming",
+          "summary": "Frozen islets were rewarmed for post-thaw recovery comparisons across CPA combinations.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Study on lower-dose permeable CPA combinations for pancreatic islet cryopreservation using Me2SO and ethylene glycol."
+    },
+    {
+      "paperId": "f805778c-f7b5-422e-978a-cf3d986f008c",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "human"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Human pancreatic islet cryopreservation study testing trehalose as an adjunct in a long-term freezing workflow."
+    },
+    {
+      "paperId": "f826780f-d21c-44df-b0ea-cf0c175038b3",
+      "excludeFromAtlas": true,
+      "notes": "Kidney-preservation paper falsely matched via incidental rat islet context; outside the islet cryopreservation atlas slice."
+    },
+    {
+      "paperId": "f91b7060-e698-46e7-8746-3d40eb683357",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "dog"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "loading",
+          "summary": "Canine islets were step-loaded in 0.5 M then 2.1 M DMSO with beraprost sodium variants before freezing.",
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "concentrations": [
+            "0.5 M",
+            "2.1 M"
+          ],
+          "temperatures": [
+            "0 °C"
+          ],
+          "durations": [
+            "15 min",
+            "5 min"
+          ],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "cooling",
+          "summary": "Aliquots were nucleated at -6.5 °C and cooled to -50 °C in an automated cryounit.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [
+            "-6.5 °C",
+            "-50 °C"
+          ],
+          "durations": [],
           "evidence": []
         },
         {
           "order": 2,
           "phase": "storage",
-          "summary": "Frozen rat islets were stored in liquid nitrogen for 2 to 12 weeks.",
+          "summary": "Frozen canine islets were stored in liquid nitrogen for one month.",
           "chemicals": [],
           "concentrations": [],
-          "temperatures": ["-196 °C"],
-          "durations": ["2-12 weeks"],
+          "temperatures": [
+            "-196 °C"
+          ],
+          "durations": [
+            "1 month"
+          ],
           "evidence": []
         },
         {
           "order": 3,
           "phase": "warming",
-          "summary": "Frozen rat islets were rapidly thawed in sucrose-containing medium before transplantation.",
-          "chemicals": ["Sucrose"],
-          "concentrations": ["0.75 M"],
-          "temperatures": [],
-          "durations": [],
-          "evidence": []
-        },
-        {
-          "order": 4,
-          "phase": "assessment",
-          "summary": "Post-thaw transplantation survival was compared after different precryopreservation culture conditions.",
+          "summary": "Cryopreserved canine islets were thawed for post-storage recovery comparisons.",
           "chemicals": [],
           "concentrations": [],
           "temperatures": [],
@@ -1091,15 +1622,8 @@
           "evidence": []
         }
       ],
-      "outcomeMentions": [
-        {
-          "outcomeClass": "transplantation",
-          "strength": "strong",
-          "summary": "The study compared transplantation survival after slow cooling and rapid thawing.",
-          "evidence": []
-        }
-      ],
-      "notes": "Primary rat islet survival/transplantation study assessing precryopreservation culture before slow cooling and rapid thawing."
+      "extractionConfidence": 0.8,
+      "notes": "Canine islet freezing-thawing study evaluating beraprost sodium within a DMSO cryopreservation workflow."
     }
   ]
 }

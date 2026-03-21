@@ -6,6 +6,8 @@ import {
   BenchmarkFileSchema,
   BenchmarkProposalDecisionFileSchema,
   DomainIdSchema,
+  type OutcomeClass,
+  type OutcomeMention,
   type BenchmarkEntry,
   type DomainId
 } from "../packages/shared/src/schema.js";
@@ -21,23 +23,50 @@ function mergeNotes(existingNotes: string | undefined, proposalId: string): stri
   return existingNotes.includes(patchNote) ? existingNotes : `${existingNotes} ${patchNote}`;
 }
 
+function buildCanonicalOutcomeMentions(outcomeClasses: OutcomeClass[]): OutcomeMention[] {
+  return outcomeClasses.map((outcomeClass) => ({
+    outcomeClass,
+    strength: "moderate",
+    summary: `Reviewed benchmark autofill accepted for outcome class: ${outcomeClass}.`,
+    evidence: []
+  }));
+}
+
 function applyAcceptedProposal(entry: BenchmarkEntry, proposal: ReturnType<typeof AutoresearchProposalFileSchema.parse>["proposals"][number]): BenchmarkEntry {
   if (!proposal.benchmarkPatch) {
     return entry;
   }
 
+  const acceptedOutcomeClasses =
+    proposal.benchmarkPatch.expectedOutcomeClasses ?? entry.expectedOutcomeClasses ?? [];
+  const acceptedStepPhases = proposal.benchmarkPatch.expectedStepPhases ?? entry.expectedStepPhases ?? [];
+  const existingOverridePatch = entry.expectedOverridePatch ?? { paperId: entry.paperId };
+  const canonicalOverridePatch = {
+    ...existingOverridePatch,
+    ...(acceptedOutcomeClasses.length > 0
+      ? { outcomeMentions: buildCanonicalOutcomeMentions(acceptedOutcomeClasses) }
+      : {}),
+    ...(acceptedStepPhases.length > 0
+      ? {
+          protocolSteps: acceptedStepPhases.map((phase, index) => ({
+            order: index,
+            phase,
+            summary: `Reviewed benchmark autofill accepted for protocol phase: ${phase}.`,
+            chemicals: [],
+            concentrations: [],
+            temperatures: [],
+            durations: [],
+            evidence: []
+          }))
+        }
+      : {})
+  };
+
   return {
     ...entry,
-    expectedOutcomeClasses:
-      proposal.benchmarkPatch.expectedOutcomeClasses ?? entry.expectedOutcomeClasses,
-    expectedStepPhases: proposal.benchmarkPatch.expectedStepPhases ?? entry.expectedStepPhases,
-    expectedOverridePatch:
-      proposal.benchmarkPatch.expectedOverridePatch || entry.expectedOverridePatch
-        ? {
-            ...(entry.expectedOverridePatch ?? { paperId: entry.paperId }),
-            ...(proposal.benchmarkPatch.expectedOverridePatch ?? {})
-          }
-        : undefined,
+    expectedOutcomeClasses: acceptedOutcomeClasses.length > 0 ? acceptedOutcomeClasses : entry.expectedOutcomeClasses,
+    expectedStepPhases: acceptedStepPhases.length > 0 ? acceptedStepPhases : entry.expectedStepPhases,
+    expectedOverridePatch: canonicalOverridePatch,
     notes: mergeNotes(entry.notes, proposal.proposalId)
   };
 }
