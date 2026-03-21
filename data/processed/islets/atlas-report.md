@@ -5,7 +5,7 @@ Total papers: 46
 ## Quality signals
 - unknown protocol families: 0
 - unknown protocol family rate: 0
-- unknown step phases: 122
+- unknown step phases: 53
 - contradiction count: 20
 - experimental papers: 42
 - methods papers: 4
@@ -33,45 +33,53 @@ Total papers: 46
 
 ## Top outcome classes
 - transplantation: 7
-- viability: 3
-- function: 1
+- function: 6
+- viability: 5
+- morphology: 2
 
 ## Top protocol phases
-- unknown: 122
-- cooling: 79
-- loading: 45
-- warming: 35
-- storage: 26
-- assessment: 6
+- cooling: 61
+- unknown: 53
+- loading: 44
+- warming: 26
+- storage: 22
+- assessment: 13
+- culture: 2
 
 ## High-confidence papers
 - Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc | type=methods | family=vitrification | confidence=0.93 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Sucrose | specimen=islets, pancreatic islets | phases=warming, unknown, cooling
-  species=rat
-- Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing | type=experimental | family=slow-freezing | confidence=0.93 | chemicals=Dimethyl Sulfoxide, Sucrose | specimen=islets, pancreatic islets | phases=cooling
   species=rat
 - Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide | type=methods | family=slow-freezing | confidence=0.93 | chemicals=Dimethyl Sulfoxide, Glycerol | specimen=islets | phases=cooling
   species=rat
 - Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets | type=experimental | family=slow-freezing | confidence=0.85 | chemicals=Sucrose | specimen=islets, pancreatic islets, encapsulated islets | phases=unknown, cooling
   species=rat
-- Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro | type=experimental | family=slow-freezing | confidence=0.85 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol | specimen=islets, pancreatic islets | phases=unknown, cooling
-  species=rat
 - Cryopreservation of rat islets of Langerhans by vitriﬁcation | type=methods | family=vitrification | confidence=0.85 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Trehalose | specimen=islets, pancreatic islets | phases=unknown, storage
   species=rat
-- Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets | type=experimental | family=comparative | confidence=0.85 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Sucrose | specimen=islets, pancreatic islets | phases=cooling, unknown, loading
+- Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets | type=experimental | family=comparative | confidence=0.85 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Sucrose | specimen=islets, pancreatic islets | phases=loading, cooling, storage, assessment
   species=rat
-- Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets | type=experimental | family=vitrification | confidence=0.85 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Sucrose | specimen=islets, pancreatic islets | phases=cooling, unknown, loading
+- Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets | type=experimental | family=vitrification | confidence=0.85 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Sucrose | specimen=islets, pancreatic islets | phases=loading, storage, warming
   species=rat
-- Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification | type=experimental | family=vitrification | confidence=0.85 | chemicals=Ethylene Glycol, Sucrose | specimen=islets, pancreatic islets | phases=unknown, warming, loading
+- Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification | type=experimental | family=vitrification | confidence=0.85 | chemicals=Ethylene Glycol, Sucrose | specimen=islets, pancreatic islets | phases=loading, storage, warming, assessment
   species=rat
-- Bulk Cryopreservation of Isolated Islets of Langerhans | type=experimental | family=slow-freezing | confidence=0.85 | chemicals=Dimethyl Sulfoxide | specimen=islets, pancreatic islets | phases=unknown, cooling, loading
+- Bulk Cryopreservation of Isolated Islets of Langerhans | type=experimental | family=slow-freezing | confidence=0.85 | chemicals=Dimethyl Sulfoxide | specimen=islets, pancreatic islets | phases=cooling, loading
   species=dog
+- COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL | type=methods | family=slow-freezing | confidence=0.85 | chemicals=Dimethyl Sulfoxide, Sucrose | specimen=islets, pancreatic islets | phases=unknown, cooling
+  species=dog
+- Prolongation of Islet Xenograft Survival by Cryopreservation | type=experimental | family=slow-freezing | confidence=0.85 | chemicals=Dimethyl Sulfoxide | specimen=islets, pancreatic islets | phases=unknown, cooling
+  species=rat
 
 ## Uncertainty hotspots
-- slow-freezing + Dimethyl Sulfoxide + islets | papers=32 | outcomes=transplantation, function, viability
-- slow-freezing + Dimethyl Sulfoxide + pancreatic islets | papers=26 | outcomes=transplantation, function, viability
-- slow-freezing + Sucrose + islets | papers=6 | outcomes=transplantation, function
-- slow-freezing + Sucrose + pancreatic islets | papers=5 | outcomes=transplantation, function
-- slow-freezing + Sucrose + encapsulated islets | papers=2 | outcomes=transplantation, function
+- slow-freezing + Dimethyl Sulfoxide + islets | papers=32 | outcomes=viability, function, transplantation
+- slow-freezing + Dimethyl Sulfoxide + pancreatic islets | papers=26 | outcomes=viability, function, transplantation
+- slow-freezing + Sucrose + islets | papers=6 | outcomes=function, transplantation
+- vitrification + Ethylene Glycol + islets | papers=5 | outcomes=transplantation, function
+- vitrification + Ethylene Glycol + pancreatic islets | papers=5 | outcomes=transplantation, function
+- slow-freezing + Sucrose + pancreatic islets | papers=5 | outcomes=function, transplantation
+- vitrification + Sucrose + islets | papers=4 | outcomes=transplantation, function
+- vitrification + Sucrose + pancreatic islets | papers=4 | outcomes=transplantation, function
+- slow-freezing + Ethylene Glycol + islets | papers=3 | outcomes=viability, function
+- slow-freezing + Ethylene Glycol + pancreatic islets | papers=3 | outcomes=viability, function
+- slow-freezing + Sucrose + encapsulated islets | papers=2 | outcomes=function, transplantation
 
 ## Contradictions
 - Dimethyl Sulfoxide, Ethylene Glycol, Sucrose in islets, pancreatic islets | comparative vs vitrification | Shared specimen/chemical context but different preservation families
@@ -112,7 +120,7 @@ Total papers: 46
 - excluded papers: 7
 - unknown protocol families resolved: 33
 - unknown protocol family rate delta: 0.62
-- unknown step phase delta: 20
+- unknown step phase delta: 89
 - experimental paper delta: 42
 - methods paper delta: -4
 - review paper delta: 0
@@ -120,7 +128,7 @@ Total papers: 46
 
 ## Baseline vs resolved quality
 - unknown protocol families: 33 -> 0
-- unknown step phases: 142 -> 122
+- unknown step phases: 142 -> 53
 - contradictions: 20 -> 20
 - experimental papers: 0 -> 42
 - methods papers: 8 -> 4

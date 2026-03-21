@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T02:43:54.511Z",
+  "generatedAt": "2026-03-21T03:09:23.066Z",
   "domain": "islets",
   "description": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "entries": [
@@ -383,11 +383,37 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedStepPhases": [
+        "cooling",
+        "equilibration"
+      ],
       "expectedOverridePatch": {
         "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
-        "paperType": "experimental"
+        "paperType": "experimental",
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "equilibration",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: equilibration.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ]
       },
-      "notes": "Primary porcine pancreatic-islet cryogenic storage study with direct preservation outcomes."
+      "notes": "Primary porcine pancreatic-islet cryogenic storage study with direct preservation outcomes. Accepted benchmark autofill proposal benchmark-depth-autofill:c7c65868-ac9d-4b95-805b-d30e02dadd0c:stepPhases."
     },
     {
       "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
@@ -430,6 +456,10 @@
         "islet cells",
         "islets"
       ],
+      "expectedStepPhases": [
+        "cooling",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
         "paperType": "experimental",
@@ -441,9 +471,31 @@
           "islet cells",
           "islets"
         ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "warming",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.82
       },
-      "notes": "Porcine islet-cell cryopreservation study comparing freezing media with DMSO, glycerol, and sucrose."
+      "notes": "Porcine islet-cell cryopreservation study comparing freezing media with DMSO, glycerol, and sucrose. Accepted benchmark autofill proposal benchmark-depth-autofill:d865c65c-b6a7-431c-941c-c23d68f30469:stepPhases."
     },
     {
       "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
@@ -680,6 +732,10 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedStepPhases": [
+        "cooling",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
         "paperType": "experimental",
@@ -691,9 +747,31 @@
           "islets",
           "pancreatic islets"
         ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "warming",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.8
       },
-      "notes": "Rat islet paper comparing two controlled freezing techniques rather than vitrification."
+      "notes": "Rat islet paper comparing two controlled freezing techniques rather than vitrification. Accepted benchmark autofill proposal benchmark-depth-autofill:51afcf7d-1bff-4630-808a-40407290f0d2:stepPhases."
     },
     {
       "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
@@ -1973,11 +2051,48 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedStepPhases": [
+        "cooling",
+        "storage",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
-        "paperType": "experimental"
+        "paperType": "experimental",
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "storage",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "warming",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ]
       },
-      "notes": "Primary xenograft-survival study evaluating cryopreserved islets."
+      "notes": "Primary xenograft-survival study evaluating cryopreserved islets. Accepted benchmark autofill proposal benchmark-depth-autofill:9ec86ab7-5e07-4437-bac6-a67b159a6540:stepPhases."
     },
     {
       "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",

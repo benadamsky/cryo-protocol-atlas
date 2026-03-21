@@ -1,21 +1,9 @@
 {
-  "generatedAt": "2026-03-21T02:52:02.908Z",
+  "generatedAt": "2026-03-21T03:09:23.890Z",
   "domain": "islets",
-  "sourceProposalGeneratedAt": "2026-03-21T02:48:34.426Z",
-  "decisionCount": 10,
+  "sourceProposalGeneratedAt": "2026-03-21T03:09:23.749Z",
+  "decisionCount": 4,
   "decisions": [
-    {
-      "proposalId": "benchmark-depth-autofill:c7c65868-ac9d-4b95-805b-d30e02dadd0c:stepPhases",
-      "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
-      "title": "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
-      "decision": "pending"
-    },
-    {
-      "proposalId": "benchmark-depth-autofill:9ec86ab7-5e07-4437-bac6-a67b159a6540:stepPhases",
-      "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
-      "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
-      "decision": "pending"
-    },
     {
       "proposalId": "benchmark-depth-autofill:6e4ea940-2dbd-4790-b848-c453f6a0f42a:stepPhases",
       "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
@@ -23,33 +11,9 @@
       "decision": "pending"
     },
     {
-      "proposalId": "benchmark-depth-autofill:d865c65c-b6a7-431c-941c-c23d68f30469:stepPhases",
-      "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
-      "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
-      "decision": "pending"
-    },
-    {
-      "proposalId": "benchmark-depth-autofill:51afcf7d-1bff-4630-808a-40407290f0d2:stepPhases",
-      "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
-      "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
-      "decision": "pending"
-    },
-    {
       "proposalId": "benchmark-depth-autofill:e61a3868-8fcf-4024-96f7-eb4ae8a9456a:stepPhases",
       "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
       "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
-      "decision": "pending"
-    },
-    {
-      "proposalId": "benchmark-depth-autofill:f805778c-f7b5-422e-978a-cf3d986f008c:stepPhases",
-      "paperId": "f805778c-f7b5-422e-978a-cf3d986f008c",
-      "title": "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
-      "decision": "pending"
-    },
-    {
-      "proposalId": "benchmark-depth-autofill:5f8b44a6-e05c-4bdd-ac73-18c0411696dc:stepPhases",
-      "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
-      "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
       "decision": "pending"
     },
     {

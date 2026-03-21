@@ -3,7 +3,7 @@
   "autoApplySafe": false,
   "currentEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T02:48:34.422Z",
+    "generatedAt": "2026-03-21T03:09:23.745Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -67,12 +67,61 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 32,
+            "labeledCount": 36,
             "exactMatchCount": 32,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
+            "averageF1": 0.94,
+            "averagePrecision": 0.944,
+            "averageRecall": 0.944,
+            "mismatches": [
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "storage"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.667
+              }
+            ]
           }
         },
         "coverage": {
@@ -109,13 +158,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 46,
-            "labeledCount": 32,
-            "coverageRate": 0.696
+            "labeledCount": 36,
+            "coverageRate": 0.783
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.825,
-          "averageOnCorrectIncluded": 0.825,
+          "averageOnExpectedIncluded": 0.837,
+          "averageOnCorrectIncluded": 0.837,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -181,8 +230,8 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 28,
-            "exactMatchCount": 28,
+            "labeledCount": 32,
+            "exactMatchCount": 32,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -223,13 +272,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 42,
-            "labeledCount": 28,
-            "coverageRate": 0.667
+            "labeledCount": 32,
+            "coverageRate": 0.762
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.819,
-          "averageOnCorrectIncluded": 0.819,
+          "averageOnExpectedIncluded": 0.836,
+          "averageOnCorrectIncluded": 0.836,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -296,11 +345,60 @@
           "stepPhases": {
             "field": "stepPhases",
             "labeledCount": 4,
-            "exactMatchCount": 4,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
+            "exactMatchCount": 0,
+            "averageF1": 0.459,
+            "averagePrecision": 0.5,
+            "averageRecall": 0.5,
+            "mismatches": [
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "storage"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.667
+              }
+            ]
           }
         },
         "coverage": {
@@ -342,8 +440,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.89,
-          "averageOnCorrectIncluded": 0.89,
+          "averageOnExpectedIncluded": 0.845,
+          "averageOnCorrectIncluded": 0.845,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -404,13 +502,13 @@
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
       "reviewedOutcomeCoverage": 0.333,
-      "reviewedStepPhaseCoverage": 0.667,
+      "reviewedStepPhaseCoverage": 0.762,
       "reviewedMinimumDepthReady": false
     }
   },
   "candidateEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T02:48:34.424Z",
+    "generatedAt": "2026-03-21T03:09:23.747Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -469,6 +567,169 @@
             "exactMatchCount": 18,
             "averageF1": 0.889,
             "averagePrecision": 0.889,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 36,
+            "exactMatchCount": 32,
+            "averageF1": 0.94,
+            "averagePrecision": 0.944,
+            "averageRecall": 0.944,
+            "mismatches": [
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "storage"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.667
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 46,
+            "labeledCount": 46,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 46,
+            "labeledCount": 16,
+            "coverageRate": 0.348
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 46,
+            "labeledCount": 36,
+            "coverageRate": 0.783
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.837,
+          "averageOnCorrectIncluded": 0.837,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "reviewed": {
+        "subset": "reviewed",
+        "entryCount": 49,
+        "expectedIncludedCount": 42,
+        "inclusion": {
+          "truePositive": 42,
+          "trueNegative": 7,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 42,
+            "exactMatchCount": 42,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 14,
+            "exactMatchCount": 14,
+            "averageF1": 1,
+            "averagePrecision": 1,
             "averageRecall": 1,
             "mismatches": []
           },
@@ -485,120 +746,6 @@
         "coverage": {
           "paperType": {
             "field": "paperType",
-            "eligibleCount": 46,
-            "labeledCount": 46,
-            "coverageRate": 1
-          },
-          "protocolFamily": {
-            "field": "protocolFamily",
-            "eligibleCount": 46,
-            "labeledCount": 38,
-            "coverageRate": 0.826
-          },
-          "speciesMentions": {
-            "field": "speciesMentions",
-            "eligibleCount": 46,
-            "labeledCount": 38,
-            "coverageRate": 0.826
-          },
-          "specimenTypes": {
-            "field": "specimenTypes",
-            "eligibleCount": 46,
-            "labeledCount": 38,
-            "coverageRate": 0.826
-          },
-          "outcomeClasses": {
-            "field": "outcomeClasses",
-            "eligibleCount": 46,
-            "labeledCount": 16,
-            "coverageRate": 0.348
-          },
-          "stepPhases": {
-            "field": "stepPhases",
-            "eligibleCount": 46,
-            "labeledCount": 32,
-            "coverageRate": 0.696
-          }
-        },
-        "confidence": {
-          "averageOnExpectedIncluded": 0.825,
-          "averageOnCorrectIncluded": 0.825,
-          "averageOnIncorrectIncluded": null
-        },
-        "unexpectedIncludedPaperIds": [],
-        "unexpectedExcludedPaperIds": []
-      },
-      "reviewed": {
-        "subset": "reviewed",
-        "entryCount": 49,
-        "expectedIncludedCount": 42,
-        "inclusion": {
-          "truePositive": 42,
-          "trueNegative": 7,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1
-        },
-        "exactFields": {
-          "paperType": {
-            "field": "paperType",
-            "labeledCount": 42,
-            "exactMatchCount": 42,
-            "accuracy": 1,
-            "mismatches": []
-          },
-          "protocolFamily": {
-            "field": "protocolFamily",
-            "labeledCount": 34,
-            "exactMatchCount": 34,
-            "accuracy": 1,
-            "mismatches": []
-          }
-        },
-        "setFields": {
-          "speciesMentions": {
-            "field": "speciesMentions",
-            "labeledCount": 34,
-            "exactMatchCount": 34,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "specimenTypes": {
-            "field": "specimenTypes",
-            "labeledCount": 34,
-            "exactMatchCount": 34,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "outcomeClasses": {
-            "field": "outcomeClasses",
-            "labeledCount": 14,
-            "exactMatchCount": 14,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "stepPhases": {
-            "field": "stepPhases",
-            "labeledCount": 28,
-            "exactMatchCount": 28,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
-          }
-        },
-        "coverage": {
-          "paperType": {
-            "field": "paperType",
             "eligibleCount": 42,
             "labeledCount": 42,
             "coverageRate": 1
@@ -630,13 +777,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 42,
-            "labeledCount": 28,
-            "coverageRate": 0.667
+            "labeledCount": 32,
+            "coverageRate": 0.762
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.819,
-          "averageOnCorrectIncluded": 0.819,
+          "averageOnExpectedIncluded": 0.836,
+          "averageOnCorrectIncluded": 0.836,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -703,11 +850,60 @@
           "stepPhases": {
             "field": "stepPhases",
             "labeledCount": 4,
-            "exactMatchCount": 4,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
+            "exactMatchCount": 0,
+            "averageF1": 0.459,
+            "averagePrecision": 0.5,
+            "averageRecall": 0.5,
+            "mismatches": [
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "storage"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.667
+              }
+            ]
           }
         },
         "coverage": {
@@ -749,8 +945,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.89,
-          "averageOnCorrectIncluded": 0.89,
+          "averageOnExpectedIncluded": 0.845,
+          "averageOnCorrectIncluded": 0.845,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -811,13 +1007,13 @@
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
       "reviewedOutcomeCoverage": 0.333,
-      "reviewedStepPhaseCoverage": 0.667,
+      "reviewedStepPhaseCoverage": 0.762,
       "reviewedMinimumDepthReady": false
     }
   },
   "candidateBenchmarkEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T02:48:34.426Z",
+    "generatedAt": "2026-03-21T03:09:23.749Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -881,105 +1077,57 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 42,
-            "exactMatchCount": 34,
-            "averageF1": 0.937,
-            "averagePrecision": 0.905,
-            "averageRecall": 1,
+            "labeledCount": 40,
+            "exactMatchCount": 36,
+            "averageF1": 0.946,
+            "averagePrecision": 0.95,
+            "averageRecall": 0.95,
             "mismatches": [
               {
-                "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
-                "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
                 "expected": [
-                  "cooling"
-                ],
-                "actual": [
                   "cooling",
-                  "unknown"
-                ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
-                "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
-                "expected": [
-                  "warming"
-                ],
-                "actual": [
                   "unknown",
                   "warming"
                 ],
-                "f1": 0.667
+                "actual": [],
+                "f1": 0
               },
               {
-                "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
-                "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
                 "expected": [
-                  "warming"
-                ],
-                "actual": [
-                  "unknown",
-                  "warming"
-                ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
-                "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
-                "expected": [
-                  "cooling"
-                ],
-                "actual": [
                   "cooling",
                   "unknown"
                 ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
-                "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
-                "expected": [
+                "actual": [
+                  "cooling",
                   "storage"
                 ],
-                "actual": [
+                "f1": 0.5
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
                   "storage",
                   "unknown"
                 ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
-                "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
-                "expected": [
-                  "warming"
-                ],
                 "actual": [
-                  "unknown",
-                  "warming"
+                  "storage"
                 ],
                 "f1": 0.667
               },
               {
-                "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
-                "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
                 "expected": [
                   "cooling"
                 ],
                 "actual": [
                   "cooling",
-                  "unknown"
-                ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "f805778c-f7b5-422e-978a-cf3d986f008c",
-                "title": "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
-                "expected": [
                   "storage"
-                ],
-                "actual": [
-                  "storage",
-                  "unknown"
                 ],
                 "f1": 0.667
               }
@@ -1020,13 +1168,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 46,
-            "labeledCount": 42,
-            "coverageRate": 0.913
+            "labeledCount": 40,
+            "coverageRate": 0.87
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.825,
-          "averageOnCorrectIncluded": 0.825,
+          "averageOnExpectedIncluded": 0.837,
+          "averageOnCorrectIncluded": 0.837,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1092,109 +1240,12 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 38,
-            "exactMatchCount": 30,
-            "averageF1": 0.93,
-            "averagePrecision": 0.895,
+            "labeledCount": 36,
+            "exactMatchCount": 36,
+            "averageF1": 1,
+            "averagePrecision": 1,
             "averageRecall": 1,
-            "mismatches": [
-              {
-                "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
-                "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
-                "expected": [
-                  "cooling"
-                ],
-                "actual": [
-                  "cooling",
-                  "unknown"
-                ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
-                "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
-                "expected": [
-                  "warming"
-                ],
-                "actual": [
-                  "unknown",
-                  "warming"
-                ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
-                "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
-                "expected": [
-                  "warming"
-                ],
-                "actual": [
-                  "unknown",
-                  "warming"
-                ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
-                "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
-                "expected": [
-                  "cooling"
-                ],
-                "actual": [
-                  "cooling",
-                  "unknown"
-                ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
-                "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
-                "expected": [
-                  "storage"
-                ],
-                "actual": [
-                  "storage",
-                  "unknown"
-                ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
-                "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
-                "expected": [
-                  "warming"
-                ],
-                "actual": [
-                  "unknown",
-                  "warming"
-                ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
-                "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
-                "expected": [
-                  "cooling"
-                ],
-                "actual": [
-                  "cooling",
-                  "unknown"
-                ],
-                "f1": 0.667
-              },
-              {
-                "paperId": "f805778c-f7b5-422e-978a-cf3d986f008c",
-                "title": "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
-                "expected": [
-                  "storage"
-                ],
-                "actual": [
-                  "storage",
-                  "unknown"
-                ],
-                "f1": 0.667
-              }
-            ]
+            "mismatches": []
           }
         },
         "coverage": {
@@ -1231,13 +1282,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 42,
-            "labeledCount": 38,
-            "coverageRate": 0.905
+            "labeledCount": 36,
+            "coverageRate": 0.857
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.819,
-          "averageOnCorrectIncluded": 0.819,
+          "averageOnExpectedIncluded": 0.836,
+          "averageOnCorrectIncluded": 0.836,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1304,11 +1355,60 @@
           "stepPhases": {
             "field": "stepPhases",
             "labeledCount": 4,
-            "exactMatchCount": 4,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
+            "exactMatchCount": 0,
+            "averageF1": 0.459,
+            "averagePrecision": 0.5,
+            "averageRecall": 0.5,
+            "mismatches": [
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "storage"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.667
+              }
+            ]
           }
         },
         "coverage": {
@@ -1350,8 +1450,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.89,
-          "averageOnCorrectIncluded": 0.89,
+          "averageOnExpectedIncluded": 0.845,
+          "averageOnCorrectIncluded": 0.845,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1412,12 +1512,12 @@
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
       "reviewedOutcomeCoverage": 0.333,
-      "reviewedStepPhaseCoverage": 0.905,
+      "reviewedStepPhaseCoverage": 0.857,
       "reviewedMinimumDepthReady": false
     }
   },
-  "proposalCount": 10,
+  "proposalCount": 4,
   "overrideProposalCount": 0,
-  "benchmarkProposalCount": 10,
+  "benchmarkProposalCount": 4,
   "candidateOverrideCount": 49
 }

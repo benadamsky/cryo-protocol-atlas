@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T02:44:31.099Z",
+  "generatedAt": "2026-03-21T03:08:39.893Z",
   "domain": "islets",
   "overrides": [
     {
@@ -128,6 +128,28 @@
       "specimenTypes": [
         "islets",
         "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "assessment",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: assessment.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
       ],
       "extractionConfidence": 0.8,
       "notes": "Rat pancreatic islet viability paper varying programmable-freezer cooling rates and assessing post-thaw survival by confocal microscopy."
@@ -705,6 +727,28 @@
         "islets",
         "pancreatic islets"
       ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "loading",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: loading.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
       "extractionConfidence": 0.8,
       "notes": "Cooling-rate, warming-rate, and CPA-permeation study on rat islet survival under freezing-thawing conditions."
     },
@@ -1280,6 +1324,28 @@
         "islets",
         "pancreatic islets"
       ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "storage",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
       "extractionConfidence": 0.82,
       "notes": "Rat islet storage and microencapsulation paper explicitly describing liquid-nitrogen cryotube freezing with 2 M DMSO."
     },
@@ -1311,6 +1377,28 @@
       ],
       "specimenTypes": [
         "islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "warming",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
       ],
       "extractionConfidence": 0.84,
       "notes": "Rat islet viability study using programmed freezing with DMSO and frozen-thawed recovery assays."

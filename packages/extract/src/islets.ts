@@ -91,6 +91,30 @@ const OUTCOME_RULES: Array<{
 const TEMPERATURE_REGEX = /-?\d+(?:\.\d+)?\s?(?:°\s?)?C\b/gi;
 const DURATION_REGEX = /\b\d+(?:\.\d+)?\s?(?:min|mins|minutes|h|hr|hrs|hours|day|days|week|weeks|month|months)\b/gi;
 const CONCENTRATION_REGEX = /\b\d+(?:\.\d+)?\s?(?:M|mM|%|mol\/L)\b/g;
+const COOLING_RATE_REGEX = /\b\d+(?:\.\d+)?\s?°?\s?C\s*\/\s*(?:min|hour|hr|h)\b/gi;
+
+const PHASE_RULES: Array<{
+  phase: ProtocolExtraction["protocolSteps"][number]["phase"];
+  patterns: RegExp[];
+}> = [
+  { phase: "perfusion", patterns: [/\bperfus/i] },
+  { phase: "equilibration", patterns: [/\bequilibr/i, /\bstepwise equilibration\b/i] },
+  {
+    phase: "loading",
+    patterns: [/\bloading\b/i, /\bcryoprotectant(?:s)? added\b/i, /\badded at \d+(?:\.\d+)?%/i, /\bpreincubat/i]
+  },
+  {
+    phase: "cooling",
+    patterns: [/\bcool/i, /\bfreez/i, /\bcooling rate\b/i, /\b0\.\d+\s?°?\s?c\/min\b/i]
+  },
+  { phase: "storage", patterns: [/\bstor/i, /\bliquid nitrogen/i, /\b-196\s?°?\s?c\b/i] },
+  { phase: "warming", patterns: [/\bwarm/i, /\bthaw/i, /\brewarm/i] },
+  { phase: "culture", patterns: [/\bculture/i, /\bincubat/i] },
+  {
+    phase: "assessment",
+    patterns: [/\bassess/i, /\bmorpholog/i, /\bviability/i, /\bfunction/i, /\binsulin secretion/i]
+  }
+];
 
 function splitSentences(text: string): string[] {
   return text
@@ -182,6 +206,25 @@ function classifyPaperType(paper: CryoPaper): PaperType {
     /\bthis study\b|\bwe evaluated\b|\bwe used\b|\bwere compared\b|\bafter thaw\b|\bafter warming\b|\bafter transplantation\b/i.test(
       paper.abstract ?? ""
     )
+  ) {
+    return PaperTypeSchema.parse("experimental");
+  }
+
+  if (
+    /\bcryopreserv/i.test(text) &&
+    /\bislet/i.test(text) &&
+    (/\bcomparison\b|\btechnique\b|\bsurvival\b|\brecovery\b|\bfunction\b|\byield\b|\bstorage\b|\btransplant/i.test(
+      text
+    ) ||
+      /\bmouse\b|\brat\b|\bporcine\b|\bpig\b|\bcanine\b|\bhuman\b/i.test(text))
+  ) {
+    return PaperTypeSchema.parse("experimental");
+  }
+
+  if (
+    /\bcryogenic\b|\bfreez(?:ing)?\b|\bfrozen-thawed\b|\bthaw(?:ing)?\b/i.test(text) &&
+    /\bislet/i.test(text) &&
+    /\bporcine\b|\bpig\b|\brat\b|\bmouse\b|\bcanine\b|\bhuman\b|\bchick\b/i.test(text)
   ) {
     return PaperTypeSchema.parse("experimental");
   }
@@ -302,7 +345,11 @@ function isStudyOutcomeSentence(sentence: string): boolean {
 }
 
 function extractOutcomes(sentences: string[]) {
-  const candidateSentences = sentences.filter(isStudyOutcomeSentence);
+  const candidateSentences = sentences.filter(
+    (sentence) =>
+      isStudyOutcomeSentence(sentence) ||
+      /\benhances?\b|\bpreserves?\b|\bpreservation\b|\bsurvival\b|\brecovery\b|\bfunction\b/i.test(sentence)
+  );
   return OUTCOME_RULES.flatMap((rule) => {
     const matchedSentences = candidateSentences.filter((sentence) =>
       rule.patterns.some((pattern) => containsRegex(sentence, pattern))
@@ -324,40 +371,76 @@ function extractOutcomes(sentences: string[]) {
   });
 }
 
-function phaseForSentence(sentence: string) {
-  if (/\bperfus/i.test(sentence)) return "perfusion";
-  if (/\bloading\b|\bequilibr/i.test(sentence)) return "loading";
-  if (/\bcool/i.test(sentence) || /\bfreez/i.test(sentence)) return "cooling";
-  if (/\bstor/i.test(sentence) || /\bliquid nitrogen/i.test(sentence)) return "storage";
-  if (/\bwarm/i.test(sentence) || /\bthaw/i.test(sentence)) return "warming";
-  if (/\bculture/i.test(sentence)) return "culture";
-  if (/\bassess/i.test(sentence) || /\bmorpholog/i.test(sentence) || /\bviability/i.test(sentence)) {
-    return "assessment";
-  }
-  return "unknown";
+function sentenceHasProceduralDetail(sentence: string): boolean {
+  return (
+    PHASE_RULES.some((rule) => rule.patterns.some((pattern) => containsRegex(sentence, pattern))) &&
+    (containsRegex(sentence, CONCENTRATION_REGEX) ||
+      containsRegex(sentence, TEMPERATURE_REGEX) ||
+      containsRegex(sentence, DURATION_REGEX) ||
+      containsRegex(sentence, COOLING_RATE_REGEX) ||
+      /\bstepwise\b|\bsequential/i.test(sentence))
+  );
 }
 
-function buildProtocolSteps(title: string, sentences: string[]) {
-  const candidates = [title, ...sentences].filter(isProtocolContext);
-
-  return candidates.map((sentence, index) =>
-    ProtocolStepSchema.parse({
-      order: index,
-      phase: phaseForSentence(sentence),
-      summary: sentence,
-      chemicals: dedupeStrings(
-        CHEMICAL_ALIASES.flatMap((entry) =>
-          entry.aliases.some((alias) => containsRegex(sentence, new RegExp(`\\b${escapeRegex(alias)}\\b`, "i")))
-            ? [entry.canonicalName]
-            : []
-        )
-      ),
-      concentrations: collectMatches(sentence, CONCENTRATION_REGEX),
-      temperatures: collectMatches(sentence, TEMPERATURE_REGEX),
-      durations: collectMatches(sentence, DURATION_REGEX),
-      evidence: [makeSnippet("protocol-family", sentence, 0.75)]
-    })
+function phasesForSentence(sentence: string) {
+  return PHASE_RULES.filter((rule) => rule.patterns.some((pattern) => containsRegex(sentence, pattern))).map(
+    (rule) => rule.phase
   );
+}
+
+function buildProtocolSteps(sentences: string[]) {
+  const candidates = sentences.filter(
+    (sentence) => isProtocolContext(sentence) && sentenceHasProceduralDetail(sentence)
+  );
+  const seen = new Set<string>();
+  const steps: ProtocolExtraction["protocolSteps"] = [];
+
+  for (const sentence of candidates) {
+    const phases = phasesForSentence(sentence);
+    const strongProceduralSentence =
+      phases.length >= 2 &&
+      (containsRegex(sentence, CONCENTRATION_REGEX) ||
+        containsRegex(sentence, TEMPERATURE_REGEX) ||
+        containsRegex(sentence, COOLING_RATE_REGEX));
+    for (const phase of phases) {
+      const dedupeKey = `${phase}:${sentence}`;
+      if (seen.has(dedupeKey)) {
+        continue;
+      }
+      seen.add(dedupeKey);
+      steps.push(
+        ProtocolStepSchema.parse({
+          order: steps.length,
+          phase,
+          summary: sentence,
+          chemicals: dedupeStrings(
+            CHEMICAL_ALIASES.flatMap((entry) =>
+              entry.aliases.some((alias) =>
+                containsRegex(sentence, new RegExp(`\\b${escapeRegex(alias)}\\b`, "i"))
+              )
+                ? [entry.canonicalName]
+                : []
+            )
+          ),
+          concentrations: collectMatches(sentence, CONCENTRATION_REGEX),
+          temperatures: dedupeStrings([
+            ...collectMatches(sentence, TEMPERATURE_REGEX),
+            ...collectMatches(sentence, COOLING_RATE_REGEX)
+          ]),
+          durations: collectMatches(sentence, DURATION_REGEX),
+          evidence: [
+            makeSnippet(
+              "protocol-family",
+              sentence,
+              phase === "assessment" ? 0.72 : strongProceduralSentence ? 0.9 : 0.82
+            )
+          ]
+        })
+      );
+    }
+  }
+
+  return steps;
 }
 
 export function extractIsletProtocol(domainPaper: DomainPaper): ProtocolExtraction {
@@ -371,7 +454,17 @@ export function extractIsletProtocol(domainPaper: DomainPaper): ProtocolExtracti
   const temperatureMentions = extractMentions(sentences, TEMPERATURE_REGEX, "temperature");
   const durationMentions = extractMentions(sentences, DURATION_REGEX, "duration");
   const outcomeMentions = extractOutcomes(sentences);
-  const protocolSteps = buildProtocolSteps(paper.title, sentences);
+  const protocolSteps = buildProtocolSteps(sentences);
+  const uniqueProceduralPhases = dedupeStrings(
+    protocolSteps
+      .map((step) => step.phase)
+      .filter((phase) => phase !== "unknown" && phase !== "assessment" && phase !== "culture")
+  );
+  const explicitStepCount = protocolSteps.filter(
+    (step) =>
+      step.phase !== "unknown" &&
+      (step.chemicals.length > 0 || step.concentrations.length > 0 || step.temperatures.length > 0)
+  ).length;
 
   const evidenceSnippets = dedupeStrings(
     [
@@ -394,7 +487,15 @@ export function extractIsletProtocol(domainPaper: DomainPaper): ProtocolExtracti
     protocolSteps.length > 0
   ].filter(Boolean).length;
 
-  const extractionConfidence = Math.min(0.45 + confidenceSignals * 0.08, 0.95);
+  const extractionConfidence = Math.min(
+    0.42 +
+      confidenceSignals * 0.07 +
+      (paperType === "experimental" ? 0.08 : 0) +
+      (uniqueProceduralPhases.length >= 2 ? 0.07 : 0) +
+      (uniqueProceduralPhases.length >= 3 ? 0.04 : 0) +
+      (explicitStepCount >= 2 ? 0.05 : 0),
+    0.95
+  );
 
   return ProtocolExtractionSchema.parse({
     domain: "islets",
