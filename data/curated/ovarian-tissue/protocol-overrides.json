@@ -1,21 +1,16 @@
 {
-  "generatedAt": "2026-03-20T16:22:29.496Z",
+  "generatedAt": "2026-03-21T02:50:43.277Z",
   "domain": "ovarian-tissue",
   "overrides": [
     {
-      "paperId": "fb9f4b85-d77c-49e6-976e-ded1ec242b61",
+      "paperId": "db1f328f-841d-4b71-b786-aaa958133cce",
       "excludeFromAtlas": true,
-      "notes": "Rat heart perfusion study; ovarian tissue mention is background context, not the specimen under study."
+      "notes": "Bovine oocyte vitrification and intrafollicular transfer study; outside the ovarian tissue protocol slice."
     },
     {
-      "paperId": "fdef775d-8d93-4bdc-a7fe-7f9074ce47fb",
+      "paperId": "dc753166-c837-4fe4-af6a-28cd82058473",
       "excludeFromAtlas": true,
-      "notes": "Canine fibroblast cryopreservation study from ovarian/testicular tissues; not an ovarian tissue preservation protocol paper."
-    },
-    {
-      "paperId": "fea34b3b-4387-4267-bc1c-8bfc5c6d4034",
-      "excludeFromAtlas": true,
-      "notes": "Granulosa cell DNA-preservation study using equine oocyte-associated cells, not ovarian tissue protocol optimization."
+      "notes": "Pig immature oocyte vitrification paper; relevant to oocyte workflows, not ovarian tissue preservation."
     },
     {
       "paperId": "e263dbc7-c35b-47ce-8d9b-57e1e6ac34e4",
@@ -23,44 +18,24 @@
       "notes": "Porcine immature oocyte vitrification paper; relevant to oocytes, not the ovarian tissue atlas slice."
     },
     {
-      "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
-      "paperType": "experimental",
-      "protocolFamily": "vitrification",
-      "extractionConfidence": 0.82,
-      "speciesMentions": [
-        "human"
-      ],
-      "specimenTypes": [
-        "ovarian tissue",
-        "follicles"
-      ],
-      "outcomeMentions": [
-        {
-          "outcomeClass": "morphology",
-          "strength": "moderate",
-          "summary": "The percentages of morphologically normal and viable follicles of DCV2 were significantly higher than DCV1, DCV3 and CV groups.",
-          "evidence": []
-        },
-        {
-          "outcomeClass": "viability",
-          "strength": "moderate",
-          "summary": "The percentages of morphologically normal and viable follicles of DCV2 were significantly higher than DCV1, DCV3 and CV groups.",
-          "evidence": []
-        },
-        {
-          "outcomeClass": "transplantation",
-          "strength": "moderate",
-          "summary": "After grafting, the follicle density of DCV2 was greater than DCV1, DCV3 and CV groups.",
-          "evidence": []
-        }
-      ],
-      "notes": "Compares direct-cover vitrification against conventional vitrification in human ovarian tissue fragments."
+      "paperId": "e6aaf317-52fc-441c-bac4-5143fbb9e54c",
+      "excludeFromAtlas": true,
+      "notes": "Embryo-focused freeze-all review; outside the ovarian tissue atlas slice."
+    },
+    {
+      "paperId": "e7d80563-9f61-460d-b7da-53f60ef58b50",
+      "excludeFromAtlas": true,
+      "notes": "Whole-liver cryopreservation paper; ovary mention is background only."
+    },
+    {
+      "paperId": "e7fe405f-8033-4260-bad8-2041ac9b2ac0",
+      "excludeFromAtlas": true,
+      "notes": "Fish ovary cryopreservation paper in a different biological system; outside the current mammalian ovarian tissue atlas slice."
     },
     {
       "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
       "paperType": "experimental",
       "protocolFamily": "vitrification",
-      "extractionConfidence": 0.78,
       "speciesMentions": [
         "human"
       ],
@@ -112,7 +87,137 @@
           "evidence": []
         }
       ],
+      "extractionConfidence": 0.78,
       "notes": "Human ovarian tissue vitrification study using a closed cryotube system with morphology-focused ultrastructural readouts."
+    },
+    {
+      "paperId": "eb9d9be6-4244-4e4b-892e-ba809925613a",
+      "paperType": "review",
+      "protocolFamily": "comparative",
+      "speciesMentions": [
+        "goat"
+      ],
+      "specimenTypes": [
+        "follicles",
+        "oocytes"
+      ],
+      "extractionConfidence": 0.74,
+      "notes": "Review of caprine preantral follicle cryopreservation and in vitro culture spanning both vitrification and slow freezing."
+    },
+    {
+      "paperId": "ef159502-8cd1-433a-9c83-1576490b3a43",
+      "excludeFromAtlas": true,
+      "notes": "Broad assisted-reproduction review spanning gonadal tissue and oocytes; not a protocol-focused ovarian tissue paper."
+    },
+    {
+      "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+      "paperType": "methods",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "human"
+      ],
+      "specimenTypes": [
+        "ovarian tissue"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "warming",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "Frozen-thawed ovarian tissue had a similar quality to fresh tissue.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "Frozen-thawed ovarian tissue could resume folliculogenesis during organotypic culture.",
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.8,
+      "notes": "Programmable-freezer optimization study with seeding, controlled cooling rates, and structured thawing for human ovarian tissue."
+    },
+    {
+      "paperId": "f18dbca4-01e4-46da-9416-ec324e26ca55",
+      "excludeFromAtlas": true,
+      "notes": "Book chapter on ovarian transplantation models and fertility-preservation context; not a primary protocol paper."
+    },
+    {
+      "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+      "paperType": "experimental",
+      "protocolFamily": "vitrification",
+      "speciesMentions": [
+        "human"
+      ],
+      "specimenTypes": [
+        "ovarian tissue",
+        "follicles"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "equilibration",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: equilibration.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "loading",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: loading.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "morphology",
+          "strength": "moderate",
+          "summary": "The percentages of morphologically normal and viable follicles of DCV2 were significantly higher than DCV1, DCV3 and CV groups.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "The percentages of morphologically normal and viable follicles of DCV2 were significantly higher than DCV1, DCV3 and CV groups.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "transplantation",
+          "strength": "moderate",
+          "summary": "After grafting, the follicle density of DCV2 was greater than DCV1, DCV3 and CV groups.",
+          "evidence": []
+        }
+      ],
+      "extractionConfidence": 0.82,
+      "notes": "Compares direct-cover vitrification against conventional vitrification in human ovarian tissue fragments."
     },
     {
       "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
@@ -128,10 +233,23 @@
       "notes": "Narrative update reviewing both slow cooling and vitrification approaches for ovarian and oocyte cryopreservation."
     },
     {
+      "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "speciesMentions": [
+        "mouse"
+      ],
+      "specimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "extractionConfidence": 0.72,
+      "notes": "Primary study on follicle survival in frozen mouse ovaries; title and context indicate a freezing protocol comparison rather than vitrification."
+    },
+    {
       "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
       "paperType": "experimental",
       "protocolFamily": "slow-freezing",
-      "extractionConfidence": 0.76,
       "speciesMentions": [
         "sheep"
       ],
@@ -175,73 +293,13 @@
           "evidence": []
         }
       ],
+      "extractionConfidence": 0.76,
       "notes": "Sheep ovary transplantation study using a controlled-rate freezer and thawing after liquid nitrogen storage."
     },
     {
-      "paperId": "f18dbca4-01e4-46da-9416-ec324e26ca55",
+      "paperId": "fb9f4b85-d77c-49e6-976e-ded1ec242b61",
       "excludeFromAtlas": true,
-      "notes": "Book chapter on ovarian transplantation models and fertility-preservation context; not a primary protocol paper."
-    },
-    {
-      "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
-      "paperType": "methods",
-      "protocolFamily": "slow-freezing",
-      "extractionConfidence": 0.8,
-      "speciesMentions": [
-        "human"
-      ],
-      "specimenTypes": [
-        "ovarian tissue"
-      ],
-      "outcomeMentions": [
-        {
-          "outcomeClass": "viability",
-          "strength": "moderate",
-          "summary": "Frozen-thawed ovarian tissue had a similar quality to fresh tissue.",
-          "evidence": []
-        },
-        {
-          "outcomeClass": "function",
-          "strength": "moderate",
-          "summary": "Frozen-thawed ovarian tissue could resume folliculogenesis during organotypic culture.",
-          "evidence": []
-        }
-      ],
-      "notes": "Programmable-freezer optimization study with seeding, controlled cooling rates, and structured thawing for human ovarian tissue."
-    },
-    {
-      "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
-      "paperType": "experimental",
-      "protocolFamily": "slow-freezing",
-      "extractionConfidence": 0.72,
-      "speciesMentions": [
-        "mouse"
-      ],
-      "specimenTypes": [
-        "follicles",
-        "ovarian tissue"
-      ],
-      "notes": "Primary study on follicle survival in frozen mouse ovaries; title and context indicate a freezing protocol comparison rather than vitrification."
-    },
-    {
-      "paperId": "db1f328f-841d-4b71-b786-aaa958133cce",
-      "excludeFromAtlas": true,
-      "notes": "Bovine oocyte vitrification and intrafollicular transfer study; outside the ovarian tissue protocol slice."
-    },
-    {
-      "paperId": "e7d80563-9f61-460d-b7da-53f60ef58b50",
-      "excludeFromAtlas": true,
-      "notes": "Whole-liver cryopreservation paper; ovary mention is background only."
-    },
-    {
-      "paperId": "ef159502-8cd1-433a-9c83-1576490b3a43",
-      "excludeFromAtlas": true,
-      "notes": "Broad assisted-reproduction review spanning gonadal tissue and oocytes; not a protocol-focused ovarian tissue paper."
-    },
-    {
-      "paperId": "e7fe405f-8033-4260-bad8-2041ac9b2ac0",
-      "excludeFromAtlas": true,
-      "notes": "Fish ovary cryopreservation paper in a different biological system; outside the current mammalian ovarian tissue atlas slice."
+      "notes": "Rat heart perfusion study; ovarian tissue mention is background context, not the specimen under study."
     },
     {
       "paperId": "fbf690db-1d63-48f7-89cb-afa7bd81b16f",
@@ -249,28 +307,14 @@
       "notes": "Embryo/oocyte cryotolerance paper driven by donor stimulation regime, not ovarian tissue cryopreservation protocols."
     },
     {
-      "paperId": "e6aaf317-52fc-441c-bac4-5143fbb9e54c",
+      "paperId": "fdef775d-8d93-4bdc-a7fe-7f9074ce47fb",
       "excludeFromAtlas": true,
-      "notes": "Embryo-focused freeze-all review; outside the ovarian tissue atlas slice."
+      "notes": "Canine fibroblast cryopreservation study from ovarian/testicular tissues; not an ovarian tissue preservation protocol paper."
     },
     {
-      "paperId": "dc753166-c837-4fe4-af6a-28cd82058473",
+      "paperId": "fea34b3b-4387-4267-bc1c-8bfc5c6d4034",
       "excludeFromAtlas": true,
-      "notes": "Pig immature oocyte vitrification paper; relevant to oocyte workflows, not ovarian tissue preservation."
-    },
-    {
-      "paperId": "eb9d9be6-4244-4e4b-892e-ba809925613a",
-      "paperType": "review",
-      "protocolFamily": "comparative",
-      "extractionConfidence": 0.74,
-      "speciesMentions": [
-        "goat"
-      ],
-      "specimenTypes": [
-        "follicles",
-        "oocytes"
-      ],
-      "notes": "Review of caprine preantral follicle cryopreservation and in vitro culture spanning both vitrification and slow freezing."
+      "notes": "Granulosa cell DNA-preservation study using equine oocyte-associated cells, not ovarian tissue protocol optimization."
     }
   ]
 }

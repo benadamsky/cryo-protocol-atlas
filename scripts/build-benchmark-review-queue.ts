@@ -23,7 +23,10 @@ function renderMarkdown(
     .filter((proposal) => proposal.target === "benchmark")
     .sort(
       (left, right) =>
-        right.proposalConfidence - left.proposalConfidence || left.title.localeCompare(right.title)
+        (right.reviewRecommendation?.policyConfidence ?? right.proposalConfidence) -
+          (left.reviewRecommendation?.policyConfidence ?? left.proposalConfidence) ||
+        right.proposalConfidence - left.proposalConfidence ||
+        left.title.localeCompare(right.title)
     );
 
   const lines: string[] = [];
@@ -44,6 +47,20 @@ function renderMarkdown(
   }
 
   lines.push("");
+  const recommendationCounts = new Map<string, number>();
+  for (const proposal of proposals) {
+    const recommendedDecision = proposal.reviewRecommendation?.recommendedDecision ?? "none";
+    recommendationCounts.set(
+      recommendedDecision,
+      (recommendationCounts.get(recommendedDecision) ?? 0) + 1
+    );
+  }
+
+  lines.push("## Policy recommendation");
+  lines.push(`- accept: ${recommendationCounts.get("accept") ?? 0}`);
+  lines.push(`- defer: ${recommendationCounts.get("defer") ?? 0}`);
+  lines.push(`- none: ${recommendationCounts.get("none") ?? 0}`);
+  lines.push("");
   lines.push("## Proposals");
 
   if (proposals.length === 0) {
@@ -58,6 +75,12 @@ function renderMarkdown(
       `- [${decision?.decision ?? "pending"}] ${proposal.title} | fields=${proposal.fields.join(", ")} | confidence=${proposal.proposalConfidence}`
     );
     lines.push(`  proposalId=${proposal.proposalId}`);
+    if (proposal.reviewRecommendation) {
+      lines.push(
+        `  recommendation=${proposal.reviewRecommendation.recommendedDecision} | policyConfidence=${proposal.reviewRecommendation.policyConfidence}`
+      );
+      lines.push(`  recommendationReasons=${proposal.reviewRecommendation.reasons.join(" || ")}`);
+    }
     lines.push(`  rationale=${proposal.rationale}`);
     if (proposal.evidenceSummary.length > 0) {
       lines.push(`  evidence=${proposal.evidenceSummary.join(" || ")}`);
@@ -72,6 +95,12 @@ function renderMarkdown(
     }
     if (decision?.reviewerNotes) {
       lines.push(`  reviewerNotes=${decision.reviewerNotes}`);
+    }
+    if (decision?.acceptedOutcomeClasses?.length) {
+      lines.push(`  acceptedOutcomeClasses=${decision.acceptedOutcomeClasses.join(", ")}`);
+    }
+    if (decision?.acceptedStepPhases?.length) {
+      lines.push(`  acceptedStepPhases=${decision.acceptedStepPhases.join(", ")}`);
     }
   }
 
@@ -114,6 +143,12 @@ async function main(selectedDomain: DomainId): Promise<void> {
         paperId: proposal.paperId,
         title: proposal.title,
         decision: existing?.decision ?? "pending",
+        ...(existing?.acceptedOutcomeClasses?.length
+          ? { acceptedOutcomeClasses: existing.acceptedOutcomeClasses }
+          : {}),
+        ...(existing?.acceptedStepPhases?.length
+          ? { acceptedStepPhases: existing.acceptedStepPhases }
+          : {}),
         ...(existing?.reviewerNotes ? { reviewerNotes: existing.reviewerNotes } : {}),
         ...(existing?.decidedAt ? { decidedAt: existing.decidedAt } : {})
       };

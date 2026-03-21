@@ -64,4 +64,7 @@ And an evaluation harness that answers:
 - The current loop is intentionally narrow: it auto-applies only reviewed benchmark-backed override repairs, while any benchmark depth expansion stays review-only.
 - Benchmark depth proposals are only generated when the resolved extraction already contains explicit outcome/step structure for a reviewed in-scope paper.
 - Benchmark depth proposals now have a review/apply path: queue decisions, accept/reject candidate benchmark patches, then rerun evaluation and loop generation on the updated gold set.
+- Benchmark depth proposals also carry conservative `accept` vs `defer` policy recommendations so review can focus on the highest-signal candidates first.
+- Review decisions can now partially accept a proposal by trimming `acceptedOutcomeClasses` / `acceptedStepPhases` before promotion, which is important for noisy abstract-level step extraction.
+- A stricter autopromote path now exists for benchmark proposals that cross the policy confidence threshold; it auto-applies only those benchmark promotions, then runs the override repair pass to convergence.
 - The ovarian and islet slices now both support ingest -> curate -> benchmark -> repair-loop regression testing.

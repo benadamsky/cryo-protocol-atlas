@@ -1,24 +1,7 @@
 {
-  "generatedAt": "2026-03-21T02:43:44.236Z",
+  "generatedAt": "2026-03-21T02:52:02.906Z",
   "domain": "ovarian-tissue",
-  "sourceProposalGeneratedAt": "2026-03-21T02:38:38.286Z",
-  "decisionCount": 2,
-  "decisions": [
-    {
-      "proposalId": "benchmark-depth-autofill:f24fdc26-2071-4ae1-86d6-fa70a17a9574:stepPhases",
-      "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
-      "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
-      "decision": "defer",
-      "reviewerNotes": "Defer until partial benchmark-patch editing exists; extracted phase set still mixes clear procedural phases with noisier inferred ones.",
-      "decidedAt": "2026-03-21T02:43:44.236Z"
-    },
-    {
-      "proposalId": "benchmark-depth-autofill:efebd52e-704f-48b4-82e5-f41f971df210:stepPhases",
-      "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
-      "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
-      "decision": "defer",
-      "reviewerNotes": "Defer until partial benchmark-patch editing exists; extracted phase set still includes noisy storage/general-context lines.",
-      "decidedAt": "2026-03-21T02:43:44.236Z"
-    }
-  ]
+  "sourceProposalGeneratedAt": "2026-03-21T02:50:43.448Z",
+  "decisionCount": 0,
+  "decisions": []
 }

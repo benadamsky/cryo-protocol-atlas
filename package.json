@@ -26,6 +26,8 @@
     "review-benchmark:islets": "node --import tsx scripts/build-benchmark-review-queue.ts islets",
     "apply-benchmark:ovarian": "node --import tsx scripts/apply-benchmark-review.ts ovarian-tissue",
     "apply-benchmark:islets": "node --import tsx scripts/apply-benchmark-review.ts islets",
+    "autopromote-benchmark:ovarian": "node --import tsx scripts/autopromote-benchmark-recommendations.ts ovarian-tissue",
+    "autopromote-benchmark:islets": "node --import tsx scripts/autopromote-benchmark-recommendations.ts islets",
     "regress:ovarian": "node --import tsx scripts/regress-autoresearch.ts ovarian-tissue",
     "regress:islets": "node --import tsx scripts/regress-autoresearch.ts islets",
     "typecheck": "tsc --noEmit"

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-20T17:08:16.444Z",
+  "generatedAt": "2026-03-21T02:50:27.631Z",
   "domain": "ovarian-tissue",
   "description": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "entries": [
@@ -259,6 +259,10 @@
         "transplantation",
         "viability"
       ],
+      "expectedStepPhases": [
+        "equilibration",
+        "loading"
+      ],
       "expectedOverridePatch": {
         "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
         "paperType": "experimental",
@@ -270,29 +274,51 @@
           "follicles",
           "ovarian tissue"
         ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "equilibration",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: equilibration.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "loading",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: loading.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
         "outcomeMentions": [
           {
             "outcomeClass": "morphology",
             "strength": "moderate",
-            "summary": "The percentages of morphologically normal and viable follicles of DCV2 were significantly higher than DCV1, DCV3 and CV groups.",
-            "evidence": []
-          },
-          {
-            "outcomeClass": "viability",
-            "strength": "moderate",
-            "summary": "The percentages of morphologically normal and viable follicles of DCV2 were significantly higher than DCV1, DCV3 and CV groups.",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: morphology.",
             "evidence": []
           },
           {
             "outcomeClass": "transplantation",
             "strength": "moderate",
-            "summary": "After grafting, the follicle density of DCV2 was greater than DCV1, DCV3 and CV groups.",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: transplantation.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
             "evidence": []
           }
         ],
         "extractionConfidence": 0.82
       },
-      "notes": "Compares direct-cover vitrification against conventional vitrification in human ovarian tissue fragments."
+      "notes": "Compares direct-cover vitrification against conventional vitrification in human ovarian tissue fragments. Accepted benchmark autofill proposal benchmark-depth-autofill:f24fdc26-2071-4ae1-86d6-fa70a17a9574:stepPhases."
     },
     {
       "paperId": "dc753166-c837-4fe4-af6a-28cd82058473",
@@ -501,6 +527,10 @@
         "function",
         "viability"
       ],
+      "expectedStepPhases": [
+        "cooling",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
         "paperType": "methods",
@@ -511,23 +541,45 @@
         "specimenTypes": [
           "ovarian tissue"
         ],
-        "outcomeMentions": [
+        "protocolSteps": [
           {
-            "outcomeClass": "viability",
-            "strength": "moderate",
-            "summary": "Frozen-thawed ovarian tissue had a similar quality to fresh tissue.",
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
             "evidence": []
           },
           {
+            "order": 1,
+            "phase": "warming",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
+        "outcomeMentions": [
+          {
             "outcomeClass": "function",
             "strength": "moderate",
-            "summary": "Frozen-thawed ovarian tissue could resume folliculogenesis during organotypic culture.",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
             "evidence": []
           }
         ],
         "extractionConfidence": 0.8
       },
-      "notes": "Programmable-freezer optimization study with seeding, controlled cooling rates, and structured thawing for human ovarian tissue."
+      "notes": "Programmable-freezer optimization study with seeding, controlled cooling rates, and structured thawing for human ovarian tissue. Accepted benchmark autofill proposal benchmark-depth-autofill:efebd52e-704f-48b4-82e5-f41f971df210:stepPhases."
     },
     {
       "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",

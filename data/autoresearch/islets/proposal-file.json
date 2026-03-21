@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T02:44:52.979Z",
+  "generatedAt": "2026-03-21T02:48:34.426Z",
   "domain": "islets",
   "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "proposalCount": 10,
@@ -55,7 +55,17 @@
       "expectedImpact": [
         "increase reviewed benchmark depth coverage",
         "create higher-signal review work without changing applied overrides"
-      ]
+      ],
+      "reviewRecommendation": {
+        "recommendedDecision": "defer",
+        "policyConfidence": 0.77,
+        "reasons": [
+          "below conservative accept threshold",
+          "extraction confidence is below high-trust threshold",
+          "single-field patch is lower-risk to review",
+          "step-phase evidence is sparse and should stay manual-review first"
+        ]
+      }
     },
     {
       "proposalId": "benchmark-depth-autofill:9ec86ab7-5e07-4437-bac6-a67b159a6540:stepPhases",
@@ -135,7 +145,17 @@
       "expectedImpact": [
         "increase reviewed benchmark depth coverage",
         "create higher-signal review work without changing applied overrides"
-      ]
+      ],
+      "reviewRecommendation": {
+        "recommendedDecision": "defer",
+        "policyConfidence": 0.74,
+        "reasons": [
+          "below conservative accept threshold",
+          "extraction confidence is below high-trust threshold",
+          "single-field patch is lower-risk to review",
+          "step-phase evidence is sparse and should stay manual-review first"
+        ]
+      }
     },
     {
       "proposalId": "benchmark-depth-autofill:6e4ea940-2dbd-4790-b848-c453f6a0f42a:stepPhases",
@@ -190,7 +210,17 @@
       "expectedImpact": [
         "increase reviewed benchmark depth coverage",
         "create higher-signal review work without changing applied overrides"
-      ]
+      ],
+      "reviewRecommendation": {
+        "recommendedDecision": "defer",
+        "policyConfidence": 0.735,
+        "reasons": [
+          "below conservative accept threshold",
+          "extraction confidence is below high-trust threshold",
+          "single-field patch is lower-risk to review",
+          "step-phase evidence is sparse and should stay manual-review first"
+        ]
+      }
     },
     {
       "proposalId": "benchmark-depth-autofill:d865c65c-b6a7-431c-941c-c23d68f30469:stepPhases",
@@ -286,7 +316,17 @@
       "expectedImpact": [
         "increase reviewed benchmark depth coverage",
         "create higher-signal review work without changing applied overrides"
-      ]
+      ],
+      "reviewRecommendation": {
+        "recommendedDecision": "defer",
+        "policyConfidence": 0.732,
+        "reasons": [
+          "below conservative accept threshold",
+          "extraction confidence is below high-trust threshold",
+          "single-field patch is lower-risk to review",
+          "step-phase evidence is sparse and should stay manual-review first"
+        ]
+      }
     },
     {
       "proposalId": "benchmark-depth-autofill:51afcf7d-1bff-4630-808a-40407290f0d2:stepPhases",
@@ -368,7 +408,17 @@
       "expectedImpact": [
         "increase reviewed benchmark depth coverage",
         "create higher-signal review work without changing applied overrides"
-      ]
+      ],
+      "reviewRecommendation": {
+        "recommendedDecision": "defer",
+        "policyConfidence": 0.73,
+        "reasons": [
+          "below conservative accept threshold",
+          "extraction confidence is below high-trust threshold",
+          "single-field patch is lower-risk to review",
+          "step-phase evidence is sparse and should stay manual-review first"
+        ]
+      }
     },
     {
       "proposalId": "benchmark-depth-autofill:e61a3868-8fcf-4024-96f7-eb4ae8a9456a:stepPhases",
@@ -421,7 +471,17 @@
       "expectedImpact": [
         "increase reviewed benchmark depth coverage",
         "create higher-signal review work without changing applied overrides"
-      ]
+      ],
+      "reviewRecommendation": {
+        "recommendedDecision": "defer",
+        "policyConfidence": 0.73,
+        "reasons": [
+          "below conservative accept threshold",
+          "extraction confidence is below high-trust threshold",
+          "single-field patch is lower-risk to review",
+          "step-phase evidence is sparse and should stay manual-review first"
+        ]
+      }
     },
     {
       "proposalId": "benchmark-depth-autofill:f805778c-f7b5-422e-978a-cf3d986f008c:stepPhases",
@@ -491,7 +551,17 @@
       "expectedImpact": [
         "increase reviewed benchmark depth coverage",
         "create higher-signal review work without changing applied overrides"
-      ]
+      ],
+      "reviewRecommendation": {
+        "recommendedDecision": "defer",
+        "policyConfidence": 0.73,
+        "reasons": [
+          "below conservative accept threshold",
+          "extraction confidence is below high-trust threshold",
+          "single-field patch is lower-risk to review",
+          "step-phase evidence is sparse and should stay manual-review first"
+        ]
+      }
     },
     {
       "proposalId": "benchmark-depth-autofill:5f8b44a6-e05c-4bdd-ac73-18c0411696dc:stepPhases",
@@ -662,7 +732,17 @@
       "expectedImpact": [
         "increase reviewed benchmark depth coverage",
         "create higher-signal review work without changing applied overrides"
-      ]
+      ],
+      "reviewRecommendation": {
+        "recommendedDecision": "defer",
+        "policyConfidence": 0.729,
+        "reasons": [
+          "below conservative accept threshold",
+          "extraction confidence is below high-trust threshold",
+          "single-field patch is lower-risk to review",
+          "step-phase evidence is sparse and should stay manual-review first"
+        ]
+      }
     },
     {
       "proposalId": "benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:stepPhases",
@@ -775,7 +855,17 @@
       "expectedImpact": [
         "increase reviewed benchmark depth coverage",
         "create higher-signal review work without changing applied overrides"
-      ]
+      ],
+      "reviewRecommendation": {
+        "recommendedDecision": "defer",
+        "policyConfidence": 0.727,
+        "reasons": [
+          "below conservative accept threshold",
+          "extraction confidence is below high-trust threshold",
+          "single-field patch is lower-risk to review",
+          "step-phase evidence is sparse and should stay manual-review first"
+        ]
+      }
     },
     {
       "proposalId": "benchmark-depth-autofill:4056fdf9-3483-40ce-9ef4-ccd534962039:stepPhases",
@@ -882,7 +972,17 @@
       "expectedImpact": [
         "increase reviewed benchmark depth coverage",
         "create higher-signal review work without changing applied overrides"
-      ]
+      ],
+      "reviewRecommendation": {
+        "recommendedDecision": "defer",
+        "policyConfidence": 0.727,
+        "reasons": [
+          "below conservative accept threshold",
+          "extraction confidence is below high-trust threshold",
+          "single-field patch is lower-risk to review",
+          "step-phase evidence is sparse and should stay manual-review first"
+        ]
+      }
     }
   ]
 }

@@ -297,7 +297,14 @@ export const AutoresearchProposalSchema = z.object({
   proposalConfidence: z.number().min(0).max(1),
   evidenceSummary: z.array(z.string()),
   rationale: z.string(),
-  expectedImpact: z.array(z.string())
+  expectedImpact: z.array(z.string()),
+  reviewRecommendation: z
+    .object({
+      recommendedDecision: z.enum(["accept", "defer"]),
+      policyConfidence: z.number().min(0).max(1),
+      reasons: z.array(z.string())
+    })
+    .optional()
 });
 export type AutoresearchProposal = z.infer<typeof AutoresearchProposalSchema>;
 
@@ -318,6 +325,8 @@ export const BenchmarkProposalDecisionSchema = z.object({
   paperId: z.string(),
   title: z.string(),
   decision: BenchmarkProposalDecisionStatusSchema,
+  acceptedOutcomeClasses: z.array(OutcomeClassSchema).optional(),
+  acceptedStepPhases: z.array(ProtocolPhaseSchema).optional(),
   reviewerNotes: z.string().optional(),
   decidedAt: z.string().optional()
 });

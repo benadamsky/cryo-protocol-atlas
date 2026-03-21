@@ -4,11 +4,13 @@ import { join } from "node:path";
 import {
   AutoresearchProposalFileSchema,
   BenchmarkFileSchema,
+  BenchmarkProposalDecisionSchema,
   BenchmarkProposalDecisionFileSchema,
   DomainIdSchema,
   type OutcomeClass,
   type OutcomeMention,
   type BenchmarkEntry,
+  type BenchmarkProposalDecision,
   type DomainId
 } from "../packages/shared/src/schema.js";
 
@@ -32,14 +34,25 @@ function buildCanonicalOutcomeMentions(outcomeClasses: OutcomeClass[]): OutcomeM
   }));
 }
 
-function applyAcceptedProposal(entry: BenchmarkEntry, proposal: ReturnType<typeof AutoresearchProposalFileSchema.parse>["proposals"][number]): BenchmarkEntry {
+function applyAcceptedProposal(
+  entry: BenchmarkEntry,
+  proposal: ReturnType<typeof AutoresearchProposalFileSchema.parse>["proposals"][number],
+  decision: BenchmarkProposalDecision
+): BenchmarkEntry {
   if (!proposal.benchmarkPatch) {
     return entry;
   }
 
   const acceptedOutcomeClasses =
-    proposal.benchmarkPatch.expectedOutcomeClasses ?? entry.expectedOutcomeClasses ?? [];
-  const acceptedStepPhases = proposal.benchmarkPatch.expectedStepPhases ?? entry.expectedStepPhases ?? [];
+    decision.acceptedOutcomeClasses ??
+    proposal.benchmarkPatch.expectedOutcomeClasses ??
+    entry.expectedOutcomeClasses ??
+    [];
+  const acceptedStepPhases =
+    decision.acceptedStepPhases ??
+    proposal.benchmarkPatch.expectedStepPhases ??
+    entry.expectedStepPhases ??
+    [];
   const existingOverridePatch = entry.expectedOverridePatch ?? { paperId: entry.paperId };
   const canonicalOverridePatch = {
     ...existingOverridePatch,
@@ -161,6 +174,11 @@ async function main(selectedDomain: DomainId): Promise<void> {
     .filter((proposalId) => proposalById.has(proposalId));
 
   const acceptedSet = new Set(acceptedProposalIds);
+  const acceptedDecisionByProposalId = new Map(
+    decisionFile.decisions
+      .filter((decision) => decision.decision === "accept")
+      .map((decision) => [decision.proposalId, BenchmarkProposalDecisionSchema.parse(decision)])
+  );
   const nextBenchmark =
     acceptedProposalIds.length === 0
       ? benchmarkFile
@@ -171,7 +189,14 @@ async function main(selectedDomain: DomainId): Promise<void> {
             const acceptedProposal = proposalFile.proposals.find(
               (proposal) => proposal.paperId === entry.paperId && acceptedSet.has(proposal.proposalId)
             );
-            return acceptedProposal ? applyAcceptedProposal(entry, acceptedProposal) : entry;
+            if (!acceptedProposal) {
+              return entry;
+            }
+
+            const acceptedDecision = acceptedDecisionByProposalId.get(acceptedProposal.proposalId);
+            return acceptedDecision
+              ? applyAcceptedProposal(entry, acceptedProposal, acceptedDecision)
+              : entry;
           })
         });
 

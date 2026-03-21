@@ -11,7 +11,7 @@ All gates passed: yes
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
 - set macro F1: species=1 specimen=1 outcomes=1 stepPhases=1
-- field coverage: paperType=1 protocolFamily=1 species=1 specimen=1 outcomes=0.75 stepPhases=0.688
+- field coverage: paperType=1 protocolFamily=1 species=1 specimen=1 outcomes=0.75 stepPhases=0.813
 - confidence: expectedIncluded=0.795 correctIncluded=0.795 incorrectIncluded=n/a
 
 ## reviewed subset
@@ -20,7 +20,7 @@ All gates passed: yes
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
 - set macro F1: species=1 specimen=1 outcomes=1 stepPhases=1
-- field coverage: paperType=1 protocolFamily=1 species=1 specimen=1 outcomes=0.429 stepPhases=0.286
+- field coverage: paperType=1 protocolFamily=1 species=1 specimen=1 outcomes=0.429 stepPhases=0.571
 - confidence: expectedIncluded=0.766 correctIncluded=0.766 incorrectIncluded=n/a
 
 ## seeded subset
@@ -48,8 +48,8 @@ All gates passed: yes
 
 ## Reviewed depth
 - reviewed outcome coverage: 0.429
-- reviewed step-phase coverage: 0.286
-- reviewed minimum-depth ready: no
+- reviewed step-phase coverage: 0.571
+- reviewed minimum-depth ready: yes
 
 ## Baseline vs resolved
 - reviewed inclusion F1 delta: 0.462
@@ -65,11 +65,11 @@ All gates passed: yes
 - inclusion: precision=0.368 recall=1 f1=0.538
 - exact: paperType=0.286 protocolFamily=0.143
 - set macro F1: species=1 specimen=0.905
-- coverage: outcomes=0.429 stepPhases=0.286
+- coverage: outcomes=0.429 stepPhases=0.571
 
 ## Reviewed depth gaps
 - reviewed entries missing outcome labels: 4
-- reviewed entries missing step-phase labels: 5
+- reviewed entries missing step-phase labels: 3
 
 ### Missing reviewed outcomes
 - Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep | family=slow-freezing type=experimental
@@ -79,7 +79,5 @@ All gates passed: yes
 
 ### Missing reviewed step phases
 - Cryopreservation and in vitro culture of caprine preantral follicles | family=comparative type=review
-- Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation | family=vitrification type=experimental
 - Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries | family=slow-freezing type=experimental
-- Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry | family=slow-freezing type=methods
 - Ovarian and oocyte cryopreservation | family=comparative type=review
