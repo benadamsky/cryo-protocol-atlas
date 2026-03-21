@@ -3,7 +3,7 @@
   "autoApplySafe": false,
   "currentEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:53:35.140Z",
+    "generatedAt": "2026-03-21T04:08:57.023Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -69,21 +69,10 @@
             "field": "stepPhases",
             "labeledCount": 43,
             "exactMatchCount": 39,
-            "averageF1": 0.94,
-            "averagePrecision": 0.934,
-            "averageRecall": 0.953,
+            "averageF1": 0.949,
+            "averagePrecision": 0.955,
+            "averageRecall": 0.961,
             "mismatches": [
-              {
-                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
-                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
-                "expected": [
-                  "cooling",
-                  "unknown",
-                  "warming"
-                ],
-                "actual": [],
-                "f1": 0
-              },
               {
                 "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
                 "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
@@ -95,6 +84,20 @@
                   "cooling",
                   "equilibration",
                   "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
                 ],
                 "f1": 0.4
               },
@@ -112,15 +115,15 @@
                 "f1": 0.5
               },
               {
-                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
-                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
                 "expected": [
-                  "cooling"
+                  "cooling",
+                  "unknown",
+                  "warming"
                 ],
                 "actual": [
-                  "cooling",
-                  "equilibration",
-                  "storage"
+                  "warming"
                 ],
                 "f1": 0.5
               }
@@ -166,8 +169,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.847,
-          "averageOnCorrectIncluded": 0.847,
+          "averageOnExpectedIncluded": 0.849,
+          "averageOnCorrectIncluded": 0.849,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -349,21 +352,10 @@
             "field": "stepPhases",
             "labeledCount": 4,
             "exactMatchCount": 0,
-            "averageF1": 0.35,
-            "averagePrecision": 0.291,
-            "averageRecall": 0.5,
+            "averageF1": 0.45,
+            "averagePrecision": 0.521,
+            "averageRecall": 0.583,
             "mismatches": [
-              {
-                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
-                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
-                "expected": [
-                  "cooling",
-                  "unknown",
-                  "warming"
-                ],
-                "actual": [],
-                "f1": 0
-              },
               {
                 "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
                 "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
@@ -375,6 +367,20 @@
                   "cooling",
                   "equilibration",
                   "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
                 ],
                 "f1": 0.4
               },
@@ -392,15 +398,15 @@
                 "f1": 0.5
               },
               {
-                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
-                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
                 "expected": [
-                  "cooling"
+                  "cooling",
+                  "unknown",
+                  "warming"
                 ],
                 "actual": [
-                  "cooling",
-                  "equilibration",
-                  "storage"
+                  "warming"
                 ],
                 "f1": 0.5
               }
@@ -446,8 +452,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.885,
-          "averageOnCorrectIncluded": 0.885,
+          "averageOnExpectedIncluded": 0.902,
+          "averageOnCorrectIncluded": 0.902,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -514,7 +520,7 @@
   },
   "candidateEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:53:35.142Z",
+    "generatedAt": "2026-03-21T04:08:57.025Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -580,21 +586,10 @@
             "field": "stepPhases",
             "labeledCount": 43,
             "exactMatchCount": 39,
-            "averageF1": 0.94,
-            "averagePrecision": 0.934,
-            "averageRecall": 0.953,
+            "averageF1": 0.949,
+            "averagePrecision": 0.955,
+            "averageRecall": 0.961,
             "mismatches": [
-              {
-                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
-                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
-                "expected": [
-                  "cooling",
-                  "unknown",
-                  "warming"
-                ],
-                "actual": [],
-                "f1": 0
-              },
               {
                 "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
                 "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
@@ -606,6 +601,20 @@
                   "cooling",
                   "equilibration",
                   "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
                 ],
                 "f1": 0.4
               },
@@ -623,15 +632,15 @@
                 "f1": 0.5
               },
               {
-                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
-                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
                 "expected": [
-                  "cooling"
+                  "cooling",
+                  "unknown",
+                  "warming"
                 ],
                 "actual": [
-                  "cooling",
-                  "equilibration",
-                  "storage"
+                  "warming"
                 ],
                 "f1": 0.5
               }
@@ -677,8 +686,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.847,
-          "averageOnCorrectIncluded": 0.847,
+          "averageOnExpectedIncluded": 0.849,
+          "averageOnCorrectIncluded": 0.849,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -860,21 +869,10 @@
             "field": "stepPhases",
             "labeledCount": 4,
             "exactMatchCount": 0,
-            "averageF1": 0.35,
-            "averagePrecision": 0.291,
-            "averageRecall": 0.5,
+            "averageF1": 0.45,
+            "averagePrecision": 0.521,
+            "averageRecall": 0.583,
             "mismatches": [
-              {
-                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
-                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
-                "expected": [
-                  "cooling",
-                  "unknown",
-                  "warming"
-                ],
-                "actual": [],
-                "f1": 0
-              },
               {
                 "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
                 "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
@@ -886,6 +884,20 @@
                   "cooling",
                   "equilibration",
                   "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
                 ],
                 "f1": 0.4
               },
@@ -903,15 +915,15 @@
                 "f1": 0.5
               },
               {
-                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
-                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
                 "expected": [
-                  "cooling"
+                  "cooling",
+                  "unknown",
+                  "warming"
                 ],
                 "actual": [
-                  "cooling",
-                  "equilibration",
-                  "storage"
+                  "warming"
                 ],
                 "f1": 0.5
               }
@@ -957,8 +969,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.885,
-          "averageOnCorrectIncluded": 0.885,
+          "averageOnExpectedIncluded": 0.902,
+          "averageOnCorrectIncluded": 0.902,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1025,7 +1037,7 @@
   },
   "candidateBenchmarkEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:53:35.145Z",
+    "generatedAt": "2026-03-21T04:08:57.027Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -1091,21 +1103,10 @@
             "field": "stepPhases",
             "labeledCount": 45,
             "exactMatchCount": 41,
-            "averageF1": 0.942,
-            "averagePrecision": 0.937,
-            "averageRecall": 0.956,
+            "averageF1": 0.951,
+            "averagePrecision": 0.957,
+            "averageRecall": 0.963,
             "mismatches": [
-              {
-                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
-                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
-                "expected": [
-                  "cooling",
-                  "unknown",
-                  "warming"
-                ],
-                "actual": [],
-                "f1": 0
-              },
               {
                 "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
                 "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
@@ -1117,6 +1118,20 @@
                   "cooling",
                   "equilibration",
                   "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
                 ],
                 "f1": 0.4
               },
@@ -1134,15 +1149,15 @@
                 "f1": 0.5
               },
               {
-                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
-                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
                 "expected": [
-                  "cooling"
+                  "cooling",
+                  "unknown",
+                  "warming"
                 ],
                 "actual": [
-                  "cooling",
-                  "equilibration",
-                  "storage"
+                  "warming"
                 ],
                 "f1": 0.5
               }
@@ -1188,8 +1203,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.847,
-          "averageOnCorrectIncluded": 0.847,
+          "averageOnExpectedIncluded": 0.849,
+          "averageOnCorrectIncluded": 0.849,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1371,21 +1386,10 @@
             "field": "stepPhases",
             "labeledCount": 4,
             "exactMatchCount": 0,
-            "averageF1": 0.35,
-            "averagePrecision": 0.291,
-            "averageRecall": 0.5,
+            "averageF1": 0.45,
+            "averagePrecision": 0.521,
+            "averageRecall": 0.583,
             "mismatches": [
-              {
-                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
-                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
-                "expected": [
-                  "cooling",
-                  "unknown",
-                  "warming"
-                ],
-                "actual": [],
-                "f1": 0
-              },
               {
                 "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
                 "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
@@ -1397,6 +1401,20 @@
                   "cooling",
                   "equilibration",
                   "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
                 ],
                 "f1": 0.4
               },
@@ -1414,15 +1432,15 @@
                 "f1": 0.5
               },
               {
-                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
-                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
                 "expected": [
-                  "cooling"
+                  "cooling",
+                  "unknown",
+                  "warming"
                 ],
                 "actual": [
-                  "cooling",
-                  "equilibration",
-                  "storage"
+                  "warming"
                 ],
                 "f1": 0.5
               }
@@ -1468,8 +1486,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.885,
-          "averageOnCorrectIncluded": 0.885,
+          "averageOnExpectedIncluded": 0.902,
+          "averageOnCorrectIncluded": 0.902,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],

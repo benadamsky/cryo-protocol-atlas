@@ -94,7 +94,8 @@ export const EvidenceSnippetSchema = z.object({
     "chemical",
     "temperature",
     "duration",
-    "outcome"
+    "outcome",
+    "source-enrichment"
   ]),
   text: z.string(),
   confidence: z.number().min(0).max(1)
@@ -154,6 +155,52 @@ export const ExtractionSnapshotSchema = z.object({
   extractions: z.array(ProtocolExtractionSchema)
 });
 export type ExtractionSnapshot = z.infer<typeof ExtractionSnapshotSchema>;
+
+export const SourceEnrichmentPrioritySchema = z.enum([
+  "extractor-gap",
+  "ambiguous-evidence",
+  "evidence-thin",
+  "step-phase-manual"
+]);
+export type SourceEnrichmentPriority = z.infer<typeof SourceEnrichmentPrioritySchema>;
+
+export const SourceEnrichmentStatusSchema = z.enum([
+  "pending",
+  "in-progress",
+  "reviewed",
+  "rejected"
+]);
+export type SourceEnrichmentStatus = z.infer<typeof SourceEnrichmentStatusSchema>;
+
+export const SourceEnrichmentExcerptSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  text: z.string(),
+  source: z.enum(["full-text", "methods", "results", "discussion", "manual-note"]),
+  confidence: z.number().min(0).max(1).optional(),
+  reviewed: z.boolean().default(true)
+});
+export type SourceEnrichmentExcerpt = z.infer<typeof SourceEnrichmentExcerptSchema>;
+
+export const SourceEnrichmentRecordSchema = z.object({
+  paperId: z.string(),
+  title: z.string(),
+  doi: z.string().nullable().optional(),
+  paperUrl: z.string().nullable().optional(),
+  priority: SourceEnrichmentPrioritySchema,
+  status: SourceEnrichmentStatusSchema,
+  rationale: z.string(),
+  reviewerNotes: z.string().optional(),
+  excerpts: z.array(SourceEnrichmentExcerptSchema).default([])
+});
+export type SourceEnrichmentRecord = z.infer<typeof SourceEnrichmentRecordSchema>;
+
+export const SourceEnrichmentFileSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  records: z.array(SourceEnrichmentRecordSchema)
+});
+export type SourceEnrichmentFile = z.infer<typeof SourceEnrichmentFileSchema>;
 
 export const ContradictionSchema = z.object({
   topic: z.string(),

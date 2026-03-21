@@ -1,11 +1,13 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { selectReviewedEnrichmentRecord } from "../packages/extract/src/enrichment.js";
 import { extractIsletProtocol } from "../packages/extract/src/islets.js";
 import { extractOvarianProtocol } from "../packages/extract/src/ovarian.js";
 import {
   DomainIdSchema,
   DomainSnapshotSchema,
   ExtractionSnapshotSchema,
+  SourceEnrichmentFileSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
 
@@ -13,17 +15,30 @@ const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
 
 async function main(selectedDomain: DomainId): Promise<void> {
   const processedDir = join(process.cwd(), "data", "processed", selectedDomain);
+  const curatedDir = join(process.cwd(), "data", "curated", selectedDomain);
   const snapshotPath = join(processedDir, "domain-snapshot.json");
   const snapshotFile = await readFile(snapshotPath, "utf8");
   const domainSnapshot = DomainSnapshotSchema.parse(JSON.parse(snapshotFile));
+  let sourceEnrichment:
+    | ReturnType<typeof SourceEnrichmentFileSchema.parse>
+    | undefined;
+
+  try {
+    sourceEnrichment = SourceEnrichmentFileSchema.parse(
+      JSON.parse(await readFile(join(curatedDir, "source-enrichment.json"), "utf8"))
+    );
+  } catch {
+    sourceEnrichment = undefined;
+  }
 
   const extractions = domainSnapshot.papers.map((paper) => {
+    const enrichmentRecord = selectReviewedEnrichmentRecord(sourceEnrichment, paper.paper);
     if (selectedDomain === "ovarian-tissue") {
-      return extractOvarianProtocol(paper);
+      return extractOvarianProtocol(paper, enrichmentRecord);
     }
 
     if (selectedDomain === "islets") {
-      return extractIsletProtocol(paper);
+      return extractIsletProtocol(paper, enrichmentRecord);
     }
 
     throw new Error(`No extractor implemented yet for domain: ${selectedDomain}`);

@@ -14,8 +14,10 @@ import {
   type ProtocolPhase,
   type ProtocolExtraction,
   type ProtocolFamily,
-  type ProtocolStep
+  type ProtocolStep,
+  type SourceEnrichmentRecord
 } from "../../shared/src/schema.js";
+import { buildAugmentedSourceText, enrichmentEvidenceSnippets } from "./enrichment.js";
 
 type ChemicalAliasEntry = {
   canonicalName: string;
@@ -463,9 +465,12 @@ function escapeRegex(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-export function extractOvarianProtocol(domainPaper: DomainPaper): ProtocolExtraction {
+export function extractOvarianProtocol(
+  domainPaper: DomainPaper,
+  sourceEnrichment?: SourceEnrichmentRecord
+): ProtocolExtraction {
   const paper: CryoPaper = domainPaper.paper;
-  const text = `${paper.title}. ${paper.abstract ?? ""}`.trim();
+  const text = buildAugmentedSourceText("ovarian-tissue", paper, sourceEnrichment).trim();
   const sentences = splitSentences(text);
   const paperType = classifyPaperType(paper);
 
@@ -494,7 +499,14 @@ export function extractOvarianProtocol(domainPaper: DomainPaper): ProtocolExtrac
     ...protocolSteps.flatMap((step) => step.evidence),
     ...temperatureEvidence,
     ...durationEvidence,
-    ...outcomeMentions.flatMap((entry) => entry.evidence)
+    ...outcomeMentions.flatMap((entry) => entry.evidence),
+    ...enrichmentEvidenceSnippets(sourceEnrichment).map((entry) =>
+      EvidenceSnippetSchema.parse({
+        kind: "source-enrichment",
+        text: entry.text,
+        confidence: entry.confidence
+      })
+    )
   ];
 
   const extractionBase = {

@@ -11,8 +11,10 @@ import {
   type OutcomeStrength,
   type PaperType,
   type ProtocolExtraction,
-  type ProtocolFamily
+  type ProtocolFamily,
+  type SourceEnrichmentRecord
 } from "../../shared/src/schema.js";
+import { buildAugmentedSourceText, enrichmentEvidenceSnippets } from "./enrichment.js";
 
 type ChemicalAliasEntry = {
   canonicalName: string;
@@ -473,9 +475,13 @@ function buildProtocolSteps(sentences: string[]) {
   return steps;
 }
 
-export function extractIsletProtocol(domainPaper: DomainPaper): ProtocolExtraction {
+export function extractIsletProtocol(
+  domainPaper: DomainPaper,
+  sourceEnrichment?: SourceEnrichmentRecord
+): ProtocolExtraction {
   const paper = domainPaper.paper;
-  const sentences = splitSentences(`${paper.title}. ${paper.abstract ?? ""}`);
+  const sourceText = buildAugmentedSourceText("islets", paper, sourceEnrichment);
+  const sentences = splitSentences(sourceText);
   const paperType = classifyPaperType(paper);
   const protocolFamilyResult = inferProtocolFamily(paper.abstract ?? "", paper.title);
   const specimen = extractSpecimenTypes(paper.title, sentences);
@@ -504,7 +510,10 @@ export function extractIsletProtocol(domainPaper: DomainPaper): ProtocolExtracti
       ...chemicalMentions.flatMap((entry) => entry.evidence.map((snippet) => JSON.stringify(snippet))),
       ...temperatureMentions.evidence.map((entry) => JSON.stringify(entry)),
       ...durationMentions.evidence.map((entry) => JSON.stringify(entry)),
-      ...outcomeMentions.flatMap((entry) => entry.evidence.map((snippet) => JSON.stringify(snippet)))
+      ...outcomeMentions.flatMap((entry) => entry.evidence.map((snippet) => JSON.stringify(snippet))),
+      ...enrichmentEvidenceSnippets(sourceEnrichment).map((entry) =>
+        JSON.stringify(makeSnippet("source-enrichment", entry.text, entry.confidence))
+      )
     ]
   ).map((value) => EvidenceSnippetSchema.parse(JSON.parse(value)));
 

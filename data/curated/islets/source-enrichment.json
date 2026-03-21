@@ -1,0 +1,188 @@
+{
+  "generatedAt": "2026-03-21T04:08:37.718Z",
+  "domain": "islets",
+  "records": [
+    {
+      "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
+      "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+      "doi": "10.1006/cryo.1993.1040",
+      "priority": "ambiguous-evidence",
+      "status": "pending",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "excerpts": []
+    },
+    {
+      "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
+      "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+      "doi": "10.1111/j.1600-6143.2007.01741.x",
+      "priority": "ambiguous-evidence",
+      "status": "pending",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "excerpts": []
+    },
+    {
+      "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+      "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+      "doi": "10.1007/bf00428975",
+      "priority": "ambiguous-evidence",
+      "status": "pending",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "excerpts": []
+    },
+    {
+      "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+      "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+      "doi": "10.5301/IJAO.2011.8465",
+      "priority": "ambiguous-evidence",
+      "status": "pending",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "excerpts": []
+    },
+    {
+      "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+      "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+      "doi": "10.3727/000000004783983927",
+      "priority": "ambiguous-evidence",
+      "status": "pending",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "excerpts": []
+    },
+    {
+      "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",
+      "title": "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+      "doi": "10.2337/diab.38.1.s176",
+      "priority": "ambiguous-evidence",
+      "status": "pending",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "excerpts": []
+    },
+    {
+      "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+      "title": "Successful Cryopreservation of Fetal Porcine Proislets",
+      "doi": "10.1006/cryo.1993.1024",
+      "priority": "ambiguous-evidence",
+      "status": "pending",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "excerpts": []
+    },
+    {
+      "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+      "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+      "doi": "10.1159/000129396",
+      "priority": "ambiguous-evidence",
+      "status": "pending",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "excerpts": []
+    },
+    {
+      "paperId": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
+      "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+      "doi": "10.1016/0011-2240(87)90033-2",
+      "priority": "ambiguous-evidence",
+      "status": "pending",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "excerpts": []
+    },
+    {
+      "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
+      "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+      "doi": "10.1177/096368979600500306",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "excerpts": []
+    },
+    {
+      "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
+      "title": "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+      "doi": "10.1097/00007890-199402150-00005",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "excerpts": []
+    },
+    {
+      "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+      "title": "CRYOPRESERVATION OF CHICK ISLETS",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "excerpts": []
+    },
+    {
+      "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
+      "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+      "doi": "10.1016/j.transproceed.2007.02.076",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "excerpts": []
+    },
+    {
+      "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+      "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+      "doi": "10.3727/000000008783907026",
+      "paperUrl": "http://www.cognizantcommunication.com",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "excerpts": []
+    },
+    {
+      "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
+      "title": "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+      "doi": "10.1292/jvms.57.859",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "excerpts": []
+    },
+    {
+      "paperId": "6c01e238-01b1-444d-ba8c-cbfb77cd7181",
+      "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+      "doi": "10.1089/bio.2017.0044",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "excerpts": []
+    },
+    {
+      "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+      "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+      "doi": "10.1016/j.cryobiol.2019.03.009",
+      "paperUrl": "https://doi.org/10.1016/j.cryobiol.2019.03.009",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "excerpts": []
+    },
+    {
+      "paperId": "1453f932-2e03-42a3-968a-9efaf2b3233e",
+      "title": "USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION",
+      "doi": "10.1177/096368979700600612",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "excerpts": []
+    },
+    {
+      "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
+      "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+      "doi": "10.1016/j.lfs.2007.10.026",
+      "paperUrl": "https://www.sciencedirect.com/science/article/pii/S0024320507005237",
+      "priority": "step-phase-manual",
+      "status": "pending",
+      "rationale": "Step phases for \"Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation\" still require manual or fuller-source confirmation before benchmark promotion.",
+      "excerpts": []
+    },
+    {
+      "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
+      "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+      "doi": "10.1016/s0041-1345(01)02875-5",
+      "priority": "step-phase-manual",
+      "status": "pending",
+      "rationale": "Step phases for \"Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets\" still require manual or fuller-source confirmation before benchmark promotion.",
+      "excerpts": []
+    }
+  ]
+}

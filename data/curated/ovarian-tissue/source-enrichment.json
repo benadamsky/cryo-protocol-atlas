@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-03-21T04:08:37.885Z",
+  "domain": "ovarian-tissue",
+  "records": [
+    {
+      "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+      "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "no resolved extraction available for this reviewed paper",
+      "excerpts": []
+    },
+    {
+      "paperId": "eb9d9be6-4244-4e4b-892e-ba809925613a",
+      "title": "Cryopreservation and in vitro culture of caprine preantral follicles",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "no resolved extraction available for this reviewed paper",
+      "excerpts": []
+    },
+    {
+      "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+      "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "no resolved extraction available for this reviewed paper",
+      "excerpts": []
+    },
+    {
+      "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+      "title": "Ovarian and oocyte cryopreservation",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "rationale": "no resolved extraction available for this reviewed paper",
+      "excerpts": []
+    }
+  ]
+}
