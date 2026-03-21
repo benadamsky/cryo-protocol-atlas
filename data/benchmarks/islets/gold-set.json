@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T03:49:41.337Z",
+  "generatedAt": "2026-03-21T04:18:22.070Z",
   "domain": "islets",
   "description": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "entries": [
@@ -827,6 +827,11 @@
       "expectedOutcomeClasses": [
         "viability"
       ],
+      "expectedStepPhases": [
+        "cooling",
+        "storage",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
         "paperType": "experimental",
@@ -838,6 +843,38 @@
           "islets",
           "pancreatic islets"
         ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "storage",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "warming",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
         "outcomeMentions": [
           {
             "outcomeClass": "viability",
@@ -848,7 +885,7 @@
         ],
         "extractionConfidence": 0.8
       },
-      "notes": "Curcumin adjunct study built on a DMSO cryopreservation workflow for mouse pancreatic islets. Accepted benchmark autofill proposal benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:outcomeClasses+stepPhases."
+      "notes": "Curcumin adjunct study built on a DMSO cryopreservation workflow for mouse pancreatic islets. Accepted benchmark autofill proposal benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:outcomeClasses+stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:stepPhases."
     },
     {
       "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
@@ -1564,6 +1601,15 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "morphology",
+        "transplantation",
+        "viability"
+      ],
+      "expectedStepPhases": [
+        "cooling"
+      ],
       "expectedOverridePatch": {
         "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
         "paperType": "experimental",
@@ -1575,9 +1621,47 @@
           "islets",
           "pancreatic islets"
         ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "morphology",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: morphology.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "transplantation",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: transplantation.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.8
       },
-      "notes": "Human islet cryopreservation study testing a p38 MAPK inhibitor within an established freezing workflow."
+      "notes": "Human islet cryopreservation study testing a p38 MAPK inhibitor within an established freezing workflow. Accepted benchmark autofill proposal benchmark-depth-autofill:7cbe1db5-5f6a-4519-9713-bddca96212f7:outcomeClasses+stepPhases."
     },
     {
       "paperId": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",

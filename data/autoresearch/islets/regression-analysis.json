@@ -3,7 +3,7 @@
     "id": "reviewed-exclusion-regression",
     "description": "Remove a reviewed exclusion so a non-primary methods paper leaks back into the islet atlas.",
     "passed": true,
-    "proposalCount": 3,
+    "proposalCount": 1,
     "proposalFound": true,
     "matchedFields": [
       "excludeFromAtlas"
@@ -24,7 +24,7 @@
     "id": "reviewed-family-type-regression",
     "description": "Corrupt reviewed family/type labels for a known comparative islet preservation paper.",
     "passed": true,
-    "proposalCount": 3,
+    "proposalCount": 1,
     "proposalFound": true,
     "matchedFields": [
       "paperType",
@@ -46,7 +46,7 @@
     "id": "reviewed-specimen-regression",
     "description": "Drop reviewed encapsulated-islet context from a graft-function study.",
     "passed": true,
-    "proposalCount": 3,
+    "proposalCount": 1,
     "proposalFound": true,
     "matchedFields": [
       "specimenTypes"
@@ -67,7 +67,7 @@
     "id": "reviewed-outcome-regression",
     "description": "Corrupt reviewed outcome classes for a cryostored encapsulated-islet graft study.",
     "passed": true,
-    "proposalCount": 3,
+    "proposalCount": 1,
     "proposalFound": true,
     "matchedFields": [
       "outcomeClasses"
@@ -78,7 +78,7 @@
     "candidateReviewedProtocolFamilyAccuracy": 1,
     "currentReviewedPaperTypeAccuracy": 1,
     "candidateReviewedPaperTypeAccuracy": 1,
-    "currentReviewedOutcomeMacroF1": 0.958,
+    "currentReviewedOutcomeMacroF1": 0.96,
     "candidateReviewedOutcomeMacroF1": 1,
     "currentReviewedStepPhaseMacroF1": 1,
     "candidateReviewedStepPhaseMacroF1": 1,
@@ -88,7 +88,7 @@
     "id": "reviewed-step-phase-regression",
     "description": "Corrupt reviewed protocol step phases for a vitrification-versus-freezing comparison paper.",
     "passed": true,
-    "proposalCount": 3,
+    "proposalCount": 1,
     "proposalFound": true,
     "matchedFields": [
       "stepPhases"
@@ -101,7 +101,7 @@
     "candidateReviewedPaperTypeAccuracy": 1,
     "currentReviewedOutcomeMacroF1": 1,
     "candidateReviewedOutcomeMacroF1": 1,
-    "currentReviewedStepPhaseMacroF1": 0.974,
+    "currentReviewedStepPhaseMacroF1": 0.976,
     "candidateReviewedStepPhaseMacroF1": 1,
     "autoApplySafe": true
   }

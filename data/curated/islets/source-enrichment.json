@@ -1,20 +1,11 @@
 {
-  "generatedAt": "2026-03-21T04:08:37.718Z",
+  "generatedAt": "2026-03-21T04:17:42.373Z",
   "domain": "islets",
   "records": [
     {
       "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
       "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
       "doi": "10.1006/cryo.1993.1040",
-      "priority": "ambiguous-evidence",
-      "status": "pending",
-      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "excerpts": []
-    },
-    {
-      "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
-      "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
-      "doi": "10.1111/j.1600-6143.2007.01741.x",
       "priority": "ambiguous-evidence",
       "status": "pending",
       "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
@@ -82,6 +73,41 @@
       "status": "pending",
       "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
       "excerpts": []
+    },
+    {
+      "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
+      "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+      "doi": "10.1111/j.1600-6143.2007.01741.x",
+      "priority": "ambiguous-evidence",
+      "status": "reviewed",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "reviewerNotes": "Reviewed directly from the accessible American Journal of Transplantation full text on 2026-03-21. Added only conservative manual-note excerpts that make post-thaw outcomes and p38-inhibitor step context explicit.",
+      "excerpts": [
+        {
+          "id": "p38-methods-1",
+          "label": "methods review note",
+          "text": "Human islets were split across RPMI, ICS, and ICS-p38IH groups. For freezing, islets were exposed to 0.5 M DMSO for 20 min, then to 2.1 M DMSO on ice, loaded into chilled cryotubes, and moved into a computer-controlled cryounit starting at 4 C. In the ICS-p38IH arm, SD-282 was added at 0.3 uM in the cryopreservation and thawing media and at 0.1 uM during post-thaw culture.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "p38-results-1",
+          "label": "results review note",
+          "text": "Post-thaw recovery at day 2 was highest in the ICS-p38IH group, while viability remained similar across RPMI, ICS, and ICS-p38IH. Beta-cell number, morphology, and glucose-stimulated function were best preserved with ICS-p38IH compared with the other frozen groups.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "p38-results-2",
+          "label": "transplant results review note",
+          "text": "After transplantation into NODscid mice, glucose-stimulated human C-peptide from ICS-p38IH islets reached about 86 percent of nonfrozen controls by 4 weeks. In diabetic recipients, 4 of 5 mice receiving ICS-p38IH islets became and remained euglycemic through day 90, whereas most RPMI and ICS recipients did not reverse diabetes.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        }
+      ]
     },
     {
       "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",

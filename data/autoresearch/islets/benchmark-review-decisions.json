@@ -1,20 +1,21 @@
 {
-  "generatedAt": "2026-03-21T03:49:42.142Z",
+  "generatedAt": "2026-03-21T04:17:42.282Z",
   "domain": "islets",
-  "sourceProposalGeneratedAt": "2026-03-21T03:49:42.011Z",
-  "decisionCount": 2,
+  "sourceProposalGeneratedAt": "2026-03-21T04:17:15.971Z",
+  "decisionCount": 1,
   "decisions": [
     {
       "proposalId": "benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:stepPhases",
       "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
       "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
-      "decision": "pending"
-    },
-    {
-      "proposalId": "benchmark-depth-autofill:7cbe1db5-5f6a-4519-9713-bddca96212f7:stepPhases",
-      "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
-      "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
-      "decision": "pending"
+      "decision": "accept",
+      "acceptedStepPhases": [
+        "cooling",
+        "storage",
+        "warming"
+      ],
+      "reviewerNotes": "Accepted conservative step-phase patch because the extracted evidence explicitly shows controlled slow cooling, transfer into liquid nitrogen storage, and a thawing/warming step.",
+      "decidedAt": "2026-03-21T16:42:00.000Z"
     }
   ]
 }

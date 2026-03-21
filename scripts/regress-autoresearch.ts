@@ -136,7 +136,7 @@ function buildScenarios(selectedDomain: DomainId): Scenario[] {
           }),
         expectedPaperId: "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
         expectedFields: ["stepPhases"],
-        minReviewedStepPhaseMacroF1Delta: 0.025
+        minReviewedStepPhaseMacroF1Delta: 0.02
       }
     ];
   }

@@ -8,10 +8,6 @@
   paperId=51afcf7d-1bff-4630-808a-40407290f0d2
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=10.1006/cryo.1993.1040
-- [pending] Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor
-  paperId=7cbe1db5-5f6a-4519-9713-bddca96212f7
-  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
-  doi=10.1111/j.1600-6143.2007.01741.x
 - [pending] Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig
   paperId=6e4ea940-2dbd-4790-b848-c453f6a0f42a
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
@@ -40,6 +36,12 @@
   paperId=3e158dec-5b97-46f4-8b40-57e009e02cc0
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=10.1016/0011-2240(87)90033-2
+- [reviewed] Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor
+  paperId=7cbe1db5-5f6a-4519-9713-bddca96212f7
+  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
+  doi=10.1111/j.1600-6143.2007.01741.x
+  reviewerNotes=Reviewed directly from the accessible American Journal of Transplantation full text on 2026-03-21. Added only conservative manual-note excerpts that make post-thaw outcomes and p38-inhibitor step context explicit.
+  reviewedExcerpts=3
 
 ## Evidence-thin
 - [pending] Bulk Cryopreservation of Isolated Islets of Langerhans

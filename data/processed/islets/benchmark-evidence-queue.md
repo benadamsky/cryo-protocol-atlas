@@ -1,7 +1,7 @@
 # islets evidence resolution queue
 
-Outcome evidence gaps: extractor-gap=0, ambiguous-evidence=9, evidence-thin=9
-Step-phase gaps: 3
+Outcome evidence gaps: extractor-gap=0, ambiguous-evidence=8, evidence-thin=9
+Step-phase gaps: 1
 
 ## Extractor gaps
 Tighten outcome extraction or promotion policy; current source likely already contains enough signal.
@@ -12,9 +12,6 @@ Needs manual review or fuller source text before benchmark promotion.
 - Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques | family=slow-freezing type=experimental
   reason=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=https://doi.org/10.1006/cryo.1993.1040
-- Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor | family=slow-freezing type=experimental
-  reason=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
-  doi=https://doi.org/10.1111/j.1600-6143.2007.01741.x
 - Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig | family=slow-freezing type=experimental
   reason=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=https://doi.org/10.1007/bf00428975
@@ -67,9 +64,5 @@ Abstract/title appears too procedural; fetch fuller source or leave unlabeled.
   doi=https://doi.org/10.1177/096368979700600612
 
 ## Step-phase review remains manual
-- Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation | family=slow-freezing type=experimental
-  doi=https://doi.org/10.1016/j.lfs.2007.10.026
 - Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets | family=n/a type=experimental
   doi=https://doi.org/10.1016/s0041-1345(01)02875-5
-- Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor | family=slow-freezing type=experimental
-  doi=https://doi.org/10.1111/j.1600-6143.2007.01741.x
