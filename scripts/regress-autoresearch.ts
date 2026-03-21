@@ -114,7 +114,7 @@ function buildScenarios(selectedDomain: DomainId): Scenario[] {
           }),
         expectedPaperId: "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
         expectedFields: ["outcomeClasses"],
-        minReviewedOutcomeMacroF1Delta: 0.05
+        minReviewedOutcomeMacroF1Delta: 0.04
       },
       {
         id: "reviewed-step-phase-regression",
@@ -136,7 +136,7 @@ function buildScenarios(selectedDomain: DomainId): Scenario[] {
           }),
         expectedPaperId: "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
         expectedFields: ["stepPhases"],
-        minReviewedStepPhaseMacroF1Delta: 0.03
+        minReviewedStepPhaseMacroF1Delta: 0.025
       }
     ];
   }

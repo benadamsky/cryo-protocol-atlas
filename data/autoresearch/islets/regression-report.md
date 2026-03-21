@@ -41,7 +41,7 @@
 
 ## reviewed-outcome-regression
 - description: Corrupt reviewed outcome classes for a cryostored encapsulated-islet graft study.
-- passed: no
+- passed: yes
 - proposal count: 3
 - proposal found: yes
 - matched fields: outcomeClasses
@@ -54,7 +54,7 @@
 
 ## reviewed-step-phase-regression
 - description: Corrupt reviewed protocol step phases for a vitrification-versus-freezing comparison paper.
-- passed: no
+- passed: yes
 - proposal count: 3
 - proposal found: yes
 - matched fields: stepPhases

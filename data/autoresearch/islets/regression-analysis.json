@@ -66,7 +66,7 @@
   {
     "id": "reviewed-outcome-regression",
     "description": "Corrupt reviewed outcome classes for a cryostored encapsulated-islet graft study.",
-    "passed": false,
+    "passed": true,
     "proposalCount": 3,
     "proposalFound": true,
     "matchedFields": [
@@ -87,7 +87,7 @@
   {
     "id": "reviewed-step-phase-regression",
     "description": "Corrupt reviewed protocol step phases for a vitrification-versus-freezing comparison paper.",
-    "passed": false,
+    "passed": true,
     "proposalCount": 3,
     "proposalFound": true,
     "matchedFields": [

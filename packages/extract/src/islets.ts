@@ -32,6 +32,15 @@ const CHEMICAL_ALIASES: ChemicalAliasEntry[] = [
   { canonicalName: "Glycerol", aliases: ["glycerol"] },
   { canonicalName: "Sucrose", aliases: ["sucrose"] },
   { canonicalName: "Trehalose", aliases: ["trehalose"] },
+  { canonicalName: "Curcumin", aliases: ["curcumin"] },
+  { canonicalName: "Beraprost Sodium", aliases: ["beraprost sodium", "beraprost"] },
+  { canonicalName: "Hydroxyethyl Starch", aliases: ["hydroxyethyl starch", "hes"] },
+  { canonicalName: "Polyvinyl Pyrrolidone", aliases: ["polyvinyl pyrrolidone", "pvp"] },
+  { canonicalName: "Polyethylene Glycol", aliases: ["polyethylene glycol", "peg"] },
+  {
+    canonicalName: "Carboxylated epsilon-poly-L-lysine",
+    aliases: ["carboxylated ε-poly-l-lysine", "carboxylated e-poly-l-lysine", "epsilon-poly-l-lysine"]
+  },
   { canonicalName: "Alginate", aliases: ["alginate"] },
   { canonicalName: "Ficoll", aliases: ["ficoll"] },
   { canonicalName: "Raffinose", aliases: ["raffinose"] }
