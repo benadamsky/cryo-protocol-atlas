@@ -1,15 +1,16 @@
 {
   "domain": "ovarian-tissue",
-  "autoApplySafe": true,
+  "autoApplySafe": false,
   "currentEvaluation": {
     "domain": "ovarian-tissue",
-    "generatedAt": "2026-03-20T17:08:16.879Z",
+    "generatedAt": "2026-03-21T02:30:15.818Z",
     "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 28,
     "subsets": {
       "all": {
         "subset": "all",
         "entryCount": 28,
+        "expectedIncludedCount": 16,
         "inclusion": {
           "truePositive": 16,
           "trueNegative": 12,
@@ -74,6 +75,44 @@
             "mismatches": []
           }
         },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 16,
+            "labeledCount": 12,
+            "coverageRate": 0.75
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 16,
+            "labeledCount": 11,
+            "coverageRate": 0.688
+          }
+        },
         "confidence": {
           "averageOnExpectedIncluded": 0.795,
           "averageOnCorrectIncluded": 0.795,
@@ -85,6 +124,7 @@
       "reviewed": {
         "subset": "reviewed",
         "entryCount": 19,
+        "expectedIncludedCount": 7,
         "inclusion": {
           "truePositive": 7,
           "trueNegative": 12,
@@ -149,6 +189,44 @@
             "mismatches": []
           }
         },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 7,
+            "labeledCount": 3,
+            "coverageRate": 0.429
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 7,
+            "labeledCount": 2,
+            "coverageRate": 0.286
+          }
+        },
         "confidence": {
           "averageOnExpectedIncluded": 0.766,
           "averageOnCorrectIncluded": 0.766,
@@ -160,6 +238,7 @@
       "seeded": {
         "subset": "seeded",
         "entryCount": 9,
+        "expectedIncludedCount": 9,
         "inclusion": {
           "truePositive": 9,
           "trueNegative": 0,
@@ -224,6 +303,44 @@
             "mismatches": []
           }
         },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          }
+        },
         "confidence": {
           "averageOnExpectedIncluded": 0.818,
           "averageOnCorrectIncluded": 0.818,
@@ -285,18 +402,22 @@
     ],
     "summary": {
       "passesAllGates": true,
-      "reviewedInclusionF1DeltaVsAll": 0
+      "reviewedInclusionF1DeltaVsAll": 0,
+      "reviewedOutcomeCoverage": 0.429,
+      "reviewedStepPhaseCoverage": 0.286,
+      "reviewedMinimumDepthReady": false
     }
   },
   "candidateEvaluation": {
     "domain": "ovarian-tissue",
-    "generatedAt": "2026-03-20T17:08:16.880Z",
+    "generatedAt": "2026-03-21T02:30:15.820Z",
     "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 28,
     "subsets": {
       "all": {
         "subset": "all",
         "entryCount": 28,
+        "expectedIncludedCount": 16,
         "inclusion": {
           "truePositive": 16,
           "trueNegative": 12,
@@ -361,6 +482,44 @@
             "mismatches": []
           }
         },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 16,
+            "labeledCount": 12,
+            "coverageRate": 0.75
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 16,
+            "labeledCount": 11,
+            "coverageRate": 0.688
+          }
+        },
         "confidence": {
           "averageOnExpectedIncluded": 0.795,
           "averageOnCorrectIncluded": 0.795,
@@ -372,6 +531,7 @@
       "reviewed": {
         "subset": "reviewed",
         "entryCount": 19,
+        "expectedIncludedCount": 7,
         "inclusion": {
           "truePositive": 7,
           "trueNegative": 12,
@@ -436,6 +596,44 @@
             "mismatches": []
           }
         },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 7,
+            "labeledCount": 3,
+            "coverageRate": 0.429
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 7,
+            "labeledCount": 2,
+            "coverageRate": 0.286
+          }
+        },
         "confidence": {
           "averageOnExpectedIncluded": 0.766,
           "averageOnCorrectIncluded": 0.766,
@@ -447,6 +645,7 @@
       "seeded": {
         "subset": "seeded",
         "entryCount": 9,
+        "expectedIncludedCount": 9,
         "inclusion": {
           "truePositive": 9,
           "trueNegative": 0,
@@ -511,6 +710,44 @@
             "mismatches": []
           }
         },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          }
+        },
         "confidence": {
           "averageOnExpectedIncluded": 0.818,
           "averageOnCorrectIncluded": 0.818,
@@ -572,9 +809,491 @@
     ],
     "summary": {
       "passesAllGates": true,
-      "reviewedInclusionF1DeltaVsAll": 0
+      "reviewedInclusionF1DeltaVsAll": 0,
+      "reviewedOutcomeCoverage": 0.429,
+      "reviewedStepPhaseCoverage": 0.286,
+      "reviewedMinimumDepthReady": false
     }
   },
-  "proposalCount": 0,
+  "candidateBenchmarkEvaluation": {
+    "domain": "ovarian-tissue",
+    "generatedAt": "2026-03-21T02:30:15.820Z",
+    "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
+    "benchmarkEntryCount": 28,
+    "subsets": {
+      "all": {
+        "subset": "all",
+        "entryCount": 28,
+        "expectedIncludedCount": 16,
+        "inclusion": {
+          "truePositive": 16,
+          "trueNegative": 12,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 16,
+            "exactMatchCount": 16,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 16,
+            "exactMatchCount": 16,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 16,
+            "exactMatchCount": 16,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 16,
+            "exactMatchCount": 16,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 12,
+            "exactMatchCount": 12,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 13,
+            "exactMatchCount": 11,
+            "averageF1": 0.98,
+            "averagePrecision": 0.965,
+            "averageRecall": 1,
+            "mismatches": [
+              {
+                "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+                "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+                "expected": [
+                  "cooling",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage",
+                  "unknown",
+                  "warming"
+                ],
+                "f1": 0.857
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": [
+                  "assessment",
+                  "equilibration",
+                  "loading",
+                  "storage"
+                ],
+                "actual": [
+                  "assessment",
+                  "equilibration",
+                  "loading",
+                  "storage",
+                  "unknown"
+                ],
+                "f1": 0.889
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 16,
+            "labeledCount": 12,
+            "coverageRate": 0.75
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 16,
+            "labeledCount": 13,
+            "coverageRate": 0.813
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.795,
+          "averageOnCorrectIncluded": 0.795,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "reviewed": {
+        "subset": "reviewed",
+        "entryCount": 19,
+        "expectedIncludedCount": 7,
+        "inclusion": {
+          "truePositive": 7,
+          "trueNegative": 12,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 7,
+            "exactMatchCount": 7,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 7,
+            "exactMatchCount": 7,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 7,
+            "exactMatchCount": 7,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 7,
+            "exactMatchCount": 7,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 3,
+            "exactMatchCount": 3,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 4,
+            "exactMatchCount": 2,
+            "averageF1": 0.937,
+            "averagePrecision": 0.887,
+            "averageRecall": 1,
+            "mismatches": [
+              {
+                "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+                "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+                "expected": [
+                  "cooling",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage",
+                  "unknown",
+                  "warming"
+                ],
+                "f1": 0.857
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": [
+                  "assessment",
+                  "equilibration",
+                  "loading",
+                  "storage"
+                ],
+                "actual": [
+                  "assessment",
+                  "equilibration",
+                  "loading",
+                  "storage",
+                  "unknown"
+                ],
+                "f1": 0.889
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 7,
+            "labeledCount": 3,
+            "coverageRate": 0.429
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 7,
+            "labeledCount": 4,
+            "coverageRate": 0.571
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.766,
+          "averageOnCorrectIncluded": 0.766,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "seeded": {
+        "subset": "seeded",
+        "entryCount": 9,
+        "expectedIncludedCount": 9,
+        "inclusion": {
+          "truePositive": 9,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.818,
+          "averageOnCorrectIncluded": 0.818,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      }
+    },
+    "gates": [
+      {
+        "name": "reviewed inclusion F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against gaming the corpus by excluding reviewed in-scope papers."
+      },
+      {
+        "name": "reviewed inclusion precision",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against keeping clearly excluded reviewed papers in the atlas."
+      },
+      {
+        "name": "reviewed protocol family accuracy",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Reviewed family labels should stay stable before autonomous updates are trusted."
+      },
+      {
+        "name": "reviewed paper type accuracy",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Paper-type drift is a common failure mode when extraction gets too eager."
+      },
+      {
+        "name": "reviewed specimen macro F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+      },
+      {
+        "name": "reviewed species macro F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Species leakage is another easy way for the system to look cleaner than it is."
+      }
+    ],
+    "summary": {
+      "passesAllGates": true,
+      "reviewedInclusionF1DeltaVsAll": 0,
+      "reviewedOutcomeCoverage": 0.429,
+      "reviewedStepPhaseCoverage": 0.571,
+      "reviewedMinimumDepthReady": true
+    }
+  },
+  "proposalCount": 2,
+  "overrideProposalCount": 0,
+  "benchmarkProposalCount": 2,
   "candidateOverrideCount": 19
 }

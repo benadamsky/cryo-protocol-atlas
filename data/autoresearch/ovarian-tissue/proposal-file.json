@@ -1,7 +1,307 @@
 {
-  "generatedAt": "2026-03-20T17:08:16.880Z",
+  "generatedAt": "2026-03-21T02:30:15.820Z",
   "domain": "ovarian-tissue",
   "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
-  "proposalCount": 0,
-  "proposals": []
+  "proposalCount": 2,
+  "proposals": [
+    {
+      "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+      "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+      "benchmarkReviewStatus": "reviewed",
+      "source": "benchmark-depth-autofill",
+      "target": "benchmark",
+      "action": "update-benchmark",
+      "fields": [
+        "stepPhases"
+      ],
+      "benchmarkPatch": {
+        "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+        "expectedStepPhases": [
+          "assessment",
+          "equilibration",
+          "loading",
+          "storage"
+        ],
+        "expectedOverridePatch": {
+          "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+          "protocolSteps": [
+            {
+              "order": 0,
+              "phase": "storage",
+              "summary": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation.",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 1,
+              "phase": "loading",
+              "summary": "Three concentrations of cryoprotectants were used in DCV group.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "Three concentrations of cryoprotectants were used in DCV group.",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 2,
+              "phase": "equilibration",
+              "summary": "The equilibration solution of DCV1, DCV2, DCV3 was 5% EG + 5% DMSO + DPBS, 7.5% EG + 7.5% DMSO + DPBS, 10% EG + 10% DMSO + DPBS, respectively.",
+              "chemicals": [
+                "Dimethyl Sulfoxide",
+                "Ethylene Glycol"
+              ],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "The equilibration solution of DCV1, DCV2, DCV3 was 5% EG + 5% DMSO + DPBS, 7.5% EG + 7.5% DMSO + DPBS, 10% EG + 10% DMSO + DPBS, respectively.",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 3,
+              "phase": "equilibration",
+              "summary": "The equilibration solution and the vitriﬁcation solution of CV group was same as DCV3 group.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "The equilibration solution and the vitriﬁcation solution of CV group was same as DCV3 group.",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 4,
+              "phase": "assessment",
+              "summary": "The effects of cryopreserved procedure on human ovarian tissue were studied by histology, TUNEL assay, transmission electron microscopy (TEM) and heterotopic allograft.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "The effects of cryopreserved procedure on human ovarian tissue were studied by histology, TUNEL assay, transmission electron microscopy (TEM) and heterotopic allograft.",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 5,
+              "phase": "storage",
+              "summary": "TUNEL assay demonstrated that the incidence of apoptotic cell in vitriﬁcation ovarian tissue was signiﬁcantly higher than fresh tissue (P < 0.05), but there were no difference in various groups with cryopreservation.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "TUNEL assay demonstrated that the incidence of apoptotic cell in vitriﬁcation ovarian tissue was signiﬁcantly higher than fresh tissue (P < 0.05), but there were no difference in various groups with cryopreservation.",
+                  "confidence": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        "notes": "Autogenerated benchmark depth candidate from the resolved extraction."
+      },
+      "proposalConfidence": 0.759,
+      "evidenceSummary": [
+        "step: equilibration | The equilibration solution of DCV1, DCV2, DCV3 was 5% EG + 5% DMSO + DPBS, 7.5% EG + 7.5% DMSO + DPBS, 10% EG + 10% DMSO + DPBS, respectively.",
+        "step: loading | Three concentrations of cryoprotectants were used in DCV group.",
+        "step: storage | Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation."
+      ],
+      "rationale": "Reviewed in-scope paper is missing benchmark depth labels, but the resolved extraction has explicit protocol/outcome structure that can be promoted for review.",
+      "expectedImpact": [
+        "increase reviewed benchmark depth coverage",
+        "create higher-signal review work without changing applied overrides"
+      ]
+    },
+    {
+      "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+      "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+      "benchmarkReviewStatus": "reviewed",
+      "source": "benchmark-depth-autofill",
+      "target": "benchmark",
+      "action": "update-benchmark",
+      "fields": [
+        "stepPhases"
+      ],
+      "benchmarkPatch": {
+        "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+        "expectedStepPhases": [
+          "cooling",
+          "storage",
+          "warming"
+        ],
+        "expectedOverridePatch": {
+          "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+          "protocolSteps": [
+            {
+              "order": 0,
+              "phase": "storage",
+              "summary": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry.",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 1,
+              "phase": "storage",
+              "summary": "The method for preserving prepubescent girls’ fertility, which is also suitable for women, is ovarian tissue cryopreservation (OTC).",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "The method for preserving prepubescent girls’ fertility, which is also suitable for women, is ovarian tissue cryopreservation (OTC).",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 2,
+              "phase": "warming",
+              "summary": "The literature indeed reports numerous protocols for freezing and thawing ovarian tissue, with no clear rationale for selection criteria.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "The literature indeed reports numerous protocols for freezing and thawing ovarian tissue, with no clear rationale for selection criteria.",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 5,
+              "phase": "cooling",
+              "summary": "With these parameters, we optimized a freezing protocol in a programmable freezer (Nano-Digitcool, Cryo Bio System) and a thawing protocol.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "With these parameters, we optimized a freezing protocol in a programmable freezer (Nano-Digitcool, Cryo Bio System) and a thawing protocol.",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 6,
+              "phase": "cooling",
+              "summary": "The freezing curve was as follows: 5 min at 4 °C, 1 °C/min to -7 °C, seeding: -60 °C/min to -32 °C, and 10 °C/min to -15 °C, 0.3 °C/min to -40 °C, 10 °C/min to -140 °C.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [
+                "4 °C",
+                "1 °C",
+                "-7 °C",
+                "-60 °C",
+                "-32 °C",
+                "10 °C",
+                "-15 °C",
+                "0.3 °C",
+                "-40 °C",
+                "-140 °C"
+              ],
+              "durations": [
+                "5 min"
+              ],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "The freezing curve was as follows: 5 min at 4 °C, 1 °C/min to -7 °C, seeding: -60 °C/min to -32 °C, and 10 °C/min to -15 °C, 0.3 °C/min to -40 °C, 10 °C/min to -140 °C.",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 7,
+              "phase": "warming",
+              "summary": "The thawing protocol consisted in a 3.5-min step in a cold chamber to reach slowly Tg’, limiting thermal and mechanical shocks, and then a 2-min incubation at 37 °C to quickly reach Tm.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [
+                "37 °C"
+              ],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "The thawing protocol consisted in a 3.5-min step in a cold chamber to reach slowly Tg’, limiting thermal and mechanical shocks, and then a 2-min incubation at 37 °C to quickly reach Tm.",
+                  "confidence": 0.75
+                }
+              ]
+            },
+            {
+              "order": 8,
+              "phase": "cooling",
+              "summary": "Ovarian tissue frozen-thawed according to these protocols had a similar quality to that of fresh tissue and could resume folliculogenesis during organotypic culture.",
+              "chemicals": [],
+              "concentrations": [],
+              "temperatures": [],
+              "durations": [],
+              "evidence": [
+                {
+                  "kind": "protocol-family",
+                  "text": "Ovarian tissue frozen-thawed according to these protocols had a similar quality to that of fresh tissue and could resume folliculogenesis during organotypic culture.",
+                  "confidence": 0.75
+                }
+              ]
+            }
+          ]
+        },
+        "notes": "Autogenerated benchmark depth candidate from the resolved extraction."
+      },
+      "proposalConfidence": 0.755,
+      "evidenceSummary": [
+        "step: storage | Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry.",
+        "step: storage | The method for preserving prepubescent girls’ fertility, which is also suitable for women, is ovarian tissue cryopreservation (OTC).",
+        "step: warming | The literature indeed reports numerous protocols for freezing and thawing ovarian tissue, with no clear rationale for selection criteria."
+      ],
+      "rationale": "Reviewed in-scope paper is missing benchmark depth labels, but the resolved extraction has explicit protocol/outcome structure that can be promoted for review.",
+      "expectedImpact": [
+        "increase reviewed benchmark depth coverage",
+        "create higher-signal review work without changing applied overrides"
+      ]
+    }
+  ]
 }

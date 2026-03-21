@@ -257,16 +257,44 @@ export const ProposalFieldSchema = z.enum([
 ]);
 export type ProposalField = z.infer<typeof ProposalFieldSchema>;
 
-export const ProposalActionSchema = z.enum(["create-override", "update-override", "exclude-paper"]);
+export const ProposalActionSchema = z.enum([
+  "create-override",
+  "update-override",
+  "exclude-paper",
+  "update-benchmark"
+]);
 export type ProposalAction = z.infer<typeof ProposalActionSchema>;
+
+export const ProposalTargetSchema = z.enum(["override", "benchmark"]);
+export type ProposalTarget = z.infer<typeof ProposalTargetSchema>;
+
+export const ProposalSourceSchema = z.enum([
+  "reviewed-benchmark-repair",
+  "benchmark-depth-autofill"
+]);
+export type ProposalSource = z.infer<typeof ProposalSourceSchema>;
+
+export const BenchmarkPatchSchema = z.object({
+  paperId: z.string(),
+  expectedOutcomeClasses: z.array(OutcomeClassSchema).optional(),
+  expectedStepPhases: z.array(ProtocolPhaseSchema).optional(),
+  expectedOverridePatch: ProtocolOverrideSchema.optional(),
+  notes: z.string().optional()
+});
+export type BenchmarkPatch = z.infer<typeof BenchmarkPatchSchema>;
 
 export const AutoresearchProposalSchema = z.object({
   paperId: z.string(),
   title: z.string(),
   benchmarkReviewStatus: BenchmarkReviewStatusSchema,
+  source: ProposalSourceSchema,
+  target: ProposalTargetSchema,
   action: ProposalActionSchema,
   fields: z.array(ProposalFieldSchema),
-  override: ProtocolOverrideSchema,
+  override: ProtocolOverrideSchema.optional(),
+  benchmarkPatch: BenchmarkPatchSchema.optional(),
+  proposalConfidence: z.number().min(0).max(1),
+  evidenceSummary: z.array(z.string()),
   rationale: z.string(),
   expectedImpact: z.array(z.string())
 });

@@ -75,10 +75,11 @@ This is still not a discovery engine. It is the evaluation scaffold that lets fu
 `bun run loop:<domain>` runs the first safe loop:
 
 - compares the current resolved atlas against the frozen reviewed benchmark
-- generates benchmark-backed override proposals only for reviewed mismatches
+- generates benchmark-backed override proposals for reviewed mismatches
+- generates review-only benchmark depth proposals when reviewed in-scope papers have explicit outcome/step structure that is still missing from the benchmark
 - scores the candidate proposal set before any apply step
 - writes loop artifacts under `data/autoresearch/<domain>/`
 
-This loop is intentionally conservative. It does not rewrite the benchmark, it does not invent new scientific labels, and it should only auto-apply proposals when the reviewed gates are preserved or improved.
+This loop is intentionally conservative. It does not auto-apply benchmark patches, it does not invent new scientific labels from thin evidence, and it should only auto-apply override proposals when the reviewed gates are preserved or improved.
 
 `bun run regress:<domain>` runs deliberate perturbation scenarios against the current reviewed benchmark and verifies that the loop proposes the expected reviewed-paper fixes. This is the main proof that the loop can recover from benchmark regressions instead of only reporting no-ops on a clean slice.

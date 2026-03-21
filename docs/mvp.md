@@ -61,5 +61,6 @@ And an evaluation harness that answers:
 - `reviewed` benchmark entries are the main quality gate.
 - `seeded` benchmark entries provide broader regression coverage, but should not be treated as equally strong truth targets.
 - Future autoresearch loops should optimize against reviewed gates first, then improve seeded coverage without rewriting the benchmark itself.
-- The current loop is intentionally narrow: it only proposes reviewed benchmark-backed override changes and scores them before any apply step.
-- The islet slice is not benchmark-ready yet; it is scaffolded so the same curation and benchmarking workflow can be repeated on a second domain.
+- The current loop is intentionally narrow: it auto-applies only reviewed benchmark-backed override repairs, while any benchmark depth expansion stays review-only.
+- Benchmark depth proposals are only generated when the resolved extraction already contains explicit outcome/step structure for a reviewed in-scope paper.
+- The ovarian and islet slices now both support ingest -> curate -> benchmark -> repair-loop regression testing.

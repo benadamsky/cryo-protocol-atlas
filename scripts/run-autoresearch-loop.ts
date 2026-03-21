@@ -13,11 +13,15 @@ const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
 const applyChanges = process.argv.includes("--apply");
 
 function renderLoopMarkdown(result: ReturnType<typeof runAutoresearchLoop>): string {
+  const overrideProposals = result.proposalFile.proposals.filter((proposal) => proposal.target === "override");
+  const benchmarkProposals = result.proposalFile.proposals.filter((proposal) => proposal.target === "benchmark");
   const lines: string[] = [];
   lines.push(`# ${result.proposalFile.domain} autoresearch loop`);
   lines.push("");
   lines.push(`Proposals generated: ${result.proposalFile.proposalCount}`);
-  lines.push(`Auto-apply safe: ${result.autoApplySafe ? "yes" : "no"}`);
+  lines.push(`- override proposals: ${overrideProposals.length}`);
+  lines.push(`- benchmark proposals: ${benchmarkProposals.length}`);
+  lines.push(`Override auto-apply safe: ${result.autoApplySafe ? "yes" : "no"}`);
   lines.push("");
   lines.push("## Benchmark state");
   lines.push(
@@ -38,6 +42,18 @@ function renderLoopMarkdown(result: ReturnType<typeof runAutoresearchLoop>): str
   lines.push(
     `- candidate reviewed paper type accuracy: ${result.candidateEvaluation.subsets.reviewed.exactFields.paperType.accuracy}`
   );
+  lines.push(
+    `- current reviewed outcome coverage: ${result.currentEvaluation.subsets.reviewed.coverage.outcomeClasses.coverageRate}`
+  );
+  lines.push(
+    `- prospective reviewed outcome coverage: ${result.candidateBenchmarkEvaluation.subsets.reviewed.coverage.outcomeClasses.coverageRate}`
+  );
+  lines.push(
+    `- current reviewed step-phase coverage: ${result.currentEvaluation.subsets.reviewed.coverage.stepPhases.coverageRate}`
+  );
+  lines.push(
+    `- prospective reviewed step-phase coverage: ${result.candidateBenchmarkEvaluation.subsets.reviewed.coverage.stepPhases.coverageRate}`
+  );
   lines.push("");
   lines.push("## Proposals");
 
@@ -46,9 +62,12 @@ function renderLoopMarkdown(result: ReturnType<typeof runAutoresearchLoop>): str
   } else {
     for (const proposal of result.proposalFile.proposals) {
       lines.push(
-        `- ${proposal.action} | ${proposal.title} | fields=${proposal.fields.join(", ")}`
+        `- ${proposal.action} | target=${proposal.target} source=${proposal.source} | ${proposal.title} | fields=${proposal.fields.join(", ")} | confidence=${proposal.proposalConfidence}`
       );
       lines.push(`  rationale=${proposal.rationale}`);
+      if (proposal.evidenceSummary.length > 0) {
+        lines.push(`  evidence=${proposal.evidenceSummary.join(" || ")}`);
+      }
       lines.push(`  expectedImpact=${proposal.expectedImpact.join("; ")}`);
     }
   }
@@ -91,7 +110,10 @@ async function main(selectedDomain: DomainId, shouldApply: boolean): Promise<voi
         autoApplySafe: result.autoApplySafe,
         currentEvaluation: result.currentEvaluation,
         candidateEvaluation: result.candidateEvaluation,
+        candidateBenchmarkEvaluation: result.candidateBenchmarkEvaluation,
         proposalCount: result.proposalFile.proposalCount,
+        overrideProposalCount: result.proposalFile.proposals.filter((proposal) => proposal.target === "override").length,
+        benchmarkProposalCount: result.proposalFile.proposals.filter((proposal) => proposal.target === "benchmark").length,
         candidateOverrideCount: result.candidateOverrideCount
       },
       null,
@@ -104,7 +126,9 @@ async function main(selectedDomain: DomainId, shouldApply: boolean): Promise<voi
   if (shouldApply && result.autoApplySafe && result.proposalFile.proposals.length > 0) {
     const nextOverrideFile = mergeProtocolOverrides(
       overrideFile,
-      result.proposalFile.proposals.map((proposal) => proposal.override)
+      result.proposalFile.proposals
+        .map((proposal) => proposal.override)
+        .filter((override): override is NonNullable<typeof override> => Boolean(override))
     );
     if (nextOverrideFile) {
       await writeFile(join(curatedDir, "protocol-overrides.json"), JSON.stringify(nextOverrideFile, null, 2), "utf8");
@@ -116,10 +140,16 @@ async function main(selectedDomain: DomainId, shouldApply: boolean): Promise<voi
       {
         domain: selectedDomain,
         proposalCount: result.proposalFile.proposalCount,
+        overrideProposalCount: result.proposalFile.proposals.filter((proposal) => proposal.target === "override").length,
+        benchmarkProposalCount: result.proposalFile.proposals.filter((proposal) => proposal.target === "benchmark").length,
         autoApplySafe: result.autoApplySafe,
         applied: shouldApply && result.autoApplySafe && result.proposalFile.proposals.length > 0,
         reviewedInclusionF1: result.currentEvaluation.subsets.reviewed.inclusion.f1,
-        candidateReviewedInclusionF1: result.candidateEvaluation.subsets.reviewed.inclusion.f1
+        candidateReviewedInclusionF1: result.candidateEvaluation.subsets.reviewed.inclusion.f1,
+        prospectiveReviewedOutcomeCoverage:
+          result.candidateBenchmarkEvaluation.subsets.reviewed.coverage.outcomeClasses.coverageRate,
+        prospectiveReviewedStepPhaseCoverage:
+          result.candidateBenchmarkEvaluation.subsets.reviewed.coverage.stepPhases.coverageRate
       },
       null,
       2

@@ -313,7 +313,13 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const results: ScenarioResult[] = buildScenarios(selectedDomain).map((scenario) => {
     const perturbedOverrideFile = scenario.mutate(overrideFile);
     const loopResult = runAutoresearchLoop(extractionSnapshot, benchmark, perturbedOverrideFile);
-    const proposal = loopResult.proposalFile.proposals.find((candidate) => candidate.paperId === scenario.expectedPaperId);
+    const proposal =
+      loopResult.proposalFile.proposals.find(
+        (candidate) =>
+          candidate.paperId === scenario.expectedPaperId &&
+          scenario.expectedFields.every((field) => candidate.fields.includes(field))
+      ) ??
+      loopResult.proposalFile.proposals.find((candidate) => candidate.paperId === scenario.expectedPaperId);
     const matchedFields = proposal ? proposal.fields.slice().sort((a, b) => a.localeCompare(b)) : [];
 
     const result: ScenarioResult = {
