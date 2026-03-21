@@ -3,7 +3,7 @@
   "autoApplySafe": false,
   "currentEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:09:23.745Z",
+    "generatedAt": "2026-03-21T03:16:38.610Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -58,20 +58,20 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 18,
-            "exactMatchCount": 18,
-            "averageF1": 0.889,
-            "averagePrecision": 0.889,
+            "labeledCount": 26,
+            "exactMatchCount": 26,
+            "averageF1": 0.923,
+            "averagePrecision": 0.923,
             "averageRecall": 1,
             "mismatches": []
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 36,
-            "exactMatchCount": 32,
-            "averageF1": 0.94,
-            "averagePrecision": 0.944,
-            "averageRecall": 0.944,
+            "labeledCount": 38,
+            "exactMatchCount": 34,
+            "averageF1": 0.943,
+            "averagePrecision": 0.947,
+            "averageRecall": 0.947,
             "mismatches": [
               {
                 "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
@@ -152,19 +152,19 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 16,
-            "coverageRate": 0.348
+            "labeledCount": 24,
+            "coverageRate": 0.522
           },
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 46,
-            "labeledCount": 36,
-            "coverageRate": 0.783
+            "labeledCount": 38,
+            "coverageRate": 0.826
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.837,
-          "averageOnCorrectIncluded": 0.837,
+          "averageOnExpectedIncluded": 0.84,
+          "averageOnCorrectIncluded": 0.84,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -221,8 +221,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 14,
-            "exactMatchCount": 14,
+            "labeledCount": 22,
+            "exactMatchCount": 22,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -230,8 +230,8 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 32,
-            "exactMatchCount": 32,
+            "labeledCount": 34,
+            "exactMatchCount": 34,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -266,19 +266,19 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 14,
-            "coverageRate": 0.333
+            "labeledCount": 22,
+            "coverageRate": 0.524
           },
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 42,
-            "labeledCount": 32,
-            "coverageRate": 0.762
+            "labeledCount": 34,
+            "coverageRate": 0.81
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.836,
-          "averageOnCorrectIncluded": 0.836,
+          "averageOnExpectedIncluded": 0.84,
+          "averageOnCorrectIncluded": 0.84,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -501,14 +501,14 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.333,
-      "reviewedStepPhaseCoverage": 0.762,
-      "reviewedMinimumDepthReady": false
+      "reviewedOutcomeCoverage": 0.524,
+      "reviewedStepPhaseCoverage": 0.81,
+      "reviewedMinimumDepthReady": true
     }
   },
   "candidateEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:09:23.747Z",
+    "generatedAt": "2026-03-21T03:16:38.612Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -563,20 +563,20 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 18,
-            "exactMatchCount": 18,
-            "averageF1": 0.889,
-            "averagePrecision": 0.889,
+            "labeledCount": 26,
+            "exactMatchCount": 26,
+            "averageF1": 0.923,
+            "averagePrecision": 0.923,
             "averageRecall": 1,
             "mismatches": []
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 36,
-            "exactMatchCount": 32,
-            "averageF1": 0.94,
-            "averagePrecision": 0.944,
-            "averageRecall": 0.944,
+            "labeledCount": 38,
+            "exactMatchCount": 34,
+            "averageF1": 0.943,
+            "averagePrecision": 0.947,
+            "averageRecall": 0.947,
             "mismatches": [
               {
                 "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
@@ -657,19 +657,19 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 16,
-            "coverageRate": 0.348
+            "labeledCount": 24,
+            "coverageRate": 0.522
           },
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 46,
-            "labeledCount": 36,
-            "coverageRate": 0.783
+            "labeledCount": 38,
+            "coverageRate": 0.826
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.837,
-          "averageOnCorrectIncluded": 0.837,
+          "averageOnExpectedIncluded": 0.84,
+          "averageOnCorrectIncluded": 0.84,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -726,8 +726,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 14,
-            "exactMatchCount": 14,
+            "labeledCount": 22,
+            "exactMatchCount": 22,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -735,8 +735,8 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 32,
-            "exactMatchCount": 32,
+            "labeledCount": 34,
+            "exactMatchCount": 34,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -771,19 +771,19 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 14,
-            "coverageRate": 0.333
+            "labeledCount": 22,
+            "coverageRate": 0.524
           },
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 42,
-            "labeledCount": 32,
-            "coverageRate": 0.762
+            "labeledCount": 34,
+            "coverageRate": 0.81
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.836,
-          "averageOnCorrectIncluded": 0.836,
+          "averageOnExpectedIncluded": 0.84,
+          "averageOnCorrectIncluded": 0.84,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1006,14 +1006,14 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.333,
-      "reviewedStepPhaseCoverage": 0.762,
-      "reviewedMinimumDepthReady": false
+      "reviewedOutcomeCoverage": 0.524,
+      "reviewedStepPhaseCoverage": 0.81,
+      "reviewedMinimumDepthReady": true
     }
   },
   "candidateBenchmarkEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:09:23.749Z",
+    "generatedAt": "2026-03-21T03:16:38.614Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -1068,10 +1068,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 18,
-            "exactMatchCount": 18,
-            "averageF1": 0.889,
-            "averagePrecision": 0.889,
+            "labeledCount": 27,
+            "exactMatchCount": 27,
+            "averageF1": 0.926,
+            "averagePrecision": 0.926,
             "averageRecall": 1,
             "mismatches": []
           },
@@ -1162,8 +1162,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 16,
-            "coverageRate": 0.348
+            "labeledCount": 25,
+            "coverageRate": 0.543
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1173,8 +1173,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.837,
-          "averageOnCorrectIncluded": 0.837,
+          "averageOnExpectedIncluded": 0.84,
+          "averageOnCorrectIncluded": 0.84,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1231,8 +1231,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 14,
-            "exactMatchCount": 14,
+            "labeledCount": 23,
+            "exactMatchCount": 23,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -1276,8 +1276,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 14,
-            "coverageRate": 0.333
+            "labeledCount": 23,
+            "coverageRate": 0.548
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1287,8 +1287,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.836,
-          "averageOnCorrectIncluded": 0.836,
+          "averageOnExpectedIncluded": 0.84,
+          "averageOnCorrectIncluded": 0.84,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1511,13 +1511,13 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.333,
+      "reviewedOutcomeCoverage": 0.548,
       "reviewedStepPhaseCoverage": 0.857,
-      "reviewedMinimumDepthReady": false
+      "reviewedMinimumDepthReady": true
     }
   },
-  "proposalCount": 4,
+  "proposalCount": 2,
   "overrideProposalCount": 0,
-  "benchmarkProposalCount": 4,
+  "benchmarkProposalCount": 2,
   "candidateOverrideCount": 49
 }

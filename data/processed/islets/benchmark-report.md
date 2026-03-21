@@ -10,9 +10,9 @@ All gates passed: yes
 - expected included entries: 46
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
-- set macro F1: species=1 specimen=1 outcomes=0.889 stepPhases=0.94
-- field coverage: paperType=1 protocolFamily=0.826 species=0.826 specimen=0.826 outcomes=0.348 stepPhases=0.783
-- confidence: expectedIncluded=0.837 correctIncluded=0.837 incorrectIncluded=n/a
+- set macro F1: species=1 specimen=1 outcomes=0.923 stepPhases=0.943
+- field coverage: paperType=1 protocolFamily=0.826 species=0.826 specimen=0.826 outcomes=0.522 stepPhases=0.826
+- confidence: expectedIncluded=0.84 correctIncluded=0.84 incorrectIncluded=n/a
 
 ## reviewed subset
 - entries: 49
@@ -20,8 +20,8 @@ All gates passed: yes
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
 - set macro F1: species=1 specimen=1 outcomes=1 stepPhases=1
-- field coverage: paperType=1 protocolFamily=0.81 species=0.81 specimen=0.81 outcomes=0.333 stepPhases=0.762
-- confidence: expectedIncluded=0.836 correctIncluded=0.836 incorrectIncluded=n/a
+- field coverage: paperType=1 protocolFamily=0.81 species=0.81 specimen=0.81 outcomes=0.524 stepPhases=0.81
+- confidence: expectedIncluded=0.84 correctIncluded=0.84 incorrectIncluded=n/a
 
 ## seeded subset
 - entries: 4
@@ -47,9 +47,9 @@ All gates passed: yes
   Species leakage is another easy way for the system to look cleaner than it is.
 
 ## Reviewed depth
-- reviewed outcome coverage: 0.333
-- reviewed step-phase coverage: 0.762
-- reviewed minimum-depth ready: no
+- reviewed outcome coverage: 0.524
+- reviewed step-phase coverage: 0.81
+- reviewed minimum-depth ready: yes
 
 ## Baseline vs resolved
 - reviewed inclusion F1 delta: 0.077
@@ -65,11 +65,11 @@ All gates passed: yes
 - inclusion: precision=0.857 recall=1 f1=0.923
 - exact: paperType=0.881 protocolFamily=0.176
 - set macro F1: species=0.951 specimen=0.984
-- coverage: outcomes=0.333 stepPhases=0.762
+- coverage: outcomes=0.524 stepPhases=0.81
 
 ## Reviewed depth gaps
-- reviewed entries missing outcome labels: 28
-- reviewed entries missing step-phase labels: 10
+- reviewed entries missing outcome labels: 20
+- reviewed entries missing step-phase labels: 8
 
 ### Missing reviewed outcomes
 - Bulk Cryopreservation of Isolated Islets of Langerhans | family=n/a type=experimental
@@ -77,16 +77,16 @@ All gates passed: yes
 - CRYOPRESERVATION OF CHICK ISLETS | family=slow-freezing type=experimental
 - Cryopreservation of Freshly Isolated Porcine Islet Cells | family=slow-freezing type=experimental
 - Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants | family=slow-freezing type=experimental
-- Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival | family=slow-freezing type=experimental
 - Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques | family=slow-freezing type=experimental
 - Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation | family=slow-freezing type=experimental
 - Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation | family=n/a type=experimental
-- Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets | family=n/a type=experimental
-- Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents | family=slow-freezing type=experimental
-- Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium | family=slow-freezing type=experimental
 - Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor | family=slow-freezing type=experimental
-- Interaction of Cooling Rate, Warming Rate, and Extent of Permeation of Cryoprotectant in Determining Survival of Isolated Rat Islets of Langerhans During Cryopreservation | family=slow-freezing type=experimental
 - Intraportal Autotransplantation of Cryopreserved Porcine Islets of Langerhans | family=slow-freezing type=experimental
+- Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig | family=slow-freezing type=experimental
+- Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets | family=vitrification type=experimental
+- Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model | family=slow-freezing type=experimental
+- Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation | family=slow-freezing type=experimental
+- Prolonged Cryopreservation of Purified Human Pancreatic Islets | family=n/a type=experimental
 
 ### Missing reviewed step phases
 - CRYOPRESERVATION OF CHICK ISLETS | family=slow-freezing type=experimental
@@ -94,8 +94,6 @@ All gates passed: yes
 - Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets | family=n/a type=experimental
 - Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor | family=slow-freezing type=experimental
 - Intraportal Autotransplantation of Cryopreserved Porcine Islets of Langerhans | family=slow-freezing type=experimental
-- Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig | family=slow-freezing type=experimental
 - Murine Islet Cryopreservation and Corticosteroids: Functional Studies | family=slow-freezing type=experimental
-- Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model | family=slow-freezing type=experimental
 - Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation | family=slow-freezing type=experimental
 - Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage | family=slow-freezing type=experimental

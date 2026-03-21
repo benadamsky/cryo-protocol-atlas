@@ -9,7 +9,7 @@ import {
 } from "../packages/shared/src/schema.js";
 
 const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
-const MIN_AUTOPROMOTE_POLICY_CONFIDENCE = 0.93;
+const MIN_AUTOPROMOTE_POLICY_CONFIDENCE = 0.9;
 
 async function main(selectedDomain: DomainId): Promise<void> {
   const loopDir = join(process.cwd(), "data", "autoresearch", selectedDomain);

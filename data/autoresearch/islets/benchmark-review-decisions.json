@@ -1,31 +1,19 @@
 {
-  "generatedAt": "2026-03-21T03:09:23.890Z",
+  "generatedAt": "2026-03-21T03:16:38.761Z",
   "domain": "islets",
-  "sourceProposalGeneratedAt": "2026-03-21T03:09:23.749Z",
-  "decisionCount": 4,
+  "sourceProposalGeneratedAt": "2026-03-21T03:16:38.614Z",
+  "decisionCount": 2,
   "decisions": [
-    {
-      "proposalId": "benchmark-depth-autofill:6e4ea940-2dbd-4790-b848-c453f6a0f42a:stepPhases",
-      "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
-      "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
-      "decision": "pending"
-    },
-    {
-      "proposalId": "benchmark-depth-autofill:e61a3868-8fcf-4024-96f7-eb4ae8a9456a:stepPhases",
-      "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
-      "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
-      "decision": "pending"
-    },
-    {
-      "proposalId": "benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:stepPhases",
-      "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
-      "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
-      "decision": "pending"
-    },
     {
       "proposalId": "benchmark-depth-autofill:4056fdf9-3483-40ce-9ef4-ccd534962039:stepPhases",
       "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
       "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:outcomeClasses+stepPhases",
+      "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
+      "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
       "decision": "pending"
     }
   ]

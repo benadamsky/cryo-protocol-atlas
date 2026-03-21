@@ -69,7 +69,10 @@ const OUTCOME_RULES: Array<{
     outcomeClass: "function",
     strength: "strong",
     patterns: [
+      /\bfunction(?:al|ality)?\b/i,
       /\binsulin secretion\b/i,
+      /\binsulin release\b/i,
+      /\bgraft function\b/i,
       /\bglucose(?:-|\s)?stimulated\b/i,
       /\bglucose control\b/i,
       /\bnormoglyc/i,
@@ -79,12 +82,24 @@ const OUTCOME_RULES: Array<{
   {
     outcomeClass: "viability",
     strength: "moderate",
-    patterns: [/\bviability\b/i, /\blive-dead assay\b/i, /\bcell survival\b/i]
+    patterns: [
+      /\bviability\b/i,
+      /\blive-dead assay\b/i,
+      /\bcell survival\b/i,
+      /\bsurvival\b/i,
+      /\brecovery\b/i,
+      /\byield\b/i,
+      /\btoxicit/i
+    ]
   },
   {
     outcomeClass: "morphology",
-    strength: "weak",
-    patterns: [/\bmorpholog(?:y|ical)\b/i, /\bhistolog(?:y|ical)\b/i, /\bultrastruct(?:ure|ural)\b/i]
+    strength: "moderate",
+    patterns: [
+      /\bmorpholog(?:y|ical)\b/i,
+      /\bhistolog(?:y|ical)\b/i,
+      /\bultrastruct(?:ure|ural)\b/i
+    ]
   }
 ];
 
@@ -339,7 +354,7 @@ function extractMentions(sentences: string[], regex: RegExp, kind: EvidenceSnipp
 }
 
 function isStudyOutcomeSentence(sentence: string): boolean {
-  return /(result|found|observed|showed|demonstrated|improved|restored|viability|insulin|glucose|graft|transplant)/i.test(
+  return /(result|found|observed|showed|demonstrated|improved|restored|viability|survival|recovery|yield|toxicit|function|functional|functionality|insulin|glucose|graft|transplant|morpholog|histolog|ultrastruct)/i.test(
     sentence
   );
 }

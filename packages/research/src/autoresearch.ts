@@ -23,6 +23,7 @@ type CurrentState = {
 
 const MIN_AUTOFILL_CONFIDENCE = 0.78;
 const MIN_RECOMMENDED_ACCEPT_CONFIDENCE = 0.9;
+const TITLE_EXPLICIT_OUTCOME_KEYWORDS = /(viability|survival|recovery|yield|function(?:al|ality)?|insulin secretion|insulin release|transplant(?:ation|ed)?|graft function|morpholog(?:y|ical)|histolog(?:y|ical)|ultrastruct(?:ure|ural))/i;
 
 function uniqueSorted(values: string[]): string[] {
   return Array.from(new Set(values.map((value) => value.trim()).filter(Boolean))).sort((a, b) =>
@@ -32,6 +33,10 @@ function uniqueSorted(values: string[]): string[] {
 
 function round(value: number): number {
   return Number(value.toFixed(3));
+}
+
+function normalizeEvidenceText(value: string): string {
+  return value.trim().toLowerCase().replace(/[.?!:;]+$/g, "");
 }
 
 function buildProposalId(
@@ -153,12 +158,27 @@ function buildReviewRecommendation(
     const strongOutcomeMentions = extraction.outcomeMentions.filter(
       (mention) => mention.strength === "moderate" || mention.strength === "strong"
     );
+    const titleExplicitOutcomeEvidence =
+      fields.length === 1 &&
+      extraction.outcomeMentions.length > 0 &&
+      extraction.outcomeMentions.every((mention) =>
+        mention.evidence.some(
+          (evidence) =>
+            normalizeEvidenceText(evidence.text) === normalizeEvidenceText(extraction.paper.title) &&
+            TITLE_EXPLICIT_OUTCOME_KEYWORDS.test(evidence.text)
+        )
+      );
     if (extraction.paperType === "experimental" && strongOutcomeMentions.length > 0) {
       score += 0.03;
       reasons.push("outcome classes come from an experimental paper with non-weak outcome evidence");
     } else {
       score -= 0.05;
       reasons.push("outcome labels are not strongly grounded in experimental abstract evidence");
+    }
+
+    if (titleExplicitOutcomeEvidence) {
+      score += 0.06;
+      reasons.push("outcome labels are stated explicitly in the paper title");
     }
   }
 
