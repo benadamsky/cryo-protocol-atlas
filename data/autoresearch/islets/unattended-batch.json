@@ -1,0 +1,12 @@
+{
+  "domain": "islets",
+  "includeIngest": false,
+  "extractionCount": 53,
+  "reviewedOutcomeCoverage": 0.595,
+  "reviewedStepPhaseCoverage": 0.976,
+  "loopProposalCount": 0,
+  "pendingBenchmarkProposalCount": 0,
+  "pendingSourceEnrichmentCount": 18,
+  "reviewedSourceEnrichmentCount": 1,
+  "minimumDepthReady": true
+}

@@ -42,6 +42,8 @@ The next scaffolded domain is:
 - `bun run apply-benchmark:islets`
 - `bun run autopromote-benchmark:ovarian`
 - `bun run autopromote-benchmark:islets`
+- `bun run run-batch:ovarian`
+- `bun run run-batch:islets`
 - `bun run enrichment-queue:ovarian`
 - `bun run enrichment-queue:islets`
 - `bun run regress:ovarian`
@@ -96,6 +98,8 @@ This loop is intentionally conservative. It does not auto-apply benchmark patche
 `bun run regress:<domain>` runs deliberate perturbation scenarios against the current reviewed benchmark and verifies that the loop proposes the expected reviewed-paper fixes. This is the main proof that the loop can recover from benchmark regressions instead of only reporting no-ops on a clean slice.
 
 `bun run review-benchmark:<domain>` materializes a decision file plus markdown queue for benchmark-depth proposals, including conservative `accept` vs `defer` policy recommendations. The decision file also supports partial acceptance via `acceptedOutcomeClasses` and `acceptedStepPhases` when a proposal is directionally right but too broad. `bun run apply-benchmark:<domain>` merges accepted benchmark patches into the gold set and reruns evaluation + loop generation so the next cycle starts from the updated benchmark. `bun run autopromote-benchmark:<domain>` is a stricter autopilot path that auto-accepts only policy-approved benchmark proposals above the autopromote confidence threshold, then runs benchmark apply + override repair convergence automatically.
+
+`bun run run-batch:<domain>` is the bounded unattended-run entrypoint. It runs extract -> analyze -> evaluate -> enrichment queue -> loop -> benchmark review queue -> conservative autopromote -> regression checks, then writes `data/autoresearch/<domain>/unattended-batch.{json,md}`. Pass `--ingest` if you explicitly want a fresh CryoDB ingest before the batch, for example `bun run run-batch:islets -- --ingest`.
 
 ## Source enrichment
 

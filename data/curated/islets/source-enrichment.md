@@ -81,10 +81,6 @@
   doi=10.1177/096368979700600612
 
 ## Step-phase manual review
-- [pending] Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation
-  paperId=0008fd20-cb99-4666-b48d-c24bd4abd4d1
-  rationale=Step phases for "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation" still require manual or fuller-source confirmation before benchmark promotion.
-  doi=10.1016/j.lfs.2007.10.026
 - [pending] Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets
   paperId=5f8b44a6-e05c-4bdd-ac73-18c0411696dc
   rationale=Step phases for "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets" still require manual or fuller-source confirmation before benchmark promotion.
