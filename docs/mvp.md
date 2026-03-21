@@ -18,6 +18,8 @@ This repo owns the layer above that:
 - outcome normalization
 - contradiction surfacing
 - next-experiment suggestions
+- evidence-scored research hypotheses
+- cross-domain agenda generation
 - benchmark/evaluation infrastructure
 
 ## First domain
@@ -50,6 +52,8 @@ And an evaluation harness that answers:
 - contradiction detection: implemented (heuristic)
 - protocol clustering: partial via atlas summaries
 - next-experiment suggestions: implemented (heuristic)
+- research hypothesis scoring/ranking: implemented
+- cross-domain agenda output: implemented
 - manual resolution queue for unknown-family papers: implemented
 - seed benchmark generation: implemented
 - baseline vs resolved benchmark scoring: implemented

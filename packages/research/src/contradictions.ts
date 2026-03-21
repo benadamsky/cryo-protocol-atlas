@@ -11,12 +11,28 @@ function intersection(valuesA: string[], valuesB: string[]): string[] {
   return Array.from(new Set(valuesA.filter((value) => setB.has(value))));
 }
 
+const GENERIC_SPECIMEN_TYPES = new Set(["islets", "pancreatic islets", "ovarian tissue", "follicles"]);
+
 function outcomeClasses(extraction: ProtocolExtraction): OutcomeClass[] {
   return Array.from(new Set(extraction.outcomeMentions.map((entry) => entry.outcomeClass)));
 }
 
 function experimentalComparable(extraction: ProtocolExtraction): boolean {
-  return extraction.paperType === "experimental" || extraction.paperType === "unknown";
+  return extraction.paperType === "experimental";
+}
+
+function meaningfulPhases(extraction: ProtocolExtraction): string[] {
+  return Array.from(
+    new Set(
+      extraction.protocolSteps
+        .map((step) => step.phase)
+        .filter((phase) => !["unknown", "assessment", "culture"].includes(phase))
+    )
+  );
+}
+
+function specificSpecimenTypes(extraction: ProtocolExtraction): string[] {
+  return extraction.specimenTypes.filter((specimen) => !GENERIC_SPECIMEN_TYPES.has(specimen));
 }
 
 function contradictionReason(paperA: ProtocolExtraction, paperB: ProtocolExtraction): string | null {
@@ -29,6 +45,9 @@ function contradictionReason(paperA: ProtocolExtraction, paperB: ProtocolExtract
   const outcomesA = outcomeClasses(paperA);
   const outcomesB = outcomeClasses(paperB);
   const sharedOutcomes = intersection(outcomesA, outcomesB);
+  const specificSpecimensA = specificSpecimenTypes(paperA);
+  const specificSpecimensB = specificSpecimenTypes(paperB);
+  const sharedSpecificSpecimens = intersection(specificSpecimensA, specificSpecimensB);
 
   if (!experimentalComparable(paperA) || !experimentalComparable(paperB)) {
     return null;
@@ -43,21 +62,34 @@ function contradictionReason(paperA: ProtocolExtraction, paperB: ProtocolExtract
   }
 
   if (
-    paperA.protocolFamily !== paperB.protocolFamily &&
-    paperA.protocolFamily !== "unknown" &&
-    paperB.protocolFamily !== "unknown" &&
-    sharedChemicals.length >= 1
+    specificSpecimensA.length > 0 &&
+    specificSpecimensB.length > 0 &&
+    sharedSpecificSpecimens.length === 0
   ) {
-    return "Shared specimen/chemical context but different preservation families";
+    return null;
+  }
+
+  if (paperA.protocolFamily === "unknown" || paperB.protocolFamily === "unknown") {
+    return null;
+  }
+
+  const phasesA = meaningfulPhases(paperA);
+  const phasesB = meaningfulPhases(paperB);
+  const sharedPhases = intersection(phasesA, phasesB);
+
+  if (sharedPhases.length === 0 && phasesA.length > 0 && phasesB.length > 0) {
+    return null;
   }
 
   if (
-    sharedOutcomes.length === 0 &&
+    paperA.protocolFamily !== paperB.protocolFamily &&
+    paperA.protocolFamily !== "comparative" &&
+    paperB.protocolFamily !== "comparative" &&
     outcomesA.length > 0 &&
     outcomesB.length > 0 &&
-    paperA.protocolFamily === paperB.protocolFamily
+    sharedOutcomes.length > 0
   ) {
-    return "Shared specimen/chemical context but different outcome emphasis";
+    return "Comparable species/context with shared outcome readout but different preservation families";
   }
 
   return null;
@@ -100,7 +132,10 @@ export function detectContradictions(snapshot: ExtractionSnapshot): Contradictio
             specimenTypes: sharedSpecimenTypes
           },
           reason,
-          confidence: paperA.protocolFamily !== "unknown" && paperB.protocolFamily !== "unknown" ? 0.8 : 0.65
+          confidence:
+            intersection(paperA.speciesMentions, paperB.speciesMentions).length > 0 && sharedChemicals.length >= 2
+              ? 0.85
+              : 0.72
         })
       );
     }

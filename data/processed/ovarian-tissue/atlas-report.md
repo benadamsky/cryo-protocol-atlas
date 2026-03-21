@@ -5,7 +5,7 @@ Total papers: 16
 ## Quality signals
 - unknown protocol families: 0
 - unknown protocol family rate: 0
-- unknown step phases: 10
+- unknown step phases: 7
 - contradiction count: 0
 - experimental papers: 9
 - methods papers: 5
@@ -40,14 +40,14 @@ Total papers: 16
 
 ## Top protocol phases
 - loading: 32
-- storage: 20
-- cooling: 14
-- unknown: 10
+- storage: 16
+- cooling: 12
 - culture: 9
-- warming: 7
-- assessment: 5
+- unknown: 7
+- warming: 6
 - perfusion: 5
-- equilibration: 3
+- assessment: 4
+- equilibration: 2
 
 ## High-confidence papers
 - Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols | type=methods | family=slow-freezing | confidence=0.95 | chemicals=Dimethyl Sulfoxide, Propylene Glycol | specimen=follicles, ovarian tissue | phases=equilibration, unknown, cooling, assessment
@@ -58,9 +58,9 @@ Total papers: 16
   species=peccary
 - FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS | type=experimental | family=comparative | confidence=0.83 | chemicals=none | specimen=ovarian tissue, whole ovary, follicles, oocytes | phases=loading, storage, cooling, perfusion
   species=human, sheep, pig, primate
-- Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation | type=experimental | family=vitrification | confidence=0.82 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol | specimen=ovarian tissue, follicles | phases=storage, loading, equilibration, assessment, unknown
+- Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation | type=experimental | family=vitrification | confidence=0.82 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol | specimen=ovarian tissue, follicles | phases=equilibration, loading
   species=human
-- Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry | type=methods | family=slow-freezing | confidence=0.8 | chemicals=Dimethyl Sulfoxide, Sucrose | specimen=ovarian tissue | phases=storage, warming, unknown, cooling
+- Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry | type=methods | family=slow-freezing | confidence=0.8 | chemicals=Dimethyl Sulfoxide, Sucrose | specimen=ovarian tissue | phases=cooling, warming
   species=human
 - Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue | type=experimental | family=vitrification | confidence=0.78 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol | specimen=ovarian tissue, follicles | phases=loading, warming, assessment
   species=human
@@ -82,6 +82,24 @@ Total papers: 16
 
 ## Contradictions
 - none detected yet
+
+## Ranked hypotheses
+- Promote morphology-heavy protocols to viability endpoints | category=endpoint-upgrade | priority=0.623 | evidence=0.867 | uncertainty=0 | actionability=0.8
+  claim=Several ovarian tissue protocols that currently look acceptable on morphology alone will reshuffle once they are compared on viability or functional endpoints.
+  evidence=papers:6, experimental:4, comparative:2, species:5, strong-outcomes:1, transplantation:2, contradictions:0, sparse-protocols:0
+  proposed-experiment=The current corpus is still dominated by morphology outcomes. Running the same preservation conditions with viability-focused readouts is likely higher signal than inventing a new formulation immediately.
+- Head-to-head DMSO-centered ovarian tissue benchmark | category=benchmark | priority=0.54 | evidence=0.583 | uncertainty=0 | actionability=0.84
+  claim=A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation.
+  evidence=papers:6, experimental:4, comparative:0, species:4, strong-outcomes:0, transplantation:1, contradictions:0, sparse-protocols:0
+  proposed-experiment=DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass.
+- Same-species DMSO + EG vitrification benchmark | category=benchmark | priority=0.517 | evidence=0.517 | uncertainty=0 | actionability=0.84
+  claim=The apparent promise of DMSO + ethylene glycol in ovarian tissue is currently species-confounded and should be tested within one species and one specimen format.
+  evidence=papers:4, experimental:4, comparative:0, species:3, strong-outcomes:0, transplantation:1, contradictions:0, sparse-protocols:0
+  proposed-experiment=The corpus shows DMSO + EG in ovarian tissue, but the strongest papers are spread across different species. A same-species benchmark would tell us whether the signal is chemistry-driven or model-driven.
+- Whole-ovary perfusion and rewarming workflow benchmark | category=scale-up | priority=0.48 | evidence=0.55 | uncertainty=0 | actionability=0.72
+  claim=Whole-ovary success is currently limited more by perfusion/loading workflow quality than by entirely new chemistry.
+  evidence=papers:2, experimental:1, comparative:1, species:4, strong-outcomes:1, transplantation:1, contradictions:0, sparse-protocols:0
+  proposed-experiment=Whole-ovary papers are sparse but repeatedly mention perfusion, controlled gradients, and rewarming. A workflow benchmark around loading/unloading plus perfusion measurements is a plausible scale-up experiment.
 
 ## Suggested next experiments
 - Head-to-head DMSO-centered ovarian tissue benchmark | category=benchmark | confidence=0.84
@@ -106,7 +124,7 @@ Total papers: 16
 - excluded papers: 12
 - unknown protocol families resolved: 15
 - unknown protocol family rate delta: 0.54
-- unknown step phase delta: 12
+- unknown step phase delta: 15
 - experimental paper delta: -1
 - methods paper delta: -3
 - review paper delta: -1
@@ -114,7 +132,7 @@ Total papers: 16
 
 ## Baseline vs resolved quality
 - unknown protocol families: 15 -> 0
-- unknown step phases: 22 -> 10
+- unknown step phases: 22 -> 7
 - contradictions: 0 -> 0
 - experimental papers: 10 -> 9
 - methods papers: 8 -> 5

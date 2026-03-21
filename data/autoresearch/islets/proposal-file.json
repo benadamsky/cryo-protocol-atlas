@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T03:16:38.614Z",
+  "generatedAt": "2026-03-21T03:31:48.662Z",
   "domain": "islets",
   "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "proposalCount": 2,
@@ -116,7 +116,8 @@
               "phase": "warming",
               "summary": "Mus musculus; Pancreas; Islets of langerhans; 6–8 week old; Swiss Albino mouse; pancreas; islets of Langerhans; ≈150 µm diameter Cryopreservation and thawing — 10% DMSO + 10 µM curcumin cryomix; no curcumin post-thaw (Swiss Albino mouse pancreatic islets).",
               "chemicals": [
-                "Dimethyl Sulfoxide"
+                "Dimethyl Sulfoxide",
+                "Curcumin"
               ],
               "concentrations": [],
               "temperatures": [],
@@ -136,7 +137,8 @@
               "phase": "warming",
               "summary": "Mus musculus; Pancreas; Islets of langerhans; 6–8 week old; Swiss Albino mouse; pancreas; islets of Langerhans; ≈150 µm diameter Cryopreservation and thawing — 10% DMSO cryomix, no curcumin; 10 µM curcumin post-thaw (Swiss Albino mouse pancreatic islets).",
               "chemicals": [
-                "Dimethyl Sulfoxide"
+                "Dimethyl Sulfoxide",
+                "Curcumin"
               ],
               "concentrations": [],
               "temperatures": [],
@@ -156,7 +158,8 @@
               "phase": "warming",
               "summary": "Mus musculus; Pancreas; Islets of langerhans; 6–8 week old; Swiss Albino mouse; pancreas; islets of Langerhans; ≈150 µm diameter Cryopreservation and thawing — 10% DMSO cryomix, no curcumin; no curcumin post-thaw (Swiss Albino mouse pancreatic islets).",
               "chemicals": [
-                "Dimethyl Sulfoxide"
+                "Dimethyl Sulfoxide",
+                "Curcumin"
               ],
               "concentrations": [],
               "temperatures": [],

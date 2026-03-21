@@ -27,6 +27,7 @@ The next scaffolded domain is:
 - `bun run extract:islets`
 - `bun run analyze:ovarian`
 - `bun run analyze:islets`
+- `bun run agenda`
 - `bun run queue:ovarian`
 - `bun run queue:islets`
 - `bun run seed-benchmark:ovarian`
@@ -58,6 +59,8 @@ The current repo is a protocol-intelligence MVP, not a discovery engine. It esta
 - protocol-step candidates
 - contradiction review
 - next-experiment suggestions
+- evidence-scored research hypotheses
+- cross-domain research agenda output
 - manual override hooks for full-text resolution
 - baseline vs resolved atlas impact reporting
 - benchmark seeding for benchmarked slices

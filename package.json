@@ -14,6 +14,7 @@
     "extract:islets": "node --import tsx scripts/extract-domain.ts islets",
     "analyze:ovarian": "node --import tsx scripts/analyze-domain.ts ovarian-tissue",
     "analyze:islets": "node --import tsx scripts/analyze-domain.ts islets",
+    "agenda": "node --import tsx scripts/build-research-agenda.ts",
     "queue:ovarian": "node --import tsx scripts/build-resolution-queue.ts ovarian-tissue",
     "queue:islets": "node --import tsx scripts/build-resolution-queue.ts islets",
     "seed-benchmark:ovarian": "node --import tsx scripts/seed-benchmark.ts ovarian-tissue",

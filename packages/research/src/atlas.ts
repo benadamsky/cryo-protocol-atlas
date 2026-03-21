@@ -4,9 +4,11 @@ import type {
   ExtractionSnapshot,
   OutcomeClass,
   ProtocolExtraction,
-  ProtocolFamily
+  ProtocolFamily,
+  ResearchHypothesis
 } from "../../shared/src/schema.js";
 import { detectContradictions } from "./contradictions.js";
+import { buildResearchHypotheses } from "./hypotheses.js";
 import { buildExperimentSuggestions } from "./suggestions.js";
 
 type CountEntry = {
@@ -44,6 +46,7 @@ export type AtlasSummary = {
   uncertaintyHotspots: AtlasHotspot[];
   contradictions: Contradiction[];
   experimentSuggestions: ExperimentSuggestion[];
+  researchHypotheses: ResearchHypothesis[];
   qualitySignals: {
     unknownProtocolFamilyCount: number;
     unknownProtocolFamilyRate: number;
@@ -134,6 +137,7 @@ export function buildAtlasSummary(snapshot: ExtractionSnapshot): AtlasSummary {
     .slice(0, 12);
   const contradictions = detectContradictions(snapshot);
   const experimentSuggestions = buildExperimentSuggestions(snapshot);
+  const researchHypotheses = buildResearchHypotheses(snapshot, experimentSuggestions, contradictions);
   const unknownProtocolFamilyCount = snapshot.extractions.filter(
     (extraction) => extraction.protocolFamily === "unknown"
   ).length;
@@ -166,6 +170,7 @@ export function buildAtlasSummary(snapshot: ExtractionSnapshot): AtlasSummary {
     uncertaintyHotspots,
     contradictions,
     experimentSuggestions,
+    researchHypotheses,
     qualitySignals: {
       unknownProtocolFamilyCount,
       unknownProtocolFamilyRate: Number((unknownProtocolFamilyCount / snapshot.totalPapers).toFixed(2)),
@@ -259,6 +264,26 @@ export function renderAtlasMarkdown(summary: AtlasSummary): string {
       );
       lines.push(`  A: ${contradiction.paperA.title}`);
       lines.push(`  B: ${contradiction.paperB.title}`);
+    }
+  }
+
+  lines.push("");
+  lines.push("## Ranked hypotheses");
+  if (summary.researchHypotheses.length === 0) {
+    lines.push("- none generated yet");
+  } else {
+    for (const hypothesis of summary.researchHypotheses.slice(0, 5)) {
+      lines.push(
+        `- ${hypothesis.title} | category=${hypothesis.category} | priority=${hypothesis.scores.priorityScore} | evidence=${hypothesis.scores.evidenceScore} | uncertainty=${hypothesis.scores.uncertaintyScore} | actionability=${hypothesis.scores.actionabilityScore}`
+      );
+      lines.push(`  claim=${hypothesis.claim}`);
+      lines.push(
+        `  evidence=papers:${hypothesis.evidence.totalPaperCount}, experimental:${hypothesis.evidence.experimentalPaperCount}, comparative:${hypothesis.evidence.comparativePaperCount}, species:${hypothesis.evidence.distinctSpeciesCount}, strong-outcomes:${hypothesis.evidence.strongOutcomePaperCount}, transplantation:${hypothesis.evidence.transplantationPaperCount}, contradictions:${hypothesis.evidence.contradictionCount}, sparse-protocols:${hypothesis.evidence.sparseProtocolPaperCount}`
+      );
+      if (hypothesis.blockers.length > 0) {
+        lines.push(`  blockers=${hypothesis.blockers.join(" | ")}`);
+      }
+      lines.push(`  proposed-experiment=${hypothesis.proposedExperiment}`);
     }
   }
 

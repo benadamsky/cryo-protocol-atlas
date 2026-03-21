@@ -198,6 +198,40 @@ export const ExperimentSuggestionSchema = z.object({
 });
 export type ExperimentSuggestion = z.infer<typeof ExperimentSuggestionSchema>;
 
+export const ResearchHypothesisSchema = z.object({
+  id: z.string(),
+  domain: DomainIdSchema,
+  title: z.string(),
+  category: z.enum(["benchmark", "endpoint-upgrade", "workflow-gap", "scale-up"]),
+  claim: z.string(),
+  proposedExperiment: z.string(),
+  supportingContext: z.object({
+    chemicals: z.array(z.string()),
+    specimenTypes: z.array(z.string()),
+    protocolFamilies: z.array(ProtocolFamilySchema),
+    paperTitles: z.array(z.string())
+  }),
+  evidence: z.object({
+    totalPaperCount: z.number().int().nonnegative(),
+    experimentalPaperCount: z.number().int().nonnegative(),
+    comparativePaperCount: z.number().int().nonnegative(),
+    distinctSpeciesCount: z.number().int().nonnegative(),
+    strongOutcomePaperCount: z.number().int().nonnegative(),
+    transplantationPaperCount: z.number().int().nonnegative(),
+    contradictionCount: z.number().int().nonnegative(),
+    sparseProtocolPaperCount: z.number().int().nonnegative()
+  }),
+  scores: z.object({
+    evidenceScore: z.number().min(0).max(1),
+    uncertaintyScore: z.number().min(0).max(1),
+    actionabilityScore: z.number().min(0).max(1),
+    priorityScore: z.number().min(0).max(1)
+  }),
+  blockers: z.array(z.string()),
+  rationale: z.string()
+});
+export type ResearchHypothesis = z.infer<typeof ResearchHypothesisSchema>;
+
 export const ProtocolOverrideSchema = z.object({
   paperId: z.string(),
   excludeFromAtlas: z.boolean().optional(),
