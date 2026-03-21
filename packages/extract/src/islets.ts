@@ -72,7 +72,13 @@ const OUTCOME_RULES: Array<{
   {
     outcomeClass: "transplantation",
     strength: "strong",
-    patterns: [/\btransplant(?:ation|ed)?\b/i, /\bgraft(?:ed|s)?\b/i]
+    patterns: [
+      /\btransplant(?:ation|ed)?\b/i,
+      /\bauto-?transplant(?:ation|ed)?\b/i,
+      /\bxeno-?graft(?:ed|s)?\b/i,
+      /\bauto-?graft(?:ed|s)?\b/i,
+      /\bgraft(?:ed|s)?\b/i
+    ]
   },
   {
     outcomeClass: "function",

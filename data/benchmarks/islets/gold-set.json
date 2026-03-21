@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T03:38:51.096Z",
+  "generatedAt": "2026-03-21T03:49:41.337Z",
   "domain": "islets",
   "description": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "entries": [
@@ -824,6 +824,9 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "viability"
+      ],
       "expectedOverridePatch": {
         "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
         "paperType": "experimental",
@@ -835,9 +838,17 @@
           "islets",
           "pancreatic islets"
         ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.8
       },
-      "notes": "Curcumin adjunct study built on a DMSO cryopreservation workflow for mouse pancreatic islets."
+      "notes": "Curcumin adjunct study built on a DMSO cryopreservation workflow for mouse pancreatic islets. Accepted benchmark autofill proposal benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:outcomeClasses+stepPhases."
     },
     {
       "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
@@ -1647,6 +1658,9 @@
       "expectedSpecimenTypes": [
         "islets"
       ],
+      "expectedOutcomeClasses": [
+        "transplantation"
+      ],
       "expectedStepPhases": [
         "cooling",
         "storage"
@@ -1683,9 +1697,17 @@
             "evidence": []
           }
         ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "transplantation",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: transplantation.",
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.82
       },
-      "notes": "Porcine autotransplantation study using controlled-rate freezing with Me2SO before intraportal grafting. Accepted benchmark autofill proposal benchmark-depth-autofill:b293075d-011c-4c8d-95a6-215ae7952c72:stepPhases."
+      "notes": "Porcine autotransplantation study using controlled-rate freezing with Me2SO before intraportal grafting. Accepted benchmark autofill proposal benchmark-depth-autofill:b293075d-011c-4c8d-95a6-215ae7952c72:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:b293075d-011c-4c8d-95a6-215ae7952c72:outcomeClasses."
     },
     {
       "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",

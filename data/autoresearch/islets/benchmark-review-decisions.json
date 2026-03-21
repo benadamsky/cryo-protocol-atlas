@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-03-21T03:39:03.606Z",
+  "generatedAt": "2026-03-21T03:49:42.142Z",
   "domain": "islets",
-  "sourceProposalGeneratedAt": "2026-03-21T03:39:03.466Z",
+  "sourceProposalGeneratedAt": "2026-03-21T03:49:42.011Z",
   "decisionCount": 2,
   "decisions": [
     {
-      "proposalId": "benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:outcomeClasses+stepPhases",
+      "proposalId": "benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:stepPhases",
       "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
       "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
       "decision": "pending"

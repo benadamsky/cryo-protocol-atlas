@@ -70,12 +70,13 @@ All gates passed: yes
 ## Reviewed depth gaps
 - reviewed entries missing outcome labels: 4
 - reviewed entries missing step-phase labels: 3
+- missing outcome evidence audit: extractor-gap=0 ambiguous-evidence=0 evidence-thin=4
 
 ### Missing reviewed outcomes
-- Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep | family=slow-freezing type=experimental
-- Cryopreservation and in vitro culture of caprine preantral follicles | family=comparative type=review
-- Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries | family=slow-freezing type=experimental
-- Ovarian and oocyte cryopreservation | family=comparative type=review
+- Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep | family=slow-freezing type=experimental evidence=evidence-thin
+- Cryopreservation and in vitro culture of caprine preantral follicles | family=comparative type=review evidence=evidence-thin
+- Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries | family=slow-freezing type=experimental evidence=evidence-thin
+- Ovarian and oocyte cryopreservation | family=comparative type=review evidence=evidence-thin
 
 ### Missing reviewed step phases
 - Cryopreservation and in vitro culture of caprine preantral follicles | family=comparative type=review

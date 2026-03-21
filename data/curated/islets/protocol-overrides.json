@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T03:38:51.647Z",
+  "generatedAt": "2026-03-21T03:48:56.171Z",
   "domain": "islets",
   "overrides": [
     {
@@ -932,6 +932,14 @@
     {
       "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
       "paperType": "experimental",
+      "outcomeMentions": [
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+          "evidence": []
+        }
+      ],
       "notes": "Primary xenograft-survival study evaluating cryopreserved islets."
     },
     {

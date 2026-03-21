@@ -3,7 +3,7 @@
   "autoApplySafe": false,
   "currentEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:39:03.463Z",
+    "generatedAt": "2026-03-21T03:53:35.140Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -58,10 +58,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 26,
-            "exactMatchCount": 26,
-            "averageF1": 0.923,
-            "averagePrecision": 0.923,
+            "labeledCount": 28,
+            "exactMatchCount": 28,
+            "averageF1": 0.929,
+            "averagePrecision": 0.929,
             "averageRecall": 1,
             "mismatches": []
           },
@@ -155,8 +155,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 24,
-            "coverageRate": 0.522
+            "labeledCount": 26,
+            "coverageRate": 0.565
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -224,8 +224,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 22,
-            "exactMatchCount": 22,
+            "labeledCount": 24,
+            "exactMatchCount": 24,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -269,8 +269,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 22,
-            "coverageRate": 0.524
+            "labeledCount": 24,
+            "coverageRate": 0.571
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -507,14 +507,14 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.524,
+      "reviewedOutcomeCoverage": 0.571,
       "reviewedStepPhaseCoverage": 0.929,
       "reviewedMinimumDepthReady": true
     }
   },
   "candidateEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:39:03.465Z",
+    "generatedAt": "2026-03-21T03:53:35.142Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -569,10 +569,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 26,
-            "exactMatchCount": 26,
-            "averageF1": 0.923,
-            "averagePrecision": 0.923,
+            "labeledCount": 28,
+            "exactMatchCount": 28,
+            "averageF1": 0.929,
+            "averagePrecision": 0.929,
             "averageRecall": 1,
             "mismatches": []
           },
@@ -666,8 +666,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 24,
-            "coverageRate": 0.522
+            "labeledCount": 26,
+            "coverageRate": 0.565
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -735,8 +735,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 22,
-            "exactMatchCount": 22,
+            "labeledCount": 24,
+            "exactMatchCount": 24,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -780,8 +780,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 22,
-            "coverageRate": 0.524
+            "labeledCount": 24,
+            "coverageRate": 0.571
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1018,14 +1018,14 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.524,
+      "reviewedOutcomeCoverage": 0.571,
       "reviewedStepPhaseCoverage": 0.929,
       "reviewedMinimumDepthReady": true
     }
   },
   "candidateBenchmarkEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:39:03.466Z",
+    "generatedAt": "2026-03-21T03:53:35.145Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -1080,10 +1080,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 27,
-            "exactMatchCount": 27,
-            "averageF1": 0.926,
-            "averagePrecision": 0.926,
+            "labeledCount": 28,
+            "exactMatchCount": 28,
+            "averageF1": 0.929,
+            "averagePrecision": 0.929,
             "averageRecall": 1,
             "mismatches": []
           },
@@ -1177,8 +1177,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 25,
-            "coverageRate": 0.543
+            "labeledCount": 26,
+            "coverageRate": 0.565
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1246,8 +1246,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 23,
-            "exactMatchCount": 23,
+            "labeledCount": 24,
+            "exactMatchCount": 24,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -1291,8 +1291,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 23,
-            "coverageRate": 0.548
+            "labeledCount": 24,
+            "coverageRate": 0.571
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1529,7 +1529,7 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.548,
+      "reviewedOutcomeCoverage": 0.571,
       "reviewedStepPhaseCoverage": 0.976,
       "reviewedMinimumDepthReady": true
     }
