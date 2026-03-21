@@ -52,9 +52,17 @@ type SetFieldMetrics<T extends string> = {
   }>;
 };
 
+type FieldCoverage = {
+  field: string;
+  eligibleCount: number;
+  labeledCount: number;
+  coverageRate: number;
+};
+
 export type BenchmarkSubsetMetrics = {
   subset: "all" | "reviewed" | "seeded";
   entryCount: number;
+  expectedIncludedCount: number;
   inclusion: BinaryMetrics;
   exactFields: {
     paperType: ExactFieldMetrics<PaperType>;
@@ -65,6 +73,14 @@ export type BenchmarkSubsetMetrics = {
     specimenTypes: SetFieldMetrics<string>;
     outcomeClasses: SetFieldMetrics<OutcomeClass>;
     stepPhases: SetFieldMetrics<ProtocolPhase>;
+  };
+  coverage: {
+    paperType: FieldCoverage;
+    protocolFamily: FieldCoverage;
+    speciesMentions: FieldCoverage;
+    specimenTypes: FieldCoverage;
+    outcomeClasses: FieldCoverage;
+    stepPhases: FieldCoverage;
   };
   confidence: {
     averageOnExpectedIncluded: number | null;
@@ -98,6 +114,9 @@ export type BenchmarkEvaluation = {
   summary: {
     passesAllGates: boolean;
     reviewedInclusionF1DeltaVsAll: number;
+    reviewedOutcomeCoverage: number;
+    reviewedStepPhaseCoverage: number;
+    reviewedMinimumDepthReady: boolean;
   };
 };
 
@@ -284,6 +303,7 @@ function evaluateSubset(
   const expectedIncludedConfidences: number[] = [];
   const correctIncludedConfidences: number[] = [];
   const incorrectIncludedConfidences: number[] = [];
+  const expectedIncludedEntries = entries.filter((entry) => entry.expectedInAtlas);
 
   for (const entry of entries) {
     const predicted = byPaperId.get(entry.paperId);
@@ -315,6 +335,7 @@ function evaluateSubset(
   return {
     subset,
     entryCount: entries.length,
+    expectedIncludedCount: expectedIncludedEntries.length,
     inclusion: makeBinaryMetrics(confusion),
     exactFields: {
       paperType: evaluateExactField(entries, byPaperId, "paperType", (entry) => entry.expectedPaperType, (extraction) => extraction.paperType),
@@ -355,6 +376,80 @@ function evaluateSubset(
         (entry) => entry.expectedStepPhases,
         (extraction) => uniqueStepPhases(extraction)
       )
+    },
+    coverage: {
+      paperType: {
+        field: "paperType",
+        eligibleCount: expectedIncludedEntries.length,
+        labeledCount: expectedIncludedEntries.filter((entry) => entry.expectedPaperType !== undefined).length,
+        coverageRate:
+          expectedIncludedEntries.length === 0
+            ? 0
+            : round(
+                expectedIncludedEntries.filter((entry) => entry.expectedPaperType !== undefined).length /
+                  expectedIncludedEntries.length
+              )
+      },
+      protocolFamily: {
+        field: "protocolFamily",
+        eligibleCount: expectedIncludedEntries.length,
+        labeledCount: expectedIncludedEntries.filter((entry) => entry.expectedProtocolFamily !== undefined).length,
+        coverageRate:
+          expectedIncludedEntries.length === 0
+            ? 0
+            : round(
+                expectedIncludedEntries.filter((entry) => entry.expectedProtocolFamily !== undefined).length /
+                  expectedIncludedEntries.length
+              )
+      },
+      speciesMentions: {
+        field: "speciesMentions",
+        eligibleCount: expectedIncludedEntries.length,
+        labeledCount: expectedIncludedEntries.filter((entry) => entry.expectedSpeciesMentions?.length).length,
+        coverageRate:
+          expectedIncludedEntries.length === 0
+            ? 0
+            : round(
+                expectedIncludedEntries.filter((entry) => entry.expectedSpeciesMentions?.length).length /
+                  expectedIncludedEntries.length
+              )
+      },
+      specimenTypes: {
+        field: "specimenTypes",
+        eligibleCount: expectedIncludedEntries.length,
+        labeledCount: expectedIncludedEntries.filter((entry) => entry.expectedSpecimenTypes?.length).length,
+        coverageRate:
+          expectedIncludedEntries.length === 0
+            ? 0
+            : round(
+                expectedIncludedEntries.filter((entry) => entry.expectedSpecimenTypes?.length).length /
+                  expectedIncludedEntries.length
+              )
+      },
+      outcomeClasses: {
+        field: "outcomeClasses",
+        eligibleCount: expectedIncludedEntries.length,
+        labeledCount: expectedIncludedEntries.filter((entry) => entry.expectedOutcomeClasses?.length).length,
+        coverageRate:
+          expectedIncludedEntries.length === 0
+            ? 0
+            : round(
+                expectedIncludedEntries.filter((entry) => entry.expectedOutcomeClasses?.length).length /
+                  expectedIncludedEntries.length
+              )
+      },
+      stepPhases: {
+        field: "stepPhases",
+        eligibleCount: expectedIncludedEntries.length,
+        labeledCount: expectedIncludedEntries.filter((entry) => entry.expectedStepPhases?.length).length,
+        coverageRate:
+          expectedIncludedEntries.length === 0
+            ? 0
+            : round(
+                expectedIncludedEntries.filter((entry) => entry.expectedStepPhases?.length).length /
+                  expectedIncludedEntries.length
+              )
+      }
     },
     confidence: {
       averageOnExpectedIncluded: average(expectedIncludedConfidences),
@@ -440,7 +535,12 @@ export function evaluateBenchmark(snapshot: ExtractionSnapshot, benchmark: Bench
     gates,
     summary: {
       passesAllGates: gates.every((gate) => gate.passed),
-      reviewedInclusionF1DeltaVsAll: round(reviewedMetrics.inclusion.f1 - allMetrics.inclusion.f1)
+      reviewedInclusionF1DeltaVsAll: round(reviewedMetrics.inclusion.f1 - allMetrics.inclusion.f1),
+      reviewedOutcomeCoverage: reviewedMetrics.coverage.outcomeClasses.coverageRate,
+      reviewedStepPhaseCoverage: reviewedMetrics.coverage.stepPhases.coverageRate,
+      reviewedMinimumDepthReady:
+        reviewedMetrics.coverage.outcomeClasses.coverageRate >= 0.4 &&
+        reviewedMetrics.coverage.stepPhases.coverageRate >= 0.4
     }
   };
 }
@@ -458,6 +558,7 @@ export function renderBenchmarkMarkdown(evaluation: BenchmarkEvaluation): string
   for (const subset of [evaluation.subsets.all, evaluation.subsets.reviewed, evaluation.subsets.seeded]) {
     lines.push(`## ${subset.subset} subset`);
     lines.push(`- entries: ${subset.entryCount}`);
+    lines.push(`- expected included entries: ${subset.expectedIncludedCount}`);
     lines.push(
       `- inclusion: accuracy=${subset.inclusion.accuracy} precision=${subset.inclusion.precision} recall=${subset.inclusion.recall} f1=${subset.inclusion.f1}`
     );
@@ -466,6 +567,9 @@ export function renderBenchmarkMarkdown(evaluation: BenchmarkEvaluation): string
     );
     lines.push(
       `- set macro F1: species=${subset.setFields.speciesMentions.averageF1} specimen=${subset.setFields.specimenTypes.averageF1} outcomes=${subset.setFields.outcomeClasses.averageF1} stepPhases=${subset.setFields.stepPhases.averageF1}`
+    );
+    lines.push(
+      `- field coverage: paperType=${subset.coverage.paperType.coverageRate} protocolFamily=${subset.coverage.protocolFamily.coverageRate} species=${subset.coverage.speciesMentions.coverageRate} specimen=${subset.coverage.specimenTypes.coverageRate} outcomes=${subset.coverage.outcomeClasses.coverageRate} stepPhases=${subset.coverage.stepPhases.coverageRate}`
     );
     lines.push(
       `- confidence: expectedIncluded=${subset.confidence.averageOnExpectedIncluded ?? "n/a"} correctIncluded=${subset.confidence.averageOnCorrectIncluded ?? "n/a"} incorrectIncluded=${subset.confidence.averageOnIncorrectIncluded ?? "n/a"}`
@@ -486,6 +590,12 @@ export function renderBenchmarkMarkdown(evaluation: BenchmarkEvaluation): string
     );
     lines.push(`  ${gate.notes}`);
   }
+  lines.push("");
+
+  lines.push("## Reviewed depth");
+  lines.push(`- reviewed outcome coverage: ${evaluation.summary.reviewedOutcomeCoverage}`);
+  lines.push(`- reviewed step-phase coverage: ${evaluation.summary.reviewedStepPhaseCoverage}`);
+  lines.push(`- reviewed minimum-depth ready: ${evaluation.summary.reviewedMinimumDepthReady ? "yes" : "no"}`);
   lines.push("");
 
   return lines.join("\n");

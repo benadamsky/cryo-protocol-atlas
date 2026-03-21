@@ -20,7 +20,7 @@
 - proposal found: yes
 - matched fields: paperType, protocolFamily
 - reviewed inclusion F1: 1 -> 1
-- reviewed protocol family accuracy: 0.969 -> 1
+- reviewed protocol family accuracy: 0.971 -> 1
 - reviewed paper type accuracy: 0.976 -> 1
 - reviewed outcome macro F1: 1 -> 1
 - reviewed step phase macro F1: 1 -> 1
@@ -48,7 +48,7 @@
 - reviewed inclusion F1: 1 -> 1
 - reviewed protocol family accuracy: 1 -> 1
 - reviewed paper type accuracy: 1 -> 1
-- reviewed outcome macro F1: 0.8 -> 1
+- reviewed outcome macro F1: 0.909 -> 1
 - reviewed step phase macro F1: 1 -> 1
 - auto-apply safe: yes
 
@@ -62,5 +62,5 @@
 - reviewed protocol family accuracy: 1 -> 1
 - reviewed paper type accuracy: 1 -> 1
 - reviewed outcome macro F1: 1 -> 1
-- reviewed step phase macro F1: 0.875 -> 1
+- reviewed step phase macro F1: 0.933 -> 1
 - auto-apply safe: yes

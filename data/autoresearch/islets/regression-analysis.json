@@ -32,7 +32,7 @@
     ],
     "currentReviewedInclusionF1": 1,
     "candidateReviewedInclusionF1": 1,
-    "currentReviewedProtocolFamilyAccuracy": 0.969,
+    "currentReviewedProtocolFamilyAccuracy": 0.971,
     "candidateReviewedProtocolFamilyAccuracy": 1,
     "currentReviewedPaperTypeAccuracy": 0.976,
     "candidateReviewedPaperTypeAccuracy": 1,
@@ -78,7 +78,7 @@
     "candidateReviewedProtocolFamilyAccuracy": 1,
     "currentReviewedPaperTypeAccuracy": 1,
     "candidateReviewedPaperTypeAccuracy": 1,
-    "currentReviewedOutcomeMacroF1": 0.8,
+    "currentReviewedOutcomeMacroF1": 0.909,
     "candidateReviewedOutcomeMacroF1": 1,
     "currentReviewedStepPhaseMacroF1": 1,
     "candidateReviewedStepPhaseMacroF1": 1,
@@ -101,7 +101,7 @@
     "candidateReviewedPaperTypeAccuracy": 1,
     "currentReviewedOutcomeMacroF1": 1,
     "candidateReviewedOutcomeMacroF1": 1,
-    "currentReviewedStepPhaseMacroF1": 0.875,
+    "currentReviewedStepPhaseMacroF1": 0.933,
     "candidateReviewedStepPhaseMacroF1": 1,
     "autoApplySafe": true
   }
