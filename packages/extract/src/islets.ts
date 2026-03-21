@@ -50,7 +50,7 @@ const SPECIMEN_PATTERNS: SpecimenPatternEntry[] = [
   { label: "pancreatic islets", pattern: /\bpancreatic islets?\b/i, weight: 3 },
   { label: "islets", pattern: /\bislets?\b/i, weight: 3 },
   { label: "islet cells", pattern: /\bislet cells?\b/i, weight: 2 },
-  { label: "encapsulated islets", pattern: /\bencapsulated islets?\b/i, weight: 3 },
+  { label: "encapsulated islets", pattern: /\bencapsulat(?:ed|ion)(?:\s+\w+){0,2}\s+islets?\b/i, weight: 3 },
   { label: "islet grafts", pattern: /\bislet grafts?\b/i, weight: 2 },
   { label: "beta cells", pattern: /\bbeta cells?\b/i, weight: 1 }
 ];
@@ -257,7 +257,7 @@ function classifyPaperType(paper: CryoPaper): PaperType {
 }
 
 function isProtocolContext(sentence: string): boolean {
-  return /(cryopreserv|vitrif|slow freezing|slow cooling|transplant|warming|thaw|perfus|culture|cryoprotectant)/i.test(
+  return /(cryopreserv|vitrif|slow freezing|slow cool(?:ing|ed)?|cool(?:ing|ed)?|freez(?:ing|e|en)?|warm(?:ing|ed)?|thaw(?:ing|ed)?|rewarm|stor(?:age|ed)?|liquid nitrogen|perfus|culture|cryoprotectant|equilibrat|loaded?)/i.test(
     sentence
   );
 }

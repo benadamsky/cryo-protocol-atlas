@@ -10,9 +10,9 @@ All gates passed: yes
 - expected included entries: 46
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
-- set macro F1: species=1 specimen=1 outcomes=0.923 stepPhases=0.943
-- field coverage: paperType=1 protocolFamily=0.826 species=0.826 specimen=0.826 outcomes=0.522 stepPhases=0.826
-- confidence: expectedIncluded=0.84 correctIncluded=0.84 incorrectIncluded=n/a
+- set macro F1: species=1 specimen=1 outcomes=0.923 stepPhases=0.94
+- field coverage: paperType=1 protocolFamily=0.826 species=0.826 specimen=0.826 outcomes=0.522 stepPhases=0.935
+- confidence: expectedIncluded=0.847 correctIncluded=0.847 incorrectIncluded=n/a
 
 ## reviewed subset
 - entries: 49
@@ -20,17 +20,17 @@ All gates passed: yes
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
 - set macro F1: species=1 specimen=1 outcomes=1 stepPhases=1
-- field coverage: paperType=1 protocolFamily=0.81 species=0.81 specimen=0.81 outcomes=0.524 stepPhases=0.81
-- confidence: expectedIncluded=0.84 correctIncluded=0.84 incorrectIncluded=n/a
+- field coverage: paperType=1 protocolFamily=0.81 species=0.81 specimen=0.81 outcomes=0.524 stepPhases=0.929
+- confidence: expectedIncluded=0.844 correctIncluded=0.844 incorrectIncluded=n/a
 
 ## seeded subset
 - entries: 4
 - expected included entries: 4
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
-- set macro F1: species=1 specimen=1 outcomes=0.5 stepPhases=0.459
+- set macro F1: species=1 specimen=1 outcomes=0.5 stepPhases=0.35
 - field coverage: paperType=1 protocolFamily=1 species=1 specimen=1 outcomes=0.5 stepPhases=1
-- confidence: expectedIncluded=0.845 correctIncluded=0.845 incorrectIncluded=n/a
+- confidence: expectedIncluded=0.885 correctIncluded=0.885 incorrectIncluded=n/a
 
 ## Gates
 - reviewed inclusion F1: pass (actual=1 >= threshold=0.9)
@@ -48,7 +48,7 @@ All gates passed: yes
 
 ## Reviewed depth
 - reviewed outcome coverage: 0.524
-- reviewed step-phase coverage: 0.81
+- reviewed step-phase coverage: 0.929
 - reviewed minimum-depth ready: yes
 
 ## Baseline vs resolved
@@ -56,7 +56,7 @@ All gates passed: yes
 - reviewed protocol family accuracy delta: 0.824
 - reviewed paper type accuracy delta: 0.119
 - reviewed species macro F1 delta: 0.049
-- reviewed specimen macro F1 delta: 0.016
+- reviewed specimen macro F1 delta: 0.01
 - reviewed outcome coverage delta: 0
 - reviewed step-phase coverage delta: 0
 - gate pass count delta: 2
@@ -64,12 +64,12 @@ All gates passed: yes
 ## Baseline reviewed subset
 - inclusion: precision=0.857 recall=1 f1=0.923
 - exact: paperType=0.881 protocolFamily=0.176
-- set macro F1: species=0.951 specimen=0.984
-- coverage: outcomes=0.524 stepPhases=0.81
+- set macro F1: species=0.951 specimen=0.99
+- coverage: outcomes=0.524 stepPhases=0.929
 
 ## Reviewed depth gaps
 - reviewed entries missing outcome labels: 20
-- reviewed entries missing step-phase labels: 8
+- reviewed entries missing step-phase labels: 3
 
 ### Missing reviewed outcomes
 - Bulk Cryopreservation of Isolated Islets of Langerhans | family=n/a type=experimental
@@ -89,11 +89,6 @@ All gates passed: yes
 - Prolonged Cryopreservation of Purified Human Pancreatic Islets | family=n/a type=experimental
 
 ### Missing reviewed step phases
-- CRYOPRESERVATION OF CHICK ISLETS | family=slow-freezing type=experimental
 - Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation | family=slow-freezing type=experimental
 - Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets | family=n/a type=experimental
 - Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor | family=slow-freezing type=experimental
-- Intraportal Autotransplantation of Cryopreserved Porcine Islets of Langerhans | family=slow-freezing type=experimental
-- Murine Islet Cryopreservation and Corticosteroids: Functional Studies | family=slow-freezing type=experimental
-- Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation | family=slow-freezing type=experimental
-- Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage | family=slow-freezing type=experimental

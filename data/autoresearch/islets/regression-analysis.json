@@ -101,7 +101,7 @@
     "candidateReviewedPaperTypeAccuracy": 1,
     "currentReviewedOutcomeMacroF1": 1,
     "candidateReviewedOutcomeMacroF1": 1,
-    "currentReviewedStepPhaseMacroF1": 0.971,
+    "currentReviewedStepPhaseMacroF1": 0.974,
     "candidateReviewedStepPhaseMacroF1": 1,
     "autoApplySafe": true
   }

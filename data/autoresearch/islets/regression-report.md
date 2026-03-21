@@ -62,5 +62,5 @@
 - reviewed protocol family accuracy: 1 -> 1
 - reviewed paper type accuracy: 1 -> 1
 - reviewed outcome macro F1: 1 -> 1
-- reviewed step phase macro F1: 0.971 -> 1
+- reviewed step phase macro F1: 0.974 -> 1
 - auto-apply safe: yes

@@ -61,11 +61,7 @@ function contradictionReason(paperA: ProtocolExtraction, paperB: ProtocolExtract
     return null;
   }
 
-  if (
-    specificSpecimensA.length > 0 &&
-    specificSpecimensB.length > 0 &&
-    sharedSpecificSpecimens.length === 0
-  ) {
+  if ((specificSpecimensA.length > 0 || specificSpecimensB.length > 0) && sharedSpecificSpecimens.length === 0) {
     return null;
   }
 

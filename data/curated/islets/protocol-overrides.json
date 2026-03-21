@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T03:08:39.893Z",
+  "generatedAt": "2026-03-21T03:38:51.647Z",
   "domain": "islets",
   "overrides": [
     {
@@ -111,6 +111,18 @@
     {
       "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
       "paperType": "experimental",
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
       "notes": "Primary study on differential freezing tolerance across rat islet size classes."
     },
     {
@@ -502,6 +514,28 @@
         "islets",
         "pancreatic islets"
       ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "warming",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
       "extractionConfidence": 0.8,
       "notes": "Rat islet paper comparing two controlled freezing techniques rather than vitrification."
     },
@@ -698,6 +732,38 @@
       "specimenTypes": [
         "islets",
         "pancreatic islets"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "culture",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: culture.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "storage",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "warming",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
       ],
       "extractionConfidence": 0.78,
       "notes": "Long-term liquid-nitrogen preservation study using 10% DMSO and controlled cooling for rodent and guinea pig islets."
@@ -1234,6 +1300,28 @@
     {
       "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
       "paperType": "experimental",
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "equilibration",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: equilibration.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
+      ],
       "notes": "Primary porcine pancreatic-islet cryogenic storage study with direct preservation outcomes."
     },
     {

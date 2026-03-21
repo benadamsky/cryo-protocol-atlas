@@ -3,7 +3,7 @@
   "autoApplySafe": false,
   "currentEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:31:48.657Z",
+    "generatedAt": "2026-03-21T03:39:03.463Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -67,11 +67,11 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 38,
-            "exactMatchCount": 34,
-            "averageF1": 0.943,
-            "averagePrecision": 0.947,
-            "averageRecall": 0.947,
+            "labeledCount": 43,
+            "exactMatchCount": 39,
+            "averageF1": 0.94,
+            "averagePrecision": 0.934,
+            "averageRecall": 0.953,
             "mismatches": [
               {
                 "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
@@ -93,9 +93,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.5
+                "f1": 0.4
               },
               {
                 "paperId": "7076767f-b08c-437f-976b-85cbda543865",
@@ -105,9 +106,10 @@
                   "unknown"
                 ],
                 "actual": [
+                  "cooling",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               },
               {
                 "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
@@ -117,9 +119,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               }
             ]
           }
@@ -158,13 +161,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 46,
-            "labeledCount": 38,
-            "coverageRate": 0.826
+            "labeledCount": 43,
+            "coverageRate": 0.935
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.84,
-          "averageOnCorrectIncluded": 0.84,
+          "averageOnExpectedIncluded": 0.847,
+          "averageOnCorrectIncluded": 0.847,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -230,8 +233,8 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 34,
-            "exactMatchCount": 34,
+            "labeledCount": 39,
+            "exactMatchCount": 39,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -272,13 +275,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 42,
-            "labeledCount": 34,
-            "coverageRate": 0.81
+            "labeledCount": 39,
+            "coverageRate": 0.929
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.84,
-          "averageOnCorrectIncluded": 0.84,
+          "averageOnExpectedIncluded": 0.844,
+          "averageOnCorrectIncluded": 0.844,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -346,8 +349,8 @@
             "field": "stepPhases",
             "labeledCount": 4,
             "exactMatchCount": 0,
-            "averageF1": 0.459,
-            "averagePrecision": 0.5,
+            "averageF1": 0.35,
+            "averagePrecision": 0.291,
             "averageRecall": 0.5,
             "mismatches": [
               {
@@ -370,9 +373,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.5
+                "f1": 0.4
               },
               {
                 "paperId": "7076767f-b08c-437f-976b-85cbda543865",
@@ -382,9 +386,10 @@
                   "unknown"
                 ],
                 "actual": [
+                  "cooling",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               },
               {
                 "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
@@ -394,9 +399,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               }
             ]
           }
@@ -440,8 +446,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.845,
-          "averageOnCorrectIncluded": 0.845,
+          "averageOnExpectedIncluded": 0.885,
+          "averageOnCorrectIncluded": 0.885,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -502,13 +508,13 @@
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
       "reviewedOutcomeCoverage": 0.524,
-      "reviewedStepPhaseCoverage": 0.81,
+      "reviewedStepPhaseCoverage": 0.929,
       "reviewedMinimumDepthReady": true
     }
   },
   "candidateEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:31:48.660Z",
+    "generatedAt": "2026-03-21T03:39:03.465Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -572,11 +578,11 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 38,
-            "exactMatchCount": 34,
-            "averageF1": 0.943,
-            "averagePrecision": 0.947,
-            "averageRecall": 0.947,
+            "labeledCount": 43,
+            "exactMatchCount": 39,
+            "averageF1": 0.94,
+            "averagePrecision": 0.934,
+            "averageRecall": 0.953,
             "mismatches": [
               {
                 "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
@@ -598,9 +604,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.5
+                "f1": 0.4
               },
               {
                 "paperId": "7076767f-b08c-437f-976b-85cbda543865",
@@ -610,9 +617,10 @@
                   "unknown"
                 ],
                 "actual": [
+                  "cooling",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               },
               {
                 "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
@@ -622,9 +630,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               }
             ]
           }
@@ -663,13 +672,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 46,
-            "labeledCount": 38,
-            "coverageRate": 0.826
+            "labeledCount": 43,
+            "coverageRate": 0.935
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.84,
-          "averageOnCorrectIncluded": 0.84,
+          "averageOnExpectedIncluded": 0.847,
+          "averageOnCorrectIncluded": 0.847,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -735,8 +744,8 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 34,
-            "exactMatchCount": 34,
+            "labeledCount": 39,
+            "exactMatchCount": 39,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -777,13 +786,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 42,
-            "labeledCount": 34,
-            "coverageRate": 0.81
+            "labeledCount": 39,
+            "coverageRate": 0.929
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.84,
-          "averageOnCorrectIncluded": 0.84,
+          "averageOnExpectedIncluded": 0.844,
+          "averageOnCorrectIncluded": 0.844,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -851,8 +860,8 @@
             "field": "stepPhases",
             "labeledCount": 4,
             "exactMatchCount": 0,
-            "averageF1": 0.459,
-            "averagePrecision": 0.5,
+            "averageF1": 0.35,
+            "averagePrecision": 0.291,
             "averageRecall": 0.5,
             "mismatches": [
               {
@@ -875,9 +884,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.5
+                "f1": 0.4
               },
               {
                 "paperId": "7076767f-b08c-437f-976b-85cbda543865",
@@ -887,9 +897,10 @@
                   "unknown"
                 ],
                 "actual": [
+                  "cooling",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               },
               {
                 "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
@@ -899,9 +910,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               }
             ]
           }
@@ -945,8 +957,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.845,
-          "averageOnCorrectIncluded": 0.845,
+          "averageOnExpectedIncluded": 0.885,
+          "averageOnCorrectIncluded": 0.885,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1007,13 +1019,13 @@
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
       "reviewedOutcomeCoverage": 0.524,
-      "reviewedStepPhaseCoverage": 0.81,
+      "reviewedStepPhaseCoverage": 0.929,
       "reviewedMinimumDepthReady": true
     }
   },
   "candidateBenchmarkEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-21T03:31:48.662Z",
+    "generatedAt": "2026-03-21T03:39:03.466Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -1077,11 +1089,11 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 40,
-            "exactMatchCount": 36,
-            "averageF1": 0.946,
-            "averagePrecision": 0.95,
-            "averageRecall": 0.95,
+            "labeledCount": 45,
+            "exactMatchCount": 41,
+            "averageF1": 0.942,
+            "averagePrecision": 0.937,
+            "averageRecall": 0.956,
             "mismatches": [
               {
                 "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
@@ -1103,9 +1115,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.5
+                "f1": 0.4
               },
               {
                 "paperId": "7076767f-b08c-437f-976b-85cbda543865",
@@ -1115,9 +1128,10 @@
                   "unknown"
                 ],
                 "actual": [
+                  "cooling",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               },
               {
                 "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
@@ -1127,9 +1141,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               }
             ]
           }
@@ -1168,13 +1183,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 46,
-            "labeledCount": 40,
-            "coverageRate": 0.87
+            "labeledCount": 45,
+            "coverageRate": 0.978
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.84,
-          "averageOnCorrectIncluded": 0.84,
+          "averageOnExpectedIncluded": 0.847,
+          "averageOnCorrectIncluded": 0.847,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1240,8 +1255,8 @@
           },
           "stepPhases": {
             "field": "stepPhases",
-            "labeledCount": 36,
-            "exactMatchCount": 36,
+            "labeledCount": 41,
+            "exactMatchCount": 41,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -1282,13 +1297,13 @@
           "stepPhases": {
             "field": "stepPhases",
             "eligibleCount": 42,
-            "labeledCount": 36,
-            "coverageRate": 0.857
+            "labeledCount": 41,
+            "coverageRate": 0.976
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.84,
-          "averageOnCorrectIncluded": 0.84,
+          "averageOnExpectedIncluded": 0.844,
+          "averageOnCorrectIncluded": 0.844,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1356,8 +1371,8 @@
             "field": "stepPhases",
             "labeledCount": 4,
             "exactMatchCount": 0,
-            "averageF1": 0.459,
-            "averagePrecision": 0.5,
+            "averageF1": 0.35,
+            "averagePrecision": 0.291,
             "averageRecall": 0.5,
             "mismatches": [
               {
@@ -1380,9 +1395,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.5
+                "f1": 0.4
               },
               {
                 "paperId": "7076767f-b08c-437f-976b-85cbda543865",
@@ -1392,9 +1408,10 @@
                   "unknown"
                 ],
                 "actual": [
+                  "cooling",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               },
               {
                 "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
@@ -1404,9 +1421,10 @@
                 ],
                 "actual": [
                   "cooling",
+                  "equilibration",
                   "storage"
                 ],
-                "f1": 0.667
+                "f1": 0.5
               }
             ]
           }
@@ -1450,8 +1468,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.845,
-          "averageOnCorrectIncluded": 0.845,
+          "averageOnExpectedIncluded": 0.885,
+          "averageOnCorrectIncluded": 0.885,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1512,7 +1530,7 @@
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
       "reviewedOutcomeCoverage": 0.548,
-      "reviewedStepPhaseCoverage": 0.857,
+      "reviewedStepPhaseCoverage": 0.976,
       "reviewedMinimumDepthReady": true
     }
   },

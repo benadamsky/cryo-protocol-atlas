@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T03:16:37.438Z",
+  "generatedAt": "2026-03-21T03:38:51.096Z",
   "domain": "islets",
   "description": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "entries": [
@@ -428,6 +428,10 @@
       "expectedSpecimenTypes": [
         "islets"
       ],
+      "expectedStepPhases": [
+        "cooling",
+        "storage"
+      ],
       "expectedOverridePatch": {
         "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
         "paperType": "experimental",
@@ -438,9 +442,31 @@
         "specimenTypes": [
           "islets"
         ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "storage",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.8
       },
-      "notes": "Chick islet cryopreservation study using stepwise DMSO loading and freeze-thaw recovery comparisons."
+      "notes": "Chick islet cryopreservation study using stepwise DMSO loading and freeze-thaw recovery comparisons. Accepted benchmark autofill proposal benchmark-depth-autofill:2b5fe0eb-5bea-4514-88d5-b6926936277e:stepPhases."
     },
     {
       "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
@@ -1621,6 +1647,10 @@
       "expectedSpecimenTypes": [
         "islets"
       ],
+      "expectedStepPhases": [
+        "cooling",
+        "storage"
+      ],
       "expectedOverridePatch": {
         "paperId": "b293075d-011c-4c8d-95a6-215ae7952c72",
         "paperType": "experimental",
@@ -1631,9 +1661,31 @@
         "specimenTypes": [
           "islets"
         ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "storage",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.82
       },
-      "notes": "Porcine autotransplantation study using controlled-rate freezing with Me2SO before intraportal grafting."
+      "notes": "Porcine autotransplantation study using controlled-rate freezing with Me2SO before intraportal grafting. Accepted benchmark autofill proposal benchmark-depth-autofill:b293075d-011c-4c8d-95a6-215ae7952c72:stepPhases."
     },
     {
       "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
@@ -1722,6 +1774,10 @@
       "expectedOutcomeClasses": [
         "function"
       ],
+      "expectedStepPhases": [
+        "cooling",
+        "storage"
+      ],
       "expectedOverridePatch": {
         "paperId": "72b969f2-a34b-439a-9300-511e3309b5d2",
         "paperType": "experimental",
@@ -1733,6 +1789,28 @@
           "islets",
           "pancreatic islets"
         ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "storage",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
         "outcomeMentions": [
           {
             "outcomeClass": "function",
@@ -1743,7 +1821,7 @@
         ],
         "extractionConfidence": 0.8
       },
-      "notes": "Murine islet cryopreservation study assessing corticosteroids within a programmable freezing workflow. Accepted benchmark autofill proposal benchmark-depth-autofill:72b969f2-a34b-439a-9300-511e3309b5d2:outcomeClasses."
+      "notes": "Murine islet cryopreservation study assessing corticosteroids within a programmable freezing workflow. Accepted benchmark autofill proposal benchmark-depth-autofill:72b969f2-a34b-439a-9300-511e3309b5d2:outcomeClasses. Accepted benchmark autofill proposal benchmark-depth-autofill:72b969f2-a34b-439a-9300-511e3309b5d2:stepPhases."
     },
     {
       "paperId": "02eddb39-be9a-4bbb-b814-5952e78e3145",
@@ -2010,6 +2088,12 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedStepPhases": [
+        "cooling",
+        "equilibration",
+        "storage",
+        "warming"
+      ],
       "expectedOverridePatch": {
         "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
         "paperType": "experimental",
@@ -2022,9 +2106,51 @@
           "islets",
           "pancreatic islets"
         ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "equilibration",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: equilibration.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "storage",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 3,
+            "phase": "warming",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.8
       },
-      "notes": "Rat islet cryopreservation study comparing PVP against standard DMSO and glycerol freezing controls."
+      "notes": "Rat islet cryopreservation study comparing PVP against standard DMSO and glycerol freezing controls. Accepted benchmark autofill proposal benchmark-depth-autofill:4056fdf9-3483-40ce-9ef4-ccd534962039:stepPhases."
     },
     {
       "paperId": "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
@@ -2614,6 +2740,11 @@
         "function",
         "viability"
       ],
+      "expectedStepPhases": [
+        "cooling",
+        "culture",
+        "storage"
+      ],
       "expectedOverridePatch": {
         "paperId": "f805778c-f7b5-422e-978a-cf3d986f008c",
         "paperType": "experimental",
@@ -2624,6 +2755,38 @@
         "specimenTypes": [
           "islets",
           "pancreatic islets"
+        ],
+        "protocolSteps": [
+          {
+            "order": 0,
+            "phase": "cooling",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 1,
+            "phase": "culture",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: culture.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          },
+          {
+            "order": 2,
+            "phase": "storage",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
+            "chemicals": [],
+            "concentrations": [],
+            "temperatures": [],
+            "durations": [],
+            "evidence": []
+          }
         ],
         "outcomeMentions": [
           {
@@ -2641,7 +2804,7 @@
         ],
         "extractionConfidence": 0.82
       },
-      "notes": "Human pancreatic islet cryopreservation study testing trehalose as an adjunct in a long-term freezing workflow. Accepted benchmark autofill proposal benchmark-depth-autofill:f805778c-f7b5-422e-978a-cf3d986f008c:outcomeClasses."
+      "notes": "Human pancreatic islet cryopreservation study testing trehalose as an adjunct in a long-term freezing workflow. Accepted benchmark autofill proposal benchmark-depth-autofill:f805778c-f7b5-422e-978a-cf3d986f008c:outcomeClasses. Accepted benchmark autofill proposal benchmark-depth-autofill:f805778c-f7b5-422e-978a-cf3d986f008c:stepPhases."
     },
     {
       "paperId": "1453f932-2e03-42a3-968a-9efaf2b3233e",
