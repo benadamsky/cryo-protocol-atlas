@@ -63,4 +63,5 @@ And an evaluation harness that answers:
 - Future autoresearch loops should optimize against reviewed gates first, then improve seeded coverage without rewriting the benchmark itself.
 - The current loop is intentionally narrow: it auto-applies only reviewed benchmark-backed override repairs, while any benchmark depth expansion stays review-only.
 - Benchmark depth proposals are only generated when the resolved extraction already contains explicit outcome/step structure for a reviewed in-scope paper.
+- Benchmark depth proposals now have a review/apply path: queue decisions, accept/reject candidate benchmark patches, then rerun evaluation and loop generation on the updated gold set.
 - The ovarian and islet slices now both support ingest -> curate -> benchmark -> repair-loop regression testing.

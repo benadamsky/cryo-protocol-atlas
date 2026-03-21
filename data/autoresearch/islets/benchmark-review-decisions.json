@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-03-21T02:38:58.360Z",
+  "domain": "islets",
+  "sourceProposalGeneratedAt": "2026-03-21T02:38:38.298Z",
+  "decisionCount": 23,
+  "decisions": [
+    {
+      "proposalId": "benchmark-depth-autofill:c7c65868-ac9d-4b95-805b-d30e02dadd0c:stepPhases",
+      "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
+      "title": "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:5657b492-dd6b-491f-935b-6248369afbb2:stepPhases",
+      "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",
+      "title": "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:80be44da-a725-4051-9d4e-0c5881409006:stepPhases",
+      "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+      "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:e8acf4c0-f208-4ee5-ac4e-1fe7221b0a48:outcomeClasses+stepPhases",
+      "paperId": "e8acf4c0-f208-4ee5-ac4e-1fe7221b0a48",
+      "title": "Viability Studies on Frozen-Thawed Rat Islets of Langerhans",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:2c726492-625a-4f6a-bd48-f8d3e9b465c3:stepPhases",
+      "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
+      "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:9ec86ab7-5e07-4437-bac6-a67b159a6540:stepPhases",
+      "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
+      "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:dae850dd-b5dd-4b24-a326-2dc59a1d0980:outcomeClasses+stepPhases",
+      "paperId": "dae850dd-b5dd-4b24-a326-2dc59a1d0980",
+      "title": "Storage and Microencapsulation of Islets for Transplantation",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:a24a1702-5dad-4428-b962-27cd59e2e6e8:stepPhases",
+      "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+      "title": "Successful Cryopreservation of Fetal Porcine Proislets",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:6e4ea940-2dbd-4790-b848-c453f6a0f42a:stepPhases",
+      "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+      "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:319d4b4f-5170-4966-a582-75463fe725d7:stepPhases",
+      "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+      "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:0690eaf4-00bb-4b65-b277-9c85d4e8bfcd:stepPhases",
+      "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
+      "title": "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:d865c65c-b6a7-431c-941c-c23d68f30469:stepPhases",
+      "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
+      "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:12e4333d-e145-4340-ada1-b38751f5f390:outcomeClasses+stepPhases",
+      "paperId": "12e4333d-e145-4340-ada1-b38751f5f390",
+      "title": "Viability Analysis of Cryopreserved Rat Pancreatic Islets Using Laser Scanning Confocal Microscopy",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:51afcf7d-1bff-4630-808a-40407290f0d2:stepPhases",
+      "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
+      "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:e61a3868-8fcf-4024-96f7-eb4ae8a9456a:stepPhases",
+      "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+      "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:f805778c-f7b5-422e-978a-cf3d986f008c:stepPhases",
+      "paperId": "f805778c-f7b5-422e-978a-cf3d986f008c",
+      "title": "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:5f8b44a6-e05c-4bdd-ac73-18c0411696dc:stepPhases",
+      "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
+      "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:3e158dec-5b97-46f4-8b40-57e009e02cc0:stepPhases",
+      "paperId": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
+      "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:0008fd20-cb99-4666-b48d-c24bd4abd4d1:stepPhases",
+      "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
+      "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:4056fdf9-3483-40ce-9ef4-ccd534962039:stepPhases",
+      "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+      "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:1453f932-2e03-42a3-968a-9efaf2b3233e:stepPhases",
+      "paperId": "1453f932-2e03-42a3-968a-9efaf2b3233e",
+      "title": "USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:571357d4-0860-494b-8a6a-23814bacb5a0:stepPhases",
+      "paperId": "571357d4-0860-494b-8a6a-23814bacb5a0",
+      "title": "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5:stepPhases",
+      "paperId": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",
+      "title": "Interaction of Cooling Rate, Warming Rate, and Extent of Permeation of Cryoprotectant in Determining Survival of Isolated Rat Islets of Langerhans During Cryopreservation",
+      "decision": "pending"
+    }
+  ]
+}

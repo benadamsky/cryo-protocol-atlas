@@ -33,6 +33,14 @@ function round(value: number): number {
   return Number(value.toFixed(3));
 }
 
+function buildProposalId(
+  source: "reviewed-benchmark-repair" | "benchmark-depth-autofill",
+  paperId: string,
+  fields: ProposalField[]
+): string {
+  return `${source}:${paperId}:${uniqueSorted(fields).join("+")}`;
+}
+
 function buildCurrentState(
   extractionSnapshot: ExtractionSnapshot,
   overrideFile: ProtocolOverrideFile | null
@@ -146,6 +154,7 @@ function createOverrideProposal(entry: BenchmarkEntry, fields: ProposalField[]):
   }
 
   return {
+    proposalId: buildProposalId("reviewed-benchmark-repair", entry.paperId, fields),
     paperId: entry.paperId,
     title: entry.title,
     benchmarkReviewStatus: entry.reviewStatus,
@@ -270,6 +279,7 @@ function createDepthAutofillProposal(
   }
 
   return {
+    proposalId: buildProposalId("benchmark-depth-autofill", entry.paperId, fields),
     paperId: entry.paperId,
     title: entry.title,
     benchmarkReviewStatus: entry.reviewStatus,

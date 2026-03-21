@@ -284,6 +284,7 @@ export const BenchmarkPatchSchema = z.object({
 export type BenchmarkPatch = z.infer<typeof BenchmarkPatchSchema>;
 
 export const AutoresearchProposalSchema = z.object({
+  proposalId: z.string(),
   paperId: z.string(),
   title: z.string(),
   benchmarkReviewStatus: BenchmarkReviewStatusSchema,
@@ -308,3 +309,25 @@ export const AutoresearchProposalFileSchema = z.object({
   proposals: z.array(AutoresearchProposalSchema)
 });
 export type AutoresearchProposalFile = z.infer<typeof AutoresearchProposalFileSchema>;
+
+export const BenchmarkProposalDecisionStatusSchema = z.enum(["pending", "accept", "reject", "defer"]);
+export type BenchmarkProposalDecisionStatus = z.infer<typeof BenchmarkProposalDecisionStatusSchema>;
+
+export const BenchmarkProposalDecisionSchema = z.object({
+  proposalId: z.string(),
+  paperId: z.string(),
+  title: z.string(),
+  decision: BenchmarkProposalDecisionStatusSchema,
+  reviewerNotes: z.string().optional(),
+  decidedAt: z.string().optional()
+});
+export type BenchmarkProposalDecision = z.infer<typeof BenchmarkProposalDecisionSchema>;
+
+export const BenchmarkProposalDecisionFileSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  sourceProposalGeneratedAt: z.string(),
+  decisionCount: z.number().int().nonnegative(),
+  decisions: z.array(BenchmarkProposalDecisionSchema)
+});
+export type BenchmarkProposalDecisionFile = z.infer<typeof BenchmarkProposalDecisionFileSchema>;

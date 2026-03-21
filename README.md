@@ -35,6 +35,10 @@ The next scaffolded domain is:
 - `bun run evaluate:islets`
 - `bun run loop:ovarian`
 - `bun run loop:islets`
+- `bun run review-benchmark:ovarian`
+- `bun run review-benchmark:islets`
+- `bun run apply-benchmark:ovarian`
+- `bun run apply-benchmark:islets`
 - `bun run regress:ovarian`
 - `bun run regress:islets`
 - `bun run typecheck`
@@ -83,3 +87,5 @@ This is still not a discovery engine. It is the evaluation scaffold that lets fu
 This loop is intentionally conservative. It does not auto-apply benchmark patches, it does not invent new scientific labels from thin evidence, and it should only auto-apply override proposals when the reviewed gates are preserved or improved.
 
 `bun run regress:<domain>` runs deliberate perturbation scenarios against the current reviewed benchmark and verifies that the loop proposes the expected reviewed-paper fixes. This is the main proof that the loop can recover from benchmark regressions instead of only reporting no-ops on a clean slice.
+
+`bun run review-benchmark:<domain>` materializes a decision file plus markdown queue for benchmark-depth proposals. `bun run apply-benchmark:<domain>` merges accepted benchmark patches into the gold set and reruns evaluation + loop generation so the next cycle starts from the updated benchmark.

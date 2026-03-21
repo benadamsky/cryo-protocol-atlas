@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-03-21T02:38:58.357Z",
+  "domain": "ovarian-tissue",
+  "sourceProposalGeneratedAt": "2026-03-21T02:38:38.286Z",
+  "decisionCount": 2,
+  "decisions": [
+    {
+      "proposalId": "benchmark-depth-autofill:f24fdc26-2071-4ae1-86d6-fa70a17a9574:stepPhases",
+      "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+      "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+      "decision": "pending"
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:efebd52e-704f-48b4-82e5-f41f971df210:stepPhases",
+      "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+      "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+      "decision": "pending"
+    }
+  ]
+}

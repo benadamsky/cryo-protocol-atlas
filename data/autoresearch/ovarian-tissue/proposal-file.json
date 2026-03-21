@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2026-03-21T02:30:15.820Z",
+  "generatedAt": "2026-03-21T02:38:38.286Z",
   "domain": "ovarian-tissue",
   "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "proposalCount": 2,
   "proposals": [
     {
+      "proposalId": "benchmark-depth-autofill:f24fdc26-2071-4ae1-86d6-fa70a17a9574:stepPhases",
       "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
       "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
       "benchmarkReviewStatus": "reviewed",
@@ -141,6 +142,7 @@
       ]
     },
     {
+      "proposalId": "benchmark-depth-autofill:efebd52e-704f-48b4-82e5-f41f971df210:stepPhases",
       "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
       "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
       "benchmarkReviewStatus": "reviewed",
