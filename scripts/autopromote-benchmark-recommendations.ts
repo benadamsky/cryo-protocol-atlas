@@ -51,13 +51,12 @@ async function main(selectedDomain: DomainId): Promise<void> {
     })
   });
 
-  await writeFile(
-    join(loopDir, "benchmark-review-decisions.json"),
-    JSON.stringify(nextDecisionFile, null, 2),
-    "utf8"
-  );
-
   if (autoAcceptedProposalIds.length > 0) {
+    await writeFile(
+      join(loopDir, "benchmark-review-decisions.json"),
+      JSON.stringify(nextDecisionFile, null, 2),
+      "utf8"
+    );
     execFileSync(process.execPath, ["--import", "tsx", "scripts/apply-benchmark-review.ts", selectedDomain], {
       cwd: process.cwd(),
       stdio: "inherit"
