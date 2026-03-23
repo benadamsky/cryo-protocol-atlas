@@ -1,0 +1,659 @@
+{
+  "generatedAt": "2026-03-20T16:03:16.646Z",
+  "domain": "ovarian-tissue",
+  "totalFetched": 500,
+  "totalMatched": 28,
+  "papers": [
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "d8fa8551-7088-4f7a-ba21-f3a7b113db47",
+        "paper_id": null,
+        "doi": "10.1016/j.cryobiol.2024.105023",
+        "title": "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+        "abstract": "In the U.S. alone, ~140,000 young women and children receive cancer diagnoses each year with hundreds of thousands more globally. Many cancer therapies destroy ovarian follicles and cause premature ovarian failure, leading to infertility and long-term health risks (adverse cardiovascular, metabolic, neurological, and bone outcomes and menopausal symptoms). While embryo and oocyte cryopreservation are and have been an option for fertility preservation in adults for decades, ovarian tissue cryopreservation (OTC) offers the only hope for future fertility in prepubertal girls, and the only option that can preserve hormone functions. Globally, over 200 human live births are reported following OTC and transplantation (only 2 in the US), and hormones are restored in over 90% of transplant recipients. Most of these successes have been achieved using slow freezing methods, that the field has recognized are sub-optimal for tissue and organ preservation. To address these limitations, we are developing improved preservation protocols using vitrification for both ovarian tissue and whole ovaries. Vitrified ovarian tissue was transplanted in heterotopic sites in a nonhuman primate model, resulting in restoration of ovarian hormone function, and production of fertilizable oocytes. However, ovarian tissue grafts only last a few years, often requiring multiple sequential transplants, while the whole ovary contains the entire follicle pool and vascular structure and can provide extended function after replantation. We used a feedback-controlled perfusion prototype capable of delivering/removing cryoprotectants to/from whole ovaries with a concentration gradient and a controlled temperature profile, and at a constant pressure before vitrification and after rewarming. Vitrified whole ovaries ware transplanted orthotopically in the gold standard sheep (long-term) and porcine (short-term) models. Ovarian hormones (estradiol and progesterone) and cyclic ovarian activity were restored in animals 2-6 months post-transplant with histological data suggesting active ovarian follicle development. Our ongoing efforts are focused on improving pregnancy outcomes.",
+        "journal": "Cryobiology",
+        "published_year": 2024,
+        "published_month": 1,
+        "published_day": null,
+        "authors_flat": "Alison Ting; Bradley Weegman; Cecily V. Bishop; Brian Wowk; Limdo Chow; Roberto Pagotan; Olivia E. Stricklin; Amanda K. Fox; Sawyer S. Harrington; Tamar Weiss; Charles Estill; Gregory Fahy; Mary Zelinskie"
+      },
+      "score": 17,
+      "matchedKeywords": [
+        "ovary",
+        "ovaries",
+        "ovarian tissue",
+        "whole ovary",
+        "follicle",
+        "follicles",
+        "ovarian",
+        "oocyte",
+        "oocytes",
+        "fertility preservation",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "f062f014-b946-4592-a58e-cd0633082b85",
+        "paper_id": null,
+        "doi": "10.1016/j.cryobiol.2025.105218",
+        "title": "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+        "abstract": "If in vitro culture conditions could be improved, in vitro growth of cryopreserved ovarian tissue and isolated follicles could become an alternative to ovarian tissue transplantation. This study evaluated two cryopreservation methods, slow cooling and vitrification, and two in vitro culture methods, to determine their effect on the in vitro growth of human ovarian follicles. After warming, the OT pieces (1 × 10 × 3 mm) were cultured in either routine culture medium (DMEM), or DMEM supplemented 50:50 with media previously used for human testicular cell culture (hTCCM) to serve as a source of growth factors. Several parameters were evaluated during culture including follicle recruitment, growth, morphology, diameter, hormone production, and gene expressions (PTEN, BMP-15, PDGF, GDF-9, and GAPDH). The follicular morphology and hormonal secretion were comparable for both cryopreservation methods and both culture methods (P > 0.05). Follicle recruitment was accelerated in the vitrified group, in the presence of hTCCM (P > 0.05). After 7 days of culture, the follicle diameter was greater in the slow/hTCCM compared to the vitrification DMEM group. Similarly only one gene expression profile, BMP-15, in the slow/hTCCM differed significantly from another treatment group (Vit DMEM). At the end of culture (over 21 days), three immature, low-quality oocytes were the achievement. In conclusion, a very quick and easy vitrification protocol gave comparable results to the slow cooling method. We also established that the laboriously prepared hTCCM supplement did not benefit the outcomes. Further work is needed before in vitro maturation of cryopreserved ovarian cortical pieces can be used clinically.",
+        "journal": "Cryobiology",
+        "published_year": 2025,
+        "published_month": 3,
+        "published_day": 13,
+        "authors_flat": "Mohammad Ali Khalili; Behrouz Aflatoonian; Mohammad Reza Mirzaei; Mahin Izadi; Mojgan Noroozi Karimabad; Fatemeh Asadi; Mahboubeh Vatanparast"
+      },
+      "score": 15,
+      "matchedKeywords": [
+        "ovarian tissue",
+        "ovarian cortical",
+        "cortical pieces",
+        "follicle",
+        "follicles",
+        "ovarian",
+        "oocyte",
+        "oocytes",
+        "fertility preservation",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "da34cec8-3a6e-460b-ae3b-62afb90c6e4e",
+        "paper_id": null,
+        "doi": "10.1016/s0015-0282(00)01787-8",
+        "title": "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+        "abstract": "Objective: To test the toxicity of cryoprotectant in sheep ovarian tissue and to determine optimal conditions for freezing hemiovary cortex. Design: Small follicles (,60 mm in diameter) were isolated enzymatically for viability testing. Dead and live follicles were identified by using trypan blue staining, and follicle morphology was examined histologically. Setting: Centre hospitalo‑universitaire de Biologie de la Reproduction, Hôpital Edouard Herriot, Lyon, France. Animal(s): Lambs 5 to 6 months of age. Intervention(s): Two‑millimeter slices of hemiovarian cortex were prepared for cryoprotectant toxicity tests and freezing procedures. Main Outcome Measure(s): Follicular mortality and histologic structure. Result(s): For freezing procedures, the concentration of cryoprotectant was increased to 2 M on the basis of results of cryoprotectant toxicity tests in fresh tissues. Follicular mortality rates were 4.6% with of 2 M dimethyl sulfoxide (DMSO) and 3.8% with 2 M of propylene glycol (PROH). After freezing with semiautomatic seeding, follicular mortality rates were 8.4% (2 M of DMSO) and 12.4% (2 M of PROH). Tissue morphology was well preserved with 1.5 M of DMSO or PROH. With 1.5 M DMSO, results of the slow cooling protocol (2°C/min) without seeding and the standard very slow cooling protocol (0.3°C/min) were similar. Conclusion(s): Optimal survival of primordial follicles in the sheep was obtained by using a slow cooling protocol with semiautomatic seeding at 2 M of DMSO.",
+        "journal": "Fertility and Sterility",
+        "published_year": 2001,
+        "published_month": 4,
+        "published_day": null,
+        "authors_flat": "Banu Demirci, D.V.M.; Jacqueline Lornage, M.D., Ph.D.; Bruno Salle, M.D., Ph.D.; Lucien Frappart, M.D., Ph.D.; Michel Franck, D.V.M.; Jean François Guerin, M.D., Ph.D."
+      },
+      "score": 14,
+      "matchedKeywords": [
+        "ovary",
+        "ovaries",
+        "ovarian tissue",
+        "ovarian cortex",
+        "follicle",
+        "follicles",
+        "ovarian",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "ef159502-8cd1-433a-9c83-1576490b3a43",
+        "paper_id": null,
+        "doi": "10.1016/j.cryobiol.2009.09.009",
+        "title": "The future potential of cryopreservation for assisted reproduction",
+        "abstract": "Cryopreservation of human gonadal tissue and oocytes has brought about new and exciting research in reproductive medicine, as well as new cryopreservation techniques that are dramatically improving post-thaw viability and freezing damage. The work done on gonadal tissues is aimed at improving the quality of life for infertile patients and for prepubertal patients undergoing gonadotoxic chemotherapy, patients for whom hormonal stimulation/IVF is not an option, and women without partners. Cryopreservation of mature oocytes is the best model for timing IVF. Vitriﬁcation is likely to beneﬁt the ﬁeld, and since 2005, implantation and pregnancy rates from vitriﬁed oocytes have matched or eclipsed results from conventional methods, due to new cell-speciﬁc methods and formulas. Cryopreservation of immature oocytes leads to a new direction of egg banking in future. Preserving ovarian tissue for autografting is still promising and has resulted in folliculogenesis, resumed hormone production and live births in limited cases. The use of small cortical blocks, or mechanical/chemical digestion of ovarian tissue for isolation of follicles is a new direction for ovary preservation for reasons of cryoprotectant permeation and graft revascularization. Maturation of follicles in vitro has become more feasible with the use of alginate microencapsulation. Testicular tissue preservation has taken a sharp turn towards preservation of gonadal stem cells. Research into the mechanism for spermatogenesis points to the ability for male germ cells to resume spermatogenesis. The cryopreservation of minced testicular tissue for isolation of germ cells via chemical digestion has produced viable cells, however, structural damage that may be avoided by vitriﬁcation has been noted to the surrounding cell junctions and supporting cells.",
+        "journal": "Cryobiology",
+        "published_year": 2010,
+        "published_month": 10,
+        "published_day": null,
+        "authors_flat": "Ying Song; Randy Sharp; Fenghua Lu; Maliha Hassan"
+      },
+      "score": 12,
+      "matchedKeywords": [
+        "ovary",
+        "ovarian tissue",
+        "follicle",
+        "follicles",
+        "ovarian",
+        "oocyte",
+        "oocytes",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "e60a5fab-5db3-49b5-99d8-badd40672abf",
+        "paper_id": null,
+        "doi": "10.1007/s10815-010-9477-5",
+        "title": "Whole sheep ovary cryopreservation: evaluation of a slow freezing protocol with dimethylsulphoxide",
+        "abstract": "Purpose To evaluate a slow freezing method for whole ovary cryopreservation by evaluating effects of added cryoprotectant. Methods Sheep ovaries were isolated during surgery, flushed with either Ringer-Acetate or dimethylsulphoxide and cryopreserved by slow freezing. After rapid thawing, viability was assessed by ovarian in vitro perfusion, cell culture, histology and fluorescent live-dead assay. Results Production of cyclic AMP and progesterone was slightly higher in the dimethylsulphoxide group. Cultured ovarian cells from dimethylsulphoxide-preserved ovaries secreted larger amounts of progesterone than cells from Ringer-Acetate preserved. Light microscopy of ovarian biopsies obtained after perfusion, revealed well-preserved tissue in the dimethysulphoxide group but not in the Ringer-Acetate group. The density of small follicles and ovarian cell viability were higher in dimethysulphoxide ovaries compared to Ringer-Acetate ovaries. Conclusions Equilibrium with its protective effect can be achieved by slow freezing protocol, with an additional protective effect by the presence of dimethylsulphoxide.",
+        "journal": "Journal of Assisted Reproduction and Genetics",
+        "published_year": 2010,
+        "published_month": 9,
+        "published_day": 15,
+        "authors_flat": "Milan Milenkovic; Ann Wallin; Manda Ghahremani; Mats Brännström"
+      },
+      "score": 12,
+      "matchedKeywords": [
+        "ovary",
+        "ovaries",
+        "whole ovary",
+        "follicle",
+        "follicles",
+        "ovarian",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+        "paper_id": null,
+        "doi": "10.1097/gco.0b013e328247f411",
+        "title": "Ovarian and oocyte cryopreservation",
+        "abstract": "The present article is an update on progress in the two available techniques of oocyte and ovarian cryopreservation: slow cooling/rapid thawing and vitriﬁcation. A new line of research has opened in recent years: freezing the whole ovary with its vascular pedicle, so as to enable vascular grafts limiting ischemia-related follicle reserve loss. The technique of mature oocyte vitriﬁcation has advanced significantly, with improved oocyte physiology, increased safety, and higher clinical pregnancy rates. The number of studies on whole ovary freezing has grown, and there has been a large-mammal (sheep) live birth by orthotopic graft with vascular anastomosis of a cryopreserved ovary. Ovarian and oocyte cryopreservation is essential to conserving the fertility of young women. Results of mature oocyte freezing techniques have improved significantly over the past few years, but remain poorer than those with embryo freezing. Mature oocyte vitriﬁcation is progressing well, but requires safety validation in view of the high cryoprotectant concentrations used. Ovarian cortex fragment freezing is widely used in patients, with two live births after orthotopic graft, worldwide. The problem of rapid graft exhaustion has led to a focus on whole ovary cryopreservation which has resulted in one live birth in a ewe.",
+        "journal": "Curr Opin Obstet Gynecol",
+        "published_year": 2007,
+        "published_month": 7,
+        "published_day": null,
+        "authors_flat": "Jacqueline Lornage; Bruno Salle"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "ovary",
+        "ovarian cortex",
+        "whole ovary",
+        "follicle",
+        "ovarian",
+        "oocyte",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+        "paper_id": null,
+        "doi": "10.1016/S0015-0282(03)01119-1",
+        "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+        "abstract": "Ovarian cryopreservation and grafting has resulted in successful ovulation, pregnancy, and live‑born animals including mice and sheep. The procedure is currently being offered to humans as a new method of assisted reproduction. However, its value frequently has been questioned because of a potential to reintroduce the malignant cells, viral infections, and induction of immune responses against the transplanted ovarian tissue. The objective of this study was to determine the relationship between ovary autotransplantation and antiovary antibody formation in 16 adult female, nonpregnant merino ewes. Surgical procedures were performed at the Cleveland Clinic Foundation Biological Resources Unit in accordance with the facility’s Standard Operating Procedures (Institutional Animal Care and Ewe Committee). The institutional animal research committee approved the study protocol. All animals underwent bilateral laparoscopic oophorectomy. Ovarian cortex fragments (5 mm²) from 6 sheep and whole ovaries from 10 sheep were removed and cryopreserved using a controlled rate freezer. After 7 days of storage in liquid nitrogen (-196°C), the specimens were thawed. All 6 ovarian cortex fragments and 10 whole ovaries were transplanted back into their original donors. The grafts were removed 7 days later for histological evaluations. Blood samples were withdrawn preoperatively, at transplantation, and at transplant removal. Antiovary antibodies in serum were detected by indirect immunofluorescence assay using commercial slides of monkey ovaries and frozen sections of fresh sheep ovary as antigen. Antiovary antibodies were detected in three serum samples obtained at transplant removal. The study supports that ovary autotransplantation induces antiovary antibody formation in sheep.",
+        "journal": "Fertility and Sterility",
+        "published_year": 2003,
+        "published_month": 10,
+        "published_day": null,
+        "authors_flat": "Navid Esfandiari; Tommaso Falcone; Mohamed A. Bedaiwy; Ashok Agarwal; Elisabeth Jeremias; Rakesh K. Sharma"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "ovary",
+        "ovaries",
+        "ovarian tissue",
+        "ovarian cortex",
+        "ovarian",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "e60a0ee8-afa8-449c-bbab-60f04b2fdf09",
+        "paper_id": null,
+        "doi": "10.1016/j.cryobiol.2018.07.003",
+        "title": "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+        "abstract": "Ovarian tissue cryopreservation is a promising technique for fertility maintenance. The aim of this study was to compare the morphology of domestic cat ovarian follicles after tissue cryopreservation with ethylene glycol (EG) and dimethyl sulfoxide (Me2SO). Ovaries from healthy adult cats undergoing elective ovariohysterectomy were used. Eight fragments were obtained from each pair of ovaries: two were used as fresh controls; three were submitted to fresh perfusion toxicity test and perfused with M199, 10% fetal calf serum and 0.4% sucrose containing Me2SO 1.5 M, EG 1.5 M or Me2SO 0.75 M + EG 0.75 M; and the remaining three fragments were perfused as described and submitted to slow freezing. After 45 days of cryopreservation, the samples were thawed, fixed and processed for light and transmission electron microscopy (TEM). The percentages of morphologically normal follicles identified by light microscopy were higher in the control group (94.45%) in comparison to the frozen groups (80.56% with EG, 78.7% with Me2SO and 75.87% with EG + Me2SO). The fresh perfused tissue showed no statistical difference compared to control or frozen samples. The TEM analysis showed less damage in the ultrastructure of follicles from the Me2SO group in comparison with the EG and Me2SO + EG groups. According to the morphological analysis, 1.5 M Me2SO is the best cryoprotectant for cryopreservation of domestic cat ovarian tissue regarding the morphology of preantral follicles after thawing. Further studies regarding the viability of these follicles should be performed.",
+        "journal": "Cryobiology",
+        "published_year": 2018,
+        "published_month": 7,
+        "published_day": 4,
+        "authors_flat": "Ellen Cristina Rivas Leonel; Janice Miranda Vasconcellos Vilela; Daniela de Jesus Carrilho; Carolina Madeira Lucci"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "ovaries",
+        "ovarian tissue",
+        "follicle",
+        "follicles",
+        "ovarian",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+        "paper_id": null,
+        "doi": "10.1093/humrep/deq357",
+        "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+        "abstract": "Cancer therapy is one of many conditions which may diminish the ovarian reserve. Banking of human ovarian tissue has become an option for the preservation of female fertility. We have shown that vitriﬁcation is an excellent method to cryopreserve ovarian tissue. To carry out vitriﬁcation in a clinical setting, we have developed a clinical grade closed system to avoid direct contact of ovarian tissue with liquid nitrogen. Ovarian tissue was obtained by biopsy from 12 consenting women undergoing Caesarean section. Tissues were vitriﬁed in cryotubes, using dimethyl sulphoxide, 1,2-propanediol, ethylene glycol and polyvinylpyrrolidon as cryoprotectants. Non-vitriﬁed and warmed-vitriﬁed tissue was compared by light and electron microscopic morphology of the follicles within the tissues. We did not see any differences in the light or electron microscopic ultrastructure of oocytes between non-vitriﬁed and vitriﬁed tissues. No irreversible subcellular alterations in vitriﬁed tissues were seen. The ultrastructure of follicles within the vitriﬁed human ovarian tissue was well preserved using cryotube in a closed vitriﬁcation system to avoid direct contact of liquid nitrogen. The system is compatible with the European tissue directive.",
+        "journal": "Human Reproduction",
+        "published_year": 2011,
+        "published_month": 1,
+        "published_day": 8,
+        "authors_flat": "Mona Sheikhi; Kjell Hultenby; Boel Niklasson; Monalill Lundqvist; Outi Hovatta"
+      },
+      "score": 9,
+      "matchedKeywords": [
+        "ovarian tissue",
+        "follicle",
+        "follicles",
+        "ovarian",
+        "oocyte",
+        "oocytes"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "fd2cabdb-f442-4545-b312-845303c594c5",
+        "paper_id": null,
+        "doi": "10.1016/j.fertnstert.2012.01.123",
+        "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+        "abstract": "Objective: To investigate four different protocols for cryopreservation of the whole rat ovary with intact vasculature to evaluate whether differences exist in post-thawing viability of the ovary after either vitrification or slow freezing. Design: Experimental study. Setting: Obstetrics and gynecology department. Animals: Immature Sprague-Dawley female rats. Intervention(s): Ovaries were isolated with the vascular tree intact up to the bifurcation of the abdominal aorta and were subsequently cannulated. The ovaries were flushed with increasing concentrations of the cryoprotectant dimethyl sulfoxide (DMSO) to either 1.5 or 7 M. The ovaries underwent cryopreservation by vitrification or passive slow freezing. Main Outcome Measure(s): After thawing, the ovaries were subjected to neutral red viability staining to assess the density of viable small follicles and for long-term (48 hours) incubation evaluation of steroid secretion, histology, and apoptosis assay. Results: The follicular viability was decreased in both vitrification groups and in the slow-freezing group with the high concentration of DMSO, as compared with fresh controls. Estradiol levels in the incubation medium followed the same pattern. Light microscopy revealed well-preserved morphology in all groups after 48 hours’ incubation. Apoptosis was increased in both vitrified and cryopreserved ovaries. Conclusion(s): We have developed a new method that can be used in basic studies to improve cryopreservation protocols. Our initial findings suggest that a moderate concentration of the cryoprotectant DMSO is superior to a high DMSO concentration for both vitrification and slow freezing.",
+        "journal": "Fertility and Sterility",
+        "published_year": 2012,
+        "published_month": 5,
+        "published_day": 1,
+        "authors_flat": "Milan Milenkovic; Cesar Diaz-Garcia; Ann Wallin; Mats Brannstrom"
+      },
+      "score": 9,
+      "matchedKeywords": [
+        "ovary",
+        "ovaries",
+        "follicle",
+        "follicles",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+        "paper_id": null,
+        "doi": "10.1016/j.cryobiol.2009.02.006",
+        "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+        "abstract": "Objective: To compare the effect of novel direct cover vitriﬁcation (DCV) and conventional vitriﬁcation (CV) for human ovarian tissue. Study design: Ovarian biopsy specimens obtained from 12 patients were randomly allocated into ﬁve groups: Fresh, DCV1, DCV2, DCV3 and CV. Three concentrations of cryoprotectants were used in DCV group. The equilibration solution of DCV1, DCV2, DCV3 was 5% EG + 5% DMSO + DPBS, 7.5% EG + 7.5% DMSO + DPBS, 10% EG + 10% DMSO + DPBS, respectively. And the vitriﬁcation solution of DCV1, DCV2, DCV3 was 10% EG + 10% DMSO + DPBS, 15% EG + 15% DMSO + DPBS, 20% EG + 20% DMSO + DPBS, respectively. The equilibration solution and the vitriﬁcation solution of CV group was same as DCV3 group. The effects of cryopreserved procedure on human ovarian tissue were studied by histology, TUNEL assay, transmission electron microscopy (TEM) and heterotopic allograft. Results: The percentages of morphologically normal and viable follicles of DCV2 were signiﬁcantly higher than DCV1, DCV3 and CV groups (P < 0.05). TUNEL assay demonstrated that the incidence of apoptotic cell in vitriﬁcation ovarian tissue was signiﬁcantly higher than fresh tissue (P < 0.05), but there were no difference in various groups with cryopreservation. TEM showed that less damage was detected in DCV2 group. After grafting, the follicle density of DCV2 was greater than DCV1, DCV3 and CV groups (P < 0.05). Conclusions: The novel cover vitriﬁcation with optimal concentration of cryoprotectants is superior to conventional vitriﬁcation. It is suitable for human ovarian tissue fragments with high efﬁciency and facility.",
+        "journal": "Cryobiology",
+        "published_year": 2010,
+        "published_month": 10,
+        "published_day": null,
+        "authors_flat": "Xin-Hui Zhou; Yi-Jun Wu; Jin Shi; Ya-xian Xia; Shu-Sen Zheng"
+      },
+      "score": 8,
+      "matchedKeywords": [
+        "ovarian tissue",
+        "follicle",
+        "follicles",
+        "ovarian",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "e94731cb-3b60-464e-b981-2b1d0737dc61",
+        "paper_id": null,
+        "doi": "10.1007/s00441-015-2181-0",
+        "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+        "abstract": "The risk of reintroducing malignant cells after ovarian graft into patients following post-cancer treatment is an obstacle for clinical applications (autotransplantation). In this context, in vitro follicle culture would be an alternative to transplantation in order to minimize such risks. Therefore, the aim of this study was to compare the development of secondary follicles after vitrification in isolated form (without stroma) with vitrification in in situ form (within fragments of ovarian tissue). Follicles were first isolated from ovarian fragments from mixed-breed ewes and then vitrified; these comprised the Follicle-Vitrification group (Follicle-Vit), or fragments of ovarian tissue were first vitrified, followed by isolation of the follicles, resulting in the Tissue-Vitrification group (Tissue-Vit). Control and vitrified groups were submitted to in vitro culture (6 days) and follicular morphology, viability, antrum formation, follicle and oocyte diameter, growth rate, ultrastructural characteristics and cell proliferation were evaluated. The percentages of morphologically normal follicles and antrum formation were similar among groups. Follicular viability and oocyte diameter were similar between Follicle-Vit and Tissue-Vit. The follicular diameter and growth rate of Follicle-Vit were similar to the Control, while those of Tissue-Vit were significantly lower compared to the Control. Both vitrified groups had an augmented rate of granulosa cellular proliferation compared to Control. Secondary follicles can be successfully vitrified before or after isolation from the ovarian tissue without impairing their ability to survive and grow during in vitro culture.",
+        "journal": "Cell and Tissue Research",
+        "published_year": 2015,
+        "published_month": 5,
+        "published_day": 7,
+        "authors_flat": "Franciele Osmarini Lunardi; Roberta Nogueira Chaves; Laritza Ferreira de Lima; Valdevane Rocha Araújo; Ivina Rocha Brito; Carlos Eduardo Azevedo Souza; Mariana Aragão Matos Donato; Christina Alves Peixoto; Andras Dinnyes; Cláudio Cabral Campello; José Ricardo de Figueiredo; Ana Paula Ribeiro Rodrigues"
+      },
+      "score": 8,
+      "matchedKeywords": [
+        "ovarian tissue",
+        "follicle",
+        "follicles",
+        "ovarian",
+        "oocyte"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "eb9d9be6-4244-4e4b-892e-ba809925613a",
+        "paper_id": null,
+        "doi": "10.1071/RD10227",
+        "title": "Cryopreservation and in vitro culture of caprine preantral follicles",
+        "abstract": "Preantral follicles (PFs) form a far larger oocyte reservoir (,90% of the follicular population) than antral follicles. Several laboratories have focussed efforts on cryopreservation and in vitro culture (IVC) of PFs to obtain large numbers of fertilisable oocytes. This technology could be used to improve the reproductive potential of economically important animals, including goats, to preserve endangered species and breeds and improve fertility after chemotherapy in young women. Caprine PFs have been successfully cryopreserved using either vitrification or slow freezing. In addition, in vitro embryo production from oocytes enclosed in caprine PFs grown and matured in vitro was also achieved. The present paper selectively reviews the published studies on cryopreservation and IVC of caprine PFs to highlight advances, limitations and prospects.",
+        "journal": "Reproduction, Fertility and Development",
+        "published_year": 2011,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "J. R. Figueiredo; A. P. R. Rodrigues; J. R. V. Silva; R. R. Santos"
+      },
+      "score": 7,
+      "matchedKeywords": [
+        "follicle",
+        "follicles",
+        "oocyte",
+        "oocytes",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "dc753166-c837-4fe4-af6a-28cd82058473",
+        "paper_id": null,
+        "doi": "10.1111/asj.13209",
+        "title": "Cryopreservation of immature oocytes of the indigeneous Vietnamese Ban Pig",
+        "abstract": "We report the cryopreservation of oocytes from Ban miniature pigs which are endemic in Vietnam. Immature cumulus‐oocyte complexes were collected from antral follicles of 7–8 mo old female cyclic Ban pigs and vitrified in micro-drops. Oocyte morphology, lipid content, post‐warming survival, nuclear maturation, and embryo development were compared to those of oocytes from commercially slaughtered Landrace × Large white hybrid pigs. The size of oocytes in the two breeds was similar. However, significantly lower amounts of intracellular lipid were detected in Ban oocytes. There was no difference (p > 0.05) between Ban and Landrace × Large white oocytes in percentages of post-warming survival (93.1 ± 3.4% vs. 70.7 ± 16.7%, respectively) and nuclear maturation after in vitro maturation (80.4 ± 5.1% vs. 90.0 ± 1.3% respectively). Similarly, cleavage (30.8 ± 7.8% vs. 10.3 ± 6.1%, respectively) and blastocyst development rates (9.4 ± 5.0% vs. 0.79 ± 0.79, respectively) were not different (p > 0.05) between vitrified Ban and Landrace × Large white oocytes after in vitro fertilization and embryo culture. In conclusion, high survival and maturation rates were achieved after vitrification of immature Ban oocytes and their cryo‐tolerance was similar to that of Landrace × Large white oocytes, despite the difference in lipid content. We succeeded to generate reasonable rates of blastocysts from vitrified Ban oocytes by in vitro fertilization.",
+        "journal": "Animal Science Journal",
+        "published_year": 2019,
+        "published_month": 3,
+        "published_day": 21,
+        "authors_flat": "Tamas Somfai; Van Khanh Nguyen; Huong Thu Thi Vu; Huong Le Thi Nguyen; Huu Xuan Quan; Nguyen Viet Linh; Son Le Phan; Lan Doan Pham; Ngo Thi Kim Cuc; Kazuhiro Kikuchi"
+      },
+      "score": 7,
+      "matchedKeywords": [
+        "follicle",
+        "follicles",
+        "oocyte",
+        "oocytes",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "fbf690db-1d63-48f7-89cb-afa7bd81b16f",
+        "paper_id": null,
+        "doi": "10.1016/j.theriogenology.2003.08.005",
+        "title": "FSH different regimes affect the developmental capacity and cryotolerance of embryos derived from oocytes collected by ovum pick-up in donor sheep",
+        "abstract": "The objective of the present study was to compare the developmental capacity of sheep oocytes obtained by OPU after two different ovarian stimulations, and cryotolerance to vitriﬁcation procedures of in vitro derived embryos after in vitro maturation, fertilisation and culture of these oocytes. Sheep were divided into three groups: (A) no treatment (control); (B) constant doses of FSH (FSH-c); (C) decreasing doses of FSH (FSH-d). Ovine groups FSH-c and FSH-d were synchronised by the insertion of intravaginal sponges left in situ for 7 days; FSH (total dose: 96 IU) was administered in four doses given every 12 h starting on Day 5. Twelve hours after the last FSH administration oocytes were collected by OPU technique. The control group showed a signiﬁcantly lower number (P < 0:05) of follicles (166) than FSH-c (294) and FSH-d (317) groups, while the number of follicles >5 mm was signiﬁcantly higher (P < 0:01) in FSH-d group, showing that this protocol stimulates the growth of a different follicle population compared to FSH-c group. The control group showed a higher number of <2 mm follicles (P < 0:01). We did not ﬁnd any difference in oocyte quality between the three groups and therefore the percentage of discarded oocytes was similar. No signiﬁcant differences were found between control, FSH-c and FSH-d groups in terms of maturation (90.9, 85.7 and 87.7%, respectively) and fertilisation rates (75.2, 80.9 and 83.7%, respectively) while a signiﬁcantly higher (P < 0:01) blastocyst rate was observed in the FSH-c group than in the FSH-d and control groups (20.4% versus 11.8 and 13.7%, respectively). After vitriﬁcation, warming and 72 h in vitro culture, the hatching rate was signiﬁcantly higher (P < 0:01) in the control (87.5%) and FSH-c (90.5%) groups than in the FSH-d group (66.7%). Control and FSH-c groups showed a signiﬁcantly higher (P < 0:001) number of total cells than FSH-d group (217:6 ± 26:5 and 203:0 ± 33:2 versus 147:5 ± 20:2), while no differences were observed in ICM cell rates in the control (35:6 ± 3:8), FSH-c (37:1 ± 4:6) and FSH-d (36:6 ± 6:7) groups. These results indicate that donor sheep stimulated with FSH-c produced better quality oocytes and blastocysts showing better cryotolerance than ewes given the decreasing doses treatment.",
+        "journal": "Theriogenology",
+        "published_year": 2004,
+        "published_month": 6,
+        "published_day": 15,
+        "authors_flat": "F. Berlinguer; G. Leoni; L. Bogliolo; P.P. Pintus; I. Rosati; S. Ledda; S. Naitana"
+      },
+      "score": 7,
+      "matchedKeywords": [
+        "follicle",
+        "follicles",
+        "ovarian",
+        "oocyte",
+        "oocytes"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "f74836db-46fb-4ca6-b619-a505fc30d0a0",
+        "paper_id": null,
+        "doi": "10.1016/j.cryobiol.2019.10.193",
+        "title": "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants",
+        "abstract": "This study aimed to evaluate different vitrification methods using distinct cryoprotectants (CPAs) for the preservation of collared peccary ovarian preantral follicles (PFs). Ovarian pairs from six females were fragmented and three fragments (fresh control group) were immediately evaluated for morphology, viability, cell proliferation capacity (assessed by quantifying the number of argyrophilic nucleolus organizer regions – NORs), and apoptosis (by the identification of activated caspase-3 expression). The remaining 18 fragments were vitrified using the solid surface vitrification (SSV) method or the ovarian tissue cryosystem (OTC) with 3 M ethylene glycol (EG), 3 M dimethylsulfoxide (DMSO), or a combination of the two (1.5 M EG/1.5 M DMSO). After two weeks, samples were rewarmed and evaluated as described previously. The OTC with any of the CPAs provided a similar conservation of morphologically normal PFs as the fresh control group (75.6 ±8.6%); however, the SSV was only efficient with DMSO alone (63.9 ±7.6%). Regarding the viability or cell proliferation, all tested groups provided post rewarming values similar to those observed for the fresh control group, 84.0 ±2.9% viable cells with 2.0 ±0.2 NORs. Related to apoptosis analysis, only the OTC with EG (46.7%) and the SSV method with EG (43.4%) or the combination of EG and DMSO (33.4%) provided similar values to those found for the fresh control group (36.7%). Our findings indicate the utilization of a closed system, the OTC, with 3 M EG as the CPA for the vitrification of collared peccary ovarian tissue.",
+        "journal": "Cryobiology",
+        "published_year": 2019,
+        "published_month": 10,
+        "published_day": 19,
+        "authors_flat": "Lívia Batista Campos; Andréa Maria da Silva; Erica Camila Gurgel Praxedes; Luana Grasiele Pereira Bezerra; Thae Lanne Barbosa Gama Lins; Vanúzia Gonçalves Menezes; Maria Helena Tavares de Matos; Gabriela Liberalino Lima; Ana Paula Ribeiro Rodrigues; Alexandre Rodrigues Silva"
+      },
+      "score": 7,
+      "matchedKeywords": [
+        "ovarian tissue",
+        "follicle",
+        "follicles",
+        "ovarian"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "e0ce771b-2f1d-4b37-8c0f-8d0afda3ef26",
+        "paper_id": null,
+        "doi": "10.1016/j.cryobiol.2023.104837",
+        "title": "Vitrified turkey ovarian tissue cultured and assessed through gene expression patterns: A potential screening tool",
+        "abstract": "Biobanking of turkey ovarian tissue has the potential to play a crucial part in preserving female genetics. To date, ovarian tissue has only been vitrified using a standard protocol, with immediate analyses after warming, therefore, long-term cryoinjury is unknown. Long-term cryoinjury was investigated here by in-ovo culturing, fresh (non-vitrified), a purposefully suboptimal poor vitrification (PV), and the standard vitrified (StV) protocol. Assessments were performed via cellular morphological changes and mRNA gene expression differences, immediately (day 0) or after 2, 4, or 6 days of in-ovo culturing. On day 0, the mRNA levels of heat-shock protein A2 (HSPA2) were lowest in the fresh tissue, and increased 5-fold in the StV treatment, and 18-fold in the PV treatment. Whereas, by day 6, growth determining factor 9 (GDF9) mRNA levels within the fresh tissue were over 3-fold and 21-fold higher than StV and PV treatments, respectively. After 6 days of in-ovo culture the follicle density was highest in the fresh ovarian tissue (4701 ± 950 #/mm3), followed by the StV (1601 ± 300 #/mm3), with PV having the lowest density (172 ± 145 #/mm3). This shows that although the density of follicles was higher in StV versus PV, a considerable number (~65 %) were lost compared to the fresh treatment. Additionally, the HSPA2 expression could be an early screening tool, whereas GDF9 expression could be a late screening tool, used to assess turkey ovarian tissue vitrification protocols. We conclude that the StV protocol should be further optimized to try and improve follicle numbers post-warming.",
+        "journal": "Cryobiology",
+        "published_year": 2024,
+        "published_month": 12,
+        "published_day": 9,
+        "authors_flat": "George B. Hall; Amy Shannon; Diane Hildenberger; Kristen Brady; Julie A. Long"
+      },
+      "score": 7,
+      "matchedKeywords": [
+        "ovarian tissue",
+        "follicle",
+        "follicles",
+        "ovarian"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "e6aaf317-52fc-441c-bac4-5143fbb9e54c",
+        "paper_id": null,
+        "doi": "10.1016/j.cryobiol.2019.11.041",
+        "title": "Clinical utility of freeze-all approach in ART treatment: A mini-review",
+        "abstract": "A significant proportion of couples at reproductive age rely on assisted reproductive technology to overcome infertility. In vitro fertilisation (IVF) involves typically the use of exogenous gonadotropins to stimulate the ovary to produce oocytes, which are collected surgically. After fertilization by conventional IVF or intracytoplasmic sperm injection (ICSI), embryos are cultured in the embryology laboratory for a few days before being replaced into the uterus (fresh embryo transfer). Spare embryos can be vitrified and stored in liquid nitrogen to be transferred in a subsequent cycle. Over the years, concerns have arisen about possible adverse outcomes of transferring embryos back to the uterus immediately after controlled ovarian stimulation (COS) as regards to obstetrical and perinatal outcomes. It has been suggested that high levels of hormone during COS could create a relatively hostile environment for embryo implantation whilst increasing the risk of ovarian hyperstimulation syndrome (OHSS). With the remarkedly improvement of vitrification as an alternative to the slow‑freezing technique for human embryos, a new strategy the so‑called “freeze‑all” (FA) or “elective frozen embryo transfer” (eFET) was introduced. This approach involves COS, followed by the elective cryopreservation of the entire cohort of viable embryos to be transferred to the uterus in subsequent cycles in a possibly more physiological environment, thus avoiding the supra‑physiologic hormonal levels observed during COS. The initial reports suggested that this policy could lead to improved pregnancy rates and reduced perinatal complications, which resulted in a steady increase and widespread use of FA globally. However, as data accumulated, it became clear that the use of FA to unselected couples undergoing ART offered no additional benefits over the conventional approach. Nonetheless, current evidence based on randomized controlled trials and observational studies indicates that FA might be justified in selected clinical scenarios, such as those involving the risk of OHSS. By contrast, there is a lack of evidence to support the FA policy for other indications, such as implantation failure or high progesterone levels on the trigger day. This review summarizes the clinical effectiveness of FA with the main focus on the health of offspring.",
+        "journal": "Cryobiology",
+        "published_year": 2019,
+        "published_month": 11,
+        "published_day": 22,
+        "authors_flat": "Sciorio Romualdo; Esteves C. Sandro"
+      },
+      "score": 6,
+      "matchedKeywords": [
+        "ovary",
+        "ovarian",
+        "oocyte",
+        "oocytes",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+        "paper_id": null,
+        "doi": "10.1530/jrf.0.1100011",
+        "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+        "abstract": null,
+        "journal": "Journal of Reproduction and Fertility",
+        "published_year": 1997,
+        "published_month": 9,
+        "published_day": 12,
+        "authors_flat": "J. Candy; M. J. Wood; D. G. Whittingham"
+      },
+      "score": 6,
+      "matchedKeywords": [
+        "ovaries",
+        "follicle",
+        "follicles"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "e263dbc7-c35b-47ce-8d9b-57e1e6ac34e4",
+        "paper_id": null,
+        "doi": "10.1016/j.anireprosci.2007.03.023",
+        "title": "Effect of sugars on maturation rate of vitriﬁed-thawed immature porcine oocytes",
+        "abstract": "This study examined the effects of monosaccharide (glucose), disaccharide (sucrose) and polysaccharides (Ficoll and Lycium barbarum polysaccharide (LBP)) at different concentrations, using ethylene glycol (EG) as membrane-permeating cryoprotectant, on in vitro maturation of vitriﬁed-thawed immature (GV) porcine oocytes. A total of 1145 oocytes were obtained by follicle aspiration from 496 ovaries of pigs slaughtered at a local abattoir and vitriﬁed using a ﬁve-step method. After thawing and removal of cryoprotectant, oocytes were cultured for 44 h at 39 ◦C in a humidiﬁed atmosphere of 5% CO₂ in air. Oocytes were stained with DAPI and nuclear maturation was examined. The highest maturation rates were obtained in 1.5 M glucose (8.62%), 0.75 M sucrose (20.0%), 3.0 g/ml Ficoll (13.79%) and 0.10 g/ml LBP (20.69%), respectively. The maturation rate using 0.75 M sucrose or 0.10 g/ml LBP was signiﬁcantly higher compared to 1.5 M glucose (P < 0.05), but there was no signiﬁcant difference from using 3.0 g/ml Ficoll (P > 0.05). The percentage of oocytes reaching metaphase II (MII) stage in the cryopreserved groups was signiﬁcantly lower than control (P < 0.05). These results suggest that LBP is an effective non-permeating membrane cryoprotectant and 0.75 M sucrose or 0.10 g/ml LBP can be used as the vitriﬁcation solution for immature porcine oocytes.",
+        "journal": "Animal Reproduction Science",
+        "published_year": 2008,
+        "published_month": 3,
+        "published_day": 30,
+        "authors_flat": "Jing Huang; Qingwang Li; Rui Zhao; Wenye Li; Zengsheng Han; Xiaoyu Chen; Bo Xiao; Shuyun Wu; Zhongliang Jiang; Jianhong Hu; Lei Liu"
+      },
+      "score": 6,
+      "matchedKeywords": [
+        "ovaries",
+        "follicle",
+        "oocyte",
+        "oocytes"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "db1f328f-841d-4b71-b786-aaa958133cce",
+        "paper_id": null,
+        "doi": "10.1016/j.theriogenology.2016.07.003",
+        "title": "Intrafollicular transfer of fresh and vitriﬁed immature bovine oocytes",
+        "abstract": "Embryo production by intrafollicular oocyte transfer (IFOT) represents an alternative for production of a large number of embryos without requiring any hormones and only basic laboratory handling. We aimed to (1) evaluate the efﬁciency of IFOT using immature oocytes (IFIOT) and (2) compare embryo development after IFIOT using fresh or vitriﬁed immature oocytes. First, six IFIOTs were performed using immature oocytes obtained by ovum pickup. After insemination and uterine ﬂush for embryo recovery, 21.3% of total transferred structures were recovered excluding the recipient’s own oocyte or embryo, and of those, 26% (5.5% of transferred cumulus–oocyte complexes [COCs]) were morula or blastocyst. In the second study, we compared fresh and vitriﬁed-warmed immature COCs. Four groups were used: (1) fresh immature COCs (Fresh-Vitro); (2) vitriﬁed immature COCs (Vit-Vitro), with both groups 1 and 2 being matured, fertilized, and cultured in vitro; (3) fresh immature COCs submitted to IFIOT (Fresh-IFIOT); and (4) vitriﬁed immature COCs submitted to IFIOT (Vit-IFIOT). Cumulus–oocyte complexes (n = 25) from Fresh-IFIOT or Vit-IFIOT groups were injected into dominant follicles (>10 mm) of synchronized heifers. After excluding one structure or blastocyst, the recovery rates per transferred oocyte were higher (P < 0.05) for Fresh-IFIOT (47.6%) than for Vit-IFIOT (12.0%). Blastocyst yield per initial oocyte was higher (P < 0.05) for Fresh-Vitro (42.1%) than for Fresh-IFIOT (12.9%). Vit-Vitro presented higher (P < 0.05) embryo development (6.3%), compared to Vit-IFIOT, which did not result in any extra embryo. Although IFOT did not improve developmental competence of vitriﬁed oocytes, we achieved viable blastocysts and pregnancies produced after IFOT of fresh bovine immature oocytes. Further work on this technique is warranted as an option both for research studies and for clinical bovine embryo production in the absence of laboratory facilities for IVF.",
+        "journal": "Theriogenology",
+        "published_year": 2016,
+        "published_month": 7,
+        "published_day": null,
+        "authors_flat": "José Felipe W. Sprícigo; Severino Bernardino Sena Netto; Carolle Vieira Muterlle; Sarah de Andrade Dias Rodrigues; Ligiane Oliveira Leme; Ana Luiza Guimarães; Felippe Manoel Costa Caixeta; Maurício Machain Franco; Ivo Pivato; Margot Alves Nunes Dode"
+      },
+      "score": 6,
+      "matchedKeywords": [
+        "follicle",
+        "follicles",
+        "oocyte",
+        "oocytes"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "e7fe405f-8033-4260-bad8-2041ac9b2ac0",
+        "paper_id": null,
+        "doi": "10.1016/j.cryobiol.2025.105251",
+        "title": "Studies on ovarian tissues’ cryopreservation in the cyprinid species",
+        "abstract": "This study was aimed to establish an effective protocol to cryopreserve the ovarian tissues of cyprinid species, including the crucian carp (Carassius auratus), zebrafish (Danio rerio) and Ya fish (Schizothorax prenanti), crucian carp was used to establish an efficient method of ovarian cryopreservation, zebrafish and Ya fish were used to validate this method. In addition, oxidative stress-related injuries induced by cryopreservation was determined in Ya fish, and the cryopreservation method was modified by adding tea polyphenol (TP) into the cryomedium. First, based on the cellular plasma membrane integrity analysis of the frozen-thawed ovarian tissues, the cryomedium and dehydration/rehydration procedures were intensively evaluated and optimized in the crucian carp. The result showed that the highest cell membrane integrity of cryopreserved ovaries was up to 51.67 ± 0.78 % (including somatic cells and oogonia) after a 7-day cryopreservation under the optimized protocol (the cryomedium containing 10 % FBS, 10 % DMSO, 6 % sucrose, and 6 % BSA in 1xPBS), together with gradient dehydration and rehydration procedures. This protocol was applied to cryopreserve ovaries in another two cyprinid species: in Ya fish, cell membrane integrity of frozen-thawed ovaries was ~65.12 %, and in zebrafish, it was ~44.56 %. Moreover, the frozen-thawed ovaries of both two fish species could be used for in vitro culture. Secondly, it was found that the cryopreservation significantly caused oxidative stress (increasing the levels of oxidation index MDA and antioxidant enzymes SOD and CAT) in the frozen-thawed ovaries of Ya fish. Intriguingly, an antioxidant, the TP supplemented into the cryomedium could prominently improve the cells’ membrane integrity of frozen-thawed ovaries to 73.82 ± 4.89 %. Likewise, tea polyphenol could also enhance cells’ proliferation potency of the cryopreserved ovaries in Ya fish. In conclusion, in this study, an efficient method was established for cryopreserving fish ovaries, and the findings provided a valuable basis for developing new biological techniques to preserve and exploit the high-quality genetic resources of aquatic species.",
+        "journal": "Cryobiology",
+        "published_year": 2025,
+        "published_month": 5,
+        "published_day": 16,
+        "authors_flat": "Jingting Yao; Linhui Zeng; Zheng Zhu; Ke Feng; Chaowei Zhou; Wanliang Wang; Jianshe Zhou; Shengqi Su; Hongyan Xu"
+      },
+      "score": 6,
+      "matchedKeywords": [
+        "ovaries",
+        "ovarian tissue",
+        "ovarian",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "f18dbca4-01e4-46da-9416-ec324e26ca55",
+        "paper_id": null,
+        "doi": "10.1016/B978-0-12-823344-3.00025-X",
+        "title": "Animal Models of Ovarian Transplantation",
+        "abstract": "Many chapters in this book attest to the rapid development of the field of ovarian tissue cryopreservation for fertility preservation, and the striking advances that have been made. We now have a number of international guidelines that promote the wider field of fertility preservation, reflecting its establishment into current practice from a research background in a very short period of time. In the United Kingdom, the National Institute for Clinical Excellence (which determines what is established clinical practice in the United Kingdom) first brought fertility preservation into mainline clinical practice in 2013 (National Institute for Clinical Excellence, 2013), and in the same year, a guideline produced by the Scottish Intercollegiate Guideline SIGN on childhood cancer survivorship (Wallace et al., 2013) highlighted the need to consider fertility preservation in that population. More internationally, the very influential ASCO guideline from the same year has been updated on several occasions (Loren et al., 2013; Oktay et al., 2018) and there are new guidelines from the European Society for Medical Oncology on fertility preservation for men and women with cancer (Lambertini et al., 2020), and the European Society for Human Reproduction and Embryology (ESHRE) guideline on female fertility preservation (ESHRE Guideline Group on Female Fertility Preservation, 2020).",
+        "journal": "Principles and Practice of Ovarian Tissue Cryopreservation and Transplantation",
+        "published_year": 2022,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Richard A. Anderson; Helen M. Picton"
+      },
+      "score": 5,
+      "matchedKeywords": [
+        "ovarian tissue",
+        "ovarian",
+        "fertility preservation",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "fea34b3b-4387-4267-bc1c-8bfc5c6d4034",
+        "paper_id": null,
+        "doi": "10.1016/j.jevs.2018.10.019",
+        "title": "Evaluation of DNA Damage of Mare Granulosa Cells Before and After Cryopreservation Using a Chromatin Dispersion Test",
+        "abstract": "DNA fragmentation of granulosa cells might be related to developmental competence of the equine oocyte. Granulosa cells are commonly stored before DNA fragmentation assessment, but the effect of preservation methods on this parameter remains unexplored. The aim of this study was to evaluate whether or not cryopreservation of granulosa cells affects the DNA damage. Equine oocytes were recovered from postmortem ovaries of five mares. Granulosa cells were washed by centrifugation and then analyzed (control) or stored in cryovials following four different protocols: P1 = directly plunged in liquid nitrogen (LN2) and then stored at -80°C; P2 = LN2/-80°C adding cryoprotectants (7.5% ethylene glycol + 7.5% dimethyl sulfoxide); P3 = -80°C; P4 = -80°C + cryoprotectants. Granulosa cell samples were processed with the prototype D3-Ovoselect (Halotech DNA, Spain), and DNA was visualized under fluorescence microscopy. High, low, and total DNA fragmentation percentages were compared among treatments by analysis of variance. Results were expressed as mean ± standard error. No significant differences (P > .05) were found among treatments and the control group. Therefore, the four conservation protocols could be considered equally efficient for DNA preservation of granulosa cells from mare oocytes. In conclusion, cryopreservation of granulosa cells in any of the four protocols used adequately preserved the DNA for further analysis.",
+        "journal": "Journal of Equine Veterinary Science",
+        "published_year": 2019,
+        "published_month": 10,
+        "published_day": 21,
+        "authors_flat": "Blasa C. Pereira; Isabel Ortiz; Jesus Dorado; Cesar Consuegra; Maria Diaz-Jimenez; Sebastian Demyda-Peyras; Jaime Gosalvez; Manuel Hidalgo"
+      },
+      "score": 5,
+      "matchedKeywords": [
+        "ovaries",
+        "oocyte",
+        "oocytes",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "efebd52e-704f-48b4-82e5-f41f971df210",
+        "paper_id": null,
+        "doi": "10.1016/j.cryobiol.2025.105245",
+        "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+        "abstract": "Fertility preservation should be offered to patients facing gonadotoxic therapy. The method for preserving prepubescent girls’ fertility, which is also suitable for women, is ovarian tissue cryopreservation (OTC). Although 200 births have been reported worldwide with this approach, significant improvements are needed. The literature indeed reports numerous protocols for freezing and thawing ovarian tissue, with no clear rationale for selection criteria. This study aims to optimize human OTC protocols by characterizing the thermodynamic properties of freezing medium. The freezing medium associated with most live births after autograft (Leibovitz L-15 medium with 4 mg/mL human serum albumin (HSA), 1.5M DMSO, and 0.1M sucrose) was characterized using differential scanning calorimetry. We obtained -120.49 °C for glass transition temperature (Tg’), -20 °C for crystallization temperature when cooling at 2.5 °C/min (Tc) and 4.11 °C for melting temperature (Tm). With these parameters, we optimized a freezing protocol in a programmable freezer (Nano-Digitcool, Cryo Bio System) and a thawing protocol. The freezing curve was as follows: 5 min at 4 °C, 1 °C/min to -7 °C, seeding: -60 °C/min to -32 °C, and 10 °C/min to -15 °C, 0.3 °C/min to -40 °C, 10 °C/min to -140 °C. The thawing protocol consisted in a 3.5-min step in a cold chamber to reach slowly Tg’, limiting thermal and mechanical shocks, and then a 2-min incubation at 37 °C to quickly reach Tm. Ovarian tissue frozen-thawed according to these protocols had a similar quality to that of fresh tissue and could resume folliculogenesis during organotypic culture. Our study will contribute to improve human OTC and optimize women fertility preservation.",
+        "journal": "Cryobiology",
+        "published_year": 2025,
+        "published_month": 5,
+        "published_day": 2,
+        "authors_flat": "Mélanie Fiot; Emmanuelle Martinot; Lincoln Travens; Sandra Dollet; Nina Radosevic-Robin; Cecily Lucas; Laure Chaput; Bruno Pereira; Anne-Sophie Gremeau; Emmanuel Hochet; Lucie Gavin-Plagne; Anne Baudot; Florence Brugnon; Gaelle Marteil"
+      },
+      "score": 5,
+      "matchedKeywords": [
+        "ovarian tissue",
+        "ovarian",
+        "fertility preservation",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "fdef775d-8d93-4bdc-a7fe-7f9074ce47fb",
+        "paper_id": null,
+        "doi": null,
+        "title": "CRYOPRESERVATION OF CANINE OVARIAN AND TESTICULAR FIBROBLASTS",
+        "abstract": "To derive a practical procedure to store canine somatic cells, fibroblasts isolated from testicular or ovarian tissues were cryopreserved in 1.2 M ethylene glycol or in 1.2 M dimethylsulfoxide prepared in Dulbecco’s Modified Eagle Medium as cryoprotectants, and were frozen either in plastic straws or vials. Thawed cells were cultured for 24 hr at 38.5ºC in a humidified atmosphere of 5% CO2 ＋ 95% air, and then their membrane integrity was assayed with a double fluorescent stain, Fertilight®. In addition, frozen-thawed fibroblasts were cultured for 4 days, and then their functional survival was measured after staining small colonies with trypan blue. After freezing and thawing, membrane integrity of testicular fibroblasts was 55-70% and functional survival ranged from 20-40%. With frozen-thawed ovarian cells, the average membrane integrity was 55-75% and the average functional survival was 35-40%. When frozen in ethylene glycol, functional survival of ovarian fibroblasts was significantly higher than that of testicular cells (P<0.05). These methods should prove useful to preserve cells collected from canids in the wild.",
+        "journal": "CryoLetters",
+        "published_year": 2009,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Il-jeoung Yu; S. P. Leibo; Nucharin Songsasen; Betsy L. Dresser; In-shik Kim"
+      },
+      "score": 4,
+      "matchedKeywords": [
+        "ovarian tissue",
+        "ovarian",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "fb9f4b85-d77c-49e6-976e-ded1ec242b61",
+        "paper_id": null,
+        "doi": "10.1371/journal.pone.0238519",
+        "title": "Me₂SO perfusion time for whole-organ cryopreservation can be shortened: Results of micro-computed tomography monitoring during Me₂SO perfusion of rat hearts",
+        "abstract": "Cryopreservation of whole organs and specific tissues is an important and continually expanding field of medicine. The protocols currently used for organ preservation do not ensure survivability and functionality; the protocols for ovarian tissue lead to acceptable outcomes, but these are still capable of further improvement. In general, cryopreservation protocols need to be optimized. One important approach to improving cryopreservation protocols in general involves reducing exposure to cytotoxic cryoprotective agents prior to freezing. This study, therefore, evaluated the real-time tissue penetration of dimethyl sulfoxide, a cryoprotective agent that is widely used in cryopreservation. Dimethyl sulfoxide penetration in rat hearts perfused with a 15% (v/v) dimethyl sulfoxide solution was examined in real-time using dynamic contrast-enhanced micro-computed tomography imaging. Viability of cardiomyocytes was not significantly affected by the dimethyl sulfoxide perfusion procedure. Two different perfusion rates were evaluated and compared with perfusion using a common iodine-based contrast agent (iomeprol). The dynamic contrast-enhanced micro-computed tomography imaging data showed that dimethyl sulfoxide flushes both the extracellular and intracellular spaces in rat heart tissue to 95% equilibration after approximately 35 s via perfusion. Subsequent wash-out via perfusion is completed to 95% within approximately 49 s. The equilibration duration routinely used in dimethyl sulfoxide–based protocols for cryopreservation should therefore be questioned. Shorter incubation duration would perhaps be sufficient, as well as being beneficial in relation to cell survivability. It would be helpful to have techniques for non-invasive real-time monitoring of the penetration of cryoprotective agents and such techniques should be used to revise cryopreservation protocols. Switching to perfusion-based equilibration procedures might be beneficial, if feasible.",
+        "journal": "PLOS ONE",
+        "published_year": 2020,
+        "published_month": 9,
+        "published_day": 2,
+        "authors_flat": "Nathalie Bleisinger; Ralf Dittrich; Olga Strahl; Robert Brauweiler; Inge Hoffmann; Matthias W. Beckmann; Tilmann Volk"
+      },
+      "score": 4,
+      "matchedKeywords": [
+        "ovarian tissue",
+        "ovarian",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paper": {
+        "id": "e7d80563-9f61-460d-b7da-53f60ef58b50",
+        "paper_id": null,
+        "doi": "10.1089/rej.2008.0706",
+        "title": "Cryopreservation of Whole Murine and Porcine Livers",
+        "abstract": "Preservation of vascularized organs, such as the liver, is limited to 24 h before destructive processes disqualify them for transplantation. This narrow window of opportunity prevents the performance of optimal pathogen screening and matching tests and possibly results in the need for retransplantation. Numerous problems are associated with freezing and thawing a whole liver while preserving its viability upon thawing, including complicated geometry, poor heat transfer, release of latent heat, and the difficulty of generating a uniform cooling rate. On the basis of our past success with sheep ovaries, we have now applied our novel freezing technique to a larger solid organ, the liver. Whole rat and pig livers were frozen and thawed using directional solidification apparatus, and viability of these livers was tested by means of integrity and functionality in vitro and in auxiliary liver transplantation. The thawed rat and porcine livers were intact and demonstrated >80% viability. Histology revealed normal architecture. Bile production and blood flow following auxiliary transplantation were normal as well. Our encouraging results in applying this novel cryopreservation technique in rat and pig livers suggest that this method may enable better human organ donor–recipient matching in the future.",
+        "journal": "Rejuvenation Research",
+        "published_year": 2008,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Zohar Gavish; Menachem Ben-Haim; Amir Arav"
+      },
+      "score": 3,
+      "matchedKeywords": [
+        "ovaries",
+        "cryopreservation"
+      ]
+    }
+  ]
+}

@@ -129,6 +129,8 @@ The repo also includes a scheduler entrypoint in [`.github/workflows/autoresearc
 
 `apps/web/` is a lightweight static wrapper over that same observer artifact. `apps/web/dashboard-data.json` is generated from `run-health.json`, so a static host can show the current system state without adding a backend. For a local preview, run `python3 -m http.server -d apps/web 4173`.
 
+For scheduled runs, prefer the checked-in `data/processed/<domain>/domain-snapshot.json` inputs so the benchmarked slice stays reproducible. Use `--ingest` only when you intentionally want to refresh the upstream corpus and are ready to absorb any resulting benchmark/override drift.
+
 ## Human-facing outputs
 
 `bun run wedge:<domain>` writes a call-ready wedge brief under `data/processed/<domain>/wedge-brief.{json,md}`. This is the current best artifact for a domain-specific conversation: standard protocol pattern, protocol families, dominant CPA clusters, contradictions, evidence quality, and top opportunity framing.
