@@ -42,6 +42,7 @@
     "cycles:ovarian": "node --import tsx scripts/run-autoresearch-cycles.ts ovarian-tissue",
     "cycles:islets": "node --import tsx scripts/run-autoresearch-cycles.ts islets",
     "cycles:all": "node --import tsx scripts/run-all-autoresearch-cycles.ts",
+    "health-report": "node --import tsx scripts/build-run-health-report.ts",
     "enrichment-queue:ovarian": "node --import tsx scripts/build-source-enrichment-queue.ts ovarian-tissue",
     "enrichment-queue:islets": "node --import tsx scripts/build-source-enrichment-queue.ts islets",
     "regress:ovarian": "node --import tsx scripts/regress-autoresearch.ts ovarian-tissue",

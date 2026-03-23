@@ -54,6 +54,7 @@ The next scaffolded domain is:
 - `bun run cycles:ovarian`
 - `bun run cycles:islets`
 - `bun run cycles:all`
+- `bun run health-report`
 - `bun run enrichment-queue:ovarian`
 - `bun run enrichment-queue:islets`
 - `bun run regress:ovarian`
@@ -122,7 +123,11 @@ It writes `data/autoresearch/<domain>/autoresearch-cycles.{json,md}`. Pass `-- -
 
 `bun run cycles:all` runs the same bounded outer loop sequentially for `ovarian-tissue` and `islets`. This is the preferred entrypoint for a scheduler because it avoids cross-domain artifact races and leaves one cycle report per domain.
 
-The repo also includes a scheduler entrypoint in [`.github/workflows/autoresearch-cycles.yml`](./.github/workflows/autoresearch-cycles.yml). It runs on weekday schedule plus manual dispatch, executes `bun run cycles:all`, publishes both cycle reports into the GitHub Actions step summary, and commits only `data/` outputs back to `main` when the run produced a real artifact delta.
+The repo also includes a scheduler entrypoint in [`.github/workflows/autoresearch-cycles.yml`](./.github/workflows/autoresearch-cycles.yml). It runs on weekday schedule plus manual dispatch, executes `bun run cycles:all`, publishes the observer-layer health report into the GitHub Actions step summary, and commits only `data/` outputs back to `main` when the run produced a real artifact delta.
+
+`bun run health-report` writes `data/autoresearch/run-health.{json,md}`. This is the observer-layer artifact for monitoring the autonomous system: per-domain stop reason, benchmark/regression health, backlog counts, normalization warnings, and the current wedge read. The bounded cycle runner refreshes it automatically, and the GitHub Actions workflow publishes the markdown version as the run summary.
+
+`apps/web/` is a lightweight static wrapper over that same observer artifact. `apps/web/dashboard-data.json` is generated from `run-health.json`, so a static host can show the current system state without adding a backend. For a local preview, run `python3 -m http.server -d apps/web 4173`.
 
 ## Human-facing outputs
 

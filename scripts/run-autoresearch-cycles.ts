@@ -346,6 +346,7 @@ async function main(): Promise<void> {
     await writeFile(reportMarkdownPath, nextReportMarkdown, "utf8");
   }
 
+  runStep("scripts/build-run-health-report.ts");
   console.log(JSON.stringify(report, null, 2));
 }
 
