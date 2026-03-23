@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T03:42:52.387Z",
+  "generatedAt": "2026-03-23T05:48:58.188Z",
   "domain": "islets",
   "records": [
     {
@@ -7,9 +7,35 @@
       "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
       "doi": "10.1006/cryo.1993.1040",
       "priority": "ambiguous-evidence",
-      "status": "pending",
+      "status": "reviewed",
       "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "excerpts": []
+      "reviewerNotes": "Reviewed from the accessible IntechOpen islet cryopreservation review on 2026-03-23. The review explicitly describes the DMSO versus ethylene glycol comparison from the original rat study and supports function plus transplantation, but the source is secondary rather than the original abstract.",
+      "excerpts": [
+        {
+          "id": "rat-comparison-methods-1",
+          "label": "comparison review note",
+          "text": "An accessible review of islet cryopreservation summarizes the original rat comparison study as a head-to-head test of dimethyl sulfoxide versus ethylene glycol cryoprotectants rather than a generic freezing paper.",
+          "source": "manual-note",
+          "confidence": 0.88,
+          "reviewed": true
+        },
+        {
+          "id": "rat-comparison-results-1",
+          "label": "function review note",
+          "text": "The same review states that dimethyl sulfoxide-treated rat islets showed impaired insulin secretory patterns and lower cellular insulin and glucagon than ethylene glycol-treated islets, while ethylene glycol-treated islets more closely resembled non-frozen controls.",
+          "source": "manual-note",
+          "confidence": 0.9,
+          "reviewed": true
+        },
+        {
+          "id": "rat-comparison-results-2",
+          "label": "transplant review note",
+          "text": "The review further reports that normal glycemic control after transplantation was achieved in all ethylene glycol-treated and non-frozen islets, whereas dimethyl sulfoxide-treated islets corrected diabetes less consistently and with slower recovery.",
+          "source": "manual-note",
+          "confidence": 0.89,
+          "reviewed": true
+        }
+      ]
     },
     {
       "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
@@ -284,14 +310,6 @@
       ]
     },
     {
-      "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
-      "title": "CRYOPRESERVATION OF CHICK ISLETS",
-      "priority": "evidence-thin",
-      "status": "pending",
-      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
-      "excerpts": []
-    },
-    {
       "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
       "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
       "doi": "10.1177/096368979600500306",
@@ -355,6 +373,32 @@
           "id": "porcine-cryogenic-results-2",
           "label": "transplant review note",
           "text": "Normoglycemia was restored within 7 days after implantation of cryopreserved porcine islets into diabetic mice, and frozen-thawed graft survival was similar to noncryopreserved xenografts, supporting in vivo viability and transplantation relevance.",
+          "source": "manual-note",
+          "confidence": 0.89,
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+      "title": "CRYOPRESERVATION OF CHICK ISLETS",
+      "priority": "evidence-thin",
+      "status": "reviewed",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "reviewerNotes": "Reviewed from the accessible PMC review Modeling Chick to Assess Diabetes Pathogenesis and Treatment on 2026-03-23. The review explicitly states that the underlying chick-islet cryopreservation study preserved viability and insulin secretory activity, but the source is secondary rather than the original paper.",
+      "excerpts": [
+        {
+          "id": "chick-cryo-methods-1",
+          "label": "protocol review note",
+          "text": "The accessible review states that isolated chick islets were cryopreserved using an established mouse-islet protocol in DMEM:Ham's F12 medium with fetal calf serum, riboflavin, and nicotinamide.",
+          "source": "manual-note",
+          "confidence": 0.87,
+          "reviewed": true
+        },
+        {
+          "id": "chick-cryo-results-1",
+          "label": "viability and function review note",
+          "text": "The review explicitly states that chick islets could be cryopreserved without losing viability and insulin secretory activity, supporting conservative viability and function labels for the underlying study.",
           "source": "manual-note",
           "confidence": 0.89,
           "reviewed": true

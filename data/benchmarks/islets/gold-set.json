@@ -485,6 +485,10 @@
       "expectedSpecimenTypes": [
         "islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "viability"
+      ],
       "expectedStepPhases": [
         "cooling",
         "storage"
@@ -498,6 +502,20 @@
         ],
         "specimenTypes": [
           "islets"
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Accessible secondary review evidence states that chick islets retained insulin secretory activity after cryopreservation with the adapted protocol.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Accessible secondary review evidence states that chick islets retained viability after cryopreservation with the adapted protocol.",
+            "evidence": []
+          }
         ],
         "protocolSteps": [
           {
@@ -523,7 +541,7 @@
         ],
         "extractionConfidence": 0.8
       },
-      "notes": "Chick islet cryopreservation study using stepwise DMSO loading and freeze-thaw recovery comparisons. Accepted benchmark autofill proposal benchmark-depth-autofill:2b5fe0eb-5bea-4514-88d5-b6926936277e:stepPhases."
+      "notes": "Chick islet cryopreservation study using stepwise DMSO loading and freeze-thaw recovery comparisons. Accepted benchmark autofill proposal benchmark-depth-autofill:2b5fe0eb-5bea-4514-88d5-b6926936277e:stepPhases. Reviewed outcome labels were promoted from accessible secondary-source evidence."
     },
     {
       "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
@@ -855,6 +873,10 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "transplantation"
+      ],
       "expectedStepPhases": [
         "cooling",
         "warming"
@@ -869,6 +891,20 @@
         "specimenTypes": [
           "islets",
           "pancreatic islets"
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Accessible secondary review evidence reports that ethylene glycol-treated rat islets preserved insulin secretory behavior more closely than dimethyl sulfoxide-treated islets in this head-to-head comparison.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "transplantation",
+            "strength": "moderate",
+            "summary": "Accessible secondary review evidence reports more consistent diabetes reversal after transplantation with ethylene glycol-treated rat islets than with the dimethyl sulfoxide method in this comparison study.",
+            "evidence": []
+          }
         ],
         "protocolSteps": [
           {
@@ -894,7 +930,7 @@
         ],
         "extractionConfidence": 0.8
       },
-      "notes": "Rat islet paper comparing two controlled freezing techniques rather than vitrification. Accepted benchmark autofill proposal benchmark-depth-autofill:51afcf7d-1bff-4630-808a-40407290f0d2:stepPhases."
+      "notes": "Rat islet paper comparing two controlled freezing techniques rather than vitrification. Accepted benchmark autofill proposal benchmark-depth-autofill:51afcf7d-1bff-4630-808a-40407290f0d2:stepPhases. Reviewed outcome labels were promoted from accessible secondary-source evidence."
     },
     {
       "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",

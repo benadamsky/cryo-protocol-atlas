@@ -4,10 +4,12 @@
 - none
 
 ## Ambiguous evidence
-- [pending] Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques
+- [reviewed] Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques
   paperId=51afcf7d-1bff-4630-808a-40407290f0d2
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=10.1006/cryo.1993.1040
+  reviewerNotes=Reviewed from the accessible IntechOpen islet cryopreservation review on 2026-03-23. The review explicitly describes the DMSO versus ethylene glycol comparison from the original rat study and supports function plus transplantation, but the source is secondary rather than the original abstract.
+  reviewedExcerpts=3
 - [reviewed] Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor
   paperId=7cbe1db5-5f6a-4519-9713-bddca96212f7
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
@@ -58,9 +60,6 @@
   reviewedExcerpts=3
 
 ## Evidence-thin
-- [pending] CRYOPRESERVATION OF CHICK ISLETS
-  paperId=2b5fe0eb-5bea-4514-88d5-b6926936277e
-  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
 - [reviewed] Bulk Cryopreservation of Isolated Islets of Langerhans
   paperId=2c726492-625a-4f6a-bd48-f8d3e9b465c3
   rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
@@ -73,6 +72,11 @@
   doi=10.1097/00007890-199402150-00005
   reviewerNotes=Reviewed from the indexed repository abstract snippet on 2026-03-23. The source explicitly supports morphology, in vitro function, and in vivo transplant viability after cryogenic storage.
   reviewedExcerpts=3
+- [reviewed] CRYOPRESERVATION OF CHICK ISLETS
+  paperId=2b5fe0eb-5bea-4514-88d5-b6926936277e
+  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
+  reviewerNotes=Reviewed from the accessible PMC review Modeling Chick to Assess Diabetes Pathogenesis and Treatment on 2026-03-23. The review explicitly states that the underlying chick-islet cryopreservation study preserved viability and insulin secretory activity, but the source is secondary rather than the original paper.
+  reviewedExcerpts=2
 - [reviewed] Cryopreservation of Freshly Isolated Porcine Islet Cells
   paperId=d865c65c-b6a7-431c-941c-c23d68f30469
   rationale=available title/abstract text is mostly procedural and does not state a concrete outcome

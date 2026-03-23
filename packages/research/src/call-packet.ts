@@ -13,6 +13,7 @@ export type DomainCallPacket = {
     reviewedMinimumDepthReady: boolean;
     pendingSourceEnrichments: number;
     reviewedSourceEnrichments: number;
+    secondarySourceReviewedCount: number;
     contradictionCount: number;
   };
   standardOfCareView: {
@@ -135,6 +136,7 @@ export function buildDomainCallPacket(input: {
       reviewedMinimumDepthReady: brief.evidenceQuality.reviewedMinimumDepthReady,
       pendingSourceEnrichments: brief.evidenceQuality.pendingSourceEnrichmentCount,
       reviewedSourceEnrichments: brief.evidenceQuality.reviewedSourceEnrichmentCount,
+      secondarySourceReviewedCount: brief.evidenceQuality.secondarySourceReviewedCount,
       contradictionCount: brief.contradictions.length
     },
     standardOfCareView: {
@@ -155,7 +157,8 @@ export function buildDomainCallPacket(input: {
     literatureGaps: [
       likelyPainPoint,
       `${brief.evidenceQuality.missingOutcomeCount} reviewed papers still lack explicit outcome labels.`,
-      `${brief.evidenceQuality.pendingSourceEnrichmentCount} source-enrichment records are still pending.`
+      `${brief.evidenceQuality.pendingSourceEnrichmentCount} source-enrichment records are still pending.`,
+      `${brief.evidenceQuality.secondarySourceReviewedCount} reviewed source-enrichment records rely on secondary-source evidence rather than the original abstract/full text.`
     ],
     marketBridge: {
       currentStandardPattern: `${brief.standardPattern.dominantProtocolFamily} via ${brief.standardPattern.dominantChemicals.join(", ")}`,
@@ -182,7 +185,8 @@ export function buildDomainCallPacket(input: {
           ? [
               "No fixed-base, head-to-head additive benchmark exists across the strongest adjunct candidates.",
               "Human or transplant-adjacent evidence is still scattered across different CPA backbones and endpoints.",
-              `${brief.evidenceQuality.missingOutcomeCount} reviewed in-scope papers still lack explicit outcome labels.`
+              `${brief.evidenceQuality.missingOutcomeCount} reviewed in-scope papers still lack explicit outcome labels.`,
+              `${brief.evidenceQuality.secondarySourceReviewedCount} reviewed labels currently depend on secondary-source evidence and should be treated as lower-authority than primary-source-backed rows.`
             ]
           : [
               `${brief.evidenceQuality.missingOutcomeCount} reviewed in-scope papers still lack explicit outcome labels.`
@@ -215,6 +219,7 @@ export function renderDomainCallPacketMarkdown(packet: DomainCallPacket): string
   lines.push(`- reviewed minimum-depth ready: ${packet.benchmarkSnapshot.reviewedMinimumDepthReady ? "yes" : "no"}`);
   lines.push(`- contradictions in top slice: ${packet.benchmarkSnapshot.contradictionCount}`);
   lines.push(`- pending source enrichments: ${packet.benchmarkSnapshot.pendingSourceEnrichments}`);
+  lines.push(`- reviewed secondary-source enrichments: ${packet.benchmarkSnapshot.secondarySourceReviewedCount}`);
   lines.push("");
   lines.push("## Standard protocol view");
   lines.push(`- dominant family: ${packet.standardOfCareView.dominantProtocolFamily}`);

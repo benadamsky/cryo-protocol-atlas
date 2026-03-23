@@ -6,7 +6,7 @@ Total papers: 46
 - unknown protocol families: 0
 - unknown protocol family rate: 0
 - unknown step phases: 0
-- contradiction count: 19
+- contradiction count: 20
 - experimental papers: 42
 - methods papers: 4
 - review papers: 0
@@ -20,7 +20,7 @@ Total papers: 46
 ## Top chemicals
 - Dimethyl Sulfoxide: 38
 - Sucrose: 12
-- Ethylene Glycol: 9
+- Ethylene Glycol: 10
 - Glycerol: 3
 - Polyethylene Glycol: 3
 - Beraprost Sodium: 2
@@ -38,9 +38,9 @@ Total papers: 46
 - islet cells: 2
 
 ## Top outcome classes
-- viability: 25
-- function: 24
-- transplantation: 14
+- function: 26
+- viability: 26
+- transplantation: 15
 - morphology: 6
 
 ## Top protocol phases
@@ -83,10 +83,10 @@ Total papers: 46
 - vitrification + Dimethyl Sulfoxide + pancreatic islets | papers=5 | outcomes=function, viability, transplantation
 - vitrification + Ethylene Glycol + islets | papers=5 | outcomes=function, viability, transplantation
 - vitrification + Ethylene Glycol + pancreatic islets | papers=5 | outcomes=function, viability, transplantation
+- slow-freezing + Ethylene Glycol + islets | papers=4 | outcomes=viability, function, transplantation, morphology
+- slow-freezing + Ethylene Glycol + pancreatic islets | papers=4 | outcomes=viability, function, transplantation, morphology
 - vitrification + Sucrose + islets | papers=4 | outcomes=function, viability, transplantation
 - vitrification + Sucrose + pancreatic islets | papers=4 | outcomes=function, viability, transplantation
-- slow-freezing + Ethylene Glycol + islets | papers=3 | outcomes=viability, function, morphology
-- slow-freezing + Ethylene Glycol + pancreatic islets | papers=3 | outcomes=viability, function, morphology
 
 ## Contradictions
 - Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets | slow-freezing vs vitrification | Comparable species/context with shared outcome readout but different preservation families
@@ -98,8 +98,14 @@ Total papers: 46
 - Dimethyl Sulfoxide, Sucrose in islets, pancreatic islets | vitrification vs slow-freezing | Comparable species/context with shared outcome readout but different preservation families
   A: Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets
   B: Bulk Cryopreservation of Isolated Islets of Langerhans
+- Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets | vitrification vs slow-freezing | Comparable species/context with shared outcome readout but different preservation families
+  A: Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets
+  B: Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques
 - Dimethyl Sulfoxide, Sucrose in islets, pancreatic islets | slow-freezing vs vitrification | Comparable species/context with shared outcome readout but different preservation families
   A: Bulk Cryopreservation of Isolated Islets of Langerhans
+  B: Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets
+- Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets | slow-freezing vs vitrification | Comparable species/context with shared outcome readout but different preservation families
+  A: Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques
   B: Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets
 - Ethylene Glycol in islets, pancreatic islets | slow-freezing vs vitrification | Comparable species/context with shared outcome readout but different preservation families
   A: Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro
@@ -113,23 +119,17 @@ Total papers: 46
 - Dimethyl Sulfoxide in islets, pancreatic islets | vitrification vs slow-freezing | Comparable species/context with shared outcome readout but different preservation families
   A: Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets
   B: Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig
-- Dimethyl Sulfoxide in islets, pancreatic islets | vitrification vs slow-freezing | Comparable species/context with shared outcome readout but different preservation families
-  A: Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets
-  B: A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation
-- Dimethyl Sulfoxide in islets | vitrification vs slow-freezing | Comparable species/context with shared outcome readout but different preservation families
-  A: Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets
-  B: Viability Studies on Frozen-Thawed Rat Islets of Langerhans
 
 ## Ranked hypotheses
 - Matched-species islet vitrification vs slow-freezing benchmark | category=benchmark | priority=0.919 | evidence=0.95 | uncertainty=1 | actionability=0.84
   claim=The current islet corpus overweights slow-freezing, so a matched-species comparison is needed to separate real vitrification gains from endpoint and species confounding.
-  evidence=papers:6, experimental:6, comparative:1, species:2, strong-outcomes:4, transplantation:1, contradictions:19, sparse-protocols:1
-  blockers=1 relevant papers still have sparse step structure | 19 unresolved contradictions remain in the relevant evidence slice
+  evidence=papers:6, experimental:6, comparative:1, species:2, strong-outcomes:4, transplantation:1, contradictions:20, sparse-protocols:1
+  blockers=1 relevant papers still have sparse step structure | 20 unresolved contradictions remain in the relevant evidence slice
   proposed-experiment=The cleaned islet slice contains many slow-freezing studies, a smaller vitrification set, and a few comparative papers. A direct benchmark with the same species and the same post-thaw function readout is the fastest way to convert that literature asymmetry into actionable signal.
 - Promote islet function-heavy protocols to transplantation endpoints | category=endpoint-upgrade | priority=0.879 | evidence=0.883 | uncertainty=1 | actionability=0.8
   claim=Several islet protocols that look promising on insulin secretion or in-vitro function will reorder once they are compared on graft or transplantation outcomes.
-  evidence=papers:6, experimental:6, comparative:1, species:1, strong-outcomes:4, transplantation:1, contradictions:9, sparse-protocols:1
-  blockers=1 relevant papers still have sparse step structure | 9 unresolved contradictions remain in the relevant evidence slice
+  evidence=papers:6, experimental:6, comparative:1, species:1, strong-outcomes:4, transplantation:1, contradictions:10, sparse-protocols:1
+  blockers=1 relevant papers still have sparse step structure | 10 unresolved contradictions remain in the relevant evidence slice
   proposed-experiment=The curated islet slice now has better function labeling than transplantation coverage. Converting the strongest in-vitro function protocols into a small transplantation benchmark is likely higher-signal than inventing a new chemistry path immediately.
 - Full-text protocol resolution for sparse islet thaw/loading workflows | category=workflow-gap | priority=0.793 | evidence=0.917 | uncertainty=0.417 | actionability=0.92
   claim=A small number of islet papers still look interesting, but their step structure is too thin to compare fairly against the rest of the corpus.
@@ -138,8 +138,8 @@ Total papers: 46
   proposed-experiment=The benchmarked islet slice is now minimum-depth ready, and the remaining weak points are concentrated in a few papers where only thawing or one procedural phase is explicit. Full-text resolution there is likely higher signal than another broad extraction pass.
 - Scale-up benchmark for banked or bulk islet handling | category=scale-up | priority=0.76 | evidence=0.633 | uncertainty=1 | actionability=0.72
   claim=Scale-up losses in islet banking may come from handling and thaw workflow variance rather than core cryomix choice alone.
-  evidence=papers:3, experimental:3, comparative:0, species:2, strong-outcomes:3, transplantation:2, contradictions:9, sparse-protocols:0
-  blockers=9 unresolved contradictions remain in the relevant evidence slice
+  evidence=papers:3, experimental:3, comparative:0, species:2, strong-outcomes:3, transplantation:2, contradictions:10, sparse-protocols:0
+  blockers=10 unresolved contradictions remain in the relevant evidence slice
   proposed-experiment=The islet corpus includes bulk/banking/transport titles, but those papers are scattered across sparse workflow descriptions. A scale-up benchmark focused on loading, storage, thaw, and handling variance would test whether operational workflow dominates the observed recovery losses.
 - Additive-assisted islet recovery benchmark on a fixed base cryomix | category=benchmark | priority=0.699 | evidence=0.917 | uncertainty=0.167 | actionability=0.84
   claim=Several islet papers imply that recovery gains may come from adjuncts added around a standard cryomix rather than from entirely new base CPA chemistry.
@@ -183,7 +183,7 @@ Total papers: 46
 ## Baseline vs resolved quality
 - unknown protocol families: 33 -> 0
 - unknown step phases: 0 -> 0
-- contradictions: 5 -> 19
+- contradictions: 5 -> 20
 - experimental papers: 40 -> 42
 - methods papers: 8 -> 4
 - review papers: 0 -> 0

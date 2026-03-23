@@ -211,8 +211,22 @@
       "specimenTypes": [
         "islets"
       ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "Accessible secondary review evidence states that chick islets retained insulin secretory activity after cryopreservation with the adapted protocol.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "Accessible secondary review evidence states that chick islets retained viability after cryopreservation with the adapted protocol.",
+          "evidence": []
+        }
+      ],
       "extractionConfidence": 0.8,
-      "notes": "Chick islet cryopreservation study using stepwise DMSO loading and freeze-thaw recovery comparisons."
+      "notes": "Chick islet cryopreservation study using stepwise DMSO loading and freeze-thaw recovery comparisons. Reviewed outcome labels were promoted from accessible secondary-source evidence rather than the original paper."
     },
     {
       "paperId": "2c3150ae-558a-49b0-b989-676d25c27884",
@@ -586,8 +600,22 @@
           "evidence": []
         }
       ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "Accessible secondary review evidence reports that ethylene glycol-treated rat islets preserved insulin secretory behavior more closely than dimethyl sulfoxide-treated islets in this head-to-head comparison.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "transplantation",
+          "strength": "moderate",
+          "summary": "Accessible secondary review evidence reports more consistent diabetes reversal after transplantation with ethylene glycol-treated rat islets than with the dimethyl sulfoxide method in this comparison study.",
+          "evidence": []
+        }
+      ],
       "extractionConfidence": 0.8,
-      "notes": "Rat islet paper comparing two controlled freezing techniques rather than vitrification."
+      "notes": "Rat islet paper comparing two controlled freezing techniques rather than vitrification. Reviewed outcome labels were promoted from accessible secondary-source evidence rather than the original abstract."
     },
     {
       "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",

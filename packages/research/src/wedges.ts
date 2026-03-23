@@ -62,6 +62,7 @@ export type DomainWedgeBrief = {
     missingStepPhaseCount: number;
     pendingSourceEnrichmentCount: number;
     reviewedSourceEnrichmentCount: number;
+    secondarySourceReviewedCount: number;
   };
   opportunityScan: Array<{
     title: string;
@@ -194,6 +195,12 @@ export function buildDomainWedgeBrief(input: {
     sourceEnrichment?.records.filter((record) => record.status === "pending" || record.status === "in-progress").length ?? 0;
   const reviewedSourceEnrichmentCount =
     sourceEnrichment?.records.filter((record) => record.status === "reviewed").length ?? 0;
+  const secondarySourceReviewedCount =
+    sourceEnrichment?.records.filter(
+      (record) =>
+        record.status === "reviewed" &&
+        /secondary-source|secondary rather than the original|secondary review/i.test(record.reviewerNotes ?? "")
+    ).length ?? 0;
 
   const protocolFamilies = atlas.protocolFamilies.slice(0, 4).map((entry) => ({
     family: entry.label,
@@ -258,12 +265,13 @@ export function buildDomainWedgeBrief(input: {
       missingOutcomeCount: benchmarkAnalysis.reviewedDepth.missingOutcomeCount,
       missingStepPhaseCount: benchmarkAnalysis.reviewedDepth.missingStepPhaseCount,
       pendingSourceEnrichmentCount,
-      reviewedSourceEnrichmentCount
+      reviewedSourceEnrichmentCount,
+      secondarySourceReviewedCount
     },
     opportunityScan,
     callout:
       snapshot.domain === "islets"
-        ? `The islet wedge is now structurally ready for opportunity finding: reviewed gates pass, reviewed depth is adequate, and the main remaining problem is ${ambiguousReviewedCount} reviewed in-scope papers that still need stronger outcome evidence.`
+        ? `The islet wedge is now structurally ready for opportunity finding: reviewed gates pass, reviewed depth is adequate, ${ambiguousReviewedCount} reviewed in-scope papers still need stronger outcome evidence, and ${secondarySourceReviewedCount} reviewed source-enrichment records still rely on secondary-source support.`
         : `This slice is benchmark-stable enough to support opportunity finding, but the next commercial story still depends on whether fuller-source evidence sharpens the endpoint picture.`
   };
 }
@@ -317,6 +325,7 @@ export function renderDomainWedgeBriefMarkdown(brief: DomainWedgeBrief): string 
   lines.push(`- missing reviewed step phases: ${brief.evidenceQuality.missingStepPhaseCount}`);
   lines.push(`- pending source enrichments: ${brief.evidenceQuality.pendingSourceEnrichmentCount}`);
   lines.push(`- reviewed source enrichments: ${brief.evidenceQuality.reviewedSourceEnrichmentCount}`);
+  lines.push(`- reviewed secondary-source enrichments: ${brief.evidenceQuality.secondarySourceReviewedCount}`);
   lines.push("");
   lines.push("## Opportunity scan");
   for (const opportunity of brief.opportunityScan) {
