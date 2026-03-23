@@ -13,3 +13,12 @@ for (const domain of domains) {
     }
   );
 }
+
+execFileSync(
+  process.execPath,
+  ["--import", "tsx", "scripts/build-run-health-report.ts"],
+  {
+    cwd: process.cwd(),
+    stdio: "inherit"
+  }
+);
