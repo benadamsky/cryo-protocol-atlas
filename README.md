@@ -27,6 +27,11 @@ The next scaffolded domain is:
 - `bun run extract:islets`
 - `bun run analyze:ovarian`
 - `bun run analyze:islets`
+- `bun run wedge:ovarian`
+- `bun run wedge:islets`
+- `bun run call:ovarian`
+- `bun run call:islets`
+- `bun run opportunity-scan`
 - `bun run agenda`
 - `bun run queue:ovarian`
 - `bun run queue:islets`
@@ -99,7 +104,21 @@ This loop is intentionally conservative. It does not auto-apply benchmark patche
 
 `bun run review-benchmark:<domain>` materializes a decision file plus markdown queue for benchmark-depth proposals, including conservative `accept` vs `defer` policy recommendations. The decision file also supports partial acceptance via `acceptedOutcomeClasses` and `acceptedStepPhases` when a proposal is directionally right but too broad. `bun run apply-benchmark:<domain>` merges accepted benchmark patches into the gold set and reruns evaluation + loop generation so the next cycle starts from the updated benchmark. `bun run autopromote-benchmark:<domain>` is a stricter autopilot path that auto-accepts only policy-approved benchmark proposals above the autopromote confidence threshold, then runs benchmark apply + override repair convergence automatically.
 
-`bun run run-batch:<domain>` is the bounded unattended-run entrypoint. It runs extract -> analyze -> evaluate -> enrichment queue -> loop -> benchmark review queue -> conservative autopromote -> regression checks, then writes `data/autoresearch/<domain>/unattended-batch.{json,md}`. Pass `--ingest` if you explicitly want a fresh CryoDB ingest before the batch, for example `bun run run-batch:islets -- --ingest`.
+`bun run run-batch:<domain>` is the bounded unattended-run entrypoint. It runs extract -> analyze -> evaluate -> wedge brief -> call packet -> enrichment queue -> loop -> benchmark review queue -> conservative autopromote -> regression checks, then writes `data/autoresearch/<domain>/unattended-batch.{json,md}`. It also refreshes the domain wedge brief and call packet and will best-effort regenerate the cross-domain opportunity scan if both domain briefs exist. Pass `--ingest` if you explicitly want a fresh CryoDB ingest before the batch, for example `bun run run-batch:islets -- --ingest`.
+
+## Human-facing outputs
+
+`bun run wedge:<domain>` writes a call-ready wedge brief under `data/processed/<domain>/wedge-brief.{json,md}`. This is the current best artifact for a domain-specific conversation: standard protocol pattern, protocol families, dominant CPA clusters, contradictions, evidence quality, and top opportunity framing.
+
+`bun run call:<domain>` writes `data/processed/<domain>/call-packet.{json,md}`. This is the one-page call artifact: standard protocol pattern, benchmark credibility, one sharp wedge, and a lightweight market bridge.
+
+`bun run opportunity-scan` writes `data/processed/opportunity-scan.{json,md}`. This is a lightweight cross-domain comparison meant to answer a product/company question rather than a literature question: which wedge looks sharpest right now, what the standard pattern is, where the pain point lives, and why optimization might matter commercially.
+
+The main presentation artifacts for a single wedge are:
+
+- `data/processed/<domain>/atlas-report.md`
+- `data/processed/<domain>/benchmark-report.md`
+- `data/processed/<domain>/call-packet.md`
 
 ## Source enrichment
 

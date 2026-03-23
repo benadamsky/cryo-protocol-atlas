@@ -74,12 +74,20 @@ async function main(selectedDomain: DomainId): Promise<void> {
   runStep("scripts/extract-domain.ts", [selectedDomain]);
   runStep("scripts/analyze-domain.ts", [selectedDomain]);
   runStep("scripts/evaluate-domain.ts", [selectedDomain]);
+  runStep("scripts/build-wedge-brief.ts", [selectedDomain]);
+  runStep("scripts/build-call-packet.ts", [selectedDomain]);
   runStep("scripts/build-source-enrichment-queue.ts", [selectedDomain]);
   runStep("scripts/run-autoresearch-loop.ts", [selectedDomain]);
   runStep("scripts/build-benchmark-review-queue.ts", [selectedDomain]);
   runStep("scripts/autopromote-benchmark-recommendations.ts", [selectedDomain]);
   runStep("scripts/build-benchmark-review-queue.ts", [selectedDomain]);
   runStep("scripts/regress-autoresearch.ts", [selectedDomain]);
+
+  try {
+    runStep("scripts/build-opportunity-scan.ts");
+  } catch {
+    // Cross-domain scan is best-effort; it should not block a single-domain unattended batch.
+  }
 
   const extractionSnapshot = await readJsonFile(
     join(processedDir, "extraction-snapshot.json"),
