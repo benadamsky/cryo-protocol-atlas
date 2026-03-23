@@ -1,0 +1,81 @@
+name: Autoresearch Cycles
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_cycles:
+        description: Maximum unattended cycles per domain
+        required: false
+        default: "5"
+      ingest_first_cycle:
+        description: Include ingest on the first cycle for each domain
+        required: false
+        default: false
+        type: boolean
+  schedule:
+    - cron: "17 13 * * 1-5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autoresearch-cycles
+  cancel-in-progress: false
+
+jobs:
+  run-cycles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.2.17"
+
+      - name: Install Dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Normalization Tests
+        run: bun run test:normalize
+
+      - name: Run Bounded Autoresearch Cycles
+        env:
+          MAX_CYCLES: ${{ github.event.inputs.max_cycles || '5' }}
+          INGEST_FIRST_CYCLE: ${{ github.event.inputs.ingest_first_cycle || 'false' }}
+        run: |
+          EXTRA_ARGS="--max-cycles ${MAX_CYCLES}"
+          if [ "${INGEST_FIRST_CYCLE}" = "true" ]; then
+            EXTRA_ARGS="${EXTRA_ARGS} --ingest"
+          fi
+          bun run cycles:all -- ${EXTRA_ARGS}
+
+      - name: Publish Cycle Summary
+        run: |
+          cat data/autoresearch/ovarian-tissue/autoresearch-cycles.md >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          cat data/autoresearch/islets/autoresearch-cycles.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit And Push Data Changes
+        run: |
+          if [ -z "$(git status --porcelain -- data)" ]; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+
+          git add data
+          git commit -m "chore(autoresearch): run bounded cycles"
+          git push origin HEAD:main

@@ -1,0 +1,32 @@
+{
+  "domain": "islets",
+  "generatedAt": "2026-03-23T20:30:31.225Z",
+  "maxCycles": 1,
+  "ingestFirstCycle": false,
+  "cyclesCompleted": 1,
+  "stopReason": "pending-source-enrichment",
+  "cycles": [
+    {
+      "cycle": 1,
+      "ingestIncluded": false,
+      "beforeState": {
+        "benchmarkHash": "3e312330e4147edc09c625d6a0e5970f6c9c23eb987ea2527e34cb8435422e4b",
+        "overrideHash": "6336a27984b9eb0bec4b8a6c1ed8989effc90683d12bdaf327747c456e0be145"
+      },
+      "afterState": {
+        "benchmarkHash": "3e312330e4147edc09c625d6a0e5970f6c9c23eb987ea2527e34cb8435422e4b",
+        "overrideHash": "6336a27984b9eb0bec4b8a6c1ed8989effc90683d12bdaf327747c456e0be145"
+      },
+      "autonomousStateChanged": false,
+      "actions": [],
+      "proposalCount": 0,
+      "overrideProposalCount": 0,
+      "benchmarkProposalCount": 0,
+      "autoApplySafe": false,
+      "pendingBenchmarkProposalCount": 0,
+      "pendingSourceEnrichmentCount": 1,
+      "reviewedOutcomeCoverage": 1,
+      "reviewedStepPhaseCoverage": 0.976
+    }
+  ]
+}

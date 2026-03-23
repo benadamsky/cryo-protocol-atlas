@@ -12,6 +12,28 @@ import {
 const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
 const applyChanges = process.argv.includes("--apply");
 
+async function readOptionalFile(path: string): Promise<string | null> {
+  try {
+    return await readFile(path, "utf8");
+  } catch {
+    return null;
+  }
+}
+
+function stripGeneratedAt(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value.map(stripGeneratedAt);
+  }
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value)
+        .filter(([key]) => key !== "generatedAt")
+        .map(([key, nestedValue]) => [key, stripGeneratedAt(nestedValue)])
+    );
+  }
+  return value;
+}
+
 function renderLoopMarkdown(result: ReturnType<typeof runAutoresearchLoop>): string {
   const overrideProposals = result.proposalFile.proposals.filter((proposal) => proposal.target === "override");
   const benchmarkProposals = result.proposalFile.proposals.filter((proposal) => proposal.target === "benchmark");
@@ -99,29 +121,62 @@ async function main(selectedDomain: DomainId, shouldApply: boolean): Promise<voi
   }
 
   const result = runAutoresearchLoop(extractionSnapshot, benchmark, overrideFile);
+  const proposalFilePath = join(loopDir, "proposal-file.json");
+  const loopAnalysisPath = join(loopDir, "loop-analysis.json");
+  const loopReportPath = join(loopDir, "loop-report.md");
+
+  const nextProposalFile = result.proposalFile;
+  const nextLoopAnalysis = {
+    domain: selectedDomain,
+    autoApplySafe: result.autoApplySafe,
+    currentEvaluation: result.currentEvaluation,
+    candidateEvaluation: result.candidateEvaluation,
+    candidateBenchmarkEvaluation: result.candidateBenchmarkEvaluation,
+    proposalCount: result.proposalFile.proposalCount,
+    overrideProposalCount: result.proposalFile.proposals.filter((proposal) => proposal.target === "override").length,
+    benchmarkProposalCount: result.proposalFile.proposals.filter((proposal) => proposal.target === "benchmark").length,
+    candidateOverrideCount: result.candidateOverrideCount
+  };
+
+  const [previousProposalFileContent, previousLoopAnalysisContent, previousLoopReportContent] = await Promise.all([
+    readOptionalFile(proposalFilePath),
+    readOptionalFile(loopAnalysisPath),
+    readOptionalFile(loopReportPath)
+  ]);
+
+  const stableProposalFile = previousProposalFileContent
+    ? (() => {
+        const previous = JSON.parse(previousProposalFileContent);
+        return JSON.stringify(stripGeneratedAt(previous)) === JSON.stringify(stripGeneratedAt(nextProposalFile))
+          ? previous
+          : nextProposalFile;
+      })()
+    : nextProposalFile;
+  const stableLoopAnalysis = previousLoopAnalysisContent
+    ? (() => {
+        const previous = JSON.parse(previousLoopAnalysisContent);
+        return JSON.stringify(stripGeneratedAt(previous)) === JSON.stringify(stripGeneratedAt(nextLoopAnalysis))
+          ? previous
+          : nextLoopAnalysis;
+      })()
+    : nextLoopAnalysis;
+  const nextLoopReport = renderLoopMarkdown({
+    ...result,
+    proposalFile: stableProposalFile
+  });
 
   await mkdir(loopDir, { recursive: true });
-  await writeFile(join(loopDir, "proposal-file.json"), JSON.stringify(result.proposalFile, null, 2), "utf8");
-  await writeFile(
-    join(loopDir, "loop-analysis.json"),
-    JSON.stringify(
-      {
-        domain: selectedDomain,
-        autoApplySafe: result.autoApplySafe,
-        currentEvaluation: result.currentEvaluation,
-        candidateEvaluation: result.candidateEvaluation,
-        candidateBenchmarkEvaluation: result.candidateBenchmarkEvaluation,
-        proposalCount: result.proposalFile.proposalCount,
-        overrideProposalCount: result.proposalFile.proposals.filter((proposal) => proposal.target === "override").length,
-        benchmarkProposalCount: result.proposalFile.proposals.filter((proposal) => proposal.target === "benchmark").length,
-        candidateOverrideCount: result.candidateOverrideCount
-      },
-      null,
-      2
-    ),
-    "utf8"
-  );
-  await writeFile(join(loopDir, "loop-report.md"), renderLoopMarkdown(result), "utf8");
+  const nextProposalFileContent = JSON.stringify(stableProposalFile, null, 2);
+  const nextLoopAnalysisContent = JSON.stringify(stableLoopAnalysis, null, 2);
+  if (previousProposalFileContent !== nextProposalFileContent) {
+    await writeFile(proposalFilePath, nextProposalFileContent, "utf8");
+  }
+  if (previousLoopAnalysisContent !== nextLoopAnalysisContent) {
+    await writeFile(loopAnalysisPath, nextLoopAnalysisContent, "utf8");
+  }
+  if (previousLoopReportContent !== nextLoopReport) {
+    await writeFile(loopReportPath, nextLoopReport, "utf8");
+  }
 
   if (shouldApply && result.autoApplySafe && result.proposalFile.proposals.length > 0) {
     const nextOverrideFile = mergeProtocolOverrides(

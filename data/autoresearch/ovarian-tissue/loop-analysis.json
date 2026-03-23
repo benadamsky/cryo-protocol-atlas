@@ -3,7 +3,7 @@
   "autoApplySafe": false,
   "currentEvaluation": {
     "domain": "ovarian-tissue",
-    "generatedAt": "2026-03-23T20:04:05.850Z",
+    "generatedAt": "2026-03-23T20:34:01.102Z",
     "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 28,
     "subsets": {
@@ -410,7 +410,7 @@
   },
   "candidateEvaluation": {
     "domain": "ovarian-tissue",
-    "generatedAt": "2026-03-23T20:04:05.851Z",
+    "generatedAt": "2026-03-23T20:34:01.103Z",
     "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 28,
     "subsets": {
@@ -817,7 +817,7 @@
   },
   "candidateBenchmarkEvaluation": {
     "domain": "ovarian-tissue",
-    "generatedAt": "2026-03-23T20:04:05.851Z",
+    "generatedAt": "2026-03-23T20:34:01.104Z",
     "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 28,
     "subsets": {

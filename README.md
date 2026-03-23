@@ -51,6 +51,9 @@ The next scaffolded domain is:
 - `bun run autopromote-benchmark:islets`
 - `bun run run-batch:ovarian`
 - `bun run run-batch:islets`
+- `bun run cycles:ovarian`
+- `bun run cycles:islets`
+- `bun run cycles:all`
 - `bun run enrichment-queue:ovarian`
 - `bun run enrichment-queue:islets`
 - `bun run regress:ovarian`
@@ -107,6 +110,19 @@ This loop is intentionally conservative. It does not auto-apply benchmark patche
 `bun run review-benchmark:<domain>` materializes a decision file plus markdown queue for benchmark-depth proposals, including conservative `accept` vs `defer` policy recommendations. The decision file also supports partial acceptance via `acceptedOutcomeClasses` and `acceptedStepPhases` when a proposal is directionally right but too broad. `bun run apply-benchmark:<domain>` merges accepted benchmark patches into the gold set and reruns evaluation + loop generation so the next cycle starts from the updated benchmark. `bun run autopromote-benchmark:<domain>` is a stricter autopilot path that auto-accepts only policy-approved benchmark proposals above the autopromote confidence threshold, then runs benchmark apply + override repair convergence automatically.
 
 `bun run run-batch:<domain>` is the bounded unattended-run entrypoint. It runs extract -> analyze -> evaluate -> wedge brief -> call packet -> enrichment queue -> loop -> benchmark review queue -> conservative autopromote -> regression checks, then writes `data/autoresearch/<domain>/unattended-batch.{json,md}`. It also refreshes the domain wedge brief and call packet and will best-effort regenerate the cross-domain opportunity scan if both domain briefs exist. Pass `--ingest` if you explicitly want a fresh CryoDB ingest before the batch, for example `bun run run-batch:islets -- --ingest`.
+
+`bun run cycles:<domain>` is the bounded outer loop wrapper. It runs up to 5 unattended batch cycles by default, auto-applies only already-safe override repairs, and stops early with an explicit reason when:
+
+- the benchmark/override state converges
+- pending benchmark proposals still require review
+- remaining override proposals are not auto-apply safe
+- pending source-enrichment work is the only thing left
+
+It writes `data/autoresearch/<domain>/autoresearch-cycles.{json,md}`. Pass `-- --max-cycles 3` to shorten the run or `-- --ingest` to include ingest on the first cycle only.
+
+`bun run cycles:all` runs the same bounded outer loop sequentially for `ovarian-tissue` and `islets`. This is the preferred entrypoint for a scheduler because it avoids cross-domain artifact races and leaves one cycle report per domain.
+
+The repo also includes a scheduler entrypoint in [`.github/workflows/autoresearch-cycles.yml`](./.github/workflows/autoresearch-cycles.yml). It runs on weekday schedule plus manual dispatch, executes `bun run cycles:all`, publishes both cycle reports into the GitHub Actions step summary, and commits only `data/` outputs back to `main` when the run produced a real artifact delta.
 
 ## Human-facing outputs
 

@@ -14,6 +14,14 @@ import {
 
 const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
 
+async function readOptionalFile(path: string): Promise<string | null> {
+  try {
+    return await readFile(path, "utf8");
+  } catch {
+    return null;
+  }
+}
+
 type BenchmarkAnalysis = {
   domain: DomainId;
   reviewedDepth: {
@@ -136,6 +144,8 @@ function renderMarkdown(domainId: DomainId, enrichmentFile: SourceEnrichmentFile
 async function main(selectedDomain: DomainId): Promise<void> {
   const processedDir = join(process.cwd(), "data", "processed", selectedDomain);
   const curatedDir = join(process.cwd(), "data", "curated", selectedDomain);
+  const enrichmentJsonPath = join(curatedDir, "source-enrichment.json");
+  const enrichmentMarkdownPath = join(curatedDir, "source-enrichment.md");
   const analysis = JSON.parse(
     await readFile(join(processedDir, "benchmark-analysis.json"), "utf8")
   ) as BenchmarkAnalysis;
@@ -145,7 +155,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
   let existing: SourceEnrichmentFile | undefined;
   try {
     existing = SourceEnrichmentFileSchema.parse(
-      JSON.parse(await readFile(join(curatedDir, "source-enrichment.json"), "utf8"))
+      JSON.parse(await readFile(enrichmentJsonPath, "utf8"))
     );
   } catch {
     existing = undefined;
@@ -216,16 +226,35 @@ async function main(selectedDomain: DomainId): Promise<void> {
     records
   });
 
-  await writeFile(join(curatedDir, "source-enrichment.json"), JSON.stringify(nextFile, null, 2), "utf8");
-  await writeFile(join(curatedDir, "source-enrichment.md"), renderMarkdown(selectedDomain, nextFile), "utf8");
+  const previousEnrichmentJsonContent = await readOptionalFile(enrichmentJsonPath);
+  const stableEnrichmentFile: SourceEnrichmentFile = previousEnrichmentJsonContent
+    ? (() => {
+        const previous = SourceEnrichmentFileSchema.parse(JSON.parse(previousEnrichmentJsonContent));
+        const nextComparable = { ...nextFile, generatedAt: null };
+        const previousComparable = { ...previous, generatedAt: null };
+        return JSON.stringify(previousComparable) === JSON.stringify(nextComparable)
+          ? previous
+          : nextFile;
+      })()
+    : nextFile;
+  const nextEnrichmentJsonContent = JSON.stringify(stableEnrichmentFile, null, 2);
+  const previousEnrichmentMarkdownContent = await readOptionalFile(enrichmentMarkdownPath);
+  const nextEnrichmentMarkdownContent = renderMarkdown(selectedDomain, stableEnrichmentFile);
+
+  if (previousEnrichmentJsonContent !== nextEnrichmentJsonContent) {
+    await writeFile(enrichmentJsonPath, nextEnrichmentJsonContent, "utf8");
+  }
+  if (previousEnrichmentMarkdownContent !== nextEnrichmentMarkdownContent) {
+    await writeFile(enrichmentMarkdownPath, nextEnrichmentMarkdownContent, "utf8");
+  }
 
   console.log(
     JSON.stringify(
       {
         domain: selectedDomain,
-        recordCount: nextFile.records.length,
-        reviewedCount: nextFile.records.filter((record) => record.status === "reviewed").length,
-        pendingCount: nextFile.records.filter((record) => record.status === "pending").length
+        recordCount: stableEnrichmentFile.records.length,
+        reviewedCount: stableEnrichmentFile.records.filter((record) => record.status === "reviewed").length,
+        pendingCount: stableEnrichmentFile.records.filter((record) => record.status === "pending").length
       },
       null,
       2

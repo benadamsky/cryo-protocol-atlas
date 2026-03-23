@@ -11,6 +11,28 @@ import {
 
 const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
 
+async function readOptionalFile(path: string): Promise<string | null> {
+  try {
+    return await readFile(path, "utf8");
+  } catch {
+    return null;
+  }
+}
+
+function stripRuntimeTimestamps(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value.map(stripRuntimeTimestamps);
+  }
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value)
+        .filter(([key]) => key !== "generatedAt" && key !== "sourceProposalGeneratedAt")
+        .map(([key, nestedValue]) => [key, stripRuntimeTimestamps(nestedValue)])
+    );
+  }
+  return value;
+}
+
 function renderMarkdown(
   domainId: DomainId,
   proposalFile: ReturnType<typeof AutoresearchProposalFileSchema.parse>,
@@ -110,6 +132,8 @@ function renderMarkdown(
 
 async function main(selectedDomain: DomainId): Promise<void> {
   const loopDir = join(process.cwd(), "data", "autoresearch", selectedDomain);
+  const decisionFilePath = join(loopDir, "benchmark-review-decisions.json");
+  const queueMarkdownPath = join(loopDir, "benchmark-review-queue.md");
   await mkdir(loopDir, { recursive: true });
 
   const proposalFile = AutoresearchProposalFileSchema.parse(
@@ -120,9 +144,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
 
   let existingDecisionFile: BenchmarkProposalDecisionFile | null = null;
   try {
-    existingDecisionFile = BenchmarkProposalDecisionFileSchema.parse(
-      JSON.parse(await readFile(join(loopDir, "benchmark-review-decisions.json"), "utf8"))
-    );
+    existingDecisionFile = BenchmarkProposalDecisionFileSchema.parse(JSON.parse(await readFile(decisionFilePath, "utf8")));
   } catch {
     existingDecisionFile = null;
   }
@@ -155,23 +177,33 @@ async function main(selectedDomain: DomainId): Promise<void> {
     })
   });
 
-  await writeFile(
-    join(loopDir, "benchmark-review-decisions.json"),
-    JSON.stringify(nextDecisionFile, null, 2),
-    "utf8"
-  );
-  await writeFile(
-    join(loopDir, "benchmark-review-queue.md"),
-    renderMarkdown(selectedDomain, proposalFile, nextDecisionFile),
-    "utf8"
-  );
+  const previousDecisionFileContent = await readOptionalFile(decisionFilePath);
+  const stableDecisionFile: BenchmarkProposalDecisionFile = previousDecisionFileContent
+    ? (() => {
+        const previous = BenchmarkProposalDecisionFileSchema.parse(JSON.parse(previousDecisionFileContent));
+        return JSON.stringify(stripRuntimeTimestamps(previous)) ===
+          JSON.stringify(stripRuntimeTimestamps(nextDecisionFile))
+          ? previous
+          : nextDecisionFile;
+      })()
+    : nextDecisionFile;
+  const nextDecisionFileContent = JSON.stringify(stableDecisionFile, null, 2);
+  const previousQueueMarkdownContent = await readOptionalFile(queueMarkdownPath);
+  const nextQueueMarkdownContent = renderMarkdown(selectedDomain, proposalFile, stableDecisionFile);
+
+  if (previousDecisionFileContent !== nextDecisionFileContent) {
+    await writeFile(decisionFilePath, nextDecisionFileContent, "utf8");
+  }
+  if (previousQueueMarkdownContent !== nextQueueMarkdownContent) {
+    await writeFile(queueMarkdownPath, nextQueueMarkdownContent, "utf8");
+  }
 
   console.log(
     JSON.stringify(
       {
         domain: selectedDomain,
         benchmarkProposalCount: benchmarkProposals.length,
-        pendingCount: nextDecisionFile.decisions.filter((decision) => decision.decision === "pending")
+        pendingCount: stableDecisionFile.decisions.filter((decision) => decision.decision === "pending")
           .length
       },
       null,

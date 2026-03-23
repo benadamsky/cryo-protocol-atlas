@@ -1,0 +1,32 @@
+{
+  "domain": "ovarian-tissue",
+  "generatedAt": "2026-03-23T20:30:28.519Z",
+  "maxCycles": 1,
+  "ingestFirstCycle": false,
+  "cyclesCompleted": 1,
+  "stopReason": "pending-source-enrichment",
+  "cycles": [
+    {
+      "cycle": 1,
+      "ingestIncluded": false,
+      "beforeState": {
+        "benchmarkHash": "88812c739ac3970c73d55b91494d3741d37226ea9e13c59311343300284bca1e",
+        "overrideHash": "321e47c83653748ff8101e190fa681a5054c3ab93588fab44e3192b8c00d0454"
+      },
+      "afterState": {
+        "benchmarkHash": "88812c739ac3970c73d55b91494d3741d37226ea9e13c59311343300284bca1e",
+        "overrideHash": "321e47c83653748ff8101e190fa681a5054c3ab93588fab44e3192b8c00d0454"
+      },
+      "autonomousStateChanged": false,
+      "actions": [],
+      "proposalCount": 0,
+      "overrideProposalCount": 0,
+      "benchmarkProposalCount": 0,
+      "autoApplySafe": false,
+      "pendingBenchmarkProposalCount": 0,
+      "pendingSourceEnrichmentCount": 4,
+      "reviewedOutcomeCoverage": 0.429,
+      "reviewedStepPhaseCoverage": 0.571
+    }
+  ]
+}
