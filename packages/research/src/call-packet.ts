@@ -37,12 +37,13 @@ export type DomainCallPacket = {
     whyOptimizationMightMatter: string;
     likelyBuyerOrUser: string;
   };
-  wedgeValidation: {
-    whatAtlasCanSay: string[];
-    missingEvidence: string[];
-    currentRead: string;
+    wedgeValidation: {
+      whatAtlasCanSay: string[];
+      missingEvidence: string[];
+      unresolvedWatchlist: string[];
+      currentRead: string;
+    };
   };
-};
 
 function commercialBuyerHint(domain: string): string {
   if (domain === "islets") {
@@ -186,6 +187,10 @@ export function buildDomainCallPacket(input: {
           : [
               `${brief.evidenceQuality.missingOutcomeCount} reviewed in-scope papers still lack explicit outcome labels.`
             ],
+      unresolvedWatchlist:
+        brief.domain === "islets" && isletMatrix
+          ? isletMatrix.summary.unresolvedTranslationalWatchlist
+          : [],
       currentRead:
         brief.domain === "islets" && isletMatrix
           ? isletMatrix.summary.currentRead
@@ -247,6 +252,13 @@ export function renderDomainCallPacketMarkdown(packet: DomainCallPacket): string
     lines.push(`- ${line}`);
   }
   lines.push("");
+  if (packet.wedgeValidation.unresolvedWatchlist.length > 0) {
+    lines.push("## Unresolved translational watchlist");
+    for (const line of packet.wedgeValidation.unresolvedWatchlist) {
+      lines.push(`- ${line}`);
+    }
+    lines.push("");
+  }
   lines.push("## Current read");
   lines.push(`- ${packet.wedgeValidation.currentRead}`);
   lines.push("");

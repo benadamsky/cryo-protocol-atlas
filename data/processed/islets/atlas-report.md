@@ -38,19 +38,19 @@ Total papers: 46
 - islet cells: 2
 
 ## Top outcome classes
-- viability: 18
-- function: 15
+- viability: 19
+- function: 16
 - transplantation: 12
 - morphology: 3
 
 ## Top protocol phases
-- cooling: 78
-- storage: 52
-- warming: 27
+- cooling: 74
+- storage: 48
+- warming: 25
 - loading: 17
-- assessment: 13
-- equilibration: 10
-- culture: 6
+- assessment: 12
+- equilibration: 7
+- culture: 4
 
 ## High-confidence papers
 - Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets | type=experimental | family=comparative | confidence=0.95 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Sucrose | specimen=islets, pancreatic islets | phases=loading, cooling, storage, assessment
@@ -126,9 +126,9 @@ Total papers: 46
   evidence=papers:6, experimental:6, comparative:1, species:2, strong-outcomes:3, transplantation:1, contradictions:11, sparse-protocols:1
   blockers=1 relevant papers still have sparse step structure | 11 unresolved contradictions remain in the relevant evidence slice
   proposed-experiment=The cleaned islet slice contains many slow-freezing studies, a smaller vitrification set, and a few comparative papers. A direct benchmark with the same species and the same post-thaw function readout is the fastest way to convert that literature asymmetry into actionable signal.
-- Full-text protocol resolution for sparse islet thaw/loading workflows | category=workflow-gap | priority=0.787 | evidence=0.9 | uncertainty=0.417 | actionability=0.92
+- Full-text protocol resolution for sparse islet thaw/loading workflows | category=workflow-gap | priority=0.746 | evidence=0.783 | uncertainty=0.417 | actionability=0.92
   claim=A small number of islet papers still look interesting, but their step structure is too thin to compare fairly against the rest of the corpus.
-  evidence=papers:6, experimental:6, comparative:0, species:4, strong-outcomes:2, transplantation:2, contradictions:1, sparse-protocols:6
+  evidence=papers:6, experimental:6, comparative:0, species:4, strong-outcomes:1, transplantation:1, contradictions:1, sparse-protocols:6
   blockers=6 relevant papers still have sparse step structure | 1 unresolved contradictions remain in the relevant evidence slice
   proposed-experiment=The benchmarked islet slice is now minimum-depth ready, and the remaining weak points are concentrated in a few papers where only thawing or one procedural phase is explicit. Full-text resolution there is likely higher signal than another broad extraction pass.
 - Promote islet function-heavy protocols to transplantation endpoints | category=endpoint-upgrade | priority=0.723 | evidence=0.95 | uncertainty=0.283 | actionability=0.8

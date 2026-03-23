@@ -16,10 +16,14 @@ async function main(): Promise<void> {
   const sourceEnrichment = SourceEnrichmentFileSchema.parse(
     JSON.parse(await readFile(join(curatedDir, "source-enrichment.json"), "utf8"))
   );
+  const benchmarkAnalysis = JSON.parse(
+    await readFile(join(processedDir, "benchmark-analysis.json"), "utf8")
+  );
 
   const matrix = buildIsletBenchmarkMatrix({
     snapshot,
-    sourceEnrichment
+    sourceEnrichment,
+    benchmarkAnalysis
   });
 
   await mkdir(processedDir, { recursive: true });
@@ -31,6 +35,7 @@ async function main(): Promise<void> {
       {
         rowCount: matrix.rows.length,
         strongestTranslationalRows: matrix.summary.strongestTranslationalRows.length,
+        unresolvedTranslationalRows: matrix.unresolvedWatchlist.length,
         currentRead: matrix.summary.currentRead
       },
       null,

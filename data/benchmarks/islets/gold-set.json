@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T03:10:09.553Z",
+  "generatedAt": "2026-03-23T03:23:24.416Z",
   "domain": "islets",
   "description": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "entries": [
@@ -2628,6 +2628,9 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedOutcomeClasses": [
+        "viability"
+      ],
       "expectedStepPhases": [
         "cooling"
       ],
@@ -2645,9 +2648,17 @@
             "durations": [],
             "evidence": []
           }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
         ]
       },
-      "notes": "Primary canine islet long-term cryopreservation study. Accepted benchmark autofill proposal benchmark-depth-autofill:80be44da-a725-4051-9d4e-0c5881409006:stepPhases."
+      "notes": "Primary canine islet long-term cryopreservation study. Accepted benchmark autofill proposal benchmark-depth-autofill:80be44da-a725-4051-9d4e-0c5881409006:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:80be44da-a725-4051-9d4e-0c5881409006:outcomeClasses."
     },
     {
       "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",

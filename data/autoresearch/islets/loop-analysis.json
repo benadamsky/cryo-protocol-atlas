@@ -3,7 +3,7 @@
   "autoApplySafe": true,
   "currentEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T03:10:09.887Z",
+    "generatedAt": "2026-03-23T03:25:21.701Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -58,10 +58,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 34,
+            "labeledCount": 35,
             "exactMatchCount": 33,
-            "averageF1": 0.926,
-            "averagePrecision": 0.922,
+            "averageF1": 0.914,
+            "averagePrecision": 0.905,
             "averageRecall": 1,
             "mismatches": [
               {
@@ -69,6 +69,19 @@
                 "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
                 "expected": [
                   "function"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+                "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+                "expected": [
+                  "viability"
                 ],
                 "actual": [
                   "function",
@@ -191,8 +204,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 32,
-            "coverageRate": 0.696
+            "labeledCount": 33,
+            "coverageRate": 0.717
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -260,10 +273,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 30,
+            "labeledCount": 31,
             "exactMatchCount": 29,
-            "averageF1": 0.983,
-            "averagePrecision": 0.978,
+            "averageF1": 0.968,
+            "averagePrecision": 0.957,
             "averageRecall": 1,
             "mismatches": [
               {
@@ -271,6 +284,19 @@
                 "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
                 "expected": [
                   "function"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+                "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+                "expected": [
+                  "viability"
                 ],
                 "actual": [
                   "function",
@@ -339,8 +365,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 30,
-            "coverageRate": 0.714
+            "labeledCount": 31,
+            "coverageRate": 0.738
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -580,14 +606,14 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.714,
+      "reviewedOutcomeCoverage": 0.738,
       "reviewedStepPhaseCoverage": 0.976,
       "reviewedMinimumDepthReady": true
     }
   },
   "candidateEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T03:10:09.888Z",
+    "generatedAt": "2026-03-23T03:25:21.703Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -642,10 +668,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 34,
-            "exactMatchCount": 34,
-            "averageF1": 0.941,
-            "averagePrecision": 0.941,
+            "labeledCount": 35,
+            "exactMatchCount": 35,
+            "averageF1": 0.943,
+            "averagePrecision": 0.943,
             "averageRecall": 1,
             "mismatches": []
           },
@@ -742,8 +768,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 32,
-            "coverageRate": 0.696
+            "labeledCount": 33,
+            "coverageRate": 0.717
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -811,8 +837,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 30,
-            "exactMatchCount": 30,
+            "labeledCount": 31,
+            "exactMatchCount": 31,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -856,8 +882,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 30,
-            "coverageRate": 0.714
+            "labeledCount": 31,
+            "coverageRate": 0.738
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1097,14 +1123,14 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.714,
+      "reviewedOutcomeCoverage": 0.738,
       "reviewedStepPhaseCoverage": 0.976,
       "reviewedMinimumDepthReady": true
     }
   },
   "candidateBenchmarkEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T03:10:09.889Z",
+    "generatedAt": "2026-03-23T03:25:21.713Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -1159,10 +1185,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 34,
-            "exactMatchCount": 34,
-            "averageF1": 0.941,
-            "averagePrecision": 0.941,
+            "labeledCount": 36,
+            "exactMatchCount": 36,
+            "averageF1": 0.944,
+            "averagePrecision": 0.944,
             "averageRecall": 1,
             "mismatches": []
           },
@@ -1259,8 +1285,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 32,
-            "coverageRate": 0.696
+            "labeledCount": 34,
+            "coverageRate": 0.739
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1328,8 +1354,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 30,
-            "exactMatchCount": 30,
+            "labeledCount": 32,
+            "exactMatchCount": 32,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -1373,8 +1399,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 30,
-            "coverageRate": 0.714
+            "labeledCount": 32,
+            "coverageRate": 0.762
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1614,13 +1640,13 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.714,
+      "reviewedOutcomeCoverage": 0.762,
       "reviewedStepPhaseCoverage": 0.976,
       "reviewedMinimumDepthReady": true
     }
   },
-  "proposalCount": 2,
-  "overrideProposalCount": 2,
-  "benchmarkProposalCount": 0,
+  "proposalCount": 4,
+  "overrideProposalCount": 3,
+  "benchmarkProposalCount": 1,
   "candidateOverrideCount": 49
 }

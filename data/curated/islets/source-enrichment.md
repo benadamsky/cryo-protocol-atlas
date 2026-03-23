@@ -16,18 +16,6 @@
   paperId=e61a3868-8fcf-4024-96f7-eb4ae8a9456a
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=10.5301/IJAO.2011.8465
-- [pending] Prolonged Cryopreservation of Purified Human Pancreatic Islets
-  paperId=5657b492-dd6b-491f-935b-6248369afbb2
-  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
-  doi=10.2337/diab.38.1.s176
-- [pending] Successful Cryopreservation of Fetal Porcine Proislets
-  paperId=a24a1702-5dad-4428-b962-27cd59e2e6e8
-  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
-  doi=10.1006/cryo.1993.1024
-- [pending] Successful Long-Term Cryopreservation of Highly Purified Canine Islets
-  paperId=80be44da-a725-4051-9d4e-0c5881409006
-  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
-  doi=10.1159/000129396
 - [reviewed] Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor
   paperId=7cbe1db5-5f6a-4519-9713-bddca96212f7
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
@@ -40,6 +28,24 @@
   doi=10.3727/000000004783983927
   reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-22. Added conservative paraphrased notes to make the comparator cryomixes, recovery, and glucose-stimulated function explicit.
   reviewedExcerpts=3
+- [reviewed] Prolonged Cryopreservation of Purified Human Pancreatic Islets
+  paperId=5657b492-dd6b-491f-935b-6248369afbb2
+  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
+  doi=10.2337/diab.38.1.s176
+  reviewerNotes=Reviewed from the accessible Diabetes abstract on 2026-03-23. The stored source is still mostly protocol-only, so this record is being upgraded for translational tracking rather than benchmark promotion.
+  reviewedExcerpts=2
+- [reviewed] Successful Cryopreservation of Fetal Porcine Proislets
+  paperId=a24a1702-5dad-4428-b962-27cd59e2e6e8
+  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
+  doi=10.1006/cryo.1993.1024
+  reviewerNotes=Reviewed from the accessible Cryobiology abstract on 2026-03-23. The title plus abstract support a conservative viability reading, but not function or transplantation.
+  reviewedExcerpts=2
+- [reviewed] Successful Long-Term Cryopreservation of Highly Purified Canine Islets
+  paperId=80be44da-a725-4051-9d4e-0c5881409006
+  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
+  doi=10.1159/000129396
+  reviewerNotes=Reviewed from the accessible European Surgical Research abstract on 2026-03-23. The title plus abstract support a conservative viability reading, but not function or transplantation.
+  reviewedExcerpts=2
 - [reviewed] Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method
   paperId=3e158dec-5b97-46f4-8b40-57e009e02cc0
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class

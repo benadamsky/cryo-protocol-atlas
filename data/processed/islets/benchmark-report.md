@@ -10,8 +10,8 @@ All gates passed: yes
 - expected included entries: 46
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
-- set macro F1: species=1 specimen=1 outcomes=0.926 stepPhases=0.947
-- field coverage: paperType=1 protocolFamily=0.826 species=0.826 specimen=0.826 outcomes=0.696 stepPhases=0.978
+- set macro F1: species=1 specimen=1 outcomes=0.943 stepPhases=0.951
+- field coverage: paperType=1 protocolFamily=0.826 species=0.826 specimen=0.826 outcomes=0.717 stepPhases=0.978
 - confidence: expectedIncluded=0.85 correctIncluded=0.85 incorrectIncluded=n/a
 
 ## reviewed subset
@@ -19,8 +19,8 @@ All gates passed: yes
 - expected included entries: 42
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
-- set macro F1: species=1 specimen=1 outcomes=0.983 stepPhases=0.995
-- field coverage: paperType=1 protocolFamily=0.81 species=0.81 specimen=0.81 outcomes=0.714 stepPhases=0.976
+- set macro F1: species=1 specimen=1 outcomes=1 stepPhases=1
+- field coverage: paperType=1 protocolFamily=0.81 species=0.81 specimen=0.81 outcomes=0.738 stepPhases=0.976
 - confidence: expectedIncluded=0.845 correctIncluded=0.845 incorrectIncluded=n/a
 
 ## seeded subset
@@ -47,7 +47,7 @@ All gates passed: yes
   Species leakage is another easy way for the system to look cleaner than it is.
 
 ## Reviewed depth
-- reviewed outcome coverage: 0.714
+- reviewed outcome coverage: 0.738
 - reviewed step-phase coverage: 0.976
 - reviewed minimum-depth ready: yes
 
@@ -65,12 +65,12 @@ All gates passed: yes
 - inclusion: precision=0.857 recall=1 f1=0.923
 - exact: paperType=0.881 protocolFamily=0.176
 - set macro F1: species=0.951 specimen=0.99
-- coverage: outcomes=0.714 stepPhases=0.976
+- coverage: outcomes=0.738 stepPhases=0.976
 
 ## Reviewed depth gaps
-- reviewed entries missing outcome labels: 12
+- reviewed entries missing outcome labels: 11
 - reviewed entries missing step-phase labels: 1
-- missing outcome evidence audit: extractor-gap=0 ambiguous-evidence=6 evidence-thin=6
+- missing outcome evidence audit: extractor-gap=1 ambiguous-evidence=4 evidence-thin=6
 
 ### Missing reviewed outcomes
 - CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS | family=n/a type=experimental evidence=evidence-thin
@@ -82,8 +82,7 @@ All gates passed: yes
 - Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets | family=vitrification type=experimental evidence=evidence-thin
 - Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model | family=slow-freezing type=experimental evidence=ambiguous-evidence
 - Prolonged Cryopreservation of Purified Human Pancreatic Islets | family=n/a type=experimental evidence=ambiguous-evidence
-- Successful Cryopreservation of Fetal Porcine Proislets | family=slow-freezing type=experimental evidence=ambiguous-evidence
-- Successful Long-Term Cryopreservation of Highly Purified Canine Islets | family=n/a type=experimental evidence=ambiguous-evidence
+- Successful Cryopreservation of Fetal Porcine Proislets | family=slow-freezing type=experimental evidence=extractor-gap
 - USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION | family=slow-freezing type=experimental evidence=evidence-thin
 
 ### Missing reviewed step phases

@@ -1,11 +1,13 @@
 # islets evidence resolution queue
 
-Outcome evidence gaps: extractor-gap=0, ambiguous-evidence=6, evidence-thin=6
+Outcome evidence gaps: extractor-gap=1, ambiguous-evidence=4, evidence-thin=6
 Step-phase gaps: 1
 
 ## Extractor gaps
 Tighten outcome extraction or promotion policy; current source likely already contains enough signal.
-- none
+- Successful Cryopreservation of Fetal Porcine Proislets | family=slow-freezing type=experimental
+  reason=resolved extraction already contains outcome evidence but the reviewed benchmark is still unlabeled
+  doi=https://doi.org/10.1006/cryo.1993.1024
 
 ## Ambiguous evidence
 Needs manual review or fuller source text before benchmark promotion.
@@ -21,12 +23,6 @@ Needs manual review or fuller source text before benchmark promotion.
 - Prolonged Cryopreservation of Purified Human Pancreatic Islets | family=n/a type=experimental
   reason=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=https://doi.org/10.2337/diab.38.1.s176
-- Successful Cryopreservation of Fetal Porcine Proislets | family=slow-freezing type=experimental
-  reason=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
-  doi=https://doi.org/10.1006/cryo.1993.1024
-- Successful Long-Term Cryopreservation of Highly Purified Canine Islets | family=n/a type=experimental
-  reason=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
-  doi=https://doi.org/10.1159/000129396
 
 ## Evidence-thin
 Abstract/title appears too procedural; fetch fuller source or leave unlabeled.

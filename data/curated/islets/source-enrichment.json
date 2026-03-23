@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T03:09:08.713Z",
+  "generatedAt": "2026-03-23T03:22:51.069Z",
   "domain": "islets",
   "records": [
     {
@@ -24,33 +24,6 @@
       "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
       "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
       "doi": "10.5301/IJAO.2011.8465",
-      "priority": "ambiguous-evidence",
-      "status": "pending",
-      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "excerpts": []
-    },
-    {
-      "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",
-      "title": "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
-      "doi": "10.2337/diab.38.1.s176",
-      "priority": "ambiguous-evidence",
-      "status": "pending",
-      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "excerpts": []
-    },
-    {
-      "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
-      "title": "Successful Cryopreservation of Fetal Porcine Proislets",
-      "doi": "10.1006/cryo.1993.1024",
-      "priority": "ambiguous-evidence",
-      "status": "pending",
-      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "excerpts": []
-    },
-    {
-      "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
-      "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
-      "doi": "10.1159/000129396",
       "priority": "ambiguous-evidence",
       "status": "pending",
       "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
@@ -122,6 +95,87 @@
           "text": "Glucose-stimulated insulin secretion after freezing with polyvinyl pyrrolidone or polyethylene glycol remained comparable to freshly isolated islets, unlike the DMSO and glycerol groups. The paper concludes that polyvinyl pyrrolidone is a potent cryoprotectant for islet freezing.",
           "source": "manual-note",
           "confidence": 0.96,
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",
+      "title": "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+      "doi": "10.2337/diab.38.1.s176",
+      "priority": "ambiguous-evidence",
+      "status": "reviewed",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "reviewerNotes": "Reviewed from the accessible Diabetes abstract on 2026-03-23. The stored source is still mostly protocol-only, so this record is being upgraded for translational tracking rather than benchmark promotion.",
+      "excerpts": [
+        {
+          "id": "human-prolonged-methods-1",
+          "label": "methods review note",
+          "text": "Purified human pancreatic islets were cryopreserved with stepwise 2 M DMSO, supercooled to minus 7.5 C, nucleated, cooled at 0.25 C per minute to minus 40 C, and then stored in liquid nitrogen for a median of 46.5 days.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "human-prolonged-limit-1",
+          "label": "limit review note",
+          "text": "The accessible source confirms prolonged storage of purified human islets but does not make a benchmark-safe post-thaw outcome explicit. This paper remains clinically adjacent but unresolved for outcome promotion.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+      "title": "Successful Cryopreservation of Fetal Porcine Proislets",
+      "doi": "10.1006/cryo.1993.1024",
+      "priority": "ambiguous-evidence",
+      "status": "reviewed",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "reviewerNotes": "Reviewed from the accessible Cryobiology abstract on 2026-03-23. The title plus abstract support a conservative viability reading, but not function or transplantation.",
+      "excerpts": [
+        {
+          "id": "fetal-porcine-methods-1",
+          "label": "methods review note",
+          "text": "Fetal porcine proislets were equilibrated with 2 M dimethyl sulfoxide, supercooled, nucleated, cooled at 0.25 C per minute to minus 40 C, and then plunged into liquid nitrogen for storage.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "fetal-porcine-title-1",
+          "label": "viability review note",
+          "text": "The title explicitly frames the protocol as successful cryopreservation of fetal porcine proislets. Conservatively, that supports post-thaw survival or viability, but it does not by itself establish functional or transplantation outcomes.",
+          "source": "manual-note",
+          "confidence": 0.95,
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+      "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+      "doi": "10.1159/000129396",
+      "priority": "ambiguous-evidence",
+      "status": "reviewed",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "reviewerNotes": "Reviewed from the accessible European Surgical Research abstract on 2026-03-23. The title plus abstract support a conservative viability reading, but not function or transplantation.",
+      "excerpts": [
+        {
+          "id": "canine-success-methods-1",
+          "label": "methods review note",
+          "text": "Highly purified canine islets were equilibrated by hypothermic treatment and stepwise exposure to 2 M dimethyl sulfoxide, seeded near minus 7.8 C, slowly cooled at 0.25 C per minute from minus 10 C to minus 40 C, and then plunged into liquid nitrogen for long-term storage.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "canine-success-title-1",
+          "label": "viability review note",
+          "text": "The title explicitly frames the protocol as successful long-term cryopreservation of highly purified canine islets. Conservatively, that supports post-thaw survival or viability after storage, but it does not by itself establish functional or transplantation outcomes.",
+          "source": "manual-note",
+          "confidence": 0.95,
           "reviewed": true
         }
       ]

@@ -17,12 +17,27 @@ export type IsletBenchmarkMatrix = {
   generatedAt: string;
   wedgeFocus: string;
   rows: IsletBenchmarkMatrixRow[];
+  unresolvedWatchlist: Array<{
+    title: string;
+    evidenceStatus: "extractor-gap" | "ambiguous-evidence" | "evidence-thin";
+    translationalSignal: "research only" | "preclinical" | "transplant relevant" | "clinically adjacent";
+  }>;
   summary: {
     basePattern: string;
     additiveSignals: string[];
     strongestTranslationalRows: string[];
     weakOrUnevenRows: string[];
+    unresolvedTranslationalWatchlist: string[];
     currentRead: string;
+  };
+};
+
+type IsletBenchmarkAnalysis = {
+  reviewedDepth?: {
+    missingOutcomes?: Array<{
+      title: string;
+      evidenceStatus: "extractor-gap" | "ambiguous-evidence" | "evidence-thin";
+    }>;
   };
 };
 
@@ -117,8 +132,9 @@ function pickTranslationalSignal(extraction: ProtocolExtraction): IsletBenchmark
 export function buildIsletBenchmarkMatrix(input: {
   snapshot: ExtractionSnapshot;
   sourceEnrichment?: SourceEnrichmentFile;
+  benchmarkAnalysis?: IsletBenchmarkAnalysis;
 }): IsletBenchmarkMatrix {
-  const { snapshot, sourceEnrichment } = input;
+  const { snapshot, sourceEnrichment, benchmarkAnalysis } = input;
   const reviewedEnrichmentTitles = getReviewedEnrichmentTitles(sourceEnrichment);
   const extractionsByTitle = new Map(snapshot.extractions.map((extraction) => [extraction.paper.title, extraction]));
 
@@ -148,17 +164,34 @@ export function buildIsletBenchmarkMatrix(input: {
   const weakOrUnevenRows = rows
     .filter((row) => row.evidenceStrength !== "strong")
     .map((row) => `${row.title} [${row.evidenceStrength}]`);
+  const unresolvedWatchlist = (benchmarkAnalysis?.reviewedDepth?.missingOutcomes ?? [])
+    .map((missing) => {
+      const extraction = extractionsByTitle.get(missing.title);
+      const translationalSignal = extraction ? pickTranslationalSignal(extraction) : "research only";
+      return {
+        title: missing.title,
+        evidenceStatus: missing.evidenceStatus,
+        translationalSignal
+      };
+    })
+    .filter((row) => row.translationalSignal === "clinically adjacent" || row.translationalSignal === "transplant relevant")
+    .slice(0, 5);
+  const unresolvedTranslationalWatchlist = unresolvedWatchlist.map(
+    (row) => `${row.title} [${row.translationalSignal}; ${row.evidenceStatus}]`
+  );
 
   return {
     domain: "islets",
     generatedAt: new Date().toISOString(),
     wedgeFocus: "additive-assisted islet recovery benchmark on a fixed base cryomix",
     rows,
+    unresolvedWatchlist,
     summary: {
       basePattern: "slow-freezing centered on DMSO, with sucrose and ethylene glycol recurring in the broader islet slice",
       additiveSignals,
       strongestTranslationalRows,
       weakOrUnevenRows,
+      unresolvedTranslationalWatchlist,
       currentRead:
         "Islets still looks better as a proving ground for Atlas than as a locked-in company wedge, but the additive benchmark story is now evidence-backed enough to test as a plausible commercial entry point."
     }
@@ -177,6 +210,9 @@ export function renderIsletBenchmarkMatrixMarkdown(matrix: IsletBenchmarkMatrix)
   lines.push(`- strongest translational rows: ${matrix.summary.strongestTranslationalRows.join(" | ") || "none"}`);
   lines.push(`- additive signals: ${matrix.summary.additiveSignals.join(" | ") || "none"}`);
   lines.push(`- weak or uneven rows: ${matrix.summary.weakOrUnevenRows.join(" | ") || "none"}`);
+  lines.push(
+    `- unresolved translational watchlist: ${matrix.summary.unresolvedTranslationalWatchlist.join(" | ") || "none"}`
+  );
   lines.push("");
   lines.push("| paper | protocol family | base CPA mix | additive | species | endpoint class | transplantation | evidence strength | commercial / translational signal |");
   lines.push("| --- | --- | --- | --- | --- | --- | --- | --- | --- |");
@@ -186,5 +222,12 @@ export function renderIsletBenchmarkMatrixMarkdown(matrix: IsletBenchmarkMatrix)
     );
   }
   lines.push("");
+  if (matrix.unresolvedWatchlist.length > 0) {
+    lines.push("## Unresolved translational watchlist");
+    for (const row of matrix.unresolvedWatchlist) {
+      lines.push(`- ${row.title} [${row.translationalSignal}; ${row.evidenceStatus}]`);
+    }
+    lines.push("");
+  }
   return lines.join("\n");
 }
