@@ -1,6 +1,6 @@
 # Autoresearch health
 
-- generated at: 2026-03-23T21:22:33.096Z
+- generated at: 2026-03-23T21:46:53.184Z
 - overall state: stalled-human-gate
 - available domains: 2
 - missing domains: none
@@ -43,6 +43,6 @@
 - baseline delta: inclusionF1=0.077 familyAccuracy=0.824 paperTypeAccuracy=0.119 outcomeCoverage=0 stepPhaseCoverage=0 gatePassCount=2
 - best wedge: Additive-assisted islet recovery benchmark on a fixed base cryomix
 - pain point: Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.
-- current read: Islets still looks better as a proving ground for Atlas than as a locked-in company wedge, but the additive benchmark story is now evidence-backed enough to test as a plausible commercial entry point.
+- current read: This slice is still better treated as a proving ground than as a committed first commercial wedge.
 - alerts: human-gated source enrichment is blocking further autonomous progress | 5 normalized protocols still carry warnings | 1 reviewed papers still lack step phases
 - artifacts: data/autoresearch/islets/autoresearch-cycles.md, data/autoresearch/islets/unattended-batch.md, data/processed/islets/benchmark-report.md, data/processed/islets/wedge-brief.md, data/processed/islets/call-packet.md
