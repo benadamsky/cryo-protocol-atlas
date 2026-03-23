@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T03:48:56.171Z",
+  "generatedAt": "2026-03-23T03:25:21.715Z",
   "domain": "islets",
   "overrides": [
     {
@@ -367,6 +367,14 @@
           "evidence": []
         }
       ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+          "evidence": []
+        }
+      ],
       "extractionConfidence": 0.82,
       "notes": "Programmed-freezing study on human pancreatic islets from non-heart-beating donors using DMSO and HES."
     },
@@ -499,6 +507,48 @@
         "islets",
         "pancreatic islets",
         "islet cells"
+      ],
+      "protocolSteps": [
+        {
+          "order": 0,
+          "phase": "cooling",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: cooling.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 1,
+          "phase": "equilibration",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: equilibration.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 2,
+          "phase": "storage",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        },
+        {
+          "order": 3,
+          "phase": "warming",
+          "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
+          "chemicals": [],
+          "concentrations": [],
+          "temperatures": [],
+          "durations": [],
+          "evidence": []
+        }
       ],
       "extractionConfidence": 0.8,
       "notes": "Rat islet cryopreservation study comparing PVP against standard DMSO and glycerol freezing controls."
@@ -844,6 +894,14 @@
           "concentrations": [],
           "temperatures": [],
           "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
           "evidence": []
         }
       ],
