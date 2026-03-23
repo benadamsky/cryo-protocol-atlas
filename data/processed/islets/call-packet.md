@@ -13,6 +13,9 @@
 - contradictions in top slice: 3
 - pending source enrichments: 1
 - reviewed secondary-source enrichments: 2
+- reviewed primary-supported rows: 42
+- reviewed secondary-supported rows: 2
+- reviewed manual-curation-only rows: 0
 
 ## Standard protocol view
 - dominant family: slow-freezing

@@ -63,6 +63,9 @@ export type DomainWedgeBrief = {
     pendingSourceEnrichmentCount: number;
     reviewedSourceEnrichmentCount: number;
     secondarySourceReviewedCount: number;
+    reviewedPrimarySupportedCount: number;
+    reviewedSecondarySupportedCount: number;
+    reviewedManualOnlyCount: number;
   };
   opportunityScan: Array<{
     title: string;
@@ -201,6 +204,25 @@ export function buildDomainWedgeBrief(input: {
         record.status === "reviewed" &&
         /secondary-source|secondary rather than the original|secondary review/i.test(record.reviewerNotes ?? "")
     ).length ?? 0;
+  const extractionByPaperId = new Map(snapshot.extractions.map((extraction) => [extraction.paper.id, extraction]));
+  const reviewedExtractions = reviewedInScopeEntries
+    .map((entry) => extractionByPaperId.get(entry.paperId))
+    .filter((extraction): extraction is ExtractionSnapshot["extractions"][number] => Boolean(extraction));
+  const reviewedPrimarySupportedCount = reviewedExtractions.filter(
+    (extraction) =>
+      extraction.evidenceAuthority.primaryDirectSnippetCount > 0 ||
+      extraction.evidenceAuthority.primaryIndirectSnippetCount > 0
+  ).length;
+  const reviewedSecondarySupportedCount = reviewedExtractions.filter(
+    (extraction) => extraction.evidenceAuthority.secondarySnippetCount > 0
+  ).length;
+  const reviewedManualOnlyCount = reviewedExtractions.filter(
+    (extraction) =>
+      extraction.evidenceAuthority.manualCurationSnippetCount > 0 &&
+      extraction.evidenceAuthority.primaryDirectSnippetCount === 0 &&
+      extraction.evidenceAuthority.primaryIndirectSnippetCount === 0 &&
+      extraction.evidenceAuthority.secondarySnippetCount === 0
+  ).length;
 
   const protocolFamilies = atlas.protocolFamilies.slice(0, 4).map((entry) => ({
     family: entry.label,
@@ -266,7 +288,10 @@ export function buildDomainWedgeBrief(input: {
       missingStepPhaseCount: benchmarkAnalysis.reviewedDepth.missingStepPhaseCount,
       pendingSourceEnrichmentCount,
       reviewedSourceEnrichmentCount,
-      secondarySourceReviewedCount
+      secondarySourceReviewedCount,
+      reviewedPrimarySupportedCount,
+      reviewedSecondarySupportedCount,
+      reviewedManualOnlyCount
     },
     opportunityScan,
     callout:
@@ -326,6 +351,9 @@ export function renderDomainWedgeBriefMarkdown(brief: DomainWedgeBrief): string 
   lines.push(`- pending source enrichments: ${brief.evidenceQuality.pendingSourceEnrichmentCount}`);
   lines.push(`- reviewed source enrichments: ${brief.evidenceQuality.reviewedSourceEnrichmentCount}`);
   lines.push(`- reviewed secondary-source enrichments: ${brief.evidenceQuality.secondarySourceReviewedCount}`);
+  lines.push(`- reviewed primary-supported rows: ${brief.evidenceQuality.reviewedPrimarySupportedCount}`);
+  lines.push(`- reviewed secondary-supported rows: ${brief.evidenceQuality.reviewedSecondarySupportedCount}`);
+  lines.push(`- reviewed manual-curation-only rows: ${brief.evidenceQuality.reviewedManualOnlyCount}`);
   lines.push("");
   lines.push("## Opportunity scan");
   for (const opportunity of brief.opportunityScan) {

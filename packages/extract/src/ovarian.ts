@@ -17,7 +17,11 @@ import {
   type ProtocolStep,
   type SourceEnrichmentRecord
 } from "../../shared/src/schema.js";
-import { buildAugmentedSourceText, enrichmentEvidenceSnippets } from "./enrichment.js";
+import {
+  buildAugmentedSourceText,
+  enrichmentEvidenceSnippets,
+  summarizeEvidenceAuthority
+} from "./enrichment.js";
 
 type ChemicalAliasEntry = {
   canonicalName: string;
@@ -117,7 +121,11 @@ function makeSnippet(kind: EvidenceSnippet["kind"], text: string, confidence: nu
   return EvidenceSnippetSchema.parse({
     kind,
     text: text.trim(),
-    confidence
+    confidence,
+    sourceType: "title-or-abstract",
+    authorityTier: "primary-indirect",
+    explicitness: "direct",
+    reviewed: false
   });
 }
 
@@ -504,10 +512,16 @@ export function extractOvarianProtocol(
       EvidenceSnippetSchema.parse({
         kind: "source-enrichment",
         text: entry.text,
-        confidence: entry.confidence
+        confidence: entry.confidence,
+        sourceType: entry.sourceType,
+        authorityTier: entry.authorityTier,
+        explicitness: entry.explicitness,
+        reviewed: entry.reviewed
       })
     )
   ];
+
+  const dedupedEvidenceSnippets = dedupeEvidence(evidenceSnippets);
 
   const extractionBase = {
     domain: domainPaper.domain,
@@ -521,7 +535,8 @@ export function extractOvarianProtocol(
     temperatureMentions,
     durationMentions,
     outcomeMentions,
-    evidenceSnippets: dedupeEvidence(evidenceSnippets)
+    evidenceSnippets: dedupedEvidenceSnippets,
+    evidenceAuthority: summarizeEvidenceAuthority(dedupedEvidenceSnippets)
   };
 
   return ProtocolExtractionSchema.parse({

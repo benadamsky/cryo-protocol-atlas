@@ -9,6 +9,7 @@ export type IsletBenchmarkMatrixRow = {
   endpointClass: string;
   transplantation: "yes" | "no";
   evidenceStrength: "strong" | "moderate" | "limited";
+  authorityProfile: "primary-backed" | "secondary-backed" | "manual-curation-backed" | "abstract-only";
   translationalSignal: "research only" | "preclinical" | "transplant relevant" | "clinically adjacent";
 };
 
@@ -112,6 +113,28 @@ function pickEvidenceStrength(
   return "limited";
 }
 
+function pickAuthorityProfile(
+  extraction: ProtocolExtraction,
+  reviewedEnrichmentTitles: Set<string>
+): IsletBenchmarkMatrixRow["authorityProfile"] {
+  if (!reviewedEnrichmentTitles.has(extraction.paper.title)) {
+    return "abstract-only";
+  }
+
+  if (
+    extraction.evidenceAuthority.strongestAuthority === "primary-direct" ||
+    extraction.evidenceAuthority.strongestAuthority === "primary-indirect"
+  ) {
+    return "primary-backed";
+  }
+
+  if (extraction.evidenceAuthority.strongestAuthority === "secondary") {
+    return "secondary-backed";
+  }
+
+  return "manual-curation-backed";
+}
+
 function pickTranslationalSignal(extraction: ProtocolExtraction): IsletBenchmarkMatrixRow["translationalSignal"] {
   const title = extraction.paper.title.toLowerCase();
   const species = new Set(extraction.speciesMentions.map((value) => value.toLowerCase()));
@@ -152,6 +175,7 @@ export function buildIsletBenchmarkMatrix(input: {
         ? ("yes" as const)
         : ("no" as const),
       evidenceStrength: pickEvidenceStrength(extraction, reviewedEnrichmentTitles),
+      authorityProfile: pickAuthorityProfile(extraction, reviewedEnrichmentTitles),
       translationalSignal: pickTranslationalSignal(extraction)
     }));
 
@@ -214,11 +238,11 @@ export function renderIsletBenchmarkMatrixMarkdown(matrix: IsletBenchmarkMatrix)
     `- unresolved translational watchlist: ${matrix.summary.unresolvedTranslationalWatchlist.join(" | ") || "none"}`
   );
   lines.push("");
-  lines.push("| paper | protocol family | base CPA mix | additive | species | endpoint class | transplantation | evidence strength | commercial / translational signal |");
-  lines.push("| --- | --- | --- | --- | --- | --- | --- | --- | --- |");
+  lines.push("| paper | protocol family | base CPA mix | additive | species | endpoint class | transplantation | evidence strength | authority profile | commercial / translational signal |");
+  lines.push("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |");
   for (const row of matrix.rows) {
     lines.push(
-      `| ${row.title} | ${row.protocolFamily} | ${row.baseCpaMix} | ${row.additive} | ${row.species} | ${row.endpointClass} | ${row.transplantation} | ${row.evidenceStrength} | ${row.translationalSignal} |`
+      `| ${row.title} | ${row.protocolFamily} | ${row.baseCpaMix} | ${row.additive} | ${row.species} | ${row.endpointClass} | ${row.transplantation} | ${row.evidenceStrength} | ${row.authorityProfile} | ${row.translationalSignal} |`
     );
   }
   lines.push("");

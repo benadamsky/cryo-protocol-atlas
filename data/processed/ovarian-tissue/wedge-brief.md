@@ -36,6 +36,10 @@ Focus question: Which ovarian cryopreservation slice is mature enough for protoc
 - missing reviewed step phases: 3
 - pending source enrichments: 4
 - reviewed source enrichments: 0
+- reviewed secondary-source enrichments: 0
+- reviewed primary-supported rows: 7
+- reviewed secondary-supported rows: 0
+- reviewed manual-curation-only rows: 0
 
 ## Opportunity scan
 - Promote morphology-heavy protocols to viability endpoints

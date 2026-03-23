@@ -87,6 +87,30 @@ export const DomainSnapshotSchema = z.object({
 });
 export type DomainSnapshot = z.infer<typeof DomainSnapshotSchema>;
 
+export const EvidenceSourceTypeSchema = z.enum([
+  "title-or-abstract",
+  "full-text",
+  "methods",
+  "results",
+  "discussion",
+  "manual-note",
+  "reviewed-benchmark",
+  "derived"
+]);
+export type EvidenceSourceType = z.infer<typeof EvidenceSourceTypeSchema>;
+
+export const EvidenceAuthorityTierSchema = z.enum([
+  "primary-direct",
+  "primary-indirect",
+  "secondary",
+  "manual-curation",
+  "derived"
+]);
+export type EvidenceAuthorityTier = z.infer<typeof EvidenceAuthorityTierSchema>;
+
+export const EvidenceExplicitnessSchema = z.enum(["direct", "indirect", "inferred"]);
+export type EvidenceExplicitness = z.infer<typeof EvidenceExplicitnessSchema>;
+
 export const EvidenceSnippetSchema = z.object({
   kind: z.enum([
     "protocol-family",
@@ -98,9 +122,26 @@ export const EvidenceSnippetSchema = z.object({
     "source-enrichment"
   ]),
   text: z.string(),
-  confidence: z.number().min(0).max(1)
+  confidence: z.number().min(0).max(1),
+  sourceType: EvidenceSourceTypeSchema.default("title-or-abstract"),
+  authorityTier: EvidenceAuthorityTierSchema.default("primary-indirect"),
+  explicitness: EvidenceExplicitnessSchema.default("indirect"),
+  reviewed: z.boolean().default(false)
 });
 export type EvidenceSnippet = z.infer<typeof EvidenceSnippetSchema>;
+
+export const EvidenceAuthoritySummarySchema = z.object({
+  strongestAuthority: EvidenceAuthorityTierSchema,
+  primaryDirectSnippetCount: z.number().int().nonnegative(),
+  primaryIndirectSnippetCount: z.number().int().nonnegative(),
+  secondarySnippetCount: z.number().int().nonnegative(),
+  manualCurationSnippetCount: z.number().int().nonnegative(),
+  reviewedSnippetCount: z.number().int().nonnegative(),
+  directSnippetCount: z.number().int().nonnegative(),
+  indirectSnippetCount: z.number().int().nonnegative(),
+  inferredSnippetCount: z.number().int().nonnegative()
+});
+export type EvidenceAuthoritySummary = z.infer<typeof EvidenceAuthoritySummarySchema>;
 
 export const ChemicalMentionSchema = z.object({
   canonicalName: z.string(),
@@ -143,6 +184,7 @@ export const ProtocolExtractionSchema = z.object({
   durationMentions: z.array(z.string()),
   outcomeMentions: z.array(OutcomeMentionSchema),
   evidenceSnippets: z.array(EvidenceSnippetSchema),
+  evidenceAuthority: EvidenceAuthoritySummarySchema,
   extractionConfidence: z.number().min(0).max(1)
 });
 export type ProtocolExtraction = z.infer<typeof ProtocolExtractionSchema>;

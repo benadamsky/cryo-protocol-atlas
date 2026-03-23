@@ -14,6 +14,9 @@ export type DomainCallPacket = {
     pendingSourceEnrichments: number;
     reviewedSourceEnrichments: number;
     secondarySourceReviewedCount: number;
+    reviewedPrimarySupportedCount: number;
+    reviewedSecondarySupportedCount: number;
+    reviewedManualOnlyCount: number;
     contradictionCount: number;
   };
   standardOfCareView: {
@@ -137,6 +140,9 @@ export function buildDomainCallPacket(input: {
       pendingSourceEnrichments: brief.evidenceQuality.pendingSourceEnrichmentCount,
       reviewedSourceEnrichments: brief.evidenceQuality.reviewedSourceEnrichmentCount,
       secondarySourceReviewedCount: brief.evidenceQuality.secondarySourceReviewedCount,
+      reviewedPrimarySupportedCount: brief.evidenceQuality.reviewedPrimarySupportedCount,
+      reviewedSecondarySupportedCount: brief.evidenceQuality.reviewedSecondarySupportedCount,
+      reviewedManualOnlyCount: brief.evidenceQuality.reviewedManualOnlyCount,
       contradictionCount: brief.contradictions.length
     },
     standardOfCareView: {
@@ -220,6 +226,9 @@ export function renderDomainCallPacketMarkdown(packet: DomainCallPacket): string
   lines.push(`- contradictions in top slice: ${packet.benchmarkSnapshot.contradictionCount}`);
   lines.push(`- pending source enrichments: ${packet.benchmarkSnapshot.pendingSourceEnrichments}`);
   lines.push(`- reviewed secondary-source enrichments: ${packet.benchmarkSnapshot.secondarySourceReviewedCount}`);
+  lines.push(`- reviewed primary-supported rows: ${packet.benchmarkSnapshot.reviewedPrimarySupportedCount}`);
+  lines.push(`- reviewed secondary-supported rows: ${packet.benchmarkSnapshot.reviewedSecondarySupportedCount}`);
+  lines.push(`- reviewed manual-curation-only rows: ${packet.benchmarkSnapshot.reviewedManualOnlyCount}`);
   lines.push("");
   lines.push("## Standard protocol view");
   lines.push(`- dominant family: ${packet.standardOfCareView.dominantProtocolFamily}`);

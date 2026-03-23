@@ -14,7 +14,11 @@ import {
   type ProtocolFamily,
   type SourceEnrichmentRecord
 } from "../../shared/src/schema.js";
-import { buildAugmentedSourceText, enrichmentEvidenceSnippets } from "./enrichment.js";
+import {
+  buildAugmentedSourceText,
+  enrichmentEvidenceSnippets,
+  summarizeEvidenceAuthority
+} from "./enrichment.js";
 
 type ChemicalAliasEntry = {
   canonicalName: string;
@@ -164,7 +168,11 @@ function makeSnippet(kind: EvidenceSnippet["kind"], text: string, confidence: nu
   return EvidenceSnippetSchema.parse({
     kind,
     text: text.trim(),
-    confidence
+    confidence,
+    sourceType: "title-or-abstract",
+    authorityTier: "primary-indirect",
+    explicitness: "direct",
+    reviewed: false
   });
 }
 
@@ -512,7 +520,17 @@ export function extractIsletProtocol(
       ...durationMentions.evidence.map((entry) => JSON.stringify(entry)),
       ...outcomeMentions.flatMap((entry) => entry.evidence.map((snippet) => JSON.stringify(snippet))),
       ...enrichmentEvidenceSnippets(sourceEnrichment).map((entry) =>
-        JSON.stringify(makeSnippet("source-enrichment", entry.text, entry.confidence))
+        JSON.stringify(
+          EvidenceSnippetSchema.parse({
+            kind: "source-enrichment",
+            text: entry.text,
+            confidence: entry.confidence,
+            sourceType: entry.sourceType,
+            authorityTier: entry.authorityTier,
+            explicitness: entry.explicitness,
+            reviewed: entry.reviewed
+          })
+        )
       )
     ]
   ).map((value) => EvidenceSnippetSchema.parse(JSON.parse(value)));
@@ -549,6 +567,7 @@ export function extractIsletProtocol(
     durationMentions: durationMentions.mentions,
     outcomeMentions,
     evidenceSnippets,
+    evidenceAuthority: summarizeEvidenceAuthority(evidenceSnippets),
     extractionConfidence: Number(extractionConfidence.toFixed(2))
   });
 }

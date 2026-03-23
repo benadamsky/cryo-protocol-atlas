@@ -45,6 +45,9 @@ Focus question: Where does islet cryopreservation still look operationally gener
 - pending source enrichments: 1
 - reviewed source enrichments: 18
 - reviewed secondary-source enrichments: 2
+- reviewed primary-supported rows: 42
+- reviewed secondary-supported rows: 2
+- reviewed manual-curation-only rows: 0
 
 ## Opportunity scan
 - Matched-species islet vitrification vs slow-freezing benchmark

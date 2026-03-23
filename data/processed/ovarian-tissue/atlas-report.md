@@ -5,7 +5,7 @@ Total papers: 16
 ## Quality signals
 - unknown protocol families: 0
 - unknown protocol family rate: 0
-- unknown step phases: 7
+- unknown step phases: 6
 - contradiction count: 0
 - experimental papers: 9
 - methods papers: 5
@@ -39,11 +39,11 @@ Total papers: 16
 - function: 2
 
 ## Top protocol phases
-- loading: 32
-- storage: 16
-- cooling: 12
+- loading: 30
+- storage: 14
+- cooling: 11
 - culture: 9
-- unknown: 7
+- unknown: 6
 - warming: 6
 - perfusion: 5
 - assessment: 4
@@ -124,7 +124,7 @@ Total papers: 16
 - excluded papers: 12
 - unknown protocol families resolved: 15
 - unknown protocol family rate delta: 0.54
-- unknown step phase delta: 15
+- unknown step phase delta: 13
 - experimental paper delta: -1
 - methods paper delta: -3
 - review paper delta: -1
@@ -132,7 +132,7 @@ Total papers: 16
 
 ## Baseline vs resolved quality
 - unknown protocol families: 15 -> 0
-- unknown step phases: 22 -> 7
+- unknown step phases: 19 -> 6
 - contradictions: 0 -> 0
 - experimental papers: 10 -> 9
 - methods papers: 8 -> 5

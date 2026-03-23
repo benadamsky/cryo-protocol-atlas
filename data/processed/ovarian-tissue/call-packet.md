@@ -12,6 +12,10 @@
 - reviewed minimum-depth ready: yes
 - contradictions in top slice: 0
 - pending source enrichments: 4
+- reviewed secondary-source enrichments: 0
+- reviewed primary-supported rows: 7
+- reviewed secondary-supported rows: 0
+- reviewed manual-curation-only rows: 0
 
 ## Standard protocol view
 - dominant family: slow-freezing
@@ -32,9 +36,19 @@
 - Literature looks directionally promising but still underspecified for a clean protocol decision.
 - 4 reviewed papers still lack explicit outcome labels.
 - 4 source-enrichment records are still pending.
+- 0 reviewed source-enrichment records rely on secondary-source evidence rather than the original abstract/full text.
 
 ## Market bridge
 - current standard pattern: slow-freezing via Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol
 - likely pain point: Literature looks directionally promising but still underspecified for a clean protocol decision.
 - why optimization might matter: Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows.
 - likely buyer or user: fertility preservation, ovarian tissue banking, and transplant-adjacent preservation groups
+
+## Wedge validation
+- Atlas can separate the dominant protocol family, the top CPA pattern, and the highest-signal protocol wedge.
+
+## Missing evidence
+- 4 reviewed in-scope papers still lack explicit outcome labels.
+
+## Current read
+- This slice is still better treated as a proving ground than as a committed first commercial wedge.
