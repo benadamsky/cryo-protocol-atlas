@@ -8,6 +8,9 @@
     "packages/*"
   ],
   "scripts": {
+    "web": "bun --cwd apps/web run dev",
+    "web:build": "bun --cwd apps/web run build",
+    "web:typecheck": "tsc --noEmit -p apps/web/tsconfig.json",
     "ingest:ovarian": "node --import tsx scripts/ingest-domain.ts ovarian-tissue",
     "ingest:islets": "node --import tsx scripts/ingest-domain.ts islets",
     "extract:ovarian": "node --import tsx scripts/extract-domain.ts ovarian-tissue",
