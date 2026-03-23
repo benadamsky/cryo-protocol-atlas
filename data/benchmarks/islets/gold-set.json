@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T04:18:22.070Z",
+  "generatedAt": "2026-03-23T03:10:09.553Z",
   "domain": "islets",
   "description": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "entries": [
@@ -313,6 +313,11 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedOutcomeClasses": [
+        "function",
+        "transplantation",
+        "viability"
+      ],
       "expectedStepPhases": [
         "cooling",
         "loading"
@@ -341,9 +346,29 @@
             "durations": [],
             "evidence": []
           }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "transplantation",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: transplantation.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
         ]
       },
-      "notes": "Bulk isolated-islet cryopreservation study, not a review or methods-only paper. Accepted benchmark autofill proposal benchmark-depth-autofill:2c726492-625a-4f6a-bd48-f8d3e9b465c3:stepPhases."
+      "notes": "Bulk isolated-islet cryopreservation study, not a review or methods-only paper. Accepted benchmark autofill proposal benchmark-depth-autofill:2c726492-625a-4f6a-bd48-f8d3e9b465c3:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:2c726492-625a-4f6a-bd48-f8d3e9b465c3:outcomeClasses."
     },
     {
       "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
@@ -537,6 +562,9 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "function"
+      ],
       "expectedStepPhases": [
         "cooling"
       ],
@@ -563,9 +591,17 @@
             "evidence": []
           }
         ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.82
       },
-      "notes": "Programmed-freezing study on human pancreatic islets from non-heart-beating donors using DMSO and HES. Accepted benchmark autofill proposal benchmark-depth-autofill:319d4b4f-5170-4966-a582-75463fe725d7:stepPhases."
+      "notes": "Programmed-freezing study on human pancreatic islets from non-heart-beating donors using DMSO and HES. Accepted benchmark autofill proposal benchmark-depth-autofill:319d4b4f-5170-4966-a582-75463fe725d7:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:319d4b4f-5170-4966-a582-75463fe725d7:outcomeClasses."
     },
     {
       "paperId": "b3a4d36a-35fd-4937-9c34-24cf63da3346",
@@ -2194,6 +2230,10 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "viability"
+      ],
       "expectedStepPhases": [
         "cooling",
         "equilibration",
@@ -2254,9 +2294,23 @@
             "evidence": []
           }
         ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.8
       },
-      "notes": "Rat islet cryopreservation study comparing PVP against standard DMSO and glycerol freezing controls. Accepted benchmark autofill proposal benchmark-depth-autofill:4056fdf9-3483-40ce-9ef4-ccd534962039:stepPhases."
+      "notes": "Rat islet cryopreservation study comparing PVP against standard DMSO and glycerol freezing controls. Accepted benchmark autofill proposal benchmark-depth-autofill:4056fdf9-3483-40ce-9ef4-ccd534962039:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:4056fdf9-3483-40ce-9ef4-ccd534962039:outcomeClasses."
     },
     {
       "paperId": "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
@@ -2609,6 +2663,10 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "viability"
+      ],
       "expectedStepPhases": [
         "loading",
         "storage",
@@ -2629,49 +2687,50 @@
           {
             "order": 0,
             "phase": "loading",
-            "summary": "Rat pancreatic islets were equilibrated in half-strength CPA solution before exposure to Cryotop vitrification solutions containing EG, DMSO and/or CPLL plus sucrose.",
-            "chemicals": [
-              "Dimethyl Sulfoxide",
-              "Ethylene Glycol",
-              "Sucrose"
-            ],
-            "concentrations": [
-              "15 %",
-              "30 %",
-              "0.5 M"
-            ],
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: loading.",
+            "chemicals": [],
+            "concentrations": [],
             "temperatures": [],
-            "durations": [
-              "3 min",
-              "60 s"
-            ],
+            "durations": [],
             "evidence": []
           },
           {
             "order": 1,
             "phase": "storage",
-            "summary": "Cryotop and nylon-mesh preparations were plunged into liquid nitrogen after CPA exposure.",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
             "chemicals": [],
             "concentrations": [],
-            "temperatures": [
-              "-196 °C"
-            ],
+            "temperatures": [],
             "durations": [],
             "evidence": []
           },
           {
             "order": 2,
             "phase": "warming",
-            "summary": "Vitrified rat islets were rewarmed to evaluate the supplementary cryoprotective effect of carboxylated epsilon-poly-L-lysine.",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
             "chemicals": [],
             "concentrations": [],
             "temperatures": [],
             "durations": [],
             "evidence": []
           }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
         ]
       },
-      "notes": "Primary rat-islet vitrification study testing carboxylated epsilon-poly-L-lysine as a supplemental cryoprotectant."
+      "notes": "Primary rat-islet vitrification study testing carboxylated epsilon-poly-L-lysine as a supplemental cryoprotectant. Accepted benchmark autofill proposal benchmark-depth-autofill:d00ca668-e6a5-4d1d-bb5c-334d7de37c34:outcomeClasses."
     },
     {
       "paperId": "3fbb6bbb-96a2-48bf-9bd3-53166a7a2250",
@@ -3101,6 +3160,11 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedOutcomeClasses": [
+        "function",
+        "transplantation",
+        "viability"
+      ],
       "expectedStepPhases": [
         "cooling",
         "loading"
@@ -3129,9 +3193,29 @@
             "durations": [],
             "evidence": []
           }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "transplantation",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: transplantation.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
         ]
       },
-      "notes": "Mouse islet paper explicitly comparing vitrification with conventional freezing. Accepted benchmark autofill proposal benchmark-depth-autofill:3e158dec-5b97-46f4-8b40-57e009e02cc0:stepPhases."
+      "notes": "Mouse islet paper explicitly comparing vitrification with conventional freezing. Accepted benchmark autofill proposal benchmark-depth-autofill:3e158dec-5b97-46f4-8b40-57e009e02cc0:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:3e158dec-5b97-46f4-8b40-57e009e02cc0:outcomeClasses."
     }
   ]
 }

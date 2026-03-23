@@ -16,6 +16,7 @@
     "analyze:islets": "node --import tsx scripts/analyze-domain.ts islets",
     "wedge:ovarian": "node --import tsx scripts/build-wedge-brief.ts ovarian-tissue",
     "wedge:islets": "node --import tsx scripts/build-wedge-brief.ts islets",
+    "matrix:islets": "node --import tsx scripts/build-islet-benchmark-matrix.ts",
     "call:ovarian": "node --import tsx scripts/build-call-packet.ts ovarian-tissue",
     "call:islets": "node --import tsx scripts/build-call-packet.ts islets",
     "opportunity-scan": "node --import tsx scripts/build-opportunity-scan.ts",

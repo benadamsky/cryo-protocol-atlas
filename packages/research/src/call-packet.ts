@@ -1,5 +1,6 @@
 import type { AtlasSummary } from "./atlas.js";
 import type { DomainWedgeBrief, OpportunityScanEntry } from "./wedges.js";
+import type { IsletBenchmarkMatrix } from "./islet-benchmark-matrix.js";
 
 export type DomainCallPacket = {
   domain: string;
@@ -36,6 +37,11 @@ export type DomainCallPacket = {
     whyOptimizationMightMatter: string;
     likelyBuyerOrUser: string;
   };
+  wedgeValidation: {
+    whatAtlasCanSay: string[];
+    missingEvidence: string[];
+    currentRead: string;
+  };
 };
 
 function commercialBuyerHint(domain: string): string {
@@ -62,7 +68,11 @@ function wedgePainPoint(title: string, fallback: string): string {
 }
 
 function chooseBestWedge(brief: DomainWedgeBrief, atlas: AtlasSummary) {
-  const preferred = atlas.researchHypotheses.find((hypothesis) => hypothesis.category === "benchmark");
+  const additivePreferred =
+    brief.domain === "islets"
+      ? atlas.researchHypotheses.find((hypothesis) => /additive-assisted/i.test(hypothesis.title))
+      : undefined;
+  const preferred = additivePreferred ?? atlas.researchHypotheses.find((hypothesis) => hypothesis.category === "benchmark");
   const fallback = atlas.researchHypotheses.find((hypothesis) => hypothesis.category !== "workflow-gap");
   const selected = preferred ?? fallback ?? atlas.researchHypotheses[0];
   if (!selected) {
@@ -94,8 +104,9 @@ export function buildDomainCallPacket(input: {
   brief: DomainWedgeBrief;
   atlas: AtlasSummary;
   opportunityScanEntry?: OpportunityScanEntry;
+  isletMatrix?: IsletBenchmarkMatrix;
 }): DomainCallPacket {
-  const { brief, atlas, opportunityScanEntry } = input;
+  const { brief, atlas, opportunityScanEntry, isletMatrix } = input;
   const bestWedge = chooseBestWedge(brief, atlas);
 
   const likelyPainPoint =
@@ -153,6 +164,32 @@ export function buildDomainCallPacket(input: {
         bestWedge?.whyNow ??
         "Commercial value depends on whether protocol optimization improves reproducibility in a way an operator would actually pay for.",
       likelyBuyerOrUser: commercialBuyerHint(brief.domain)
+    },
+    wedgeValidation: {
+      whatAtlasCanSay:
+        brief.domain === "islets" && isletMatrix
+          ? [
+              `Atlas now has reviewed additive- or benchmark-relevant rows spanning ${isletMatrix.rows.length} papers in the compact islet matrix.`,
+              `The strongest translational rows are ${isletMatrix.summary.strongestTranslationalRows.join("; ") || "still sparse"}.`,
+              `The additive story is not just one paper now: ${isletMatrix.summary.additiveSignals.slice(0, 4).join("; ")}.`
+            ]
+          : [
+              "Atlas can separate the dominant protocol family, the top CPA pattern, and the highest-signal protocol wedge."
+            ],
+      missingEvidence:
+        brief.domain === "islets" && isletMatrix
+          ? [
+              "No fixed-base, head-to-head additive benchmark exists across the strongest adjunct candidates.",
+              "Human or transplant-adjacent evidence is still scattered across different CPA backbones and endpoints.",
+              `${brief.evidenceQuality.missingOutcomeCount} reviewed in-scope papers still lack explicit outcome labels.`
+            ]
+          : [
+              `${brief.evidenceQuality.missingOutcomeCount} reviewed in-scope papers still lack explicit outcome labels.`
+            ],
+      currentRead:
+        brief.domain === "islets" && isletMatrix
+          ? isletMatrix.summary.currentRead
+          : "This slice is still better treated as a proving ground than as a committed first commercial wedge."
     }
   };
 }
@@ -199,6 +236,19 @@ export function renderDomainCallPacketMarkdown(packet: DomainCallPacket): string
   lines.push(`- likely pain point: ${packet.marketBridge.likelyPainPoint}`);
   lines.push(`- why optimization might matter: ${packet.marketBridge.whyOptimizationMightMatter}`);
   lines.push(`- likely buyer or user: ${packet.marketBridge.likelyBuyerOrUser}`);
+  lines.push("");
+  lines.push("## Wedge validation");
+  for (const line of packet.wedgeValidation.whatAtlasCanSay) {
+    lines.push(`- ${line}`);
+  }
+  lines.push("");
+  lines.push("## Missing evidence");
+  for (const line of packet.wedgeValidation.missingEvidence) {
+    lines.push(`- ${line}`);
+  }
+  lines.push("");
+  lines.push("## Current read");
+  lines.push(`- ${packet.wedgeValidation.currentRead}`);
   lines.push("");
   return lines.join("\n");
 }

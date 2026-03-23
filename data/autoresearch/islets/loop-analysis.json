@@ -1,9 +1,9 @@
 {
   "domain": "islets",
-  "autoApplySafe": false,
+  "autoApplySafe": true,
   "currentEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T02:21:05.001Z",
+    "generatedAt": "2026-03-23T03:10:09.887Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -58,19 +58,33 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 29,
-            "exactMatchCount": 29,
-            "averageF1": 0.931,
-            "averagePrecision": 0.931,
+            "labeledCount": 34,
+            "exactMatchCount": 33,
+            "averageF1": 0.926,
+            "averagePrecision": 0.922,
             "averageRecall": 1,
-            "mismatches": []
+            "mismatches": [
+              {
+                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+                "expected": [
+                  "function"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.5
+              }
+            ]
           },
           "stepPhases": {
             "field": "stepPhases",
             "labeledCount": 45,
-            "exactMatchCount": 41,
-            "averageF1": 0.951,
-            "averagePrecision": 0.957,
+            "exactMatchCount": 40,
+            "averageF1": 0.947,
+            "averagePrecision": 0.95,
             "averageRecall": 0.963,
             "mismatches": [
               {
@@ -126,6 +140,25 @@
                   "warming"
                 ],
                 "f1": 0.5
+              },
+              {
+                "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+                "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+                "expected": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "assessment",
+                  "cooling",
+                  "culture",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.8
               }
             ]
           }
@@ -158,8 +191,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 27,
-            "coverageRate": 0.587
+            "labeledCount": 32,
+            "coverageRate": 0.696
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -169,8 +202,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.849,
-          "averageOnCorrectIncluded": 0.849,
+          "averageOnExpectedIncluded": 0.85,
+          "averageOnCorrectIncluded": 0.85,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -227,21 +260,55 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 25,
-            "exactMatchCount": 25,
-            "averageF1": 1,
-            "averagePrecision": 1,
+            "labeledCount": 30,
+            "exactMatchCount": 29,
+            "averageF1": 0.983,
+            "averagePrecision": 0.978,
             "averageRecall": 1,
-            "mismatches": []
+            "mismatches": [
+              {
+                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+                "expected": [
+                  "function"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.5
+              }
+            ]
           },
           "stepPhases": {
             "field": "stepPhases",
             "labeledCount": 41,
-            "exactMatchCount": 41,
-            "averageF1": 1,
-            "averagePrecision": 1,
+            "exactMatchCount": 40,
+            "averageF1": 0.995,
+            "averagePrecision": 0.992,
             "averageRecall": 1,
-            "mismatches": []
+            "mismatches": [
+              {
+                "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+                "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+                "expected": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "assessment",
+                  "cooling",
+                  "culture",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.8
+              }
+            ]
           }
         },
         "coverage": {
@@ -272,8 +339,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 25,
-            "coverageRate": 0.595
+            "labeledCount": 30,
+            "coverageRate": 0.714
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -283,8 +350,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.844,
-          "averageOnCorrectIncluded": 0.844,
+          "averageOnExpectedIncluded": 0.845,
+          "averageOnCorrectIncluded": 0.845,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -513,14 +580,14 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.595,
+      "reviewedOutcomeCoverage": 0.714,
       "reviewedStepPhaseCoverage": 0.976,
       "reviewedMinimumDepthReady": true
     }
   },
   "candidateEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T02:21:05.002Z",
+    "generatedAt": "2026-03-23T03:10:09.888Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -575,10 +642,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 29,
-            "exactMatchCount": 29,
-            "averageF1": 0.931,
-            "averagePrecision": 0.931,
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "averageF1": 0.941,
+            "averagePrecision": 0.941,
             "averageRecall": 1,
             "mismatches": []
           },
@@ -675,8 +742,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 27,
-            "coverageRate": 0.587
+            "labeledCount": 32,
+            "coverageRate": 0.696
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -686,8 +753,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.849,
-          "averageOnCorrectIncluded": 0.849,
+          "averageOnExpectedIncluded": 0.85,
+          "averageOnCorrectIncluded": 0.85,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -744,8 +811,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 25,
-            "exactMatchCount": 25,
+            "labeledCount": 30,
+            "exactMatchCount": 30,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -789,8 +856,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 25,
-            "coverageRate": 0.595
+            "labeledCount": 30,
+            "coverageRate": 0.714
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -800,8 +867,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.844,
-          "averageOnCorrectIncluded": 0.844,
+          "averageOnExpectedIncluded": 0.845,
+          "averageOnCorrectIncluded": 0.845,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1030,14 +1097,14 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.595,
+      "reviewedOutcomeCoverage": 0.714,
       "reviewedStepPhaseCoverage": 0.976,
       "reviewedMinimumDepthReady": true
     }
   },
   "candidateBenchmarkEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T02:21:05.003Z",
+    "generatedAt": "2026-03-23T03:10:09.889Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -1092,10 +1159,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 29,
-            "exactMatchCount": 29,
-            "averageF1": 0.931,
-            "averagePrecision": 0.931,
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "averageF1": 0.941,
+            "averagePrecision": 0.941,
             "averageRecall": 1,
             "mismatches": []
           },
@@ -1192,8 +1259,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 27,
-            "coverageRate": 0.587
+            "labeledCount": 32,
+            "coverageRate": 0.696
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1203,8 +1270,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.849,
-          "averageOnCorrectIncluded": 0.849,
+          "averageOnExpectedIncluded": 0.85,
+          "averageOnCorrectIncluded": 0.85,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1261,8 +1328,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 25,
-            "exactMatchCount": 25,
+            "labeledCount": 30,
+            "exactMatchCount": 30,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -1306,8 +1373,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 25,
-            "coverageRate": 0.595
+            "labeledCount": 30,
+            "coverageRate": 0.714
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1317,8 +1384,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.844,
-          "averageOnCorrectIncluded": 0.844,
+          "averageOnExpectedIncluded": 0.845,
+          "averageOnCorrectIncluded": 0.845,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1547,13 +1614,13 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.595,
+      "reviewedOutcomeCoverage": 0.714,
       "reviewedStepPhaseCoverage": 0.976,
       "reviewedMinimumDepthReady": true
     }
   },
-  "proposalCount": 0,
-  "overrideProposalCount": 0,
+  "proposalCount": 2,
+  "overrideProposalCount": 2,
   "benchmarkProposalCount": 0,
   "candidateOverrideCount": 49
 }

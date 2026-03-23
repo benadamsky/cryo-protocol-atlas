@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T02:21:04.839Z",
+  "generatedAt": "2026-03-23T03:09:08.713Z",
   "domain": "islets",
   "records": [
     {
@@ -30,15 +30,6 @@
       "excerpts": []
     },
     {
-      "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
-      "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
-      "doi": "10.3727/000000004783983927",
-      "priority": "ambiguous-evidence",
-      "status": "pending",
-      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "excerpts": []
-    },
-    {
       "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",
       "title": "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
       "doi": "10.2337/diab.38.1.s176",
@@ -60,15 +51,6 @@
       "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
       "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
       "doi": "10.1159/000129396",
-      "priority": "ambiguous-evidence",
-      "status": "pending",
-      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "excerpts": []
-    },
-    {
-      "paperId": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
-      "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
-      "doi": "10.1016/0011-2240(87)90033-2",
       "priority": "ambiguous-evidence",
       "status": "pending",
       "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
@@ -110,13 +92,74 @@
       ]
     },
     {
-      "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
-      "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
-      "doi": "10.1177/096368979600500306",
-      "priority": "evidence-thin",
-      "status": "pending",
-      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
-      "excerpts": []
+      "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+      "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+      "doi": "10.3727/000000004783983927",
+      "priority": "ambiguous-evidence",
+      "status": "reviewed",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "reviewerNotes": "Reviewed from the accessible PubMed abstract on 2026-03-22. Added conservative paraphrased notes to make the comparator cryomixes, recovery, and glucose-stimulated function explicit.",
+      "excerpts": [
+        {
+          "id": "pvp-methods-1",
+          "label": "methods review note",
+          "text": "Isolated rat islets were frozen with a programmable controller after overnight culture using one of four cryomixes: 2 M DMSO, 3 M glycerol, 5 percent polyethylene glycol, or 10 percent polyvinyl pyrrolidone. Samples were stored at minus 80 C for 1 week and assessed after thawing plus overnight recovery culture.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "pvp-results-1",
+          "label": "recovery review note",
+          "text": "Post-thaw intact islet recovery was higher with polyvinyl pyrrolidone than with DMSO, about 82 percent versus about 63 percent. Recovery with polyethylene glycol was similar to polyvinyl pyrrolidone, while DMSO and glycerol performed worse.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "pvp-results-2",
+          "label": "function review note",
+          "text": "Glucose-stimulated insulin secretion after freezing with polyvinyl pyrrolidone or polyethylene glycol remained comparable to freshly isolated islets, unlike the DMSO and glycerol groups. The paper concludes that polyvinyl pyrrolidone is a potent cryoprotectant for islet freezing.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "paperId": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
+      "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+      "doi": "10.1016/0011-2240(87)90033-2",
+      "priority": "ambiguous-evidence",
+      "status": "reviewed",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "reviewerNotes": "Reviewed from the accessible PubMed abstract on 2026-03-22. Added conservative paraphrased notes to make the comparative design and the in vitro plus in vivo outcomes explicit.",
+      "excerpts": [
+        {
+          "id": "mouse-vit-methods-1",
+          "label": "methods review note",
+          "text": "The study compared mouse islets preserved by vitrification with a cryoprotectant mixture against islets frozen in 1.5 M Me2SO, alongside unfrozen cultured controls. Both cryopreserved groups were rewarmed and cultured for 4 days before outcome testing.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "mouse-vit-results-1",
+          "label": "function review note",
+          "text": "After warming, both cryopreserved groups still showed strong glucose-responsive insulin secretion. High-glucose secretion was only slightly lower than controls and survival during post-warm culture was comparable between vitrification and conventional freezing.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        },
+        {
+          "id": "mouse-vit-results-2",
+          "label": "transplant review note",
+          "text": "Islets from both cryopreserved groups lowered serum glucose in streptozotocin-diabetic mice, supporting preserved in vivo graft function. The authors conclude that vitrification preserved mouse-islet function in vitro and in vivo while avoiding complex freezing equipment.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        }
+      ]
     },
     {
       "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
@@ -145,16 +188,6 @@
       "excerpts": []
     },
     {
-      "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
-      "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
-      "doi": "10.3727/000000008783907026",
-      "paperUrl": "http://www.cognizantcommunication.com",
-      "priority": "evidence-thin",
-      "status": "pending",
-      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
-      "excerpts": []
-    },
-    {
       "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
       "title": "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
       "doi": "10.1292/jvms.57.859",
@@ -173,16 +206,6 @@
       "excerpts": []
     },
     {
-      "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
-      "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
-      "doi": "10.1016/j.cryobiol.2019.03.009",
-      "paperUrl": "https://doi.org/10.1016/j.cryobiol.2019.03.009",
-      "priority": "evidence-thin",
-      "status": "pending",
-      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
-      "excerpts": []
-    },
-    {
       "paperId": "1453f932-2e03-42a3-968a-9efaf2b3233e",
       "title": "USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION",
       "doi": "10.1177/096368979700600612",
@@ -190,6 +213,113 @@
       "status": "pending",
       "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
       "excerpts": []
+    },
+    {
+      "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
+      "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+      "doi": "10.1177/096368979600500306",
+      "priority": "evidence-thin",
+      "status": "reviewed",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "reviewerNotes": "Reviewed from the accessible PubMed abstract on 2026-03-22. Added conservative paraphrased notes to make the bulk-banking workflow, recovery, and transplant endpoint explicit.",
+      "excerpts": [
+        {
+          "id": "bulk-methods-1",
+          "label": "methods review note",
+          "text": "The study compared bulk slow-freezing in a blood freezer bag against multiple glass tubes. DMSO was added stepwise, removed with a sucrose dilution after thawing, and freezing-thawing profiles were matched to the conventional tube method.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "bulk-results-1",
+          "label": "recovery review note",
+          "text": "Rat and canine islet recovery in freezer bags was similar to glass tubes, with roughly 92 versus 90 percent recovery in rat islets and about 79 versus 82 percent recovery in canine islets. In vitro function after thawing was equivalent between the bag and tube groups, although both remained below fresh controls.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "bulk-results-2",
+          "label": "transplant review note",
+          "text": "When 2000 cryopreserved canine islets from either freezer bags or glass tubes were transplanted into diabetic nude mice, the recipients became and remained normoglycemic. The paper frames the bulk-bag workflow as a practical tissue-banking method for clinical islet-transplant programs.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+      "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+      "doi": "10.3727/000000008783907026",
+      "paperUrl": "http://www.cognizantcommunication.com",
+      "priority": "evidence-thin",
+      "status": "reviewed",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "reviewerNotes": "Reviewed from the accessible PubMed abstract on 2026-03-22. Added conservative paraphrased notes to make the human donor context, structure/function outcomes, and transplant-adjacent decision boundary explicit.",
+      "excerpts": [
+        {
+          "id": "hes-methods-1",
+          "label": "methods review note",
+          "text": "Hydroxyethyl starch was combined with DMSO to simplify freezing and thawing while reducing DMSO toxicity. The protocol was first tested in beagle islets and then applied to 12 cryopreservation cases using human islets from non-heart-beating donors.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "hes-results-1",
+          "label": "preclinical review note",
+          "text": "In the beagle preclinical study, thawed islet structure remained well preserved, recovery was about 71 percent, and the post-thaw stimulation index was about 1.8 after 4 weeks of storage.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        },
+        {
+          "id": "hes-results-2",
+          "label": "human review note",
+          "text": "Among the human donor cases, 7 of 12 thawed samples retained normal structure while 5 showed fragmentation. Static-incubation stimulation index fell on average from about 3.37 before freezing to about 1.34 after thawing, and the authors concluded that low-function islet preparations should not be banked for transplantation even though cryopreservation was feasible.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+      "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+      "doi": "10.1016/j.cryobiol.2019.03.009",
+      "paperUrl": "https://doi.org/10.1016/j.cryobiol.2019.03.009",
+      "priority": "evidence-thin",
+      "status": "reviewed",
+      "rationale": "available title/abstract text is mostly procedural and does not state a concrete outcome",
+      "reviewerNotes": "Reviewed from the accessible PubMed abstract on 2026-03-22. Added conservative paraphrased notes to make the CPLL additive effect, function, and scale-up angle explicit.",
+      "excerpts": [
+        {
+          "id": "cpll-methods-1",
+          "label": "methods review note",
+          "text": "Rat pancreatic islets were vitrified by Cryotop using ethylene glycol at 30 percent with carboxylated epsilon-poly-L-lysine at 0, 10, or 20 percent. The study also tested lower ethylene glycol concentrations with 20 percent CPLL and a larger-load nylon-mesh format.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "cpll-results-1",
+          "label": "survival review note",
+          "text": "Post-warm survival was highest with 30 percent ethylene glycol plus 20 percent CPLL at about 74 percent, compared with about 65 to 66 percent in the lower-CPLL conditions. Reducing ethylene glycol to 10 or 20 percent while keeping 20 percent CPLL impaired survival.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "cpll-results-2",
+          "label": "function and scale review note",
+          "text": "Glucose-stimulated insulin secretion with 30 percent ethylene glycol plus 20 percent CPLL remained comparable to fresh controls and to vitrification with 30 percent ethylene glycol alone. Using nylon mesh, 50 islets per device could still be vitrified with about 68 percent survival and a stimulation index around 3.7.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        }
+      ]
     },
     {
       "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",

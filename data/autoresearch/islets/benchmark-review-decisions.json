@@ -1,7 +1,59 @@
 {
-  "generatedAt": "2026-03-23T02:21:05.373Z",
+  "generatedAt": "2026-03-23T03:09:09.405Z",
   "domain": "islets",
-  "sourceProposalGeneratedAt": "2026-03-23T02:21:05.003Z",
-  "decisionCount": 0,
-  "decisions": []
+  "sourceProposalGeneratedAt": "2026-03-23T03:09:09.271Z",
+  "decisionCount": 5,
+  "decisions": [
+    {
+      "proposalId": "benchmark-depth-autofill:d00ca668-e6a5-4d1d-bb5c-334d7de37c34:outcomeClasses",
+      "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+      "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+      "decision": "accept",
+      "acceptedOutcomeClasses": [
+        "function",
+        "viability"
+      ]
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:2c726492-625a-4f6a-bd48-f8d3e9b465c3:outcomeClasses",
+      "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
+      "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+      "decision": "accept",
+      "acceptedOutcomeClasses": [
+        "function",
+        "transplantation",
+        "viability"
+      ]
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:3e158dec-5b97-46f4-8b40-57e009e02cc0:outcomeClasses",
+      "paperId": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
+      "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+      "decision": "accept",
+      "acceptedOutcomeClasses": [
+        "function",
+        "transplantation",
+        "viability"
+      ]
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:319d4b4f-5170-4966-a582-75463fe725d7:outcomeClasses",
+      "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+      "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+      "decision": "accept",
+      "acceptedOutcomeClasses": [
+        "function"
+      ]
+    },
+    {
+      "proposalId": "benchmark-depth-autofill:4056fdf9-3483-40ce-9ef4-ccd534962039:outcomeClasses",
+      "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+      "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+      "decision": "accept",
+      "acceptedOutcomeClasses": [
+        "function",
+        "viability"
+      ]
+    }
+  ]
 }

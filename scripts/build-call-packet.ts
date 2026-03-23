@@ -7,6 +7,7 @@ import {
   buildDomainCallPacket,
   renderDomainCallPacketMarkdown
 } from "../packages/research/src/call-packet.js";
+import type { IsletBenchmarkMatrix } from "../packages/research/src/islet-benchmark-matrix.js";
 
 const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
 
@@ -24,6 +25,20 @@ async function maybeReadOpportunityScanEntry(
   }
 }
 
+async function maybeReadIsletMatrix(rootDir: string, selectedDomain: DomainId): Promise<IsletBenchmarkMatrix | undefined> {
+  if (selectedDomain !== "islets") {
+    return undefined;
+  }
+
+  try {
+    return JSON.parse(
+      await readFile(join(rootDir, "data", "processed", "islets", "benchmark-matrix.json"), "utf8")
+    ) as IsletBenchmarkMatrix;
+  } catch {
+    return undefined;
+  }
+}
+
 async function main(selectedDomain: DomainId): Promise<void> {
   const rootDir = process.cwd();
   const processedDir = join(rootDir, "data", "processed", selectedDomain);
@@ -31,11 +46,13 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const brief = JSON.parse(await readFile(join(processedDir, "wedge-brief.json"), "utf8"));
   const atlas = JSON.parse(await readFile(join(processedDir, "atlas-summary.json"), "utf8")) as AtlasSummary;
   const opportunityScanEntry = await maybeReadOpportunityScanEntry(rootDir, selectedDomain);
+  const isletMatrix = await maybeReadIsletMatrix(rootDir, selectedDomain);
 
   const packet = buildDomainCallPacket({
     brief,
     atlas,
-    opportunityScanEntry
+    opportunityScanEntry,
+    isletMatrix
   });
 
   await mkdir(processedDir, { recursive: true });
