@@ -1,29 +1,11 @@
 {
-  "generatedAt": "2026-03-23T03:22:51.069Z",
+  "generatedAt": "2026-03-23T03:34:33.267Z",
   "domain": "islets",
   "records": [
     {
       "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
       "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
       "doi": "10.1006/cryo.1993.1040",
-      "priority": "ambiguous-evidence",
-      "status": "pending",
-      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "excerpts": []
-    },
-    {
-      "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
-      "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
-      "doi": "10.1007/bf00428975",
-      "priority": "ambiguous-evidence",
-      "status": "pending",
-      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "excerpts": []
-    },
-    {
-      "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
-      "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
-      "doi": "10.5301/IJAO.2011.8465",
       "priority": "ambiguous-evidence",
       "status": "pending",
       "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
@@ -60,6 +42,76 @@
           "text": "After transplantation into NODscid mice, glucose-stimulated human C-peptide from ICS-p38IH islets reached about 86 percent of nonfrozen controls by 4 weeks. In diabetic recipients, 4 of 5 mice receiving ICS-p38IH islets became and remained euglycemic through day 90, whereas most RPMI and ICS recipients did not reverse diabetes.",
           "source": "manual-note",
           "confidence": 0.96,
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+      "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+      "doi": "10.1007/bf00428975",
+      "priority": "ambiguous-evidence",
+      "status": "reviewed",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "reviewerNotes": "Reviewed from the accessible PubMed abstract on 2026-03-23. The abstract explicitly reports histological and glucose-stimulated functional survival, so this paper is promotable for viability and function but not transplantation.",
+      "excerpts": [
+        {
+          "id": "longterm-multispecies-methods-1",
+          "label": "methods review note",
+          "text": "The paper tested three preservation systems for isolated islets from mouse, rat, and guinea pig, including simple cold storage, controlled freezing with dimethyl sulfoxide and serum, and organ culture.",
+          "source": "manual-note",
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "longterm-multispecies-results-1",
+          "label": "viability review note",
+          "text": "The abstract reports histological survival after storage and freezing, including roughly 35 percent survival in one freezing group and about 87 percent survival in a second freezing group with a post-thaw culture period.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        },
+        {
+          "id": "longterm-multispecies-results-2",
+          "label": "function review note",
+          "text": "Functional survival was assessed by insulin release in response to glucose. The freezing condition with post-thaw culture retained about 75 percent functional survival, while a slower condition retained about 20 percent.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        }
+      ]
+    },
+    {
+      "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+      "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+      "doi": "10.5301/IJAO.2011.8465",
+      "priority": "ambiguous-evidence",
+      "status": "reviewed",
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "reviewerNotes": "Reviewed from the accessible abstract snippet on 2026-03-23. The source supports viability and function in a transplant-adjacent porcine isolation context, but not transplantation.",
+      "excerpts": [
+        {
+          "id": "nhbd-pig-methods-1",
+          "label": "methods review note",
+          "text": "The study compares preservation methods for pancreatic islets from non-heart-beating donor pig in an in vitro porcine model, including a classic ice-storage approach and a two-layer preservation method before islet isolation.",
+          "source": "manual-note",
+          "confidence": 0.93,
+          "reviewed": true
+        },
+        {
+          "id": "nhbd-pig-results-1",
+          "label": "viability review note",
+          "text": "The accessible abstract states that islet cell viability could be efficiently preserved during the processing window needed for organ handling.",
+          "source": "manual-note",
+          "confidence": 0.91,
+          "reviewed": true
+        },
+        {
+          "id": "nhbd-pig-results-2",
+          "label": "function review note",
+          "text": "The accessible abstract also states that total islet yield and function measured by insulin release favored the preservation strategy being evaluated, indicating transplant-adjacent functional relevance without proving transplantation outcomes.",
+          "source": "manual-note",
+          "confidence": 0.91,
           "reviewed": true
         }
       ]
@@ -106,7 +158,7 @@
       "priority": "ambiguous-evidence",
       "status": "reviewed",
       "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "reviewerNotes": "Reviewed from the accessible Diabetes abstract on 2026-03-23. The stored source is still mostly protocol-only, so this record is being upgraded for translational tracking rather than benchmark promotion.",
+      "reviewerNotes": "Reviewed from the accessible PubMed abstract on 2026-03-23. The abstract explicitly reports post-thaw recovery, glucose-stimulated perifusion, and preserved morphology/ultrastructure, so this paper is promotable for viability, function, and morphology.",
       "excerpts": [
         {
           "id": "human-prolonged-methods-1",
@@ -117,9 +169,17 @@
           "reviewed": true
         },
         {
-          "id": "human-prolonged-limit-1",
-          "label": "limit review note",
-          "text": "The accessible source confirms prolonged storage of purified human islets but does not make a benchmark-safe post-thaw outcome explicit. This paper remains clinically adjacent but unresolved for outcome promotion.",
+          "id": "human-prolonged-results-1",
+          "label": "viability review note",
+          "text": "The abstract reports about 94 percent recovery by count and about 90 percent recovery by insulin extraction immediately after thawing, with substantial recovery still present after an additional 48 hours in culture.",
+          "source": "manual-note",
+          "confidence": 0.96,
+          "reviewed": true
+        },
+        {
+          "id": "human-prolonged-results-2",
+          "label": "function and morphology review note",
+          "text": "Glucose-stimulated perifusion retained normal baseline and first-phase insulin secretion after cryopreservation, although second-phase insulin secretion decreased. Insulin staining and electron microscopy showed preserved morphology and ultrastructure.",
           "source": "manual-note",
           "confidence": 0.96,
           "reviewed": true
@@ -133,7 +193,7 @@
       "priority": "ambiguous-evidence",
       "status": "reviewed",
       "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
-      "reviewerNotes": "Reviewed from the accessible Cryobiology abstract on 2026-03-23. The title plus abstract support a conservative viability reading, but not function or transplantation.",
+      "reviewerNotes": "Reviewed from the accessible PubMed abstract on 2026-03-23. The abstract supports viability, function, and transplantation-grade in vivo performance.",
       "excerpts": [
         {
           "id": "fetal-porcine-methods-1",
@@ -144,11 +204,19 @@
           "reviewed": true
         },
         {
-          "id": "fetal-porcine-title-1",
-          "label": "viability review note",
-          "text": "The title explicitly frames the protocol as successful cryopreservation of fetal porcine proislets. Conservatively, that supports post-thaw survival or viability, but it does not by itself establish functional or transplantation outcomes.",
+          "id": "fetal-porcine-results-1",
+          "label": "transplant review note",
+          "text": "After transplantation, all mice receiving cultured fetal porcine proislets and seven of eight mice receiving cryopreserved fetal porcine proislets achieved normoglycemia, with no significant difference between groups.",
           "source": "manual-note",
-          "confidence": 0.95,
+          "confidence": 0.97,
+          "reviewed": true
+        },
+        {
+          "id": "fetal-porcine-results-2",
+          "label": "function and viability review note",
+          "text": "Grafts from normoglycemic recipients secreted insulin during in vitro perifusion, and histology showed comparable in vivo differentiation and development between cryopreserved and cultured groups. The abstract concludes that the protocol maintained functional viability after thawing.",
+          "source": "manual-note",
+          "confidence": 0.96,
           "reviewed": true
         }
       ]

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T03:25:21.715Z",
+  "generatedAt": "2026-03-23T03:35:31.488Z",
   "domain": "islets",
   "overrides": [
     {
@@ -815,6 +815,20 @@
           "evidence": []
         }
       ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+          "evidence": []
+        }
+      ],
       "extractionConfidence": 0.78,
       "notes": "Long-term liquid-nitrogen preservation study using 10% DMSO and controlled cooling for rodent and guinea pig islets."
     },
@@ -1020,6 +1034,26 @@
           "concentrations": [],
           "temperatures": [],
           "durations": [],
+          "evidence": []
+        }
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "transplantation",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: transplantation.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
           "evidence": []
         }
       ],
@@ -1518,6 +1552,20 @@
       "specimenTypes": [
         "islets",
         "pancreatic islets"
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+          "evidence": []
+        }
       ],
       "extractionConfidence": 0.78,
       "notes": "Porcine pancreatic islet study using sequential 10% DMSO cryopreservation after non-heart-beating donor procurement."

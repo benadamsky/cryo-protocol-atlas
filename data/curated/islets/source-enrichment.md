@@ -8,19 +8,23 @@
   paperId=51afcf7d-1bff-4630-808a-40407290f0d2
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=10.1006/cryo.1993.1040
-- [pending] Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig
-  paperId=6e4ea940-2dbd-4790-b848-c453f6a0f42a
-  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
-  doi=10.1007/bf00428975
-- [pending] Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model
-  paperId=e61a3868-8fcf-4024-96f7-eb4ae8a9456a
-  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
-  doi=10.5301/IJAO.2011.8465
 - [reviewed] Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor
   paperId=7cbe1db5-5f6a-4519-9713-bddca96212f7
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=10.1111/j.1600-6143.2007.01741.x
   reviewerNotes=Reviewed directly from the accessible American Journal of Transplantation full text on 2026-03-21. Added only conservative manual-note excerpts that make post-thaw outcomes and p38-inhibitor step context explicit.
+  reviewedExcerpts=3
+- [reviewed] Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig
+  paperId=6e4ea940-2dbd-4790-b848-c453f6a0f42a
+  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
+  doi=10.1007/bf00428975
+  reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-23. The abstract explicitly reports histological and glucose-stimulated functional survival, so this paper is promotable for viability and function but not transplantation.
+  reviewedExcerpts=3
+- [reviewed] Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model
+  paperId=e61a3868-8fcf-4024-96f7-eb4ae8a9456a
+  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
+  doi=10.5301/IJAO.2011.8465
+  reviewerNotes=Reviewed from the accessible abstract snippet on 2026-03-23. The source supports viability and function in a transplant-adjacent porcine isolation context, but not transplantation.
   reviewedExcerpts=3
 - [reviewed] Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation
   paperId=4056fdf9-3483-40ce-9ef4-ccd534962039
@@ -32,14 +36,14 @@
   paperId=5657b492-dd6b-491f-935b-6248369afbb2
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=10.2337/diab.38.1.s176
-  reviewerNotes=Reviewed from the accessible Diabetes abstract on 2026-03-23. The stored source is still mostly protocol-only, so this record is being upgraded for translational tracking rather than benchmark promotion.
-  reviewedExcerpts=2
+  reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-23. The abstract explicitly reports post-thaw recovery, glucose-stimulated perifusion, and preserved morphology/ultrastructure, so this paper is promotable for viability, function, and morphology.
+  reviewedExcerpts=3
 - [reviewed] Successful Cryopreservation of Fetal Porcine Proislets
   paperId=a24a1702-5dad-4428-b962-27cd59e2e6e8
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
   doi=10.1006/cryo.1993.1024
-  reviewerNotes=Reviewed from the accessible Cryobiology abstract on 2026-03-23. The title plus abstract support a conservative viability reading, but not function or transplantation.
-  reviewedExcerpts=2
+  reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-23. The abstract supports viability, function, and transplantation-grade in vivo performance.
+  reviewedExcerpts=3
 - [reviewed] Successful Long-Term Cryopreservation of Highly Purified Canine Islets
   paperId=80be44da-a725-4051-9d4e-0c5881409006
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class

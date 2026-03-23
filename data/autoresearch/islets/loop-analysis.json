@@ -1,9 +1,9 @@
 {
   "domain": "islets",
-  "autoApplySafe": true,
+  "autoApplySafe": false,
   "currentEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T03:25:21.701Z",
+    "generatedAt": "2026-03-23T03:36:29.773Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -58,46 +58,19 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 35,
-            "exactMatchCount": 33,
-            "averageF1": 0.914,
-            "averagePrecision": 0.905,
+            "labeledCount": 39,
+            "exactMatchCount": 39,
+            "averageF1": 0.949,
+            "averagePrecision": 0.949,
             "averageRecall": 1,
-            "mismatches": [
-              {
-                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
-                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
-                "expected": [
-                  "function"
-                ],
-                "actual": [
-                  "function",
-                  "transplantation",
-                  "viability"
-                ],
-                "f1": 0.5
-              },
-              {
-                "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
-                "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
-                "expected": [
-                  "viability"
-                ],
-                "actual": [
-                  "function",
-                  "transplantation",
-                  "viability"
-                ],
-                "f1": 0.5
-              }
-            ]
+            "mismatches": []
           },
           "stepPhases": {
             "field": "stepPhases",
             "labeledCount": 45,
-            "exactMatchCount": 40,
-            "averageF1": 0.947,
-            "averagePrecision": 0.95,
+            "exactMatchCount": 41,
+            "averageF1": 0.951,
+            "averagePrecision": 0.957,
             "averageRecall": 0.963,
             "mismatches": [
               {
@@ -153,25 +126,6 @@
                   "warming"
                 ],
                 "f1": 0.5
-              },
-              {
-                "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
-                "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
-                "expected": [
-                  "cooling",
-                  "equilibration",
-                  "storage",
-                  "warming"
-                ],
-                "actual": [
-                  "assessment",
-                  "cooling",
-                  "culture",
-                  "equilibration",
-                  "storage",
-                  "warming"
-                ],
-                "f1": 0.8
               }
             ]
           }
@@ -204,8 +158,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 33,
-            "coverageRate": 0.717
+            "labeledCount": 37,
+            "coverageRate": 0.804
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -266,401 +220,6 @@
             "field": "specimenTypes",
             "labeledCount": 34,
             "exactMatchCount": 34,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "outcomeClasses": {
-            "field": "outcomeClasses",
-            "labeledCount": 31,
-            "exactMatchCount": 29,
-            "averageF1": 0.968,
-            "averagePrecision": 0.957,
-            "averageRecall": 1,
-            "mismatches": [
-              {
-                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
-                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
-                "expected": [
-                  "function"
-                ],
-                "actual": [
-                  "function",
-                  "transplantation",
-                  "viability"
-                ],
-                "f1": 0.5
-              },
-              {
-                "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
-                "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
-                "expected": [
-                  "viability"
-                ],
-                "actual": [
-                  "function",
-                  "transplantation",
-                  "viability"
-                ],
-                "f1": 0.5
-              }
-            ]
-          },
-          "stepPhases": {
-            "field": "stepPhases",
-            "labeledCount": 41,
-            "exactMatchCount": 40,
-            "averageF1": 0.995,
-            "averagePrecision": 0.992,
-            "averageRecall": 1,
-            "mismatches": [
-              {
-                "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
-                "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
-                "expected": [
-                  "cooling",
-                  "equilibration",
-                  "storage",
-                  "warming"
-                ],
-                "actual": [
-                  "assessment",
-                  "cooling",
-                  "culture",
-                  "equilibration",
-                  "storage",
-                  "warming"
-                ],
-                "f1": 0.8
-              }
-            ]
-          }
-        },
-        "coverage": {
-          "paperType": {
-            "field": "paperType",
-            "eligibleCount": 42,
-            "labeledCount": 42,
-            "coverageRate": 1
-          },
-          "protocolFamily": {
-            "field": "protocolFamily",
-            "eligibleCount": 42,
-            "labeledCount": 34,
-            "coverageRate": 0.81
-          },
-          "speciesMentions": {
-            "field": "speciesMentions",
-            "eligibleCount": 42,
-            "labeledCount": 34,
-            "coverageRate": 0.81
-          },
-          "specimenTypes": {
-            "field": "specimenTypes",
-            "eligibleCount": 42,
-            "labeledCount": 34,
-            "coverageRate": 0.81
-          },
-          "outcomeClasses": {
-            "field": "outcomeClasses",
-            "eligibleCount": 42,
-            "labeledCount": 31,
-            "coverageRate": 0.738
-          },
-          "stepPhases": {
-            "field": "stepPhases",
-            "eligibleCount": 42,
-            "labeledCount": 41,
-            "coverageRate": 0.976
-          }
-        },
-        "confidence": {
-          "averageOnExpectedIncluded": 0.845,
-          "averageOnCorrectIncluded": 0.845,
-          "averageOnIncorrectIncluded": null
-        },
-        "unexpectedIncludedPaperIds": [],
-        "unexpectedExcludedPaperIds": []
-      },
-      "seeded": {
-        "subset": "seeded",
-        "entryCount": 4,
-        "expectedIncludedCount": 4,
-        "inclusion": {
-          "truePositive": 4,
-          "trueNegative": 0,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1
-        },
-        "exactFields": {
-          "paperType": {
-            "field": "paperType",
-            "labeledCount": 4,
-            "exactMatchCount": 4,
-            "accuracy": 1,
-            "mismatches": []
-          },
-          "protocolFamily": {
-            "field": "protocolFamily",
-            "labeledCount": 4,
-            "exactMatchCount": 4,
-            "accuracy": 1,
-            "mismatches": []
-          }
-        },
-        "setFields": {
-          "speciesMentions": {
-            "field": "speciesMentions",
-            "labeledCount": 4,
-            "exactMatchCount": 4,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "specimenTypes": {
-            "field": "specimenTypes",
-            "labeledCount": 4,
-            "exactMatchCount": 4,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "outcomeClasses": {
-            "field": "outcomeClasses",
-            "labeledCount": 4,
-            "exactMatchCount": 4,
-            "averageF1": 0.5,
-            "averagePrecision": 0.5,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "stepPhases": {
-            "field": "stepPhases",
-            "labeledCount": 4,
-            "exactMatchCount": 0,
-            "averageF1": 0.45,
-            "averagePrecision": 0.521,
-            "averageRecall": 0.583,
-            "mismatches": [
-              {
-                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
-                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
-                "expected": [
-                  "cooling",
-                  "unknown"
-                ],
-                "actual": [
-                  "cooling",
-                  "equilibration",
-                  "storage"
-                ],
-                "f1": 0.4
-              },
-              {
-                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
-                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
-                "expected": [
-                  "cooling"
-                ],
-                "actual": [
-                  "cooling",
-                  "equilibration",
-                  "storage",
-                  "warming"
-                ],
-                "f1": 0.4
-              },
-              {
-                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
-                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
-                "expected": [
-                  "storage",
-                  "unknown"
-                ],
-                "actual": [
-                  "cooling",
-                  "storage"
-                ],
-                "f1": 0.5
-              },
-              {
-                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
-                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
-                "expected": [
-                  "cooling",
-                  "unknown",
-                  "warming"
-                ],
-                "actual": [
-                  "warming"
-                ],
-                "f1": 0.5
-              }
-            ]
-          }
-        },
-        "coverage": {
-          "paperType": {
-            "field": "paperType",
-            "eligibleCount": 4,
-            "labeledCount": 4,
-            "coverageRate": 1
-          },
-          "protocolFamily": {
-            "field": "protocolFamily",
-            "eligibleCount": 4,
-            "labeledCount": 4,
-            "coverageRate": 1
-          },
-          "speciesMentions": {
-            "field": "speciesMentions",
-            "eligibleCount": 4,
-            "labeledCount": 4,
-            "coverageRate": 1
-          },
-          "specimenTypes": {
-            "field": "specimenTypes",
-            "eligibleCount": 4,
-            "labeledCount": 4,
-            "coverageRate": 1
-          },
-          "outcomeClasses": {
-            "field": "outcomeClasses",
-            "eligibleCount": 4,
-            "labeledCount": 2,
-            "coverageRate": 0.5
-          },
-          "stepPhases": {
-            "field": "stepPhases",
-            "eligibleCount": 4,
-            "labeledCount": 4,
-            "coverageRate": 1
-          }
-        },
-        "confidence": {
-          "averageOnExpectedIncluded": 0.902,
-          "averageOnCorrectIncluded": 0.902,
-          "averageOnIncorrectIncluded": null
-        },
-        "unexpectedIncludedPaperIds": [],
-        "unexpectedExcludedPaperIds": []
-      }
-    },
-    "gates": [
-      {
-        "name": "reviewed inclusion F1",
-        "passed": true,
-        "actual": 1,
-        "threshold": 0.9,
-        "comparator": ">=",
-        "notes": "Guard against gaming the corpus by excluding reviewed in-scope papers."
-      },
-      {
-        "name": "reviewed inclusion precision",
-        "passed": true,
-        "actual": 1,
-        "threshold": 0.9,
-        "comparator": ">=",
-        "notes": "Guard against keeping clearly excluded reviewed papers in the atlas."
-      },
-      {
-        "name": "reviewed protocol family accuracy",
-        "passed": true,
-        "actual": 1,
-        "threshold": 0.85,
-        "comparator": ">=",
-        "notes": "Reviewed family labels should stay stable before autonomous updates are trusted."
-      },
-      {
-        "name": "reviewed paper type accuracy",
-        "passed": true,
-        "actual": 1,
-        "threshold": 0.85,
-        "comparator": ">=",
-        "notes": "Paper-type drift is a common failure mode when extraction gets too eager."
-      },
-      {
-        "name": "reviewed specimen macro F1",
-        "passed": true,
-        "actual": 1,
-        "threshold": 0.75,
-        "comparator": ">=",
-        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
-      },
-      {
-        "name": "reviewed species macro F1",
-        "passed": true,
-        "actual": 1,
-        "threshold": 0.75,
-        "comparator": ">=",
-        "notes": "Species leakage is another easy way for the system to look cleaner than it is."
-      }
-    ],
-    "summary": {
-      "passesAllGates": true,
-      "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.738,
-      "reviewedStepPhaseCoverage": 0.976,
-      "reviewedMinimumDepthReady": true
-    }
-  },
-  "candidateEvaluation": {
-    "domain": "islets",
-    "generatedAt": "2026-03-23T03:25:21.703Z",
-    "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
-    "benchmarkEntryCount": 53,
-    "subsets": {
-      "all": {
-        "subset": "all",
-        "entryCount": 53,
-        "expectedIncludedCount": 46,
-        "inclusion": {
-          "truePositive": 46,
-          "trueNegative": 7,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1
-        },
-        "exactFields": {
-          "paperType": {
-            "field": "paperType",
-            "labeledCount": 46,
-            "exactMatchCount": 46,
-            "accuracy": 1,
-            "mismatches": []
-          },
-          "protocolFamily": {
-            "field": "protocolFamily",
-            "labeledCount": 38,
-            "exactMatchCount": 38,
-            "accuracy": 1,
-            "mismatches": []
-          }
-        },
-        "setFields": {
-          "speciesMentions": {
-            "field": "speciesMentions",
-            "labeledCount": 38,
-            "exactMatchCount": 38,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "specimenTypes": {
-            "field": "specimenTypes",
-            "labeledCount": 38,
-            "exactMatchCount": 38,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -670,175 +229,6 @@
             "field": "outcomeClasses",
             "labeledCount": 35,
             "exactMatchCount": 35,
-            "averageF1": 0.943,
-            "averagePrecision": 0.943,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "stepPhases": {
-            "field": "stepPhases",
-            "labeledCount": 45,
-            "exactMatchCount": 41,
-            "averageF1": 0.951,
-            "averagePrecision": 0.957,
-            "averageRecall": 0.963,
-            "mismatches": [
-              {
-                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
-                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
-                "expected": [
-                  "cooling",
-                  "unknown"
-                ],
-                "actual": [
-                  "cooling",
-                  "equilibration",
-                  "storage"
-                ],
-                "f1": 0.4
-              },
-              {
-                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
-                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
-                "expected": [
-                  "cooling"
-                ],
-                "actual": [
-                  "cooling",
-                  "equilibration",
-                  "storage",
-                  "warming"
-                ],
-                "f1": 0.4
-              },
-              {
-                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
-                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
-                "expected": [
-                  "storage",
-                  "unknown"
-                ],
-                "actual": [
-                  "cooling",
-                  "storage"
-                ],
-                "f1": 0.5
-              },
-              {
-                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
-                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
-                "expected": [
-                  "cooling",
-                  "unknown",
-                  "warming"
-                ],
-                "actual": [
-                  "warming"
-                ],
-                "f1": 0.5
-              }
-            ]
-          }
-        },
-        "coverage": {
-          "paperType": {
-            "field": "paperType",
-            "eligibleCount": 46,
-            "labeledCount": 46,
-            "coverageRate": 1
-          },
-          "protocolFamily": {
-            "field": "protocolFamily",
-            "eligibleCount": 46,
-            "labeledCount": 38,
-            "coverageRate": 0.826
-          },
-          "speciesMentions": {
-            "field": "speciesMentions",
-            "eligibleCount": 46,
-            "labeledCount": 38,
-            "coverageRate": 0.826
-          },
-          "specimenTypes": {
-            "field": "specimenTypes",
-            "eligibleCount": 46,
-            "labeledCount": 38,
-            "coverageRate": 0.826
-          },
-          "outcomeClasses": {
-            "field": "outcomeClasses",
-            "eligibleCount": 46,
-            "labeledCount": 33,
-            "coverageRate": 0.717
-          },
-          "stepPhases": {
-            "field": "stepPhases",
-            "eligibleCount": 46,
-            "labeledCount": 45,
-            "coverageRate": 0.978
-          }
-        },
-        "confidence": {
-          "averageOnExpectedIncluded": 0.85,
-          "averageOnCorrectIncluded": 0.85,
-          "averageOnIncorrectIncluded": null
-        },
-        "unexpectedIncludedPaperIds": [],
-        "unexpectedExcludedPaperIds": []
-      },
-      "reviewed": {
-        "subset": "reviewed",
-        "entryCount": 49,
-        "expectedIncludedCount": 42,
-        "inclusion": {
-          "truePositive": 42,
-          "trueNegative": 7,
-          "falsePositive": 0,
-          "falseNegative": 0,
-          "accuracy": 1,
-          "precision": 1,
-          "recall": 1,
-          "f1": 1
-        },
-        "exactFields": {
-          "paperType": {
-            "field": "paperType",
-            "labeledCount": 42,
-            "exactMatchCount": 42,
-            "accuracy": 1,
-            "mismatches": []
-          },
-          "protocolFamily": {
-            "field": "protocolFamily",
-            "labeledCount": 34,
-            "exactMatchCount": 34,
-            "accuracy": 1,
-            "mismatches": []
-          }
-        },
-        "setFields": {
-          "speciesMentions": {
-            "field": "speciesMentions",
-            "labeledCount": 34,
-            "exactMatchCount": 34,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "specimenTypes": {
-            "field": "specimenTypes",
-            "labeledCount": 34,
-            "exactMatchCount": 34,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
-          },
-          "outcomeClasses": {
-            "field": "outcomeClasses",
-            "labeledCount": 31,
-            "exactMatchCount": 31,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -882,8 +272,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 31,
-            "coverageRate": 0.738
+            "labeledCount": 35,
+            "coverageRate": 0.833
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1123,14 +513,14 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.738,
+      "reviewedOutcomeCoverage": 0.833,
       "reviewedStepPhaseCoverage": 0.976,
       "reviewedMinimumDepthReady": true
     }
   },
-  "candidateBenchmarkEvaluation": {
+  "candidateEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T03:25:21.713Z",
+    "generatedAt": "2026-03-23T03:36:29.775Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -1185,10 +575,10 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 36,
-            "exactMatchCount": 36,
-            "averageF1": 0.944,
-            "averagePrecision": 0.944,
+            "labeledCount": 39,
+            "exactMatchCount": 39,
+            "averageF1": 0.949,
+            "averagePrecision": 0.949,
             "averageRecall": 1,
             "mismatches": []
           },
@@ -1285,8 +675,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 46,
-            "labeledCount": 34,
-            "coverageRate": 0.739
+            "labeledCount": 37,
+            "coverageRate": 0.804
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1354,8 +744,8 @@
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
-            "labeledCount": 32,
-            "exactMatchCount": 32,
+            "labeledCount": 35,
+            "exactMatchCount": 35,
             "averageF1": 1,
             "averagePrecision": 1,
             "averageRecall": 1,
@@ -1399,8 +789,8 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "eligibleCount": 42,
-            "labeledCount": 32,
-            "coverageRate": 0.762
+            "labeledCount": 35,
+            "coverageRate": 0.833
           },
           "stepPhases": {
             "field": "stepPhases",
@@ -1640,13 +1030,530 @@
     "summary": {
       "passesAllGates": true,
       "reviewedInclusionF1DeltaVsAll": 0,
-      "reviewedOutcomeCoverage": 0.762,
+      "reviewedOutcomeCoverage": 0.833,
       "reviewedStepPhaseCoverage": 0.976,
       "reviewedMinimumDepthReady": true
     }
   },
-  "proposalCount": 4,
-  "overrideProposalCount": 3,
-  "benchmarkProposalCount": 1,
+  "candidateBenchmarkEvaluation": {
+    "domain": "islets",
+    "generatedAt": "2026-03-23T03:36:29.776Z",
+    "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
+    "benchmarkEntryCount": 53,
+    "subsets": {
+      "all": {
+        "subset": "all",
+        "entryCount": 53,
+        "expectedIncludedCount": 46,
+        "inclusion": {
+          "truePositive": 46,
+          "trueNegative": 7,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 46,
+            "exactMatchCount": 46,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 38,
+            "exactMatchCount": 38,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 38,
+            "exactMatchCount": 38,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 38,
+            "exactMatchCount": 38,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 39,
+            "exactMatchCount": 39,
+            "averageF1": 0.949,
+            "averagePrecision": 0.949,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 45,
+            "exactMatchCount": 41,
+            "averageF1": 0.951,
+            "averagePrecision": 0.957,
+            "averageRecall": 0.963,
+            "mismatches": [
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [
+                  "warming"
+                ],
+                "f1": 0.5
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 46,
+            "labeledCount": 46,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 46,
+            "labeledCount": 37,
+            "coverageRate": 0.804
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 46,
+            "labeledCount": 45,
+            "coverageRate": 0.978
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.85,
+          "averageOnCorrectIncluded": 0.85,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "reviewed": {
+        "subset": "reviewed",
+        "entryCount": 49,
+        "expectedIncludedCount": 42,
+        "inclusion": {
+          "truePositive": 42,
+          "trueNegative": 7,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 42,
+            "exactMatchCount": 42,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 35,
+            "exactMatchCount": 35,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 41,
+            "exactMatchCount": 41,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 42,
+            "labeledCount": 42,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 42,
+            "labeledCount": 34,
+            "coverageRate": 0.81
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 42,
+            "labeledCount": 34,
+            "coverageRate": 0.81
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 42,
+            "labeledCount": 34,
+            "coverageRate": 0.81
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 42,
+            "labeledCount": 35,
+            "coverageRate": 0.833
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 42,
+            "labeledCount": 41,
+            "coverageRate": 0.976
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.845,
+          "averageOnCorrectIncluded": 0.845,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "seeded": {
+        "subset": "seeded",
+        "entryCount": 4,
+        "expectedIncludedCount": 4,
+        "inclusion": {
+          "truePositive": 4,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "averageF1": 0.5,
+            "averagePrecision": 0.5,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 4,
+            "exactMatchCount": 0,
+            "averageF1": 0.45,
+            "averagePrecision": 0.521,
+            "averageRecall": 0.583,
+            "mismatches": [
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [
+                  "warming"
+                ],
+                "f1": 0.5
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 4,
+            "labeledCount": 2,
+            "coverageRate": 0.5
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.902,
+          "averageOnCorrectIncluded": 0.902,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      }
+    },
+    "gates": [
+      {
+        "name": "reviewed inclusion F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against gaming the corpus by excluding reviewed in-scope papers."
+      },
+      {
+        "name": "reviewed inclusion precision",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against keeping clearly excluded reviewed papers in the atlas."
+      },
+      {
+        "name": "reviewed protocol family accuracy",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Reviewed family labels should stay stable before autonomous updates are trusted."
+      },
+      {
+        "name": "reviewed paper type accuracy",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Paper-type drift is a common failure mode when extraction gets too eager."
+      },
+      {
+        "name": "reviewed specimen macro F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+      },
+      {
+        "name": "reviewed species macro F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Species leakage is another easy way for the system to look cleaner than it is."
+      }
+    ],
+    "summary": {
+      "passesAllGates": true,
+      "reviewedInclusionF1DeltaVsAll": 0,
+      "reviewedOutcomeCoverage": 0.833,
+      "reviewedStepPhaseCoverage": 0.976,
+      "reviewedMinimumDepthReady": true
+    }
+  },
+  "proposalCount": 0,
+  "overrideProposalCount": 0,
+  "benchmarkProposalCount": 0,
   "candidateOverrideCount": 49
 }

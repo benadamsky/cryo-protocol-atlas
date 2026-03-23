@@ -1,14 +1,7 @@
 {
-  "generatedAt": "2026-03-23T03:25:22.201Z",
+  "generatedAt": "2026-03-23T03:35:42.984Z",
   "domain": "islets",
-  "sourceProposalGeneratedAt": "2026-03-23T03:25:21.713Z",
-  "decisionCount": 1,
-  "decisions": [
-    {
-      "proposalId": "benchmark-depth-autofill:a24a1702-5dad-4428-b962-27cd59e2e6e8:outcomeClasses",
-      "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
-      "title": "Successful Cryopreservation of Fetal Porcine Proislets",
-      "decision": "pending"
-    }
-  ]
+  "sourceProposalGeneratedAt": "2026-03-23T03:35:31.644Z",
+  "decisionCount": 0,
+  "decisions": []
 }

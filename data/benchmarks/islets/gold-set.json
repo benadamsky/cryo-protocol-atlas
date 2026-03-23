@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T03:23:24.416Z",
+  "generatedAt": "2026-03-23T03:35:31.314Z",
   "domain": "islets",
   "description": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "entries": [
@@ -1845,6 +1845,10 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "viability"
+      ],
       "expectedStepPhases": [
         "culture",
         "storage",
@@ -1895,9 +1899,23 @@
             "evidence": []
           }
         ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.78
       },
-      "notes": "Long-term liquid-nitrogen preservation study using 10% DMSO and controlled cooling for rodent and guinea pig islets. Accepted benchmark autofill proposal benchmark-depth-autofill:6e4ea940-2dbd-4790-b848-c453f6a0f42a:stepPhases."
+      "notes": "Long-term liquid-nitrogen preservation study using 10% DMSO and controlled cooling for rodent and guinea pig islets. Accepted benchmark autofill proposal benchmark-depth-autofill:6e4ea940-2dbd-4790-b848-c453f6a0f42a:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:6e4ea940-2dbd-4790-b848-c453f6a0f42a:outcomeClasses."
     },
     {
       "paperId": "72b969f2-a34b-439a-9300-511e3309b5d2",
@@ -2174,6 +2192,10 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "viability"
+      ],
       "expectedStepPhases": [
         "loading",
         "storage"
@@ -2211,9 +2233,23 @@
             "evidence": []
           }
         ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.78
       },
-      "notes": "Porcine pancreatic islet study using sequential 10% DMSO cryopreservation after non-heart-beating donor procurement. Accepted benchmark autofill proposal benchmark-depth-autofill:e61a3868-8fcf-4024-96f7-eb4ae8a9456a:stepPhases."
+      "notes": "Porcine pancreatic islet study using sequential 10% DMSO cryopreservation after non-heart-beating donor procurement. Accepted benchmark autofill proposal benchmark-depth-autofill:e61a3868-8fcf-4024-96f7-eb4ae8a9456a:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:e61a3868-8fcf-4024-96f7-eb4ae8a9456a:outcomeClasses."
     },
     {
       "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
@@ -2491,6 +2527,11 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedOutcomeClasses": [
+        "function",
+        "morphology",
+        "viability"
+      ],
       "expectedStepPhases": [
         "cooling"
       ],
@@ -2508,9 +2549,29 @@
             "durations": [],
             "evidence": []
           }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "morphology",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: morphology.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
         ]
       },
-      "notes": "Human pancreatic-islet long-term cryopreservation study with direct preservation outcomes. Accepted benchmark autofill proposal benchmark-depth-autofill:5657b492-dd6b-491f-935b-6248369afbb2:stepPhases."
+      "notes": "Human pancreatic-islet long-term cryopreservation study with direct preservation outcomes. Accepted benchmark autofill proposal benchmark-depth-autofill:5657b492-dd6b-491f-935b-6248369afbb2:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:5657b492-dd6b-491f-935b-6248369afbb2:outcomeClasses."
     },
     {
       "paperId": "dae850dd-b5dd-4b24-a326-2dc59a1d0980",
@@ -2592,6 +2653,11 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "transplantation",
+        "viability"
+      ],
       "expectedStepPhases": [
         "cooling"
       ],
@@ -2618,9 +2684,29 @@
             "evidence": []
           }
         ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "transplantation",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: transplantation.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.82
       },
-      "notes": "Fetal porcine proislet paper explicitly using slow cooling to -40 C before liquid-nitrogen storage. Accepted benchmark autofill proposal benchmark-depth-autofill:a24a1702-5dad-4428-b962-27cd59e2e6e8:stepPhases."
+      "notes": "Fetal porcine proislet paper explicitly using slow cooling to -40 C before liquid-nitrogen storage. Accepted benchmark autofill proposal benchmark-depth-autofill:a24a1702-5dad-4428-b962-27cd59e2e6e8:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:a24a1702-5dad-4428-b962-27cd59e2e6e8:outcomeClasses."
     },
     {
       "paperId": "80be44da-a725-4051-9d4e-0c5881409006",

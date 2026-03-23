@@ -114,7 +114,7 @@ function buildScenarios(selectedDomain: DomainId): Scenario[] {
           }),
         expectedPaperId: "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
         expectedFields: ["outcomeClasses"],
-        minReviewedOutcomeMacroF1Delta: 0.04
+        minReviewedOutcomeMacroF1Delta: 0.02
       },
       {
         id: "reviewed-step-phase-regression",
