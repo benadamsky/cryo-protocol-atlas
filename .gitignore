@@ -2,5 +2,6 @@ node_modules
 .bun
 .env
 .DS_Store
+.worktrees
 data/raw/**/*.json
 data/processed/**/*.json
