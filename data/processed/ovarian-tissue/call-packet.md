@@ -1,7 +1,7 @@
 # ovarian-tissue wedge call packet
 
 ## Executive summary
-- ovarian-tissue is currently anchored on slow-freezing protocols built around Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol.
+- ovarian-tissue is currently anchored on slow-freezing protocols built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol.
 - The atlas is credible enough to use for wedge-finding: reviewed gates pass, reviewed outcome coverage is 0.429, and reviewed step-phase coverage is 0.571.
 - The cleanest first wedge is "Head-to-head DMSO-centered ovarian tissue benchmark" because it attacks a protocol choice that still looks under-benchmarked rather than inventing a new chemistry story too early.
 
@@ -10,6 +10,8 @@
 - reviewed outcome coverage: 0.429
 - reviewed step-phase coverage: 0.571
 - reviewed minimum-depth ready: yes
+- normalized protocols: 16
+- protocols with normalization warnings: 3
 - contradictions in top slice: 0
 - pending source enrichments: 4
 - reviewed secondary-source enrichments: 0
@@ -19,9 +21,11 @@
 
 ## Standard protocol view
 - dominant family: slow-freezing
-- dominant chemicals: Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol
+- dominant chemicals: Dimethyl Sulfoxide, Sucrose, Ethylene Glycol
 - dominant specimen types: follicles, ovarian tissue
-- summary: Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol in follicles, ovarian tissue workflows.
+- normalized transitions: n/a
+- representative conditions: Dimethyl Sulfoxide 1.5 M
+- summary: Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol in follicles, ovarian tissue workflows. Normalized workflow signal is still sparse, with repeated condition mentions such as Dimethyl Sulfoxide 1.5 M.
 
 ## Best first wedge
 - title: Head-to-head DMSO-centered ovarian tissue benchmark
@@ -39,7 +43,7 @@
 - 0 reviewed source-enrichment records rely on secondary-source evidence rather than the original abstract/full text.
 
 ## Market bridge
-- current standard pattern: slow-freezing via Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol
+- current standard pattern: slow-freezing via Dimethyl Sulfoxide, Sucrose, Ethylene Glycol
 - likely pain point: Literature looks directionally promising but still underspecified for a clean protocol decision.
 - why optimization might matter: Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows.
 - likely buyer or user: fertility preservation, ovarian tissue banking, and transplant-adjacent preservation groups

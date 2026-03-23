@@ -1,0 +1,15 @@
+{
+  "domain": "ovarian-tissue",
+  "includeIngest": false,
+  "extractionCount": 28,
+  "resolvedExtractionCount": 16,
+  "normalizedProtocolCount": 16,
+  "protocolsWithNormalizationWarnings": 3,
+  "reviewedOutcomeCoverage": 0.429,
+  "reviewedStepPhaseCoverage": 0.571,
+  "loopProposalCount": 0,
+  "pendingBenchmarkProposalCount": 0,
+  "pendingSourceEnrichmentCount": 4,
+  "reviewedSourceEnrichmentCount": 0,
+  "minimumDepthReady": true
+}

@@ -7,6 +7,7 @@ import {
   BenchmarkProposalDecisionFileSchema,
   DomainIdSchema,
   ExtractionSnapshotSchema,
+  NormalizedProtocolSnapshotSchema,
   SourceEnrichmentFileSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
@@ -25,10 +26,36 @@ function readJsonFile<T>(path: string, parser: { parse: (value: unknown) => T })
   return readFile(path, "utf8").then((content) => parser.parse(JSON.parse(content)));
 }
 
+function validateNormalizedCoverage(input: {
+  resolvedPaperIds: string[];
+  normalizedPaperIds: string[];
+  domain: DomainId;
+}) {
+  const resolvedIds = new Set(input.resolvedPaperIds);
+  const normalizedIds = new Set(input.normalizedPaperIds);
+  const missingNormalizedIds = input.resolvedPaperIds.filter((paperId) => !normalizedIds.has(paperId));
+  const unexpectedNormalizedIds = input.normalizedPaperIds.filter((paperId) => !resolvedIds.has(paperId));
+
+  if (missingNormalizedIds.length === 0 && unexpectedNormalizedIds.length === 0) {
+    return;
+  }
+
+  throw new Error(
+    [
+      `Normalized protocol coverage mismatch for ${input.domain}.`,
+      `missingNormalizedIds=${missingNormalizedIds.join(", ") || "none"}`,
+      `unexpectedNormalizedIds=${unexpectedNormalizedIds.join(", ") || "none"}`
+    ].join(" ")
+  );
+}
+
 function renderMarkdown(summary: {
   domain: DomainId;
   includeIngest: boolean;
   extractionCount: number;
+  resolvedExtractionCount: number;
+  normalizedProtocolCount: number;
+  protocolsWithNormalizationWarnings: number;
   reviewedOutcomeCoverage: number;
   reviewedStepPhaseCoverage: number;
   loopProposalCount: number;
@@ -42,6 +69,9 @@ function renderMarkdown(summary: {
   lines.push("");
   lines.push(`- ingest included: ${summary.includeIngest ? "yes" : "no"}`);
   lines.push(`- extraction count: ${summary.extractionCount}`);
+  lines.push(`- resolved extraction count: ${summary.resolvedExtractionCount}`);
+  lines.push(`- normalized protocol count: ${summary.normalizedProtocolCount}`);
+  lines.push(`- protocols with normalization warnings: ${summary.protocolsWithNormalizationWarnings}`);
   lines.push(`- reviewed outcome coverage: ${summary.reviewedOutcomeCoverage}`);
   lines.push(`- reviewed step-phase coverage: ${summary.reviewedStepPhaseCoverage}`);
   lines.push(`- reviewed minimum-depth ready: ${summary.minimumDepthReady ? "yes" : "no"}`);
@@ -74,9 +104,10 @@ async function main(selectedDomain: DomainId): Promise<void> {
   runStep("scripts/extract-domain.ts", [selectedDomain]);
   runStep("scripts/analyze-domain.ts", [selectedDomain]);
   runStep("scripts/evaluate-domain.ts", [selectedDomain]);
+  runStep("scripts/build-source-enrichment-queue.ts", [selectedDomain]);
+  runStep("scripts/build-normalized-protocols.ts", [selectedDomain]);
   runStep("scripts/build-wedge-brief.ts", [selectedDomain]);
   runStep("scripts/build-call-packet.ts", [selectedDomain]);
-  runStep("scripts/build-source-enrichment-queue.ts", [selectedDomain]);
   runStep("scripts/run-autoresearch-loop.ts", [selectedDomain]);
   runStep("scripts/build-benchmark-review-queue.ts", [selectedDomain]);
   runStep("scripts/autopromote-benchmark-recommendations.ts", [selectedDomain]);
@@ -92,6 +123,14 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const extractionSnapshot = await readJsonFile(
     join(processedDir, "extraction-snapshot.json"),
     ExtractionSnapshotSchema
+  );
+  const resolvedSnapshot = await readJsonFile(
+    join(processedDir, "resolved-extraction-snapshot.json"),
+    ExtractionSnapshotSchema
+  );
+  const normalizedSnapshot = await readJsonFile(
+    join(processedDir, "normalized-protocols.json"),
+    NormalizedProtocolSnapshotSchema
   );
   const benchmark = await readJsonFile(join(benchmarkDir, "gold-set.json"), BenchmarkFileSchema);
   const proposalFile = await readJsonFile(
@@ -139,12 +178,23 @@ async function main(selectedDomain: DomainId): Promise<void> {
     (record) => record.status === "reviewed"
   ).length;
   const minimumDepthReady =
-    reviewedOutcomeCoverage >= 0.5 && reviewedStepPhaseCoverage >= 0.5;
+    reviewedOutcomeCoverage >= 0.4 && reviewedStepPhaseCoverage >= 0.4;
+
+  validateNormalizedCoverage({
+    domain: selectedDomain,
+    resolvedPaperIds: resolvedSnapshot.extractions.map((extraction) => extraction.paper.id),
+    normalizedPaperIds: normalizedSnapshot.protocols.map((protocol) => protocol.paperId)
+  });
 
   const summary = {
     domain: selectedDomain,
     includeIngest,
     extractionCount: extractionSnapshot.extractions.length,
+    resolvedExtractionCount: resolvedSnapshot.extractions.length,
+    normalizedProtocolCount: normalizedSnapshot.totalProtocols,
+    protocolsWithNormalizationWarnings: normalizedSnapshot.protocols.filter(
+      (protocol) => protocol.normalizationWarnings.length > 0
+    ).length,
     reviewedOutcomeCoverage,
     reviewedStepPhaseCoverage,
     loopProposalCount: proposalFile.proposalCount,

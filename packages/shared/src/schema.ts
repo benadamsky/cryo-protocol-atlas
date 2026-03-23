@@ -198,6 +198,92 @@ export const ExtractionSnapshotSchema = z.object({
 });
 export type ExtractionSnapshot = z.infer<typeof ExtractionSnapshotSchema>;
 
+export const NormalizedMeasurementKindSchema = z.enum([
+  "concentration",
+  "temperature",
+  "duration",
+  "cooling-rate",
+  "warming-rate"
+]);
+export type NormalizedMeasurementKind = z.infer<typeof NormalizedMeasurementKindSchema>;
+
+export const NormalizationMethodSchema = z.enum([
+  "parsed",
+  "canonicalized",
+  "copied",
+  "unresolved"
+]);
+export type NormalizationMethod = z.infer<typeof NormalizationMethodSchema>;
+
+export const NormalizedMeasurementSchema = z.object({
+  rawText: z.string(),
+  kind: NormalizedMeasurementKindSchema,
+  value: z.number(),
+  unit: z.string(),
+  normalizedText: z.string(),
+  normalizationMethod: NormalizationMethodSchema,
+  confidence: z.number().min(0).max(1)
+});
+export type NormalizedMeasurement = z.infer<typeof NormalizedMeasurementSchema>;
+
+export const NormalizedChemicalSchema = z.object({
+  canonicalName: z.string(),
+  aliasesMatched: z.array(z.string()),
+  normalizedConcentrations: z.array(NormalizedMeasurementSchema)
+});
+export type NormalizedChemical = z.infer<typeof NormalizedChemicalSchema>;
+
+export const NormalizedConditionSourceSchema = z.enum(["step", "chemical-mention"]);
+export type NormalizedConditionSource = z.infer<typeof NormalizedConditionSourceSchema>;
+
+export const NormalizedConditionSchema = z.object({
+  phase: ProtocolPhaseSchema,
+  chemical: z.string(),
+  measurement: NormalizedMeasurementSchema,
+  label: z.string(),
+  source: NormalizedConditionSourceSchema,
+  confidence: z.number().min(0).max(1)
+});
+export type NormalizedCondition = z.infer<typeof NormalizedConditionSchema>;
+
+export const NormalizedProtocolStepSchema = z.object({
+  order: z.number().int().nonnegative(),
+  phase: ProtocolPhaseSchema,
+  summary: z.string(),
+  chemicals: z.array(z.string()),
+  concentrations: z.array(NormalizedMeasurementSchema),
+  temperatures: z.array(NormalizedMeasurementSchema),
+  durations: z.array(NormalizedMeasurementSchema),
+  rates: z.array(NormalizedMeasurementSchema),
+  transitionToNextPhase: ProtocolPhaseSchema.optional(),
+  evidence: z.array(EvidenceSnippetSchema)
+});
+export type NormalizedProtocolStep = z.infer<typeof NormalizedProtocolStepSchema>;
+
+export const NormalizedProtocolSchema = z.object({
+  domain: DomainIdSchema,
+  paperId: z.string(),
+  paperTitle: z.string(),
+  paperType: PaperTypeSchema,
+  protocolFamily: ProtocolFamilySchema,
+  speciesMentions: z.array(z.string()),
+  specimenTypes: z.array(z.string()),
+  normalizedChemicals: z.array(NormalizedChemicalSchema),
+  representativeConditions: z.array(NormalizedConditionSchema),
+  normalizedSteps: z.array(NormalizedProtocolStepSchema),
+  normalizationWarnings: z.array(z.string()),
+  normalizationConfidence: z.number().min(0).max(1)
+});
+export type NormalizedProtocol = z.infer<typeof NormalizedProtocolSchema>;
+
+export const NormalizedProtocolSnapshotSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  totalProtocols: z.number(),
+  protocols: z.array(NormalizedProtocolSchema)
+});
+export type NormalizedProtocolSnapshot = z.infer<typeof NormalizedProtocolSnapshotSchema>;
+
 export const SourceEnrichmentPrioritySchema = z.enum([
   "extractor-gap",
   "ambiguous-evidence",

@@ -11,6 +11,8 @@ export type DomainCallPacket = {
     reviewedOutcomeCoverage: number;
     reviewedStepPhaseCoverage: number;
     reviewedMinimumDepthReady: boolean;
+    normalizedProtocolCount: number;
+    protocolsWithNormalizationWarnings: number;
     pendingSourceEnrichments: number;
     reviewedSourceEnrichments: number;
     secondarySourceReviewedCount: number;
@@ -23,6 +25,8 @@ export type DomainCallPacket = {
     dominantProtocolFamily: string;
     dominantChemicals: string[];
     dominantSpecimenTypes: string[];
+    dominantTransitions: string[];
+    representativeConditions: string[];
     summary: string;
   };
   bestWedge: {
@@ -126,7 +130,7 @@ export function buildDomainCallPacket(input: {
         ? "Islets wedge call packet"
         : `${brief.domain} wedge call packet`,
     executiveSummary: [
-      `${brief.domain} is currently anchored on ${brief.standardPattern.dominantProtocolFamily} protocols built around ${brief.standardPattern.dominantChemicals.join(", ")}.`,
+      `${brief.domain} is currently anchored on ${brief.standardPattern.dominantProtocolFamily} protocols built around ${brief.standardPattern.dominantChemicals.join(", ")}${brief.standardPattern.dominantTransitions.length > 0 ? `, with a normalized workflow backbone of ${brief.standardPattern.dominantTransitions.join(", ")}` : ""}.`,
       `The atlas is credible enough to use for wedge-finding: reviewed gates ${brief.evidenceQuality.passesAllGates ? "pass" : "do not pass"}, reviewed outcome coverage is ${brief.evidenceQuality.reviewedOutcomeCoverage}, and reviewed step-phase coverage is ${brief.evidenceQuality.reviewedStepPhaseCoverage}.`,
       bestWedge
         ? `The cleanest first wedge is \"${bestWedge.title}\" because it attacks a protocol choice that still looks under-benchmarked rather than inventing a new chemistry story too early.`
@@ -137,6 +141,8 @@ export function buildDomainCallPacket(input: {
       reviewedOutcomeCoverage: brief.evidenceQuality.reviewedOutcomeCoverage,
       reviewedStepPhaseCoverage: brief.evidenceQuality.reviewedStepPhaseCoverage,
       reviewedMinimumDepthReady: brief.evidenceQuality.reviewedMinimumDepthReady,
+      normalizedProtocolCount: brief.evidenceQuality.normalizedProtocolCount,
+      protocolsWithNormalizationWarnings: brief.evidenceQuality.protocolsWithNormalizationWarnings,
       pendingSourceEnrichments: brief.evidenceQuality.pendingSourceEnrichmentCount,
       reviewedSourceEnrichments: brief.evidenceQuality.reviewedSourceEnrichmentCount,
       secondarySourceReviewedCount: brief.evidenceQuality.secondarySourceReviewedCount,
@@ -149,6 +155,8 @@ export function buildDomainCallPacket(input: {
       dominantProtocolFamily: brief.standardPattern.dominantProtocolFamily,
       dominantChemicals: brief.standardPattern.dominantChemicals,
       dominantSpecimenTypes: brief.standardPattern.dominantSpecimenTypes,
+      dominantTransitions: brief.standardPattern.dominantTransitions,
+      representativeConditions: brief.standardPattern.representativeConditions,
       summary: brief.standardPattern.explanation
     },
     bestWedge: bestWedge ?? {
@@ -167,7 +175,10 @@ export function buildDomainCallPacket(input: {
       `${brief.evidenceQuality.secondarySourceReviewedCount} reviewed source-enrichment records rely on secondary-source evidence rather than the original abstract/full text.`
     ],
     marketBridge: {
-      currentStandardPattern: `${brief.standardPattern.dominantProtocolFamily} via ${brief.standardPattern.dominantChemicals.join(", ")}`,
+      currentStandardPattern:
+        brief.standardPattern.dominantTransitions.length > 0
+          ? `${brief.standardPattern.dominantProtocolFamily} via ${brief.standardPattern.dominantChemicals.join(", ")} with ${brief.standardPattern.dominantTransitions.join(", ")}`
+          : `${brief.standardPattern.dominantProtocolFamily} via ${brief.standardPattern.dominantChemicals.join(", ")}`,
       likelyPainPoint,
       whyOptimizationMightMatter:
         opportunityScanEntry?.whyOptimizationMatters ??
@@ -223,6 +234,8 @@ export function renderDomainCallPacketMarkdown(packet: DomainCallPacket): string
   lines.push(`- reviewed outcome coverage: ${packet.benchmarkSnapshot.reviewedOutcomeCoverage}`);
   lines.push(`- reviewed step-phase coverage: ${packet.benchmarkSnapshot.reviewedStepPhaseCoverage}`);
   lines.push(`- reviewed minimum-depth ready: ${packet.benchmarkSnapshot.reviewedMinimumDepthReady ? "yes" : "no"}`);
+  lines.push(`- normalized protocols: ${packet.benchmarkSnapshot.normalizedProtocolCount}`);
+  lines.push(`- protocols with normalization warnings: ${packet.benchmarkSnapshot.protocolsWithNormalizationWarnings}`);
   lines.push(`- contradictions in top slice: ${packet.benchmarkSnapshot.contradictionCount}`);
   lines.push(`- pending source enrichments: ${packet.benchmarkSnapshot.pendingSourceEnrichments}`);
   lines.push(`- reviewed secondary-source enrichments: ${packet.benchmarkSnapshot.secondarySourceReviewedCount}`);
@@ -234,6 +247,8 @@ export function renderDomainCallPacketMarkdown(packet: DomainCallPacket): string
   lines.push(`- dominant family: ${packet.standardOfCareView.dominantProtocolFamily}`);
   lines.push(`- dominant chemicals: ${packet.standardOfCareView.dominantChemicals.join(", ") || "n/a"}`);
   lines.push(`- dominant specimen types: ${packet.standardOfCareView.dominantSpecimenTypes.join(", ") || "n/a"}`);
+  lines.push(`- normalized transitions: ${packet.standardOfCareView.dominantTransitions.join(", ") || "n/a"}`);
+  lines.push(`- representative conditions: ${packet.standardOfCareView.representativeConditions.join(", ") || "n/a"}`);
   lines.push(`- summary: ${packet.standardOfCareView.summary}`);
   lines.push("");
   lines.push("## Best first wedge");

@@ -3,7 +3,7 @@
   "autoApplySafe": false,
   "currentEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T06:06:58.437Z",
+    "generatedAt": "2026-03-23T20:04:05.991Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -520,7 +520,7 @@
   },
   "candidateEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T06:06:58.438Z",
+    "generatedAt": "2026-03-23T20:04:05.992Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {
@@ -1037,7 +1037,7 @@
   },
   "candidateBenchmarkEvaluation": {
     "domain": "islets",
-    "generatedAt": "2026-03-23T06:06:58.439Z",
+    "generatedAt": "2026-03-23T20:04:05.993Z",
     "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 53,
     "subsets": {

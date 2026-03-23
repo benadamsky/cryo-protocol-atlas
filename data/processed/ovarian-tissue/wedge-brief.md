@@ -4,17 +4,21 @@ Focus question: Which ovarian cryopreservation slice is mature enough for protoc
 
 ## Standard pattern
 - dominant family: slow-freezing
-- dominant chemicals: Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol
+- dominant chemicals: Dimethyl Sulfoxide, Sucrose, Ethylene Glycol
 - dominant specimen types: follicles, ovarian tissue
-- interpretation: Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol in follicles, ovarian tissue workflows.
+- normalized transitions: none
+- representative conditions: Dimethyl Sulfoxide 1.5 M
+- interpretation: Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol in follicles, ovarian tissue workflows. Normalized workflow signal is still sparse, with repeated condition mentions such as Dimethyl Sulfoxide 1.5 M.
 
 ## Protocol families
-- slow-freezing: papers=6 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol | outcomes=morphology, viability, reproductive
-  Most common preserved workflow in-slice, centered on Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol. Outcome emphasis is morphology, viability, reproductive, suggesting this is the baseline to beat rather than the frontier.
-- comparative: papers=5 | chemicals=Dimethyl Sulfoxide | outcomes=morphology, function, reproductive
+- slow-freezing: papers=6 | chemicals=Dimethyl Sulfoxide, Sucrose, Ethylene Glycol | outcomes=viability, morphology, function
+  Most common preserved workflow in-slice, centered on Dimethyl Sulfoxide, Sucrose, Ethylene Glycol. Outcome emphasis is viability, morphology, function, suggesting this is the baseline to beat rather than the frontier.
+- comparative: papers=5 | chemicals=Dimethyl Sulfoxide | outcomes=morphology, reproductive, transplantation
+  normalized transitions=loading -> storage, cooling -> storage
   Direct comparison slice is small (5 papers) but high-value because it anchors head-to-head decisions instead of isolated protocol claims.
-- vitrification: papers=5 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol | outcomes=morphology, viability
-  Smaller but sharper cluster, often tied to Dimethyl Sulfoxide, Ethylene Glycol. This is the likely optimization frontier if post-warm outcomes can be made more comparable.
+- vitrification: papers=5 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol | outcomes=morphology, viability, transplantation
+  normalized transitions=loading -> culture, loading -> warming
+  Smaller but sharper cluster, often tied to Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol. This is the likely optimization frontier if post-warm outcomes can be made more comparable.
 
 ## Dominant CPA patterns
 - slow-freezing + Dimethyl Sulfoxide + ovarian tissue | papers=3 | outcomes=viability, morphology, function
@@ -32,6 +36,8 @@ Focus question: Which ovarian cryopreservation slice is mature enough for protoc
 - reviewed outcome coverage: 0.429
 - reviewed step-phase coverage: 0.571
 - reviewed minimum-depth ready: yes
+- normalized protocols: 16
+- protocols with normalization warnings: 3
 - missing reviewed outcomes: 4
 - missing reviewed step phases: 3
 - pending source enrichments: 4

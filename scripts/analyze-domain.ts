@@ -139,6 +139,11 @@ async function main(selectedDomain: DomainId): Promise<void> {
 
   await writeFile(join(processedDir, "atlas-summary.json"), JSON.stringify(summary, null, 2), "utf8");
   await writeFile(join(processedDir, "atlas-analysis.json"), JSON.stringify(analysis, null, 2), "utf8");
+  await writeFile(
+    join(processedDir, "resolved-extraction-snapshot.json"),
+    JSON.stringify(resolvedSnapshot, null, 2),
+    "utf8"
+  );
   await writeFile(join(processedDir, "atlas-report.md"), markdown, "utf8");
 
   console.log(JSON.stringify(analysis, null, 2));

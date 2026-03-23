@@ -39,6 +39,8 @@ The next scaffolded domain is:
 - `bun run seed-benchmark:islets`
 - `bun run evaluate:ovarian`
 - `bun run evaluate:islets`
+- `bun run normalize:ovarian`
+- `bun run normalize:islets`
 - `bun run loop:ovarian`
 - `bun run loop:islets`
 - `bun run review-benchmark:ovarian`
@@ -128,3 +130,11 @@ The remaining depth gaps are often evidence-limited rather than extractor-limite
 - Only `reviewed` source-enrichment records are consumed during extraction.
 - Reviewed excerpts are appended to the source text seen by the extractor and logged as `source-enrichment` evidence snippets.
 - This keeps the loop conservative: richer evidence can improve extraction, but the system does not pretend that abstract-only papers contain more signal than they actually do.
+
+## Canonical protocol layer
+
+Phase 1 now includes a derived canonical protocol artifact built from the resolved post-override extraction snapshot.
+
+- `bun run normalize:<domain>` writes `data/processed/<domain>/normalized-protocols.json` plus `normalized-protocol-report.md`.
+- The normalized artifact is additive. It does not replace extraction or benchmark logic.
+- The first pass is intentionally conservative: canonical chemical names, normalized measurement parsing, and step-to-step transition hints.

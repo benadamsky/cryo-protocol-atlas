@@ -6,14 +6,18 @@ Focus question: Where does islet cryopreservation still look operationally gener
 - dominant family: slow-freezing
 - dominant chemicals: Dimethyl Sulfoxide, Sucrose, Ethylene Glycol
 - dominant specimen types: islets, pancreatic islets
-- interpretation: Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol in islets, pancreatic islets workflows.
+- normalized transitions: cooling -> storage, cooling -> warming, loading -> cooling
+- representative conditions: Dimethyl Sulfoxide 2 M, Dimethyl Sulfoxide 1 M, Dimethyl Sulfoxide 0.67 M
+- interpretation: Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol in islets, pancreatic islets workflows. Normalized workflow signal is cooling -> storage, cooling -> warming, loading -> cooling, with repeated condition mentions such as Dimethyl Sulfoxide 2 M, Dimethyl Sulfoxide 1 M, Dimethyl Sulfoxide 0.67 M.
 
 ## Protocol families
-- slow-freezing: papers=39 | chemicals=Dimethyl Sulfoxide, Sucrose, Ethylene Glycol | outcomes=function, viability, transplantation
-  Most common preserved workflow in-slice, centered on Dimethyl Sulfoxide, Sucrose, Ethylene Glycol. Outcome emphasis is function, viability, transplantation, suggesting this is the baseline to beat rather than the frontier.
-- vitrification: papers=6 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Sucrose | outcomes=function, transplantation, viability
+- slow-freezing: papers=39 | chemicals=Dimethyl Sulfoxide, Sucrose, Ethylene Glycol | outcomes=viability, function, transplantation
+  normalized transitions=cooling -> storage, cooling -> warming, loading -> cooling
+  Most common preserved workflow in-slice, centered on Dimethyl Sulfoxide, Sucrose, Ethylene Glycol. Outcome emphasis is viability, function, transplantation, suggesting this is the baseline to beat rather than the frontier.
+- vitrification: papers=6 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Sucrose | outcomes=function, viability, transplantation
+  normalized transitions=loading -> storage, storage -> warming
   Smaller but sharper cluster, often tied to Dimethyl Sulfoxide, Ethylene Glycol, Sucrose. This is the likely optimization frontier if post-warm outcomes can be made more comparable.
-- comparative: papers=1 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Sucrose | outcomes=function, viability
+- comparative: papers=1 | chemicals=Dimethyl Sulfoxide, Ethylene Glycol, Sucrose | outcomes=function
   Direct comparison slice is small (1 papers) but high-value because it anchors head-to-head decisions instead of isolated protocol claims.
 
 ## Dominant CPA patterns
@@ -40,6 +44,8 @@ Focus question: Where does islet cryopreservation still look operationally gener
 - reviewed outcome coverage: 1
 - reviewed step-phase coverage: 0.976
 - reviewed minimum-depth ready: yes
+- normalized protocols: 46
+- protocols with normalization warnings: 5
 - missing reviewed outcomes: 0
 - missing reviewed step phases: 1
 - pending source enrichments: 1

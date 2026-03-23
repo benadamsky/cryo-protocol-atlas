@@ -2,7 +2,12 @@ import type {
   AtlasSummary,
   AtlasHotspot
 } from "./atlas.js";
-import type { BenchmarkEntry, ExtractionSnapshot, SourceEnrichmentFile } from "../../shared/src/schema.js";
+import type {
+  BenchmarkEntry,
+  ExtractionSnapshot,
+  NormalizedProtocolSnapshot,
+  SourceEnrichmentFile
+} from "../../shared/src/schema.js";
 
 type BenchmarkAnalysis = {
   domain: string;
@@ -32,6 +37,8 @@ export type DomainWedgeBrief = {
     dominantProtocolFamily: string;
     dominantChemicals: string[];
     dominantSpecimenTypes: string[];
+    dominantTransitions: string[];
+    representativeConditions: string[];
     explanation: string;
   };
   protocolFamilies: Array<{
@@ -39,6 +46,7 @@ export type DomainWedgeBrief = {
     paperCount: number;
     topChemicals: string[];
     topOutcomes: string[];
+    topTransitions: string[];
     interpretation: string;
   }>;
   dominantCpaPatterns: Array<{
@@ -58,6 +66,8 @@ export type DomainWedgeBrief = {
     reviewedOutcomeCoverage: number;
     reviewedStepPhaseCoverage: number;
     reviewedMinimumDepthReady: boolean;
+    normalizedProtocolCount: number;
+    protocolsWithNormalizationWarnings: number;
     missingOutcomeCount: number;
     missingStepPhaseCount: number;
     pendingSourceEnrichmentCount: number;
@@ -99,6 +109,40 @@ function topChemicalsForFamily(snapshot: ExtractionSnapshot, family: string): st
   }
   return Array.from(counts.entries())
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .filter(([, count], index, entries) => {
+      const hasRepeatedConditions = entries.some((entry) => entry[1] > 1);
+      return hasRepeatedConditions ? count > 1 : true;
+    })
+    .slice(0, 3)
+    .map(([label]) => label);
+}
+
+function topNormalizedChemicalsForFamily(
+  normalizedSnapshot: NormalizedProtocolSnapshot | undefined,
+  family: string
+): string[] {
+  if (!normalizedSnapshot) {
+    return [];
+  }
+
+  const counts = new Map<string, number>();
+  for (const protocol of normalizedSnapshot.protocols) {
+    if (protocol.protocolFamily !== family) {
+      continue;
+    }
+
+    const seen = new Set<string>();
+    for (const chemical of protocol.normalizedChemicals) {
+      if (seen.has(chemical.canonicalName)) {
+        continue;
+      }
+      seen.add(chemical.canonicalName);
+      counts.set(chemical.canonicalName, (counts.get(chemical.canonicalName) ?? 0) + 1);
+    }
+  }
+
+  return Array.from(counts.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .slice(0, 3)
     .map(([label]) => label);
 }
@@ -117,6 +161,102 @@ function topOutcomesForFamily(snapshot: ExtractionSnapshot, family: string): str
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .slice(0, 3)
     .map(([label]) => label);
+}
+
+function topTransitionsForFamily(
+  normalizedSnapshot: NormalizedProtocolSnapshot | undefined,
+  family: string
+): string[] {
+  if (!normalizedSnapshot) {
+    return [];
+  }
+
+  const counts = new Map<string, number>();
+  for (const protocol of normalizedSnapshot.protocols) {
+    if (protocol.protocolFamily !== family) {
+      continue;
+    }
+
+    const seen = new Set<string>();
+    for (const step of protocol.normalizedSteps) {
+      if (!step.transitionToNextPhase) {
+        continue;
+      }
+      const label = `${step.phase} -> ${step.transitionToNextPhase}`;
+      if (seen.has(label)) {
+        continue;
+      }
+      seen.add(label);
+      counts.set(label, (counts.get(label) ?? 0) + 1);
+    }
+  }
+
+  const ranked = Array.from(counts.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .filter(([, count]) => count >= 2);
+
+  return ranked.slice(0, 3).map(([label]) => label);
+}
+
+function topRepresentativeConditions(
+  normalizedSnapshot: NormalizedProtocolSnapshot | undefined,
+  family: string,
+  preferredChemicals: string[]
+): string[] {
+  if (!normalizedSnapshot) {
+    return [];
+  }
+
+  const preferred = new Set(preferredChemicals);
+  const counts = new Map<string, { count: number; stepCount: number; phaseWeight: number }>();
+  for (const protocol of normalizedSnapshot.protocols) {
+    if (protocol.protocolFamily !== family) {
+      continue;
+    }
+
+    const candidates = protocol.representativeConditions.filter(
+      (condition) => preferred.size === 0 || preferred.has(condition.chemical)
+    );
+    const repeatedStructuralConditions = new Set(
+      candidates.filter((condition) => condition.source === "step").map((condition) => condition.label)
+    );
+    const conditionsToCount =
+      repeatedStructuralConditions.size > 0
+        ? candidates.filter((condition) => condition.source === "step")
+        : candidates;
+
+    const seen = new Set<string>();
+    for (const condition of conditionsToCount) {
+      if (seen.has(condition.label)) {
+        continue;
+      }
+      seen.add(condition.label);
+      const current = counts.get(condition.label) ?? { count: 0, stepCount: 0, phaseWeight: 0 };
+      const phaseWeight =
+        condition.phase === "equilibration" || condition.phase === "loading" || condition.phase === "perfusion"
+          ? 3
+          : condition.phase === "cooling" || condition.phase === "warming" || condition.phase === "unloading"
+            ? 2
+            : 1;
+      counts.set(condition.label, {
+        count: current.count + 1,
+        stepCount: current.stepCount + (condition.source === "step" ? 1 : 0),
+        phaseWeight: Math.max(current.phaseWeight, phaseWeight)
+      });
+    }
+  }
+
+  const ranked = Array.from(counts.entries())
+    .sort(
+      (a, b) =>
+        b[1].count - a[1].count ||
+        b[1].stepCount - a[1].stepCount ||
+        b[1].phaseWeight - a[1].phaseWeight ||
+        a[0].localeCompare(b[0])
+    )
+    .filter(([, stats]) => stats.count >= 2);
+
+  return ranked.slice(0, 3).map(([label]) => label);
 }
 
 function protocolFamilyInterpretation(
@@ -188,12 +328,25 @@ export function buildDomainWedgeBrief(input: {
   benchmarkAnalysis: BenchmarkAnalysis;
   benchmarkEntries: BenchmarkEntry[];
   sourceEnrichment?: SourceEnrichmentFile;
+  normalizedProtocols?: NormalizedProtocolSnapshot;
 }): DomainWedgeBrief {
-  const { snapshot, atlas, benchmarkAnalysis, benchmarkEntries, sourceEnrichment } = input;
+  const { snapshot, atlas, benchmarkAnalysis, benchmarkEntries, sourceEnrichment, normalizedProtocols } = input;
   const reviewedInScopeEntries = benchmarkEntries.filter((entry) => entry.reviewStatus === "reviewed" && entry.expectedInAtlas);
   const dominantFamily = atlas.protocolFamilies[0]?.label ?? "unknown";
-  const dominantChemicals = atlas.topChemicals.slice(0, 3).map((entry) => entry.label);
+  const dominantChemicals =
+    topNormalizedChemicalsForFamily(normalizedProtocols, dominantFamily).length > 0
+      ? topNormalizedChemicalsForFamily(normalizedProtocols, dominantFamily)
+      : atlas.topChemicals.slice(0, 3).map((entry) => entry.label);
   const dominantSpecimens = atlas.topSpecimenTypes.slice(0, 2).map((entry) => entry.label);
+  const dominantTransitions = topTransitionsForFamily(normalizedProtocols, dominantFamily);
+  const representativeConditions = topRepresentativeConditions(
+    normalizedProtocols,
+    dominantFamily,
+    dominantChemicals
+  );
+  const normalizedProtocolCount = normalizedProtocols?.totalProtocols ?? 0;
+  const protocolsWithNormalizationWarnings =
+    normalizedProtocols?.protocols.filter((protocol) => protocol.normalizationWarnings.length > 0).length ?? 0;
   const pendingSourceEnrichmentCount =
     sourceEnrichment?.records.filter((record) => record.status === "pending" || record.status === "in-progress").length ?? 0;
   const reviewedSourceEnrichmentCount =
@@ -227,11 +380,17 @@ export function buildDomainWedgeBrief(input: {
   const protocolFamilies = atlas.protocolFamilies.slice(0, 4).map((entry) => ({
     family: entry.label,
     paperCount: entry.count,
-    topChemicals: topChemicalsForFamily(snapshot, entry.label),
+    topChemicals:
+      topNormalizedChemicalsForFamily(normalizedProtocols, entry.label).length > 0
+        ? topNormalizedChemicalsForFamily(normalizedProtocols, entry.label)
+        : topChemicalsForFamily(snapshot, entry.label),
     topOutcomes: topOutcomesForFamily(snapshot, entry.label),
+    topTransitions: topTransitionsForFamily(normalizedProtocols, entry.label),
     interpretation: protocolFamilyInterpretation(
       entry.label,
-      topChemicalsForFamily(snapshot, entry.label),
+      topNormalizedChemicalsForFamily(normalizedProtocols, entry.label).length > 0
+        ? topNormalizedChemicalsForFamily(normalizedProtocols, entry.label)
+        : topChemicalsForFamily(snapshot, entry.label),
       topOutcomesForFamily(snapshot, entry.label),
       entry.count
     )
@@ -268,7 +427,12 @@ export function buildDomainWedgeBrief(input: {
       dominantProtocolFamily: dominantFamily,
       dominantChemicals,
       dominantSpecimenTypes: dominantSpecimens,
-      explanation: `Current default literature center of gravity is ${dominantFamily}, usually built around ${dominantChemicals.join(", ")} in ${dominantSpecimens.join(", ")} workflows.`
+      dominantTransitions,
+      representativeConditions,
+      explanation:
+        dominantTransitions.length > 0 || representativeConditions.length > 0
+          ? `Current default literature center of gravity is ${dominantFamily}, usually built around ${dominantChemicals.join(", ")} in ${dominantSpecimens.join(", ")} workflows. Normalized workflow signal is ${dominantTransitions.join(", ") || "still sparse"}, with repeated condition mentions such as ${representativeConditions.join(", ") || "still sparse"}.`
+          : `Current default literature center of gravity is ${dominantFamily}, usually built around ${dominantChemicals.join(", ")} in ${dominantSpecimens.join(", ")} workflows.`
     },
     protocolFamilies,
     dominantCpaPatterns: atlas.uncertaintyHotspots.slice(0, 6).map((entry) => ({
@@ -284,6 +448,8 @@ export function buildDomainWedgeBrief(input: {
       reviewedOutcomeCoverage: benchmarkAnalysis.resolved.summary.reviewedOutcomeCoverage,
       reviewedStepPhaseCoverage: benchmarkAnalysis.resolved.summary.reviewedStepPhaseCoverage,
       reviewedMinimumDepthReady: benchmarkAnalysis.resolved.summary.reviewedMinimumDepthReady,
+      normalizedProtocolCount,
+      protocolsWithNormalizationWarnings,
       missingOutcomeCount: benchmarkAnalysis.reviewedDepth.missingOutcomeCount,
       missingStepPhaseCount: benchmarkAnalysis.reviewedDepth.missingStepPhaseCount,
       pendingSourceEnrichmentCount,
@@ -313,6 +479,8 @@ export function renderDomainWedgeBriefMarkdown(brief: DomainWedgeBrief): string 
   );
   lines.push(`- dominant chemicals: ${brief.standardPattern.dominantChemicals.join(", ") || "none"}`);
   lines.push(`- dominant specimen types: ${brief.standardPattern.dominantSpecimenTypes.join(", ") || "none"}`);
+  lines.push(`- normalized transitions: ${brief.standardPattern.dominantTransitions.join(", ") || "none"}`);
+  lines.push(`- representative conditions: ${brief.standardPattern.representativeConditions.join(", ") || "none"}`);
   lines.push(`- interpretation: ${brief.standardPattern.explanation}`);
   lines.push("");
   lines.push("## Protocol families");
@@ -320,6 +488,9 @@ export function renderDomainWedgeBriefMarkdown(brief: DomainWedgeBrief): string 
     lines.push(
       `- ${family.family}: papers=${family.paperCount} | chemicals=${family.topChemicals.join(", ") || "none"} | outcomes=${family.topOutcomes.join(", ") || "none"}`
     );
+    if (family.topTransitions.length > 0) {
+      lines.push(`  normalized transitions=${family.topTransitions.join(", ")}`);
+    }
     lines.push(`  ${family.interpretation}`);
   }
   lines.push("");
@@ -346,6 +517,8 @@ export function renderDomainWedgeBriefMarkdown(brief: DomainWedgeBrief): string 
   lines.push(`- reviewed outcome coverage: ${brief.evidenceQuality.reviewedOutcomeCoverage}`);
   lines.push(`- reviewed step-phase coverage: ${brief.evidenceQuality.reviewedStepPhaseCoverage}`);
   lines.push(`- reviewed minimum-depth ready: ${brief.evidenceQuality.reviewedMinimumDepthReady ? "yes" : "no"}`);
+  lines.push(`- normalized protocols: ${brief.evidenceQuality.normalizedProtocolCount}`);
+  lines.push(`- protocols with normalization warnings: ${brief.evidenceQuality.protocolsWithNormalizationWarnings}`);
   lines.push(`- missing reviewed outcomes: ${brief.evidenceQuality.missingOutcomeCount}`);
   lines.push(`- missing reviewed step phases: ${brief.evidenceQuality.missingStepPhaseCount}`);
   lines.push(`- pending source enrichments: ${brief.evidenceQuality.pendingSourceEnrichmentCount}`);
