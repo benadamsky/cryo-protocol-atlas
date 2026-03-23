@@ -2,16 +2,16 @@
 
 ## Executive summary
 - islets is currently anchored on slow-freezing protocols built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol.
-- The atlas is credible enough to use for wedge-finding: reviewed gates pass, reviewed outcome coverage is 0.833, and reviewed step-phase coverage is 0.976.
+- The atlas is credible enough to use for wedge-finding: reviewed gates pass, reviewed outcome coverage is 0.952, and reviewed step-phase coverage is 0.976.
 - The cleanest first wedge is "Additive-assisted islet recovery benchmark on a fixed base cryomix" because it attacks a protocol choice that still looks under-benchmarked rather than inventing a new chemistry story too early.
 
 ## Benchmark snapshot
 - reviewed gates passing: yes
-- reviewed outcome coverage: 0.833
+- reviewed outcome coverage: 0.952
 - reviewed step-phase coverage: 0.976
 - reviewed minimum-depth ready: yes
 - contradictions in top slice: 3
-- pending source enrichments: 8
+- pending source enrichments: 3
 
 ## Standard protocol view
 - dominant family: slow-freezing
@@ -30,8 +30,8 @@
 
 ## Literature gaps
 - Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.
-- 7 reviewed papers still lack explicit outcome labels.
-- 8 source-enrichment records are still pending.
+- 2 reviewed papers still lack explicit outcome labels.
+- 3 source-enrichment records are still pending.
 
 ## Market bridge
 - current standard pattern: slow-freezing via Dimethyl Sulfoxide, Sucrose, Ethylene Glycol
@@ -47,7 +47,7 @@
 ## Missing evidence
 - No fixed-base, head-to-head additive benchmark exists across the strongest adjunct candidates.
 - Human or transplant-adjacent evidence is still scattered across different CPA backbones and endpoints.
-- 7 reviewed in-scope papers still lack explicit outcome labels.
+- 2 reviewed in-scope papers still lack explicit outcome labels.
 
 ## Current read
 - Islets still looks better as a proving ground for Atlas than as a locked-in company wedge, but the additive benchmark story is now evidence-backed enough to test as a plausible commercial entry point.

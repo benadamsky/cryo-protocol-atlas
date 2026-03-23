@@ -1,11 +1,12 @@
 # islets benchmark review apply
 
-Accepted proposals: 4
+Accepted proposals: 5
 Rejected proposals: 0
 Deferred proposals: 0
 
 ## Accepted
-- Prolonged Cryopreservation of Purified Human Pancreatic Islets | fields=outcomeClasses | confidence=0.83
-- Successful Cryopreservation of Fetal Porcine Proislets | fields=outcomeClasses | confidence=0.802
-- Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig | fields=outcomeClasses | confidence=0.797
-- Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model | fields=outcomeClasses | confidence=0.796
+- Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets | fields=outcomeClasses | confidence=0.85
+- Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation | fields=outcomeClasses | confidence=0.837
+- CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS | fields=outcomeClasses | confidence=0.821
+- Cryopreservation of Freshly Isolated Porcine Islet Cells | fields=outcomeClasses | confidence=0.804
+- USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION | fields=outcomeClasses | confidence=0.793

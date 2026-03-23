@@ -78,7 +78,7 @@
     "candidateReviewedProtocolFamilyAccuracy": 1,
     "currentReviewedPaperTypeAccuracy": 1,
     "candidateReviewedPaperTypeAccuracy": 1,
-    "currentReviewedOutcomeMacroF1": 0.971,
+    "currentReviewedOutcomeMacroF1": 0.975,
     "candidateReviewedOutcomeMacroF1": 1,
     "currentReviewedStepPhaseMacroF1": 1,
     "candidateReviewedStepPhaseMacroF1": 1,

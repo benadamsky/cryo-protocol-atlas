@@ -12,8 +12,8 @@ Override auto-apply safe: no
 - candidate reviewed protocol family accuracy: 1
 - current reviewed paper type accuracy: 1
 - candidate reviewed paper type accuracy: 1
-- current reviewed outcome coverage: 0.833
-- prospective reviewed outcome coverage: 0.833
+- current reviewed outcome coverage: 0.952
+- prospective reviewed outcome coverage: 0.952
 - current reviewed step-phase coverage: 0.976
 - prospective reviewed step-phase coverage: 0.976
 

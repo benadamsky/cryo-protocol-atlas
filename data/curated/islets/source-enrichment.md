@@ -58,34 +58,26 @@
   reviewedExcerpts=3
 
 ## Evidence-thin
-- [pending] CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS
-  paperId=c7c65868-ac9d-4b95-805b-d30e02dadd0c
-  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
-  doi=10.1097/00007890-199402150-00005
 - [pending] CRYOPRESERVATION OF CHICK ISLETS
   paperId=2b5fe0eb-5bea-4514-88d5-b6926936277e
   rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
-- [pending] Cryopreservation of Freshly Isolated Porcine Islet Cells
-  paperId=d865c65c-b6a7-431c-941c-c23d68f30469
-  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
-  doi=10.1016/j.transproceed.2007.02.076
-- [pending] Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation
-  paperId=0690eaf4-00bb-4b65-b277-9c85d4e8bfcd
-  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
-  doi=10.1292/jvms.57.859
-- [pending] Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets
-  paperId=6c01e238-01b1-444d-ba8c-cbfb77cd7181
-  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
-  doi=10.1089/bio.2017.0044
-- [pending] USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION
-  paperId=1453f932-2e03-42a3-968a-9efaf2b3233e
-  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
-  doi=10.1177/096368979700600612
 - [reviewed] Bulk Cryopreservation of Isolated Islets of Langerhans
   paperId=2c726492-625a-4f6a-bd48-f8d3e9b465c3
   rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
   doi=10.1177/096368979600500306
   reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-22. Added conservative paraphrased notes to make the bulk-banking workflow, recovery, and transplant endpoint explicit.
+  reviewedExcerpts=3
+- [reviewed] CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS
+  paperId=c7c65868-ac9d-4b95-805b-d30e02dadd0c
+  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
+  doi=10.1097/00007890-199402150-00005
+  reviewerNotes=Reviewed from the indexed repository abstract snippet on 2026-03-23. The source explicitly supports morphology, in vitro function, and in vivo transplant viability after cryogenic storage.
+  reviewedExcerpts=3
+- [reviewed] Cryopreservation of Freshly Isolated Porcine Islet Cells
+  paperId=d865c65c-b6a7-431c-941c-c23d68f30469
+  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
+  doi=10.1016/j.transproceed.2007.02.076
+  reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-23. The abstract explicitly supports viability and glucose-dependent function across freezing media, but not transplantation.
   reviewedExcerpts=3
 - [reviewed] Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants
   paperId=319d4b4f-5170-4966-a582-75463fe725d7
@@ -93,11 +85,29 @@
   doi=10.3727/000000008783907026
   reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-22. Added conservative paraphrased notes to make the human donor context, structure/function outcomes, and transplant-adjacent decision boundary explicit.
   reviewedExcerpts=3
+- [reviewed] Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation
+  paperId=0690eaf4-00bb-4b65-b277-9c85d4e8bfcd
+  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
+  doi=10.1292/jvms.57.859
+  reviewerNotes=Reviewed from the accessible J-STAGE abstract on 2026-03-23. The abstract explicitly supports function and morphology, with size-dependent freezing injury in large islets.
+  reviewedExcerpts=3
+- [reviewed] Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets
+  paperId=6c01e238-01b1-444d-ba8c-cbfb77cd7181
+  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
+  doi=10.1089/bio.2017.0044
+  reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-23. The abstract explicitly supports post-warm survival and glucose-stimulated function, plus scale-up handling relevance, but not transplantation.
+  reviewedExcerpts=3
 - [reviewed] Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets
   paperId=d00ca668-e6a5-4d1d-bb5c-334d7de37c34
   rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
   doi=10.1016/j.cryobiol.2019.03.009
   reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-22. Added conservative paraphrased notes to make the CPLL additive effect, function, and scale-up angle explicit.
+  reviewedExcerpts=3
+- [reviewed] USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION
+  paperId=1453f932-2e03-42a3-968a-9efaf2b3233e
+  rationale=available title/abstract text is mostly procedural and does not state a concrete outcome
+  doi=10.1177/096368979700600612
+  reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-23. The abstract explicitly supports in vitro function and transplantation relevance for PEG relative to the standard dimethyl sulfoxide procedure.
   reviewedExcerpts=3
 
 ## Step-phase manual review

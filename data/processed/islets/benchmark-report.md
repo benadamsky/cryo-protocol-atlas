@@ -10,8 +10,8 @@ All gates passed: yes
 - expected included entries: 46
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
-- set macro F1: species=1 specimen=1 outcomes=0.949 stepPhases=0.951
-- field coverage: paperType=1 protocolFamily=0.826 species=0.826 specimen=0.826 outcomes=0.804 stepPhases=0.978
+- set macro F1: species=1 specimen=1 outcomes=0.955 stepPhases=0.951
+- field coverage: paperType=1 protocolFamily=0.826 species=0.826 specimen=0.826 outcomes=0.913 stepPhases=0.978
 - confidence: expectedIncluded=0.85 correctIncluded=0.85 incorrectIncluded=n/a
 
 ## reviewed subset
@@ -20,7 +20,7 @@ All gates passed: yes
 - inclusion: accuracy=1 precision=1 recall=1 f1=1
 - exact accuracy: paperType=1 protocolFamily=1
 - set macro F1: species=1 specimen=1 outcomes=1 stepPhases=1
-- field coverage: paperType=1 protocolFamily=0.81 species=0.81 specimen=0.81 outcomes=0.833 stepPhases=0.976
+- field coverage: paperType=1 protocolFamily=0.81 species=0.81 specimen=0.81 outcomes=0.952 stepPhases=0.976
 - confidence: expectedIncluded=0.845 correctIncluded=0.845 incorrectIncluded=n/a
 
 ## seeded subset
@@ -47,7 +47,7 @@ All gates passed: yes
   Species leakage is another easy way for the system to look cleaner than it is.
 
 ## Reviewed depth
-- reviewed outcome coverage: 0.833
+- reviewed outcome coverage: 0.952
 - reviewed step-phase coverage: 0.976
 - reviewed minimum-depth ready: yes
 
@@ -55,7 +55,7 @@ All gates passed: yes
 - reviewed inclusion F1 delta: 0.077
 - reviewed protocol family accuracy delta: 0.824
 - reviewed paper type accuracy delta: 0.119
-- reviewed species macro F1 delta: 0.049
+- reviewed species macro F1 delta: 0.059
 - reviewed specimen macro F1 delta: 0.01
 - reviewed outcome coverage delta: 0
 - reviewed step-phase coverage delta: 0
@@ -64,22 +64,17 @@ All gates passed: yes
 ## Baseline reviewed subset
 - inclusion: precision=0.857 recall=1 f1=0.923
 - exact: paperType=0.881 protocolFamily=0.176
-- set macro F1: species=0.951 specimen=0.99
-- coverage: outcomes=0.833 stepPhases=0.976
+- set macro F1: species=0.941 specimen=0.99
+- coverage: outcomes=0.952 stepPhases=0.976
 
 ## Reviewed depth gaps
-- reviewed entries missing outcome labels: 7
+- reviewed entries missing outcome labels: 2
 - reviewed entries missing step-phase labels: 1
-- missing outcome evidence audit: extractor-gap=0 ambiguous-evidence=1 evidence-thin=6
+- missing outcome evidence audit: extractor-gap=0 ambiguous-evidence=1 evidence-thin=1
 
 ### Missing reviewed outcomes
-- CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS | family=n/a type=experimental evidence=evidence-thin
 - CRYOPRESERVATION OF CHICK ISLETS | family=slow-freezing type=experimental evidence=evidence-thin
-- Cryopreservation of Freshly Isolated Porcine Islet Cells | family=slow-freezing type=experimental evidence=evidence-thin
 - Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques | family=slow-freezing type=experimental evidence=ambiguous-evidence
-- Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation | family=n/a type=experimental evidence=evidence-thin
-- Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets | family=vitrification type=experimental evidence=evidence-thin
-- USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION | family=slow-freezing type=experimental evidence=evidence-thin
 
 ### Missing reviewed step phases
 - Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets | family=n/a type=experimental

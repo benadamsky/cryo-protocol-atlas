@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T03:35:31.488Z",
+  "generatedAt": "2026-03-23T03:47:31.448Z",
   "domain": "islets",
   "overrides": [
     {
@@ -1497,6 +1497,20 @@
       "specimenTypes": [
         "islets",
         "islet cells"
+      ],
+      "outcomeMentions": [
+        {
+          "outcomeClass": "function",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+          "evidence": []
+        },
+        {
+          "outcomeClass": "viability",
+          "strength": "moderate",
+          "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+          "evidence": []
+        }
       ],
       "extractionConfidence": 0.82,
       "notes": "Porcine islet-cell cryopreservation study comparing freezing media with DMSO, glycerol, and sucrose."

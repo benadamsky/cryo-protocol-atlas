@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T03:35:31.314Z",
+  "generatedAt": "2026-03-23T03:46:22.668Z",
   "domain": "islets",
   "description": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "entries": [
@@ -408,6 +408,12 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedOutcomeClasses": [
+        "function",
+        "morphology",
+        "transplantation",
+        "viability"
+      ],
       "expectedStepPhases": [
         "cooling",
         "equilibration"
@@ -436,9 +442,35 @@
             "durations": [],
             "evidence": []
           }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "morphology",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: morphology.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "transplantation",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: transplantation.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
         ]
       },
-      "notes": "Primary porcine pancreatic-islet cryogenic storage study with direct preservation outcomes. Accepted benchmark autofill proposal benchmark-depth-autofill:c7c65868-ac9d-4b95-805b-d30e02dadd0c:stepPhases."
+      "notes": "Primary porcine pancreatic-islet cryogenic storage study with direct preservation outcomes. Accepted benchmark autofill proposal benchmark-depth-autofill:c7c65868-ac9d-4b95-805b-d30e02dadd0c:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:c7c65868-ac9d-4b95-805b-d30e02dadd0c:outcomeClasses."
     },
     {
       "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
@@ -507,6 +539,10 @@
         "islet cells",
         "islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "viability"
+      ],
       "expectedStepPhases": [
         "cooling",
         "warming"
@@ -544,9 +580,23 @@
             "evidence": []
           }
         ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.82
       },
-      "notes": "Porcine islet-cell cryopreservation study comparing freezing media with DMSO, glycerol, and sucrose. Accepted benchmark autofill proposal benchmark-depth-autofill:d865c65c-b6a7-431c-941c-c23d68f30469:stepPhases."
+      "notes": "Porcine islet-cell cryopreservation study comparing freezing media with DMSO, glycerol, and sucrose. Accepted benchmark autofill proposal benchmark-depth-autofill:d865c65c-b6a7-431c-941c-c23d68f30469:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:d865c65c-b6a7-431c-941c-c23d68f30469:outcomeClasses."
     },
     {
       "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
@@ -929,6 +979,10 @@
       "reviewStatus": "reviewed",
       "expectedInAtlas": true,
       "expectedPaperType": "experimental",
+      "expectedOutcomeClasses": [
+        "function",
+        "morphology"
+      ],
       "expectedStepPhases": [
         "cooling"
       ],
@@ -946,9 +1000,23 @@
             "durations": [],
             "evidence": []
           }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "morphology",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: morphology.",
+            "evidence": []
+          }
         ]
       },
-      "notes": "Primary study on differential freezing tolerance across rat islet size classes. Accepted benchmark autofill proposal benchmark-depth-autofill:0690eaf4-00bb-4b65-b277-9c85d4e8bfcd:stepPhases."
+      "notes": "Primary study on differential freezing tolerance across rat islet size classes. Accepted benchmark autofill proposal benchmark-depth-autofill:0690eaf4-00bb-4b65-b277-9c85d4e8bfcd:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:0690eaf4-00bb-4b65-b277-9c85d4e8bfcd:outcomeClasses."
     },
     {
       "paperId": "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
@@ -2008,6 +2076,10 @@
         "islets",
         "pancreatic islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "viability"
+      ],
       "expectedStepPhases": [
         "loading",
         "storage",
@@ -2028,49 +2100,50 @@
           {
             "order": 0,
             "phase": "loading",
-            "summary": "Rat pancreatic islets were equilibrated in EG/Me2SO then exposed to a higher-strength vitrification solution containing sucrose on Cryotop or nylon-mesh devices.",
-            "chemicals": [
-              "Dimethyl Sulfoxide",
-              "Ethylene Glycol",
-              "Sucrose"
-            ],
-            "concentrations": [
-              "7.5 %",
-              "15 %",
-              "0.5 M"
-            ],
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: loading.",
+            "chemicals": [],
+            "concentrations": [],
             "temperatures": [],
-            "durations": [
-              "3 min",
-              "60 s"
-            ],
+            "durations": [],
             "evidence": []
           },
           {
             "order": 1,
             "phase": "storage",
-            "summary": "Cryotop and nylon-mesh devices were rapidly plunged into liquid nitrogen for vitrified storage.",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: storage.",
             "chemicals": [],
             "concentrations": [],
-            "temperatures": [
-              "-196 °C"
-            ],
+            "temperatures": [],
             "durations": [],
             "evidence": []
           },
           {
             "order": 2,
             "phase": "warming",
-            "summary": "Vitrified islets were rewarmed to compare large-quantity preservation performance across devices.",
+            "summary": "Reviewed benchmark autofill accepted for protocol phase: warming.",
             "chemicals": [],
             "concentrations": [],
             "temperatures": [],
             "durations": [],
             "evidence": []
           }
+        ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "viability",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: viability.",
+            "evidence": []
+          }
         ]
       },
-      "notes": "Primary rat islet vitrification device study, not methods-only background."
+      "notes": "Primary rat islet vitrification device study, not methods-only background. Accepted benchmark autofill proposal benchmark-depth-autofill:6c01e238-01b1-444d-ba8c-cbfb77cd7181:outcomeClasses."
     },
     {
       "paperId": "beb603fe-8522-4842-99a9-fba1195cc973",
@@ -3081,6 +3154,10 @@
       "expectedSpecimenTypes": [
         "islets"
       ],
+      "expectedOutcomeClasses": [
+        "function",
+        "transplantation"
+      ],
       "expectedStepPhases": [
         "cooling",
         "warming"
@@ -3117,9 +3194,23 @@
             "evidence": []
           }
         ],
+        "outcomeMentions": [
+          {
+            "outcomeClass": "function",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: function.",
+            "evidence": []
+          },
+          {
+            "outcomeClass": "transplantation",
+            "strength": "moderate",
+            "summary": "Reviewed benchmark autofill accepted for outcome class: transplantation.",
+            "evidence": []
+          }
+        ],
         "extractionConfidence": 0.78
       },
-      "notes": "Porcine islet cryopreservation paper focused on polyethylene glycol within a DMSO freezing-thawing workflow. Accepted benchmark autofill proposal benchmark-depth-autofill:1453f932-2e03-42a3-968a-9efaf2b3233e:stepPhases."
+      "notes": "Porcine islet cryopreservation paper focused on polyethylene glycol within a DMSO freezing-thawing workflow. Accepted benchmark autofill proposal benchmark-depth-autofill:1453f932-2e03-42a3-968a-9efaf2b3233e:stepPhases. Accepted benchmark autofill proposal benchmark-depth-autofill:1453f932-2e03-42a3-968a-9efaf2b3233e:outcomeClasses."
     },
     {
       "paperId": "12e4333d-e145-4340-ada1-b38751f5f390",

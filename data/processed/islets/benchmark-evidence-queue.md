@@ -1,6 +1,6 @@
 # islets evidence resolution queue
 
-Outcome evidence gaps: extractor-gap=0, ambiguous-evidence=1, evidence-thin=6
+Outcome evidence gaps: extractor-gap=0, ambiguous-evidence=1, evidence-thin=1
 Step-phase gaps: 1
 
 ## Extractor gaps
@@ -15,23 +15,8 @@ Needs manual review or fuller source text before benchmark promotion.
 
 ## Evidence-thin
 Abstract/title appears too procedural; fetch fuller source or leave unlabeled.
-- CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS | family=n/a type=experimental
-  reason=available title/abstract text is mostly procedural and does not state a concrete outcome
-  doi=https://doi.org/10.1097/00007890-199402150-00005
 - CRYOPRESERVATION OF CHICK ISLETS | family=slow-freezing type=experimental
   reason=available title/abstract text is mostly procedural and does not state a concrete outcome
-- Cryopreservation of Freshly Isolated Porcine Islet Cells | family=slow-freezing type=experimental
-  reason=available title/abstract text is mostly procedural and does not state a concrete outcome
-  doi=https://doi.org/10.1016/j.transproceed.2007.02.076
-- Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation | family=n/a type=experimental
-  reason=available title/abstract text is mostly procedural and does not state a concrete outcome
-  doi=https://doi.org/10.1292/jvms.57.859
-- Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets | family=vitrification type=experimental
-  reason=available title/abstract text is mostly procedural and does not state a concrete outcome
-  doi=https://doi.org/10.1089/bio.2017.0044
-- USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION | family=slow-freezing type=experimental
-  reason=available title/abstract text is mostly procedural and does not state a concrete outcome
-  doi=https://doi.org/10.1177/096368979700600612
 
 ## Step-phase review remains manual
 - Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets | family=n/a type=experimental
