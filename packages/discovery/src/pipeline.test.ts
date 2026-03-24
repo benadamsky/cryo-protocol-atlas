@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
@@ -12,14 +13,22 @@ import {
   DiscoverySnapshotSchema
 } from "../../shared/src/schema.js";
 
-const worktreeRoot = fileURLToPath(new URL("../../../", import.meta.url));
-const projectRoot = fileURLToPath(new URL("../../../../../", import.meta.url));
-const tsxLoader = join(projectRoot, "node_modules", "tsx", "dist", "loader.mjs");
-const importScript = join(worktreeRoot, "scripts", "import-discovery-exports.ts");
-const discoverScript = join(worktreeRoot, "scripts", "discover-domain-corpus.ts");
-const queueScript = join(worktreeRoot, "scripts", "build-discovery-review-queue.ts");
-const packetScript = join(worktreeRoot, "scripts", "build-discovery-promotion-packet.ts");
-const validateScript = join(worktreeRoot, "scripts", "validate-discovery-refresh.ts");
+const projectRoot = fileURLToPath(new URL("../../../", import.meta.url));
+const tsxLoaderCandidates = [
+  join(projectRoot, "node_modules", "tsx", "dist", "loader.mjs"),
+  join(dirname(projectRoot), "node_modules", "tsx", "dist", "loader.mjs"),
+  join(dirname(dirname(projectRoot)), "node_modules", "tsx", "dist", "loader.mjs")
+];
+const resolvedTsxLoader = tsxLoaderCandidates.find((candidate) => existsSync(candidate));
+if (!resolvedTsxLoader) {
+  throw new Error(`Unable to locate tsx loader from ${projectRoot}`);
+}
+const tsxLoader = resolvedTsxLoader;
+const importScript = join(projectRoot, "scripts", "import-discovery-exports.ts");
+const discoverScript = join(projectRoot, "scripts", "discover-domain-corpus.ts");
+const queueScript = join(projectRoot, "scripts", "build-discovery-review-queue.ts");
+const packetScript = join(projectRoot, "scripts", "build-discovery-promotion-packet.ts");
+const validateScript = join(projectRoot, "scripts", "validate-discovery-refresh.ts");
 
 async function writeJson(path: string, value: unknown): Promise<void> {
   await mkdir(dirname(path), { recursive: true });

@@ -7,7 +7,20 @@ import {
 import { recommendDiscoveryPaper } from "../../optimizer/src/discovery.js";
 
 const RECOMMENDATION_SCORING = {
+  multiSourceBonus: 2,
   multiSourceThreshold: 2,
+  openAccessFullTextBonus: 2,
+  fullTextLinkBonus: 1,
+  strongAuthorityThreshold: 0.5,
+  moderateAuthorityThreshold: 0.2,
+  strongAuthorityBonus: 2,
+  moderateAuthorityBonus: 1,
+  highRelevanceThreshold: 8,
+  mediumRelevanceThreshold: 5,
+  highRelevanceBonus: 2,
+  mediumRelevanceBonus: 1,
+  promoteThreshold: 5,
+  reviewThreshold: 3,
   weakAuthorityRiskThreshold: 0.2
 } as const;
 
