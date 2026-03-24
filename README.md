@@ -23,6 +23,15 @@ The next scaffolded domain is:
 
 - `bun run ingest:ovarian`
 - `bun run ingest:islets`
+- `bun run discover-imports:ovarian`
+- `bun run discover-imports:islets`
+- `bun run discover:ovarian`
+- `bun run discover:islets`
+- `bun run discover-queue:ovarian`
+- `bun run discover-queue:islets`
+- `bun run discover-refresh:ovarian`
+- `bun run discover-refresh:islets`
+- `bun run discover-refresh:all`
 - `bun run extract:ovarian`
 - `bun run extract:islets`
 - `bun run analyze:ovarian`
@@ -81,6 +90,21 @@ The current repo is a protocol-intelligence MVP, not a discovery engine. It esta
 - benchmark seeding for benchmarked slices
 - reviewed-gate evaluation for inclusion/exclusion and field accuracy
 - second-domain scaffold for islet cryopreservation literature
+
+## Discovery lane
+
+The benchmarked atlas loop remains conservative and slice-stable. A separate discovery lane now begins under `data/discovery/<domain>/`.
+
+- `bun run discover:<domain>` queries a broader literature surface and merges candidates from multiple sources.
+- `bun run discover-imports:<domain>` scans `data/discovery/<domain>/imports/*.json` for normalized external search export files and merges them into the canonical `manual-source-records.json`.
+- `bun run discover-queue:<domain>` compares those candidates against the current domain slice and writes a manual promotion queue for genuinely novel papers.
+- `bun run discover-refresh:<domain>` runs import merge + snapshot rebuild + promotion-queue rebuild as one bounded refresh step.
+- The first providers are `cryodb`, `openalex`, `crossref`, and `europe-pmc`.
+- You can still edit `data/discovery/<domain>/manual-source-records.json` directly, but the preferred path is to drop normalized import files into `data/discovery/<domain>/imports/`.
+- Import files should follow the `DiscoveryImportFileSchema` shape in [`packages/shared/src/schema.ts`](./packages/shared/src/schema.ts): `{ generatedAt, domain, source, label?, records[] }`.
+- Discovery outputs are additive. They do not directly mutate `data/processed/<domain>/`, benchmarks, or override files.
+- The purpose is to widen the candidate evidence frontier first, then promote only reviewed high-signal papers into the benchmarked slice later.
+- A separate scheduler entrypoint now lives at [`.github/workflows/discovery-refresh.yml`](./.github/workflows/discovery-refresh.yml). It refreshes only `data/discovery/` artifacts and keeps that lane decoupled from the conservative atlas loop.
 
 ## Benchmarking model
 

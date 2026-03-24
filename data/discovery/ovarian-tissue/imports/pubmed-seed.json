@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-03-24T00:35:00.000Z",
+  "domain": "ovarian-tissue",
+  "source": "pubmed",
+  "label": "initial external PubMed seed",
+  "records": [
+    {
+      "source": "pubmed",
+      "sourceId": "pubmed:38575798",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/38575798/",
+      "rawQuery": "site:pubmed.ncbi.nlm.nih.gov ovarian tissue cryopreservation 2024 2025",
+      "title": "A retrospective study of ovarian tissue cryopreservation in female patients with hematological diseases for fertility preservation",
+      "abstract": "Purposes: To investigate the effect and safety of ovarian tissue cryopreservation (OTC) for fertility preservation in female patients with hematological diseases. Methods: We designed a retrospective study. The clinical data of patients with hematological diseases undergoing OTC admitted to Peking University People's Hospital from April 2017 to January 2023 were analyzed and summarized.",
+      "doi": "10.1007/s00404-024-07484-4",
+      "pmid": "38575798",
+      "journal": "Archives of Gynecology and Obstetrics",
+      "publishedYear": 2024,
+      "authorsFlat": "Yi-Ling Wang; Qing-Jie Zhai; Zhao-Hua Wang; Xin Yang; Jian-Liu Wang; Hong-Lan Zhu",
+      "citationCount": 0,
+      "fullTextAvailability": "full-text-link"
+    },
+    {
+      "source": "pubmed",
+      "sourceId": "pubmed:40611136",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/40611136/",
+      "rawQuery": "site:pubmed.ncbi.nlm.nih.gov ovarian tissue cryopreservation 2024 2025",
+      "title": "A dual-drug strategy to enhance the function of cryopreserved ovaries by promoting revascularization and inhibiting follicle over-activation",
+      "abstract": "Background: Ovarian tissue cryopreservation and transplantation (OTCT) is a promising approach for fertility preservation. However, significant follicle loss after transplantation challenges long-term reproductive recovery. Methods: Ovarian tissues from wild-type or Tek-CreERT2;mTmG female mice were cryopreserved using vitrification. Follicle dynamics after OTCT were analyzed through histology, proteomics, and high-resolution imaging.",
+      "doi": "10.1186/s12958-025-01422-y",
+      "pmid": "40611136",
+      "journal": "Reproductive Biology and Endocrinology",
+      "publishedYear": 2025,
+      "authorsFlat": "Lingyu Li; Jian Yang; Longzhong Jia; Jing Liang; Kaixin Cheng; Xuebing Yang; Lu Mu; Ge Wang; Kaiying Geng; Qiuxian Hu; Xueqiang Xu; Zhen Li; Guoliang Xia; Ting Guo; Jiawei Zhang; Yan Zhang; Hua Zhang",
+      "citationCount": 0,
+      "fullTextAvailability": "full-text-link"
+    }
+  ]
+}

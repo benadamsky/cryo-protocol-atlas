@@ -1,0 +1,9 @@
+{
+  "domain": "islets",
+  "importFileCount": 1,
+  "importedRecordCount": 4,
+  "totalManualRecordCount": 4,
+  "importedSources": [
+    "pubmed:pubmed-seed.json"
+  ]
+}

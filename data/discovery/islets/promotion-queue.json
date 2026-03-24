@@ -1,0 +1,136 @@
+{
+  "generatedAt": "2026-03-24T00:08:16.124Z",
+  "domain": "islets",
+  "sourceSnapshotGeneratedAt": "2026-03-24T00:08:07.919Z",
+  "candidateCount": 57,
+  "trackedCount": 53,
+  "novelCandidateCount": 4,
+  "decisions": [
+    {
+      "dedupeKey": "doi:10.1038/s41591-022-01718-1",
+      "title": "Pancreatic islet cryopreservation by vitrification achieves high viability, function, recovery and clinical scalability for transplantation",
+      "doi": "10.1038/s41591-022-01718-1",
+      "pmid": "35288694",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 14.45,
+      "relevanceScore": 13.9,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.25,
+      "sourceCount": 1,
+      "sourceTypes": [
+        "manual"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "beta cell",
+        "cryopreservation",
+        "insulin",
+        "islet",
+        "islet transplantation",
+        "islets",
+        "pancreatic islet",
+        "transplantation",
+        "vitrification"
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1186/s13287-025-04168-x",
+      "title": "Reviving hope: unlocking pancreatic islet immortality by optimizing a trehalose-based cryopreservation media and cell-penetrating peptide",
+      "doi": "10.1186/s13287-025-04168-x",
+      "pmid": "40083015",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 12.25,
+      "relevanceScore": 11.7,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.25,
+      "sourceCount": 1,
+      "sourceTypes": [
+        "manual"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "insulin",
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "transplantation"
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.bbrep.2024.101658",
+      "title": "The effect of hydroxyethyl starch as a cryopreservation agent during freezing of mouse pancreatic islets",
+      "doi": "10.1016/j.bbrep.2024.101658",
+      "pmid": "38362049",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 12.25,
+      "relevanceScore": 11.7,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.25,
+      "sourceCount": 1,
+      "sourceTypes": [
+        "manual"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets"
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416",
+      "title": "Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "doi": "10.1002/btm2.10416",
+      "pmid": "37476055",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 12.25,
+      "relevanceScore": 11.7,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.25,
+      "sourceCount": 1,
+      "sourceTypes": [
+        "manual"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ]
+    }
+  ]
+}

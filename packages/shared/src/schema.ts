@@ -87,6 +87,182 @@ export const DomainSnapshotSchema = z.object({
 });
 export type DomainSnapshot = z.infer<typeof DomainSnapshotSchema>;
 
+export const DiscoverySourceSchema = z.enum([
+  "cryodb",
+  "openalex",
+  "crossref",
+  "europe-pmc",
+  "manual"
+]);
+export type DiscoverySource = z.infer<typeof DiscoverySourceSchema>;
+
+export const FullTextAvailabilitySchema = z.enum([
+  "unknown",
+  "abstract-only",
+  "full-text-link",
+  "open-access-full-text"
+]);
+export type FullTextAvailability = z.infer<typeof FullTextAvailabilitySchema>;
+
+export const DiscoverySourceRecordSchema = z.object({
+  source: DiscoverySourceSchema,
+  sourceId: z.string(),
+  sourceUrl: z.string().nullable().optional(),
+  rawQuery: z.string(),
+  title: z.string(),
+  abstract: z.string().nullable().optional(),
+  doi: z.string().nullable().optional(),
+  pmid: z.string().nullable().optional(),
+  pmcid: z.string().nullable().optional(),
+  journal: z.string().nullable().optional(),
+  publishedYear: z.number().nullable().optional(),
+  authorsFlat: z.string().nullable().optional(),
+  citationCount: z.number().int().nonnegative().nullable().optional(),
+  fullTextAvailability: FullTextAvailabilitySchema.default("unknown"),
+  matchedKeywords: z.array(z.string()),
+  relevanceScore: z.number().min(0)
+});
+export type DiscoverySourceRecord = z.infer<typeof DiscoverySourceRecordSchema>;
+
+export const DiscoveryPaperSchema = z.object({
+  domain: DomainIdSchema,
+  dedupeKey: z.string(),
+  title: z.string(),
+  abstract: z.string().nullable().optional(),
+  doi: z.string().nullable().optional(),
+  pmid: z.string().nullable().optional(),
+  pmcid: z.string().nullable().optional(),
+  journal: z.string().nullable().optional(),
+  publishedYear: z.number().nullable().optional(),
+  authorsFlat: z.string().nullable().optional(),
+  sourceCount: z.number().int().positive(),
+  sources: z.array(DiscoverySourceRecordSchema),
+  matchedKeywords: z.array(z.string()),
+  sourceTypes: z.array(DiscoverySourceSchema),
+  fullTextAvailability: FullTextAvailabilitySchema,
+  relevanceScore: z.number().min(0),
+  authorityScore: z.number().min(0),
+  sourceDiversityScore: z.number().min(0),
+  rankingScore: z.number().min(0)
+});
+export type DiscoveryPaper = z.infer<typeof DiscoveryPaperSchema>;
+
+export const DiscoveryProviderSummarySchema = z.object({
+  source: DiscoverySourceSchema,
+  query: z.string(),
+  fetchedCount: z.number().int().nonnegative(),
+  acceptedCount: z.number().int().nonnegative(),
+  failed: z.boolean().default(false),
+  error: z.string().nullable().optional()
+});
+export type DiscoveryProviderSummary = z.infer<typeof DiscoveryProviderSummarySchema>;
+
+export const DiscoverySnapshotSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  queryDescription: z.string(),
+  totalCandidates: z.number().int().nonnegative(),
+  providerSummaries: z.array(DiscoveryProviderSummarySchema),
+  papers: z.array(DiscoveryPaperSchema)
+});
+export type DiscoverySnapshot = z.infer<typeof DiscoverySnapshotSchema>;
+
+export const ManualDiscoveryRecordSchema = z.object({
+  sourceId: z.string(),
+  sourceUrl: z.string().nullable().optional(),
+  rawQuery: z.string().default("manual-import"),
+  title: z.string(),
+  abstract: z.string().nullable().optional(),
+  doi: z.string().nullable().optional(),
+  pmid: z.string().nullable().optional(),
+  pmcid: z.string().nullable().optional(),
+  journal: z.string().nullable().optional(),
+  publishedYear: z.number().nullable().optional(),
+  authorsFlat: z.string().nullable().optional(),
+  citationCount: z.number().int().nonnegative().nullable().optional(),
+  fullTextAvailability: FullTextAvailabilitySchema.default("unknown")
+});
+export type ManualDiscoveryRecord = z.infer<typeof ManualDiscoveryRecordSchema>;
+
+export const ManualDiscoveryImportFileSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  records: z.array(ManualDiscoveryRecordSchema)
+});
+export type ManualDiscoveryImportFile = z.infer<typeof ManualDiscoveryImportFileSchema>;
+
+export const DiscoveryImportSourceSchema = z.enum([
+  "pubmed",
+  "openalex",
+  "crossref",
+  "europe-pmc",
+  "semantic-scholar",
+  "manual",
+  "other"
+]);
+export type DiscoveryImportSource = z.infer<typeof DiscoveryImportSourceSchema>;
+
+export const DiscoveryImportRecordSchema = ManualDiscoveryRecordSchema.extend({
+  source: DiscoveryImportSourceSchema.default("other")
+});
+export type DiscoveryImportRecord = z.infer<typeof DiscoveryImportRecordSchema>;
+
+export const DiscoveryImportFileSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  source: DiscoveryImportSourceSchema,
+  label: z.string().optional(),
+  records: z.array(DiscoveryImportRecordSchema)
+});
+export type DiscoveryImportFile = z.infer<typeof DiscoveryImportFileSchema>;
+
+export const DiscoveryPromotionRecommendationSchema = z.enum([
+  "promote",
+  "review",
+  "defer"
+]);
+export type DiscoveryPromotionRecommendation = z.infer<typeof DiscoveryPromotionRecommendationSchema>;
+
+export const DiscoveryPromotionDecisionStatusSchema = z.enum([
+  "pending",
+  "promote",
+  "defer",
+  "reject"
+]);
+export type DiscoveryPromotionDecisionStatus = z.infer<typeof DiscoveryPromotionDecisionStatusSchema>;
+
+export const DiscoveryPromotionDecisionSchema = z.object({
+  dedupeKey: z.string(),
+  title: z.string(),
+  doi: z.string().nullable().optional(),
+  pmid: z.string().nullable().optional(),
+  decision: DiscoveryPromotionDecisionStatusSchema,
+  recommendation: DiscoveryPromotionRecommendationSchema,
+  recommendationReasons: z.array(z.string()),
+  rankingScore: z.number().min(0),
+  relevanceScore: z.number().min(0),
+  authorityScore: z.number().min(0),
+  sourceDiversityScore: z.number().min(0),
+  sourceCount: z.number().int().positive(),
+  sourceTypes: z.array(DiscoverySourceSchema),
+  fullTextAvailability: FullTextAvailabilitySchema,
+  matchedKeywords: z.array(z.string()),
+  reviewerNotes: z.string().optional(),
+  decidedAt: z.string().optional()
+});
+export type DiscoveryPromotionDecision = z.infer<typeof DiscoveryPromotionDecisionSchema>;
+
+export const DiscoveryPromotionQueueSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  sourceSnapshotGeneratedAt: z.string(),
+  candidateCount: z.number().int().nonnegative(),
+  trackedCount: z.number().int().nonnegative(),
+  novelCandidateCount: z.number().int().nonnegative(),
+  decisions: z.array(DiscoveryPromotionDecisionSchema)
+});
+export type DiscoveryPromotionQueue = z.infer<typeof DiscoveryPromotionQueueSchema>;
+
 export const EvidenceSourceTypeSchema = z.enum([
   "title-or-abstract",
   "full-text",

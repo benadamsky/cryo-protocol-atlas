@@ -1,0 +1,9 @@
+{
+  "domain": "ovarian-tissue",
+  "importFileCount": 1,
+  "importedRecordCount": 2,
+  "totalManualRecordCount": 2,
+  "importedSources": [
+    "pubmed:pubmed-seed.json"
+  ]
+}
