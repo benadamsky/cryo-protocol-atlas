@@ -1,0 +1,1317 @@
+{
+  "generatedAt": "2026-03-20T17:27:01.357Z",
+  "domain": "islets",
+  "totalFetched": 3157,
+  "totalMatched": 53,
+  "papers": [
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
+        "paper_id": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
+        "doi": "10.1016/s0041-1345(01)02875-5",
+        "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+        "abstract": "Slow cooling cryopreservation & rapid thaw — Encapsulated islets without sucrose (WAG rat pancreatic islets). cryopreserved according to the Rajotte method of slow cooling. Rattus norvegicus; Pancreas; Islets of langerhans; WAG rat; pancreas; islets of Langerhans Slow cooling cryopreservation & rapid thaw — Encapsulated islets with sucrose (WAG rat pancreatic islets). cryopreserved according to the Rajotte method of slow cooling. Rattus norvegicus; Pancreas; Islets of langerhans; WAG rat; pancreas; islets of Langerhans Slow cooling cryopreservation & rapid thaw — Free islets without sucrose (WAG rat pancreatic islets). cryopreserved according to the Rajotte method of slow cooling. Rattus norvegicus; Pancreas; Islets of langerhans; WAG rat; pancreas; islets of Langerhans Slow cooling cryopreservation & rapid thaw — Free islets with sucrose (WAG rat pancreatic islets). cryopreserved according to the Rajotte method of slow cooling. Rattus norvegicus; Pancreas; Islets of langerhans; WAG rat; pancreas; islets of Langerhans",
+        "paper_url": null,
+        "journal": "Transplantation Proceedings",
+        "published_year": 2002,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "M. Sabat; E. Godlewska; E. Sitarek; T. Orłowski"
+      },
+      "score": 12,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "encapsulated islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+        "paper_id": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+        "doi": "10.3727/000000004783983927",
+        "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+        "abstract": "Cryopreservation and Thawing of Islets — 10 % PVP (Sprague-Dawley rat pancreatic islets). Isolated rat islets were equilibrated with 10 % polyvinylpyrrolidone (MW 40 kDa) for 5 min and frozen in cryotubes using a programmable temperature controller (Gordiner Electronics model 7009); super-cooled to −4 °C, nucleated, cooled at −3 °C / min to −40 °C and −5 °C / min to −100 °C; stored at −80 °C for 1 week.. Rattus norvegicus; Pancreas; Pancreatic islet; Adult; Sprague-Dawley rat; pancreas; islet; adult Cryopreservation and Thawing of Islets — 2 M DMSO (Sprague-Dawley rat pancreatic islets). Isolated rat islets were equilibrated step-wise with 0.67 M, 1 M and 1.5 M DMSO for 5 min each, then with 2 M DMSO for 15 min before freezing in cryotubes using a programmable temperature controller (Gordiner Electronics model 7009). Cryotubes were placed in the freezing chamber, super-cooled to −4 °C and nucleated, then cooled at −3 °C / min to −40 °C and −5 °C / min to −100 °C, followed by storage at −80 °C for 1 week.. Rattus norvegicus; Pancreas; Pancreatic islet; Adult; Sprague-Dawley rat; pancreas; islet; adult Cryopreservation and Thawing of Islets — 3 M glycerol (Sprague-Dawley rat pancreatic islets). Isolated rat islets were equilibrated step-wise with 2 M glycerol for 5 min, reaching a final 3 M glycerol for 15 min before freezing in cryotubes using a programmable temperature controller (Gordiner Electronics model 7009); cryotubes super-cooled to −4 °C, nucleated, then cooled at −3 °C / min to −40 °C and −5 °C / min to −100 °C and stored at −80 °C for 1 week.. Rattus norvegicus; Pancreas; Pancreatic islet; Adult; Sprague-Dawley rat; pancreas; islet; adult Cryopreservation and Thawing of Islets — 5 % PEG (Sprague-Dawley rat pancreatic islets). Isolated rat islets were equilibrated with 5 % polyethylene glycol (MW 20 kDa) for 5 min, then frozen in cryotubes with a programmable temperature controller (Gordiner Electronics model 7009): super-cooled to −4 °C, nucleated, cooled at −3 °C / min to −40 °C and −5 °C / min to −100 °C; stored at −80 °C for 1 week.. Rattus norvegicus; Pancreas; Pancreatic islet; Adult; Sprague-Dawley rat; pancreas; islet; adult",
+        "paper_url": null,
+        "journal": "Cell Transplantation",
+        "published_year": 2004,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Hesham M. El-Shewy; William F. Kendall, Jr.; Marcus Darrabie; Bradley H. Collins; Emmanuel C. Opara"
+      },
+      "score": 12,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "islet cell",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "b3a4d36a-35fd-4937-9c34-24cf63da3346",
+        "paper_id": "b3a4d36a-35fd-4937-9c34-24cf63da3346",
+        "doi": "10.1006/cryo.1996.0036",
+        "title": "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+        "abstract": "Freezing and thawing — programmable slow cooling with 2.0 M dimethyl sulfoxide (rat pancreatic islets). After 1 h exposure at 0 °C to 2.0 M dimethyl sulfoxide, islets were loaded into 0.25-ml straws, placed in a programmable freezer held at 0 °C for 2 min, cooled from 0 to −6.5 °C at 1 °C min⁻¹ and seeded at −6.5 °C with forceps cooled in liquid nitrogen, allowed 10 min for latent heat release, then cooled to −40 °C at 0.3 °C min⁻¹ before being plunged into liquid nitrogen for storage at −196 °C.. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets Freezing and thawing — programmable slow cooling with 2.0 M ethylene glycol (rat pancreatic islets). After 1 h exposure at 0 °C to 2.0 M ethylene glycol, islets were loaded into 0.25-ml straws, placed in a programmable freezer held at 0 °C for 2 min, cooled from 0 to −6.5 °C at 1 °C min⁻¹ and seeded at −6.5 °C with forceps cooled in liquid nitrogen, allowed 10 min for latent heat release, then cooled to −40 °C at 0.3 °C min⁻¹ before being plunged into liquid nitrogen for storage at −196 °C.. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1996,
+        "published_month": 5,
+        "published_day": 18,
+        "authors_flat": "Iwao Sakonju; Yasuho Taura; Yousuke Inayoshi; Tatsuyuki Suzuki; Koichi Takimoto; Munekazu Nakaichi; Sanenori Nakama"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "insulin",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "7076767f-b08c-437f-976b-85cbda543865",
+        "paper_id": "7076767f-b08c-437f-976b-85cbda543865",
+        "doi": "10.1007/s10047-012-0635-7",
+        "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+        "abstract": "Quick-rate vitrification — 10 % DMSO solution (rat pancreatic islets). Quick-rate vitrification: 100 islets suspended in 40 µl of 10 % DMSO solution (10 % v/v DMSO, 10 % v/v FBS in RPMI1640), immediately dropped onto an aluminium cup floating on liquid nitrogen, transferred to cryotube and stored in LN2.. Rattus norvegicus; Pancreas; Islets of langerhans; Male; Male Lewis rat; pancreas; islets of Langerhans Quick-rate vitrification — CL solution (rat pancreatic islets). Vitrification using CL (cryoloop) solution as described in Table 1; 100 islets vitrified with cryoloop method before storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Islets of langerhans; Male; Male Lewis rat; pancreas; islets of Langerhans Quick-rate vitrification — EDT324 (rat pancreatic islets). Quick-rate vitrification: 100 islets suspended in 40 µl EDT324 (30 % v/v ethylene glycol, 20 % v/v DMSO, 0.4 M trehalose in RPMI1640) and immediately dropped onto an aluminium cup floating on liquid nitrogen; droplets transferred to cryotube and stored in LN2.. Rattus norvegicus; Pancreas; Islets of langerhans; Male; Male Lewis rat; pancreas; islets of Langerhans Quick-rate vitrification — ESF40 solution (rat pancreatic islets). Vitrification using ESF40 solution as described in Table 1; 100 islets vitrified and stored in liquid nitrogen.. Rattus norvegicus; Pancreas; Islets of langerhans; Male; Male Lewis rat; pancreas; islets of Langerhans Quick-rate vitrification — OPS solution (rat pancreatic islets). Vitrification using OPS (open pulled straws) solution as described in Table 1; 100 islets vitrified according to the OPS protocol before storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Islets of langerhans; Male; Male Lewis rat; pancreas; islets of Langerhans Quick-rate vitrification — SSV solution (rat pancreatic islets). Vitrification using SSV (solid-surface vitrification) solution as described in Table 1; 100 islets vitrified on a solid surface and stored in liquid nitrogen.. Rattus norvegicus; Pancreas; Islets of langerhans; Male; Male Lewis rat; pancreas; islets of Langerhans Slow-rate freezing — 10% DMSO (rat pancreatic islets). Slow-rate freezing: 100 islets suspended in 1 ml RPMI1640 containing 10 % DMSO, held at 4 °C for 40 min, then cooled at 0.25 °C / min to −80 °C and finally stored in liquid nitrogen.. Rattus norvegicus; Pancreas; Islets of langerhans; Male; Male Lewis rat; pancreas; islets of Langerhans",
+        "paper_url": null,
+        "journal": "Artificial Organs",
+        "published_year": 2012,
+        "published_month": 3,
+        "published_day": 2,
+        "authors_flat": "Hiromi Sasamoto; Midori Futami; Yusuke Ando; Shuhei Nakaji"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation",
+        "vitrification"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
+        "paper_id": "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
+        "doi": "10.1016/j.cryobiol.2016.09.003",
+        "title": "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+        "abstract": "Bicell® freezing — 15% Me2SO (rat pancreatic islets 101-150 µm). Slow freezing using Bicell® bio freezing vessel: islets exposed to 15 % dimethyl-sulfoxide (Me2SO) in RPMI-1640/10 % FBS for 15 min at 25 ± 2 °C, precooled to 4 °C for 15 min, placed in cryotubes (50 islets/500 µl) packed into Bicell®, cooled overnight in −80 °C deep freezer (estimated −0.5 °C min-1 during first 3 h) and transferred to liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; Brown Norway rat; pancreas; pancreatic islets; 101–150 µm Cryotop® vitrification — 15 % EG + 15 % Me2SO (rat pancreatic islets 101-150 µm). Ultra-rapid vitrification with Cryotop®: equilibration 3 min in 7.5 % ethylene glycol + 7.5 % Me2SO in RPMI-1640/20 % FBS at ambient temperature; transfer to 15 % EG + 15 % Me2SO + 0.5 M sucrose for 60 s; 10 ± 2 islets loaded on Cryotop strip in minimal volume and plunged into liquid nitrogen (predicted cooling rate −23 000 °C min-1).. Rattus norvegicus; Pancreas; Pancreatic islet; Brown Norway rat; pancreas; pancreatic islets; 101–150 µm Cryotop® vitrification — 15 % EG + 15 % Me2SO (rat pancreatic islets 151-200 µm). Ultra-rapid vitrification with Cryotop®: same reagent concentrations and timing as EXPT-002.. Rattus norvegicus; Pancreas; Pancreatic islet; Brown Norway rat; pancreas; pancreatic islets; 151–200 µm Cryotop® vitrification — 15 % EG + 15 % Me2SO (rat pancreatic islets 201-250 µm). Ultra-rapid vitrification with Cryotop®: same reagent concentrations and timing as EXPT-002.. Rattus norvegicus; Pancreas; Pancreatic islet; Brown Norway rat; pancreas; pancreatic islets; 201–250 µm Cryotop® vitrification — 15 % EG + 15 % Me2SO (rat pancreatic islets 251-300 µm). Ultra-rapid vitrification with Cryotop®: same reagent concentrations and timing as EXPT-002.. Rattus norvegicus; Pancreas; Pancreatic islet; Brown Norway rat; pancreas; pancreatic islets; 251–300 µm Cryotop® vitrification — 15 % EG + 15 % Me2SO (rat pancreatic islets 301-350 µm). Ultra-rapid vitrification with Cryotop®: same reagent concentrations and timing as EXPT-002.. Rattus norvegicus; Pancreas; Pancreatic islet; Brown Norway rat; pancreas; pancreatic islets; 301–350 µm",
+        "paper_url": "http://dx.doi.org/10.1016/j.cryobiol.2016.09.003",
+        "journal": "Cryobiology",
+        "published_year": 2016,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Takahiro Yamanaka; Kazuya Tashima; Rio Takahashi; Seiji Takashima; Teppei Goto; Masumi Hirabayashi; Shinichi Hochi"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "vitrification",
+        "slow freezing"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "6c01e238-01b1-444d-ba8c-cbfb77cd7181",
+        "paper_id": "6c01e238-01b1-444d-ba8c-cbfb77cd7181",
+        "doi": "10.1089/bio.2017.0044",
+        "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+        "abstract": "Cryopreservation — Bicell freezing (rat pancreatic islets). Islets were exposed to 15% dimethyl sulfoxide in RPMI-1640 containing 10% FBS and antibiotics for 15 min at ambient temperature, cooled to 4 °C for 15 min; 50 islets were placed in a precooled cryotube with 500 µL of the CPA solution, tubes packed into a Bicell bio-freezing vessel which was placed in a −80 °C deep freezer overnight (estimated cooling rate −0.5 °C / min during the first 3 h) and subsequently transferred to liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; Brown Norway rat; pancreas; pancreatic islets; 101–150 µm diameter Cryopreservation — Cryotop vitrification (rat pancreatic islets). Islets were equilibrated with 7.5% ethylene glycol and 7.5% dimethyl sulfoxide in RPMI-1640 containing 20% FBS for 3 min at 25 ± 2 °C, transferred for 60 s into a vitrification solution of 15% ethylene glycol, 15% dimethyl sulfoxide, 0.5 M sucrose in RPMI-1640 + 20% FBS, loaded (10 islets) onto the polypropylene strip of a Cryotop device with minimal solution volume and quickly plunged into liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; Brown Norway rat; pancreas; pancreatic islets; 101–150 µm diameter Cryopreservation — Nylon mesh vitrification (rat pancreatic islets). A 10-mm triangular pyramid device was fashioned from 57 µm-pore nylon mesh. Islets were equilibrated for 3 min at ambient temperature in 7.5% ethylene glycol + 7.5% dimethyl sulfoxide in RPMI-1640 with 20% FBS, placed onto the mesh, excess solution removed with Kimwipes, then exposed for 60 s to vitrification solution containing 15% ethylene glycol, 15% dimethyl sulfoxide, 0.5 M sucrose in RPMI-1640 + 20% FBS; the device was blotted on fresh Kimwipes and rapidly plunged into liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; Brown Norway rat; pancreas; pancreatic islets; 101–150 µm diameter",
+        "paper_url": null,
+        "journal": "Biopreservation and Biobanking",
+        "published_year": 2017,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Takahiro Yamanaka; Teppei Goto; Masumi Hirabayashi; Shinichi Hochi"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation",
+        "vitrification"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
+        "paper_id": "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
+        "doi": "10.1016/j.regpep.2010.10.005",
+        "title": "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets",
+        "abstract": "Cryopreservation — 0.7 M final DMSO concentration (microencapsulated CD rat islets). Islets in RPMI + 10 % FCS were equilibrated stepwise with DMSO to a final concentration of 0.7 M before computer-controlled freezing and storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Cryopreservation — 100% FCS freezing medium (microencapsulated CD rat islets). Islets were resuspended in 0.2 ml 100% FCS, then dimethyl sulfoxide was added stepwise (0.1 ml 2.0 M DMSO for 5 min at 22 °C, 0.1 ml 2.0 M DMSO for 5 min at 22 °C, 0.4 ml 3.1 M DMSO for 15 min at 0 °C), followed by a computer-controlled freezing program in a BV-8 Consarctic freezer and transfer into liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Cryopreservation — 1.4 M final DMSO concentration (microencapsulated CD rat islets). Islets in RPMI + 10 % FCS were equilibrated stepwise with DMSO to a final concentration of 1.4 M before computer-controlled freezing and storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Cryopreservation — 2.0 M final DMSO concentration (microencapsulated CD rat islets). Islets in RPMI + 10 % FCS were equilibrated stepwise with DMSO to a final concentration of 2.0 M before computer-controlled freezing and storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Cryopreservation — 2.6 M final DMSO concentration (microencapsulated CD rat islets). Islets in RPMI + 10 % FCS were equilibrated stepwise with DMSO to a final concentration of 2.6 M before computer-controlled freezing and storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Cryopreservation — 3.1 M final DMSO concentration (microencapsulated CD rat islets). Islets in RPMI + 10 % FCS were equilibrated stepwise with DMSO to a final concentration of 3.1 M before computer-controlled freezing and storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Cryopreservation — all steps at 0 °C 15 min total equilibration (microencapsulated CD rat islets). Each step was performed at 0 °C with 5 min incubation (total equilibration 15 min) before computer-controlled freezing and storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Cryopreservation — all steps at 0 °C standard time (microencapsulated CD rat islets). Steps one, two and three were all carried out at 0 °C with the same incubation periods as the standard protocol (total 45 min) prior to computer-controlled freezing and storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Cryopreservation — hepatocyte suspension buffer freezing medium (microencapsulated CD rat islets). Islets were resuspended in 0.2 ml hepatocyte suspension buffer, then dimethyl sulfoxide was added stepwise (0.1 ml 2.0 M DMSO for 5 min at 22 °C, 0.1 ml 2.0 M DMSO for 5 min at 22 °C, 0.4 ml 3.1 M DMSO for 15 min at 0 °C), followed by a computer-controlled freezing program in a BV-8 Consarctic freezer and transfer into liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Cryopreservation — RPMI + 10 % FCS freezing medium (microencapsulated CD rat islets). Islets were resuspended in 0.2 ml RPMI medium containing 10 % FCS, then dimethyl sulfoxide was added stepwise (0.1 ml 2.0 M DMSO for 5 min at 22 °C, 0.1 ml 2.0 M DMSO for 5 min at 22 °C, 0.4 ml 3.1 M DMSO for 15 min at 0 °C), followed by a computer-controlled freezing program in a BV-8 Consarctic freezer and transfer into liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Cryopreservation — standard 22 °C then 0 °C equilibration protocol (microencapsulated CD rat islets). Step one and two were carried out at 22 °C (0.1 ml 2.0 M DMSO each for 5 min) and step three at 0 °C (0.4 ml 3.1 M DMSO for 15 min) giving 45 min total equilibration before computer-controlled freezing and storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Thawing — one-step 30 min sucrose dilution (microencapsulated CD rat islets). Islets were cryopreserved in RPMI + 10 % FCS using 2.0 M DMSO (15 min equilibration at 0 °C) followed by computer-controlled freezing and liquid-nitrogen storage.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Thawing — stepwise 15 min sucrose dilution (microencapsulated CD rat islets). Islets were cryopreserved in RPMI + 10 % FCS using 2.0 M DMSO (15 min equilibration at 0 °C) followed by computer-controlled freezing and liquid-nitrogen storage.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets Thawing — stepwise 30 min sucrose dilution (microencapsulated CD rat islets). Islets were cryopreserved in RPMI + 10 % FCS using 2.0 M DMSO (15 min equilibration at 0 °C) followed by computer-controlled freezing and liquid-nitrogen storage.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (CD strain); pancreas; microencapsulated pancreatic islets",
+        "paper_url": "http://www.elsevier.com/locate/regpep",
+        "journal": "Regulatory Peptides",
+        "published_year": 2011,
+        "published_month": 10,
+        "published_day": null,
+        "authors_flat": "Stephan Schneider; Harald H. Klein"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "insulin",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "dae850dd-b5dd-4b24-a326-2dc59a1d0980",
+        "paper_id": "dae850dd-b5dd-4b24-a326-2dc59a1d0980",
+        "doi": "10.1177/096368970000900105",
+        "title": "Storage and Microencapsulation of Islets for Transplantation",
+        "abstract": "Cryopreservation and Microencapsulation of Islets — liquid-nitrogen cryotube freezing with 2 M DMSO (Sprague-Dawley rat islets, microencapsulated). frozen under liquid nitrogen using cryotubes containing Medium 199 supplemented with 2 M DMSO, 10 % fetal calf serum, 0.7 mM L-glutamine and 25 mM HEPES, pH 7.4. Rattus norvegicus; Pancreas; Pancreatic islet; Adult; Sprague-Dawley rat; pancreas; isolated pancreatic islets; adult Cryopreservation of Islets — liquid-nitrogen cryotube freezing with 2 M DMSO (Sprague-Dawley rat islets, unencapsulated). frozen under liquid nitrogen using cryotubes containing Medium 199 supplemented with 2 M DMSO, 10 % fetal calf serum, 0.7 mM L-glutamine and 25 mM HEPES, pH 7.4. Rattus norvegicus; Pancreas; Pancreatic islet; Adult; Sprague-Dawley rat; pancreas; isolated pancreatic islets; adult",
+        "paper_url": null,
+        "journal": "Cell Transplantation",
+        "published_year": 2000,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Kirk Charles; Robert C. Harland; Denise Ching; Emmanuel C. Opara"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "transplantation",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "3fbb6bbb-96a2-48bf-9bd3-53166a7a2250",
+        "paper_id": "3fbb6bbb-96a2-48bf-9bd3-53166a7a2250",
+        "doi": "10.1016/j.cryobiol.2022.11.063",
+        "title": "TOOLS FOR HEART PRESERVATION RESEARCH",
+        "abstract": "Supercooling − 100 mM 3-OMG; HTK+Trehalose50 mM+Glycerol5%+PEG5% (rodent VCA limb). Limbs cooled to +4 °C, flushed and submerged in HTK + Trehalose 50 mM + Glycerol 5% + PEG 5%, then supercooled for 24 h at −4 °C without ice nucleation. Rattus norvegicus; Limb; Composite tissue graft (vascularized composite allograft); rodent; limb; vascularized composite allograft Supercooling − 300 mM 3-OMG; HTK+Trehalose50 mM+Glycerol5%+PEG5% (rodent VCA limb). Limbs cooled to +4 °C, flushed and submerged in HTK + Trehalose 50 mM + Glycerol 5% + PEG 5%, then supercooled for 24 h at −4 °C without ice nucleation. Rattus norvegicus; Limb; Composite tissue graft (vascularized composite allograft); rodent; limb; vascularized composite allograft Vitrification/Rewarming (VR) − human pancreatic islets. Vitrification of human pancreatic islets using optimized cryoprotectant agent (CPA) composition, CPA loading/unloading conditions. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; pancreatic islets Vitrification/Rewarming (VR) − human SC-beta cell islets. Vitrification of human stem cell-derived beta cell islets using optimized cryoprotectant agent (CPA) composition, CPA loading/unloading conditions. Homo sapiens; Pancreas; Pancreatic islet; beta cell; human; pancreas; pancreatic islets; stem cell-derived beta cell (SC-beta) Vitrification/Rewarming (VR) − mouse pancreatic islets. Vitrification of mouse pancreatic islets using optimized cryoprotectant agent (CPA) composition, CPA loading/unloading conditions. Mus musculus; Pancreas; Pancreatic islet; mouse; pancreas; pancreatic islets Vitrification/Rewarming (VR) − porcine pancreatic islets. Vitrification of porcine pancreatic islets using optimized cryoprotectant agent (CPA) composition, CPA loading/unloading conditions. Sus scrofa; Pancreas; Pancreatic islet; porcine; pancreas; pancreatic islets",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 2022,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Manuela Lopera Higuita; Luciana Da Silveira Cavalcante; Juan Manuel Gonzalez Rosa; Casie Pendexter; Kaustav Gopinathan; Samantha To; Reinier De Vries; Felix Ellett; Korkut Uygun; David M. Langenau; Mehmet Toner; Shannon N. Tessier"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "beta cell",
+        "vitrification"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "68dc5ee9-dd99-4f47-8e58-a59a28089fb7",
+        "paper_id": "68dc5ee9-dd99-4f47-8e58-a59a28089fb7",
+        "doi": "10.1007/bf01655500",
+        "title": "Transplantation of Cryopreserved Human Pancreatic Islets into Diabetic Nude Mice",
+        "abstract": "Material and Methods — cryopreservation of human pancreatic islets with 2M dimethylsulfoxide. After addition of 2M dimethylsulfoxide as cryoprotectant agent, the islets were supercooled to -7.5°C over 5 minutes in an ethanol bath. The islet preparation was nucleated by contacting the test tube against steel tubing through which liquid nitrogen was circulating. After 15 minutes, to allow for release of the latent heat effusion, the islets were cooled at 0.25°C/min to -40°C. The islets were finally immersed in liquid nitrogen (-196°C) for storage for 2-8 weeks.. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; pancreatic islets",
+        "paper_url": null,
+        "journal": "World Journal of Surgery",
+        "published_year": 1988,
+        "published_month": 12,
+        "published_day": null,
+        "authors_flat": "Camillo Ricordi; Norman M. Kneteman; David W. Scharp; Paul E. Lacy"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "transplantation",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+        "paper_id": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+        "doi": "10.1080/19382014.2020.1849928",
+        "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+        "abstract": "NM vitrification — 15% EG + 15% DMSO + 0.5 M sucrose VS (rat pancreatic islets). minimum volume cooling protocol: islets (100 ± 10) on a nylon mesh triangular pyramid device exposed to vitrification solution for 70 sec, VS volume minimized by paper-towel absorption, then device quickly plunged into liquid nitrogen (LN₂). Rattus norvegicus; Pancreas; Pancreatic islet; Rat; Pancreatic islets SF sponge disc vitrification — 15% EG + 15% DMSO + 0.5 M sucrose VS (rat pancreatic islets). solid surface vitrification protocol: islets on silk fibroin sponge disc exposed to VS for 40 sec, excess VS blotted, disc cooled rapidly on an aluminum pan floating on liquid nitrogen. Rattus norvegicus; Pancreas; Pancreatic islet; Rat; Pancreatic islets",
+        "paper_url": "https://doi.org/10.1080/19382014.2020.1849928",
+        "journal": "Islets",
+        "published_year": 2020,
+        "published_month": 12,
+        "published_day": 8,
+        "authors_flat": "Kenyu Nakayama-Iwatsuki; Takahiro Yamanaka; Jun Negishi; Junki Teshima; Yasushi Tamada; Masumi Hirabayashi; Shinichi Hochi"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "transplantation",
+        "vitrification"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "f805778c-f7b5-422e-978a-cf3d986f008c",
+        "paper_id": "f805778c-f7b5-422e-978a-cf3d986f008c",
+        "doi": "10.2337/diab.46.3.519",
+        "title": "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+        "abstract": "Cryopreservation — cd-glucose medium (human adult pancreatic islets). islets or ICCs were incubated in increasing concentrations of DMSO from 0.66 to 1.5 mol/l, and supercooled to −7.5°C. The latent heat of fusion was released by nucleation, and samples were cooled slowly by 0.25°C/min to −40°C then immediately plunged into liquid nitrogen for storage at −196°C for at least 48 h.. Homo sapiens; Pancreas; Pancreatic islet; Adult; pancreas; pancreatic islets; adult Cryopreservation — cd-glucose medium (human fetal islet-like cell clusters). islets or ICCs were incubated in increasing concentrations of DMSO from 0.66 to 1.5 mol/l, and supercooled to −7.5°C. The latent heat of fusion was released by nucleation, and samples were cooled slowly by 0.25°C/min to −40°C then immediately plunged into liquid nitrogen for storage at −196°C for at least 48 h.. Homo sapiens; Pancreas; Pancreatic islet; Fetal; pancreas; islet-like cell clusters; fetal Cryopreservation — cd-trehalose medium (human adult pancreatic islets). islets or ICCs were incubated in increasing concentrations of DMSO from 0.66 to 1.5 mol/l, and supercooled to −7.5°C. The latent heat of fusion was released by nucleation, and samples were cooled slowly by 0.25°C/min to −40°C then immediately plunged into liquid nitrogen for storage at −196°C for at least 48 h.. Homo sapiens; Pancreas; Pancreatic islet; Adult; pancreas; pancreatic islets; adult Cryopreservation — cd-trehalose medium (human fetal islet-like cell clusters). islets or ICCs were incubated in increasing concentrations of DMSO from 0.66 to 1.5 mol/l, and supercooled to −7.5°C. The latent heat of fusion was released by nucleation, and samples were cooled slowly by 0.25°C/min to −40°C then immediately plunged into liquid nitrogen for storage at −196°C for at least 48 h.. Homo sapiens; Pancreas; Pancreatic islet; Fetal; pancreas; islet-like cell clusters; fetal",
+        "paper_url": null,
+        "journal": "Diabetes",
+        "published_year": 1997,
+        "published_month": 3,
+        "published_day": null,
+        "authors_flat": "Gillian M. Beattie; John H. Crowe; Ana D. Lopez; Vincenzo Cirulli; Camillo Ricordi; Alberto Hayek"
+      },
+      "score": 11,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "glucose",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "f2002bfc-a9e1-45b3-99b7-cff44eee4194",
+        "paper_id": "f2002bfc-a9e1-45b3-99b7-cff44eee4194",
+        "doi": "10.1016/j.cryobiol.2021.03.005",
+        "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+        "abstract": "Vitrification on nylon mesh — 60 μg/ml LDM post-warm culture (rat pancreatic islets). Islets without prior LDM exposure were equilibrated with 7.5% ethylene glycol and 7.5% dimethylsulfoxide in RPMI-1640 containing 20% fetal bovine serum for 3 min, exposed for 60 s to 15% ethylene glycol, 15% dimethylsulfoxide and 0.5 M sucrose in RPMI-1640/20% FBS on a nylon mesh, then plunged into liquid nitrogen and stored in LN2 for at least 1 week.. Rattus norvegicus; Pancreas; Pancreatic islet; Rat; Pancreatic islets Vitrification on nylon mesh — 60 μg/ml LDM pre-treatment (rat pancreatic islets). Islets pre-cultured for 24 h with 60 μg/ml LDM were equilibrated with 7.5% ethylene glycol and 7.5% dimethylsulfoxide in RPMI-1640 containing 20% fetal bovine serum for 3 min at ambient temperature, exposed for 60 s to 15% ethylene glycol, 15% dimethylsulfoxide and 0.5 M sucrose in RPMI-1640/20% FBS, then plunged on a nylon-mesh device into liquid nitrogen and stored in LN2 for at least 1 week.. Rattus norvegicus; Pancreas; Pancreatic islet; Rat; Pancreatic islets Vitrification on nylon mesh — no LDM treatment (rat pancreatic islets). Islets were equilibrated with 7.5% ethylene glycol and 7.5% dimethylsulfoxide in RPMI-1640 containing 20% fetal bovine serum for 3 min at ambient temperature, excess solution removed, then exposed for 60 s to vitrification solution composed of 15% ethylene glycol, 15% dimethylsulfoxide and 0.5 M sucrose in RPMI-1640 with 20% fetal bovine serum; the nylon-mesh device was immediately plunged into liquid nitrogen and stored in LN2 for at least 1 week.. Rattus norvegicus; Pancreas; Pancreatic islet; Rat; Pancreatic islets",
+        "paper_url": "http://www.elsevier.com/locate/cryo",
+        "journal": "Cryobiology",
+        "published_year": 2021,
+        "published_month": 3,
+        "published_day": 20,
+        "authors_flat": "Kenyu Nakayama-Iwatsuki; Kotaro Yanagisawa; Dan Tanaka; Masumi Hirabayashi; Jun Negishi; Shinichi Hochi"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "vitrification"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "f826780f-d21c-44df-b0ea-cf0c175038b3",
+        "paper_id": "f826780f-d21c-44df-b0ea-cf0c175038b3",
+        "doi": "10.1097/00007890-199310000-00045",
+        "title": "BENEFICIAL EFFECT OF ASPIRIN AND HEPARIN IN THREE-DAY DOG KIDNEY PRESERVATION",
+        "abstract": "Cryo/gamma — cryopreservation followed by gamma irradiation (rat pancreatic islets). cryopreservation (cryo/gamma protocol) of purified rat pancreatic islets before subsequent gamma irradiation. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets Gamma/cryo — gamma irradiation followed by cryopreservation (rat pancreatic islets). cryopreservation (gamma/cryo protocol) applied after gamma irradiation of purified rat pancreatic islets. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets",
+        "paper_url": null,
+        "journal": "Transplantation",
+        "published_year": 1993,
+        "published_month": 10,
+        "published_day": null,
+        "authors_flat": "Alan Saunder; James H. Southard; Folkert O. Belzer"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "b52df02d-5796-4b24-ba2c-e76c9f6ebd93",
+        "paper_id": "b52df02d-5796-4b24-ba2c-e76c9f6ebd93",
+        "doi": "10.1016/s0041-1345(97)00190-5",
+        "title": "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+        "abstract": "Automated cryounit freezing — 2.1 mmol/L DMSO + 100 nmol/L BP (canine pancreatic islets). Cultured canine islets were exposed to 0.5 mmol/L DMSO supplemented with 100 nmol/L BP, then frozen in 2.1 mmol/L DMSO containing 100 nmol/L BP using an automated cryounit and stored in liquid nitrogen for 1 month.. Canis lupus; Pancreas; Islets of langerhans; canine; pancreas; islets Automated cryounit freezing — 2.1 mmol/L DMSO + 10 nmol/L BP (canine pancreatic islets). Cultured canine islets were exposed to 0.5 mmol/L DMSO supplemented with 10 nmol/L BP, then frozen in 2.1 mmol/L DMSO containing 10 nmol/L BP using an automated cryounit and stored in liquid nitrogen for 1 month.. Canis lupus; Pancreas; Islets of langerhans; canine; pancreas; islets Automated cryounit freezing — 2.1 mmol/L DMSO + 1 nmol/L BP (canine pancreatic islets). Cultured canine islets were exposed to 0.5 mmol/L DMSO supplemented with 1 nmol/L BP, then frozen in 2.1 mmol/L DMSO containing 1 nmol/L BP using an automated cryounit and stored in liquid nitrogen for 1 month.. Canis lupus; Pancreas; Islets of langerhans; canine; pancreas; islets Automated cryounit freezing — 2.1 mmol/L DMSO + no BP (canine pancreatic islets). Cultured canine islets were exposed to 0.5 mmol/L DMSO, then frozen in 2.1 mmol/L DMSO using an automated cryounit and stored in liquid nitrogen for 1 month.. Canis lupus; Pancreas; Islets of langerhans; canine; pancreas; islets",
+        "paper_url": null,
+        "journal": "Transplantation Proceedings",
+        "published_year": 1997,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "S. Arita; A. Kasraie; S. Une; S. Ohtsuka; T. Kawahara; L. Shevlin; N. Matusda; S. Amirmoazzami; Y. Mullen"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
+        "paper_id": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
+        "doi": "10.1177/096368979600500306",
+        "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+        "abstract": "Cryopreservation — 2 M DMSO slow cooling 0.25 °C/min (canine pancreatic islets). Stepwise addition of DMSO to a final concentration of 2 M, equilibration (0.67 M 5 min, 1 M 30 min, 2 M 15 min), 5 min in ice-slush at 4 °C, 10 min in −7.4 °C 95 % ethanol seeding bath, nucleation with a super-cooled metal rod, then slow cooling at 0.25 °C / min to −40 °C in a programmable FTS freezer bath before plunging into liquid nitrogen (−196 °C) for storage. Canis lupus; Pancreas; Islets of langerhans; dog; pancreas; islets of Langerhans",
+        "paper_url": null,
+        "journal": "Cell Transplantation",
+        "published_year": 1996,
+        "published_month": 3,
+        "published_day": null,
+        "authors_flat": "Jonathan R.T. Lakey; Garth L. Warnock; Ziliang Ao; Ray V. Rajotte"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+        "paper_id": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+        "doi": "10.1177/096368979700600210",
+        "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+        "abstract": "Freezer-bag cryopreservation — modified slow-step thaw (canine pancreatic islets). Same freezer-bag slow cooling protocol with stepwise DMSO addition (0.67 M 5 min, 1 M 30 min, 2 M 15 min); bag nucleated after ice-slush and ethanol baths; slow-cooled at 0.25 °C / min to −40 °C; plunged into liquid nitrogen (−196 °C).. Canis lupus; Pancreas; Islets of langerhans; dog; pancreas; islets of Langerhans Freezer-bag cryopreservation — sucrose dilution thaw (canine pancreatic islets). Islets suspended in 25 mL freeze media transferred to 500 mL Cryocyte freezer bags; DMSO added stepwise (0.67 M 5 min, 1 M 30 min at 22 °C, 2 M 15 min); bag heat-sealed, ice-slush 5 min, ethanol seeding bath and nucleation; bag held in stainless holder and slow-cooled at 0.25 °C / min to −40 °C; holder removed and bag plunged into liquid nitrogen (−196 °C).. Canis lupus; Pancreas; Islets of langerhans; dog; pancreas; islets of Langerhans Islet Freezing and Low-Temperature Storage — modified slow-step thaw (canine pancreatic islets, glass tubes). Same glass-tube slow cooling protocol: 0.67 M DMSO 5 min, 1 M 30 min, 2 M 15 min; nucleation after ice-slush and −7.4 °C ethanol bath; cooled 0.25 °C / min to −40 °C and plunged into liquid nitrogen.. Canis lupus; Pancreas; Islets of langerhans; dog; pancreas; islets of Langerhans Islet Freezing and Low-Temperature Storage — standard slow-step thaw (canine pancreatic islets, glass tubes). Equilibrated canine islets with 0.67 M DMSO 5 min, 1 M DMSO 30 min at 22 °C, then 2 M DMSO 15 min; nucleated after ice-slush and ethanol baths; slow-cooled 0.25 °C / min to −40 °C with programmable FTS freezer; plunged into liquid nitrogen (−196 °C).. Canis lupus; Pancreas; Islets of langerhans; dog; pancreas; islets of Langerhans Islet Freezing and Low-Temperature Storage — sucrose dilution thaw (canine pancreatic islets, glass tubes). Equilibrated canine islets with 0.67 M DMSO for 5 min, 1 M DMSO for 30 min at 22 °C, then 2 M DMSO for 15 min; glass tubes capped, placed 5 min in an ice-slush bath, transferred 5 min to a −7.4 °C 95 % ethanol seeding bath and nucleated; slow-cooled at 0.25 °C / min to −40 °C with a programmable FTS freezer bath; at −40 °C tubes were plunged into liquid nitrogen (−196 °C) for storage.. Canis lupus; Pancreas; Islets of langerhans; dog; pancreas; islets of Langerhans",
+        "paper_url": null,
+        "journal": "Cell Transplantation",
+        "published_year": 1997,
+        "published_month": 10,
+        "published_day": 4,
+        "authors_flat": "Jonathan R.T. Lakey; Garth L. Warnock; Ray V. Rajotte"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "0afd5156-4444-4294-a8de-8c29c35b03a5",
+        "paper_id": "0afd5156-4444-4294-a8de-8c29c35b03a5",
+        "doi": "10.1016/j.transproceed.2011.10.001",
+        "title": "Cryo-isolation: A Novel Method for Enzyme-Free Isolation of Pancreatic Islets Involving In Situ Cryopreservation of Islets and Selective Destruction of Acinar Tissue",
+        "abstract": "Methods—Cryo-isolation freezing −160 °C with 2 mol/L DMSO Unisol perfusion (juvenile pig pancreas). After completion of perfusion and ductal infusion the entire pancreas was cooled to sub-zero temperatures until frozen solid at −160 °C.. Sus scrofa; Pancreas; Juvenile (3–6 months old); juvenile pig; pancreas; 3–6 months old",
+        "paper_url": null,
+        "journal": "Transplantation Proceedings",
+        "published_year": 2011,
+        "published_month": 10,
+        "published_day": 1,
+        "authors_flat": "M.J. Taylor; S. Baicu"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "319d4b4f-5170-4966-a582-75463fe725d7",
+        "paper_id": "319d4b4f-5170-4966-a582-75463fe725d7",
+        "doi": "10.3727/000000008783907026",
+        "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+        "abstract": "Human islet cryopreservation — Programmed freezing with 5% DMSO + 6% HES (non-heart-beating donor pancreatic islets). After an overnight culture in serum-free medium containing human albumin, the islets were cryopreserved using the same procedure as the preclinical study: they were suspended in RPMI-1640 containing 5% DMSO and 6% HES, placed in a cryogenic storage container and cooled with the programmed freezing system Cryomed Model 1010 before storage in liquid nitrogen. Eight sample tubes (500–1000 islets each) per preparation were frozen for monitoring.. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; pancreatic islets Preclinical Study — Programmed freezing with 5% DMSO + 6% HES in RPMI-1640 (beagle dog pancreatic islets). Islets were suspended in RPMI-1640 containing 5% dimethyl sulfoxide (DMSO), 6% hydroxyethyl starch (HES) and 4% fetal bovine serum on ice, transferred into a 75-ml cryogenic storage container (7005-2, CharterMed Inc.) and the container was cooled using a programmed freezing system (Cryomed Model 1010, Forma Med Inc.). The container was stored for 4 weeks in liquid nitrogen.. Canis lupus; Pancreas; Pancreatic islet; beagle dog; pancreas; pancreatic islets",
+        "paper_url": "http://www.cognizantcommunication.com",
+        "journal": "Cell Transplantation",
+        "published_year": 2008,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Takashi Kenmochi; Takehide Asano; Michihiro Maruyama; Kenichi Saigo; Naotake Akutsu; Chikara Iwashita; Kazunori Ohtsuki; Akiko Suzuki; Mariko Miyazaki"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "571357d4-0860-494b-8a6a-23814bacb5a0",
+        "paper_id": "571357d4-0860-494b-8a6a-23814bacb5a0",
+        "doi": "10.3109/03009738709178687",
+        "title": "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+        "abstract": "Cryopreservation — 2 M DMSO in Hanks’ +10 % human serum, 25 °C/min cooling (mouse pancreatic islets). Planer Mini-freezer; 8 °C min⁻¹ to 0 °C, 25 °C min⁻¹ to –70 °C; immersion in liquid nitrogen. Freezing medium: Hanks’ solution with 10 % human serum + 2 M DMSO.. Mus musculus; Pancreas; Pancreatic islet; Mouse (NMRI); pancreas; pancreatic islets Cryopreservation — 2 M DMSO in Hanks’ +10 % human serum, 5 °C/min cooling (mouse pancreatic islets). Programmable temperature controller (Planer Mini-freezer, Model R 202/200R); initial 8 °C min⁻¹ from room temperature to 0 °C with 20 min hold, then 5 °C min⁻¹ to –70 °C followed by immersion in liquid nitrogen. Freezing medium: Hanks’ balanced salt solution supplemented with 10 % (v/v) human serum and 2 M dimethylsulphoxide.. Mus musculus; Pancreas; Pancreatic islet; Mouse (NMRI); pancreas; pancreatic islets Cryopreservation — 2 M DMSO in Hanks’ solution, 25 °C/min cooling (mouse pancreatic islets). Planer Mini-freezer; 8 °C min⁻¹ to 0 °C (20 min hold) then 25 °C min⁻¹ to –70 °C before liquid nitrogen plunge. Freezing medium: Hanks’ balanced salt solution + 2 M DMSO (no serum).. Mus musculus; Pancreas; Pancreatic islet; Mouse (NMRI); pancreas; pancreatic islets Cryopreservation — 2 M DMSO in Hanks’ solution, 5 °C/min cooling (mouse pancreatic islets). Programmable temperature controller (Planer Mini-freezer, Model R 202/200R); initial 8 °C min⁻¹ from room temperature to 0 °C with 20 min hold, then 5 °C min⁻¹ to –70 °C followed by immersion of ampoules in liquid nitrogen (–196 °C). Freezing medium: Hanks’ balanced salt solution + 2 M dimethylsulphoxide (no human serum).. Mus musculus; Pancreas; Pancreatic islet; Mouse (NMRI); pancreas; pancreatic islets Cryopreservation — 2 M DMSO in RPMI 1640 +10 % human serum, 25 °C/min cooling (mouse pancreatic islets). Planer Mini-freezer program: 8 °C min⁻¹ to 0 °C (20 min), 25 °C min⁻¹ to –70 °C; liquid nitrogen plunge. Freezing medium: RPMI 1640 containing 10 % human serum and 2 M DMSO.. Mus musculus; Pancreas; Pancreatic islet; Mouse (NMRI); pancreas; pancreatic islets Cryopreservation — 2 M DMSO in RPMI 1640 +10 % human serum, 5 °C/min cooling (mouse pancreatic islets). Planer Mini-freezer protocol: 8 °C min⁻¹ to 0 °C (20 min hold), 5 °C min⁻¹ to –70 °C then liquid nitrogen immersion. Freezing medium: RPMI 1640 supplemented with 10 % human serum and 2 M DMSO.. Mus musculus; Pancreas; Pancreatic islet; Mouse (NMRI); pancreas; pancreatic islets Cryopreservation — 2 M DMSO in RPMI 1640, 25 °C/min cooling (mouse pancreatic islets). Programmable Planer freezer; 8 °C min⁻¹ to 0 °C (20 min), then 25 °C min⁻¹ to –70 °C; liquid nitrogen storage. Freezing medium: RPMI 1640 + 2 M DMSO (no serum).. Mus musculus; Pancreas; Pancreatic islet; Mouse (NMRI); pancreas; pancreatic islets Cryopreservation — 2 M DMSO in RPMI 1640, 5 °C/min cooling (mouse pancreatic islets). Programmable temperature controller; 8 °C min⁻¹ to 0 °C (20 min hold) then 5 °C min⁻¹ to –70 °C; immersion in liquid nitrogen. Freezing medium: RPMI 1640 + 2 M DMSO (no human serum).. Mus musculus; Pancreas; Pancreatic islet; Mouse (NMRI); pancreas; pancreatic islets",
+        "paper_url": null,
+        "journal": "Upsala J Med Sci",
+        "published_year": 1987,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Stellan Sandler; Bo Nilsson; Arne Andersson"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "51afcf7d-1bff-4630-808a-40407290f0d2",
+        "paper_id": "51afcf7d-1bff-4630-808a-40407290f0d2",
+        "doi": "10.1006/cryo.1993.1040",
+        "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+        "abstract": "Method A cryopreservation — 2 M Me2SO, 0.25 °C/min to −40 °C, rapid warm 200 °C/min (rat pancreatic islets). Islets were exposed to 0.67 M Me2SO for 5 min at 22 °C, then 1 M Me2SO for 25 min at 22 °C, and finally 2 M Me2SO for 15 min at 0 °C; samples were cooled to −7.5 °C for ice nucleation and subsequently cooled at 0.25 °C /min to −40 °C in a Planer PTC 300 freezer before being plunged into and stored in liquid nitrogen.. Rattus norvegicus; Pancreas; Islet of langerhans; Rat (WAG/Ola); pancreas; islets of Langerhans; 100–200 µm diameter islets Method B cryopreservation — 2 M Me2SO, 0.3 °C/min to −70 °C, warm 50 °C/min (rat pancreatic islets). Islets were exposed to 0.67 M Me2SO for 5 min at 22 °C, then 1 M Me2SO for 25 min at 22 °C, and finally 2 M Me2SO for 15 min at 0 °C; samples were cooled to −10 °C for ice nucleation and subsequently cooled at 0.3 °C /min to −70 °C before being plunged into and stored in liquid nitrogen.. Rattus norvegicus; Pancreas; Islet of langerhans; Rat (WAG/Ola); pancreas; islets of Langerhans; 100–200 µm diameter islets",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1993,
+        "published_month": 6,
+        "published_day": 30,
+        "authors_flat": "S. J. Rich; S. Swift; S. M. Thirdborough; G. Rumford; R. F. L. James; N. J. M. London"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
+        "paper_id": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
+        "doi": "10.1016/j.lfs.2007.10.026",
+        "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+        "abstract": "Cryopreservation and thawing — 10% DMSO + 10 µM curcumin cryomix; 10 µM curcumin post-thaw (Swiss Albino mouse pancreatic islets). Islets were slow cooled in a temperature-controlled cooler (Cryobath Freeze Controller, Cryologic, Australia) to −40 °C at 0.25 °C / min and then transferred to liquid nitrogen for 7 days.. Mus musculus; Pancreas; Islets of langerhans; 6–8 week old; Swiss Albino mouse; pancreas; islets of Langerhans; ≈150 µm diameter Cryopreservation and thawing — 10% DMSO + 10 µM curcumin cryomix; no curcumin post-thaw (Swiss Albino mouse pancreatic islets). Islets were slow cooled in a temperature-controlled cooler (Cryobath Freeze Controller, Cryologic, Australia) to −40 °C at 0.25 °C / min and then transferred to liquid nitrogen for 7 days.. Mus musculus; Pancreas; Islets of langerhans; 6–8 week old; Swiss Albino mouse; pancreas; islets of Langerhans; ≈150 µm diameter Cryopreservation and thawing — 10% DMSO cryomix, no curcumin; 10 µM curcumin post-thaw (Swiss Albino mouse pancreatic islets). Islets were slow cooled in a temperature-controlled cooler (Cryobath Freeze Controller, Cryologic, Australia) to −40 °C at 0.25 °C / min and then transferred to liquid nitrogen for 7 days.. Mus musculus; Pancreas; Islets of langerhans; 6–8 week old; Swiss Albino mouse; pancreas; islets of Langerhans; ≈150 µm diameter Cryopreservation and thawing — 10% DMSO cryomix, no curcumin; no curcumin post-thaw (Swiss Albino mouse pancreatic islets). Islets were slow cooled in a temperature-controlled cooler (Cryobath Freeze Controller, Cryologic, Australia) to −40 °C at a rate of 0.25 °C / min and then transferred to liquid nitrogen for 7 days.. Mus musculus; Pancreas; Islets of langerhans; 6–8 week old; Swiss Albino mouse; pancreas; islets of Langerhans; ≈150 µm diameter",
+        "paper_url": "https://www.sciencedirect.com/science/article/pii/S0024320507005237",
+        "journal": "Life Sciences",
+        "published_year": 2008,
+        "published_month": 1,
+        "published_day": null,
+        "authors_flat": "Meghana Kanitkar; Ramesh R. Bhonde"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "2c3150ae-558a-49b0-b989-676d25c27884",
+        "paper_id": "2c3150ae-558a-49b0-b989-676d25c27884",
+        "doi": "10.1016/0011-2240(89)90039-4",
+        "title": "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+        "abstract": "Materials and Methods — Slow cooling 2 M Me2SO + rapid thaw 0.75 M sucrose (Wistar-Furth rat pancreatic islets). Dimethyl sulfoxide (Me2SO) was added stepwise at 22 °C to 1 M with 30 min equilibration, then raised to 2 M with 15 min equilibration at 0 °C; samples were nucleated for 5 min in a −7.5 °C ethanol seeding bath, allowed 10 min for latent-heat release, cooled at 0.25 °C min⁻¹ from −10 °C to −40 °C, and transferred to liquid nitrogen for storage at −196 °C for 2–12 weeks.. Rattus norvegicus; Pancreas; Islets of langerhans; Wistar-Furth rat; pancreas; islets of Langerhans; 100-250 µm; groups of 500 islets",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1989,
+        "published_month": 1,
+        "published_day": 1,
+        "authors_flat": "G. L. Warnock; R. V. Rajotte"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "341ba0bf-982b-48aa-88b0-a8d57ec8199e",
+        "paper_id": "341ba0bf-982b-48aa-88b0-a8d57ec8199e",
+        "doi": "10.4161/isl.26304",
+        "title": "Human islet mass, morphology, and survival after cryopreservation using the Edmonton protocol",
+        "abstract": "Thawing of cryopreserved human pancreatic islets — Edmonton medium; 24 h post-thaw culture. Cryopreservation at −196 °C in 2 M dimethyl-sulfoxide (liquid nitrogen storage) prior to thaw. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islet Thawing of cryopreserved human pancreatic islets — Edmonton medium; 3 day post-thaw culture. Cryopreservation at −196 °C in 2 M dimethyl-sulfoxide (liquid nitrogen storage) prior to thaw. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islet Thawing of cryopreserved human pancreatic islets — Edmonton medium; 5 day post-thaw culture. Cryopreservation at −196 °C in 2 M dimethyl-sulfoxide (liquid nitrogen storage) prior to thaw. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islet Thawing of cryopreserved human pancreatic islets — Edmonton medium; 7 day post-thaw culture. Cryopreservation at −196 °C in 2 M dimethyl-sulfoxide (liquid nitrogen storage) prior to thaw. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islet Thawing of cryopreserved human pancreatic islets — Pre-Edmonton medium; 24 h post-thaw culture. Cryopreservation at −196 °C in 2 M dimethyl-sulfoxide (liquid nitrogen storage) prior to thaw. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islet Thawing of cryopreserved human pancreatic islets — Pre-Edmonton medium; 3 day post-thaw culture. Cryopreservation at −196 °C in 2 M dimethyl-sulfoxide (liquid nitrogen storage) prior to thaw. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islet Thawing of cryopreserved human pancreatic islets — Pre-Edmonton medium; 5 day post-thaw culture. Cryopreservation at −196 °C in 2 M dimethyl-sulfoxide (liquid nitrogen storage) prior to thaw. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islet Thawing of cryopreserved human pancreatic islets — Pre-Edmonton medium; 7 day post-thaw culture. Cryopreservation at −196 °C in 2 M dimethyl-sulfoxide (liquid nitrogen storage) prior to thaw. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islet",
+        "paper_url": "http://dx.doi.org/10.4161/isl.26304",
+        "journal": "Islets",
+        "published_year": 2013,
+        "published_month": 9,
+        "published_day": null,
+        "authors_flat": "Priya M Miranda; Viswanathan Mohan; Sekhar Ganthimathy; Ranjit M Anjana; S Gunasekaran; Venkatachalam Thiagarajan; Thomas A Churchill; Tatsuya Kin; AM James Shapiro; Jonathan RT Lakey"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "f68c40d9-4184-4dc8-b527-095353b5c290",
+        "paper_id": "f68c40d9-4184-4dc8-b527-095353b5c290",
+        "doi": "10.1016/j.cryobiol.2019.04.004",
+        "title": "Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents",
+        "abstract": "Cryopreservation — 1 M Me₂SO + 0.5 M EG (human pancreatic islets). Stepwise addition of cryoprotectant, −7.5 °C ethanol bath nucleation (5 min, metal-rod), controlled-rate cooling at 0.25 °C /min to −40 °C, immersion in liquid nitrogen to −196 °C for 4 weeks.. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islets Cryopreservation — 1 M Me₂SO + 0.5 M EG (rat pancreatic islets). Stepwise addition of cryoprotectant followed by −7.5 °C ethanol bath nucleation (5 min), nucleation with pre-frozen metal rod; cooled at 0.25 °C /min in evacuated Dewar from −7.5 °C to −40 °C; submerged in liquid nitrogen to −196 °C for 4 weeks.. Rattus norvegicus; Pancreas; Islets of langerhans; Sprague-Dawley rat; pancreas; islets Cryopreservation — 1 M Me₂SO + 1 M EG (human pancreatic islets). Stepwise addition of cryoprotectant followed by −7.5 °C ethanol bath nucleation, controlled-rate cooling at 0.25 °C /min to −40 °C, then immersion in liquid nitrogen (−196 °C) for 4 weeks.. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islets Cryopreservation — 1 M Me₂SO + 1 M EG (rat pancreatic islets). Stepwise addition of cryoprotectant followed by transfer of the tubes to a −7.5 °C ethanol bath for 5 min for nucleation; nucleation with pre-frozen metal rod; cooled in evacuated freezing Dewar at 0.25 °C /min from −7.5 °C to −40 °C; submerged in liquid nitrogen to −196 °C for 4 weeks.. Rattus norvegicus; Pancreas; Islets of langerhans; Sprague-Dawley rat; pancreas; islets Cryopreservation — 2 M Me₂SO (human pancreatic islets). Stepwise addition of cryoprotectant followed by −7.5 °C ethanol bath nucleation (5 min, metal-rod induced), cooling in evacuated Dewar at 0.25 °C /min to −40 °C, then immersion in liquid nitrogen to −196 °C for 4 weeks.. Homo sapiens; Pancreas; Pancreatic islet; human; pancreas; islets Cryopreservation — 2 M Me₂SO (rat pancreatic islets). Stepwise addition of cryoprotectant followed by transfer of the tubes to a −7.5 °C ethanol bath for 5 min to nucleate (nucleation initiated by touching the tubes with a pre-frozen metal rod). Samples were then placed in an evacuated freezing Dewar set to cool at 0.25 °C /min from −7.5 °C to −40 °C, after which they were submerged in liquid nitrogen to −196 °C and stored for 4 weeks.. Rattus norvegicus; Pancreas; Islets of langerhans; Sprague-Dawley rat; pancreas; islets",
+        "paper_url": "https://doi.org/10.1016/j.cryobiol.2019.04.004",
+        "journal": "Cryobiology",
+        "published_year": 2019,
+        "published_month": 4,
+        "published_day": 13,
+        "authors_flat": "Greg Kojayan; David Whaley; Michael Alexander; Samuel Rodriguez; Sarah Lee; Jonathan RT. Lakey"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
+        "paper_id": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
+        "doi": "10.1111/j.1600-6143.2007.01741.x",
+        "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+        "abstract": "Islet cryopreservation — ICS solution (human pancreatic islets). Islets were first exposed to 0.5 M dimethyl sulfoxide (DMSO) for 20 min on ice with ICS, followed by 2.1 M DMSO on ice. Five thousand to ten thousand IEQ were placed in a cooled 1.8-mL cryotube. The vials were immediately transferred into a freezing compartment, chilled to 4 °C, of an automated, computer-controlled cryounit (CRF2000, Gordinier Electronics, Roseville, MI).. Homo sapiens; Pancreas; Pancreatic islet; Human; pancreas; islets; 5000–10000 IEQ per cryotube Islet cryopreservation — ICS supplemented with p38IH SD-282 (ICS-p38IH) (human pancreatic islets). Islets were first exposed to 0.5 M dimethyl sulfoxide (DMSO) for 20 min on ice with ICS-p38IH, followed by 2.1 M DMSO on ice. Five thousand to ten thousand IEQ were placed in a cooled 1.8-mL cryotube. The vials were immediately transferred into a freezing compartment, chilled to 4 °C, of an automated, computer-controlled cryounit (CRF2000, Gordinier Electronics, Roseville, MI).. Homo sapiens; Pancreas; Pancreatic islet; Human; pancreas; islets; 5000–10000 IEQ per cryotube Islet cryopreservation — RPMI1640 medium (human pancreatic islets). Islets were first exposed to 0.5 M dimethyl sulfoxide (DMSO) for 20 min at room temperature with RPMI, followed by 2.1 M DMSO on ice. Five thousand to ten thousand IEQ were placed in a cooled 1.8-mL cryotube. The vials were immediately transferred into a freezing compartment, chilled to 4 °C, of an automated, computer-controlled cryounit (CRF2000, Gordinier Electronics, Roseville, MI).. Homo sapiens; Pancreas; Pancreatic islet; Human; pancreas; islets; 5000–10000 IEQ per cryotube",
+        "paper_url": null,
+        "journal": "American Journal of Transplantation",
+        "published_year": 2007,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "K. Omori; L. Valiente; C. Orr; J. Rawson; K. Ferreria; I. Todorova; I. H. Al-Abdullah; S. Medicherla; A. A. Potter; G. F. Schreiner; F. Kandeel; Y. Mullen"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",
+        "paper_id": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",
+        "doi": "10.2337/diab.36.1.59",
+        "title": "Interaction of Cooling Rate, Warming Rate, and Extent of Permeation of Cryoprotectant in Determining Survival of Isolated Rat Islets of Langerhans During Cryopreservation",
+        "abstract": "Freezing and thawing procedures — fully equilibrated — cooled at 0.3°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 0.3°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 0.3°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 0.3°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at >1000°C/min, warmed at ~10°C/min (rat pancreatic islets). droplet freezing directly into boiling liquid N2 giving a cooling rate >1000°C/min. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at >1000°C/min, warmed at ~50°C/min (rat pancreatic islets). droplet freezing directly into boiling liquid N2 giving a cooling rate >1000°C/min. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 10°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 10°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 10°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 10°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 150°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 150°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 150°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 150°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 30°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 30°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 30°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 30°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 3°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 3°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 3°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 3°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 60°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 60°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — fully equilibrated — cooled at 60°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 60°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 0.3°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 0.3°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 0.3°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 0.3°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at >1000°C/min, warmed at ~10°C/min (rat pancreatic islets). droplet freezing directly into boiling liquid N2 giving a cooling rate >1000°C/min. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at >1000°C/min, warmed at ~50°C/min (rat pancreatic islets). droplet freezing directly into boiling liquid N2 giving a cooling rate >1000°C/min. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 10°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 10°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 10°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 10°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 150°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 150°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 150°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 150°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 30°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 30°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 30°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 30°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 3°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 3°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 3°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 3°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 60°C/min, warmed at ~10°C/min (rat pancreatic islets). cooled at 60°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans Freezing and thawing procedures — partially equilibrated — cooled at 60°C/min, warmed at ~50°C/min (rat pancreatic islets). cooled at 60°C/min to −70°C and then transferred directly into liquid N2 for storage at −196°C. Rattus norvegicus; Pancreas; Islets of langerhans; rat; pancreas; islets of Langerhans",
+        "paper_url": null,
+        "journal": "Diabetes",
+        "published_year": 1987,
+        "published_month": 1,
+        "published_day": 1,
+        "authors_flat": "Michael J. Taylor; Marcus J. Benton"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "72b969f2-a34b-439a-9300-511e3309b5d2",
+        "paper_id": "72b969f2-a34b-439a-9300-511e3309b5d2",
+        "doi": "10.1016/0011-2240(83)90010-x",
+        "title": "Murine Islet Cryopreservation and Corticosteroids: Functional Studies",
+        "abstract": "Programmable freezing — 10% Me2SO with hydrocortisone (neonatal murine pancreatic islets). Vials were transferred to a programmable (Cryo-med) freezing system, freezing at 0.25 °C per minute to –80 °C, then transferred to the vapor phase of liquid nitrogen, –196 °C.. Mus musculus; Pancreas; Pancreatic islet; Neonatal; mouse; pancreas; pancreatic islets; neonatal Programmable freezing — 10% Me2SO without hydrocortisone (neonatal murine pancreatic islets). Vials were transferred to a programmable (Cryo-med) freezing system, freezing at 0.25 °C per minute to –80 °C, then transferred to the vapor phase of liquid nitrogen, –196 °C.. Mus musculus; Pancreas; Pancreatic islet; Neonatal; mouse; pancreas; pancreatic islets; neonatal",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1983,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "C. Weber; F. X. Pi-Sunyer; G. Nilaver; K. Reemtsma"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "02eddb39-be9a-4bbb-b814-5952e78e3145",
+        "paper_id": "02eddb39-be9a-4bbb-b814-5952e78e3145",
+        "doi": "10.3727/096368913X672055",
+        "title": "Nonenzymatic Cryogenic Isolation of Therapeutic Cells: Novel Approach for Enzyme-Free Isolation of Pancreatic Islets Using In Situ Cryopreservation of Islets and Concurrent Selective Freeze Destruction of Acinar Tissue",
+        "abstract": "Cryoisolation baseline — 2 M DMSO vascular perfusion, LN2 tray freezing, mechanical crushing plus cold-medium blending rewarming (juvenile porcine pancreas). Entire porcine pancreas placed on a stainless-steel tray supported above the surface of boiling liquid nitrogen (−196 °C); average cooling rate ≈ 11 °C / min until the gland reached ≤ −160 °C, then sealed in a plastic bag and stored in the vapor phase of a liquid-nitrogen cryostorage container.. Sus scrofa; Pancreas; Juvenile; Domestic Yorkshire juvenile pig; pancreas; whole pancreas with embedded islets; donor body weight 25–32 kg; juvenile Cryoisolation baseline — 2 M DMSO vascular perfusion, LN2 tray freezing, warm medium immersion rewarming (juvenile porcine pancreas). Entire porcine pancreas placed on a stainless-steel tray supported above the surface of boiling liquid nitrogen (−196 °C); average cooling rate ≈ 11 °C / min until the gland reached ≤ −160 °C, then sealed in a plastic bag and stored in the vapor phase of a liquid-nitrogen cryostorage container.. Sus scrofa; Pancreas; Juvenile; Domestic Yorkshire juvenile pig; pancreas; whole pancreas with embedded islets; donor body weight 25–32 kg; juvenile",
+        "paper_url": "http://dx.doi.org/10.3727/096368913X672055",
+        "journal": "Cell Transplantation",
+        "published_year": 2014,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Michael J. Taylor; Simona C. Baicu"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "c10110ba-e282-4d66-80f6-bebbfcedbbfa",
+        "paper_id": "c10110ba-e282-4d66-80f6-bebbfcedbbfa",
+        "doi": "10.1016/0011-2240(81)90108-5",
+        "title": "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+        "abstract": "Controlled-rate freezing — 0.25 °C/min pellet, step dilution (Lewis rat pancreatic islets). Islet pellet equilibrated to 2 M Me2SO (0.1 ml 2 M Me2SO for 5 min at 22 °C, second 0.1 ml 2 M Me2SO for 25 min at 22 °C, then 0.4 ml 3 M Me2SO for 15 min at 0 °C); seeded at −7.5 °C for 5 min, nucleated with an ice crystal, then cooled from −10 °C to −75 °C at 0.25 °C / min in an evacuated Dewar containing 95 % ethanol before transfer to liquid nitrogen (−196 °C).. Rattus norvegicus; Pancreas; Islets of langerhans; Adult; Healthy; Lewis rat; Islets of Langerhans; adult donors Controlled-rate freezing — 0.25 °C/min pellet, sucrose dilution (Lewis rat pancreatic islets). Islet pellet equilibrated to 2 M Me2SO with the sequential additions described, seeded at −7.5 °C, nucleated, then cooled at 0.25 °C / min from −10 °C to −75 °C in an ethanol-filled Dewar before immersion in liquid nitrogen (−196 °C).. Rattus norvegicus; Pancreas; Islets of langerhans; Adult; Healthy; Lewis rat; Islets of Langerhans; adult donors Controlled-rate freezing — 0.25 °C/min suspension, sucrose dilution (Lewis rat pancreatic islets). Islets suspended in medium, tube gently agitated so all islets remained in suspension; equilibrated to 2 M Me2SO as above, seeded at −7.5 °C, nucleated, then cooled from −10 °C to −75 °C at 0.25 °C / min before storage in liquid nitrogen (−196 °C).. Rattus norvegicus; Pancreas; Islets of langerhans; Adult; Healthy; Lewis rat; Islets of Langerhans; adult donors Programmed freezing — 1.0 °C/min suspension, sucrose dilution (Lewis rat pancreatic islets). Islet suspension equilibrated with Me2SO to 2 M, seeded at −7.5 °C, then cooled in a programmable FTS-2 freezer at 1.0 °C / min from −10 °C to −75 °C before transfer to liquid nitrogen (−196 °C).. Rattus norvegicus; Pancreas; Islets of langerhans; Adult; Healthy; Lewis rat; Islets of Langerhans; adult donors",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1981,
+        "published_month": 1,
+        "published_day": null,
+        "authors_flat": "Ray V. Rajotte; David W. Scharp; Richard Downing; Robert Preston; George D. Molnar; Walter F. Ballinger; Marie H. Greider"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "transplantation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+        "paper_id": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+        "doi": "10.5301/IJAO.2011.8465",
+        "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+        "abstract": "Materials and Methods — 10% DMSO sequential cryopreservation of porcine pancreatic islets. Cryopreserved using DMSO added at 10% in sequential stages to reduce temperature, then transferred into liquid nitrogen at -196°C. Sus scrofa; Pancreas; Pancreatic islet; pig; pancreas; pancreatic islets",
+        "paper_url": null,
+        "journal": "Artificial Organs",
+        "published_year": 2011,
+        "published_month": 6,
+        "published_day": null,
+        "authors_flat": "Maria Concetta Gioviale; Giuseppe Damiano; Vincenzo Davide Palumbo; Maurizio Bellavia; Francesco Cacciabaudo; Giovanni Cassata; Roberto Puleio; Roberta Altomare; Attilio Ignazio Lo Monte"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
+        "paper_id": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
+        "doi": "10.2337/diab.36.9.1086",
+        "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
+        "abstract": "Cryopreservation — 2 M DMSO slow cooling to −40 °C, storage −196 °C and rapid thaw (rat pancreatic islets, no ALS). Dimethyl sulfoxide (DMSO) was added stepwise to a final concentration of 2 M. The samples were super-cooled to −7.3 °C, nucleated, slowly cooled at 0.25 °C / min to −40 °C, then quickly frozen to −196 °C for storage.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (Wistar-Furth); pancreas; pancreatic islets; >100 μm Cryopreservation — 2 M DMSO slow cooling to −40 °C, storage −196 °C and rapid thaw (rat pancreatic islets, with ALS). Dimethyl sulfoxide (DMSO) was added stepwise to a final concentration of 2 M. The samples were super-cooled to −7.3 °C, nucleated, slowly cooled at 0.25 °C / min to −40 °C, then quickly frozen to −196 °C for storage.. Rattus norvegicus; Pancreas; Pancreatic islet; rat (Wistar-Furth); pancreas; pancreatic islets; >100 μm",
+        "paper_url": null,
+        "journal": "Diabetes",
+        "published_year": 1987,
+        "published_month": 9,
+        "published_day": null,
+        "authors_flat": "Marilyne G. Coulombe; Garth L. Warnock; Ray V. Rajotte"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "5657b492-dd6b-491f-935b-6248369afbb2",
+        "paper_id": "5657b492-dd6b-491f-935b-6248369afbb2",
+        "doi": "10.2337/diab.38.1.s176",
+        "title": "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+        "abstract": "Cryopreservation — stepwise 2 M DMSO slow cooling liquid nitrogen (human pancreatic islets). Islets were supercooled to -7.5°C in an ethanol bath, nucleated, and cooled at 0.25°C/min to -40°C before immersion in liquid nitrogen (-196°C) for a median 46.5 days.. Homo sapiens; Pancreas; Pancreatic islet; Cadaveric; human; pancreas; pancreatic islets; cadaveric",
+        "paper_url": null,
+        "journal": "Diabetes",
+        "published_year": 1989,
+        "published_month": 1,
+        "published_day": null,
+        "authors_flat": "Norman M. Kneteman; Derek Alderson; David W. Scharp; Paul E. Lacy"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "80be44da-a725-4051-9d4e-0c5881409006",
+        "paper_id": "80be44da-a725-4051-9d4e-0c5881409006",
+        "doi": "10.1159/000129396",
+        "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+        "abstract": "Cryopreservation and Cryothaw — 2 M DMSO, slow cooling 0.25 °C/min (canine pancreatic islets). Islets were fully equilibrated by hypothermic treatment and step-wise exposure to 2 M dimethylsulfoxide, tubes were seeded for 5 min in a Forma Scientific ethanol seeding bath pre-cooled to −7.8 °C, nucleation was induced by touching a frost-covered metal coil and shaking in ethanol, tubes were left 15 min to dissipate latent heat, transferred to a Dewar flask of anhydrous ethanol surrounded by liquid nitrogen and slowly cooled at 0.25 °C / min from −10 °C to −40 °C, then plunged into a liquid-nitrogen tank (−196 °C) for long-term storage.. Canis lupus; Pancreas; Islets of langerhans; Adult; dog; pancreas; islets of Langerhans; adult",
+        "paper_url": null,
+        "journal": "European Surgical Research",
+        "published_year": 1995,
+        "published_month": 3,
+        "published_day": 27,
+        "authors_flat": "H.T. Cherna; D. W. Scharph"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+        "paper_id": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+        "doi": "10.1016/j.cryobiol.2019.03.009",
+        "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+        "abstract": "Cryotop vitrification — 10% EG + 20 % CPLL + 0.5 M sucrose (rat pancreatic islets). Islets were equilibrated for 3 min in half-strength solution (5 % EG, 10 % CPLL) before 60-s exposure to the vitrification solution containing 10 % EG, 20 % CPLL and 0.5 M sucrose; 10 islets were mounted on a Cryotop® strip and plunged into LN₂.. Rattus norvegicus; Pancreas; Pancreatic islet; Wistar × Brown-Norway F1 rat; pancreas; pancreatic islets; 10 islets per Cryotop® device Cryotop vitrification — 15% EG + 15% DMSO + 0.5 M sucrose (no CPLL) (rat pancreatic islets). Islets were equilibrated 3 min in half-strength EG/DMSO solution, transferred 60 s into the vitrification solution (15 % EG, 15 % DMSO, 0.5 M sucrose), loaded (10 islets) onto Cryotop® and plunged into liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; Wistar × Brown-Norway F1 rat; pancreas; pancreatic islets; 10 islets per Cryotop® device Cryotop vitrification — 15% EG + 15% DMSO + 20 % CPLL + 0.5 M sucrose (rat pancreatic islets). Equilibration 3 min (7.5 % EG, 7.5 % DMSO, 10 % CPLL); 60-s exposure to 15 % EG, 15 % DMSO, 20 % CPLL, 0.5 M sucrose; 10 islets on Cryotop® plunged into LN₂.. Rattus norvegicus; Pancreas; Pancreatic islet; Wistar × Brown-Norway F1 rat; pancreas; pancreatic islets; 10 islets per Cryotop® device Cryotop vitrification — 20% EG + 20 % CPLL + 0.5 M sucrose (rat pancreatic islets). Equilibration 3 min (10 % EG, 10 % CPLL); 60-s exposure to 20 % EG, 20 % CPLL, 0.5 M sucrose; 10 islets loaded onto Cryotop® and plunged into LN₂.. Rattus norvegicus; Pancreas; Pancreatic islet; Wistar × Brown-Norway F1 rat; pancreas; pancreatic islets; 10 islets per Cryotop® device Cryotop vitrification — 30% EG + 0.5 M sucrose, 0 % CPLL (rat pancreatic islets). Islets were equilibrated for 3 min with ethylene glycol (EG) in RPMI-1640 supplemented with FBS at ambient temperature (25 ± 2 °C).  The islets were then transferred into the vitrification solution for 60 s at ambient temperature.  Within this 60-s period, 10 ± 1 islets were loaded onto the polypropylene strip of a Cryotop® device with a minimal volume of the vitrification solution and then quickly plunged into liquid nitrogen (LN₂).. Rattus norvegicus; Pancreas; Pancreatic islet; Wistar × Brown-Norway F1 rat; pancreas; pancreatic islets; 10 islets per Cryotop® device Cryotop vitrification — 30% EG + 0.5 M sucrose, 10 % CPLL (rat pancreatic islets). Islets were equilibrated for 3 min with EG and CPLL in RPMI-1640 supplemented with FBS at 25 ± 2 °C.  The islets were then transferred into the vitrification solution for 60 s, loaded (10 ± 1 islets) onto a Cryotop® strip and rapidly plunged into liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; Wistar × Brown-Norway F1 rat; pancreas; pancreatic islets; 10 islets per Cryotop® device Cryotop vitrification — 30% EG + 0.5 M sucrose, 20 % CPLL (rat pancreatic islets). Islets were equilibrated for 3 min with EG and 20 % CPLL (half-strength) and then transferred into the full-strength vitrification solution (30 % EG, 20 % CPLL, 0.5 M sucrose).  Ten islets were loaded onto a Cryotop® strip during the 60-s exposure and immediately plunged into liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; Wistar × Brown-Norway F1 rat; pancreas; pancreatic islets; 10 islets per Cryotop® device Nylon-mesh vitrification — 30% EG + 20 % CPLL + 0.5 M sucrose (10 islets per device). Islets were equilibrated with 15 % EG, 10 % CPLL and 20 % FBS in RPMI-1640 for 3 min at ambient temperature, placed onto the centre triangle of the sterilised nylon mesh device (10 islets), the equilibration solution wicked away on sterile filter paper, and the islets were exposed to vitrification solution (30 % EG, 20 % CPLL, 0.5 M sucrose, 20 % FBS in RPMI-1640) for 60 s at ambient temperature; the device was then placed on fresh Kimwipes® and quickly plunged into LN₂.. Rattus norvegicus; Pancreas; Pancreatic islet; Wistar × Brown-Norway F1 rat; pancreas; pancreatic islets; 10 islets per nylon mesh device Nylon-mesh vitrification — 30% EG + 20 % CPLL + 0.5 M sucrose (50 islets per device). Identical nylon-mesh equilibration (15 % EG, 10 % CPLL, 3 min), exposure 60 s to 30 % EG, 20 % CPLL, 0.5 M sucrose; 50 islets were loaded onto the nylon mesh device before rapid plunging into liquid nitrogen.. Rattus norvegicus; Pancreas; Pancreatic islet; Wistar × Brown-Norway F1 rat; pancreas; pancreatic islets; 50 islets per nylon mesh device",
+        "paper_url": "https://doi.org/10.1016/j.cryobiol.2019.03.009",
+        "journal": "Cryobiology",
+        "published_year": 2019,
+        "published_month": 3,
+        "published_day": 25,
+        "authors_flat": "Kenyu Nakayama; Takahiro Yamanaka; Yasushi Tamada; Masumi Hirabayashi; Shinichi Hochi"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "vitrification"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "12e4333d-e145-4340-ada1-b38751f5f390",
+        "paper_id": "12e4333d-e145-4340-ada1-b38751f5f390",
+        "doi": "10.1006/cryo.1996.0024",
+        "title": "Viability Analysis of Cryopreserved Rat Pancreatic Islets Using Laser Scanning Confocal Microscopy",
+        "abstract": "Cryopreservation Procedures — 0.3 °C / min programmable freezer (rat pancreatic islets). Ice was nucleated at −10 °C, equilibrated 5 min, then cooled in a Kryo-10 digitally programmable and controlled freezer at 0.3 °C / min to −70 °C before transfer to liquid nitrogen (−196 °C).. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets Cryopreservation Procedures — 10 °C / min programmable freezer (rat pancreatic islets). Ice was nucleated at −10 °C, equilibrated 5 min, then cooled in a Kryo-10 digitally programmable and controlled freezer at 10 °C / min to −70 °C before transfer to liquid nitrogen (−196 °C).. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets Cryopreservation Procedures — 1 °C / min programmable freezer (rat pancreatic islets). Ice was nucleated at −10 °C, equilibrated 5 min, then cooled in a Kryo-10 digitally programmable and controlled freezer at 1 °C / min to −70 °C before transfer to liquid nitrogen (−196 °C).. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets Cryopreservation Procedures — 30 °C / min programmable freezer (rat pancreatic islets). Ice was nucleated at −10 °C, equilibrated 5 min, then cooled in a Kryo-10 digitally programmable and controlled freezer at 30 °C / min to −70 °C before transfer to liquid nitrogen (−196 °C).. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets Cryopreservation Procedures — 3 °C / min programmable freezer (rat pancreatic islets). Ice was nucleated at −10 °C, equilibrated 5 min, then cooled in a Kryo-10 digitally programmable and controlled freezer at 3 °C / min to −70 °C before transfer to liquid nitrogen (−196 °C).. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1996,
+        "published_month": 3,
+        "published_day": 1,
+        "authors_flat": "Fatima A. Merchant; Kenneth R. Diller; Shanti J. Aggarwal; Alan C. Bovik"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
+        "paper_id": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
+        "doi": "10.1016/0011-2240(87)90033-2",
+        "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+        "abstract": "Fast plunge of Me2SO-loaded islets — 1.5 M Me2SO, direct 0 °C → −196 °C (mouse pancreatic islets). After equilibration in 1.5 M Me2SO the straws were transferred from 0 °C directly into liquid nitrogen (−196 °C) in a single step, omitting the programmed slow-cool to −40 °C.. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans Slow-cool freezing — 1.5 M 1,2-propanediol, cooled to −40 °C (mouse pancreatic islets). Islets equilibrated with 1.5 M 1,2-propanediol in straws; ice seeded at −9 °C; cooling at 0.3 °C min-1 to −40 °C then plunge into liquid nitrogen (−196 °C).. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans Slow-cool freezing — 1.5 M 1,2-propanediol, cooled to −80 °C (mouse pancreatic islets). As EXPT-003 but cooling continued to −80 °C at 0.3 °C min-1 before plunging into liquid nitrogen.. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans Slow-cool freezing — 1.5 M Me2SO, cooled 0.3 °C min-1 to −40 °C (mouse pancreatic islets). Islets equilibrated with 1.5 M dimethyl-sulfoxide in plastic straws; ice seeding induced at −9 °C then the straws were cooled at 0.3 °C min-1 to −40 °C, held up to 5 min and plunged into liquid nitrogen (−196 °C) for 30 min–4 days.. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans Slow-cool freezing — 1.5 M Me2SO, cooled 0.3 °C min-1 to −80 °C (mouse pancreatic islets). Same 1.5 M Me2SO loading as EXPT-001 but the programmable freezer cooled the straws at 0.3 °C min-1 to −80 °C before plunging into liquid nitrogen (−196 °C).. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans Vitrification — stepwise to 100 % VM (22.5 % Me2SO + 17 % acetamide + 11 % propylene glycol + 5 % PEG-6000) (mouse pancreatic islets). Islets in 100 µl RPMI-BSA received 30 µl 110 % vitrification medium (22.5 % Me2SO, 17 % acetamide, 11 % propylene glycol, 5 % PEG-6000) at room temperature (25 % VM). After 15 min 55 µl 110 % VM were added (50 % VM) and the ampoule transferred to ice-water. Ten minutes later 925 µl cold 110 % VM were added at 0 °C to reach 100 % VM. After 10 min equilibration the sealed ampoules were plunged into liquid nitrogen; contents vitrified within ≈30 s.. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans Vitrification variant — 10 min 25-100 % VM ramp (mouse pancreatic islets). Islets incubated 10 min in 25 % VM at room temperature, then 10 min in 50 % VM, followed by 3 min each in 70 %, 80 %, 90 % VM and 10 min in 100 % VM at 0 °C before plunging into liquid nitrogen.. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans Vitrification variant — 15 min 25-100 % VM ramp (mouse pancreatic islets). Islets incubated 15 min in 25 % VM at room temperature, then 10 min 50 % VM, 3 min 70 %, 3 min 80 %, 3 min 90 %, 10 min 100 % VM at 0 °C before plunge freezing in liquid nitrogen.. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans Vitrification variant — 15 min 25-80 % VM ramp (mouse pancreatic islets). Islets treated 15 min in 25 % VM (room temp), 10 min 50 % VM, 10 min 70 % VM and 10 min 80 % VM (all at 0 °C) before plunge into liquid nitrogen.. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans Vitrification variant — 20 min 25-100 % VM ramp (mouse pancreatic islets). Islets incubated 20 min in 25 % VM at room temperature then processed through 50 %, 70 %, 80 %, 90 % and 100 % VM as in EXPT-006 before plunging into liquid nitrogen.. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans Vitrification variant — single-step 15 min 25 % VM (Rall & Fahy method) (mouse pancreatic islets). Islets incubated 15 min in 25 % VM at room temperature, sealed and plunged directly into liquid nitrogen without further concentration steps (as in Rall & Fahy).. Mus musculus; Pancreas; Islets of langerhans; mouse; pancreas; islets of Langerhans",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1987,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "N. H. P. M. Jutte; P. Heyse; H. G. Jansen; G. J. Bruining; G. H. Zeilmaker"
+      },
+      "score": 10,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic",
+        "vitrification"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
+        "paper_id": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
+        "doi": "10.1097/00007890-199402150-00005",
+        "title": "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+        "abstract": "Islet freezing — DMSO stepwise equilibration, slow cooling 0.25°C/min (porcine pancreatic islets). The islets were supercooled to -7.5°C for 5 min in an ethanol bath, then nucleated by contacting the test tube against steel tubing through which liquid N2 was circulating. Release of the latent heat of fusion was permitted by incubating the tubes at -7.5°C for 15 min. An apparatus consisting of an evacuated calibrated Dewar flask filled with ethanol and surrounded by liquid N2 that had already been developed (7) was used to cool the islets linearly at 0.25°C/min to -40°C. The tissue was then immersed in liquid N2 and stored at -130°C for variable periods of time (from 5 days to 8 weeks).. Sus scrofa; Pancreas; Pancreatic islet; Adult; pig; pancreas; pancreatic islets; adult",
+        "paper_url": null,
+        "journal": "Transplantation",
+        "published_year": 1994,
+        "published_month": 2,
+        "published_day": null,
+        "authors_flat": "Piero Marchetti; David W. Scharp; Kim Pfiffner; Carol J. Swanson; Edward H. Finke; Barbara J. Olack; Andriani Gerasimidi-Vazeou; Melissa McLear; Paul E. Lacy"
+      },
+      "score": 9,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "d865c65c-b6a7-431c-941c-c23d68f30469",
+        "paper_id": "d865c65c-b6a7-431c-941c-c23d68f30469",
+        "doi": "10.1016/j.transproceed.2007.02.076",
+        "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+        "abstract": "Freezing and Thawing of FIPIC — FM I (10 % DMSO + 0.4 mol/L sucrose; porcine islet cells). For freezing, 10 mL of cold FM I (70 % Dulbecco’s modified Eagle medium high glucose, 20 % fetal calf serum, 10 % dimethylsulfoxide, 0.4 mol/L sucrose) was added to freshly isolated porcine islet cells and 1 mL of this suspension was transferred into 1.2-mL freezing ampoules and frozen slowly with a temperature decrease of 1 °C per minute using a 5100 Cryo 1 °C Freezing Container (“Mr. Frosty”).. Sus scrofa; Pancreas; pancreatic endocrine cell; pig; pancreas; islet cells Freezing and Thawing of FIPIC — FM II (40 % DMSO; porcine islet cells). For freezing, 10 mL of cold FM II (40 % dimethylsulfoxide, 60 % basal medium) was added to freshly isolated porcine islet cells and 1 mL of this suspension was transferred into 1.2-mL freezing ampoules and frozen slowly with a temperature decrease of 1 °C per minute using a 5100 Cryo 1 °C Freezing Container (“Mr. Frosty”).. Sus scrofa; Pancreas; pancreatic endocrine cell; pig; pancreas; islet cells Freezing and Thawing of FIPIC — FM III (1 mol/L glycerol + 0.4 mol/L sucrose; porcine islet cells). FIPIC were first taken in 4.5 mL cold fetal calf serum and held on ice for 10 minutes; 1.5 mL FM III (75 % Dulbecco’s modified Eagle medium high glucose, 25 % fetal calf serum, 1 mol/L glycerol, 0.4 mol/L sucrose) was then added. The suspension (1 mL) was transferred into 1.2-mL freezing ampoules and frozen slowly with a temperature decrease of 1 °C per minute using a 5100 Cryo 1 °C Freezing Container (“Mr. Frosty”).. Sus scrofa; Pancreas; pancreatic endocrine cell; pig; pancreas; islet cells",
+        "paper_url": null,
+        "journal": "Transplantation Proceedings",
+        "published_year": 2007,
+        "published_month": 2,
+        "published_day": null,
+        "authors_flat": "P. Stiegler; V. Stadlbauer; S. Schaffellner; H. Florian; C. Lackner; F. Iberer; K. Tscheliessnigg"
+      },
+      "score": 9,
+      "matchedKeywords": [
+        "islet",
+        "islet cell",
+        "islet cells",
+        "pancreatic",
+        "glucose",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
+        "paper_id": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
+        "doi": "10.1292/jvms.57.859",
+        "title": "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+        "abstract": "Programmable slow cooling — 3.0 M EG (large >300 µm rat pancreatic islets). Islets pre-equilibrated by adding an equal volume of TCM-199 containing 3.0 M ethylene glycol, held 20 min at 22 °C; loaded into plastic straws, held 2 min at 0 °C, cooled from 0 °C to −5.5 °C at −1 °C / min and seeded at −5.5 °C, then cooled to −40 °C at −0.3 °C / min in a programmable freezer before transfer to liquid nitrogen (−196 °C) for 1–4 weeks.. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets; large (>300 µm) Programmable slow cooling — 3.0 M EG (medium 201-300 µm rat pancreatic islets). Islets pre-equilibrated by adding an equal volume of TCM-199 containing 3.0 M ethylene glycol, held 20 min at 22 °C; loaded into plastic straws, held 2 min at 0 °C, cooled from 0 °C to −5.5 °C at −1 °C / min and seeded at −5.5 °C, then cooled to −40 °C at −0.3 °C / min in a programmable freezer before transfer to liquid nitrogen (−196 °C) for 1–4 weeks.. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets; medium (201–300 µm) Programmable slow cooling — 3.0 M EG (small 100-200 µm rat pancreatic islets). Islets pre-equilibrated by adding an equal volume of TCM-199 containing 3.0 M ethylene glycol, held 20 min at 22 °C; loaded into plastic straws, held 2 min at 0 °C, cooled from 0 °C to −5.5 °C at −1 °C / min and seeded at −5.5 °C, then cooled to −40 °C at −0.3 °C / min in a programmable freezer before transfer to liquid nitrogen (−196 °C) for 1–4 weeks.. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets; small (100–200 µm) Programmable slow cooling — stepwise Me2SO (large >300 µm rat pancreatic islets). Islets exposed stepwise to Me2SO: 0.67 M at 22 °C for 5 min, 1.0 M at 22 °C for 25 min, 2.0 M at 0 °C for 15 min; loaded into plastic straws, held 2 min at 0 °C, cooled from 0 °C to −5.5 °C at −1 °C / min and seeded at −5.5 °C, then cooled to −40 °C at −0.3 °C / min in a programmable freezer before transfer to liquid nitrogen (−196 °C) for 1–4 weeks.. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets; large (>300 µm) Programmable slow cooling — stepwise Me2SO (medium 201-300 µm rat pancreatic islets). Islets exposed stepwise to Me2SO: 0.67 M at 22 °C for 5 min, 1.0 M at 22 °C for 25 min, 2.0 M at 0 °C for 15 min; loaded into plastic straws, held 2 min at 0 °C, cooled from 0 °C to −5.5 °C at −1 °C / min and seeded at −5.5 °C, then cooled to −40 °C at −0.3 °C / min in a programmable freezer before transfer to liquid nitrogen (−196 °C) for 1–4 weeks.. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets; medium (201–300 µm) Programmable slow cooling — stepwise Me2SO (small 100-200 µm rat pancreatic islets). Islets exposed stepwise to Me2SO: 0.67 M at 22 °C for 5 min, 1.0 M at 22 °C for 25 min, 2.0 M at 0 °C for 15 min; loaded into plastic straws, held 2 min at 0 °C, cooled from 0 °C to −5.5 °C at −1 °C / min and seeded at −5.5 °C, then cooled to −40 °C at −0.3 °C / min in a programmable freezer before transfer to liquid nitrogen (−196 °C) for 1–4 weeks.. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets; small (100–200 µm)",
+        "paper_url": null,
+        "journal": "Journal of Veterinary Medical Science",
+        "published_year": 1995,
+        "published_month": 5,
+        "published_day": null,
+        "authors_flat": "Iwao SAKONJU; Yasuho TAURA; Kouichi MAMBA; Tatsuyuki SUZUKI; Koichi TAKIMOTO; Munekazu NAKAICHI; Sanenori NAKAMA"
+      },
+      "score": 9,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "c05ceecd-014d-4e09-9dfa-5e095dc5de93",
+        "paper_id": "c05ceecd-014d-4e09-9dfa-5e095dc5de93",
+        "doi": "10.1016/j.lfs.2005.08.043",
+        "title": "Effect of thawing rate and post-thaw culture on the cryopreserved fetal rat islets: Functional and morphological correlation",
+        "abstract": "Thawing rate and post-thaw culture — fast warming (200 °C/min) + 24 h culture (fetal rat pancreatic islets). Programmable step-rate cooling in a Mini-Cool 40 P.C. Embryo Freezer: ice nucleation at −8 °C, hold 10–15 min, decrease 0.25–0.5 °C / min to −40 °C, then transfer vials to liquid nitrogen (−196 °C) in 2 M dimethylsulphoxide. Rattus norvegicus; Pancreas; Islets of langerhans; Fetal; rat; pancreas; pancreatic islets (islets of Langerhans); fetal Thawing rate and post-thaw culture — fast warming (200 °C/min) + 48 h culture (fetal rat pancreatic islets). Programmable step-rate cooling in a Mini-Cool 40 P.C. Embryo Freezer: ice nucleation at −8 °C, hold 10–15 min, decrease 0.25–0.5 °C / min to −40 °C, then transfer vials to liquid nitrogen (−196 °C) with 2 M dimethylsulphoxide. Rattus norvegicus; Pancreas; Islets of langerhans; Fetal; rat; pancreas; pancreatic islets (islets of Langerhans); fetal Thawing rate and post-thaw culture — slow warming (10 °C/min) + 24 h culture (fetal rat pancreatic islets). Programmable step-rate cooling in a Mini-Cool 40 P.C. Embryo Freezer: ice nucleation at −8 °C, hold 10–15 min, decrease 0.25–0.5 °C / min to −40 °C, then transfer vials to liquid nitrogen (−196 °C) in 2 M dimethylsulphoxide. Rattus norvegicus; Pancreas; Islets of langerhans; Fetal; rat; pancreas; pancreatic islets (islets of Langerhans); fetal Thawing rate and post-thaw culture — slow warming (10 °C/min) + 48 h culture (fetal rat pancreatic islets). Programmable step-rate cooling in a Mini-Cool 40 P.C. Embryo Freezer: ice nucleation at −8 °C, hold 10–15 min, decrease 0.25–0.5 °C / min to −40 °C, then transfer vials to liquid nitrogen (−196 °C) in 2 M dimethylsulphoxide. Rattus norvegicus; Pancreas; Islets of langerhans; Fetal; rat; pancreas; pancreatic islets (islets of Langerhans); fetal",
+        "paper_url": null,
+        "journal": "Life Sciences",
+        "published_year": 2006,
+        "published_month": 6,
+        "published_day": null,
+        "authors_flat": "Mostafa M. El-Naggar; Faisal M.H. Al-Mashat; Ahmed A. Elayat; Abdul Rahman M. Sibiany; M. Salleh M. Ardawi; Mohamed H. Badawoud"
+      },
+      "score": 9,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "f91b7060-e698-46e7-8746-3d40eb683357",
+        "paper_id": "f91b7060-e698-46e7-8746-3d40eb683357",
+        "doi": "10.1097/00006676-199910000-00010",
+        "title": "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium",
+        "abstract": "Freezing and thawing procedures — 100 nM beraprost sodium in 0.5 M/2.1 M DMSO (canine pancreatic islets). Same as above, incorporating 100 nM beraprost sodium in both 0.5 M and 2.1 M DMSO solutions; frozen in GR9000 cryounit with nucleation at −6.5 °C, cooling −0.3 °C min⁻¹ to −50 °C, then liquid nitrogen storage (−196 °C).. Canis lupus; Pancreas; Pancreatic islet; canine; pancreas; pancreatic islets; 1,000 IEQ aliquots Freezing and thawing procedures — 10 nM beraprost sodium in 0.5 M/2.1 M DMSO (canine pancreatic islets). Islet suspensions were immersed first in RPMI-1640 containing 0.5 M dimethyl sulfoxide (DMSO), 4 mg/dl aprotinin and 20 % fetal bovine serum for 15 min at room temperature, followed by 2.1 M DMSO containing 20 % FBS on ice for 5 min. Aliquots (1,000 IEQ) were placed into 2-ml cryotubes and frozen in an automated, computer-controlled cryounit (GR9000) with the program initiating nucleation at −6.5 °C and cooling at −0.3 °C min⁻¹ to −50 °C before storage in liquid nitrogen (−196 °C) for one month.. Canis lupus; Pancreas; Pancreatic islet; canine; pancreas; pancreatic islets; 1,000 IEQ aliquots Freezing and thawing procedures — 1 nM beraprost sodium in 0.5 M/2.1 M DMSO (canine pancreatic islets). Islet suspensions were immersed first in RPMI-1640 containing 0.5 M dimethyl sulfoxide (DMSO), 4 mg/dl aprotinin and 20 % fetal bovine serum for 15 min at room temperature, followed by 2.1 M DMSO containing 20 % FBS on ice for 5 min. Aliquots (1,000 IEQ) were placed into 2-ml cryotubes and frozen in an automated, computer-controlled cryounit (GR9000; Gordinier Electronics) using our original program: nucleation initiated at −6.5 °C and cooled at −0.3 °C min⁻¹ until −50 °C, then cryotubes were plunged into liquid nitrogen (−196 °C) for one month storage.. Canis lupus; Pancreas; Pancreatic islet; canine; pancreas; pancreatic islets; 1,000 IEQ aliquots Freezing and thawing procedures — no beraprost sodium (control) in 0.5 M/2.1 M DMSO (canine pancreatic islets). Control islets were processed identically but without beraprost sodium: immersed in 0.5 M DMSO RPMI-1640 (4 mg/dl aprotinin, 20 % FBS) 15 min at room temperature, transferred to 2.1 M DMSO with 20 % FBS on ice 5 min, loaded into cryotubes, frozen in GR9000 cryounit with nucleation at −6.5 °C, cooled −0.3 °C min⁻¹ to −50 °C, then stored in liquid nitrogen (−196 °C) for one month.. Canis lupus; Pancreas; Pancreatic islet; canine; pancreas; pancreatic islets; 1,000 IEQ aliquots",
+        "paper_url": null,
+        "journal": "Pancreas",
+        "published_year": 1999,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Seiji Arita; Ali Kasraie; Satoshi Une; Satoki Ohtsuka; Takako Kawahara; Craig V. Smith; Yoko Mullen"
+      },
+      "score": 9,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+        "paper_id": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+        "doi": "10.1007/bf00428975",
+        "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+        "abstract": "Storage in Liquid Nitrogen — 10% DMSO + 10% fetal calf serum, 1°C/min then liquid N2 (mouse pancreatic islets). Cryosan biological freezer model BV4; islets in Earles solution containing 10% dimethyl sulphoxide and 10% fetal calf serum were frozen at 1°C/min to −50 °C, then rapidly cooled by immersing the cryules in liquid nitrogen to −187 °C; stored one to two weeks.. Mus musculus; Pancreas; Pancreatic islet; mouse; pancreas; pancreatic islets Storage in Liquid Nitrogen — 10% DMSO + 10% fetal calf serum, 1°C/min then liquid N2 (rat pancreatic islets). Cryosan biological freezer model BV4; islets in Earles solution containing 10% dimethyl sulphoxide and 10% fetal calf serum were frozen at 1°C/min to −50 °C, then rapidly cooled by immersing the cryules in liquid nitrogen to −187 °C; stored one to two weeks.. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets Storage in Liquid Nitrogen — 10% DMSO + 10% fetal calf serum, 5°C/min then liquid N2 with post-thaw 14–24 h culture (rat pancreatic islets). Cryosan biological freezer model BV4; islets in Earles solution containing 10% dimethyl sulphoxide and 10% fetal calf serum were frozen at 5°C/min to −50 °C, then rapidly cooled by immersion in liquid nitrogen to −187 °C; stored one to two weeks.. Rattus norvegicus; Pancreas; Pancreatic islet; rat; pancreas; pancreatic islets",
+        "paper_url": null,
+        "journal": "Diabetologia",
+        "published_year": 1976,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "J. Ferguson; R.H. Allsopp; R. M. R. Taylor; I. D. A. Johnston"
+      },
+      "score": 9,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "pancreatic"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "beb603fe-8522-4842-99a9-fba1195cc973",
+        "paper_id": "beb603fe-8522-4842-99a9-fba1195cc973",
+        "doi": "10.1016/j.cryobiol.2023.104609",
+        "title": "OPTIMIZING ALKYLATED AMMONIUM-BASED COMPOUNDS FOR ICE RECRYSTALLIZATION INHIBITION (IRI) ACTIVITY",
+        "abstract": "Organ cryopreservation by vitrification and rapid rewarming — islets. vitrification. Homo sapiens; Pancreatic islet; islets Organ cryopreservation by vitrification and rapid rewarming — kidney. vitrification. Homo sapiens; Kidney; kidney",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 2023,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "Ellyssa M. Walsh; Marcus F. Diamante; Robert N. Ben"
+      },
+      "score": 9,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic",
+        "cryopreservation",
+        "vitrification"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "cc7ce88a-94b0-4ca4-97b0-2a31e0bd98c9",
+        "paper_id": "cc7ce88a-94b0-4ca4-97b0-2a31e0bd98c9",
+        "doi": "10.1016/j.cryobiol.2025.105455",
+        "title": "ESTABLISHING BASELINE CONTROL WATER VALUES FOR DIFFERENTIAL SCANNING CALORIMETRY (DSC) IN CRYOPROTECTANT EXPLORATION",
+        "abstract": "DMSO-free prototype formulation cryopreservation — human mesenchymal stem cells. Homo sapiens; mesenchymal stem cell; Human; mesenchymal stem cells; hMSC Dual-network antifreeze hydrogel cryopreservation — trehalose (islets). Pancreas; Pancreatic islet; unspecified; pancreas; islets",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 2025,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "P.U. Ashvin Iresh Fernando; Nick Mitchell; Olivier Montmayeur; Brianna M. Fernando; Matthew A. Fort; John G. Tsavalas; Emily Asenath-Smith"
+      },
+      "score": 8,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+        "paper_id": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+        "doi": "10.1006/cryo.1993.1024",
+        "title": "Successful Cryopreservation of Fetal Porcine Proislets",
+        "abstract": "Cryopreservation — 2 M dimethyl sulfoxide slow-cool to −40 °C then liquid nitrogen (fetal porcine proislets). Fetal porcine proislets were equilibrated with 2 M dimethyl sulfoxide, super-cooled to −7.2 °C over 3 min in a programmable freezing chamber (Cryoson), held 10 min, nucleated at −7.4 °C over 8 s, allowed 5 min for latent heat release, then cooled at 0.25 °C / min to −40 °C before the cryotubes were plunged into liquid nitrogen (−196 °C) for storage.. Sus scrofa; Pancreas; Pancreatic islet; Fetal (gestational age 65–85 days); Sus scrofa domesticus (pig); pancreas; fetal porcine proislets; diameter 100–150 µm, about 1000–1500 proislets per batch; fetal (gestational age 65–85 days)",
+        "paper_url": null,
+        "journal": "CRYOBIOLOGY",
+        "published_year": 1993,
+        "published_month": 4,
+        "published_day": 7,
+        "authors_flat": "XUEMEI LIU; MATHIAS D. BRENDEL; DANIEL KLITSCHER; HEIDE BRANDHORST; BERNHARD J. HERING; KONRAD F. FEDERLIN; REINHARD G. BRETZEL"
+      },
+      "score": 8,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "df288637-aaad-454a-9595-156c7db96495",
+        "paper_id": "df288637-aaad-454a-9595-156c7db96495",
+        "doi": "10.1006/cryo.1998.2124",
+        "title": "Hydraulic Conductivity (Lp) and Its Activation Energy (Ea), Cryoprotectant Agent Permeability (Ps) and Its Ea, and Reflection Coefficients (s) for Golden Hamster Individual Pancreatic Islet Cell Membranes",
+        "abstract": null,
+        "paper_url": null,
+        "journal": "CRYOBIOLOGY",
+        "published_year": 1998,
+        "published_month": 9,
+        "published_day": 23,
+        "authors_flat": "C. T. Benson; C. Liu; D. Y. Gao; E. S. Critser; J. D. Benson; J. K. Critser"
+      },
+      "score": 7,
+      "matchedKeywords": [
+        "islet",
+        "pancreatic islet",
+        "islet cell",
+        "pancreatic"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+        "paper_id": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+        "doi": null,
+        "title": "CRYOPRESERVATION OF CHICK ISLETS",
+        "abstract": "Cryopreservation and revival of chick islets — Control (no additive). Suspensions (≈1000 chick pancreatic B-islets in 1 ml DMEM:Ham’s F12) were placed in 1 ml Nunc cryovials; dimethylsulfoxide (DMSO) was added step-wise to final concentrations of 0.67 mol l⁻¹, 1.0 mol l⁻¹ and 2.0 mol l⁻¹ over 30 min at 0 °C. Samples were super-cooled to –7.4 °C, nucleated, then cooled at 1 °C min⁻¹ to –40 °C and finally stored in liquid nitrogen (–196 °C) using a Cryomed freezer.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Nicotinamide 100 µg ml⁻¹. Suspensions with 100 µg ml⁻¹ nicotinamide; DMSO step-wise 0.67→1.0→2.0 mol l⁻¹/30 min at 0 °C; super-cool –7.4 °C, nucleate, cool 1 °C min⁻¹ to –40 °C; store at –196 °C in LN2.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Nicotinamide 150 µg ml⁻¹. Suspensions with 150 µg ml⁻¹ nicotinamide; DMSO 0.67→1.0→2.0 mol l⁻¹ over 30 min at 0 °C; super-cool –7.4 °C, nucleate, cool 1 °C min⁻¹ to –40 °C; LN2 storage –196 °C.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Nicotinamide 200 µg ml⁻¹. Suspensions with 200 µg ml⁻¹ nicotinamide; DMSO added step-wise (0.67,1.0,2.0 mol l⁻¹/30 min, 0 °C); super-cooled –7.4 °C, nucleated, cooled 1 °C min⁻¹ to –40 °C and stored in LN2 –196 °C.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Nicotinamide 250 µg ml⁻¹. Suspensions with 250 µg ml⁻¹ nicotinamide; DMSO 0.67,1.0,2.0 mol l⁻¹ addition (30 min, 0 °C); super-cool –7.4 °C, nucleate, cool 1 °C min⁻¹ to –40 °C; store in LN2 –196 °C.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Nicotinamide 500 µg ml⁻¹. Suspensions with 500 µg ml⁻¹ nicotinamide; DMSO added 0.67→1.0→2.0 mol l⁻¹ over 30 min (0 °C); super-cool –7.4 °C, nucleate, cool 1 °C min⁻¹ to –40 °C; LN2 storage –196 °C.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Nicotinamide 50 µg ml⁻¹. Suspensions containing 50 µg ml⁻¹ nicotinamide with stepwise DMSO (0.67,1.0,2.0 mol l⁻¹ over 30 min, 0 °C); super-cool –7.4 °C, nucleate, cool 1 °C min⁻¹ to –40 °C; store in LN2 –196 °C.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Riboflavin 100 µg ml⁻¹. Suspensions containing 100 µg ml⁻¹ riboflavin with stepwise DMSO (0.67,1.0,2.0 mol l⁻¹/30 min, 0 °C) were super-cooled to –7.4 °C, nucleated, cooled 1 °C min⁻¹ to –40 °C, then stored in liquid nitrogen (–196 °C) by Cryomed.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Riboflavin 150 µg ml⁻¹. Suspensions with 150 µg ml⁻¹ riboflavin; DMSO step-wise 0.67→1.0→2.0 mol l⁻¹ over 30 min at 0 °C; super-cooled to –7.4 °C, nucleated, cooled 1 °C min⁻¹ to –40 °C; stored in LN2 (–196 °C) via Cryomed.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Riboflavin 200 µg ml⁻¹. Suspensions with 200 µg ml⁻¹ riboflavin; DMSO added 0.67, 1.0, 2.0 mol l⁻¹ over 30 min (0 °C); super-cooled –7.4 °C, nucleated, cooled 1 °C min⁻¹ to –40 °C; stored in liquid nitrogen –196 °C.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Riboflavin 250 µg ml⁻¹. Suspensions with 250 µg ml⁻¹ riboflavin; DMSO step-wise 0.67→1.0→2.0 mol l⁻¹/30 min, 0 °C; super-cool –7.4 °C, nucleate, cool 1 °C min⁻¹ to –40 °C; store in LN2 –196 °C.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Riboflavin 500 µg ml⁻¹. Suspensions with 500 µg ml⁻¹ riboflavin; DMSO step-wise (0.67,1.0,2.0 mol l⁻¹/30 min, 0 °C); super-cool –7.4 °C, nucleate, cool 1 °C min⁻¹ to –40 °C; store in liquid nitrogen –196 °C.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm Cryopreservation and revival of chick islets — Riboflavin 50 µg ml⁻¹. Suspensions containing 50 µg ml⁻¹ riboflavin plus DMSO added step-wise (0.67, 1.0, 2.0 mol l⁻¹ over 30 min at 0 °C) were super-cooled to –7.4 °C, nucleated, cooled at 1 °C min⁻¹ to –40 °C and stored in liquid nitrogen (–196 °C) using a Cryomed freezer.. Gallus gallus; Pancreas; Islets of langerhans; 5–6 days old; chick (Rhode Island Red); pancreas; pancreatic B-islets; diameter >80 µm",
+        "paper_url": null,
+        "journal": "CryoLetters",
+        "published_year": 2010,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "S. P. Datar; R. R. Bhonde"
+      },
+      "score": 6,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "pancreatic",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "b293075d-011c-4c8d-95a6-215ae7952c72",
+        "paper_id": "b293075d-011c-4c8d-95a6-215ae7952c72",
+        "doi": "10.1016/0011-2240(84)90296-7",
+        "title": "Intraportal Autotransplantation of Cryopreserved Porcine Islets of Langerhans",
+        "abstract": "Addition of Dimethyl Sulfoxide and controlled-rate freezing — 2 M Me2SO (porcine islets of Langerhans). Cooled unseeded at a rate of 1 °C / min to −70 °C in a Planer controlled-rate freezer, then stored in liquid nitrogen at −196 °C. Sus scrofa; Pancreas; Islets of langerhans; Landrace pig; pancreas; islets of Langerhans",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1985,
+        "published_month": 1,
+        "published_day": 21,
+        "authors_flat": "M. H. Wise; C. Gordon; R. W. G. Johnson"
+      },
+      "score": 5,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "transplantation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "09c94224-a694-419d-a858-0168cf6f5f51",
+        "paper_id": "09c94224-a694-419d-a858-0168cf6f5f51",
+        "doi": "10.1016/0011-2240(83)90007-x",
+        "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+        "abstract": "Freezing protocol — 1 M glycerol slow–cool (adult rat islets). Islets were exposed stepwise to glycerol up to a final concentration of 1 M, equilibrated 10 min at −10 °C, seeded, and cooled at 0.3 ± 0.02 °C / min from −10 °C to −70 °C in a program-controlled cooling machine before transfer to liquid nitrogen.. Rattus norvegicus; Pancreas; Islets of langerhans; Adult; rat (WAG); pancreas; islets of Langerhans; adult Freezing protocol — 1 M Me₂SO slow–cool (adult rat islets). Islets were exposed stepwise to Me₂SO up to a final concentration of 1 M, held 10 min at −10 °C, seeded, then cooled at 0.3 ± 0.02 °C / min from −10 °C to −70 °C in a program-controlled cooling machine before transfer to liquid nitrogen (−196 °C).. Rattus norvegicus; Pancreas; Islets of langerhans; Adult; rat (WAG); pancreas; islets of Langerhans; adult Freezing protocol — 2 M glycerol slow–cool (adult rat islets). Islets were raised to 2 M glycerol (30 min at 22 °C), equilibrated 10 min at −10 °C, seeded, cooled 0.3 ± 0.02 °C / min to −70 °C and plunged to liquid nitrogen.. Rattus norvegicus; Pancreas; Islets of langerhans; Adult; rat (WAG); pancreas; islets of Langerhans; adult Freezing protocol — 2 M Me₂SO slow–cool (adult rat islets). Islets were stepped to a final concentration of 2 M Me₂SO (final exposure 15 min at 0 °C), held 10 min at −10 °C, seeded, cooled at 0.3 ± 0.02 °C / min from −10 °C to −70 °C in a program-controlled freezer and stored in liquid nitrogen.. Rattus norvegicus; Pancreas; Islets of langerhans; Adult; rat (WAG); pancreas; islets of Langerhans; adult Freezing protocol — 3 M glycerol slow–cool (adult rat islets). Islets were equilibrated to 3 M glycerol (30 min at 22 °C), frozen by seeding at −10 °C and cooling 0.3 ± 0.02 °C / min to −70 °C, then stored in liquid nitrogen.. Rattus norvegicus; Pancreas; Islets of langerhans; Adult; rat (WAG); pancreas; islets of Langerhans; adult Freezing protocol — 3 M Me₂SO slow–cool (adult rat islets). Final cryoprotectant 3 M Me₂SO (15 min at 0 °C), seeded at −10 °C and cooled 0.3 ± 0.02 °C / min to −70 °C before storage in liquid nitrogen.. Rattus norvegicus; Pancreas; Islets of langerhans; Adult; rat (WAG); pancreas; islets of Langerhans; adult",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1983,
+        "published_month": null,
+        "published_day": null,
+        "authors_flat": "M. J. Taylor; T. J. Duffy; C. J. Hunt; S. R. A. Morgan; P. J. Davisson"
+      },
+      "score": 5,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "transplantation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "1453f932-2e03-42a3-968a-9efaf2b3233e",
+        "paper_id": "1453f932-2e03-42a3-968a-9efaf2b3233e",
+        "doi": "10.1177/096368979700600612",
+        "title": "USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION",
+        "abstract": "Freezing–thawing procedure — DMSO cryopreservation — 2 M DMSO (porcine islets). A programmable cooling machine (Nicool Plus, Air Liquide) was used for freezing. Cryotubes were placed in the freezing chamber, supercooled to −7 °C and nucleated. They were subsequently frozen at a rate of −0.3 °C/min to −40 °C and −5 °C/min to −100 °C before immediate overnight storage in liquid nitrogen.. Sus scrofa; Pancreas; Islets of langerhans; pig; pancreas; islets of Langerhans Freezing–thawing procedure — PEG cryopreservation — 5 % w/v PEG 20000 (porcine islets). Islets were then frozen, thawed, and cultured as described above.. Sus scrofa; Pancreas; Islets of langerhans; pig; pancreas; islets of Langerhans",
+        "paper_url": null,
+        "journal": "Cell Transplantation",
+        "published_year": 1997,
+        "published_month": 6,
+        "published_day": null,
+        "authors_flat": "Bénédicte Monroy; Jirí Honiger; Sylviane Darquy; Gérard Reach"
+      },
+      "score": 5,
+      "matchedKeywords": [
+        "islet",
+        "islets",
+        "cryopreservation"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "8171cfdd-b8b3-488a-ba11-a919b71c1d2c",
+        "paper_id": "8171cfdd-b8b3-488a-ba11-a919b71c1d2c",
+        "doi": "10.1016/0011-2240(83)90058-5",
+        "title": "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation",
+        "abstract": "Cooling system I — Cryo-Med, 14 °C/min, 1.0 M Me2SO (rat islets of Langerhans). Cryo-Med programmable freezer; 1.0 M Me2SO-equilibrated islets cooled at 14 °C / min from −6 °C to −75 °C after ice seeding.. Rattus norvegicus; Pancreas; Islets of langerhans; Adult (male; 250–350 g); Sprague-Dawley rat; pancreas; islets of Langerhans; adult (250–350 g males) Cooling system I — Cryo-Med, 3 °C/min, 1.0 M Me2SO (rat islets of Langerhans). Cryo-Med programmable freezing system; islets in 1.0 M dimethylsulfoxide were placed into cryotubes, seeded at −6 °C, then cooled at 3 °C / min to −75 °C and held 20–24 h.. Rattus norvegicus; Pancreas; Islets of langerhans; Adult (male; 250–350 g); Sprague-Dawley rat; pancreas; islets of Langerhans; adult (250–350 g males) Cooling system I — Cryo-Med, 48 °C/min, 1.0 M Me2SO (rat islets of Langerhans). Cryo-Med programmable freezer; islets containing 1.0 M dimethylsulfoxide cooled at 48 °C / min after seeding at −6 °C to a terminal temperature of −75 °C (20–24 h storage).. Rattus norvegicus; Pancreas; Islets of langerhans; Adult (male; 250–350 g); Sprague-Dawley rat; pancreas; islets of Langerhans; adult (250–350 g males) Cooling system II — nested-beaker, 0.25–0.35 °C/min, 1.4 M Me2SO (rat islets of Langerhans). Modified nested-beaker apparatus: cryotubes containing islets in 1.4 M dimethylsulfoxide placed in a 150-ml beaker of 95 % ethanol at 4 °C, precooled in a stacked-beaker assembly over liquid nitrogen; cooled 0.5–0.6 °C/min to −6 °C (ice seeding) then 0.25–0.35 °C/min to −75 °C, stored 20–24 h.. Rattus norvegicus; Pancreas; Islets of langerhans; Adult (male; 250–350 g); Sprague-Dawley rat; pancreas; islets of Langerhans; adult (250–350 g males)",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1983,
+        "published_month": 1,
+        "published_day": 1,
+        "authors_flat": "Dennis B. McKay; Armand M. Karow"
+      },
+      "score": 4,
+      "matchedKeywords": [
+        "islet",
+        "islets"
+      ]
+    },
+    {
+      "domain": "islets",
+      "paper": {
+        "id": "e8acf4c0-f208-4ee5-ac4e-1fe7221b0a48",
+        "paper_id": "e8acf4c0-f208-4ee5-ac4e-1fe7221b0a48",
+        "doi": "10.1016/0011-2240(77)90130-4",
+        "title": "Viability Studies on Frozen-Thawed Rat Islets of Langerhans",
+        "abstract": "Programmed freezing — 10% DMSO, 2-day culture (rat islets of Langerhans). Islets in 10 ml of 10 % (v/v) dimethylsulfoxide were placed in 25 × 45 mm freezing vials and cooled to −100 °C at 0.5–0.7 °C min⁻¹; vials were then transferred to liquid-nitrogen vapour and further cooled to −150 °C at 20 °C min⁻¹ and stored 1–7 days. Rattus norvegicus; Pancreas; Islets of langerhans; Rat (Wistar); Islets of Langerhans Programmed freezing — 10% DMSO, immediate test (rat islets of Langerhans). Islets in 10 ml of 10 % (v/v) dimethylsulfoxide were placed in 25 × 45 mm freezing vials and cooled to −100 °C at 0.5–0.7 °C min⁻¹; vials were then transferred to liquid-nitrogen vapour and further cooled to −150 °C at 20 °C min⁻¹ and stored 1–7 days. Rattus norvegicus; Pancreas; Islets of langerhans; Rat (Wistar); Islets of Langerhans Programmed freezing — 7.5% DMSO, 2-day culture (rat islets of Langerhans). Islets in 10 ml of 7.5 % (v/v) dimethylsulfoxide were placed in 25 × 45 mm freezing vials and cooled to −100 °C at 0.5–0.7 °C min⁻¹; vials were then transferred to liquid-nitrogen vapour and further cooled to −150 °C at 20 °C min⁻¹ and stored 1–7 days. Rattus norvegicus; Pancreas; Islets of langerhans; Rat (Wistar); Islets of Langerhans Programmed freezing — 7.5% DMSO, immediate test (rat islets of Langerhans). Islets in 10 ml of 7.5 % (v/v) dimethylsulfoxide were placed in 25 × 45 mm freezing vials and cooled to −100 °C at 0.5–0.7 °C min⁻¹; vials were then transferred to liquid-nitrogen vapour and further cooled to −150 °C at 20 °C min⁻¹ and stored 1–7 days. Rattus norvegicus; Pancreas; Islets of langerhans; Rat (Wistar); Islets of Langerhans",
+        "paper_url": null,
+        "journal": "Cryobiology",
+        "published_year": 1977,
+        "published_month": 1,
+        "published_day": 14,
+        "authors_flat": "R. V. Rajotte; H. L. Stewart; W. A. G. Voss; T. K. Shnitka; J. B. Dossetor"
+      },
+      "score": 4,
+      "matchedKeywords": [
+        "islet",
+        "islets"
+      ]
+    }
+  ]
+}

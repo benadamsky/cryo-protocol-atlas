@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import {
   AutoresearchProposalFileSchema,
@@ -24,6 +24,15 @@ function runStep(script: string, args: string[] = []) {
 
 function readJsonFile<T>(path: string, parser: { parse: (value: unknown) => T }): Promise<T> {
   return readFile(path, "utf8").then((content) => parser.parse(JSON.parse(content)));
+}
+
+async function fileExists(path: string): Promise<boolean> {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 function validateNormalizedCoverage(input: {
@@ -96,8 +105,10 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const loopDir = join(process.cwd(), "data", "autoresearch", selectedDomain);
   const benchmarkDir = join(process.cwd(), "data", "benchmarks", selectedDomain);
   const curatedDir = join(process.cwd(), "data", "curated", selectedDomain);
+  const domainSnapshotPath = join(processedDir, "domain-snapshot.json");
+  const ingestIncluded = includeIngest || !(await fileExists(domainSnapshotPath));
 
-  if (includeIngest) {
+  if (ingestIncluded) {
     runStep("scripts/ingest-domain.ts", [selectedDomain]);
   }
 
@@ -188,7 +199,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
 
   const summary = {
     domain: selectedDomain,
-    includeIngest,
+    includeIngest: ingestIncluded,
     extractionCount: extractionSnapshot.extractions.length,
     resolvedExtractionCount: resolvedSnapshot.extractions.length,
     normalizedProtocolCount: normalizedSnapshot.totalProtocols,

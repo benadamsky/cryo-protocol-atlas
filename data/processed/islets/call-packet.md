@@ -49,15 +49,10 @@
 - likely buyer or user: transplant researchers, islet-banking teams, and cell-therapy groups trying to standardize post-thaw recovery
 
 ## Wedge validation
-- Atlas now has reviewed additive- or benchmark-relevant rows spanning 9 papers in the compact islet matrix.
-- The strongest translational rows are Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor [clinically adjacent]; Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage [clinically adjacent]; Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants [clinically adjacent]; Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method [transplant relevant]; Bulk Cryopreservation of Isolated Islets of Langerhans [transplant relevant].
-- The additive story is not just one paper now: Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage (Trehalose); Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation (Beraprost Sodium); Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation (Curcumin); Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation (Polyvinyl Pyrrolidone + Polyethylene Glycol).
+- Atlas can separate the dominant protocol family, the top CPA pattern, and the highest-signal protocol wedge.
 
 ## Missing evidence
-- No fixed-base, head-to-head additive benchmark exists across the strongest adjunct candidates.
-- Human or transplant-adjacent evidence is still scattered across different CPA backbones and endpoints.
 - 0 reviewed in-scope papers still lack explicit outcome labels.
-- 2 reviewed labels currently depend on secondary-source evidence and should be treated as lower-authority than primary-source-backed rows.
 
 ## Current read
-- Islets still looks better as a proving ground for Atlas than as a locked-in company wedge, but the additive benchmark story is now evidence-backed enough to test as a plausible commercial entry point.
+- This slice is still better treated as a proving ground than as a committed first commercial wedge.
