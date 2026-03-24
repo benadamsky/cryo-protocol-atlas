@@ -178,18 +178,19 @@ export function evaluateOptimizerPolicy(input: {
     .filter((candidate) => candidate.label === "promote" && candidate.recommendation === "defer")
     .sort((left, right) => left.score - right.score)
     .slice(0, 10);
+  const aggregateCounts = computeMetricCounts(scoredCandidates);
 
   return OptimizerEvaluationSchema.parse({
     generatedAt: new Date().toISOString(),
     benchmarkGeneratedAt: input.benchmark.generatedAt,
     aggregate: {
-      candidateCount: computeMetricCounts(scoredCandidates).candidateCount,
-      positiveCount: computeMetricCounts(scoredCandidates).positiveCount,
-      negativeCount: computeMetricCounts(scoredCandidates).negativeCount,
-      promoteCount: computeMetricCounts(scoredCandidates).promoteCount,
-      reviewCount: computeMetricCounts(scoredCandidates).reviewCount,
-      deferCount: computeMetricCounts(scoredCandidates).deferCount,
-      ...metricsFromCounts(computeMetricCounts(scoredCandidates))
+      candidateCount: aggregateCounts.candidateCount,
+      positiveCount: aggregateCounts.positiveCount,
+      negativeCount: aggregateCounts.negativeCount,
+      promoteCount: aggregateCounts.promoteCount,
+      reviewCount: aggregateCounts.reviewCount,
+      deferCount: aggregateCounts.deferCount,
+      ...metricsFromCounts(aggregateCounts)
     },
     byDomain,
     topFalsePromotes,
