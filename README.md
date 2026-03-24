@@ -138,9 +138,10 @@ For scheduled runs, prefer the checked-in `data/processed/<domain>/domain-snapsh
 The repo now also has a narrow optimizer lane under `packages/optimizer/`. This is separate from the trusted atlas loop.
 
 - The only mutable optimization target is `packages/optimizer/src/policy.ts`.
-- `bun run optimizer:evaluate` builds a cheap deterministic benchmark from reviewed gold-set labels joined against the current matched corpus, then writes `data/optimizer/benchmark.json`, `evaluation.json`, and `evaluation.md`.
-- `bun run optimizer:loop` reads `packages/optimizer/program.md`, tries one bounded numeric mutation at a time, keeps only objective-improving policy edits, and writes `data/optimizer/loop-results.json`, `loop-report.md`, and append-only `history.jsonl`.
+- `bun run optimizer:evaluate` builds a cheap deterministic benchmark from reviewed gold-set labels joined against the current matched corpus, then writes runtime artifacts under `data/optimizer/`.
+- `bun run optimizer:loop` reads `packages/optimizer/program.md`, hill-climbs one bounded numeric mutation at a time, keeps only objective-improving policy edits that preserve promote precision and recall guardrails, and writes runtime artifacts under `data/optimizer/`.
 - This lane does not mutate benchmark gold sets, source enrichment, overrides, or atlas outputs.
+- The benchmark run fails fast if reviewed papers disappear from the current matched corpus, so benchmark coverage cannot silently shrink.
 - The package exports generic scoring helpers so a later discovery lane can consume the same policy with only light mapping glue.
 
 ## Human-facing outputs

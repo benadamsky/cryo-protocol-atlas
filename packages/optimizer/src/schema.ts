@@ -62,6 +62,7 @@ export type OptimizerBenchmarkCandidate = z.infer<typeof OptimizerBenchmarkCandi
 export const OptimizerBenchmarkSchema = z.object({
   generatedAt: z.string(),
   description: z.string(),
+  heuristicFingerprint: z.string(),
   domains: z.array(DomainIdSchema),
   candidateCount: z.number().int().nonnegative(),
   positiveCount: z.number().int().nonnegative(),
@@ -150,7 +151,8 @@ export const OptimizerLoopRunSchema = z.object({
     maxAttempts: z.number().int().positive(),
     maxAcceptedMutations: z.number().int().positive(),
     minimumScoreDelta: z.number().nonnegative(),
-    minimumPromotePrecision: z.number().min(0).max(1)
+    minimumPromotePrecision: z.number().min(0).max(1),
+    minimumPromoteRecall: z.number().min(0).max(1)
   }),
   baselineObjective: z.number(),
   finalObjective: z.number(),
@@ -164,6 +166,7 @@ export const OptimizerProgramSchema = z.object({
   maxAttempts: z.number().int().positive(),
   maxAcceptedMutations: z.number().int().positive(),
   minimumScoreDelta: z.number().nonnegative(),
-  minimumPromotePrecision: z.number().min(0).max(1)
+  minimumPromotePrecision: z.number().min(0).max(1),
+  minimumPromoteRecall: z.number().min(0).max(1)
 });
 export type OptimizerProgram = z.infer<typeof OptimizerProgramSchema>;

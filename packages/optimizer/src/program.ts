@@ -4,10 +4,11 @@ import { OptimizerProgramSchema, type OptimizerProgram } from "./schema.js";
 
 const DEFAULT_PROGRAM: OptimizerProgram = {
   domains: ["islets", "ovarian-tissue"],
-  maxAttempts: 24,
+  maxAttempts: 40,
   maxAcceptedMutations: 4,
   minimumScoreDelta: 0.001,
-  minimumPromotePrecision: 0.75
+  minimumPromotePrecision: 0.75,
+  minimumPromoteRecall: 0.02
 };
 
 function parseLineValue(content: string, label: string): string | null {
@@ -34,6 +35,9 @@ export async function readOptimizerProgram(path: string): Promise<OptimizerProgr
     ),
     minimumPromotePrecision: Number.parseFloat(
       parseLineValue(content, "minimum promote precision") ?? `${DEFAULT_PROGRAM.minimumPromotePrecision}`
+    ),
+    minimumPromoteRecall: Number.parseFloat(
+      parseLineValue(content, "minimum promote recall") ?? `${DEFAULT_PROGRAM.minimumPromoteRecall}`
     )
   });
 }

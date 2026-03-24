@@ -4,7 +4,7 @@ export const optimizerPolicy: OptimizerPolicy = OptimizerPolicySchema.parse(
 {
   "weights": {
     "bias": -0.2,
-    "retrievalScore": 2.2,
+    "retrievalScore": 2.4,
     "matchedKeywordCount": 1,
     "titleProtocolHits": 0.95,
     "titleExperimentalHits": 0.9,
@@ -17,7 +17,7 @@ export const optimizerPolicy: OptimizerPolicy = OptimizerPolicySchema.parse(
   },
   "thresholds": {
     "promote": 3.6,
-    "review": 2.3
+    "review": 1.85
   },
   "heuristics": {
     "protocolSignals": [

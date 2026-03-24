@@ -47,6 +47,7 @@ async function main() {
         deferCount: evaluation.aggregate.deferCount,
         rankingAccuracy: evaluation.aggregate.rankingAccuracy,
         promotePrecision: evaluation.aggregate.promotePrecision,
+        promoteRecall: evaluation.aggregate.promoteRecall,
         reviewOrPromoteRecall: evaluation.aggregate.reviewOrPromoteRecall,
         objective: evaluation.aggregate.objective
       },

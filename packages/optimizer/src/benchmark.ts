@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import {
@@ -35,6 +36,10 @@ function normalizeYear(year: number | null | undefined): number {
     return 0;
   }
   return Number(Math.max(0, Math.min(1, (year - 1990) / 40)).toFixed(4));
+}
+
+function buildHeuristicFingerprint(policy: OptimizerPolicy): string {
+  return createHash("sha256").update(JSON.stringify(policy.heuristics)).digest("hex");
 }
 
 function buildCandidate(
@@ -81,6 +86,7 @@ export async function buildOptimizerBenchmark(input: {
   policy: OptimizerPolicy;
 }) {
   const candidates: OptimizerBenchmarkCandidate[] = [];
+  const missingReviewedEntries: Array<{ domain: DomainId; paperId: string; title: string }> = [];
 
   for (const domain of input.domains) {
     const domainSnapshot = DomainSnapshotSchema.parse(
@@ -95,16 +101,33 @@ export async function buildOptimizerBenchmark(input: {
     for (const entry of reviewedEntries) {
       const paper = papersById.get(entry.paperId);
       if (!paper) {
+        missingReviewedEntries.push({
+          domain,
+          paperId: entry.paperId,
+          title: entry.title
+        });
         continue;
       }
       candidates.push(buildCandidate(paper, entry, input.policy));
     }
   }
 
+  if (missingReviewedEntries.length > 0) {
+    throw new Error(
+      [
+        "Optimizer benchmark coverage mismatch.",
+        ...missingReviewedEntries.map(
+          (entry) => `${entry.domain}:${entry.paperId}:${entry.title}`
+        )
+      ].join(" ")
+    );
+  }
+
   const benchmark = OptimizerBenchmarkSchema.parse({
     generatedAt: new Date().toISOString(),
     description:
       "Optimizer benchmark derived from reviewed gold-set labels joined against the current matched domain corpus. It is additive and does not modify atlas outputs.",
+    heuristicFingerprint: buildHeuristicFingerprint(input.policy),
     domains: input.domains,
     candidateCount: candidates.length,
     positiveCount: candidates.filter((candidate) => candidate.label === "promote").length,

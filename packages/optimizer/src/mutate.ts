@@ -52,6 +52,16 @@ export function listDeterministicMutations(policyInput: OptimizerPolicy): Optimi
   return mutations;
 }
 
+export function mutationSignature(mutation: OptimizerMutation): string {
+  return `${mutation.path}:${mutation.from}:${mutation.to}`;
+}
+
 export function applyMutation(policyInput: OptimizerPolicy, mutation: OptimizerMutation): OptimizerPolicy {
+  const currentValue = getNumericValue(policyInput, mutation.path);
+  if (currentValue !== mutation.from) {
+    throw new Error(
+      `Mutation baseline mismatch for ${mutation.path}: expected ${mutation.from}, received ${currentValue}`
+    );
+  }
   return setNumericValue(policyInput, mutation.path, mutation.to);
 }

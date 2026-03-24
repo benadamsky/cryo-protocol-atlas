@@ -16,109 +16,136 @@ function safeRatio(numerator: number, denominator: number): number {
   return Number((numerator / denominator).toFixed(4));
 }
 
-function computeRankingAccuracy(candidates: OptimizerScoredCandidate[]): number {
+type MetricCounts = {
+  candidateCount: number;
+  positiveCount: number;
+  negativeCount: number;
+  promoteCount: number;
+  reviewCount: number;
+  deferCount: number;
+  positivePromoteCount: number;
+  positiveReviewOrPromoteCount: number;
+  negativePromoteCount: number;
+  negativeDeferCount: number;
+  pairCount: number;
+  pairWins: number;
+  pairTies: number;
+};
+
+function computeRankingSummary(candidates: OptimizerScoredCandidate[]) {
   const positives = candidates.filter((candidate) => candidate.label === "promote");
   const negatives = candidates.filter((candidate) => candidate.label === "defer");
   if (positives.length === 0 || negatives.length === 0) {
-    return 0;
+    return {
+      pairCount: 0,
+      pairWins: 0,
+      pairTies: 0
+    };
   }
 
-  let wins = 0;
-  let ties = 0;
+  let pairWins = 0;
+  let pairTies = 0;
   for (const positive of positives) {
     for (const negative of negatives) {
       if (positive.score > negative.score) {
-        wins += 1;
+        pairWins += 1;
       } else if (positive.score === negative.score) {
-        ties += 1;
+        pairTies += 1;
       }
     }
   }
 
-  const pairCount = positives.length * negatives.length;
-  return Number(((wins + ties * 0.5) / pairCount).toFixed(4));
+  return {
+    pairCount: positives.length * negatives.length,
+    pairWins,
+    pairTies
+  };
 }
 
-function buildDomainMetrics(domainCandidates: OptimizerScoredCandidate[]): OptimizerDomainMetrics {
-  const positives = domainCandidates.filter((candidate) => candidate.label === "promote");
-  const negatives = domainCandidates.filter((candidate) => candidate.label === "defer");
-  const promoted = domainCandidates.filter((candidate) => candidate.recommendation === "promote");
-  const deferred = domainCandidates.filter((candidate) => candidate.recommendation === "defer");
-  const nonDeferredPositives = positives.filter((candidate) => candidate.recommendation !== "defer");
-  const negativePromotes = promoted.filter((candidate) => candidate.label === "defer");
-
-  const rankingAccuracy = computeRankingAccuracy(domainCandidates);
-  const promotePrecision = safeRatio(
-    promoted.filter((candidate) => candidate.label === "promote").length,
-    promoted.length
-  );
-  const promoteRecall = safeRatio(
-    positives.filter((candidate) => candidate.recommendation === "promote").length,
-    positives.length
-  );
-  const reviewOrPromoteRecall = safeRatio(nonDeferredPositives.length, positives.length);
-  const deferPrecision = safeRatio(
-    deferred.filter((candidate) => candidate.label === "defer").length,
-    deferred.length
-  );
-  const negativePromoteRate = safeRatio(negativePromotes.length, negatives.length);
-  const objective = Number(
-    (
-      rankingAccuracy * 0.55 +
-      promotePrecision * 0.2 +
-      reviewOrPromoteRecall * 0.2 +
-      deferPrecision * 0.05
-    ).toFixed(4)
-  );
+function computeMetricCounts(candidates: OptimizerScoredCandidate[]): MetricCounts {
+  const positives = candidates.filter((candidate) => candidate.label === "promote");
+  const negatives = candidates.filter((candidate) => candidate.label === "defer");
+  const promoted = candidates.filter((candidate) => candidate.recommendation === "promote");
+  const reviewed = candidates.filter((candidate) => candidate.recommendation === "review");
+  const deferred = candidates.filter((candidate) => candidate.recommendation === "defer");
+  const rankingSummary = computeRankingSummary(candidates);
 
   return {
-    domain: domainCandidates[0]?.domain ?? "islets",
-    candidateCount: domainCandidates.length,
+    candidateCount: candidates.length,
     positiveCount: positives.length,
     negativeCount: negatives.length,
     promoteCount: promoted.length,
-    reviewCount: domainCandidates.filter((candidate) => candidate.recommendation === "review").length,
+    reviewCount: reviewed.length,
     deferCount: deferred.length,
+    positivePromoteCount: promoted.filter((candidate) => candidate.label === "promote").length,
+    positiveReviewOrPromoteCount: positives.filter((candidate) => candidate.recommendation !== "defer").length,
+    negativePromoteCount: promoted.filter((candidate) => candidate.label === "defer").length,
+    negativeDeferCount: deferred.filter((candidate) => candidate.label === "defer").length,
+    pairCount: rankingSummary.pairCount,
+    pairWins: rankingSummary.pairWins,
+    pairTies: rankingSummary.pairTies
+  };
+}
+
+function computeObjective(metrics: {
+  rankingAccuracy: number;
+  promotePrecision: number;
+  promoteRecall: number;
+  reviewOrPromoteRecall: number;
+  deferPrecision: number;
+}) {
+  return Number(
+    (
+      metrics.rankingAccuracy * 0.4 +
+      metrics.promotePrecision * 0.2 +
+      metrics.promoteRecall * 0.2 +
+      metrics.reviewOrPromoteRecall * 0.15 +
+      metrics.deferPrecision * 0.05
+    ).toFixed(4)
+  );
+}
+
+function metricsFromCounts(counts: MetricCounts) {
+  const rankingAccuracy =
+    counts.pairCount === 0
+      ? 0
+      : Number(((counts.pairWins + counts.pairTies * 0.5) / counts.pairCount).toFixed(4));
+  const promotePrecision = safeRatio(counts.positivePromoteCount, counts.promoteCount);
+  const promoteRecall = safeRatio(counts.positivePromoteCount, counts.positiveCount);
+  const reviewOrPromoteRecall = safeRatio(counts.positiveReviewOrPromoteCount, counts.positiveCount);
+  const deferPrecision = safeRatio(counts.negativeDeferCount, counts.deferCount);
+  const negativePromoteRate = safeRatio(counts.negativePromoteCount, counts.negativeCount);
+
+  return {
     rankingAccuracy,
     promotePrecision,
     promoteRecall,
     reviewOrPromoteRecall,
     deferPrecision,
     negativePromoteRate,
-    objective
+    objective: computeObjective({
+      rankingAccuracy,
+      promotePrecision,
+      promoteRecall,
+      reviewOrPromoteRecall,
+      deferPrecision
+    })
   };
 }
 
-function aggregateMetrics(byDomain: OptimizerDomainMetrics[]) {
-  const candidateCount = byDomain.reduce((sum, metrics) => sum + metrics.candidateCount, 0);
-  const positiveCount = byDomain.reduce((sum, metrics) => sum + metrics.positiveCount, 0);
-  const negativeCount = byDomain.reduce((sum, metrics) => sum + metrics.negativeCount, 0);
-  const promoteCount = byDomain.reduce((sum, metrics) => sum + metrics.promoteCount, 0);
-  const reviewCount = byDomain.reduce((sum, metrics) => sum + metrics.reviewCount, 0);
-  const deferCount = byDomain.reduce((sum, metrics) => sum + metrics.deferCount, 0);
-  const totalWeight = candidateCount || 1;
-
-  const weightedAverage = (selector: (metrics: OptimizerDomainMetrics) => number) =>
-    Number(
-      (
-        byDomain.reduce((sum, metrics) => sum + selector(metrics) * metrics.candidateCount, 0) / totalWeight
-      ).toFixed(4)
-    );
+function buildDomainMetrics(domainCandidates: OptimizerScoredCandidate[]): OptimizerDomainMetrics {
+  const counts = computeMetricCounts(domainCandidates);
+  const metrics = metricsFromCounts(counts);
 
   return {
-    candidateCount,
-    positiveCount,
-    negativeCount,
-    promoteCount,
-    reviewCount,
-    deferCount,
-    rankingAccuracy: weightedAverage((metrics) => metrics.rankingAccuracy),
-    promotePrecision: weightedAverage((metrics) => metrics.promotePrecision),
-    promoteRecall: weightedAverage((metrics) => metrics.promoteRecall),
-    reviewOrPromoteRecall: weightedAverage((metrics) => metrics.reviewOrPromoteRecall),
-    deferPrecision: weightedAverage((metrics) => metrics.deferPrecision),
-    negativePromoteRate: weightedAverage((metrics) => metrics.negativePromoteRate),
-    objective: weightedAverage((metrics) => metrics.objective)
+    domain: domainCandidates[0]?.domain ?? "islets",
+    candidateCount: counts.candidateCount,
+    positiveCount: counts.positiveCount,
+    negativeCount: counts.negativeCount,
+    promoteCount: counts.promoteCount,
+    reviewCount: counts.reviewCount,
+    deferCount: counts.deferCount,
+    ...metrics
   };
 }
 
@@ -155,7 +182,15 @@ export function evaluateOptimizerPolicy(input: {
   return OptimizerEvaluationSchema.parse({
     generatedAt: new Date().toISOString(),
     benchmarkGeneratedAt: input.benchmark.generatedAt,
-    aggregate: aggregateMetrics(byDomain),
+    aggregate: {
+      candidateCount: computeMetricCounts(scoredCandidates).candidateCount,
+      positiveCount: computeMetricCounts(scoredCandidates).positiveCount,
+      negativeCount: computeMetricCounts(scoredCandidates).negativeCount,
+      promoteCount: computeMetricCounts(scoredCandidates).promoteCount,
+      reviewCount: computeMetricCounts(scoredCandidates).reviewCount,
+      deferCount: computeMetricCounts(scoredCandidates).deferCount,
+      ...metricsFromCounts(computeMetricCounts(scoredCandidates))
+    },
     byDomain,
     topFalsePromotes,
     missedPositives
@@ -177,6 +212,7 @@ export function renderEvaluationMarkdown(input: {
   lines.push(`- recommendations: promote=${input.evaluation.aggregate.promoteCount} review=${input.evaluation.aggregate.reviewCount} defer=${input.evaluation.aggregate.deferCount}`);
   lines.push(`- ranking accuracy: ${input.evaluation.aggregate.rankingAccuracy}`);
   lines.push(`- promote precision: ${input.evaluation.aggregate.promotePrecision}`);
+  lines.push(`- promote recall: ${input.evaluation.aggregate.promoteRecall}`);
   lines.push(`- review-or-promote recall: ${input.evaluation.aggregate.reviewOrPromoteRecall}`);
   lines.push(`- defer precision: ${input.evaluation.aggregate.deferPrecision}`);
   lines.push(`- optimizer objective: ${input.evaluation.aggregate.objective}`);
