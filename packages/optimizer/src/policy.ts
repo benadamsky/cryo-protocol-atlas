@@ -9,14 +9,14 @@ export const optimizerPolicy: OptimizerPolicy = OptimizerPolicySchema.parse(
     "titleProtocolHits": 0.95,
     "titleExperimentalHits": 0.9,
     "abstractProtocolHits": 0.65,
-    "abstractOutcomeHits": 0.45,
+    "abstractOutcomeHits": 0,
     "negativeSignalHits": -1.3,
     "doiPresent": 0.3,
     "journalPresent": 0.2,
     "recentYear": 0.05
   },
   "thresholds": {
-    "promote": 3.6,
+    "promote": 3.45,
     "review": 1.85
   },
   "heuristics": {

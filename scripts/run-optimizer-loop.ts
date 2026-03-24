@@ -1,5 +1,5 @@
 import { mkdir, open, readFile, rename, unlink, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { join, relative } from "node:path";
 import {
   applyMutation,
   buildOptimizerBenchmark,
@@ -72,6 +72,7 @@ async function acquireLoopLock(lockPath: string) {
 
 async function main() {
   const strategyPath = parseStrategyPath(process.argv);
+  const relativeStrategyPath = relative(process.cwd(), strategyPath);
   const program = await readOptimizerProgram(strategyPath);
   const outputDir = join(process.cwd(), "data", "optimizer");
   const policyPath = join(process.cwd(), "packages", "optimizer", "src", "policy.ts");
@@ -157,7 +158,7 @@ async function main() {
 
     const run = OptimizerLoopRunSchema.parse({
       generatedAt: new Date().toISOString(),
-      strategyPath,
+      strategyPath: relativeStrategyPath,
       strategySummary: {
         domains: program.domains,
         maxAttempts: program.maxAttempts,
