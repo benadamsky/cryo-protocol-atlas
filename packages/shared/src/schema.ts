@@ -50,6 +50,8 @@ export const CryoPaperSchema = z.object({
   id: z.string(),
   paper_id: z.string().nullable().optional(),
   doi: z.string().nullable().optional(),
+  pmid: z.string().nullable().optional(),
+  pmcid: z.string().nullable().optional(),
   title: z.string(),
   abstract: z.string().nullable().optional(),
   paper_url: z.string().nullable().optional(),
@@ -147,6 +149,7 @@ export const DiscoveryPaperSchema = z.object({
   publishedYear: z.number().nullable().optional(),
   authorsFlat: z.string().nullable().optional(),
   sourceCount: z.number().int().positive(),
+  recordCount: z.number().int().positive(),
   sources: z.array(DiscoverySourceRecordSchema),
   matchedKeywords: z.array(z.string()),
   sourceTypes: z.array(DiscoverySourceSchema),
@@ -158,14 +161,40 @@ export const DiscoveryPaperSchema = z.object({
 });
 export type DiscoveryPaper = z.infer<typeof DiscoveryPaperSchema>;
 
-export const DiscoveryProviderSummarySchema = z.object({
-  source: DiscoverySourceSchema,
+export const LiveDiscoveryProviderSummarySchema = z.object({
+  kind: z.literal("live-provider"),
+  source: LiveDiscoveryProviderSchema,
   query: z.string(),
   fetchedCount: z.number().int().nonnegative(),
   acceptedCount: z.number().int().nonnegative(),
   failed: z.boolean().default(false),
-  error: z.string().nullable().optional()
+  error: z.string().nullable().optional(),
+  totalHits: z.number().int().nonnegative().nullable().optional(),
+  truncated: z.boolean().default(false)
 });
+export const ImportedDiscoveryProviderSummarySchema = z.object({
+  kind: z.literal("import"),
+  source: DiscoverySourceSchema,
+  label: z.string(),
+  fetchedCount: z.number().int().nonnegative(),
+  acceptedCount: z.number().int().nonnegative(),
+  failed: z.literal(false).default(false),
+  error: z.null().optional()
+});
+export const ManualDiscoveryProviderSummarySchema = z.object({
+  kind: z.literal("manual"),
+  source: z.literal("manual"),
+  label: z.string(),
+  fetchedCount: z.number().int().nonnegative(),
+  acceptedCount: z.number().int().nonnegative(),
+  failed: z.literal(false).default(false),
+  error: z.null().optional()
+});
+export const DiscoveryProviderSummarySchema = z.discriminatedUnion("kind", [
+  LiveDiscoveryProviderSummarySchema,
+  ImportedDiscoveryProviderSummarySchema,
+  ManualDiscoveryProviderSummarySchema
+]);
 export type DiscoveryProviderSummary = z.infer<typeof DiscoveryProviderSummarySchema>;
 
 export const DiscoverySnapshotSchema = z.object({
@@ -173,13 +202,15 @@ export const DiscoverySnapshotSchema = z.object({
   domain: DomainIdSchema,
   queryDescription: z.string(),
   totalCandidates: z.number().int().nonnegative(),
+  isDegraded: z.boolean().default(false),
+  degradationReasons: z.array(z.string()).default([]),
   providerSummaries: z.array(DiscoveryProviderSummarySchema),
   papers: z.array(DiscoveryPaperSchema)
 });
 export type DiscoverySnapshot = z.infer<typeof DiscoverySnapshotSchema>;
 
 export const ManualDiscoveryRecordSchema = z.object({
-  source: DiscoverySourceSchema.default("manual"),
+  source: z.literal("manual").default("manual"),
   sourceId: z.string(),
   sourceUrl: z.string().nullable().optional(),
   rawQuery: z.string().default("manual-import"),
@@ -231,9 +262,24 @@ export type DiscoveryImportFile = z.infer<typeof DiscoveryImportFileSchema>;
 export const MergedDiscoveryImportFileSchema = z.object({
   generatedAt: z.string(),
   domain: DomainIdSchema,
+  isDegraded: z.boolean().default(false),
+  degradationReasons: z.array(z.string()).default([]),
   records: z.array(DiscoveryImportRecordSchema)
 });
 export type MergedDiscoveryImportFile = z.infer<typeof MergedDiscoveryImportFileSchema>;
+
+export const DiscoveryImportSummarySchema = z.object({
+  domain: DomainIdSchema,
+  importFileCount: z.number().int().nonnegative(),
+  importedRecordCount: z.number().int().nonnegative(),
+  mergedImportedRecordCount: z.number().int().nonnegative(),
+  manualOnlyRecordCount: z.number().int().nonnegative(),
+  importedSources: z.array(z.string()),
+  sourceBreakdown: z.record(z.number().int().nonnegative()),
+  isDegraded: z.boolean().default(false),
+  degradationReasons: z.array(z.string()).default([])
+});
+export type DiscoveryImportSummary = z.infer<typeof DiscoveryImportSummarySchema>;
 
 export const DiscoveryPromotionRecommendationSchema = z.enum([
   "promote",
@@ -255,6 +301,8 @@ export const DiscoveryPromotionDecisionSchema = z.object({
   title: z.string(),
   doi: z.string().nullable().optional(),
   pmid: z.string().nullable().optional(),
+  pmcid: z.string().nullable().optional(),
+  titleKey: z.string(),
   decision: DiscoveryPromotionDecisionStatusSchema,
   recommendation: DiscoveryPromotionRecommendationSchema,
   recommendationReasons: z.array(z.string()),
@@ -263,9 +311,12 @@ export const DiscoveryPromotionDecisionSchema = z.object({
   authorityScore: z.number().min(0),
   sourceDiversityScore: z.number().min(0),
   sourceCount: z.number().int().positive(),
+  recordCount: z.number().int().positive(),
   sourceTypes: z.array(DiscoverySourceSchema),
   fullTextAvailability: FullTextAvailabilitySchema,
   matchedKeywords: z.array(z.string()),
+  staleEvidence: z.boolean().default(false),
+  staleReason: z.string().optional(),
   reviewerNotes: z.string().optional(),
   decidedAt: z.string().optional()
 });
@@ -278,6 +329,8 @@ export const DiscoveryPromotionQueueSchema = z.object({
   candidateCount: z.number().int().nonnegative(),
   trackedCount: z.number().int().nonnegative(),
   novelCandidateCount: z.number().int().nonnegative(),
+  isDegraded: z.boolean().default(false),
+  degradationReasons: z.array(z.string()).default([]),
   decisions: z.array(DiscoveryPromotionDecisionSchema)
 });
 export type DiscoveryPromotionQueue = z.infer<typeof DiscoveryPromotionQueueSchema>;
@@ -296,6 +349,8 @@ export const DiscoveryPromotionReviewItemSchema = z.object({
   title: z.string(),
   doi: z.string().nullable().optional(),
   pmid: z.string().nullable().optional(),
+  pmcid: z.string().nullable().optional(),
+  titleKey: z.string(),
   journal: z.string().nullable().optional(),
   publishedYear: z.number().nullable().optional(),
   decision: DiscoveryPromotionDecisionStatusSchema,
@@ -305,6 +360,7 @@ export const DiscoveryPromotionReviewItemSchema = z.object({
   authorityScore: z.number().min(0),
   sourceDiversityScore: z.number().min(0),
   sourceCount: z.number().int().positive(),
+  recordCount: z.number().int().positive(),
   sourceTypes: z.array(DiscoverySourceSchema),
   fullTextAvailability: FullTextAvailabilitySchema,
   matchedKeywords: z.array(z.string()),
@@ -312,6 +368,8 @@ export const DiscoveryPromotionReviewItemSchema = z.object({
   promotionRisks: z.array(z.string()),
   reviewChecklist: z.array(z.string()),
   recommendationReasons: z.array(z.string()),
+  staleEvidence: z.boolean().default(false),
+  staleReason: z.string().optional(),
   reviewerNotes: z.string().optional(),
   sources: z.array(DiscoveryPromotionReviewSourceSchema)
 });
@@ -324,6 +382,8 @@ export const DiscoveryPromotionReviewPacketSchema = z.object({
   queueGeneratedAt: z.string(),
   candidateCount: z.number().int().nonnegative(),
   reviewItemCount: z.number().int().nonnegative(),
+  isDegraded: z.boolean().default(false),
+  degradationReasons: z.array(z.string()).default([]),
   items: z.array(DiscoveryPromotionReviewItemSchema)
 });
 export type DiscoveryPromotionReviewPacket = z.infer<typeof DiscoveryPromotionReviewPacketSchema>;

@@ -9,18 +9,50 @@ export function normalizeTitle(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 
+export function titleKey(value: string): string {
+  return `title:${normalizeTitle(value)}`;
+}
+
+export function identityHintsForPaperLike(input: {
+  doi?: string | null;
+  pmid?: string | null;
+  pmcid?: string | null;
+  title: string;
+}): string[] {
+  const hints: string[] = [];
+  if (input.doi) {
+    hints.push(`doi:${input.doi.toLowerCase()}`);
+  }
+  if (input.pmid) {
+    hints.push(`pmid:${input.pmid}`);
+  }
+  if (input.pmcid) {
+    hints.push(`pmcid:${input.pmcid}`);
+  }
+  hints.push(titleKey(input.title));
+  return hints;
+}
+
 export function buildTrackedKeys(domainSnapshot: DomainSnapshot): Set<string> {
   const tracked = new Set<string>();
   for (const paper of domainSnapshot.papers) {
-    if (paper.paper.doi) {
-      tracked.add(`doi:${paper.paper.doi.toLowerCase()}`);
+    for (const hint of identityHintsForPaperLike({
+      doi: paper.paper.doi ?? null,
+      pmid: paper.paper.pmid ?? null,
+      pmcid: paper.paper.pmcid ?? null,
+      title: paper.paper.title
+    })) {
+      tracked.add(hint);
     }
     if (paper.paper.paper_id) {
       tracked.add(`paper:${paper.paper.paper_id}`);
     }
-    tracked.add(`title:${normalizeTitle(paper.paper.title)}`);
   }
   return tracked;
+}
+
+export function paperIsTracked(paper: DiscoveryPaper, trackedKeys: Set<string>): boolean {
+  return identityHintsForPaperLike(paper).some((hint) => trackedKeys.has(hint));
 }
 
 export function noveltyBasisForPaper(paper: DiscoveryPaper, trackedKeys: Set<string>): string[] {
@@ -28,7 +60,13 @@ export function noveltyBasisForPaper(paper: DiscoveryPaper, trackedKeys: Set<str
   if (paper.doi && !trackedKeys.has(`doi:${paper.doi.toLowerCase()}`)) {
     basis.push("doi-not-in-current-slice");
   }
-  if (!trackedKeys.has(`title:${normalizeTitle(paper.title)}`)) {
+  if (paper.pmid && !trackedKeys.has(`pmid:${paper.pmid}`)) {
+    basis.push("pmid-not-in-current-slice");
+  }
+  if (paper.pmcid && !trackedKeys.has(`pmcid:${paper.pmcid}`)) {
+    basis.push("pmcid-not-in-current-slice");
+  }
+  if (!trackedKeys.has(titleKey(paper.title))) {
     basis.push("title-not-in-current-slice");
   }
   if (paper.pmid) {
@@ -37,7 +75,40 @@ export function noveltyBasisForPaper(paper: DiscoveryPaper, trackedKeys: Set<str
   if (basis.length === 0) {
     basis.push("novelty-requires-manual-confirmation");
   }
-  return basis;
+  return Array.from(new Set(basis));
+}
+
+export function evidenceFingerprintForPaper(paper: DiscoveryPaper, recommendation: "promote" | "review" | "defer"): string {
+  return JSON.stringify({
+    recommendation,
+    rankingScore: Number(paper.rankingScore.toFixed(3)),
+    relevanceScore: Number(paper.relevanceScore.toFixed(3)),
+    authorityScore: Number(paper.authorityScore.toFixed(3)),
+    sourceDiversityScore: Number(paper.sourceDiversityScore.toFixed(3)),
+    sourceTypes: [...paper.sourceTypes].sort(),
+    recordCount: paper.recordCount,
+    sourceCount: paper.sourceCount,
+    fullTextAvailability: paper.fullTextAvailability
+  });
+}
+
+export function findMatchingExistingDecision(
+  existingDecisions: DiscoveryPromotionDecision[],
+  paper: DiscoveryPaper
+): DiscoveryPromotionDecision | null {
+  const paperHints = new Set(identityHintsForPaperLike(paper));
+  return (
+    existingDecisions.find((decision) => {
+      const decisionHints = [
+        decision.dedupeKey,
+        ...(decision.doi ? [`doi:${decision.doi.toLowerCase()}`] : []),
+        ...(decision.pmid ? [`pmid:${decision.pmid}`] : []),
+        ...(decision.pmcid ? [`pmcid:${decision.pmcid}`] : []),
+        decision.titleKey
+      ];
+      return decisionHints.some((hint) => paperHints.has(hint));
+    }) ?? null
+  );
 }
 
 export function recommendationForPaper(paper: DiscoveryPaper): {
@@ -58,7 +129,7 @@ export function recommendationForPaper(paper: DiscoveryPaper): {
     score += 1;
     reasons.push("full-text landing page is available");
   }
-  if (paper.authorityScore >= 0.6) {
+  if (paper.authorityScore >= 0.5) {
     score += 2;
     reasons.push("authority score is high enough to justify direct promotion review");
   } else if (paper.authorityScore >= 0.2) {
@@ -68,7 +139,7 @@ export function recommendationForPaper(paper: DiscoveryPaper): {
   if (paper.relevanceScore >= 8) {
     score += 2;
     reasons.push("domain relevance score is high");
-  } else if (paper.relevanceScore >= 4) {
+  } else if (paper.relevanceScore >= 5) {
     score += 1;
     reasons.push("domain relevance score is non-trivial");
   }
@@ -127,6 +198,8 @@ export function buildPromotionReviewItem(
     title: paper.title,
     doi: paper.doi ?? null,
     pmid: paper.pmid ?? null,
+    pmcid: paper.pmcid ?? null,
+    titleKey: titleKey(paper.title),
     journal: paper.journal ?? null,
     publishedYear: paper.publishedYear ?? null,
     decision: decision.decision,
@@ -136,6 +209,7 @@ export function buildPromotionReviewItem(
     authorityScore: paper.authorityScore,
     sourceDiversityScore: paper.sourceDiversityScore,
     sourceCount: paper.sourceCount,
+    recordCount: paper.recordCount,
     sourceTypes: paper.sourceTypes,
     fullTextAvailability: paper.fullTextAvailability,
     matchedKeywords: paper.matchedKeywords,
@@ -143,6 +217,8 @@ export function buildPromotionReviewItem(
     promotionRisks: promotionRisksForPaper(paper),
     reviewChecklist: reviewChecklistForPaper(paper),
     recommendationReasons: decision.recommendationReasons,
+    staleEvidence: decision.staleEvidence,
+    ...(decision.staleReason ? { staleReason: decision.staleReason } : {}),
     ...(decision.reviewerNotes ? { reviewerNotes: decision.reviewerNotes } : {}),
     sources: paper.sources.map((source) => ({
       source: source.source,

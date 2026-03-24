@@ -21,6 +21,7 @@
     "discover-refresh:ovarian": "node --import tsx scripts/run-discovery-refresh.ts ovarian-tissue",
     "discover-refresh:islets": "node --import tsx scripts/run-discovery-refresh.ts islets",
     "discover-refresh:all": "node --import tsx scripts/run-discovery-refresh.ts all",
+    "validate-discovery-refresh": "node --import tsx scripts/validate-discovery-refresh.ts all",
     "extract:ovarian": "node --import tsx scripts/extract-domain.ts ovarian-tissue",
     "extract:islets": "node --import tsx scripts/extract-domain.ts islets",
     "analyze:ovarian": "node --import tsx scripts/analyze-domain.ts ovarian-tissue",
@@ -59,7 +60,7 @@
     "regress:ovarian": "node --import tsx scripts/regress-autoresearch.ts ovarian-tissue",
     "regress:islets": "node --import tsx scripts/regress-autoresearch.ts islets",
     "test:normalize": "node --import tsx --test packages/normalize/src/canonical-protocols.test.ts",
-    "test:discovery": "node --import tsx --test packages/discovery/src/review.test.ts",
+    "test:discovery": "node --import tsx --test packages/discovery/src/review.test.ts packages/discovery/src/pipeline.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

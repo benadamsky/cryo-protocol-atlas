@@ -1,14 +1,25 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { buildTrackedKeys, recommendationForPaper } from "../packages/discovery/src/review.js";
 import {
+  buildTrackedKeys,
+  evidenceFingerprintForPaper,
+  findMatchingExistingDecision,
+  paperIsTracked,
+  recommendationForPaper,
+  titleKey
+} from "../packages/discovery/src/review.js";
+import {
+  DiscoveryPromotionDecisionSchema,
+  DiscoveryPromotionRecommendationSchema,
   DiscoveryPromotionDecisionStatusSchema,
   DiscoveryPromotionQueueSchema,
+  DiscoverySourceSchema,
   DiscoverySnapshotSchema,
   DomainIdSchema,
   DomainSnapshotSchema,
+  FullTextAvailabilitySchema,
   type DiscoveryPaper,
-  type DiscoveryPromotionQueue,
+  type DiscoveryPromotionDecision,
   type DomainId
 } from "../packages/shared/src/schema.js";
 
@@ -17,19 +28,112 @@ const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
 async function readOptionalFile(path: string): Promise<string | null> {
   try {
     return await readFile(path, "utf8");
-  } catch {
-    return null;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return null;
+    }
+    throw error;
   }
 }
 
-function normalizeTitle(value: string): string {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+function normalizeLegacyDecision(value: unknown): DiscoveryPromotionDecision | null {
+  if (!value || typeof value !== "object") {
+    return null;
+  }
+  const decision = value as Record<string, unknown>;
+  if (typeof decision.dedupeKey !== "string" || typeof decision.title !== "string") {
+    return null;
+  }
+
+  const decisionStatus = DiscoveryPromotionDecisionStatusSchema.safeParse(decision.decision).success
+    ? (decision.decision as DiscoveryPromotionDecision["decision"])
+    : "pending";
+  const recommendation = DiscoveryPromotionRecommendationSchema.safeParse(decision.recommendation).success
+    ? (decision.recommendation as DiscoveryPromotionDecision["recommendation"])
+    : "review";
+  const sourceTypes = Array.isArray(decision.sourceTypes)
+    ? decision.sourceTypes
+        .filter((entry): entry is string => typeof entry === "string")
+        .filter((entry) => DiscoverySourceSchema.safeParse(entry).success)
+    : [];
+
+  return DiscoveryPromotionDecisionSchema.parse({
+    dedupeKey: decision.dedupeKey,
+    title: decision.title,
+    doi: typeof decision.doi === "string" ? decision.doi : null,
+    pmid: typeof decision.pmid === "string" ? decision.pmid : null,
+    pmcid: typeof decision.pmcid === "string" ? decision.pmcid : null,
+    titleKey: typeof decision.titleKey === "string" ? decision.titleKey : titleKey(decision.title),
+    decision: decisionStatus,
+    recommendation,
+    recommendationReasons: Array.isArray(decision.recommendationReasons)
+      ? decision.recommendationReasons.filter((entry): entry is string => typeof entry === "string")
+      : [],
+    rankingScore: typeof decision.rankingScore === "number" ? decision.rankingScore : 0,
+    relevanceScore: typeof decision.relevanceScore === "number" ? decision.relevanceScore : 0,
+    authorityScore: typeof decision.authorityScore === "number" ? decision.authorityScore : 0,
+    sourceDiversityScore: typeof decision.sourceDiversityScore === "number" ? decision.sourceDiversityScore : 0,
+    sourceCount: typeof decision.sourceCount === "number" && decision.sourceCount > 0 ? decision.sourceCount : 1,
+    recordCount:
+      typeof decision.recordCount === "number" && decision.recordCount > 0
+        ? decision.recordCount
+        : typeof decision.sourceCount === "number" && decision.sourceCount > 0
+          ? decision.sourceCount
+          : 1,
+    sourceTypes: sourceTypes.length > 0 ? sourceTypes : ["other"],
+    fullTextAvailability: FullTextAvailabilitySchema.safeParse(decision.fullTextAvailability).success
+      ? decision.fullTextAvailability
+      : "unknown",
+    matchedKeywords: Array.isArray(decision.matchedKeywords)
+      ? decision.matchedKeywords.filter((entry): entry is string => typeof entry === "string")
+      : [],
+    staleEvidence: Boolean(decision.staleEvidence),
+    ...(typeof decision.staleReason === "string" ? { staleReason: decision.staleReason } : {}),
+    ...(typeof decision.reviewerNotes === "string" ? { reviewerNotes: decision.reviewerNotes } : {}),
+    ...(typeof decision.decidedAt === "string" ? { decidedAt: decision.decidedAt } : {})
+  });
+}
+
+function parseExistingQueue(value: string | null): ReturnType<typeof DiscoveryPromotionQueueSchema.parse> | null {
+  if (value === null) {
+    return null;
+  }
+  const raw = JSON.parse(value);
+  const parsed = DiscoveryPromotionQueueSchema.safeParse(raw);
+  if (parsed.success) {
+    return parsed.data;
+  }
+  if (!raw || typeof raw !== "object") {
+    throw parsed.error;
+  }
+
+  const queue = raw as Record<string, unknown>;
+  const decisions = Array.isArray(queue.decisions)
+    ? queue.decisions
+        .map((decision) => normalizeLegacyDecision(decision))
+        .filter((decision): decision is DiscoveryPromotionDecision => Boolean(decision))
+    : [];
+
+  return DiscoveryPromotionQueueSchema.parse({
+    generatedAt: typeof queue.generatedAt === "string" ? queue.generatedAt : new Date().toISOString(),
+    domain: typeof queue.domain === "string" ? queue.domain : domain,
+    sourceSnapshotGeneratedAt:
+      typeof queue.sourceSnapshotGeneratedAt === "string" ? queue.sourceSnapshotGeneratedAt : new Date().toISOString(),
+    candidateCount: typeof queue.candidateCount === "number" ? queue.candidateCount : decisions.length,
+    trackedCount: typeof queue.trackedCount === "number" ? queue.trackedCount : 0,
+    novelCandidateCount: typeof queue.novelCandidateCount === "number" ? queue.novelCandidateCount : decisions.length,
+    isDegraded: Boolean(queue.isDegraded),
+    degradationReasons: Array.isArray(queue.degradationReasons)
+      ? queue.degradationReasons.filter((entry): entry is string => typeof entry === "string")
+      : [],
+    decisions
+  });
 }
 
 function renderMarkdown(
   domainId: DomainId,
   discoverySnapshot: ReturnType<typeof DiscoverySnapshotSchema.parse>,
-  queue: DiscoveryPromotionQueue
+  queue: ReturnType<typeof DiscoveryPromotionQueueSchema.parse>
 ): string {
   const lines: string[] = [];
   lines.push(`# ${domainId} discovery promotion queue`);
@@ -38,6 +142,10 @@ function renderMarkdown(
   lines.push(`- total discovery candidates: ${queue.candidateCount}`);
   lines.push(`- already tracked in current slice: ${queue.trackedCount}`);
   lines.push(`- novel candidates requiring review: ${queue.novelCandidateCount}`);
+  lines.push(`- degraded refresh: ${queue.isDegraded ? "yes" : "no"}`);
+  if (queue.degradationReasons.length > 0) {
+    lines.push(`- degradation reasons: ${queue.degradationReasons.join(" || ")}`);
+  }
   lines.push("");
 
   const counts = new Map<string, number>();
@@ -61,11 +169,16 @@ function renderMarkdown(
         `- [${decision.decision}] ${decision.title} | recommendation=${decision.recommendation} | ranking=${decision.rankingScore}`
       );
       lines.push(`  dedupeKey=${decision.dedupeKey}`);
-      lines.push(`  sources=${decision.sourceTypes.join(", ")} | sourceCount=${decision.sourceCount}`);
+      lines.push(
+        `  sources=${decision.sourceTypes.join(", ")} | sourceCount=${decision.sourceCount} | recordCount=${decision.recordCount}`
+      );
       lines.push(
         `  relevance=${decision.relevanceScore} authority=${decision.authorityScore} diversity=${decision.sourceDiversityScore}`
       );
       lines.push(`  reasons=${decision.recommendationReasons.join(" || ")}`);
+      if (decision.staleEvidence) {
+        lines.push(`  staleEvidence=${decision.staleReason ?? "evidence changed since the previous decision"}`);
+      }
       if (decision.doi) {
         lines.push(`  doi=${decision.doi}`);
       } else if (decision.pmid) {
@@ -82,9 +195,13 @@ function renderMarkdown(
   lines.push("## Provider status");
   lines.push(`- provider failures: ${providerFailureCount}`);
   for (const summary of discoverySnapshot.providerSummaries) {
-    lines.push(
-      `- ${summary.source}: fetched=${summary.fetchedCount} accepted=${summary.acceptedCount}${summary.failed ? ` error=${summary.error}` : ""}`
-    );
+    if (summary.kind === "live-provider") {
+      lines.push(
+        `- ${summary.source}: fetched=${summary.fetchedCount} accepted=${summary.acceptedCount}${summary.totalHits !== null && summary.totalHits !== undefined ? ` total=${summary.totalHits}` : ""}${summary.truncated ? " truncated=yes" : ""}${summary.failed ? ` error=${summary.error}` : ""}`
+      );
+      continue;
+    }
+    lines.push(`- ${summary.source}: fetched=${summary.fetchedCount} accepted=${summary.acceptedCount} label=${summary.label}`);
   }
   lines.push("");
 
@@ -108,25 +225,16 @@ async function main(selectedDomain: DomainId): Promise<void> {
   let trackedCount = 0;
   const novelCandidates: DiscoveryPaper[] = [];
   for (const paper of discoverySnapshot.papers) {
-    const tracked =
-      trackedKeys.has(paper.dedupeKey) ||
-      (paper.doi ? trackedKeys.has(`doi:${paper.doi.toLowerCase()}`) : false) ||
-      trackedKeys.has(`title:${normalizeTitle(paper.title)}`);
-    if (tracked) {
+    if (paperIsTracked(paper, trackedKeys)) {
       trackedCount += 1;
       continue;
     }
     novelCandidates.push(paper);
   }
 
-  let existingQueue: DiscoveryPromotionQueue | null = null;
-  try {
-    existingQueue = DiscoveryPromotionQueueSchema.parse(JSON.parse(await readFile(queueJsonPath, "utf8")));
-  } catch {
-    existingQueue = null;
-  }
+  const existingQueue = parseExistingQueue(await readOptionalFile(queueJsonPath));
 
-  const existingByKey = new Map(existingQueue?.decisions.map((decision) => [decision.dedupeKey, decision]) ?? []);
+  const existingDecisions = existingQueue?.decisions ?? [];
   const nextQueue = DiscoveryPromotionQueueSchema.parse({
     generatedAt: new Date().toISOString(),
     domain: selectedDomain,
@@ -134,15 +242,41 @@ async function main(selectedDomain: DomainId): Promise<void> {
     candidateCount: discoverySnapshot.totalCandidates,
     trackedCount,
     novelCandidateCount: novelCandidates.length,
+    isDegraded: discoverySnapshot.isDegraded,
+    degradationReasons: discoverySnapshot.degradationReasons,
     decisions: novelCandidates.map((paper) => {
-      const existing = existingByKey.get(paper.dedupeKey);
+      const existing = findMatchingExistingDecision(existingDecisions, paper);
       const recommendation = recommendationForPaper(paper);
+      const nextFingerprint = evidenceFingerprintForPaper(paper, recommendation.recommendation);
+      const previousFingerprint =
+        existing &&
+        evidenceFingerprintForPaper(
+          {
+            ...paper,
+            rankingScore: existing.rankingScore,
+            relevanceScore: existing.relevanceScore,
+            authorityScore: existing.authorityScore,
+            sourceDiversityScore: existing.sourceDiversityScore,
+            sourceCount: existing.sourceCount,
+            recordCount: existing.recordCount,
+            sourceTypes: existing.sourceTypes,
+            fullTextAvailability: existing.fullTextAvailability
+          },
+          existing.recommendation
+        );
+      const staleReason =
+        existing && previousFingerprint !== nextFingerprint
+          ? "evidence or recommendation changed since the previous review state"
+          : undefined;
+      const shouldResetDecision = Boolean(existing && existing.decision !== "pending" && staleReason);
       return {
         dedupeKey: paper.dedupeKey,
         title: paper.title,
         doi: paper.doi ?? null,
         pmid: paper.pmid ?? null,
-        decision: existing?.decision ?? "pending",
+        pmcid: paper.pmcid ?? null,
+        titleKey: titleKey(paper.title),
+        decision: shouldResetDecision ? "pending" : existing?.decision ?? "pending",
         recommendation: recommendation.recommendation,
         recommendationReasons: recommendation.reasons,
         rankingScore: paper.rankingScore,
@@ -150,12 +284,15 @@ async function main(selectedDomain: DomainId): Promise<void> {
         authorityScore: paper.authorityScore,
         sourceDiversityScore: paper.sourceDiversityScore,
         sourceCount: paper.sourceCount,
+        recordCount: paper.recordCount,
         sourceTypes: paper.sourceTypes,
         fullTextAvailability: paper.fullTextAvailability,
         matchedKeywords: paper.matchedKeywords,
+        staleEvidence: Boolean(staleReason),
+        ...(staleReason ? { staleReason } : {}),
         ...(existing?.reviewerNotes ? { reviewerNotes: existing.reviewerNotes } : {}),
         ...(existing?.decidedAt ? { decidedAt: existing.decidedAt } : {})
-      };
+      } satisfies DiscoveryPromotionDecision;
     })
   });
 
@@ -195,6 +332,6 @@ async function main(selectedDomain: DomainId): Promise<void> {
 }
 
 main(domain).catch((error) => {
-  console.error(error);
+  console.error(error instanceof Error ? (error.stack ?? error.message) : String(error));
   process.exitCode = 1;
 });

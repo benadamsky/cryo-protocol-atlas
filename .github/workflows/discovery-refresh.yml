@@ -59,6 +59,9 @@ jobs:
           fi
           bun run discover-refresh:all -- ${EXTRA_ARGS}
 
+      - name: Validate Discovery Refresh
+        run: bun run validate-discovery-refresh
+
       - name: Publish Discovery Summary
         run: |
           echo "# Discovery refresh" >> "$GITHUB_STEP_SUMMARY"

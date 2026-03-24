@@ -2,6 +2,7 @@ import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import {
   DiscoveryImportFileSchema,
+  DiscoveryImportSummarySchema,
   DomainIdSchema,
   MergedDiscoveryImportFileSchema,
   ManualDiscoveryImportFileSchema,
@@ -11,12 +12,16 @@ import {
 } from "../packages/shared/src/schema.js";
 
 const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const allowEmpty = process.argv.includes("--allow-empty");
 
 async function readOptionalFile(path: string): Promise<string | null> {
   try {
     return await readFile(path, "utf8");
-  } catch {
-    return null;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return null;
+    }
+    throw error;
   }
 }
 
@@ -24,58 +29,26 @@ function normalizeTitle(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 
-function dedupeKey(record: Pick<ManualDiscoveryRecord, "doi" | "pmid" | "pmcid" | "title">): string {
+function importIdentity(record: Pick<ManualDiscoveryRecord, "doi" | "pmid" | "pmcid" | "title"> & { source: string }): string {
   if (record.doi) {
-    return `doi:${record.doi.toLowerCase()}`;
+    return `${record.source}:doi:${record.doi.toLowerCase()}`;
   }
   if (record.pmid) {
-    return `pmid:${record.pmid}`;
+    return `${record.source}:pmid:${record.pmid}`;
   }
   if (record.pmcid) {
-    return `pmcid:${record.pmcid}`;
+    return `${record.source}:pmcid:${record.pmcid}`;
   }
-  return `title:${normalizeTitle(record.title)}`;
+  return `${record.source}:title:${normalizeTitle(record.title)}`;
 }
 
-function preferString(values: Array<string | null | undefined>): string | null {
-  const candidates = values.map((value) => value?.trim()).filter(Boolean) as string[];
-  candidates.sort((left, right) => right.length - left.length);
-  return candidates[0] ?? null;
-}
-
-function preferYear(values: Array<number | null | undefined>): number | null {
-  const years = values.filter((value): value is number => Number.isInteger(value));
-  years.sort((left, right) => right - left);
-  return years[0] ?? null;
-}
-
-function mergeRecords(records: DiscoveryImportRecord[]): DiscoveryImportRecord {
-  const preferredSource =
-    records.find((record) => record.source !== "manual" && record.source !== "other")?.source ??
-    records[0]?.source ??
-    "manual";
-  return {
-    source: preferredSource,
-    sourceId: preferString(records.map((record) => record.sourceId)) ?? crypto.randomUUID(),
-    sourceUrl: preferString(records.map((record) => record.sourceUrl ?? null)),
-    rawQuery: preferString(records.map((record) => record.rawQuery)) ?? "manual-import",
-    title: preferString(records.map((record) => record.title)) ?? "untitled",
-    abstract: preferString(records.map((record) => record.abstract ?? null)),
-    doi: preferString(records.map((record) => record.doi ?? null)),
-    pmid: preferString(records.map((record) => record.pmid ?? null)),
-    pmcid: preferString(records.map((record) => record.pmcid ?? null)),
-    journal: preferString(records.map((record) => record.journal ?? null)),
-    publishedYear: preferYear(records.map((record) => record.publishedYear ?? null)),
-    authorsFlat: preferString(records.map((record) => record.authorsFlat ?? null)),
-    citationCount: Math.max(...records.map((record) => record.citationCount ?? 0), 0),
-    fullTextAvailability: records.some((record) => record.fullTextAvailability === "open-access-full-text")
-      ? "open-access-full-text"
-      : records.some((record) => record.fullTextAvailability === "full-text-link")
-        ? "full-text-link"
-        : records.some((record) => record.fullTextAvailability === "abstract-only")
-          ? "abstract-only"
-          : "unknown"
-  };
+function sortImportedRecords(records: DiscoveryImportRecord[]): DiscoveryImportRecord[] {
+  return [...records].sort(
+    (left, right) =>
+      (right.publishedYear ?? 0) - (left.publishedYear ?? 0) ||
+      left.source.localeCompare(right.source) ||
+      left.title.localeCompare(right.title)
+  );
 }
 
 async function main(selectedDomain: DomainId): Promise<void> {
@@ -86,19 +59,28 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const summaryJsonPath = join(discoveryDir, "import-summary.json");
   const summaryMarkdownPath = join(discoveryDir, "import-summary.md");
 
-  const [existingManual, existingMerged] = await Promise.all([
+  const [existingManualContent, existingMergedContent] = await Promise.all([
     readOptionalFile(manualFilePath),
     readOptionalFile(mergedFilePath)
   ]);
-  const existingManualFile = existingManual
-    ? ManualDiscoveryImportFileSchema.parse(JSON.parse(existingManual))
+
+  const existingManualFile = existingManualContent
+    ? ManualDiscoveryImportFileSchema.parse(JSON.parse(existingManualContent))
     : {
         generatedAt: new Date().toISOString(),
         domain: selectedDomain,
         records: []
       };
+  const existingMergedFile = existingMergedContent
+    ? MergedDiscoveryImportFileSchema.parse(JSON.parse(existingMergedContent))
+    : null;
 
-  const importedFiles = await readdir(importsDir).catch(() => []);
+  const importedFiles = await readdir(importsDir).catch((error: NodeJS.ErrnoException) => {
+    if (error.code === "ENOENT") {
+      return [];
+    }
+    throw error;
+  });
   const jsonFiles = importedFiles.filter((name) => name.endsWith(".json")).sort();
   const importedRecords: DiscoveryImportRecord[] = [];
   const importedSources: string[] = [];
@@ -113,53 +95,58 @@ async function main(selectedDomain: DomainId): Promise<void> {
     importedSources.push(`${parsed.source}:${fileName}`);
   }
 
-  const allRecords = importedRecords;
-  const buckets = new Map<string, DiscoveryImportRecord[]>();
-  for (const record of allRecords) {
-    const key = dedupeKey(record);
-    const bucket = buckets.get(key) ?? [];
-    bucket.push(record);
-    buckets.set(key, bucket);
-  }
+  const degradationReasons: string[] = [];
+  const exactDedupedRecords = sortImportedRecords(
+    Array.from(
+      importedRecords.reduce((acc, record) => {
+        acc.set(importIdentity(record), record);
+        return acc;
+      }, new Map<string, DiscoveryImportRecord>()).values()
+    )
+  );
 
-  const mergedRecords = Array.from(buckets.values())
-    .map((bucket) => mergeRecords(bucket))
-    .sort(
-      (left, right) =>
-        (right.publishedYear ?? 0) - (left.publishedYear ?? 0) ||
-        left.title.localeCompare(right.title)
-    );
+  let mergedRecords = exactDedupedRecords;
+  if (jsonFiles.length === 0 && existingMergedFile && !allowEmpty) {
+    degradationReasons.push("no-import-files-present; preserved prior imported-source-records.json");
+    mergedRecords = existingMergedFile.records;
+  } else if (jsonFiles.length === 0 && !allowEmpty) {
+    degradationReasons.push("no-import-files-present");
+  }
 
   const nextMergedFile = MergedDiscoveryImportFileSchema.parse({
     generatedAt: new Date().toISOString(),
     domain: selectedDomain,
+    isDegraded: degradationReasons.length > 0,
+    degradationReasons,
     records: mergedRecords
   });
 
-  const previousComparable = existingMerged
-    ? JSON.stringify({ ...JSON.parse(existingMerged), generatedAt: null })
+  const previousComparable = existingMergedContent
+    ? JSON.stringify({ ...JSON.parse(existingMergedContent), generatedAt: null })
     : null;
   const nextComparable = JSON.stringify({ ...nextMergedFile, generatedAt: null });
   const stableMergedFile =
-    previousComparable === nextComparable && existingMerged
-      ? MergedDiscoveryImportFileSchema.parse(JSON.parse(existingMerged))
+    previousComparable === nextComparable && existingMergedContent
+      ? MergedDiscoveryImportFileSchema.parse(JSON.parse(existingMergedContent))
       : nextMergedFile;
 
-  const manualOnlyCount = existingManualFile.records.filter((record) => record.source === "manual").length;
+  const manualOnlyCount = existingManualFile.records.length;
   const sourceBreakdown = stableMergedFile.records.reduce<Record<string, number>>((acc, record) => {
     acc[record.source] = (acc[record.source] ?? 0) + 1;
     return acc;
   }, {});
 
-  const summary = {
+  const summary = DiscoveryImportSummarySchema.parse({
     domain: selectedDomain,
     importFileCount: jsonFiles.length,
     importedRecordCount: importedRecords.length,
     mergedImportedRecordCount: stableMergedFile.records.length,
     manualOnlyRecordCount: manualOnlyCount,
     importedSources,
-    sourceBreakdown
-  };
+    sourceBreakdown,
+    isDegraded: stableMergedFile.isDegraded,
+    degradationReasons: stableMergedFile.degradationReasons
+  });
 
   const summaryMarkdown = [
     `# ${selectedDomain} discovery import summary`,
@@ -168,12 +155,14 @@ async function main(selectedDomain: DomainId): Promise<void> {
     `- imported records: ${summary.importedRecordCount}`,
     `- merged imported discovery records: ${summary.mergedImportedRecordCount}`,
     `- manual-only discovery records: ${summary.manualOnlyRecordCount}`,
+    `- degraded imports: ${summary.isDegraded ? "yes" : "no"}`,
     `- imported sources: ${summary.importedSources.join(", ") || "none"}`,
     `- source breakdown: ${
       Object.entries(summary.sourceBreakdown)
         .map(([source, count]) => `${source}=${count}`)
         .join(", ") || "none"
     }`,
+    ...(summary.degradationReasons.length > 0 ? [`- degradation reasons: ${summary.degradationReasons.join(" || ")}`] : []),
     ""
   ].join("\n");
 
@@ -182,7 +171,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
   await writeFile(summaryMarkdownPath, summaryMarkdown, "utf8");
 
   const nextMergedContent = JSON.stringify(stableMergedFile, null, 2);
-  if (existingMerged !== nextMergedContent) {
+  if (existingMergedContent !== nextMergedContent) {
     await writeFile(mergedFilePath, nextMergedContent, "utf8");
   }
 
@@ -190,6 +179,6 @@ async function main(selectedDomain: DomainId): Promise<void> {
 }
 
 main(domain).catch((error) => {
-  console.error(error);
+  console.error(error instanceof Error ? (error.stack ?? error.message) : String(error));
   process.exitCode = 1;
 });

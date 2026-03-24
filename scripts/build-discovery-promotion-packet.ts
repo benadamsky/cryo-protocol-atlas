@@ -1,6 +1,10 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { buildPromotionReviewItem, buildTrackedKeys } from "../packages/discovery/src/review.js";
+import {
+  buildPromotionReviewItem,
+  buildTrackedKeys,
+  identityHintsForPaperLike
+} from "../packages/discovery/src/review.js";
 import {
   DiscoveryPromotionQueueSchema,
   DiscoveryPromotionReviewPacketSchema,
@@ -15,8 +19,11 @@ const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
 async function readOptionalFile(path: string): Promise<string | null> {
   try {
     return await readFile(path, "utf8");
-  } catch {
-    return null;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return null;
+    }
+    throw error;
   }
 }
 
@@ -28,6 +35,10 @@ function renderMarkdown(selectedDomain: DomainId, packet: ReturnType<typeof Disc
   lines.push(`- queue snapshot: ${packet.queueGeneratedAt}`);
   lines.push(`- total queue candidates: ${packet.candidateCount}`);
   lines.push(`- review items: ${packet.reviewItemCount}`);
+  lines.push(`- degraded refresh: ${packet.isDegraded ? "yes" : "no"}`);
+  if (packet.degradationReasons.length > 0) {
+    lines.push(`- degradation reasons: ${packet.degradationReasons.join(" || ")}`);
+  }
   lines.push("");
   lines.push("## Review items");
 
@@ -42,11 +53,16 @@ function renderMarkdown(selectedDomain: DomainId, packet: ReturnType<typeof Disc
     lines.push(
       `  ranking=${item.rankingScore} relevance=${item.relevanceScore} authority=${item.authorityScore} diversity=${item.sourceDiversityScore}`
     );
-    lines.push(`  sources=${item.sourceTypes.join(", ")} | sourceCount=${item.sourceCount}`);
+    lines.push(
+      `  sources=${item.sourceTypes.join(", ")} | sourceCount=${item.sourceCount} | recordCount=${item.recordCount}`
+    );
     lines.push(`  noveltyBasis=${item.noveltyBasis.join(" || ")}`);
     lines.push(`  recommendationReasons=${item.recommendationReasons.join(" || ")}`);
     lines.push(`  promotionRisks=${item.promotionRisks.join(" || ") || "none"}`);
     lines.push(`  reviewChecklist=${item.reviewChecklist.join(" || ")}`);
+    if (item.staleEvidence) {
+      lines.push(`  staleEvidence=${item.staleReason ?? "evidence changed since the previous review state"}`);
+    }
     if (item.doi) {
       lines.push(`  doi=${item.doi}`);
     } else if (item.pmid) {
@@ -76,9 +92,19 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const papersByKey = new Map(discoverySnapshot.papers.map((paper) => [paper.dedupeKey, paper]));
 
   const items = promotionQueue.decisions
-    .filter((decision) => decision.recommendation !== "defer" || decision.decision === "promote")
+    .filter((decision) => decision.recommendation !== "defer")
     .map((decision) => {
-      const paper = papersByKey.get(decision.dedupeKey);
+      const paper =
+        papersByKey.get(decision.dedupeKey) ??
+        discoverySnapshot.papers.find((candidate) =>
+          identityHintsForPaperLike(candidate).some((hint) =>
+            [decision.dedupeKey, decision.titleKey]
+              .concat(decision.doi ? [`doi:${decision.doi.toLowerCase()}`] : [])
+              .concat(decision.pmid ? [`pmid:${decision.pmid}`] : [])
+              .concat(decision.pmcid ? [`pmcid:${decision.pmcid}`] : [])
+              .includes(hint)
+          )
+        );
       if (!paper) {
         throw new Error(`Missing discovery paper for queue decision ${decision.dedupeKey}`);
       }
@@ -92,6 +118,8 @@ async function main(selectedDomain: DomainId): Promise<void> {
     queueGeneratedAt: promotionQueue.generatedAt,
     candidateCount: promotionQueue.candidateCount,
     reviewItemCount: items.length,
+    isDegraded: promotionQueue.isDegraded,
+    degradationReasons: promotionQueue.degradationReasons,
     items
   });
 
@@ -129,6 +157,6 @@ async function main(selectedDomain: DomainId): Promise<void> {
 }
 
 main(domain).catch((error) => {
-  console.error(error);
+  console.error(error instanceof Error ? (error.stack ?? error.message) : String(error));
   process.exitCode = 1;
 });

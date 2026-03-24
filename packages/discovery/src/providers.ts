@@ -12,7 +12,12 @@ import { getDiscoveryDomainConfig, scoreDiscoveryText, shouldKeepDiscoveryCandid
 type DiscoveryFetchResult = {
   records: DiscoverySourceRecord[];
   fetchedCount: number;
+  totalHits: number | null;
+  truncated: boolean;
 };
+
+const PAGE_SIZE = 50;
+const MAX_PROVIDER_PAGES = 3;
 
 function normalizeAuthorList(authors: string[]): string | null {
   const normalized = authors.map((author) => author.trim()).filter(Boolean);
@@ -99,11 +104,14 @@ async function fetchCryoDbSnapshot(domain: DomainId): Promise<DiscoveryFetchResu
 
   return {
     records,
-    fetchedCount: snapshot.papers.length
+    fetchedCount: snapshot.papers.length,
+    totalHits: snapshot.papers.length,
+    truncated: false
   };
 }
 
 type OpenAlexResponse = {
+  meta?: { count?: number | null };
   results?: Array<{
     id?: string;
     doi?: string | null;
@@ -135,41 +143,58 @@ function decodeAbstract(index: Record<string, number[]> | null | undefined): str
 
 async function fetchOpenAlex(domain: DomainId): Promise<DiscoveryFetchResult> {
   const query = getDiscoveryDomainConfig(domain).providerQueries.openalex;
-  const url = `https://api.openalex.org/works?per-page=50&search=${encodeURIComponent(query)}`;
-  const response = await fetchJson<OpenAlexResponse>(url);
-  const results = response.results ?? [];
-  const records = results
-    .map((result) =>
-      mapRecord({
-        domain,
-        source: "openalex",
-        sourceId: normalizeString(result.id) ?? crypto.randomUUID(),
-        sourceUrl: normalizeString(result.primary_location?.landing_page_url) ?? normalizeString(result.id),
-        rawQuery: query,
-        title: normalizeString(result.title) ?? "untitled",
-        abstract: decodeAbstract(result.abstract_inverted_index),
-        doi: normalizeString(result.doi)?.replace("https://doi.org/", "") ?? null,
-        pmid: normalizeString(result.ids?.pmid)?.replace("https://pubmed.ncbi.nlm.nih.gov/", "") ?? null,
-        pmcid: normalizeString(result.ids?.pmcid)?.replace("https://www.ncbi.nlm.nih.gov/pmc/articles/", "") ?? null,
-        journal: normalizeString(result.primary_location?.source?.display_name) ?? null,
-        publishedYear: result.publication_year ?? null,
-        authorsFlat: normalizeAuthorList(
-          (result.authorships ?? []).map((entry) => normalizeString(entry.author?.display_name) ?? "").filter(Boolean)
-        ),
-        citationCount: result.cited_by_count ?? null,
-        fullTextAvailability: result.open_access?.is_oa ? "open-access-full-text" : "abstract-only"
-      })
-    )
-    .filter((record): record is DiscoverySourceRecord => Boolean(record));
+  const records: DiscoverySourceRecord[] = [];
+  let totalHits: number | null = null;
+  let page = 1;
+  while (page <= MAX_PROVIDER_PAGES) {
+    const url = `https://api.openalex.org/works?per-page=${PAGE_SIZE}&page=${page}&search=${encodeURIComponent(query)}`;
+    const response = await fetchJson<OpenAlexResponse>(url);
+    totalHits = response.meta?.count ?? totalHits;
+    const results = response.results ?? [];
+    records.push(
+      ...results
+        .map((result) =>
+          mapRecord({
+            domain,
+            source: "openalex",
+            sourceId: normalizeString(result.id) ?? crypto.randomUUID(),
+            sourceUrl: normalizeString(result.primary_location?.landing_page_url) ?? normalizeString(result.id),
+            rawQuery: query,
+            title: normalizeString(result.title) ?? "untitled",
+            abstract: decodeAbstract(result.abstract_inverted_index),
+            doi: normalizeString(result.doi)?.replace("https://doi.org/", "") ?? null,
+            pmid: normalizeString(result.ids?.pmid)?.replace("https://pubmed.ncbi.nlm.nih.gov/", "") ?? null,
+            pmcid: normalizeString(result.ids?.pmcid)?.replace("https://www.ncbi.nlm.nih.gov/pmc/articles/", "") ?? null,
+            journal: normalizeString(result.primary_location?.source?.display_name) ?? null,
+            publishedYear: result.publication_year ?? null,
+            authorsFlat: normalizeAuthorList(
+              (result.authorships ?? [])
+                .map((entry) => normalizeString(entry.author?.display_name) ?? "")
+                .filter(Boolean)
+            ),
+            citationCount: result.cited_by_count ?? null,
+            fullTextAvailability: result.open_access?.is_oa ? "open-access-full-text" : "abstract-only"
+          })
+        )
+        .filter((record): record is DiscoverySourceRecord => Boolean(record))
+    );
+    if (results.length < PAGE_SIZE) {
+      break;
+    }
+    page += 1;
+  }
 
   return {
     records,
-    fetchedCount: results.length
+    fetchedCount: records.length,
+    totalHits,
+    truncated: totalHits !== null ? records.length < totalHits : page > MAX_PROVIDER_PAGES
   };
 }
 
 type CrossrefResponse = {
   message?: {
+    "total-results"?: number;
     items?: Array<{
       DOI?: string;
       title?: string[];
@@ -192,40 +217,54 @@ function stripCrossrefAbstractMarkup(value: string | undefined): string | null {
 
 async function fetchCrossref(domain: DomainId): Promise<DiscoveryFetchResult> {
   const query = getDiscoveryDomainConfig(domain).providerQueries.crossref;
-  const url = `https://api.crossref.org/works?rows=50&query.bibliographic=${encodeURIComponent(query)}`;
-  const response = await fetchJson<CrossrefResponse>(url);
-  const items = response.message?.items ?? [];
-  const records = items
-    .map((item) =>
-      mapRecord({
-        domain,
-        source: "crossref",
-        sourceId: normalizeString(item.DOI) ?? crypto.randomUUID(),
-        sourceUrl: normalizeString(item.URL),
-        rawQuery: query,
-        title: normalizeString(item.title?.[0]) ?? "untitled",
-        abstract: stripCrossrefAbstractMarkup(item.abstract),
-        doi: normalizeString(item.DOI),
-        pmid: null,
-        pmcid: null,
-        journal: normalizeString(item["container-title"]?.[0]),
-        publishedYear: item.published?.["date-parts"]?.[0]?.[0] ?? null,
-        authorsFlat: normalizeAuthorList(
-          (item.author ?? []).map((author) => [author.given, author.family].filter(Boolean).join(" "))
-        ),
-        citationCount: item["is-referenced-by-count"] ?? null,
-        fullTextAvailability: item.URL ? "full-text-link" : "abstract-only"
-      })
-    )
-    .filter((record): record is DiscoverySourceRecord => Boolean(record));
+  const records: DiscoverySourceRecord[] = [];
+  let totalHits: number | null = null;
+  for (let page = 0; page < MAX_PROVIDER_PAGES; page += 1) {
+    const offset = page * PAGE_SIZE;
+    const url = `https://api.crossref.org/works?rows=${PAGE_SIZE}&offset=${offset}&query.bibliographic=${encodeURIComponent(query)}`;
+    const response = await fetchJson<CrossrefResponse>(url);
+    totalHits = response.message?.["total-results"] ?? totalHits;
+    const items = response.message?.items ?? [];
+    records.push(
+      ...items
+        .map((item) =>
+          mapRecord({
+            domain,
+            source: "crossref",
+            sourceId: normalizeString(item.DOI) ?? crypto.randomUUID(),
+            sourceUrl: normalizeString(item.URL),
+            rawQuery: query,
+            title: normalizeString(item.title?.[0]) ?? "untitled",
+            abstract: stripCrossrefAbstractMarkup(item.abstract),
+            doi: normalizeString(item.DOI),
+            pmid: null,
+            pmcid: null,
+            journal: normalizeString(item["container-title"]?.[0]),
+            publishedYear: item.published?.["date-parts"]?.[0]?.[0] ?? null,
+            authorsFlat: normalizeAuthorList(
+              (item.author ?? []).map((author) => [author.given, author.family].filter(Boolean).join(" "))
+            ),
+            citationCount: item["is-referenced-by-count"] ?? null,
+            fullTextAvailability: item.URL ? "full-text-link" : "abstract-only"
+          })
+        )
+        .filter((record): record is DiscoverySourceRecord => Boolean(record))
+    );
+    if (items.length < PAGE_SIZE) {
+      break;
+    }
+  }
 
   return {
     records,
-    fetchedCount: items.length
+    fetchedCount: records.length,
+    totalHits,
+    truncated: totalHits !== null ? records.length < totalHits : records.length >= PAGE_SIZE * MAX_PROVIDER_PAGES
   };
 }
 
 type EuropePmcResponse = {
+  hitCount?: number;
   resultList?: {
     result?: Array<{
       id?: string;
@@ -246,38 +285,50 @@ type EuropePmcResponse = {
 
 async function fetchEuropePmc(domain: DomainId): Promise<DiscoveryFetchResult> {
   const query = getDiscoveryDomainConfig(domain).providerQueries["europe-pmc"];
-  const url = `https://www.ebi.ac.uk/europepmc/webservices/rest/search?format=json&pageSize=50&query=${encodeURIComponent(query)}`;
-  const response = await fetchJson<EuropePmcResponse>(url);
-  const results = response.resultList?.result ?? [];
-  const records = results
-    .map((result) =>
-      mapRecord({
-        domain,
-        source: "europe-pmc",
-        sourceId: normalizeString(result.id) ?? crypto.randomUUID(),
-        sourceUrl: normalizeString(result.fullTextUrlList?.fullTextUrl?.[0]?.url),
-        rawQuery: query,
-        title: normalizeString(result.title) ?? "untitled",
-        abstract: normalizeString(result.abstractText),
-        doi: normalizeString(result.doi),
-        pmid: normalizeString(result.pmid),
-        pmcid: normalizeString(result.pmcid),
-        journal: normalizeString(result.journalTitle),
-        publishedYear: result.pubYear ? Number.parseInt(result.pubYear, 10) : null,
-        authorsFlat: normalizeString(result.authorString),
-        citationCount: result.citedByCount ?? null,
-        fullTextAvailability: result.pmcid
-          ? "open-access-full-text"
-          : result.fullTextUrlList?.fullTextUrl?.length
-            ? "full-text-link"
-            : "abstract-only"
-      })
-    )
-    .filter((record): record is DiscoverySourceRecord => Boolean(record));
+  const records: DiscoverySourceRecord[] = [];
+  let totalHits: number | null = null;
+  for (let page = 1; page <= MAX_PROVIDER_PAGES; page += 1) {
+    const url = `https://www.ebi.ac.uk/europepmc/webservices/rest/search?format=json&pageSize=${PAGE_SIZE}&page=${page}&query=${encodeURIComponent(query)}`;
+    const response = await fetchJson<EuropePmcResponse>(url);
+    totalHits = response.hitCount ?? totalHits;
+    const results = response.resultList?.result ?? [];
+    records.push(
+      ...results
+        .map((result) =>
+          mapRecord({
+            domain,
+            source: "europe-pmc",
+            sourceId: normalizeString(result.id) ?? crypto.randomUUID(),
+            sourceUrl: normalizeString(result.fullTextUrlList?.fullTextUrl?.[0]?.url),
+            rawQuery: query,
+            title: normalizeString(result.title) ?? "untitled",
+            abstract: normalizeString(result.abstractText),
+            doi: normalizeString(result.doi),
+            pmid: normalizeString(result.pmid),
+            pmcid: normalizeString(result.pmcid),
+            journal: normalizeString(result.journalTitle),
+            publishedYear: result.pubYear ? Number.parseInt(result.pubYear, 10) : null,
+            authorsFlat: normalizeString(result.authorString),
+            citationCount: result.citedByCount ?? null,
+            fullTextAvailability: result.pmcid
+              ? "open-access-full-text"
+              : result.fullTextUrlList?.fullTextUrl?.length
+                ? "full-text-link"
+                : "abstract-only"
+          })
+        )
+        .filter((record): record is DiscoverySourceRecord => Boolean(record))
+    );
+    if (results.length < PAGE_SIZE) {
+      break;
+    }
+  }
 
   return {
     records,
-    fetchedCount: results.length
+    fetchedCount: records.length,
+    totalHits,
+    truncated: totalHits !== null ? records.length < totalHits : records.length >= PAGE_SIZE * MAX_PROVIDER_PAGES
   };
 }
 
