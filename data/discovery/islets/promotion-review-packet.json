@@ -1,0 +1,236 @@
+{
+  "generatedAt": "2026-03-24T00:32:32.704Z",
+  "domain": "islets",
+  "sourceSnapshotGeneratedAt": "2026-03-24T00:27:25.057Z",
+  "queueGeneratedAt": "2026-03-24T00:26:38.476Z",
+  "candidateCount": 57,
+  "reviewItemCount": 4,
+  "items": [
+    {
+      "dedupeKey": "doi:10.1038/s41591-022-01718-1",
+      "title": "Pancreatic islet cryopreservation by vitrification achieves high viability, function, recovery and clinical scalability for transplantation",
+      "doi": "10.1038/s41591-022-01718-1",
+      "pmid": "35288694",
+      "journal": "Nature Medicine",
+      "publishedYear": 2022,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 14.367,
+      "relevanceScore": 13.9,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "sourceTypes": [
+        "pubmed"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "beta cell",
+        "cryopreservation",
+        "insulin",
+        "islet",
+        "islet transplantation",
+        "islets",
+        "pancreatic islet",
+        "transplantation",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "sources": [
+        {
+          "source": "pubmed",
+          "sourceId": "pubmed:35288694",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/35288694/",
+          "rawQuery": "site:pubmed.ncbi.nlm.nih.gov pancreatic islet cryopreservation vitrification",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1186/s13287-025-04168-x",
+      "title": "Reviving hope: unlocking pancreatic islet immortality by optimizing a trehalose-based cryopreservation media and cell-penetrating peptide",
+      "doi": "10.1186/s13287-025-04168-x",
+      "pmid": "40083015",
+      "journal": "Stem Cell Research & Therapy",
+      "publishedYear": 2025,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 12.167,
+      "relevanceScore": 11.7,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "sourceTypes": [
+        "pubmed"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "insulin",
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "transplantation"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "sources": [
+        {
+          "source": "pubmed",
+          "sourceId": "pubmed:40083015",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/40083015/",
+          "rawQuery": "site:pubmed.ncbi.nlm.nih.gov pancreatic islet trehalose cryopreservation transplantation",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.bbrep.2024.101658",
+      "title": "The effect of hydroxyethyl starch as a cryopreservation agent during freezing of mouse pancreatic islets",
+      "doi": "10.1016/j.bbrep.2024.101658",
+      "pmid": "38362049",
+      "journal": "Biochemistry and Biophysics Reports",
+      "publishedYear": 2024,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 12.167,
+      "relevanceScore": 11.7,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "sourceTypes": [
+        "pubmed"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "sources": [
+        {
+          "source": "pubmed",
+          "sourceId": "pubmed:38362049",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/38362049/",
+          "rawQuery": "site:pubmed.ncbi.nlm.nih.gov mouse pancreatic islets cryopreservation hydroxyethyl starch",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416",
+      "title": "Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "doi": "10.1002/btm2.10416",
+      "pmid": "37476055",
+      "journal": "Bioengineering & Translational Medicine",
+      "publishedYear": 2022,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 12.167,
+      "relevanceScore": 11.7,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "sourceTypes": [
+        "pubmed"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islet",
+        "islets",
+        "pancreatic islet",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "sources": [
+        {
+          "source": "pubmed",
+          "sourceId": "pubmed:37476055",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/37476055/",
+          "rawQuery": "site:pubmed.ncbi.nlm.nih.gov pancreatic islet vitrification nanowarming cryopreservation",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    }
+  ]
+}
