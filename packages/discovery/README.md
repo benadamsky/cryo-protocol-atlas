@@ -17,6 +17,7 @@ Current responsibilities:
 - merged imported records via `data/discovery/<domain>/imported-source-records.json`
 - manual-only records via `data/discovery/<domain>/manual-source-records.json`
 - promotion queue generation for novel candidates
+- review packet generation for high-signal novel candidates
 
 Current providers:
 

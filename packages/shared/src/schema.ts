@@ -282,6 +282,52 @@ export const DiscoveryPromotionQueueSchema = z.object({
 });
 export type DiscoveryPromotionQueue = z.infer<typeof DiscoveryPromotionQueueSchema>;
 
+export const DiscoveryPromotionReviewSourceSchema = z.object({
+  source: DiscoverySourceSchema,
+  sourceId: z.string(),
+  sourceUrl: z.string().nullable().optional(),
+  rawQuery: z.string(),
+  fullTextAvailability: FullTextAvailabilitySchema
+});
+export type DiscoveryPromotionReviewSource = z.infer<typeof DiscoveryPromotionReviewSourceSchema>;
+
+export const DiscoveryPromotionReviewItemSchema = z.object({
+  dedupeKey: z.string(),
+  title: z.string(),
+  doi: z.string().nullable().optional(),
+  pmid: z.string().nullable().optional(),
+  journal: z.string().nullable().optional(),
+  publishedYear: z.number().nullable().optional(),
+  decision: DiscoveryPromotionDecisionStatusSchema,
+  recommendation: DiscoveryPromotionRecommendationSchema,
+  rankingScore: z.number().min(0),
+  relevanceScore: z.number().min(0),
+  authorityScore: z.number().min(0),
+  sourceDiversityScore: z.number().min(0),
+  sourceCount: z.number().int().positive(),
+  sourceTypes: z.array(DiscoverySourceSchema),
+  fullTextAvailability: FullTextAvailabilitySchema,
+  matchedKeywords: z.array(z.string()),
+  noveltyBasis: z.array(z.string()),
+  promotionRisks: z.array(z.string()),
+  reviewChecklist: z.array(z.string()),
+  recommendationReasons: z.array(z.string()),
+  reviewerNotes: z.string().optional(),
+  sources: z.array(DiscoveryPromotionReviewSourceSchema)
+});
+export type DiscoveryPromotionReviewItem = z.infer<typeof DiscoveryPromotionReviewItemSchema>;
+
+export const DiscoveryPromotionReviewPacketSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  sourceSnapshotGeneratedAt: z.string(),
+  queueGeneratedAt: z.string(),
+  candidateCount: z.number().int().nonnegative(),
+  reviewItemCount: z.number().int().nonnegative(),
+  items: z.array(DiscoveryPromotionReviewItemSchema)
+});
+export type DiscoveryPromotionReviewPacket = z.infer<typeof DiscoveryPromotionReviewPacketSchema>;
+
 export const EvidenceSourceTypeSchema = z.enum([
   "title-or-abstract",
   "full-text",

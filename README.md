@@ -29,6 +29,8 @@ The next scaffolded domain is:
 - `bun run discover:islets`
 - `bun run discover-queue:ovarian`
 - `bun run discover-queue:islets`
+- `bun run discover-packet:ovarian`
+- `bun run discover-packet:islets`
 - `bun run discover-refresh:ovarian`
 - `bun run discover-refresh:islets`
 - `bun run discover-refresh:all`
@@ -98,6 +100,7 @@ The benchmarked atlas loop remains conservative and slice-stable. A separate dis
 - `bun run discover:<domain>` queries a broader literature surface and merges candidates from multiple sources.
 - `bun run discover-imports:<domain>` scans `data/discovery/<domain>/imports/*.json` for normalized external search export files and merges them into `imported-source-records.json`.
 - `bun run discover-queue:<domain>` compares those candidates against the current domain slice and writes a manual promotion queue for genuinely novel papers.
+- `bun run discover-packet:<domain>` turns the current queue into a stricter review packet with explicit novelty basis, source provenance, and review risks.
 - `bun run discover-refresh:<domain>` runs import merge + snapshot rebuild + promotion-queue rebuild as one bounded refresh step.
 - The first providers are `cryodb`, `openalex`, `crossref`, and `europe-pmc`.
 - `data/discovery/<domain>/manual-source-records.json` is now reserved for true manual-only records.
@@ -105,6 +108,7 @@ The benchmarked atlas loop remains conservative and slice-stable. A separate dis
 - The merged imported feed is written to `data/discovery/<domain>/imported-source-records.json`, preserving per-record provenance such as `pubmed` versus `openalex`.
 - Import files should follow the `DiscoveryImportFileSchema` shape in [`packages/shared/src/schema.ts`](./packages/shared/src/schema.ts): `{ generatedAt, domain, source, label?, records[] }`.
 - Discovery outputs are additive. They do not directly mutate `data/processed/<domain>/`, benchmarks, or override files.
+- The promotion review packet is intentionally review-only. It does not auto-promote papers into the trusted atlas slice.
 - The purpose is to widen the candidate evidence frontier first, then promote only reviewed high-signal papers into the benchmarked slice later.
 - A separate scheduler entrypoint now lives at [`.github/workflows/discovery-refresh.yml`](./.github/workflows/discovery-refresh.yml). It refreshes only `data/discovery/` artifacts and keeps that lane decoupled from the conservative atlas loop.
 

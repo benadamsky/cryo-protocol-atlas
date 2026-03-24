@@ -45,6 +45,9 @@ jobs:
       - name: Typecheck
         run: bun run typecheck
 
+      - name: Discovery Tests
+        run: bun run test:discovery
+
       - name: Run Discovery Refresh
         env:
           SKIP_IMPORTS: ${{ github.event.inputs.skip_imports || 'false' }}
@@ -60,9 +63,9 @@ jobs:
           echo "# Discovery refresh" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           cat data/discovery/ovarian-tissue/import-summary.md >> "$GITHUB_STEP_SUMMARY"
-          cat data/discovery/ovarian-tissue/promotion-queue.md >> "$GITHUB_STEP_SUMMARY"
+          cat data/discovery/ovarian-tissue/promotion-review-packet.md >> "$GITHUB_STEP_SUMMARY"
           cat data/discovery/islets/import-summary.md >> "$GITHUB_STEP_SUMMARY"
-          cat data/discovery/islets/promotion-queue.md >> "$GITHUB_STEP_SUMMARY"
+          cat data/discovery/islets/promotion-review-packet.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit And Push Discovery Changes
         run: |

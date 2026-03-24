@@ -30,6 +30,7 @@ async function main(): Promise<void> {
     }
     runStep("scripts/discover-domain-corpus.ts", [domain]);
     runStep("scripts/build-discovery-review-queue.ts", [domain]);
+    runStep("scripts/build-discovery-promotion-packet.ts", [domain]);
   }
 }
 

@@ -16,6 +16,8 @@
     "discover:islets": "node --import tsx scripts/discover-domain-corpus.ts islets",
     "discover-queue:ovarian": "node --import tsx scripts/build-discovery-review-queue.ts ovarian-tissue",
     "discover-queue:islets": "node --import tsx scripts/build-discovery-review-queue.ts islets",
+    "discover-packet:ovarian": "node --import tsx scripts/build-discovery-promotion-packet.ts ovarian-tissue",
+    "discover-packet:islets": "node --import tsx scripts/build-discovery-promotion-packet.ts islets",
     "discover-refresh:ovarian": "node --import tsx scripts/run-discovery-refresh.ts ovarian-tissue",
     "discover-refresh:islets": "node --import tsx scripts/run-discovery-refresh.ts islets",
     "discover-refresh:all": "node --import tsx scripts/run-discovery-refresh.ts all",
@@ -57,6 +59,7 @@
     "regress:ovarian": "node --import tsx scripts/regress-autoresearch.ts ovarian-tissue",
     "regress:islets": "node --import tsx scripts/regress-autoresearch.ts islets",
     "test:normalize": "node --import tsx --test packages/normalize/src/canonical-protocols.test.ts",
+    "test:discovery": "node --import tsx --test packages/discovery/src/review.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
