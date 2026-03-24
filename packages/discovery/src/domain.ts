@@ -17,6 +17,7 @@ const DISCOVERY_SCORING = {
   anchorCoverageWeight: 7,
   supportingCoverageWeight: 5,
   minimumAnchorMatches: 1,
+  minimumSupportingMatches: 1,
   minimumAnchorMatchesWithoutSupporting: 2
 } as const;
 
@@ -139,7 +140,7 @@ export function shouldKeepDiscoveryCandidate(
   return (
     anchorMatches.length >= DISCOVERY_SCORING.minimumAnchorMatches &&
     (
-      supportingMatches.length > 0 ||
+      supportingMatches.length >= DISCOVERY_SCORING.minimumSupportingMatches ||
       anchorMatches.length >= DISCOVERY_SCORING.minimumAnchorMatchesWithoutSupporting
     )
   );

@@ -7,6 +7,7 @@ import {
 
 const RECOMMENDATION_SCORING = {
   multiSourceBonus: 2,
+  multiSourceThreshold: 2,
   openAccessFullTextBonus: 2,
   fullTextLinkBonus: 1,
   strongAuthorityThreshold: 0.5,
@@ -135,7 +136,7 @@ export function recommendationForPaper(paper: DiscoveryPaper): {
   const reasons: string[] = [];
   let score = 0;
 
-  if (paper.sourceTypes.length >= 2) {
+  if (paper.sourceTypes.length >= RECOMMENDATION_SCORING.multiSourceThreshold) {
     score += RECOMMENDATION_SCORING.multiSourceBonus;
     reasons.push("candidate appears in multiple discovery sources");
   }
@@ -175,7 +176,7 @@ export function recommendationForPaper(paper: DiscoveryPaper): {
 
 export function promotionRisksForPaper(paper: DiscoveryPaper): string[] {
   const risks: string[] = [];
-  if (paper.sourceTypes.length < 2) {
+  if (paper.sourceTypes.length < RECOMMENDATION_SCORING.multiSourceThreshold) {
     risks.push("single-source evidence; cross-source confirmation is still missing");
   }
   if (paper.fullTextAvailability !== "open-access-full-text") {
@@ -199,7 +200,7 @@ export function reviewChecklistForPaper(paper: DiscoveryPaper): string[] {
   if (paper.fullTextAvailability !== "open-access-full-text") {
     checklist.push("locate a full-text path or secondary source before trusting protocol detail");
   }
-  if (paper.sourceTypes.length < 2) {
+  if (paper.sourceTypes.length < RECOMMENDATION_SCORING.multiSourceThreshold) {
     checklist.push("look for corroborating records from a second literature source");
   }
   return checklist;
