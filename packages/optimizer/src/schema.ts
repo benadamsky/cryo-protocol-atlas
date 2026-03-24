@@ -16,7 +16,14 @@ export const OptimizerPolicySchema = z.object({
     negativeSignalHits: z.number(),
     doiPresent: z.number(),
     journalPresent: z.number(),
-    recentYear: z.number()
+    recentYear: z.number(),
+    discoveryRankingScore: z.number(),
+    discoveryRelevanceScore: z.number(),
+    authorityScore: z.number(),
+    sourceDiversityScore: z.number(),
+    multiSourceEvidence: z.number(),
+    fullTextLink: z.number(),
+    openAccessFullText: z.number()
   }),
   thresholds: z.object({
     promote: z.number(),
@@ -31,6 +38,27 @@ export const OptimizerPolicySchema = z.object({
 });
 export type OptimizerPolicy = z.infer<typeof OptimizerPolicySchema>;
 
+export const OptimizerFeatureVectorSchema = z.object({
+  retrievalScore: z.number(),
+  matchedKeywordCount: z.number(),
+  titleProtocolHits: z.number(),
+  titleExperimentalHits: z.number(),
+  abstractProtocolHits: z.number(),
+  abstractOutcomeHits: z.number(),
+  negativeSignalHits: z.number(),
+  doiPresent: z.number(),
+  journalPresent: z.number(),
+  recentYear: z.number(),
+  discoveryRankingScore: z.number(),
+  discoveryRelevanceScore: z.number(),
+  authorityScore: z.number(),
+  sourceDiversityScore: z.number(),
+  multiSourceEvidence: z.number(),
+  fullTextLink: z.number(),
+  openAccessFullText: z.number()
+});
+export type OptimizerFeatureVector = z.infer<typeof OptimizerFeatureVectorSchema>;
+
 export const OptimizerBenchmarkCandidateSchema = z.object({
   domain: DomainIdSchema,
   paperId: z.string(),
@@ -44,18 +72,7 @@ export const OptimizerBenchmarkCandidateSchema = z.object({
     publishedYear: z.number().nullable(),
     matchedKeywords: z.array(z.string())
   }),
-  features: z.object({
-    retrievalScore: z.number(),
-    matchedKeywordCount: z.number(),
-    titleProtocolHits: z.number(),
-    titleExperimentalHits: z.number(),
-    abstractProtocolHits: z.number(),
-    abstractOutcomeHits: z.number(),
-    negativeSignalHits: z.number(),
-    doiPresent: z.number(),
-    journalPresent: z.number(),
-    recentYear: z.number()
-  })
+  features: OptimizerFeatureVectorSchema
 });
 export type OptimizerBenchmarkCandidate = z.infer<typeof OptimizerBenchmarkCandidateSchema>;
 

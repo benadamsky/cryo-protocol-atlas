@@ -175,7 +175,8 @@ The repo now also has a narrow optimizer lane under `packages/optimizer/`. This 
 - `bun run optimizer:loop` reads `packages/optimizer/program.md`, hill-climbs one bounded numeric mutation at a time, keeps only objective-improving policy edits that preserve promote precision and recall guardrails, and writes runtime artifacts under `data/optimizer/`.
 - This lane does not mutate benchmark gold sets, source enrichment, overrides, or atlas outputs.
 - The benchmark run fails fast if reviewed papers disappear from the current matched corpus, so benchmark coverage cannot silently shrink.
-- The package exports generic scoring helpers so a later discovery lane can consume the same policy with only light mapping glue.
+- The package now exports the live discovery recommendation adapter, and `packages/discovery/src/review.ts` consumes the same policy with light mapping glue.
+- The deterministic optimizer benchmark is still a proxy benchmark. Discovery review decisions have not yet replaced it as the optimizer gold set.
 
 ## Human-facing outputs
 

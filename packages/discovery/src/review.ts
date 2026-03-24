@@ -4,6 +4,7 @@ import {
   type DiscoveryPromotionReviewItem,
   type DomainSnapshot
 } from "../../shared/src/schema.js";
+import { recommendDiscoveryPaper } from "../../optimizer/src/discovery.js";
 
 export function normalizeTitle(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -115,44 +116,10 @@ export function recommendationForPaper(paper: DiscoveryPaper): {
   recommendation: "promote" | "review" | "defer";
   reasons: string[];
 } {
-  const reasons: string[] = [];
-  let score = 0;
-
-  if (paper.sourceTypes.length >= 2) {
-    score += 2;
-    reasons.push("candidate appears in multiple discovery sources");
-  }
-  if (paper.fullTextAvailability === "open-access-full-text") {
-    score += 2;
-    reasons.push("open-access full text is available");
-  } else if (paper.fullTextAvailability === "full-text-link") {
-    score += 1;
-    reasons.push("full-text landing page is available");
-  }
-  if (paper.authorityScore >= 0.5) {
-    score += 2;
-    reasons.push("authority score is high enough to justify direct promotion review");
-  } else if (paper.authorityScore >= 0.2) {
-    score += 1;
-    reasons.push("authority score is directionally promising");
-  }
-  if (paper.relevanceScore >= 8) {
-    score += 2;
-    reasons.push("domain relevance score is high");
-  } else if (paper.relevanceScore >= 5) {
-    score += 1;
-    reasons.push("domain relevance score is non-trivial");
-  }
-
-  if (score >= 5) {
-    return { recommendation: "promote", reasons };
-  }
-  if (score >= 3) {
-    return { recommendation: "review", reasons };
-  }
+  const result = recommendDiscoveryPaper(paper);
   return {
-    recommendation: "defer",
-    reasons: reasons.length > 0 ? reasons : ["single-source, low-authority candidate should stay in the discovery backlog"]
+    recommendation: result.recommendation,
+    reasons: result.reasons
   };
 }
 

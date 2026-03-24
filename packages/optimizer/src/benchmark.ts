@@ -8,35 +8,8 @@ import {
   type DomainId,
   type DomainPaper
 } from "../../shared/src/schema.js";
+import { buildOptimizerFeatureVector } from "./features.js";
 import { OptimizerBenchmarkSchema, type OptimizerBenchmarkCandidate, type OptimizerPolicy } from "./schema.js";
-
-function normalizeText(value: string | null | undefined): string {
-  return (value ?? "").toLowerCase();
-}
-
-function countSignalHits(text: string, signals: string[]): number {
-  let hitCount = 0;
-  for (const signal of signals) {
-    if (text.includes(signal.toLowerCase())) {
-      hitCount += 1;
-    }
-  }
-  return hitCount;
-}
-
-function clampUnit(value: number, max: number): number {
-  if (max <= 0) {
-    return 0;
-  }
-  return Number(Math.max(0, Math.min(1, value / max)).toFixed(4));
-}
-
-function normalizeYear(year: number | null | undefined): number {
-  if (!year) {
-    return 0;
-  }
-  return Number(Math.max(0, Math.min(1, (year - 1990) / 40)).toFixed(4));
-}
 
 function buildHeuristicFingerprint(policy: OptimizerPolicy): string {
   return createHash("sha256").update(JSON.stringify(policy.heuristics)).digest("hex");
@@ -47,8 +20,17 @@ function buildCandidate(
   benchmarkEntry: BenchmarkEntry,
   policy: OptimizerPolicy
 ): OptimizerBenchmarkCandidate {
-  const title = normalizeText(domainPaper.paper.title);
-  const abstract = normalizeText(domainPaper.paper.abstract);
+  const retrievalScore = Number(Math.max(0, Math.min(1, domainPaper.score / 20)).toFixed(4));
+  const keywordDensity = Number(Math.max(0, Math.min(1, domainPaper.matchedKeywords.length / 10)).toFixed(4));
+  const metadataAuthority = Number(
+    Math.min(
+      1,
+      (domainPaper.paper.doi ? 0.15 : 0) +
+        (domainPaper.paper.journal ? 0.1 : 0) +
+        ((domainPaper.paper.published_year ?? 0) >= 2015 ? 0.05 : 0)
+    ).toFixed(4)
+  );
+
   return {
     domain: domainPaper.domain,
     paperId: domainPaper.paper.id,
@@ -62,21 +44,23 @@ function buildCandidate(
       publishedYear: domainPaper.paper.published_year ?? null,
       matchedKeywords: domainPaper.matchedKeywords
     },
-    features: {
-      retrievalScore: clampUnit(domainPaper.score, 20),
-      matchedKeywordCount: clampUnit(domainPaper.matchedKeywords.length, 10),
-      titleProtocolHits: clampUnit(countSignalHits(title, policy.heuristics.protocolSignals), 5),
-      titleExperimentalHits: clampUnit(countSignalHits(title, policy.heuristics.experimentalSignals), 5),
-      abstractProtocolHits: clampUnit(countSignalHits(abstract, policy.heuristics.protocolSignals), 6),
-      abstractOutcomeHits: clampUnit(countSignalHits(abstract, policy.heuristics.outcomeSignals), 6),
-      negativeSignalHits: clampUnit(
-        countSignalHits(`${title} ${abstract}`, policy.heuristics.negativeSignals),
-        4
-      ),
-      doiPresent: domainPaper.paper.doi ? 1 : 0,
-      journalPresent: domainPaper.paper.journal ? 1 : 0,
-      recentYear: normalizeYear(domainPaper.paper.published_year)
-    }
+    features: buildOptimizerFeatureVector(
+      {
+        title: domainPaper.paper.title,
+        abstract: domainPaper.paper.abstract,
+        doi: domainPaper.paper.doi ?? null,
+        journal: domainPaper.paper.journal ?? null,
+        publishedYear: domainPaper.paper.published_year ?? null,
+        matchedKeywords: domainPaper.matchedKeywords,
+        retrievalScore,
+        // The benchmark is still a proxy, so discovery-native features are deterministically
+        // approximated from the current matched corpus instead of pulled from live discovery.
+        discoveryRankingScore: Number((retrievalScore * 15).toFixed(4)),
+        discoveryRelevanceScore: Number((keywordDensity * 15).toFixed(4)),
+        authorityScore: metadataAuthority
+      },
+      policy
+    )
   };
 }
 
@@ -126,7 +110,7 @@ export async function buildOptimizerBenchmark(input: {
   const benchmark = OptimizerBenchmarkSchema.parse({
     generatedAt: new Date().toISOString(),
     description:
-      "Optimizer benchmark derived from reviewed gold-set labels joined against the current matched domain corpus. It is additive and does not modify atlas outputs.",
+      "Optimizer benchmark derived from reviewed gold-set labels joined against the current matched domain corpus, with deterministic proxy discovery features inferred from retrieval and metadata. It is additive and does not modify atlas outputs.",
     heuristicFingerprint: buildHeuristicFingerprint(input.policy),
     domains: input.domains,
     candidateCount: candidates.length,

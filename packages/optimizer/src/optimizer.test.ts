@@ -4,13 +4,14 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import test from "node:test";
-import { DomainSnapshotSchema, BenchmarkFileSchema } from "../../shared/src/schema.js";
+import { DiscoveryPaperSchema, DomainSnapshotSchema, BenchmarkFileSchema } from "../../shared/src/schema.js";
 import {
   applyMutation,
   buildOptimizerBenchmark,
   evaluateOptimizerPolicy,
   mutationSignature,
   optimizerPolicy,
+  recommendDiscoveryPaper,
   readOptimizerProgram,
   renderPolicyFile
 } from "./index.js";
@@ -112,7 +113,14 @@ test("evaluateOptimizerPolicy aggregates metrics from corpus-level counts", () =
           negativeSignalHits: 0,
           doiPresent: 0,
           journalPresent: 0,
-          recentYear: 0
+          recentYear: 0,
+          discoveryRankingScore: 0,
+          discoveryRelevanceScore: 0,
+          authorityScore: 0,
+          sourceDiversityScore: 0,
+          multiSourceEvidence: 0,
+          fullTextLink: 0,
+          openAccessFullText: 0
         }
       },
       {
@@ -133,7 +141,14 @@ test("evaluateOptimizerPolicy aggregates metrics from corpus-level counts", () =
           negativeSignalHits: 0,
           doiPresent: 0,
           journalPresent: 0,
-          recentYear: 0
+          recentYear: 0,
+          discoveryRankingScore: 0,
+          discoveryRelevanceScore: 0,
+          authorityScore: 0,
+          sourceDiversityScore: 0,
+          multiSourceEvidence: 0,
+          fullTextLink: 0,
+          openAccessFullText: 0
         }
       },
       {
@@ -154,7 +169,14 @@ test("evaluateOptimizerPolicy aggregates metrics from corpus-level counts", () =
           negativeSignalHits: 0,
           doiPresent: 0,
           journalPresent: 0,
-          recentYear: 0
+          recentYear: 0,
+          discoveryRankingScore: 0,
+          discoveryRelevanceScore: 0,
+          authorityScore: 0,
+          sourceDiversityScore: 0,
+          multiSourceEvidence: 0,
+          fullTextLink: 0,
+          openAccessFullText: 0
         }
       },
       {
@@ -175,7 +197,14 @@ test("evaluateOptimizerPolicy aggregates metrics from corpus-level counts", () =
           negativeSignalHits: 0,
           doiPresent: 0,
           journalPresent: 0,
-          recentYear: 0
+          recentYear: 0,
+          discoveryRankingScore: 0,
+          discoveryRelevanceScore: 0,
+          authorityScore: 0,
+          sourceDiversityScore: 0,
+          multiSourceEvidence: 0,
+          fullTextLink: 0,
+          openAccessFullText: 0
         }
       },
       {
@@ -196,7 +225,14 @@ test("evaluateOptimizerPolicy aggregates metrics from corpus-level counts", () =
           negativeSignalHits: 0,
           doiPresent: 0,
           journalPresent: 0,
-          recentYear: 0
+          recentYear: 0,
+          discoveryRankingScore: 0,
+          discoveryRelevanceScore: 0,
+          authorityScore: 0,
+          sourceDiversityScore: 0,
+          multiSourceEvidence: 0,
+          fullTextLink: 0,
+          openAccessFullText: 0
         }
       }
     ]
@@ -218,7 +254,14 @@ test("evaluateOptimizerPolicy aggregates metrics from corpus-level counts", () =
         negativeSignalHits: 0,
         doiPresent: 0,
         journalPresent: 0,
-        recentYear: 0
+        recentYear: 0,
+        discoveryRankingScore: 0,
+        discoveryRelevanceScore: 0,
+        authorityScore: 0,
+        sourceDiversityScore: 0,
+        multiSourceEvidence: 0,
+        fullTextLink: 0,
+        openAccessFullText: 0
       },
       thresholds: {
         promote: 0.9,
@@ -295,4 +338,58 @@ test("readOptimizerProgram parses promote recall guardrails", async () => {
   assert.equal(program.minimumScoreDelta, 0.01);
   assert.equal(program.minimumPromotePrecision, 0.8);
   assert.equal(program.minimumPromoteRecall, 0.15);
+});
+
+test("recommendDiscoveryPaper uses optimizer policy for live discovery decisions", () => {
+  const promoteCandidate = DiscoveryPaperSchema.parse({
+    domain: "islets" as const,
+    dedupeKey: "doi:10.1000/promote",
+    title: "Pancreatic islet cryopreservation by vitrification improves insulin function",
+    abstract: "Cryopreservation and transplantation study for pancreatic islets with viability outcomes.",
+    doi: "10.1000/promote",
+    pmid: "12345678",
+    pmcid: null,
+    journal: "Nature Medicine",
+    publishedYear: 2024,
+    authorsFlat: "Author A",
+    sourceCount: 2,
+    recordCount: 2,
+    sources: [],
+    matchedKeywords: ["islets", "cryopreservation", "transplantation", "vitrification", "insulin"],
+    sourceTypes: ["pubmed", "openalex"],
+    fullTextAvailability: "open-access-full-text",
+    relevanceScore: 11.5,
+    authorityScore: 0.45,
+    sourceDiversityScore: 0.5,
+    rankingScore: 12.45
+  });
+  const deferCandidate = DiscoveryPaperSchema.parse({
+    ...promoteCandidate,
+    dedupeKey: "doi:10.1000/defer",
+    title: "Retrospective ovarian tissue preservation cohort note",
+    abstract: "Clinical note with sparse cryopreservation detail.",
+    doi: "10.1000/defer",
+    pmid: "87654321",
+    journal: "Archive Notes",
+    publishedYear: 2001,
+    sourceCount: 1,
+    recordCount: 1,
+    sources: [],
+    matchedKeywords: ["ovarian tissue", "cryopreservation"],
+    sourceTypes: ["pubmed"],
+    fullTextAvailability: "abstract-only",
+    relevanceScore: 3.8,
+    authorityScore: 0.05,
+    sourceDiversityScore: 0.167,
+    rankingScore: 4.1
+  });
+
+  const promote = recommendDiscoveryPaper(promoteCandidate);
+  const defer = recommendDiscoveryPaper(deferCandidate);
+
+  assert.equal(promote.recommendation, "promote");
+  assert.ok(promote.reasons.some((reason) => reason.includes("optimizer score")));
+  assert.ok(promote.reasons.includes("candidate appears in multiple discovery sources"));
+  assert.equal(defer.recommendation, "defer");
+  assert.ok(defer.reasons.some((reason) => reason.includes("stayed below the review threshold")));
 });

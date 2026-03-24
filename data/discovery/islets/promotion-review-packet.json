@@ -1,25 +1,32 @@
 {
-  "generatedAt": "2026-03-24T00:32:32.704Z",
+  "generatedAt": "2026-03-24T16:15:37.755Z",
   "domain": "islets",
-  "sourceSnapshotGeneratedAt": "2026-03-24T00:27:25.057Z",
-  "queueGeneratedAt": "2026-03-24T00:26:38.476Z",
+  "sourceSnapshotGeneratedAt": "2026-03-24T16:13:53.635Z",
+  "queueGeneratedAt": "2026-03-24T16:15:06.450Z",
   "candidateCount": 57,
   "reviewItemCount": 4,
+  "isDegraded": true,
+  "degradationReasons": [
+    "live-provider-failures:openalex,crossref,europe-pmc"
+  ],
   "items": [
     {
       "dedupeKey": "doi:10.1038/s41591-022-01718-1",
       "title": "Pancreatic islet cryopreservation by vitrification achieves high viability, function, recovery and clinical scalability for transplantation",
       "doi": "10.1038/s41591-022-01718-1",
       "pmid": "35288694",
+      "pmcid": "PMC9018423",
+      "titleKey": "title:pancreatic islet cryopreservation by vitrification achieves high viability function recovery and clinical scalability for transplantation",
       "journal": "Nature Medicine",
       "publishedYear": 2022,
       "decision": "pending",
       "recommendation": "promote",
-      "rankingScore": 14.367,
-      "relevanceScore": 13.9,
+      "rankingScore": 9.038,
+      "relevanceScore": 8.571,
       "authorityScore": 0.3,
       "sourceDiversityScore": 0.167,
       "sourceCount": 1,
+      "recordCount": 1,
       "sourceTypes": [
         "pubmed"
       ],
@@ -28,15 +35,16 @@
         "beta cell",
         "cryopreservation",
         "insulin",
-        "islet",
         "islet transplantation",
         "islets",
-        "pancreatic islet",
+        "pancreatic islets",
         "transplantation",
         "vitrification"
       ],
       "noveltyBasis": [
         "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "pmcid-not-in-current-slice",
         "title-not-in-current-slice",
         "pmid-available-for-review"
       ],
@@ -50,10 +58,12 @@
         "look for corroborating records from a second literature source"
       ],
       "recommendationReasons": [
+        "optimizer score 7.112215 cleared the promote threshold 5.2",
         "open-access full text is available",
         "authority score is directionally promising",
         "domain relevance score is high"
       ],
+      "staleEvidence": false,
       "sources": [
         {
           "source": "pubmed",
@@ -69,30 +79,34 @@
       "title": "Reviving hope: unlocking pancreatic islet immortality by optimizing a trehalose-based cryopreservation media and cell-penetrating peptide",
       "doi": "10.1186/s13287-025-04168-x",
       "pmid": "40083015",
+      "pmcid": "PMC11908028",
+      "titleKey": "title:reviving hope unlocking pancreatic islet immortality by optimizing a trehalose based cryopreservation media and cell penetrating peptide",
       "journal": "Stem Cell Research & Therapy",
       "publishedYear": 2025,
       "decision": "pending",
       "recommendation": "promote",
-      "rankingScore": 12.167,
-      "relevanceScore": 11.7,
+      "rankingScore": 6.724,
+      "relevanceScore": 6.257,
       "authorityScore": 0.3,
       "sourceDiversityScore": 0.167,
       "sourceCount": 1,
+      "recordCount": 1,
       "sourceTypes": [
         "pubmed"
       ],
       "fullTextAvailability": "open-access-full-text",
       "matchedKeywords": [
         "cryopreservation",
+        "freezing",
         "insulin",
-        "islet",
         "islets",
-        "pancreatic islet",
         "pancreatic islets",
         "transplantation"
       ],
       "noveltyBasis": [
         "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "pmcid-not-in-current-slice",
         "title-not-in-current-slice",
         "pmid-available-for-review"
       ],
@@ -106,10 +120,12 @@
         "look for corroborating records from a second literature source"
       ],
       "recommendationReasons": [
+        "optimizer score 5.656115 cleared the promote threshold 5.2",
         "open-access full text is available",
         "authority score is directionally promising",
-        "domain relevance score is high"
+        "domain relevance score is non-trivial"
       ],
+      "staleEvidence": false,
       "sources": [
         {
           "source": "pubmed",
@@ -125,15 +141,18 @@
       "title": "The effect of hydroxyethyl starch as a cryopreservation agent during freezing of mouse pancreatic islets",
       "doi": "10.1016/j.bbrep.2024.101658",
       "pmid": "38362049",
+      "pmcid": "PMC10867579",
+      "titleKey": "title:the effect of hydroxyethyl starch as a cryopreservation agent during freezing of mouse pancreatic islets",
       "journal": "Biochemistry and Biophysics Reports",
       "publishedYear": 2024,
       "decision": "pending",
       "recommendation": "promote",
-      "rankingScore": 12.167,
-      "relevanceScore": 11.7,
+      "rankingScore": 5.91,
+      "relevanceScore": 5.443,
       "authorityScore": 0.3,
       "sourceDiversityScore": 0.167,
       "sourceCount": 1,
+      "recordCount": 1,
       "sourceTypes": [
         "pubmed"
       ],
@@ -142,13 +161,13 @@
         "cryopreservation",
         "freezing",
         "insulin",
-        "islet",
         "islets",
-        "pancreatic islet",
         "pancreatic islets"
       ],
       "noveltyBasis": [
         "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "pmcid-not-in-current-slice",
         "title-not-in-current-slice",
         "pmid-available-for-review"
       ],
@@ -162,10 +181,12 @@
         "look for corroborating records from a second literature source"
       ],
       "recommendationReasons": [
+        "optimizer score 5.60492 cleared the promote threshold 5.2",
         "open-access full text is available",
         "authority score is directionally promising",
-        "domain relevance score is high"
+        "domain relevance score is non-trivial"
       ],
+      "staleEvidence": false,
       "sources": [
         {
           "source": "pubmed",
@@ -181,30 +202,33 @@
       "title": "Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
       "doi": "10.1002/btm2.10416",
       "pmid": "37476055",
+      "pmcid": "PMC10354753",
+      "titleKey": "title:nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
       "journal": "Bioengineering & Translational Medicine",
       "publishedYear": 2022,
       "decision": "pending",
       "recommendation": "promote",
-      "rankingScore": 12.167,
-      "relevanceScore": 11.7,
+      "rankingScore": 5.91,
+      "relevanceScore": 5.443,
       "authorityScore": 0.3,
       "sourceDiversityScore": 0.167,
       "sourceCount": 1,
+      "recordCount": 1,
       "sourceTypes": [
         "pubmed"
       ],
       "fullTextAvailability": "open-access-full-text",
       "matchedKeywords": [
         "cryopreservation",
-        "islet",
         "islets",
-        "pancreatic islet",
         "pancreatic islets",
         "transplantation",
         "vitrification"
       ],
       "noveltyBasis": [
         "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "pmcid-not-in-current-slice",
         "title-not-in-current-slice",
         "pmid-available-for-review"
       ],
@@ -218,10 +242,12 @@
         "look for corroborating records from a second literature source"
       ],
       "recommendationReasons": [
+        "optimizer score 5.61242 cleared the promote threshold 5.2",
         "open-access full text is available",
         "authority score is directionally promising",
-        "domain relevance score is high"
+        "domain relevance score is non-trivial"
       ],
+      "staleEvidence": false,
       "sources": [
         {
           "source": "pubmed",

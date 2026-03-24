@@ -90,11 +90,60 @@ const novelPaper = DiscoveryPaperSchema.parse({
   rankingScore: 8.867
 });
 
+const weakPaper = DiscoveryPaperSchema.parse({
+  domain: "ovarian-tissue",
+  dedupeKey: "doi:10.1000/weak",
+  title: "Retrospective ovarian tissue preservation cohort note",
+  abstract: "Clinical note with sparse cryopreservation detail.",
+  doi: "10.1000/weak",
+  pmid: "11111111",
+  pmcid: null,
+  journal: "Archive Notes",
+  publishedYear: 2001,
+  authorsFlat: "Author C",
+  sourceCount: 1,
+  recordCount: 1,
+  sources: [
+    {
+      source: "pubmed",
+      sourceId: "pubmed:11111111",
+      sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/11111111/",
+      rawQuery: "ovarian tissue cryopreservation retrospective",
+      title: "Retrospective ovarian tissue preservation cohort note",
+      abstract: "Clinical note with sparse cryopreservation detail.",
+      doi: "10.1000/weak",
+      pmid: "11111111",
+      pmcid: null,
+      journal: "Archive Notes",
+      publishedYear: 2001,
+      authorsFlat: "Author C",
+      citationCount: 1,
+      fullTextAvailability: "abstract-only",
+      matchedKeywords: ["ovarian tissue", "cryopreservation"],
+      relevanceScore: 3.8
+    }
+  ],
+  matchedKeywords: ["ovarian tissue", "cryopreservation"],
+  sourceTypes: ["pubmed"],
+  fullTextAvailability: "abstract-only",
+  relevanceScore: 3.8,
+  authorityScore: 0.05,
+  sourceDiversityScore: 0.167,
+  rankingScore: 4.1
+});
+
 test("recommendationForPaper promotes high-signal open-access candidates", () => {
   const result = recommendationForPaper(novelPaper);
   assert.equal(result.recommendation, "promote");
+  assert.ok(result.reasons.some((reason) => reason.includes("optimizer score")));
   assert.ok(result.reasons.includes("open-access full text is available"));
   assert.ok(result.reasons.includes("domain relevance score is high"));
+});
+
+test("recommendationForPaper defers weak single-source candidates", () => {
+  const result = recommendationForPaper(weakPaper);
+  assert.equal(result.recommendation, "defer");
+  assert.ok(result.reasons.some((reason) => reason.includes("stayed below the review threshold")));
 });
 
 test("buildTrackedKeys includes pmid and pmcid identities", () => {
