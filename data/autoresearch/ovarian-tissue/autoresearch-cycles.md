@@ -1,7 +1,7 @@
 # ovarian-tissue autoresearch cycles
 
-- generated at: 2026-03-23T20:30:28.519Z
-- max cycles: 1
+- generated at: 2026-03-24T13:51:51.717Z
+- max cycles: 5
 - ingest first cycle: no
 - cycles completed: 1
 - stop reason: pending-source-enrichment

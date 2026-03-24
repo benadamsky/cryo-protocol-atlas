@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T21:50:35.824Z",
+  "generatedAt": "2026-03-24T13:51:57.363Z",
   "overallState": "stalled-human-gate",
   "availableDomainCount": 2,
   "missingDomains": [],
@@ -9,7 +9,7 @@
   "domains": [
     {
       "domain": "ovarian-tissue",
-      "latestRunGeneratedAt": "2026-03-23T20:30:28.519Z",
+      "latestRunGeneratedAt": "2026-03-24T13:51:51.717Z",
       "healthState": "stalled-human-gate",
       "stopReason": "pending-source-enrichment",
       "cyclesCompleted": 1,
@@ -54,7 +54,7 @@
     },
     {
       "domain": "islets",
-      "latestRunGeneratedAt": "2026-03-23T20:30:31.225Z",
+      "latestRunGeneratedAt": "2026-03-24T13:51:57.146Z",
       "healthState": "stalled-human-gate",
       "stopReason": "pending-source-enrichment",
       "cyclesCompleted": 1,
