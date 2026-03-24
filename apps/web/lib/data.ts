@@ -485,6 +485,7 @@ export type DiscoveryDomainCorpus = {
   totalMatched: number;
   matchRate: number;
   topPapers: Array<{
+    id: string;
     title: string;
     doi: string | null | undefined;
     journal: string | null | undefined;
@@ -915,6 +916,7 @@ export async function getDiscoveryData(): Promise<DiscoveryData> {
         .sort((left, right) => right.score - left.score || right.paper.title.localeCompare(left.paper.title))
         .slice(0, 5)
         .map((paper) => ({
+          id: paper.paper.id,
           title: paper.paper.title,
           doi: paper.paper.doi,
           journal: paper.paper.journal,

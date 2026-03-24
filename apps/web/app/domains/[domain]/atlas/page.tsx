@@ -26,6 +26,8 @@ export default async function AtlasPage({
     const domain = parseDomainId(rawDomain);
     const meta = getDomainMeta(domain);
     const data = await getDomainData(domain);
+    const baselineQualitySignals = data.atlasAnalysis.baselineSummary.qualitySignals;
+    const resolvedQualitySignals = data.atlasAnalysis.resolvedSummary.qualitySignals;
 
     return (
       <>
@@ -175,22 +177,21 @@ export default async function AtlasPage({
               ],
               [
                 "Unknown protocol families",
-                data.atlasAnalysis.baselineSummary.qualitySignals?.unknownProtocolFamilyCount ?? 0,
-                data.atlasAnalysis.resolvedSummary.qualitySignals?.unknownProtocolFamilyCount ?? 0,
+                baselineQualitySignals?.unknownProtocolFamilyCount ?? 0,
+                resolvedQualitySignals?.unknownProtocolFamilyCount ?? 0,
                 data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
               ],
               [
                 "Unknown step phases",
-                data.atlasAnalysis.baselineSummary.qualitySignals?.unknownStepPhaseCount ?? 0,
-                data.atlasAnalysis.resolvedSummary.qualitySignals?.unknownStepPhaseCount ?? 0,
+                baselineQualitySignals?.unknownStepPhaseCount ?? 0,
+                resolvedQualitySignals?.unknownStepPhaseCount ?? 0,
                 data.atlasAnalysis.overrideImpact.unknownStepPhaseDelta
               ],
               [
                 "Contradictions",
-                data.atlasAnalysis.baselineSummary.qualitySignals?.contradictionCount ?? 0,
-                data.atlasAnalysis.resolvedSummary.qualitySignals?.contradictionCount ?? 0,
-                (data.atlasAnalysis.resolvedSummary.qualitySignals?.contradictionCount ?? 0) -
-                  (data.atlasAnalysis.baselineSummary.qualitySignals?.contradictionCount ?? 0)
+                baselineQualitySignals?.contradictionCount ?? 0,
+                resolvedQualitySignals?.contradictionCount ?? 0,
+                (resolvedQualitySignals?.contradictionCount ?? 0) - (baselineQualitySignals?.contradictionCount ?? 0)
               ]
             ]}
           />

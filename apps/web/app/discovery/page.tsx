@@ -120,7 +120,7 @@ export default async function DiscoveryPage() {
                   </thead>
                   <tbody>
                     {domain.topPapers.slice(0, 3).map((paper) => (
-                      <tr key={`${domain.domain}-${paper.title}`}>
+                      <tr key={`${domain.domain}-${paper.id}`}>
                         <td>
                           <strong>{paper.title}</strong>
                           <div className="artifact-ledger__meta">

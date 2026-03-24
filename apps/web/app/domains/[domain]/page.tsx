@@ -17,6 +17,8 @@ import {
 import { formatDateTime, getDomainData } from "@/lib/data";
 import { getDomainMeta, parseDomainId } from "@/lib/domain";
 
+const MAX_ARTIFACTS_TO_SHOW = 8;
+
 export default async function DomainPage({
   params
 }: {
@@ -27,6 +29,8 @@ export default async function DomainPage({
     const domain = parseDomainId(rawDomain);
     const meta = getDomainMeta(domain);
     const data = await getDomainData(domain);
+    const baselineQualitySignals = data.atlasAnalysis.baselineSummary.qualitySignals;
+    const resolvedQualitySignals = data.atlasAnalysis.resolvedSummary.qualitySignals;
 
     return (
       <>
@@ -285,22 +289,21 @@ export default async function DomainPage({
                 ],
                 [
                   "Unknown protocol families",
-                  data.atlasAnalysis.baselineSummary.qualitySignals?.unknownProtocolFamilyCount ?? 0,
-                  data.atlasAnalysis.resolvedSummary.qualitySignals?.unknownProtocolFamilyCount ?? 0,
+                  baselineQualitySignals?.unknownProtocolFamilyCount ?? 0,
+                  resolvedQualitySignals?.unknownProtocolFamilyCount ?? 0,
                   data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
                 ],
                 [
                   "Unknown step phases",
-                  data.atlasAnalysis.baselineSummary.qualitySignals?.unknownStepPhaseCount ?? 0,
-                  data.atlasAnalysis.resolvedSummary.qualitySignals?.unknownStepPhaseCount ?? 0,
+                  baselineQualitySignals?.unknownStepPhaseCount ?? 0,
+                  resolvedQualitySignals?.unknownStepPhaseCount ?? 0,
                   data.atlasAnalysis.overrideImpact.unknownStepPhaseDelta
                 ],
                 [
                   "Contradictions",
-                  data.atlasAnalysis.baselineSummary.qualitySignals?.contradictionCount ?? 0,
-                  data.atlasAnalysis.resolvedSummary.qualitySignals?.contradictionCount ?? 0,
-                  (data.atlasAnalysis.resolvedSummary.qualitySignals?.contradictionCount ?? 0) -
-                    (data.atlasAnalysis.baselineSummary.qualitySignals?.contradictionCount ?? 0)
+                  baselineQualitySignals?.contradictionCount ?? 0,
+                  resolvedQualitySignals?.contradictionCount ?? 0,
+                  (resolvedQualitySignals?.contradictionCount ?? 0) - (baselineQualitySignals?.contradictionCount ?? 0)
                 ]
               ]}
             />
@@ -323,7 +326,7 @@ export default async function DomainPage({
           </Section>
 
           <Section title="Artifact ledger" subtitle="Exactly which generated artifacts back this domain page, including the comparison inputs.">
-            <ArtifactLedger artifacts={data.artifacts.slice(0, 8)} />
+            <ArtifactLedger artifacts={data.artifacts.slice(0, MAX_ARTIFACTS_TO_SHOW)} />
           </Section>
         </div>
       </>
