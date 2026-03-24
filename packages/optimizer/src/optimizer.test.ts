@@ -298,6 +298,30 @@ test("applyMutation rejects stale mutation baselines", () => {
   );
 });
 
+test("applyMutation rejects invalid numeric paths", () => {
+  assert.throws(
+    () =>
+      applyMutation(optimizerPolicy, {
+        path: "heuristics.protocolSignals",
+        from: 0,
+        to: 1,
+        delta: 1
+      }),
+    /Invalid numeric path in policy/
+  );
+
+  assert.throws(
+    () =>
+      applyMutation(optimizerPolicy, {
+        path: "weights.missingWeight",
+        from: 0,
+        to: 1,
+        delta: 1
+      }),
+    /Invalid numeric path in policy/
+  );
+});
+
 test("renderPolicyFile round-trips through a generated module", async () => {
   const rootDir = await mkdtemp(join(tmpdir(), "optimizer-policy-"));
   const filePath = join(rootDir, "policy.ts");

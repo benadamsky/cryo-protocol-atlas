@@ -14,6 +14,7 @@ import {
 } from "../../shared/src/schema.js";
 
 const projectRoot = fileURLToPath(new URL("../../../", import.meta.url));
+<<<<<<< HEAD
 const tsxLoaderCandidates = [
   join(projectRoot, "node_modules", "tsx", "dist", "loader.mjs"),
   join(dirname(projectRoot), "node_modules", "tsx", "dist", "loader.mjs"),
@@ -24,6 +25,9 @@ if (!resolvedTsxLoader) {
   throw new Error(`Unable to locate tsx loader from ${projectRoot}`);
 }
 const tsxLoader = resolvedTsxLoader;
+=======
+const tsxLoader = join(projectRoot, "node_modules", "tsx", "dist", "loader.mjs");
+>>>>>>> main
 const importScript = join(projectRoot, "scripts", "import-discovery-exports.ts");
 const discoverScript = join(projectRoot, "scripts", "discover-domain-corpus.ts");
 const queueScript = join(projectRoot, "scripts", "build-discovery-review-queue.ts");

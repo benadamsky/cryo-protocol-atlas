@@ -16,16 +16,49 @@ const MUTATION_SPECS = [
   { path: "thresholds.review", step: 0.15, min: 0, max: 8 }
 ] as const;
 
+type NumericSection = "weights" | "thresholds";
+type NumericContainer = OptimizerPolicy[NumericSection];
+
+function parseNumericPath(path: string): {
+  section: NumericSection;
+  key: string;
+} {
+  const [section, key, ...rest] = path.split(".");
+  if (rest.length > 0 || !key) {
+    throw new Error(`Invalid numeric path in policy: ${path}`);
+  }
+  if (section !== "weights" && section !== "thresholds") {
+    throw new Error(`Invalid numeric path in policy: ${path}`);
+  }
+  return { section, key };
+}
+
+function getNumericContainer(policy: OptimizerPolicy, section: NumericSection): NumericContainer {
+  return section === "weights" ? policy.weights : policy.thresholds;
+}
+
+function hasNumericKey(container: NumericContainer, key: string): boolean {
+  return Object.prototype.hasOwnProperty.call(container, key);
+}
+
 function getNumericValue(policy: OptimizerPolicy, path: string): number {
-  const [section, key] = path.split(".") as [keyof OptimizerPolicy, string];
-  const container = policy[section] as Record<string, number>;
-  return container[key];
+  const { section, key } = parseNumericPath(path);
+  const container = getNumericContainer(policy, section);
+  if (!hasNumericKey(container, key)) {
+    throw new Error(`Invalid numeric path in policy: ${path}`);
+  }
+  return container[key as keyof NumericContainer];
 }
 
 function setNumericValue(policy: OptimizerPolicy, path: string, value: number): OptimizerPolicy {
-  const [section, key] = path.split(".") as [keyof OptimizerPolicy, string];
+  const { section, key } = parseNumericPath(path);
   const nextPolicy = structuredClone(policy);
-  (nextPolicy[section] as Record<string, number>)[key] = Number(value.toFixed(4));
+  const container = getNumericContainer(nextPolicy, section);
+  if (!hasNumericKey(container, key)) {
+    throw new Error(`Invalid numeric path in policy: ${path}`);
+  }
+  const writableContainer = container as Record<string, number>;
+  writableContainer[key] = Number(value.toFixed(4));
   return OptimizerPolicySchema.parse(nextPolicy);
 }
 
