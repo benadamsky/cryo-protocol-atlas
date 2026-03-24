@@ -53,8 +53,11 @@ function renderLoopMarkdown(run: ReturnType<typeof OptimizerLoopRunSchema.parse>
 async function readOptionalFile(path: string): Promise<string | null> {
   try {
     return await readFile(path, "utf8");
-  } catch {
-    return null;
+  } catch (error) {
+    if (error instanceof Error && "code" in error && error.code === "ENOENT") {
+      return null;
+    }
+    throw error;
   }
 }
 
