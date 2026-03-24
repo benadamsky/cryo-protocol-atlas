@@ -12,14 +12,13 @@ import {
   DiscoverySnapshotSchema
 } from "../../shared/src/schema.js";
 
-const worktreeRoot = fileURLToPath(new URL("../../../", import.meta.url));
-const projectRoot = fileURLToPath(new URL("../../../../../", import.meta.url));
+const projectRoot = fileURLToPath(new URL("../../../", import.meta.url));
 const tsxLoader = join(projectRoot, "node_modules", "tsx", "dist", "loader.mjs");
-const importScript = join(worktreeRoot, "scripts", "import-discovery-exports.ts");
-const discoverScript = join(worktreeRoot, "scripts", "discover-domain-corpus.ts");
-const queueScript = join(worktreeRoot, "scripts", "build-discovery-review-queue.ts");
-const packetScript = join(worktreeRoot, "scripts", "build-discovery-promotion-packet.ts");
-const validateScript = join(worktreeRoot, "scripts", "validate-discovery-refresh.ts");
+const importScript = join(projectRoot, "scripts", "import-discovery-exports.ts");
+const discoverScript = join(projectRoot, "scripts", "discover-domain-corpus.ts");
+const queueScript = join(projectRoot, "scripts", "build-discovery-review-queue.ts");
+const packetScript = join(projectRoot, "scripts", "build-discovery-promotion-packet.ts");
+const validateScript = join(projectRoot, "scripts", "validate-discovery-refresh.ts");
 
 async function writeJson(path: string, value: unknown): Promise<void> {
   await mkdir(dirname(path), { recursive: true });
