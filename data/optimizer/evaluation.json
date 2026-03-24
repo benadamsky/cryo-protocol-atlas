@@ -1,0 +1,245 @@
+{
+  "generatedAt": "2026-03-24T00:23:35.021Z",
+  "benchmarkGeneratedAt": "2026-03-24T00:23:35.018Z",
+  "aggregate": {
+    "candidateCount": 68,
+    "positiveCount": 49,
+    "negativeCount": 19,
+    "promoteCount": 0,
+    "reviewCount": 48,
+    "deferCount": 20,
+    "rankingAccuracy": 0.74,
+    "promotePrecision": 0,
+    "promoteRecall": 0,
+    "reviewOrPromoteRecall": 0.8001,
+    "deferPrecision": 0.3887,
+    "negativePromoteRate": 0,
+    "objective": 0.5865
+  },
+  "byDomain": [
+    {
+      "domain": "islets",
+      "candidateCount": 49,
+      "positiveCount": 42,
+      "negativeCount": 7,
+      "promoteCount": 0,
+      "reviewCount": 40,
+      "deferCount": 9,
+      "rankingAccuracy": 0.7177,
+      "promotePrecision": 0,
+      "promoteRecall": 0,
+      "reviewOrPromoteRecall": 0.8333,
+      "deferPrecision": 0.2222,
+      "negativePromoteRate": 0,
+      "objective": 0.5725
+    },
+    {
+      "domain": "ovarian-tissue",
+      "candidateCount": 19,
+      "positiveCount": 7,
+      "negativeCount": 12,
+      "promoteCount": 0,
+      "reviewCount": 8,
+      "deferCount": 11,
+      "rankingAccuracy": 0.7976,
+      "promotePrecision": 0,
+      "promoteRecall": 0,
+      "reviewOrPromoteRecall": 0.7143,
+      "deferPrecision": 0.8182,
+      "negativePromoteRate": 0,
+      "objective": 0.6225
+    }
+  ],
+  "topFalsePromotes": [],
+  "missedPositives": [
+    {
+      "domain": "islets",
+      "paperId": "b293075d-011c-4c8d-95a6-215ae7952c72",
+      "title": "Intraportal Autotransplantation of Cryopreserved Porcine Islets of Langerhans",
+      "label": "promote",
+      "score": 1.556645,
+      "recommendation": "defer",
+      "featureContributions": {
+        "bias": -0.2,
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.3,
+        "titleProtocolHits": 0.19,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.216645,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 0.3,
+        "journalPresent": 0.2,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "e8acf4c0-f208-4ee5-ac4e-1fe7221b0a48",
+      "title": "Viability Studies on Frozen-Thawed Rat Islets of Langerhans",
+      "label": "promote",
+      "score": 1.608355,
+      "recommendation": "defer",
+      "featureContributions": {
+        "bias": -0.2,
+        "retrievalScore": 0.44,
+        "matchedKeywordCount": 0.2,
+        "titleProtocolHits": 0.38,
+        "titleExperimentalHits": 0.18,
+        "abstractProtocolHits": 0.108355,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 0.3,
+        "journalPresent": 0.2,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+      "title": "CRYOPRESERVATION OF CHICK ISLETS",
+      "label": "promote",
+      "score": 1.79,
+      "recommendation": "defer",
+      "featureContributions": {
+        "bias": -0.2,
+        "retrievalScore": 0.66,
+        "matchedKeywordCount": 0.4,
+        "titleProtocolHits": 0.38,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.325,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 0,
+        "journalPresent": 0.2,
+        "recentYear": 0.025
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+      "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+      "label": "promote",
+      "score": 1.81875,
+      "recommendation": "defer",
+      "featureContributions": {
+        "bias": -0.2,
+        "retrievalScore": 0.66,
+        "matchedKeywordCount": 0.3,
+        "titleProtocolHits": 0.19,
+        "titleExperimentalHits": 0.36,
+        "abstractProtocolHits": 0,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 0.3,
+        "journalPresent": 0.2,
+        "recentYear": 0.00875
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
+      "title": "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+      "label": "promote",
+      "score": 1.903355,
+      "recommendation": "defer",
+      "featureContributions": {
+        "bias": -0.2,
+        "retrievalScore": 0.99,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.108355,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 0.3,
+        "journalPresent": 0.2,
+        "recentYear": 0.005
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "8171cfdd-b8b3-488a-ba11-a919b71c1d2c",
+      "title": "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation",
+      "label": "promote",
+      "score": 2.066645,
+      "recommendation": "defer",
+      "featureContributions": {
+        "bias": -0.2,
+        "retrievalScore": 0.44,
+        "matchedKeywordCount": 0.2,
+        "titleProtocolHits": 0.19,
+        "titleExperimentalHits": 0.72,
+        "abstractProtocolHits": 0.216645,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 0.3,
+        "journalPresent": 0.2,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "1453f932-2e03-42a3-968a-9efaf2b3233e",
+      "title": "USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION",
+      "label": "promote",
+      "score": 2.080395,
+      "recommendation": "defer",
+      "featureContributions": {
+        "bias": -0.2,
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.3,
+        "titleProtocolHits": 0.38,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.541645,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 0.3,
+        "journalPresent": 0.2,
+        "recentYear": 0.00875
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
+      "title": "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+      "label": "promote",
+      "score": 2.094605,
+      "recommendation": "defer",
+      "featureContributions": {
+        "bias": -0.2,
+        "retrievalScore": 0.99,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0.19,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.108355,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 0.3,
+        "journalPresent": 0.2,
+        "recentYear": 0.00625
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+      "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+      "label": "promote",
+      "score": 2.249605,
+      "recommendation": "defer",
+      "featureContributions": {
+        "bias": -0.2,
+        "retrievalScore": 0.99,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.108355,
+        "abstractOutcomeHits": 0.225,
+        "negativeSignalHits": 0,
+        "doiPresent": 0.3,
+        "journalPresent": 0.2,
+        "recentYear": 0.02625
+      }
+    }
+  ]
+}

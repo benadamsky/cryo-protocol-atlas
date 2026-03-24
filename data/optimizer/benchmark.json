@@ -1,0 +1,2215 @@
+{
+  "generatedAt": "2026-03-24T00:23:35.018Z",
+  "description": "Optimizer benchmark derived from reviewed gold-set labels joined against the current matched domain corpus. It is additive and does not modify atlas outputs.",
+  "domains": [
+    "islets",
+    "ovarian-tissue"
+  ],
+  "candidateCount": 68,
+  "positiveCount": 49,
+  "negativeCount": 19,
+  "candidates": [
+    {
+      "domain": "islets",
+      "paperId": "8171cfdd-b8b3-488a-ba11-a919b71c1d2c",
+      "title": "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/0011-2240(83)90058-5",
+        "journal": "Cryobiology",
+        "publishedYear": 1983,
+        "matchedKeywords": [
+          "islet",
+          "islets"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.2,
+        "matchedKeywordCount": 0.2,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0.8,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "f2002bfc-a9e1-45b3-99b7-cff44eee4194",
+      "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2021.03.005",
+        "journal": "Cryobiology",
+        "publishedYear": 2021,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "vitrification"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0.6,
+        "abstractProtocolHits": 0.1667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.775
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "f826780f-d21c-44df-b0ea-cf0c175038b3",
+      "title": "BENEFICIAL EFFECT OF ASPIRIN AND HEPARIN IN THREE-DAY DOG KIDNEY PRESERVATION",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1097/00007890-199310000-00045",
+        "journal": "Transplantation",
+        "publishedYear": 1993,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.075
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "b52df02d-5796-4b24-ba2c-e76c9f6ebd93",
+      "title": "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/s0041-1345(97)00190-5",
+        "journal": "Transplantation Proceedings",
+        "publishedYear": 1997,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.4,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.175
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
+      "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1177/096368979600500306",
+        "journal": "Cell Transplantation",
+        "publishedYear": 1996,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.15
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "0afd5156-4444-4294-a8de-8c29c35b03a5",
+      "title": "Cryo-isolation: A Novel Method for Enzyme-Free Isolation of Pancreatic Islets Involving In Situ Cryopreservation of Islets and Selective Destruction of Acinar Tissue",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.transproceed.2011.10.001",
+        "journal": "Transplantation Proceedings",
+        "publishedYear": 2011,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.525
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
+      "title": "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1097/00007890-199402150-00005",
+        "journal": "Transplantation",
+        "publishedYear": 1994,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.45,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.1667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.1
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+      "title": "CRYOPRESERVATION OF CHICK ISLETS",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": null,
+        "journal": "CryoLetters",
+        "publishedYear": 2010,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.3,
+        "matchedKeywordCount": 0.4,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 0,
+        "journalPresent": 1,
+        "recentYear": 0.5
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
+      "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/j.transproceed.2007.02.076",
+        "journal": "Transplantation Proceedings",
+        "publishedYear": 2007,
+        "matchedKeywords": [
+          "islet",
+          "islet cell",
+          "islet cells",
+          "pancreatic",
+          "glucose",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.45,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.425
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+      "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.3727/000000008783907026",
+        "journal": "Cell Transplantation",
+        "publishedYear": 2008,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.8333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.45
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "b3a4d36a-35fd-4937-9c34-24cf63da3346",
+      "title": "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1006/cryo.1996.0036",
+        "journal": "Cryobiology",
+        "publishedYear": 1996,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "insulin",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.15
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "571357d4-0860-494b-8a6a-23814bacb5a0",
+      "title": "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.3109/03009738709178687",
+        "journal": "Upsala J Med Sci",
+        "publishedYear": 1987,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.6,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
+      "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1006/cryo.1993.1040",
+        "journal": "Cryobiology",
+        "publishedYear": 1993,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.075
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
+      "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/j.lfs.2007.10.026",
+        "journal": "Life Sciences",
+        "publishedYear": 2008,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.45
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
+      "title": "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1292/jvms.57.859",
+        "journal": "Journal of Veterinary Medical Science",
+        "publishedYear": 1995,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.45,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.1667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.125
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
+      "title": "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2016.09.003",
+        "journal": "Cryobiology",
+        "publishedYear": 2016,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "vitrification",
+          "slow freezing"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0.6,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.65
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "c05ceecd-014d-4e09-9dfa-5e095dc5de93",
+      "title": "Effect of thawing rate and post-thaw culture on the cryopreserved fetal rat islets: Functional and morphological correlation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/j.lfs.2005.08.043",
+        "journal": "Life Sciences",
+        "publishedYear": 2006,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.45,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.6,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.4
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
+      "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/s0041-1345(01)02875-5",
+        "journal": "Transplantation Proceedings",
+        "publishedYear": 2002,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "encapsulated islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.6,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0.6,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.3
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "2c3150ae-558a-49b0-b989-676d25c27884",
+      "title": "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/0011-2240(89)90039-4",
+        "journal": "Cryobiology",
+        "publishedYear": 1989,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.6,
+        "titleExperimentalHits": 0.6,
+        "abstractProtocolHits": 0.1667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "cc7ce88a-94b0-4ca4-97b0-2a31e0bd98c9",
+      "title": "ESTABLISHING BASELINE CONTROL WATER VALUES FOR DIFFERENTIAL SCANNING CALORIMETRY (DSC) IN CRYOPROTECTANT EXPLORATION",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2025.105455",
+        "journal": "Cryobiology",
+        "publishedYear": 2025,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.4,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.875
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "341ba0bf-982b-48aa-88b0-a8d57ec8199e",
+      "title": "Human islet mass, morphology, and survival after cryopreservation using the Edmonton protocol",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.4161/isl.26304",
+        "journal": "Islets",
+        "publishedYear": 2013,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.4,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.575
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "df288637-aaad-454a-9595-156c7db96495",
+      "title": "Hydraulic Conductivity (Lp) and Its Activation Energy (Ea), Cryoprotectant Agent Permeability (Ps) and Its Ea, and Reflection Coefficients (s) for Golden Hamster Individual Pancreatic Islet Cell Membranes",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1006/cryo.1998.2124",
+        "journal": "CRYOBIOLOGY",
+        "publishedYear": 1998,
+        "matchedKeywords": [
+          "islet",
+          "pancreatic islet",
+          "islet cell",
+          "pancreatic"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.35,
+        "matchedKeywordCount": 0.4,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.2
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "f68c40d9-4184-4dc8-b527-095353b5c290",
+      "title": "Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2019.04.004",
+        "journal": "Cryobiology",
+        "publishedYear": 2019,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.725
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "f91b7060-e698-46e7-8746-3d40eb683357",
+      "title": "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1097/00006676-199910000-00010",
+        "journal": "Pancreas",
+        "publishedYear": 1999,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.45,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.225
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
+      "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1111/j.1600-6143.2007.01741.x",
+        "journal": "American Journal of Transplantation",
+        "publishedYear": 2007,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.425
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",
+      "title": "Interaction of Cooling Rate, Warming Rate, and Extent of Permeation of Cryoprotectant in Determining Survival of Isolated Rat Islets of Langerhans During Cryopreservation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.2337/diab.36.1.59",
+        "journal": "Diabetes",
+        "publishedYear": 1987,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.6,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "b293075d-011c-4c8d-95a6-215ae7952c72",
+      "title": "Intraportal Autotransplantation of Cryopreserved Porcine Islets of Langerhans",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/0011-2240(84)90296-7",
+        "journal": "Cryobiology",
+        "publishedYear": 1985,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "transplantation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.25,
+        "matchedKeywordCount": 0.3,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+      "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1007/bf00428975",
+        "journal": "Diabetologia",
+        "publishedYear": 1976,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.45,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "72b969f2-a34b-439a-9300-511e3309b5d2",
+      "title": "Murine Islet Cryopreservation and Corticosteroids: Functional Studies",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/0011-2240(83)90010-x",
+        "journal": "Cryobiology",
+        "publishedYear": 1983,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.4,
+        "abstractProtocolHits": 0.1667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "02eddb39-be9a-4bbb-b814-5952e78e3145",
+      "title": "Nonenzymatic Cryogenic Isolation of Therapeutic Cells: Novel Approach for Enzyme-Free Isolation of Pancreatic Islets Using In Situ Cryopreservation of Islets and Concurrent Selective Freeze Destruction of Acinar Tissue",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.3727/096368913X672055",
+        "journal": "Cell Transplantation",
+        "publishedYear": 2014,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.6,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.6
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "6c01e238-01b1-444d-ba8c-cbfb77cd7181",
+      "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1089/bio.2017.0044",
+        "journal": "Biopreservation and Biobanking",
+        "publishedYear": 2017,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation",
+          "vitrification"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.8333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.675
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "beb603fe-8522-4842-99a9-fba1195cc973",
+      "title": "OPTIMIZING ALKYLATED AMMONIUM-BASED COMPOUNDS FOR ICE RECRYSTALLIZATION INHIBITION (IRI) ACTIVITY",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2023.104609",
+        "journal": "Cryobiology",
+        "publishedYear": 2023,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic",
+          "cryopreservation",
+          "vitrification"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.45,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.825
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "c10110ba-e282-4d66-80f6-bebbfcedbbfa",
+      "title": "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/0011-2240(81)90108-5",
+        "journal": "Cryobiology",
+        "publishedYear": 1981,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "transplantation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+      "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.5301/IJAO.2011.8465",
+        "journal": "Artificial Organs",
+        "publishedYear": 2011,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.525
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+      "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.3727/000000004783983927",
+        "journal": "Cell Transplantation",
+        "publishedYear": 2004,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "islet cell",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.6,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.8333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.35
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
+      "title": "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/j.regpep.2010.10.005",
+        "journal": "Regulatory Peptides",
+        "publishedYear": 2011,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "insulin",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 1,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.525
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
+      "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.2337/diab.36.9.1086",
+        "journal": "Diabetes",
+        "publishedYear": 1987,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",
+      "title": "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.2337/diab.38.1.s176",
+        "journal": "Diabetes",
+        "publishedYear": 1989,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "dae850dd-b5dd-4b24-a326-2dc59a1d0980",
+      "title": "Storage and Microencapsulation of Islets for Transplantation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1177/096368970000900105",
+        "journal": "Cell Transplantation",
+        "publishedYear": 2000,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "transplantation",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.25
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+      "title": "Successful Cryopreservation of Fetal Porcine Proislets",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1006/cryo.1993.1024",
+        "journal": "CRYOBIOLOGY",
+        "publishedYear": 1993,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.4,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.075
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+      "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1159/000129396",
+        "journal": "European Surgical Research",
+        "publishedYear": 1995,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.125
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+      "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2019.03.009",
+        "journal": "Cryobiology",
+        "publishedYear": 2019,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "vitrification"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.1667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.725
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "3fbb6bbb-96a2-48bf-9bd3-53166a7a2250",
+      "title": "TOOLS FOR HEART PRESERVATION RESEARCH",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2022.11.063",
+        "journal": "Cryobiology",
+        "publishedYear": 2022,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "beta cell",
+          "vitrification"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.8
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "68dc5ee9-dd99-4f47-8e58-a59a28089fb7",
+      "title": "Transplantation of Cryopreserved Human Pancreatic Islets into Diabetic Nude Mice",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1007/bf01655500",
+        "journal": "World Journal of Surgery",
+        "publishedYear": 1988,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "transplantation",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "f805778c-f7b5-422e-978a-cf3d986f008c",
+      "title": "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.2337/diab.46.3.519",
+        "journal": "Diabetes",
+        "publishedYear": 1997,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "glucose",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.175
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "1453f932-2e03-42a3-968a-9efaf2b3233e",
+      "title": "USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1177/096368979700600612",
+        "journal": "Cell Transplantation",
+        "publishedYear": 1997,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.25,
+        "matchedKeywordCount": 0.3,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.8333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.175
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "12e4333d-e145-4340-ada1-b38751f5f390",
+      "title": "Viability Analysis of Cryopreserved Rat Pancreatic Islets Using Laser Scanning Confocal Microscopy",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1006/cryo.1996.0024",
+        "journal": "Cryobiology",
+        "publishedYear": 1996,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.15
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "e8acf4c0-f208-4ee5-ac4e-1fe7221b0a48",
+      "title": "Viability Studies on Frozen-Thawed Rat Islets of Langerhans",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/0011-2240(77)90130-4",
+        "journal": "Cryobiology",
+        "publishedYear": 1977,
+        "matchedKeywords": [
+          "islet",
+          "islets"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.2,
+        "matchedKeywordCount": 0.2,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.1667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "islets",
+      "paperId": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
+      "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/0011-2240(87)90033-2",
+        "journal": "Cryobiology",
+        "publishedYear": 1987,
+        "matchedKeywords": [
+          "islet",
+          "islets",
+          "pancreatic islet",
+          "pancreatic islets",
+          "pancreatic",
+          "vitrification"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "f18dbca4-01e4-46da-9416-ec324e26ca55",
+      "title": "Animal Models of Ovarian Transplantation",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/B978-0-12-823344-3.00025-X",
+        "journal": "Principles and Practice of Ovarian Tissue Cryopreservation and Transplantation",
+        "publishedYear": 2022,
+        "matchedKeywords": [
+          "ovarian tissue",
+          "ovarian",
+          "fertility preservation",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.25,
+        "matchedKeywordCount": 0.4,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0.1667,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.8
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+      "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/S0015-0282(03)01119-1",
+        "journal": "Fertility and Sterility",
+        "publishedYear": 2003,
+        "matchedKeywords": [
+          "ovary",
+          "ovaries",
+          "ovarian tissue",
+          "ovarian cortex",
+          "ovarian",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.5,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 1,
+        "abstractOutcomeHits": 0.1667,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.325
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+      "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1093/humrep/deq357",
+        "journal": "Human Reproduction",
+        "publishedYear": 2011,
+        "matchedKeywords": [
+          "ovarian tissue",
+          "follicle",
+          "follicles",
+          "ovarian",
+          "oocyte",
+          "oocytes"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.45,
+        "matchedKeywordCount": 0.6,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.1667,
+        "abstractOutcomeHits": 0.5,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.525
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "e6aaf317-52fc-441c-bac4-5143fbb9e54c",
+      "title": "Clinical utility of freeze-all approach in ART treatment: A mini-review",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2019.11.041",
+        "journal": "Cryobiology",
+        "publishedYear": 2019,
+        "matchedKeywords": [
+          "ovary",
+          "ovarian",
+          "oocyte",
+          "oocytes",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.3,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 1,
+        "abstractOutcomeHits": 0.1667,
+        "negativeSignalHits": 0.75,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.725
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "eb9d9be6-4244-4e4b-892e-ba809925613a",
+      "title": "Cryopreservation and in vitro culture of caprine preantral follicles",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1071/RD10227",
+        "journal": "Reproduction, Fertility and Development",
+        "publishedYear": 2011,
+        "matchedKeywords": [
+          "follicle",
+          "follicles",
+          "oocyte",
+          "oocytes",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.35,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.8333,
+        "abstractOutcomeHits": 0.5,
+        "negativeSignalHits": 0.25,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.525
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "fdef775d-8d93-4bdc-a7fe-7f9074ce47fb",
+      "title": "CRYOPRESERVATION OF CANINE OVARIAN AND TESTICULAR FIBROBLASTS",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": null,
+        "journal": "CryoLetters",
+        "publishedYear": 2009,
+        "matchedKeywords": [
+          "ovarian tissue",
+          "ovarian",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.2,
+        "matchedKeywordCount": 0.3,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0.5,
+        "negativeSignalHits": 0.25,
+        "doiPresent": 0,
+        "journalPresent": 1,
+        "recentYear": 0.475
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+      "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2009.02.006",
+        "journal": "Cryobiology",
+        "publishedYear": 2010,
+        "matchedKeywords": [
+          "ovarian tissue",
+          "follicle",
+          "follicles",
+          "ovarian",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.4,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0.1667,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.5
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "dc753166-c837-4fe4-af6a-28cd82058473",
+      "title": "Cryopreservation of immature oocytes of the indigeneous Vietnamese Ban Pig",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1111/asj.13209",
+        "journal": "Animal Science Journal",
+        "publishedYear": 2019,
+        "matchedKeywords": [
+          "follicle",
+          "follicles",
+          "oocyte",
+          "oocytes",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.35,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.8333,
+        "abstractOutcomeHits": 0.5,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.725
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "e7d80563-9f61-460d-b7da-53f60ef58b50",
+      "title": "Cryopreservation of Whole Murine and Porcine Livers",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1089/rej.2008.0706",
+        "journal": "Rejuvenation Research",
+        "publishedYear": 2008,
+        "matchedKeywords": [
+          "ovaries",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.15,
+        "matchedKeywordCount": 0.2,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.8333,
+        "abstractOutcomeHits": 0.6667,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.45
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+      "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1530/jrf.0.1100011",
+        "journal": "Journal of Reproduction and Fertility",
+        "publishedYear": 1997,
+        "matchedKeywords": [
+          "ovaries",
+          "follicle",
+          "follicles"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.3,
+        "matchedKeywordCount": 0.3,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0.4,
+        "abstractProtocolHits": 0,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.175
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "e263dbc7-c35b-47ce-8d9b-57e1e6ac34e4",
+      "title": "Effect of sugars on maturation rate of vitriﬁed-thawed immature porcine oocytes",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.anireprosci.2007.03.023",
+        "journal": "Animal Reproduction Science",
+        "publishedYear": 2008,
+        "matchedKeywords": [
+          "ovaries",
+          "follicle",
+          "oocyte",
+          "oocytes"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.3,
+        "matchedKeywordCount": 0.4,
+        "titleProtocolHits": 0.2,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0.1667,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.45
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "fea34b3b-4387-4267-bc1c-8bfc5c6d4034",
+      "title": "Evaluation of DNA Damage of Mare Granulosa Cells Before and After Cryopreservation Using a Chromatin Dispersion Test",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.jevs.2018.10.019",
+        "journal": "Journal of Equine Veterinary Science",
+        "publishedYear": 2019,
+        "matchedKeywords": [
+          "ovaries",
+          "oocyte",
+          "oocytes",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.25,
+        "matchedKeywordCount": 0.4,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0.2,
+        "abstractProtocolHits": 0.3333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.725
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "fbf690db-1d63-48f7-89cb-afa7bd81b16f",
+      "title": "FSH different regimes affect the developmental capacity and cryotolerance of embryos derived from oocytes collected by ovum pick-up in donor sheep",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.theriogenology.2003.08.005",
+        "journal": "Theriogenology",
+        "publishedYear": 2004,
+        "matchedKeywords": [
+          "follicle",
+          "follicles",
+          "ovarian",
+          "oocyte",
+          "oocytes"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.35,
+        "matchedKeywordCount": 0.5,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.1667,
+        "abstractOutcomeHits": 0.1667,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.35
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "db1f328f-841d-4b71-b786-aaa958133cce",
+      "title": "Intrafollicular transfer of fresh and vitriﬁed immature bovine oocytes",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.theriogenology.2016.07.003",
+        "journal": "Theriogenology",
+        "publishedYear": 2016,
+        "matchedKeywords": [
+          "follicle",
+          "follicles",
+          "oocyte",
+          "oocytes"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.3,
+        "matchedKeywordCount": 0.4,
+        "titleProtocolHits": 0,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0,
+        "abstractOutcomeHits": 0.3333,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.65
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "fb9f4b85-d77c-49e6-976e-ded1ec242b61",
+      "title": "Me₂SO perfusion time for whole-organ cryopreservation can be shortened: Results of micro-computed tomography monitoring during Me₂SO perfusion of rat hearts",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1371/journal.pone.0238519",
+        "journal": "PLOS ONE",
+        "publishedYear": 2020,
+        "matchedKeywords": [
+          "ovarian tissue",
+          "ovarian",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.2,
+        "matchedKeywordCount": 0.3,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.5,
+        "abstractOutcomeHits": 0.5,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.75
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+      "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2025.105245",
+        "journal": "Cryobiology",
+        "publishedYear": 2025,
+        "matchedKeywords": [
+          "ovarian tissue",
+          "ovarian",
+          "fertility preservation",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.25,
+        "matchedKeywordCount": 0.4,
+        "titleProtocolHits": 0.8,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 1,
+        "abstractOutcomeHits": 0.1667,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.875
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+      "title": "Ovarian and oocyte cryopreservation",
+      "label": "promote",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": true,
+      "metadata": {
+        "doi": "10.1097/gco.0b013e328247f411",
+        "journal": "Curr Opin Obstet Gynecol",
+        "publishedYear": 2007,
+        "matchedKeywords": [
+          "ovary",
+          "ovarian cortex",
+          "whole ovary",
+          "follicle",
+          "ovarian",
+          "oocyte",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.55,
+        "matchedKeywordCount": 0.7,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.8333,
+        "abstractOutcomeHits": 0.3333,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.425
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "e7fe405f-8033-4260-bad8-2041ac9b2ac0",
+      "title": "Studies on ovarian tissues’ cryopreservation in the cyprinid species",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2025.105251",
+        "journal": "Cryobiology",
+        "publishedYear": 2025,
+        "matchedKeywords": [
+          "ovaries",
+          "ovarian tissue",
+          "ovarian",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.3,
+        "matchedKeywordCount": 0.4,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.8333,
+        "abstractOutcomeHits": 0,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.875
+      }
+    },
+    {
+      "domain": "ovarian-tissue",
+      "paperId": "ef159502-8cd1-433a-9c83-1576490b3a43",
+      "title": "The future potential of cryopreservation for assisted reproduction",
+      "label": "defer",
+      "reviewStatus": "reviewed",
+      "expectedInAtlas": false,
+      "metadata": {
+        "doi": "10.1016/j.cryobiol.2009.09.009",
+        "journal": "Cryobiology",
+        "publishedYear": 2010,
+        "matchedKeywords": [
+          "ovary",
+          "ovarian tissue",
+          "follicle",
+          "follicles",
+          "ovarian",
+          "oocyte",
+          "oocytes",
+          "cryopreservation"
+        ]
+      },
+      "features": {
+        "retrievalScore": 0.6,
+        "matchedKeywordCount": 0.8,
+        "titleProtocolHits": 0.4,
+        "titleExperimentalHits": 0,
+        "abstractProtocolHits": 0.6667,
+        "abstractOutcomeHits": 0.3333,
+        "negativeSignalHits": 0,
+        "doiPresent": 1,
+        "journalPresent": 1,
+        "recentYear": 0.5
+      }
+    }
+  ]
+}

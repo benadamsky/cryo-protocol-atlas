@@ -1,0 +1,691 @@
+{
+  "generatedAt": "2026-03-24T00:23:24.367Z",
+  "strategyPath": "/Users/benadamsky/Documents/Building/Cryo/cryo-protocol-atlas/.worktrees/optimizer-lane/packages/optimizer/program.md",
+  "strategySummary": {
+    "domains": [
+      "islets",
+      "ovarian-tissue"
+    ],
+    "maxAttempts": 24,
+    "maxAcceptedMutations": 4,
+    "minimumScoreDelta": 0.001,
+    "minimumPromotePrecision": 0.75
+  },
+  "baselineObjective": 0.5525,
+  "finalObjective": 0.5865,
+  "acceptedMutationCount": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "mutation": {
+        "path": "weights.bias",
+        "from": -0.4,
+        "to": -0.2,
+        "delta": 0.2
+      },
+      "objectiveBefore": 0.5525,
+      "objectiveAfter": 0.5801,
+      "accepted": true,
+      "rationale": "kept because objective improved without violating the promote-precision guardrail",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 48,
+        "deferCount": 20,
+        "rankingAccuracy": 0.7196,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.8228,
+        "deferPrecision": 0.3956,
+        "negativePromoteRate": 0,
+        "objective": 0.5801
+      }
+    },
+    {
+      "attempt": 2,
+      "mutation": {
+        "path": "weights.bias",
+        "from": -0.4,
+        "to": -0.6,
+        "delta": -0.2
+      },
+      "objectiveBefore": 0.5801,
+      "objectiveAfter": 0.5087,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 28,
+        "deferCount": 40,
+        "rankingAccuracy": 0.7196,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.48,
+        "deferPrecision": 0.3382,
+        "negativePromoteRate": 0,
+        "objective": 0.5087
+      }
+    },
+    {
+      "attempt": 3,
+      "mutation": {
+        "path": "weights.retrievalScore",
+        "from": 2.2,
+        "to": 2.4,
+        "delta": 0.2
+      },
+      "objectiveBefore": 0.5801,
+      "objectiveAfter": 0.7252,
+      "accepted": false,
+      "rationale": "reverted because promote precision fell below the guardrail",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 1,
+        "reviewCount": 48,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7138,
+        "promotePrecision": 0.7206,
+        "promoteRecall": 0.0172,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.7252
+      }
+    },
+    {
+      "attempt": 4,
+      "mutation": {
+        "path": "weights.retrievalScore",
+        "from": 2.2,
+        "to": 2,
+        "delta": -0.2
+      },
+      "objectiveBefore": 0.5801,
+      "objectiveAfter": 0.565,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 44,
+        "deferCount": 24,
+        "rankingAccuracy": 0.7229,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.7486,
+        "deferPrecision": 0.353,
+        "negativePromoteRate": 0,
+        "objective": 0.565
+      }
+    },
+    {
+      "attempt": 5,
+      "mutation": {
+        "path": "weights.matchedKeywordCount",
+        "from": 1,
+        "to": 1.15,
+        "delta": 0.15
+      },
+      "objectiveBefore": 0.5801,
+      "objectiveAfter": 0.7252,
+      "accepted": false,
+      "rationale": "reverted because promote precision fell below the guardrail",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 1,
+        "reviewCount": 48,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7138,
+        "promotePrecision": 0.7206,
+        "promoteRecall": 0.0172,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.7252
+      }
+    },
+    {
+      "attempt": 6,
+      "mutation": {
+        "path": "weights.matchedKeywordCount",
+        "from": 1,
+        "to": 0.85,
+        "delta": -0.15
+      },
+      "objectiveBefore": 0.5801,
+      "objectiveAfter": 0.5671,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 45,
+        "deferCount": 23,
+        "rankingAccuracy": 0.7196,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.7657,
+        "deferPrecision": 0.3638,
+        "negativePromoteRate": 0,
+        "objective": 0.5671
+      }
+    },
+    {
+      "attempt": 7,
+      "mutation": {
+        "path": "weights.titleProtocolHits",
+        "from": 0.8,
+        "to": 0.95,
+        "delta": 0.15
+      },
+      "objectiveBefore": 0.5801,
+      "objectiveAfter": 0.5821,
+      "accepted": true,
+      "rationale": "kept because objective improved without violating the promote-precision guardrail",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 49,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7155,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.5821
+      }
+    },
+    {
+      "attempt": 8,
+      "mutation": {
+        "path": "weights.titleProtocolHits",
+        "from": 0.8,
+        "to": 0.65,
+        "delta": -0.15
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5748,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 46,
+        "deferCount": 22,
+        "rankingAccuracy": 0.7171,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.8056,
+        "deferPrecision": 0.385,
+        "negativePromoteRate": 0,
+        "objective": 0.5748
+      }
+    },
+    {
+      "attempt": 9,
+      "mutation": {
+        "path": "weights.titleExperimentalHits",
+        "from": 0.9,
+        "to": 1.05,
+        "delta": 0.15
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.7289,
+      "accepted": false,
+      "rationale": "reverted because promote precision fell below the guardrail",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 1,
+        "reviewCount": 48,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7204,
+        "promotePrecision": 0.7206,
+        "promoteRecall": 0.0172,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.7289
+      }
+    },
+    {
+      "attempt": 10,
+      "mutation": {
+        "path": "weights.titleExperimentalHits",
+        "from": 0.9,
+        "to": 0.75,
+        "delta": -0.15
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5817,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 49,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7147,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.5817
+      }
+    },
+    {
+      "attempt": 11,
+      "mutation": {
+        "path": "weights.abstractProtocolHits",
+        "from": 0.65,
+        "to": 0.8,
+        "delta": 0.15
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.7357,
+      "accepted": false,
+      "rationale": "reverted because promote precision fell below the guardrail",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 1,
+        "reviewCount": 48,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7327,
+        "promotePrecision": 0.7206,
+        "promoteRecall": 0.0172,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.7357
+      }
+    },
+    {
+      "attempt": 12,
+      "mutation": {
+        "path": "weights.abstractProtocolHits",
+        "from": 0.65,
+        "to": 0.5,
+        "delta": -0.15
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5676,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 46,
+        "deferCount": 22,
+        "rankingAccuracy": 0.7131,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.7829,
+        "deferPrecision": 0.377,
+        "negativePromoteRate": 0,
+        "objective": 0.5676
+      }
+    },
+    {
+      "attempt": 13,
+      "mutation": {
+        "path": "weights.abstractOutcomeHits",
+        "from": 0.45,
+        "to": 0.6,
+        "delta": 0.15
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5803,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 49,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7122,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.5803
+      }
+    },
+    {
+      "attempt": 14,
+      "mutation": {
+        "path": "weights.abstractOutcomeHits",
+        "from": 0.45,
+        "to": 0.3,
+        "delta": -0.15
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5712,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 48,
+        "deferCount": 20,
+        "rankingAccuracy": 0.7122,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.8001,
+        "deferPrecision": 0.3887,
+        "negativePromoteRate": 0,
+        "objective": 0.5712
+      }
+    },
+    {
+      "attempt": 15,
+      "mutation": {
+        "path": "weights.negativeSignalHits",
+        "from": -1.3,
+        "to": -1.1,
+        "delta": 0.2
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5821,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 49,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7155,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.5821
+      }
+    },
+    {
+      "attempt": 16,
+      "mutation": {
+        "path": "weights.negativeSignalHits",
+        "from": -1.3,
+        "to": -1.5,
+        "delta": -0.2
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5821,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 49,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7155,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.5821
+      }
+    },
+    {
+      "attempt": 17,
+      "mutation": {
+        "path": "weights.doiPresent",
+        "from": 0.3,
+        "to": 0.4,
+        "delta": 0.1
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.7262,
+      "accepted": false,
+      "rationale": "reverted because promote precision fell below the guardrail",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 1,
+        "reviewCount": 48,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7155,
+        "promotePrecision": 0.7206,
+        "promoteRecall": 0.0172,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.7262
+      }
+    },
+    {
+      "attempt": 18,
+      "mutation": {
+        "path": "weights.doiPresent",
+        "from": 0.3,
+        "to": 0.2,
+        "delta": -0.1
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5607,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 45,
+        "deferCount": 23,
+        "rankingAccuracy": 0.7155,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.7486,
+        "deferPrecision": 0.3487,
+        "negativePromoteRate": 0,
+        "objective": 0.5607
+      }
+    },
+    {
+      "attempt": 19,
+      "mutation": {
+        "path": "weights.journalPresent",
+        "from": 0.2,
+        "to": 0.3,
+        "delta": 0.1
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.7262,
+      "accepted": false,
+      "rationale": "reverted because promote precision fell below the guardrail",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 1,
+        "reviewCount": 48,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7155,
+        "promotePrecision": 0.7206,
+        "promoteRecall": 0.0172,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.7262
+      }
+    },
+    {
+      "attempt": 20,
+      "mutation": {
+        "path": "weights.journalPresent",
+        "from": 0.2,
+        "to": 0.1,
+        "delta": -0.1
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5607,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 45,
+        "deferCount": 23,
+        "rankingAccuracy": 0.7155,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.7486,
+        "deferPrecision": 0.3487,
+        "negativePromoteRate": 0,
+        "objective": 0.5607
+      }
+    },
+    {
+      "attempt": 21,
+      "mutation": {
+        "path": "weights.recentYear",
+        "from": 0.15,
+        "to": 0.25,
+        "delta": 0.1
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5781,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 49,
+        "deferCount": 19,
+        "rankingAccuracy": 0.7082,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.84,
+        "deferPrecision": 0.4116,
+        "negativePromoteRate": 0,
+        "objective": 0.5781
+      }
+    },
+    {
+      "attempt": 22,
+      "mutation": {
+        "path": "weights.recentYear",
+        "from": 0.15,
+        "to": 0.05,
+        "delta": -0.1
+      },
+      "objectiveBefore": 0.5821,
+      "objectiveAfter": 0.5865,
+      "accepted": true,
+      "rationale": "kept because objective improved without violating the promote-precision guardrail",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 48,
+        "deferCount": 20,
+        "rankingAccuracy": 0.74,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.8001,
+        "deferPrecision": 0.3887,
+        "negativePromoteRate": 0,
+        "objective": 0.5865
+      }
+    },
+    {
+      "attempt": 23,
+      "mutation": {
+        "path": "thresholds.promote",
+        "from": 3.6,
+        "to": 3.75,
+        "delta": 0.15
+      },
+      "objectiveBefore": 0.5865,
+      "objectiveAfter": 0.5865,
+      "accepted": false,
+      "rationale": "reverted because the objective did not improve enough",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 0,
+        "reviewCount": 48,
+        "deferCount": 20,
+        "rankingAccuracy": 0.74,
+        "promotePrecision": 0,
+        "promoteRecall": 0,
+        "reviewOrPromoteRecall": 0.8001,
+        "deferPrecision": 0.3887,
+        "negativePromoteRate": 0,
+        "objective": 0.5865
+      }
+    },
+    {
+      "attempt": 24,
+      "mutation": {
+        "path": "thresholds.promote",
+        "from": 3.6,
+        "to": 3.45,
+        "delta": -0.15
+      },
+      "objectiveBefore": 0.5865,
+      "objectiveAfter": 0.7306,
+      "accepted": false,
+      "rationale": "reverted because promote precision fell below the guardrail",
+      "metricsAfter": {
+        "candidateCount": 68,
+        "positiveCount": 49,
+        "negativeCount": 19,
+        "promoteCount": 1,
+        "reviewCount": 47,
+        "deferCount": 20,
+        "rankingAccuracy": 0.74,
+        "promotePrecision": 0.7206,
+        "promoteRecall": 0.0172,
+        "reviewOrPromoteRecall": 0.8001,
+        "deferPrecision": 0.3887,
+        "negativePromoteRate": 0,
+        "objective": 0.7306
+      }
+    }
+  ]
+}
