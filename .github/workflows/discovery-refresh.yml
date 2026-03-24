@@ -1,0 +1,86 @@
+name: Discovery Refresh
+
+on:
+  workflow_dispatch:
+    inputs:
+      skip_imports:
+        description: Skip merging normalized import files before refresh
+        required: false
+        default: false
+        type: boolean
+  schedule:
+    - cron: "11 15 * * 1-5"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: discovery-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.2.17"
+
+      - name: Install Dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Discovery Tests
+        run: bun run test:discovery
+
+      - name: Run Discovery Refresh
+        env:
+          SKIP_IMPORTS: ${{ github.event.inputs.skip_imports || 'false' }}
+        run: |
+          EXTRA_ARGS=""
+          if [ "${SKIP_IMPORTS}" = "true" ]; then
+            EXTRA_ARGS="--skip-imports"
+          fi
+          bun run discover-refresh:all -- ${EXTRA_ARGS}
+
+      - name: Validate Discovery Refresh
+        run: bun run validate-discovery-refresh
+
+      - name: Publish Discovery Summary
+        run: |
+          echo "# Discovery refresh" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          cat data/discovery/ovarian-tissue/import-summary.md >> "$GITHUB_STEP_SUMMARY"
+          cat data/discovery/ovarian-tissue/promotion-review-packet.md >> "$GITHUB_STEP_SUMMARY"
+          cat data/discovery/islets/import-summary.md >> "$GITHUB_STEP_SUMMARY"
+          cat data/discovery/islets/promotion-review-packet.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Create Discovery Refresh Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          add-paths: |
+            data/discovery
+          commit-message: "chore(discovery): refresh discovery queue"
+          branch: "automation/discovery-refresh"
+          delete-branch: false
+          title: "chore(discovery): refresh discovery queue"
+          body: |
+            Automated discovery refresh.
+
+            This PR was opened by the scheduled discovery workflow and includes only `data/discovery/` updates.

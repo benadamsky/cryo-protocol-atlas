@@ -12,6 +12,20 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="app-shell">
       <TopBar />
+      <div className="shell-ribbon">
+        <div className="shell-ribbon__copy">
+          <span className="shell-ribbon__eyebrow">Lineage</span>
+          <p>
+            The console renders generated artifacts directly. Benchmark truth stays in the pipeline; the web layer is
+            a read-only lens.
+          </p>
+        </div>
+        <div className="shell-ribbon__chips" aria-label="Atlas state">
+          <StatusPill tone="good">validated artifacts</StatusPill>
+          <StatusPill tone="neutral">review-led</StatusPill>
+          <StatusPill tone="warn">candidate discovery later</StatusPill>
+        </div>
+      </div>
       <main className="page-shell">{children}</main>
     </div>
   );
@@ -24,13 +38,19 @@ export function TopBar() {
         <span className="brandmark__signal" />
         <span>
           <strong>Cryo Protocol Atlas</strong>
-          <small>File-backed internal console</small>
+          <small>Technical console for validated cryopreservation evidence</small>
         </span>
       </Link>
-      <nav className="topbar__nav">
-        <Link href="/">Overview</Link>
-        <Link href="/domains/ovarian-tissue">Ovarian</Link>
-        <Link href="/domains/islets">Islets</Link>
+      <nav className="topbar__nav" aria-label="Primary">
+        <Link href="/#validated-atlas">Validated Atlas</Link>
+        <Link href="/#benchmarking">Benchmarking</Link>
+        <Link href="/#discovery">Discovery</Link>
+        <Link href="/#debug">Debug</Link>
+      </nav>
+      <nav className="topbar__meta" aria-label="Status">
+        <StatusPill tone="good">file-backed</StatusPill>
+        <StatusPill tone="neutral">print-ready</StatusPill>
+        <StatusPill tone="warn">no mutable backend</StatusPill>
       </nav>
     </header>
   );
@@ -51,6 +71,51 @@ export function PageIntro(props: {
       </div>
       {props.children ? <div className="hero__aside">{props.children}</div> : null}
     </section>
+  );
+}
+
+export function SectionNav(props: {
+  items: Array<{
+    id: string;
+    label: string;
+    summary: string;
+  }>;
+}) {
+  return (
+    <nav className="section-nav" aria-label="Atlas sections">
+      {props.items.map((item) => (
+        <a className="section-nav__item" href={`#${item.id}`} key={item.id}>
+          <strong>{item.label}</strong>
+          <span>{item.summary}</span>
+        </a>
+      ))}
+    </nav>
+  );
+}
+
+export function ProvenanceCallout(props: {
+  eyebrow: string;
+  title: string;
+  summary: string;
+  items: Array<{
+    label: string;
+    value: string;
+  }>;
+}) {
+  return (
+    <aside className="provenance-callout">
+      <span className="eyebrow">{props.eyebrow}</span>
+      <h3>{props.title}</h3>
+      <p>{props.summary}</p>
+      <div className="provenance-callout__items">
+        {props.items.map((item) => (
+          <div className="inline-stat" key={item.label}>
+            <span>{item.label}</span>
+            <strong>{item.value}</strong>
+          </div>
+        ))}
+      </div>
+    </aside>
   );
 }
 
@@ -101,13 +166,14 @@ export function MetricCard(props: {
 }
 
 export function Section(props: {
+  id?: string;
   title: string;
   subtitle?: string;
   actions?: ReactNode;
   children: ReactNode;
 }) {
   return (
-    <section className="section-card">
+    <section className="section-card" id={props.id}>
       <div className="section-card__header">
         <div>
           <h2>{props.title}</h2>

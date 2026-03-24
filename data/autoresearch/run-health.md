@@ -1,6 +1,6 @@
 # Autoresearch health
 
-- generated at: 2026-03-23T21:50:35.824Z
+- generated at: 2026-03-24T13:51:57.363Z
 - overall state: stalled-human-gate
 - available domains: 2
 - missing domains: none
@@ -15,7 +15,7 @@
 ## Domains
 ### ovarian-tissue
 - state: stalled-human-gate
-- latest run: 2026-03-23T20:30:28.519Z
+- latest run: 2026-03-24T13:51:51.717Z
 - stop reason: pending-source-enrichment
 - cycles completed: 1
 - reviewed quality: inclusionF1=1 familyAccuracy=1 paperTypeAccuracy=1
@@ -32,7 +32,7 @@
 
 ### islets
 - state: stalled-human-gate
-- latest run: 2026-03-23T20:30:31.225Z
+- latest run: 2026-03-24T13:51:57.146Z
 - stop reason: pending-source-enrichment
 - cycles completed: 1
 - reviewed quality: inclusionF1=1 familyAccuracy=1 paperTypeAccuracy=1
