@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   ArtifactLedger,
@@ -8,9 +9,11 @@ import {
   MetricGrid,
   PageIntro,
   Section,
-  SourceNote
+  SourceNote,
+  QuickFacts,
+  StatusPill
 } from "@/components/atlas-ui";
-import { getDomainData } from "@/lib/data";
+import { formatDateTime, getDomainData } from "@/lib/data";
 import { getDomainMeta, parseDomainId } from "@/lib/domain";
 
 export default async function AtlasPage({
@@ -29,15 +32,60 @@ export default async function AtlasPage({
         <PageIntro
           eyebrow={`${meta.label} Atlas`}
           title={`${meta.label} protocol structure`}
-          summary="Literature clusters, dominant chemicals, outcomes, and high-confidence papers derived from the resolved extraction layer."
+          summary="Literature clusters, dominant chemicals, outcomes, and high-confidence papers derived from the resolved extraction layer. This page is the print-friendly, validated atlas view."
         >
           <div className="hero__stack">
             <DomainBadge domain={domain} />
             <SourceNote sourceLabel={data.sourceLabel} />
+            <StatusPill tone="neutral">last benchmark {formatDateTime(data.benchmarkSummary.generatedAt)}</StatusPill>
+            <QuickFacts
+              items={[
+                {
+                  label: "Total papers",
+                  value: data.atlasSummary.totalPapers
+                },
+                {
+                  label: "Families",
+                  value: data.atlasSummary.protocolFamilies.length
+                },
+                {
+                  label: "Unknown families resolved",
+                  value: data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
+                },
+                {
+                  label: "Source",
+                  value: data.sourceLabel
+                }
+              ]}
+            />
           </div>
         </PageIntro>
 
         <DomainTabs current="atlas" domain={domain} />
+
+        <Section
+          title="Cross-page compare"
+          subtitle="Use the benchmark and debug pages alongside this atlas view when you need to interrogate the underlying trust surface."
+        >
+          <div className="split-grid">
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Benchmark</h3>
+                <StatusPill tone="good">baseline vs resolved</StatusPill>
+              </div>
+              <p>Shows gate checks, reviewed-depth deltas, and mismatch watchlists.</p>
+              <Link href={`/domains/${domain}/benchmark`}>Open benchmark</Link>
+            </article>
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Debug</h3>
+                <StatusPill tone="warn">paper-level provenance</StatusPill>
+              </div>
+              <p>Shows the normalized protocol, representative conditions, and raw evidence snapshots.</p>
+              <Link href={`/domains/${domain}/debug`}>Open debug</Link>
+            </article>
+          </div>
+        </Section>
 
         <MetricGrid>
           <MetricCard label="Total papers" value={String(data.atlasSummary.totalPapers)} />
@@ -109,6 +157,58 @@ export default async function AtlasPage({
               hotspot.paperCount,
               hotspot.outcomeClasses.join(", ")
             ])}
+          />
+        </Section>
+
+        <Section
+          title="Resolved vs baseline"
+          subtitle="The atlas should not only say what exists, but also show what the resolved pass changed."
+        >
+          <DataTable
+            columns={["Signal", "Baseline", "Resolved", "Delta"]}
+            rows={[
+              [
+                "Total papers",
+                data.atlasAnalysis.baselineSummary.totalPapers,
+                data.atlasAnalysis.resolvedSummary.totalPapers,
+                data.atlasAnalysis.resolvedSummary.totalPapers - data.atlasAnalysis.baselineSummary.totalPapers
+              ],
+              [
+                "Unknown protocol families",
+                data.atlasAnalysis.baselineSummary.qualitySignals?.unknownProtocolFamilyCount ?? 0,
+                data.atlasAnalysis.resolvedSummary.qualitySignals?.unknownProtocolFamilyCount ?? 0,
+                data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
+              ],
+              [
+                "Unknown step phases",
+                data.atlasAnalysis.baselineSummary.qualitySignals?.unknownStepPhaseCount ?? 0,
+                data.atlasAnalysis.resolvedSummary.qualitySignals?.unknownStepPhaseCount ?? 0,
+                data.atlasAnalysis.overrideImpact.unknownStepPhaseDelta
+              ],
+              [
+                "Contradictions",
+                data.atlasAnalysis.baselineSummary.qualitySignals?.contradictionCount ?? 0,
+                data.atlasAnalysis.resolvedSummary.qualitySignals?.contradictionCount ?? 0,
+                (data.atlasAnalysis.resolvedSummary.qualitySignals?.contradictionCount ?? 0) -
+                  (data.atlasAnalysis.baselineSummary.qualitySignals?.contradictionCount ?? 0)
+              ]
+            ]}
+          />
+          <QuickFacts
+            items={[
+              {
+                label: "Overrides applied",
+                value: data.atlasAnalysis.overrideImpact.overridesApplied
+              },
+              {
+                label: "Excluded papers",
+                value: data.atlasAnalysis.overrideImpact.excludedPaperCount
+              },
+              {
+                label: "Families resolved",
+                value: data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
+              }
+            ]}
           />
         </Section>
 

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   ArtifactLedger,
@@ -10,9 +11,10 @@ import {
   ScoreBar,
   Section,
   SourceNote,
-  StatusPill
+  StatusPill,
+  QuickFacts
 } from "@/components/atlas-ui";
-import { formatPercent, getDomainData, getReviewedEntryCounts } from "@/lib/data";
+import { formatDateTime, formatPercent, getDomainData, getReviewedEntryCounts } from "@/lib/data";
 import { getDomainMeta, parseDomainId } from "@/lib/domain";
 
 export default async function BenchmarkPage({
@@ -35,15 +37,70 @@ export default async function BenchmarkPage({
         <PageIntro
           eyebrow={`${meta.label} Benchmark`}
           title="Trust surface for current atlas outputs"
-          summary={data.benchmarkSummary.benchmarkDescription}
+          summary={`${data.benchmarkSummary.benchmarkDescription} Use this page to read the trust story, not just the pass/fail badge.`}
         >
           <div className="hero__stack">
             <DomainBadge domain={domain} />
             <SourceNote sourceLabel={data.sourceLabel} />
+            <StatusPill tone={data.benchmarkSummary.summary.passesAllGates ? "good" : "warn"}>
+              {data.benchmarkSummary.summary.passesAllGates ? "all gates pass" : "gate failure"}
+            </StatusPill>
+            <QuickFacts
+              items={[
+                {
+                  label: "Generated",
+                  value: formatDateTime(data.benchmarkSummary.generatedAt)
+                },
+                {
+                  label: "Reviewed rows",
+                  value: entryCounts.reviewed
+                },
+                {
+                  label: "Seeded rows",
+                  value: entryCounts.seeded
+                },
+                {
+                  label: "Read path",
+                  value: data.sourceLabel
+                }
+              ]}
+            />
           </div>
         </PageIntro>
 
         <DomainTabs current="benchmark" domain={domain} />
+
+        <Section
+          title="Cross-page compare"
+          subtitle="Use this route together with atlas, review, and debug when you need the underlying evidence instead of a single summary number."
+        >
+          <div className="split-grid">
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Validated atlas</h3>
+                <StatusPill tone="neutral">print-friendly summary</StatusPill>
+              </div>
+              <p>Use this to compare family structure, uncertainty hotspots, and the resolved literature shape.</p>
+              <Link href={`/domains/${domain}/atlas`}>Open atlas</Link>
+            </article>
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Review queue</h3>
+                <StatusPill tone="good">candidate provenance</StatusPill>
+              </div>
+              <p>Use this to see how human review and benchmark decisions support the same slice.</p>
+              <Link href={`/domains/${domain}/review`}>Open review</Link>
+            </article>
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Debug</h3>
+                <StatusPill tone="warn">paper-level trace</StatusPill>
+              </div>
+              <p>Use this when you need the per-paper view of extraction, resolution, and normalization.</p>
+              <Link href={`/domains/${domain}/debug`}>Open debug</Link>
+            </article>
+          </div>
+        </Section>
 
         <MetricGrid>
           <MetricCard
@@ -146,6 +203,26 @@ export default async function BenchmarkPage({
               </div>
             </article>
           </div>
+          <QuickFacts
+            items={[
+              {
+                label: "Inclusion F1 delta vs all",
+                value: data.benchmarkSummary.summary.reviewedInclusionF1DeltaVsAll.toFixed(3)
+              },
+              {
+                label: "Minimum depth ready",
+                value: data.benchmarkSummary.summary.reviewedMinimumDepthReady ? "yes" : "no"
+              },
+              {
+                label: "Outcome coverage delta",
+                value: formatPercent(data.benchmarkAnalysis.reviewedDepth.outcomeCoverageDelta)
+              },
+              {
+                label: "Step-phase coverage delta",
+                value: formatPercent(data.benchmarkAnalysis.reviewedDepth.stepPhaseCoverageDelta)
+              }
+            ]}
+          />
         </Section>
 
         <Section title="Gate checks" subtitle="These are the safeguards against making the atlas look cleaner by dropping or relabeling difficult papers.">

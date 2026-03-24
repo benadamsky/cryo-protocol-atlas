@@ -6,6 +6,7 @@ import {
   BenchmarkFileSchema,
   BenchmarkProposalDecisionFileSchema,
   DomainIdSchema,
+  DomainSnapshotSchema,
   ExtractionSnapshotSchema,
   NormalizedProtocolSnapshotSchema,
   SourceEnrichmentFileSchema,
@@ -288,7 +289,7 @@ const ReviewedDepthSchema = z.object({
     z.object({
       paperId: z.string(),
       title: z.string(),
-      protocolFamily: z.string(),
+      protocolFamily: z.string().optional().default("unknown"),
       paperType: z.string()
     })
   )
@@ -334,6 +335,92 @@ const UnattendedBatchSchema = z.object({
   minimumDepthReady: z.boolean()
 });
 
+const RunHealthDomainSchema = z.object({
+  domain: DomainIdSchema,
+  latestRunGeneratedAt: z.string(),
+  healthState: z.string(),
+  stopReason: z.string(),
+  cyclesCompleted: z.number(),
+  passesAllGates: z.boolean(),
+  reviewedMinimumDepthReady: z.boolean(),
+  reviewedInclusionF1: z.number(),
+  reviewedProtocolFamilyAccuracy: z.number(),
+  reviewedPaperTypeAccuracy: z.number(),
+  reviewedOutcomeCoverage: z.number(),
+  reviewedStepPhaseCoverage: z.number(),
+  regressionPassedCount: z.number(),
+  regressionScenarioCount: z.number(),
+  normalizedProtocolCount: z.number(),
+  protocolsWithNormalizationWarnings: z.number(),
+  pendingBenchmarkProposalCount: z.number(),
+  pendingSourceEnrichmentCount: z.number(),
+  reviewedSourceEnrichmentCount: z.number(),
+  missingOutcomeCount: z.number(),
+  missingStepPhaseCount: z.number(),
+  reviewedInclusionF1Delta: z.number(),
+  reviewedProtocolFamilyAccuracyDelta: z.number(),
+  reviewedPaperTypeAccuracyDelta: z.number(),
+  reviewedOutcomeCoverageDelta: z.number(),
+  reviewedStepPhaseCoverageDelta: z.number(),
+  gatePassCountDelta: z.number(),
+  bestWedgeTitle: z.string(),
+  currentRead: z.string(),
+  likelyPainPoint: z.string(),
+  alerts: z.array(z.string()),
+  artifactPaths: z.object({
+    cycleReport: z.string(),
+    unattendedBatch: z.string(),
+    benchmarkReport: z.string(),
+    wedgeBrief: z.string(),
+    callPacket: z.string()
+  })
+});
+
+const RunHealthSchema = z.object({
+  generatedAt: z.string(),
+  overallState: z.string(),
+  availableDomainCount: z.number(),
+  missingDomains: z.array(DomainIdSchema),
+  totalPendingBenchmarkProposalCount: z.number(),
+  totalPendingSourceEnrichmentCount: z.number(),
+  totalNormalizedProtocolCount: z.number(),
+  domains: z.array(RunHealthDomainSchema),
+  recommendations: z.array(z.string())
+});
+
+const AutoresearchCycleEntrySchema = z.object({
+  cycle: z.number(),
+  ingestIncluded: z.boolean(),
+  beforeState: z.object({
+    benchmarkHash: z.string(),
+    overrideHash: z.string()
+  }),
+  afterState: z.object({
+    benchmarkHash: z.string(),
+    overrideHash: z.string()
+  }),
+  autonomousStateChanged: z.boolean(),
+  actions: z.array(z.string()),
+  proposalCount: z.number(),
+  overrideProposalCount: z.number(),
+  benchmarkProposalCount: z.number(),
+  autoApplySafe: z.boolean(),
+  pendingBenchmarkProposalCount: z.number(),
+  pendingSourceEnrichmentCount: z.number(),
+  reviewedOutcomeCoverage: z.number(),
+  reviewedStepPhaseCoverage: z.number()
+});
+
+const AutoresearchCyclesSchema = z.object({
+  domain: DomainIdSchema,
+  generatedAt: z.string(),
+  maxCycles: z.number(),
+  ingestFirstCycle: z.boolean(),
+  cyclesCompleted: z.number(),
+  stopReason: z.string(),
+  cycles: z.array(AutoresearchCycleEntrySchema)
+});
+
 type DataSource<T> = {
   data: T;
   relativePath: string;
@@ -341,8 +428,20 @@ type DataSource<T> = {
   sourceLabel: "worktree" | "primary";
 };
 
-type ExtractionSnapshotData = z.infer<typeof ExtractionSnapshotSchema>;
-type NormalizedProtocolSnapshotData = z.infer<typeof NormalizedProtocolSnapshotSchema>;
+type ExtractionSnapshotData = z.output<typeof ExtractionSnapshotSchema>;
+type NormalizedProtocolSnapshotData = z.output<typeof NormalizedProtocolSnapshotSchema>;
+type BenchmarkFileData = z.output<typeof BenchmarkFileSchema>;
+type SourceEnrichmentData = z.output<typeof SourceEnrichmentFileSchema>;
+type ProposalFileData = z.output<typeof AutoresearchProposalFileSchema>;
+type DecisionFileData = z.output<typeof BenchmarkProposalDecisionFileSchema>;
+type RunHealthData = z.output<typeof RunHealthSchema>;
+type CallPacketData = z.output<typeof CallPacketSchema>;
+type WedgeBriefData = z.output<typeof WedgeBriefSchema>;
+type AtlasSummaryData = z.output<typeof AtlasSummarySchema>;
+type AtlasAnalysisData = z.output<typeof AtlasAnalysisSchema>;
+type BenchmarkSummaryData = z.output<typeof BenchmarkSummarySchema>;
+type BenchmarkAnalysisData = z.output<typeof BenchmarkAnalysisSchema>;
+type UnattendedBatchData = z.output<typeof UnattendedBatchSchema>;
 type ArtifactMeta = {
   label: string;
   relativePath: string;
@@ -376,20 +475,141 @@ export type OverviewData = {
   readyDomainCount: number;
 };
 
+export type DiscoveryDomainCorpus = {
+  domain: DomainId;
+  label: string;
+  strapline: string;
+  sourceLabel: "worktree" | "primary";
+  generatedAt: string;
+  totalFetched: number;
+  totalMatched: number;
+  matchRate: number;
+  topPapers: Array<{
+    title: string;
+    doi: string | null | undefined;
+    journal: string | null | undefined;
+    publishedYear: number | null | undefined;
+    score: number;
+    matchedKeywords: string[];
+    paperUrl: string | null | undefined;
+  }>;
+};
+
+export type DiscoveryData = {
+  sourceLabel: "worktree" | "primary";
+  overview: OverviewData;
+  runHealth: RunHealthData;
+  domains: DiscoveryDomainCorpus[];
+  recommendations: string[];
+  artifacts: ArtifactMeta[];
+};
+
+export type CompareDomainRow = {
+  domain: DomainId;
+  label: string;
+  strapline: string;
+  sourceLabel: "worktree" | "primary";
+  reviewedInclusionF1: number;
+  reviewedProtocolFamilyAccuracy: number;
+  reviewedPaperTypeAccuracy: number;
+  reviewedMinimumDepthReady: boolean;
+  readinessScore: number;
+  evidenceScore: number;
+  commercialScore: number;
+  latestRunGeneratedAt: string;
+  healthState: string;
+  stopReason: string;
+  normalizedProtocolCount: number;
+  pendingSourceEnrichmentCount: number;
+  reviewedOutcomeCoverage: number;
+  reviewedStepPhaseCoverage: number;
+  bestWedgeTitle: string;
+  likelyPainPoint: string;
+  corpusGeneratedAt: string;
+  totalFetched: number;
+  totalMatched: number;
+  matchRate: number;
+  topSnapshotTitle: string;
+  reviewedInclusionF1Delta: number;
+  reviewedProtocolFamilyAccuracyDelta: number;
+  reviewedPaperTypeAccuracyDelta: number;
+  reviewedOutcomeCoverageDelta: number;
+  reviewedStepPhaseCoverageDelta: number;
+  gatePassCountDelta: number;
+};
+
+export type CompareData = {
+  sourceLabel: "worktree" | "primary";
+  overview: OverviewData;
+  runHealth: RunHealthData;
+  domains: CompareDomainRow[];
+  artifacts: ArtifactMeta[];
+};
+
+export type HistoryDomainRow = {
+  domain: DomainId;
+  label: string;
+  strapline: string;
+  sourceLabel: "worktree" | "primary";
+  latestRunGeneratedAt: string;
+  stopReason: string;
+  cyclesCompleted: number;
+  reviewedInclusionF1: number;
+  reviewedProtocolFamilyAccuracy: number;
+  reviewedPaperTypeAccuracy: number;
+  reviewedMinimumDepthReady: boolean;
+  reviewedOutcomeCoverage: number;
+  reviewedStepPhaseCoverage: number;
+  reviewedInclusionF1Delta: number;
+  reviewedProtocolFamilyAccuracyDelta: number;
+  reviewedPaperTypeAccuracyDelta: number;
+  gatePassCountDelta: number;
+  pendingBenchmarkProposalCount: number;
+  pendingSourceEnrichmentCount: number;
+  missingOutcomeCount: number;
+  missingStepPhaseCount: number;
+  cycles: Array<{
+    cycle: number;
+    ingestIncluded: boolean;
+    autonomousStateChanged: boolean;
+    proposalCount: number;
+    overrideProposalCount: number;
+    benchmarkProposalCount: number;
+    autoApplySafe: boolean;
+    pendingBenchmarkProposalCount: number;
+    pendingSourceEnrichmentCount: number;
+    reviewedOutcomeCoverage: number;
+    reviewedStepPhaseCoverage: number;
+    beforeBenchmarkHash: string;
+    afterBenchmarkHash: string;
+    beforeOverrideHash: string;
+    afterOverrideHash: string;
+  }>;
+};
+
+export type HistoryData = {
+  sourceLabel: "worktree" | "primary";
+  generatedAt: string;
+  overallState: string;
+  recommendations: string[];
+  domains: HistoryDomainRow[];
+  artifacts: ArtifactMeta[];
+};
+
 export type DomainData = {
   domain: DomainId;
   sourceLabel: "worktree" | "primary";
-  callPacket: z.infer<typeof CallPacketSchema>;
-  wedgeBrief: z.infer<typeof WedgeBriefSchema>;
-  atlasSummary: z.infer<typeof AtlasSummarySchema>;
-  atlasAnalysis: z.infer<typeof AtlasAnalysisSchema>;
-  benchmarkSummary: z.infer<typeof BenchmarkSummarySchema>;
-  benchmarkAnalysis: z.infer<typeof BenchmarkAnalysisSchema>;
-  batchSummary: z.infer<typeof UnattendedBatchSchema>;
-  benchmarkFile: z.infer<typeof BenchmarkFileSchema>;
-  sourceEnrichment: z.infer<typeof SourceEnrichmentFileSchema>;
-  proposalFile: z.infer<typeof AutoresearchProposalFileSchema>;
-  decisionFile: z.infer<typeof BenchmarkProposalDecisionFileSchema>;
+  callPacket: CallPacketData;
+  wedgeBrief: WedgeBriefData;
+  atlasSummary: AtlasSummaryData;
+  atlasAnalysis: AtlasAnalysisData;
+  benchmarkSummary: BenchmarkSummaryData;
+  benchmarkAnalysis: BenchmarkAnalysisData;
+  batchSummary: UnattendedBatchData;
+  benchmarkFile: BenchmarkFileData;
+  sourceEnrichment: SourceEnrichmentData;
+  proposalFile: ProposalFileData;
+  decisionFile: DecisionFileData;
   artifacts: ArtifactMeta[];
   extractionSnapshot: ExtractionSnapshotData | null;
   resolvedExtractionSnapshot: ExtractionSnapshotData | null;
@@ -415,8 +635,8 @@ export type DebugData = {
     conditionCount: number;
     stepCount: number;
   }>;
-  benchmarkEntry: z.infer<typeof BenchmarkFileSchema>["entries"][number] | null;
-  enrichmentRecord: z.infer<typeof SourceEnrichmentFileSchema>["records"][number] | null;
+  benchmarkEntry: BenchmarkFileData["entries"][number] | null;
+  enrichmentRecord: SourceEnrichmentData["records"][number] | null;
   selected: {
     paperId: string;
     title: string;
@@ -481,11 +701,21 @@ function labelForRoot(root: string): "worktree" | "primary" {
   return root === uniqueRoots()[0] ? "worktree" : "primary";
 }
 
-async function readJsonArtifact<T>(
+async function readJsonArtifact<TSchema extends z.ZodTypeAny>(
   relativePath: string,
-  schema: z.ZodType<T>,
+  schema: TSchema,
+  options: { optional: true }
+): Promise<DataSource<z.output<TSchema>> | null>;
+async function readJsonArtifact<TSchema extends z.ZodTypeAny>(
+  relativePath: string,
+  schema: TSchema,
+  options?: { optional?: false }
+): Promise<DataSource<z.output<TSchema>>>;
+async function readJsonArtifact<TSchema extends z.ZodTypeAny>(
+  relativePath: string,
+  schema: TSchema,
   options?: { optional?: boolean }
-): Promise<DataSource<T> | null> {
+): Promise<DataSource<z.output<TSchema>> | null> {
   const attemptedPaths: string[] = [];
 
   for (const root of uniqueRoots()) {
@@ -546,6 +776,14 @@ function toArtifactMeta(label: string, source: DataSource<unknown> | null): Arti
   };
 }
 
+function requireArtifact<T>(source: DataSource<T> | null, relativePath: string): DataSource<T> {
+  if (!source) {
+    throw new Error(`Missing artifact ${relativePath}`);
+  }
+
+  return source;
+}
+
 function sum(values: number[]) {
   return values.reduce((total, value) => total + value, 0);
 }
@@ -566,6 +804,16 @@ export function formatPercent(value: number) {
 
 export function formatScore(value: number) {
   return value.toFixed(3).replace(/0+$/, "").replace(/\.$/, "");
+}
+
+export function formatSignedScore(value: number) {
+  const sign = value > 0 ? "+" : value < 0 ? "-" : "";
+  return `${sign}${formatScore(Math.abs(value))}`;
+}
+
+export function formatSignedPercent(value: number) {
+  const sign = value > 0 ? "+" : value < 0 ? "-" : "";
+  return `${sign}${Math.round(Math.abs(value) * 100)}%`;
 }
 
 export function formatDateTime(value: string | null) {
@@ -634,6 +882,256 @@ export async function getOverviewData(): Promise<OverviewData> {
     readyDomainCount: cards.filter(
       (card) => card.reviewedOutcomeCoverage >= 0.4 && card.reviewedStepPhaseCoverage >= 0.4
     ).length
+  };
+}
+
+async function getRunHealthArtifact() {
+  return readJsonArtifact("data/autoresearch/run-health.json", RunHealthSchema);
+}
+
+async function getDomainSnapshotArtifact(domain: DomainId) {
+  return readJsonArtifact(`data/processed/${domain}/domain-snapshot.json`, DomainSnapshotSchema);
+}
+
+async function getAutoresearchCyclesArtifact(domain: DomainId) {
+  return readJsonArtifact(`data/autoresearch/${domain}/autoresearch-cycles.json`, AutoresearchCyclesSchema);
+}
+
+export async function getDiscoveryData(): Promise<DiscoveryData> {
+  const [overview, runHealth, snapshots] = await Promise.all([
+    getOverviewData(),
+    getRunHealthArtifact(),
+    Promise.all(DOMAIN_ORDER.map((domain) => getDomainSnapshotArtifact(domain)))
+  ]);
+  const runHealthSource = requireArtifact(runHealth, "data/autoresearch/run-health.json");
+  const snapshotSources = snapshots.map((source, index) =>
+    requireArtifact(source, `data/processed/${DOMAIN_ORDER[index]}/domain-snapshot.json`)
+  );
+
+  const domains = snapshotSources
+    .map((source) => {
+      const meta = getDomainMeta(source.data.domain);
+      const topPapers = [...source.data.papers]
+        .sort((left, right) => right.score - left.score || right.paper.title.localeCompare(left.paper.title))
+        .slice(0, 5)
+        .map((paper) => ({
+          title: paper.paper.title,
+          doi: paper.paper.doi,
+          journal: paper.paper.journal,
+          publishedYear: paper.paper.published_year,
+          score: paper.score,
+          matchedKeywords: paper.matchedKeywords,
+          paperUrl: paper.paper.paper_url
+        }));
+
+      return {
+        domain: source.data.domain,
+        label: meta.label,
+        strapline: meta.strapline,
+        sourceLabel: source.sourceLabel,
+        generatedAt: source.data.generatedAt,
+        totalFetched: source.data.totalFetched,
+        totalMatched: source.data.totalMatched,
+        matchRate: source.data.totalFetched > 0 ? source.data.totalMatched / source.data.totalFetched : 0,
+        topPapers
+      } satisfies DiscoveryDomainCorpus;
+    })
+    .sort(
+      (left, right) =>
+        DOMAIN_ORDER.indexOf(left.domain) - DOMAIN_ORDER.indexOf(right.domain)
+    );
+
+  return {
+    sourceLabel: pickSourceLabel(runHealthSource, ...snapshotSources),
+    overview,
+    runHealth: runHealthSource.data,
+    domains,
+    recommendations: runHealthSource.data.recommendations,
+    artifacts: [
+      toArtifactMeta("Run health", runHealthSource),
+      ...snapshotSources.map((source) =>
+        toArtifactMeta(
+          `${getDomainMeta(source.data.domain).label} corpus snapshot`,
+          source
+        )
+      )
+    ].filter((artifact): artifact is ArtifactMeta => artifact !== null)
+  };
+}
+
+export async function getCompareData(): Promise<CompareData> {
+  const [overview, runHealth, snapshots, domainData] = await Promise.all([
+    getOverviewData(),
+    getRunHealthArtifact(),
+    Promise.all(DOMAIN_ORDER.map((domain) => getDomainSnapshotArtifact(domain))),
+    Promise.all(DOMAIN_ORDER.map((domain) => getDomainData(domain)))
+  ]);
+  const runHealthSource = requireArtifact(runHealth, "data/autoresearch/run-health.json");
+  const snapshotSources = snapshots.map((source, index) =>
+    requireArtifact(source, `data/processed/${DOMAIN_ORDER[index]}/domain-snapshot.json`)
+  );
+
+  const domainSummaries = domainData.map((data, index) => {
+    const snapshot = snapshotSources[index];
+    const meta = getDomainMeta(data.domain);
+    const overviewCard = overview.cards.find((card) => card.domain === data.domain);
+    const runHealthDomain = runHealthSource.data.domains.find((entry) => entry.domain === data.domain);
+    const topPaper = [...snapshot.data.papers].sort(
+      (left, right) =>
+        right.score - left.score || right.paper.title.localeCompare(left.paper.title)
+    )[0];
+
+    if (!overviewCard || !runHealthDomain || !topPaper) {
+      throw new Error(`Compare data missing domain ${data.domain}`);
+    }
+
+    return {
+      domain: data.domain,
+      label: meta.label,
+      strapline: meta.strapline,
+      sourceLabel: data.sourceLabel,
+      reviewedInclusionF1: runHealthDomain.reviewedInclusionF1,
+      reviewedProtocolFamilyAccuracy: runHealthDomain.reviewedProtocolFamilyAccuracy,
+      reviewedPaperTypeAccuracy: runHealthDomain.reviewedPaperTypeAccuracy,
+      reviewedMinimumDepthReady: runHealthDomain.reviewedMinimumDepthReady,
+      readinessScore: overviewCard.readinessScore,
+      evidenceScore: overviewCard.evidenceScore,
+      commercialScore: overviewCard.commercialScore,
+      latestRunGeneratedAt: runHealthDomain.latestRunGeneratedAt,
+      healthState: runHealthDomain.healthState,
+      stopReason: runHealthDomain.stopReason,
+      normalizedProtocolCount: runHealthDomain.normalizedProtocolCount,
+      pendingSourceEnrichmentCount: runHealthDomain.pendingSourceEnrichmentCount,
+      reviewedOutcomeCoverage: runHealthDomain.reviewedOutcomeCoverage,
+      reviewedStepPhaseCoverage: runHealthDomain.reviewedStepPhaseCoverage,
+      bestWedgeTitle: runHealthDomain.bestWedgeTitle,
+      likelyPainPoint: runHealthDomain.likelyPainPoint,
+      corpusGeneratedAt: snapshot.data.generatedAt,
+      totalFetched: snapshot.data.totalFetched,
+      totalMatched: snapshot.data.totalMatched,
+      matchRate: snapshot.data.totalFetched > 0 ? snapshot.data.totalMatched / snapshot.data.totalFetched : 0,
+      topSnapshotTitle: topPaper.paper.title,
+      reviewedInclusionF1Delta: runHealthDomain.reviewedInclusionF1Delta,
+      reviewedProtocolFamilyAccuracyDelta: runHealthDomain.reviewedProtocolFamilyAccuracyDelta,
+      reviewedPaperTypeAccuracyDelta: runHealthDomain.reviewedPaperTypeAccuracyDelta,
+      reviewedOutcomeCoverageDelta: runHealthDomain.reviewedOutcomeCoverageDelta,
+      reviewedStepPhaseCoverageDelta: runHealthDomain.reviewedStepPhaseCoverageDelta,
+      gatePassCountDelta: runHealthDomain.gatePassCountDelta
+    } satisfies CompareDomainRow;
+  });
+
+  return {
+    sourceLabel: pickSourceLabel(runHealthSource, ...snapshotSources),
+    overview,
+    runHealth: runHealthSource.data,
+    domains: domainSummaries,
+    artifacts: [
+      toArtifactMeta("Run health", runHealthSource),
+      ...snapshotSources.map((source) =>
+        toArtifactMeta(
+          `${getDomainMeta(source.data.domain).label} corpus snapshot`,
+          source
+        )
+      ),
+      ...domainData.flatMap((data) =>
+        data.artifacts.filter((artifact) =>
+          [
+            "Benchmark summary",
+            "Benchmark analysis",
+            "Atlas analysis",
+            "Atlas summary",
+            "Wedge brief"
+          ].includes(artifact.label)
+        )
+      )
+    ].filter((artifact): artifact is ArtifactMeta => artifact !== null)
+  };
+}
+
+export async function getHistoryData(): Promise<HistoryData> {
+  const [runHealth, domainData, cyclesData] = await Promise.all([
+    getRunHealthArtifact(),
+    Promise.all(DOMAIN_ORDER.map((domain) => getDomainData(domain))),
+    Promise.all(DOMAIN_ORDER.map((domain) => getAutoresearchCyclesArtifact(domain)))
+  ]);
+  const runHealthSource = requireArtifact(runHealth, "data/autoresearch/run-health.json");
+  const cycleSources = cyclesData.map((source, index) =>
+    requireArtifact(source, `data/autoresearch/${DOMAIN_ORDER[index]}/autoresearch-cycles.json`)
+  );
+
+  const domains = domainData.map((data, index) => {
+    const meta = getDomainMeta(data.domain);
+    const cyclesSource = cycleSources[index];
+    const runHealthDomain = runHealthSource.data.domains.find((entry) => entry.domain === data.domain);
+
+    if (!runHealthDomain) {
+      throw new Error(`Run health missing domain ${data.domain}`);
+    }
+
+    return {
+      domain: data.domain,
+      label: meta.label,
+      strapline: meta.strapline,
+      sourceLabel: data.sourceLabel,
+      latestRunGeneratedAt: runHealthDomain.latestRunGeneratedAt,
+      stopReason: runHealthDomain.stopReason,
+      cyclesCompleted: cyclesSource.data.cyclesCompleted,
+      reviewedInclusionF1: runHealthDomain.reviewedInclusionF1,
+      reviewedProtocolFamilyAccuracy: runHealthDomain.reviewedProtocolFamilyAccuracy,
+      reviewedPaperTypeAccuracy: runHealthDomain.reviewedPaperTypeAccuracy,
+      reviewedMinimumDepthReady: runHealthDomain.reviewedMinimumDepthReady,
+      reviewedOutcomeCoverage: runHealthDomain.reviewedOutcomeCoverage,
+      reviewedStepPhaseCoverage: runHealthDomain.reviewedStepPhaseCoverage,
+      reviewedInclusionF1Delta: runHealthDomain.reviewedInclusionF1Delta,
+      reviewedProtocolFamilyAccuracyDelta: runHealthDomain.reviewedProtocolFamilyAccuracyDelta,
+      reviewedPaperTypeAccuracyDelta: runHealthDomain.reviewedPaperTypeAccuracyDelta,
+      gatePassCountDelta: runHealthDomain.gatePassCountDelta,
+      pendingBenchmarkProposalCount: runHealthDomain.pendingBenchmarkProposalCount,
+      pendingSourceEnrichmentCount: runHealthDomain.pendingSourceEnrichmentCount,
+      missingOutcomeCount: runHealthDomain.missingOutcomeCount,
+      missingStepPhaseCount: runHealthDomain.missingStepPhaseCount,
+      cycles: cyclesSource.data.cycles.map((cycle) => ({
+        cycle: cycle.cycle,
+        ingestIncluded: cycle.ingestIncluded,
+        autonomousStateChanged: cycle.autonomousStateChanged,
+        proposalCount: cycle.proposalCount,
+        overrideProposalCount: cycle.overrideProposalCount,
+        benchmarkProposalCount: cycle.benchmarkProposalCount,
+        autoApplySafe: cycle.autoApplySafe,
+        pendingBenchmarkProposalCount: cycle.pendingBenchmarkProposalCount,
+        pendingSourceEnrichmentCount: cycle.pendingSourceEnrichmentCount,
+        reviewedOutcomeCoverage: cycle.reviewedOutcomeCoverage,
+        reviewedStepPhaseCoverage: cycle.reviewedStepPhaseCoverage,
+        beforeBenchmarkHash: cycle.beforeState.benchmarkHash,
+        afterBenchmarkHash: cycle.afterState.benchmarkHash,
+        beforeOverrideHash: cycle.beforeState.overrideHash,
+        afterOverrideHash: cycle.afterState.overrideHash
+      }))
+    } satisfies HistoryDomainRow;
+  });
+
+  return {
+    sourceLabel: pickSourceLabel(runHealthSource, ...cycleSources),
+    generatedAt: runHealthSource.data.generatedAt,
+    overallState: runHealthSource.data.overallState,
+    recommendations: runHealthSource.data.recommendations,
+    domains,
+    artifacts: [
+      toArtifactMeta("Run health", runHealthSource),
+      ...cycleSources.map((source) =>
+        toArtifactMeta(`${getDomainMeta(source.data.domain).label} autoresearch cycles`, source)
+      ),
+      ...domainData.flatMap((data) =>
+        data.artifacts.filter((artifact) =>
+          [
+            "Benchmark summary",
+            "Benchmark analysis",
+            "Autoresearch proposals",
+            "Benchmark decisions"
+          ].includes(artifact.label)
+        )
+      )
+    ].filter((artifact): artifact is ArtifactMeta => artifact !== null)
   };
 }
 
@@ -871,7 +1369,7 @@ export async function getDebugData(
   };
 }
 
-export function getReviewedEntryCounts(benchmarkFile: z.infer<typeof BenchmarkFileSchema>) {
+export function getReviewedEntryCounts(benchmarkFile: BenchmarkFileData) {
   return {
     reviewed: benchmarkFile.entries.filter((entry) => entry.reviewStatus === "reviewed").length,
     seeded: benchmarkFile.entries.filter((entry) => entry.reviewStatus === "seeded").length,
@@ -881,7 +1379,7 @@ export function getReviewedEntryCounts(benchmarkFile: z.infer<typeof BenchmarkFi
 }
 
 export function getSourceEnrichmentCounts(
-  file: z.infer<typeof SourceEnrichmentFileSchema>
+  file: SourceEnrichmentData
 ) {
   return {
     pending: file.records.filter((record) => record.status === "pending").length,

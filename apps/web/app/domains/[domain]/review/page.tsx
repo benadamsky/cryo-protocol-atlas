@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   ArtifactLedger,
@@ -7,11 +8,12 @@ import {
   MetricCard,
   MetricGrid,
   PageIntro,
+  QuickFacts,
   Section,
   SourceNote,
   StatusPill
 } from "@/components/atlas-ui";
-import { getDomainData, getSourceEnrichmentCounts } from "@/lib/data";
+import { formatDateTime, getDomainData, getSourceEnrichmentCounts } from "@/lib/data";
 import { getDomainMeta, parseDomainId } from "@/lib/domain";
 
 export default async function ReviewPage({
@@ -31,15 +33,70 @@ export default async function ReviewPage({
         <PageIntro
           eyebrow={`${meta.label} Review Queue`}
           title="Human review backlog and proposal state"
-          summary="This page is still read-only. It exposes the current queue state without moving benchmark or enrichment decisions out of the pipeline."
+          summary="This page is still read-only. It exposes the current queue state without moving benchmark or enrichment decisions out of the pipeline. Use it to see how candidate evidence becomes reviewable provenance."
         >
           <div className="hero__stack">
             <DomainBadge domain={domain} />
             <SourceNote sourceLabel={data.sourceLabel} />
+            <StatusPill tone={enrichmentCounts.pending > 0 ? "warn" : "good"}>
+              {enrichmentCounts.pending > 0 ? "queue open" : "queue clean"}
+            </StatusPill>
+            <QuickFacts
+              items={[
+                {
+                  label: "Enrichment generated",
+                  value: formatDateTime(data.sourceEnrichment.generatedAt)
+                },
+                {
+                  label: "Proposal generated",
+                  value: formatDateTime(data.proposalFile.generatedAt)
+                },
+                {
+                  label: "Decision generated",
+                  value: formatDateTime(data.decisionFile.generatedAt)
+                },
+                {
+                  label: "Read path",
+                  value: data.sourceLabel
+                }
+              ]}
+            />
           </div>
         </PageIntro>
 
         <DomainTabs current="review" domain={domain} />
+
+        <Section
+          title="Review flow"
+          subtitle="This lane is the bridge between candidate evidence, conservative autoresearch, and benchmark decisions."
+        >
+          <div className="split-grid">
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Source enrichment</h3>
+                <StatusPill tone="warn">candidate evidence</StatusPill>
+              </div>
+              <p>Shows where source support remains manual, thin, or pending further review.</p>
+              <Link href={`/domains/${domain}/debug`}>Check debug</Link>
+            </article>
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Autoresearch proposals</h3>
+                <StatusPill tone="neutral">conservative loop</StatusPill>
+              </div>
+              <p>Shows the read-only loop output before anything can mutate the validated slice.</p>
+              <Link href={`/domains/${domain}/benchmark`}>Check benchmark</Link>
+            </article>
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Decisions</h3>
+                <StatusPill tone="good">promoted state</StatusPill>
+              </div>
+              <p>Shows the review outcome currently stored in the generated decision file.</p>
+              <Link href={`/domains/${domain}/atlas`}>Check atlas</Link>
+            </article>
+          </div>
+        </Section>
 
         <MetricGrid>
           <MetricCard label="Pending enrichments" value={String(enrichmentCounts.pending)} tone="warn" />
@@ -50,14 +107,20 @@ export default async function ReviewPage({
 
         <Section title="Source-enrichment queue" subtitle="Evidence depth remains manual by design. This queue shows where better source support still matters.">
           <DataTable
-            columns={["Status", "Priority", "Paper", "DOI", "Rationale", "Excerpts"]}
+            columns={["Status", "Priority", "Paper", "Source", "Rationale", "Excerpts"]}
             rows={data.sourceEnrichment.records.map((record) => [
               <StatusPill key={`${record.paperId}-status`} tone={record.status === "reviewed" ? "good" : "warn"}>
                 {record.status}
               </StatusPill>,
               record.priority,
               record.title,
-              record.doi ?? "n/a",
+              record.paperUrl ? (
+                <Link href={record.paperUrl} target="_blank" rel="noreferrer">
+                  {record.doi ?? "paper url"}
+                </Link>
+              ) : (
+                record.doi ?? "n/a"
+              ),
               record.rationale,
               record.excerpts.length
             ])}
@@ -112,6 +175,26 @@ export default async function ReviewPage({
                 ["Reviewed secondary-supported rows", data.wedgeBrief.evidenceQuality.reviewedSecondarySupportedCount],
                 ["Reviewed manual-only rows", data.wedgeBrief.evidenceQuality.reviewedManualOnlyCount],
                 ["Secondary-source reviewed", data.wedgeBrief.evidenceQuality.secondarySourceReviewedCount]
+              ]}
+            />
+            <QuickFacts
+              items={[
+                {
+                  label: "Pending",
+                  value: enrichmentCounts.pending
+                },
+                {
+                  label: "Reviewed",
+                  value: enrichmentCounts.reviewed
+                },
+                {
+                  label: "Rejected",
+                  value: enrichmentCounts.rejected
+                },
+                {
+                  label: "In progress",
+                  value: enrichmentCounts.inProgress
+                }
               ]}
             />
           </Section>
