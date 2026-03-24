@@ -1,9 +1,9 @@
-import { DomainIdSchema, type DiscoverySource, type DomainId } from "../../shared/src/schema.js";
+import { DomainIdSchema, type DomainId, type LiveDiscoveryProvider } from "../../shared/src/schema.js";
 
 type DiscoveryDomainConfig = {
   label: string;
   queryDescription: string;
-  providerQueries: Record<Exclude<DiscoverySource, "manual">, string>;
+  providerQueries: Record<LiveDiscoveryProvider, string>;
   anchorKeywords: string[];
   supportingKeywords: string[];
 };

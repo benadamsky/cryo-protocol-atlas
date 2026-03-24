@@ -2,8 +2,12 @@
   "domain": "islets",
   "importFileCount": 1,
   "importedRecordCount": 4,
-  "totalManualRecordCount": 4,
+  "mergedImportedRecordCount": 4,
+  "manualOnlyRecordCount": 0,
   "importedSources": [
     "pubmed:pubmed-seed.json"
-  ]
+  ],
+  "sourceBreakdown": {
+    "pubmed": 4
+  }
 }

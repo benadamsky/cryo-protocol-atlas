@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-24T00:08:15.999Z",
+  "generatedAt": "2026-03-24T00:26:37.981Z",
   "domain": "ovarian-tissue",
-  "sourceSnapshotGeneratedAt": "2026-03-24T00:08:07.910Z",
+  "sourceSnapshotGeneratedAt": "2026-03-24T00:26:37.833Z",
   "candidateCount": 30,
   "trackedCount": 28,
   "novelCandidateCount": 2,
@@ -17,13 +17,13 @@
         "full-text landing page is available",
         "domain relevance score is high"
       ],
-      "rankingScore": 11.1,
+      "rankingScore": 11.017,
       "relevanceScore": 10.7,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
+      "sourceDiversityScore": 0.167,
       "sourceCount": 1,
       "sourceTypes": [
-        "manual"
+        "pubmed"
       ],
       "fullTextAvailability": "full-text-link",
       "matchedKeywords": [
@@ -47,13 +47,13 @@
         "full-text landing page is available",
         "domain relevance score is non-trivial"
       ],
-      "rankingScore": 4.7,
+      "rankingScore": 4.617,
       "relevanceScore": 4.3,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
+      "sourceDiversityScore": 0.167,
       "sourceCount": 1,
       "sourceTypes": [
-        "manual"
+        "pubmed"
       ],
       "fullTextAvailability": "full-text-link",
       "matchedKeywords": [

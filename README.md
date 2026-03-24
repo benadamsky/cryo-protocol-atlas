@@ -96,11 +96,13 @@ The current repo is a protocol-intelligence MVP, not a discovery engine. It esta
 The benchmarked atlas loop remains conservative and slice-stable. A separate discovery lane now begins under `data/discovery/<domain>/`.
 
 - `bun run discover:<domain>` queries a broader literature surface and merges candidates from multiple sources.
-- `bun run discover-imports:<domain>` scans `data/discovery/<domain>/imports/*.json` for normalized external search export files and merges them into the canonical `manual-source-records.json`.
+- `bun run discover-imports:<domain>` scans `data/discovery/<domain>/imports/*.json` for normalized external search export files and merges them into `imported-source-records.json`.
 - `bun run discover-queue:<domain>` compares those candidates against the current domain slice and writes a manual promotion queue for genuinely novel papers.
 - `bun run discover-refresh:<domain>` runs import merge + snapshot rebuild + promotion-queue rebuild as one bounded refresh step.
 - The first providers are `cryodb`, `openalex`, `crossref`, and `europe-pmc`.
-- You can still edit `data/discovery/<domain>/manual-source-records.json` directly, but the preferred path is to drop normalized import files into `data/discovery/<domain>/imports/`.
+- `data/discovery/<domain>/manual-source-records.json` is now reserved for true manual-only records.
+- External search exports should go into `data/discovery/<domain>/imports/`.
+- The merged imported feed is written to `data/discovery/<domain>/imported-source-records.json`, preserving per-record provenance such as `pubmed` versus `openalex`.
 - Import files should follow the `DiscoveryImportFileSchema` shape in [`packages/shared/src/schema.ts`](./packages/shared/src/schema.ts): `{ generatedAt, domain, source, label?, records[] }`.
 - Discovery outputs are additive. They do not directly mutate `data/processed/<domain>/`, benchmarks, or override files.
 - The purpose is to widen the candidate evidence frontier first, then promote only reviewed high-signal papers into the benchmarked slice later.

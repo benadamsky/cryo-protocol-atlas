@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-24T00:08:07.919Z",
+  "generatedAt": "2026-03-24T00:27:25.057Z",
   "domain": "islets",
   "queryDescription": "Cryopreservation literature for pancreatic islets, islet transplantation, graft function, and post-thaw islet recovery.",
   "totalCandidates": 57,
@@ -37,8 +37,8 @@
       "error": "fetch failed"
     },
     {
-      "source": "manual",
-      "query": "manual-source-records.json",
+      "source": "pubmed",
+      "query": "imported-source-records.json",
       "fetchedCount": 4,
       "acceptedCount": 4,
       "failed": false,
@@ -60,7 +60,7 @@
       "sourceCount": 1,
       "sources": [
         {
-          "source": "manual",
+          "source": "pubmed",
           "sourceId": "pubmed:35288694",
           "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/35288694/",
           "rawQuery": "site:pubmed.ncbi.nlm.nih.gov pancreatic islet cryopreservation vitrification",
@@ -100,13 +100,13 @@
         "vitrification"
       ],
       "sourceTypes": [
-        "manual"
+        "pubmed"
       ],
       "fullTextAvailability": "open-access-full-text",
       "relevanceScore": 13.9,
       "authorityScore": 0.3,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 14.45
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 14.367
     },
     {
       "domain": "islets",
@@ -165,8 +165,8 @@
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 12.8,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 13.2
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 13.117
     },
     {
       "domain": "islets",
@@ -182,7 +182,7 @@
       "sourceCount": 1,
       "sources": [
         {
-          "source": "manual",
+          "source": "pubmed",
           "sourceId": "pubmed:40083015",
           "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/40083015/",
           "rawQuery": "site:pubmed.ncbi.nlm.nih.gov pancreatic islet trehalose cryopreservation transplantation",
@@ -218,13 +218,13 @@
         "transplantation"
       ],
       "sourceTypes": [
-        "manual"
+        "pubmed"
       ],
       "fullTextAvailability": "open-access-full-text",
       "relevanceScore": 11.7,
       "authorityScore": 0.3,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 12.25
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 12.167
     },
     {
       "domain": "islets",
@@ -240,7 +240,7 @@
       "sourceCount": 1,
       "sources": [
         {
-          "source": "manual",
+          "source": "pubmed",
           "sourceId": "pubmed:38362049",
           "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/38362049/",
           "rawQuery": "site:pubmed.ncbi.nlm.nih.gov mouse pancreatic islets cryopreservation hydroxyethyl starch",
@@ -276,13 +276,13 @@
         "pancreatic islets"
       ],
       "sourceTypes": [
-        "manual"
+        "pubmed"
       ],
       "fullTextAvailability": "open-access-full-text",
       "relevanceScore": 11.7,
       "authorityScore": 0.3,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 12.25
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 12.167
     },
     {
       "domain": "islets",
@@ -298,7 +298,7 @@
       "sourceCount": 1,
       "sources": [
         {
-          "source": "manual",
+          "source": "pubmed",
           "sourceId": "pubmed:37476055",
           "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/37476055/",
           "rawQuery": "site:pubmed.ncbi.nlm.nih.gov pancreatic islet vitrification nanowarming cryopreservation",
@@ -334,13 +334,13 @@
         "vitrification"
       ],
       "sourceTypes": [
-        "manual"
+        "pubmed"
       ],
       "fullTextAvailability": "open-access-full-text",
       "relevanceScore": 11.7,
       "authorityScore": 0.3,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 12.25
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 12.167
     },
     {
       "domain": "islets",
@@ -397,8 +397,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 11.7,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11.95
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 11.867
     },
     {
       "domain": "islets",
@@ -455,8 +455,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 11.7,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11.95
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 11.867
     },
     {
       "domain": "islets",
@@ -513,8 +513,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 11.7,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11.95
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 11.867
     },
     {
       "domain": "islets",
@@ -571,8 +571,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 11.7,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11.95
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 11.867
     },
     {
       "domain": "islets",
@@ -629,8 +629,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 11.7,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11.95
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 11.867
     },
     {
       "domain": "islets",
@@ -685,8 +685,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 11.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 11.767
     },
     {
       "domain": "islets",
@@ -741,8 +741,8 @@
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 10.6,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.917
     },
     {
       "domain": "islets",
@@ -797,8 +797,8 @@
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 10.6,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.917
     },
     {
       "domain": "islets",
@@ -853,8 +853,8 @@
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 10.6,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.917
     },
     {
       "domain": "islets",
@@ -909,8 +909,8 @@
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 10.6,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.917
     },
     {
       "domain": "islets",
@@ -965,8 +965,8 @@
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 10.6,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.917
     },
     {
       "domain": "islets",
@@ -1021,8 +1021,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1077,8 +1077,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1133,8 +1133,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1189,8 +1189,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1245,8 +1245,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1301,8 +1301,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1357,8 +1357,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1413,8 +1413,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1469,8 +1469,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1525,8 +1525,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1581,8 +1581,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1637,8 +1637,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "islets",
@@ -1691,8 +1691,8 @@
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 9.5,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.9
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.817
     },
     {
       "domain": "islets",
@@ -1745,8 +1745,8 @@
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 9.5,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.9
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.817
     },
     {
       "domain": "islets",
@@ -1799,8 +1799,8 @@
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 9.5,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.9
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.817
     },
     {
       "domain": "islets",
@@ -1853,8 +1853,8 @@
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 9.5,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.9
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.817
     },
     {
       "domain": "islets",
@@ -1907,8 +1907,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -1961,8 +1961,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2015,8 +2015,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2069,8 +2069,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2123,8 +2123,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2177,8 +2177,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2231,8 +2231,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2285,8 +2285,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2339,8 +2339,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2393,8 +2393,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2447,8 +2447,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2501,8 +2501,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "islets",
@@ -2555,8 +2555,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 8.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 8.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 8.667
     },
     {
       "domain": "islets",
@@ -2609,8 +2609,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 8.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 8.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 8.667
     },
     {
       "domain": "islets",
@@ -2661,8 +2661,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 8.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 8.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 8.567
     },
     {
       "domain": "islets",
@@ -2713,8 +2713,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 8.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 8.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 8.567
     },
     {
       "domain": "islets",
@@ -2765,8 +2765,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 7.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 7.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 7.567
     },
     {
       "domain": "islets",
@@ -2817,8 +2817,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 6.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 6.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 6.567
     },
     {
       "domain": "islets",
@@ -2869,8 +2869,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 6.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 6.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 6.567
     },
     {
       "domain": "islets",
@@ -2921,8 +2921,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 6.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 6.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 6.567
     },
     {
       "domain": "islets",
@@ -2971,8 +2971,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 5.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 5.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 5.467
     },
     {
       "domain": "islets",
@@ -3021,8 +3021,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 5.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 5.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 5.467
     },
     {
       "domain": "islets",
@@ -3071,8 +3071,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 5.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 5.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 5.467
     },
     {
       "domain": "islets",
@@ -3121,8 +3121,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 4.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 4.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 4.467
     },
     {
       "domain": "islets",
@@ -3169,8 +3169,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 4.2,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 4.45
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 4.367
     }
   ]
 }

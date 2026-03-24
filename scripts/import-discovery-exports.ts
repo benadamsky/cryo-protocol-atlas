@@ -3,11 +3,11 @@ import { join } from "node:path";
 import {
   DiscoveryImportFileSchema,
   DomainIdSchema,
+  MergedDiscoveryImportFileSchema,
   ManualDiscoveryImportFileSchema,
   type DomainId,
   type DiscoveryImportRecord,
-  type ManualDiscoveryRecord,
-  type ManualDiscoveryImportFile
+  type ManualDiscoveryRecord
 } from "../packages/shared/src/schema.js";
 
 const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
@@ -49,8 +49,13 @@ function preferYear(values: Array<number | null | undefined>): number | null {
   return years[0] ?? null;
 }
 
-function mergeRecords(records: DiscoveryImportRecord[]): ManualDiscoveryRecord {
+function mergeRecords(records: DiscoveryImportRecord[]): DiscoveryImportRecord {
+  const preferredSource =
+    records.find((record) => record.source !== "manual" && record.source !== "other")?.source ??
+    records[0]?.source ??
+    "manual";
   return {
+    source: preferredSource,
     sourceId: preferString(records.map((record) => record.sourceId)) ?? crypto.randomUUID(),
     sourceUrl: preferString(records.map((record) => record.sourceUrl ?? null)),
     rawQuery: preferString(records.map((record) => record.rawQuery)) ?? "manual-import",
@@ -73,34 +78,19 @@ function mergeRecords(records: DiscoveryImportRecord[]): ManualDiscoveryRecord {
   };
 }
 
-function toImportRecord(record: ManualDiscoveryRecord): DiscoveryImportRecord {
-  return {
-    source: "manual",
-    sourceId: record.sourceId,
-    sourceUrl: record.sourceUrl ?? null,
-    rawQuery: record.rawQuery,
-    title: record.title,
-    abstract: record.abstract ?? null,
-    doi: record.doi ?? null,
-    pmid: record.pmid ?? null,
-    pmcid: record.pmcid ?? null,
-    journal: record.journal ?? null,
-    publishedYear: record.publishedYear ?? null,
-    authorsFlat: record.authorsFlat ?? null,
-    citationCount: record.citationCount ?? null,
-    fullTextAvailability: record.fullTextAvailability
-  };
-}
-
 async function main(selectedDomain: DomainId): Promise<void> {
   const discoveryDir = join(process.cwd(), "data", "discovery", selectedDomain);
   const importsDir = join(discoveryDir, "imports");
   const manualFilePath = join(discoveryDir, "manual-source-records.json");
+  const mergedFilePath = join(discoveryDir, "imported-source-records.json");
   const summaryJsonPath = join(discoveryDir, "import-summary.json");
   const summaryMarkdownPath = join(discoveryDir, "import-summary.md");
 
-  const existingManual = await readOptionalFile(manualFilePath);
-  const existingManualFile: ManualDiscoveryImportFile = existingManual
+  const [existingManual, existingMerged] = await Promise.all([
+    readOptionalFile(manualFilePath),
+    readOptionalFile(mergedFilePath)
+  ]);
+  const existingManualFile = existingManual
     ? ManualDiscoveryImportFileSchema.parse(JSON.parse(existingManual))
     : {
         generatedAt: new Date().toISOString(),
@@ -123,7 +113,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
     importedSources.push(`${parsed.source}:${fileName}`);
   }
 
-  const allRecords = [...existingManualFile.records.map(toImportRecord), ...importedRecords];
+  const allRecords = importedRecords;
   const buckets = new Map<string, DiscoveryImportRecord[]>();
   for (const record of allRecords) {
     const key = dedupeKey(record);
@@ -140,27 +130,35 @@ async function main(selectedDomain: DomainId): Promise<void> {
         left.title.localeCompare(right.title)
     );
 
-  const nextManualFile = ManualDiscoveryImportFileSchema.parse({
+  const nextMergedFile = MergedDiscoveryImportFileSchema.parse({
     generatedAt: new Date().toISOString(),
     domain: selectedDomain,
     records: mergedRecords
   });
 
-  const previousComparable = existingManual
-    ? JSON.stringify({ ...JSON.parse(existingManual), generatedAt: null })
+  const previousComparable = existingMerged
+    ? JSON.stringify({ ...JSON.parse(existingMerged), generatedAt: null })
     : null;
-  const nextComparable = JSON.stringify({ ...nextManualFile, generatedAt: null });
-  const stableManualFile =
-    previousComparable === nextComparable && existingManual
-      ? ManualDiscoveryImportFileSchema.parse(JSON.parse(existingManual))
-      : nextManualFile;
+  const nextComparable = JSON.stringify({ ...nextMergedFile, generatedAt: null });
+  const stableMergedFile =
+    previousComparable === nextComparable && existingMerged
+      ? MergedDiscoveryImportFileSchema.parse(JSON.parse(existingMerged))
+      : nextMergedFile;
+
+  const manualOnlyCount = existingManualFile.records.filter((record) => record.source === "manual").length;
+  const sourceBreakdown = stableMergedFile.records.reduce<Record<string, number>>((acc, record) => {
+    acc[record.source] = (acc[record.source] ?? 0) + 1;
+    return acc;
+  }, {});
 
   const summary = {
     domain: selectedDomain,
     importFileCount: jsonFiles.length,
     importedRecordCount: importedRecords.length,
-    totalManualRecordCount: stableManualFile.records.length,
-    importedSources
+    mergedImportedRecordCount: stableMergedFile.records.length,
+    manualOnlyRecordCount: manualOnlyCount,
+    importedSources,
+    sourceBreakdown
   };
 
   const summaryMarkdown = [
@@ -168,8 +166,14 @@ async function main(selectedDomain: DomainId): Promise<void> {
     "",
     `- import files: ${summary.importFileCount}`,
     `- imported records: ${summary.importedRecordCount}`,
-    `- total manual discovery records: ${summary.totalManualRecordCount}`,
+    `- merged imported discovery records: ${summary.mergedImportedRecordCount}`,
+    `- manual-only discovery records: ${summary.manualOnlyRecordCount}`,
     `- imported sources: ${summary.importedSources.join(", ") || "none"}`,
+    `- source breakdown: ${
+      Object.entries(summary.sourceBreakdown)
+        .map(([source, count]) => `${source}=${count}`)
+        .join(", ") || "none"
+    }`,
     ""
   ].join("\n");
 
@@ -177,9 +181,9 @@ async function main(selectedDomain: DomainId): Promise<void> {
   await writeFile(summaryJsonPath, JSON.stringify(summary, null, 2), "utf8");
   await writeFile(summaryMarkdownPath, summaryMarkdown, "utf8");
 
-  const nextManualContent = JSON.stringify(stableManualFile, null, 2);
-  if (existingManual !== nextManualContent) {
-    await writeFile(manualFilePath, nextManualContent, "utf8");
+  const nextMergedContent = JSON.stringify(stableMergedFile, null, 2);
+  if (existingMerged !== nextMergedContent) {
+    await writeFile(mergedFilePath, nextMergedContent, "utf8");
   }
 
   console.log(JSON.stringify(summary, null, 2));

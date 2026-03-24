@@ -14,7 +14,8 @@ Current responsibilities:
 - source adapters for broader literature providers
 - normalized import merge from `data/discovery/<domain>/imports/*.json`
 - deduped discovery snapshots under `data/discovery/<domain>/`
-- canonical merged manual records via `data/discovery/<domain>/manual-source-records.json`
+- merged imported records via `data/discovery/<domain>/imported-source-records.json`
+- manual-only records via `data/discovery/<domain>/manual-source-records.json`
 - promotion queue generation for novel candidates
 
 Current providers:

@@ -89,12 +89,23 @@ export type DomainSnapshot = z.infer<typeof DomainSnapshotSchema>;
 
 export const DiscoverySourceSchema = z.enum([
   "cryodb",
+  "pubmed",
   "openalex",
   "crossref",
   "europe-pmc",
-  "manual"
+  "semantic-scholar",
+  "manual",
+  "other"
 ]);
 export type DiscoverySource = z.infer<typeof DiscoverySourceSchema>;
+
+export const LiveDiscoveryProviderSchema = z.enum([
+  "cryodb",
+  "openalex",
+  "crossref",
+  "europe-pmc"
+]);
+export type LiveDiscoveryProvider = z.infer<typeof LiveDiscoveryProviderSchema>;
 
 export const FullTextAvailabilitySchema = z.enum([
   "unknown",
@@ -168,6 +179,7 @@ export const DiscoverySnapshotSchema = z.object({
 export type DiscoverySnapshot = z.infer<typeof DiscoverySnapshotSchema>;
 
 export const ManualDiscoveryRecordSchema = z.object({
+  source: DiscoverySourceSchema.default("manual"),
   sourceId: z.string(),
   sourceUrl: z.string().nullable().optional(),
   rawQuery: z.string().default("manual-import"),
@@ -215,6 +227,13 @@ export const DiscoveryImportFileSchema = z.object({
   records: z.array(DiscoveryImportRecordSchema)
 });
 export type DiscoveryImportFile = z.infer<typeof DiscoveryImportFileSchema>;
+
+export const MergedDiscoveryImportFileSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  records: z.array(DiscoveryImportRecordSchema)
+});
+export type MergedDiscoveryImportFile = z.infer<typeof MergedDiscoveryImportFileSchema>;
 
 export const DiscoveryPromotionRecommendationSchema = z.enum([
   "promote",

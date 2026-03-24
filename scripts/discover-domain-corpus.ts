@@ -5,9 +5,10 @@ import {
   scoreDiscoveryText,
   shouldKeepDiscoveryCandidate
 } from "../packages/discovery/src/domain.js";
-import { DISCOVERY_SOURCES, fetchDiscoverySource } from "../packages/discovery/src/providers.js";
+import { LIVE_DISCOVERY_PROVIDERS, fetchDiscoverySource } from "../packages/discovery/src/providers.js";
 import {
   ManualDiscoveryImportFileSchema,
+  MergedDiscoveryImportFileSchema,
   DiscoveryPaperSchema,
   DiscoverySnapshotSchema,
   DomainIdSchema,
@@ -19,6 +20,7 @@ import {
 } from "../packages/shared/src/schema.js";
 
 const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const SOURCE_DIVERSITY_BASELINE = ["cryodb", "pubmed", "openalex", "crossref", "europe-pmc", "semantic-scholar"] as const;
 
 function normalizeTitle(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -67,7 +69,10 @@ function rankPaper(dedupeKey: string, records: DiscoverySourceRecord[], domain: 
   const sourceTypes = Array.from(new Set(records.map((record) => record.source))).sort();
   const matchedKeywords = Array.from(new Set(records.flatMap((record) => record.matchedKeywords))).sort();
   const sourceCount = records.length;
-  const sourceDiversityScore = Number((sourceTypes.length / DISCOVERY_SOURCES.length).toFixed(3));
+  const sourceDiversityCount = sourceTypes.filter((source) =>
+    SOURCE_DIVERSITY_BASELINE.includes(source as (typeof SOURCE_DIVERSITY_BASELINE)[number])
+  ).length;
+  const sourceDiversityScore = Number((sourceDiversityCount / SOURCE_DIVERSITY_BASELINE.length).toFixed(3));
   const relevanceScore = Number(
     (records.reduce((max, record) => Math.max(max, record.relevanceScore), 0) + matchedKeywords.length * 0.1).toFixed(3)
   );
@@ -144,12 +149,12 @@ async function readOptionalJson<T>(path: string): Promise<T | null> {
   }
 }
 
-function mapManualRecord(
+function mapImportedRecord(
   record: ReturnType<typeof ManualDiscoveryImportFileSchema.parse>["records"][number],
   domain: DomainId
 ): DiscoverySourceRecord | null {
   const paper = DiscoveryPaperSchema.shape.sources.element.parse({
-    source: "manual",
+    source: record.source,
     sourceId: record.sourceId,
     sourceUrl: record.sourceUrl ?? null,
     rawQuery: record.rawQuery,
@@ -178,20 +183,43 @@ function mapManualRecord(
   };
 }
 
+function recordIdentity(record: DiscoverySourceRecord): string {
+  if (record.doi) {
+    return `${record.source}:doi:${record.doi.toLowerCase()}`;
+  }
+  if (record.pmid) {
+    return `${record.source}:pmid:${record.pmid}`;
+  }
+  if (record.pmcid) {
+    return `${record.source}:pmcid:${record.pmcid}`;
+  }
+  return `${record.source}:title:${normalizeTitle(record.title)}`;
+}
+
+function addDiscoveryRecord(
+  recordBuckets: Map<string, DiscoverySourceRecord[]>,
+  record: DiscoverySourceRecord
+): void {
+  const dedupeKey = buildDedupeKey(record);
+  const bucket = recordBuckets.get(dedupeKey) ?? [];
+  const identity = recordIdentity(record);
+  if (!bucket.some((existing) => recordIdentity(existing) === identity)) {
+    bucket.push(record);
+    recordBuckets.set(dedupeKey, bucket);
+  }
+}
+
 async function main(selectedDomain: DomainId): Promise<void> {
   const config = getDiscoveryDomainConfig(selectedDomain);
   const providerSummaries: DiscoveryProviderSummary[] = [];
   const recordBuckets = new Map<string, DiscoverySourceRecord[]>();
   const discoveryDir = join(process.cwd(), "data", "discovery", selectedDomain);
 
-  for (const source of DISCOVERY_SOURCES) {
+  for (const source of LIVE_DISCOVERY_PROVIDERS) {
     try {
       const result = await fetchDiscoverySource(source, selectedDomain);
       for (const record of result.records) {
-        const dedupeKey = buildDedupeKey(record);
-        const bucket = recordBuckets.get(dedupeKey) ?? [];
-        bucket.push(record);
-        recordBuckets.set(dedupeKey, bucket);
+        addDiscoveryRecord(recordBuckets, record);
       }
       providerSummaries.push({
         source,
@@ -213,26 +241,56 @@ async function main(selectedDomain: DomainId): Promise<void> {
     }
   }
 
+  const mergedImports = await readOptionalJson<unknown>(join(discoveryDir, "imported-source-records.json"));
+  if (mergedImports) {
+    const mergedFile = MergedDiscoveryImportFileSchema.parse(mergedImports);
+    const importedRecords = mergedFile.records
+      .map((record) => mapImportedRecord(record, selectedDomain))
+      .filter((record): record is DiscoverySourceRecord => Boolean(record));
+    const importedCounts = new Map<string, { fetched: number; accepted: number }>();
+    for (const rawRecord of mergedFile.records) {
+      const current = importedCounts.get(rawRecord.source) ?? { fetched: 0, accepted: 0 };
+      current.fetched += 1;
+      importedCounts.set(rawRecord.source, current);
+    }
+    for (const record of importedRecords) {
+      addDiscoveryRecord(recordBuckets, record);
+      const current = importedCounts.get(record.source) ?? { fetched: 0, accepted: 0 };
+      current.accepted += 1;
+      importedCounts.set(record.source, current);
+    }
+    for (const [source, counts] of importedCounts.entries()) {
+      providerSummaries.push({
+        source: DiscoveryPaperSchema.shape.sourceTypes.element.parse(source),
+        query: "imported-source-records.json",
+        fetchedCount: counts.fetched,
+        acceptedCount: counts.accepted,
+        failed: false,
+        error: null
+      });
+    }
+  }
+
   const manualImport = await readOptionalJson<unknown>(join(discoveryDir, "manual-source-records.json"));
   if (manualImport) {
     const manualFile = ManualDiscoveryImportFileSchema.parse(manualImport);
-    const manualRecords = manualFile.records
-      .map((record) => mapManualRecord(record, selectedDomain))
+    const manualOnlyRecords = manualFile.records.filter((record) => record.source === "manual");
+    const manualRecords = manualOnlyRecords
+      .map((record) => mapImportedRecord(record, selectedDomain))
       .filter((record): record is DiscoverySourceRecord => Boolean(record));
     for (const record of manualRecords) {
-      const dedupeKey = buildDedupeKey(record);
-      const bucket = recordBuckets.get(dedupeKey) ?? [];
-      bucket.push(record);
-      recordBuckets.set(dedupeKey, bucket);
+      addDiscoveryRecord(recordBuckets, record);
     }
-    providerSummaries.push({
-      source: "manual",
-      query: "manual-source-records.json",
-      fetchedCount: manualFile.records.length,
-      acceptedCount: manualRecords.length,
-      failed: false,
-      error: null
-    });
+    if (manualOnlyRecords.length > 0) {
+      providerSummaries.push({
+        source: "manual",
+        query: "manual-source-records.json",
+        fetchedCount: manualOnlyRecords.length,
+        acceptedCount: manualRecords.length,
+        failed: false,
+        error: null
+      });
+    }
   }
 
   const papers = Array.from(recordBuckets.entries())

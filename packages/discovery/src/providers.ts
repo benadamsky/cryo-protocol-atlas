@@ -3,7 +3,7 @@ import { join } from "node:path";
 import {
   DomainSnapshotSchema,
   FullTextAvailabilitySchema,
-  type DiscoverySource,
+  LiveDiscoveryProviderSchema,
   type DiscoverySourceRecord,
   type DomainId
 } from "../../shared/src/schema.js";
@@ -282,7 +282,7 @@ async function fetchEuropePmc(domain: DomainId): Promise<DiscoveryFetchResult> {
 }
 
 export async function fetchDiscoverySource(
-  source: Exclude<DiscoverySource, "manual">,
+  source: (typeof LiveDiscoveryProviderSchema.options)[number],
   domain: DomainId
 ): Promise<DiscoveryFetchResult> {
   switch (source) {
@@ -297,9 +297,4 @@ export async function fetchDiscoverySource(
   }
 }
 
-export const DISCOVERY_SOURCES: Array<Exclude<DiscoverySource, "manual">> = [
-  "cryodb",
-  "openalex",
-  "crossref",
-  "europe-pmc"
-];
+export const LIVE_DISCOVERY_PROVIDERS = LiveDiscoveryProviderSchema.options;

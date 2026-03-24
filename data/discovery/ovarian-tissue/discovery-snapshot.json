@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-24T00:08:07.910Z",
+  "generatedAt": "2026-03-24T00:27:24.569Z",
   "domain": "ovarian-tissue",
   "queryDescription": "Cryopreservation and fertility-preservation literature for ovarian tissue, ovarian cortex, follicles, and whole ovary workflows.",
   "totalCandidates": 30,
@@ -37,8 +37,8 @@
       "error": "fetch failed"
     },
     {
-      "source": "manual",
-      "query": "manual-source-records.json",
+      "source": "pubmed",
+      "query": "imported-source-records.json",
       "fetchedCount": 2,
       "acceptedCount": 2,
       "failed": false,
@@ -109,8 +109,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 18.1,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 18.35
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 18.267
     },
     {
       "domain": "ovarian-tissue",
@@ -169,8 +169,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 14.8,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 15.05
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 14.967
     },
     {
       "domain": "ovarian-tissue",
@@ -229,8 +229,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 12.8,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 13.05
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 12.967
     },
     {
       "domain": "ovarian-tissue",
@@ -289,8 +289,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 12.8,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 13.05
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 12.967
     },
     {
       "domain": "ovarian-tissue",
@@ -347,8 +347,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 12.7,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 12.95
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 12.867
     },
     {
       "domain": "ovarian-tissue",
@@ -405,8 +405,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 11.7,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11.95
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 11.867
     },
     {
       "domain": "ovarian-tissue",
@@ -463,8 +463,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 11.7,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11.95
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 11.867
     },
     {
       "domain": "ovarian-tissue",
@@ -480,7 +480,7 @@
       "sourceCount": 1,
       "sources": [
         {
-          "source": "manual",
+          "source": "pubmed",
           "sourceId": "pubmed:40611136",
           "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/40611136/",
           "rawQuery": "site:pubmed.ncbi.nlm.nih.gov ovarian tissue cryopreservation 2024 2025",
@@ -516,13 +516,13 @@
         "vitrification"
       ],
       "sourceTypes": [
-        "manual"
+        "pubmed"
       ],
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 10.7,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 11.1
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 11.017
     },
     {
       "domain": "ovarian-tissue",
@@ -577,8 +577,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 10.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 10.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 10.767
     },
     {
       "domain": "ovarian-tissue",
@@ -635,8 +635,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.7,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.95
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.867
     },
     {
       "domain": "ovarian-tissue",
@@ -689,8 +689,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 9.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 9.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 9.667
     },
     {
       "domain": "ovarian-tissue",
@@ -743,8 +743,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 8.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 8.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 8.667
     },
     {
       "domain": "ovarian-tissue",
@@ -799,8 +799,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 7.6,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 7.85
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 7.767
     },
     {
       "domain": "ovarian-tissue",
@@ -853,8 +853,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 7.5,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 7.75
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 7.667
     },
     {
       "domain": "ovarian-tissue",
@@ -905,8 +905,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 7.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 7.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 7.567
     },
     {
       "domain": "ovarian-tissue",
@@ -957,8 +957,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 7.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 7.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 7.567
     },
     {
       "domain": "ovarian-tissue",
@@ -1009,8 +1009,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 7.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 7.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 7.567
     },
     {
       "domain": "ovarian-tissue",
@@ -1061,8 +1061,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 7.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 7.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 7.567
     },
     {
       "domain": "ovarian-tissue",
@@ -1111,8 +1111,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 6.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 6.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 6.467
     },
     {
       "domain": "ovarian-tissue",
@@ -1163,8 +1163,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 5.4,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 5.65
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 5.567
     },
     {
       "domain": "ovarian-tissue",
@@ -1213,8 +1213,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 5.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 5.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 5.467
     },
     {
       "domain": "ovarian-tissue",
@@ -1263,8 +1263,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 5.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 5.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 5.467
     },
     {
       "domain": "ovarian-tissue",
@@ -1313,8 +1313,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 5.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 5.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 5.467
     },
     {
       "domain": "ovarian-tissue",
@@ -1363,8 +1363,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 5.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 5.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 5.467
     },
     {
       "domain": "ovarian-tissue",
@@ -1380,7 +1380,7 @@
       "sourceCount": 1,
       "sources": [
         {
-          "source": "manual",
+          "source": "pubmed",
           "sourceId": "pubmed:38575798",
           "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/38575798/",
           "rawQuery": "site:pubmed.ncbi.nlm.nih.gov ovarian tissue cryopreservation 2024 2025",
@@ -1408,13 +1408,13 @@
         "ovarian tissue"
       ],
       "sourceTypes": [
-        "manual"
+        "pubmed"
       ],
       "fullTextAvailability": "full-text-link",
       "relevanceScore": 4.3,
       "authorityScore": 0.15,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 4.7
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 4.617
     },
     {
       "domain": "ovarian-tissue",
@@ -1463,8 +1463,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 4.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 4.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 4.467
     },
     {
       "domain": "ovarian-tissue",
@@ -1513,8 +1513,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 4.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 4.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 4.467
     },
     {
       "domain": "ovarian-tissue",
@@ -1563,8 +1563,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 4.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 4.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 4.467
     },
     {
       "domain": "ovarian-tissue",
@@ -1613,8 +1613,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 4.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 4.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 4.467
     },
     {
       "domain": "ovarian-tissue",
@@ -1663,8 +1663,8 @@
       "fullTextAvailability": "abstract-only",
       "relevanceScore": 4.3,
       "authorityScore": 0,
-      "sourceDiversityScore": 0.25,
-      "rankingScore": 4.55
+      "sourceDiversityScore": 0.167,
+      "rankingScore": 4.467
     }
   ]
 }
