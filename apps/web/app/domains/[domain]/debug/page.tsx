@@ -8,6 +8,7 @@ import {
   MetricCard,
   MetricGrid,
   PageIntro,
+  QuickFacts,
   RawArtifactPanel,
   Section,
   SourceNote,
@@ -55,15 +56,70 @@ export default async function DebugPage({
         <PageIntro
           eyebrow={`${meta.label} Debug`}
           title={debug.selected.title}
-          summary="Baseline extraction, resolved extraction, and normalized protocol views aligned to the same paper. This is the page to use while iterating on representative conditions and provenance."
+          summary="Baseline extraction, resolved extraction, and normalized protocol views aligned to the same paper. This is the page to use while iterating on representative conditions, provenance, and compare checks."
         >
           <div className="hero__stack">
             <DomainBadge domain={domain} />
             <SourceNote sourceLabel={domainData.sourceLabel} />
+            <StatusPill tone={debug.selected.warnings.length > 0 ? "warn" : "good"}>
+              {debug.selected.warnings.length > 0 ? "normalization warnings" : "clean normalization"}
+            </StatusPill>
+            <QuickFacts
+              items={[
+                {
+                  label: "Selected paper",
+                  value: debug.selectedPaperId
+                },
+                {
+                  label: "Source path",
+                  value: domainData.sourceLabel
+                },
+                {
+                  label: "Authority",
+                  value: debug.selected.resolved?.strongestAuthority ?? "n/a"
+                },
+                {
+                  label: "Representative conditions",
+                  value: debug.selected.representativeConditions.length
+                }
+              ]}
+            />
           </div>
         </PageIntro>
 
         <DomainTabs current="debug" domain={domain} />
+
+        <Section
+          title="Cross-checks"
+          subtitle="Use these pages to compare the selected paper against the wider atlas and the benchmark review surface."
+        >
+          <div className="split-grid">
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Validated atlas</h3>
+                <StatusPill tone="neutral">family context</StatusPill>
+              </div>
+              <p>Use this to see how the selected paper fits into the broader literature structure.</p>
+              <Link href={`/domains/${domain}/atlas`}>Open atlas</Link>
+            </article>
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Benchmark</h3>
+                <StatusPill tone="good">review deltas</StatusPill>
+              </div>
+              <p>Use this to compare the selected paper against the baseline/resolved benchmark path.</p>
+              <Link href={`/domains/${domain}/benchmark`}>Open benchmark</Link>
+            </article>
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Review</h3>
+                <StatusPill tone="warn">evidence queue</StatusPill>
+              </div>
+              <p>Use this to see whether the paper still sits in a pending review or enrichment lane.</p>
+              <Link href={`/domains/${domain}/review`}>Open review</Link>
+            </article>
+          </div>
+        </Section>
 
         <MetricGrid>
           <MetricCard label="Selected family" value={debug.selected.protocolFamily} />

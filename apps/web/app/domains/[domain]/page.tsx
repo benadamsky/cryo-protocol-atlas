@@ -14,8 +14,10 @@ import {
   SourceNote,
   StatusPill
 } from "@/components/atlas-ui";
-import { getDomainData } from "@/lib/data";
+import { formatDateTime, getDomainData } from "@/lib/data";
 import { getDomainMeta, parseDomainId } from "@/lib/domain";
+
+const MAX_ARTIFACTS_TO_SHOW = 8;
 
 export default async function DomainPage({
   params
@@ -27,21 +29,86 @@ export default async function DomainPage({
     const domain = parseDomainId(rawDomain);
     const meta = getDomainMeta(domain);
     const data = await getDomainData(domain);
+    const baselineQualitySignals = data.atlasAnalysis.baselineSummary.qualitySignals;
+    const resolvedQualitySignals = data.atlasAnalysis.resolvedSummary.qualitySignals;
 
     return (
       <>
         <PageIntro
           eyebrow={`${meta.label} Summary`}
           title={data.callPacket.bestWedge.title}
-          summary={data.wedgeBrief.focusQuestion}
+          summary={`${data.wedgeBrief.focusQuestion} The summary stays tied to benchmarked artifacts so the route into review, benchmark, and debug is always explicit.`}
         >
           <div className="hero__stack">
             <DomainBadge domain={domain} />
             <SourceNote sourceLabel={data.sourceLabel} />
+            <StatusPill tone={data.batchSummary.minimumDepthReady ? "good" : "warn"}>
+              {data.batchSummary.minimumDepthReady ? "minimum depth ready" : "depth still pending"}
+            </StatusPill>
+            <QuickFacts
+              items={[
+                {
+                  label: "Benchmark snapshot",
+                  value: formatDateTime(data.benchmarkSummary.generatedAt)
+                },
+                {
+                  label: "Normalized protocols",
+                  value: data.batchSummary.normalizedProtocolCount
+                },
+                {
+                  label: "Pending enrichments",
+                  value: data.batchSummary.pendingSourceEnrichmentCount
+                },
+                {
+                  label: "Read path",
+                  value: data.sourceLabel
+                }
+              ]}
+            />
           </div>
         </PageIntro>
 
         <DomainTabs current="overview" domain={domain} />
+
+        <Section
+          title="Cross-page entry points"
+          subtitle="Use these routes to move from the summary into comparison, review, or paper-level provenance."
+        >
+          <div className="split-grid">
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Validated atlas</h3>
+                <StatusPill tone="neutral">print-friendly summary</StatusPill>
+              </div>
+              <p>
+                Use this when you want the stable wedge story, family distribution, and current literature shape.
+              </p>
+              <Link href={`/domains/${domain}/atlas`}>Open atlas</Link>
+            </article>
+
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Benchmarking</h3>
+                <StatusPill tone="good">baseline vs resolved</StatusPill>
+              </div>
+              <p>
+                Use this when you need gate checks, reviewed-depth deltas, and a direct comparison of what changed.
+              </p>
+              <Link href={`/domains/${domain}/benchmark`}>Open benchmark</Link>
+            </article>
+
+            <article className="surface">
+              <div className="surface__header">
+                <h3>Debug and provenance</h3>
+                <StatusPill tone="warn">paper-level trace</StatusPill>
+              </div>
+              <p>
+                Use this when you need representative conditions, normalization warnings, and line-by-line evidence.
+              </p>
+              <Link href={`/domains/${domain}/debug`}>Open debug</Link>
+            </article>
+          </div>
+        </Section>
 
         <MetricGrid>
           <MetricCard
@@ -207,24 +274,36 @@ export default async function DomainPage({
         </Section>
 
         <div className="split-grid">
-          <Section title="Progress since baseline" subtitle="How much the resolved atlas improved the literature slice versus the initial extraction pass.">
+          <Section
+            title="Resolved vs baseline"
+            subtitle="This comparison shows how the resolved pass changes the slice without hiding difficult papers."
+          >
             <DataTable
-              columns={["Signal", "Baseline", "Resolved"]}
+              columns={["Signal", "Baseline", "Resolved", "Delta"]}
               rows={[
                 [
                   "Total papers",
                   data.atlasAnalysis.baselineSummary.totalPapers,
-                  data.atlasAnalysis.resolvedSummary.totalPapers
+                  data.atlasAnalysis.resolvedSummary.totalPapers,
+                  data.atlasAnalysis.resolvedSummary.totalPapers - data.atlasAnalysis.baselineSummary.totalPapers
                 ],
                 [
                   "Unknown protocol families",
-                  data.atlasAnalysis.baselineSummary.qualitySignals.unknownProtocolFamilyCount,
-                  data.atlasAnalysis.resolvedSummary.qualitySignals.unknownProtocolFamilyCount
+                  baselineQualitySignals?.unknownProtocolFamilyCount ?? 0,
+                  resolvedQualitySignals?.unknownProtocolFamilyCount ?? 0,
+                  data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
                 ],
                 [
                   "Unknown step phases",
-                  data.atlasAnalysis.baselineSummary.qualitySignals.unknownStepPhaseCount,
-                  data.atlasAnalysis.resolvedSummary.qualitySignals.unknownStepPhaseCount
+                  baselineQualitySignals?.unknownStepPhaseCount ?? 0,
+                  resolvedQualitySignals?.unknownStepPhaseCount ?? 0,
+                  data.atlasAnalysis.overrideImpact.unknownStepPhaseDelta
+                ],
+                [
+                  "Contradictions",
+                  baselineQualitySignals?.contradictionCount ?? 0,
+                  resolvedQualitySignals?.contradictionCount ?? 0,
+                  (resolvedQualitySignals?.contradictionCount ?? 0) - (baselineQualitySignals?.contradictionCount ?? 0)
                 ]
               ]}
             />
@@ -246,8 +325,8 @@ export default async function DomainPage({
             />
           </Section>
 
-          <Section title="Artifact ledger" subtitle="Exactly which generated artifacts back this domain page.">
-            <ArtifactLedger artifacts={data.artifacts.slice(0, 8)} />
+          <Section title="Artifact ledger" subtitle="Exactly which generated artifacts back this domain page, including the comparison inputs.">
+            <ArtifactLedger artifacts={data.artifacts.slice(0, MAX_ARTIFACTS_TO_SHOW)} />
           </Section>
         </div>
       </>
