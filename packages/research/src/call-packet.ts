@@ -1,6 +1,5 @@
-import type { AtlasSummary } from "./atlas.js";
 import type { DomainWedgeBrief, OpportunityScanEntry } from "./wedges.js";
-import type { IsletBenchmarkMatrix } from "./islet-benchmark-matrix.js";
+import type { WedgeBenchmarkMatrix } from "../../shared/src/schema.js";
 
 export type DomainCallPacket = {
   domain: string;
@@ -76,51 +75,34 @@ function wedgePainPoint(title: string, fallback: string): string {
   return fallback;
 }
 
-function chooseBestWedge(brief: DomainWedgeBrief, atlas: AtlasSummary) {
-  const additivePreferred =
-    brief.domain === "islets"
-      ? atlas.researchHypotheses.find((hypothesis) => /additive-assisted/i.test(hypothesis.title))
-      : undefined;
-  const preferred = additivePreferred ?? atlas.researchHypotheses.find((hypothesis) => hypothesis.category === "benchmark");
-  const fallback = atlas.researchHypotheses.find((hypothesis) => hypothesis.category !== "workflow-gap");
-  const selected = preferred ?? fallback ?? atlas.researchHypotheses[0];
-  if (!selected) {
-    return null;
-  }
-
-  const matchingOpportunity =
-    brief.opportunityScan.find((entry) => entry.title === selected.title) ?? brief.opportunityScan[0];
-
-  return {
-    title: selected.title,
-    category: selected.category,
-    whyThisWedge: selected.claim,
+export function buildDomainCallPacket(input: {
+  brief: DomainWedgeBrief;
+  opportunityScanEntry?: OpportunityScanEntry;
+  wedgeMatrix?: WedgeBenchmarkMatrix;
+}): DomainCallPacket {
+  const { brief, opportunityScanEntry, wedgeMatrix } = input;
+  const preferredOpportunity =
+    brief.opportunityScan.find((entry) => entry.title === brief.activeWedge.title) ?? brief.opportunityScan[0];
+  const bestWedge = {
+    title: brief.activeWedge.title,
+    category: brief.activeWedge.category,
+    whyThisWedge: brief.callout,
     currentPainPoint: wedgePainPoint(
-      selected.title,
-      matchingOpportunity?.painPoint ??
-        selected.blockers[0] ??
+      brief.activeWedge.title,
+      preferredOpportunity?.painPoint ??
+        brief.evidenceGaps[0]?.rationale ??
         "The literature is still too uneven to compare candidate protocols cleanly."
     ),
     whyNow:
-      matchingOpportunity?.commercialWhyNow ??
-      "This looks close enough to a real operational workflow that better protocol evidence could matter outside the lab.",
-    evidenceSummary: `priority=${selected.scores.priorityScore} | evidence=${selected.scores.evidenceScore} | contradictions=${selected.evidence.contradictionCount} | strong outcomes=${selected.evidence.strongOutcomePaperCount} | transplantation=${selected.evidence.transplantationPaperCount}`,
-    firstExperiment: selected.proposedExperiment
+      preferredOpportunity?.commercialWhyNow ??
+      brief.activeWedge.currentRead,
+    evidenceSummary: `scientific=${brief.activeWedge.scientificRelevance} | company=${brief.activeWedge.companyRelevance} | confidence=${brief.activeWedge.evidenceConfidence} | translational=${brief.activeWedge.translationalPotential}`,
+    firstExperiment: brief.nextExperiments[0]?.title ?? brief.activeWedge.recommendedNextStep
   };
-}
-
-export function buildDomainCallPacket(input: {
-  brief: DomainWedgeBrief;
-  atlas: AtlasSummary;
-  opportunityScanEntry?: OpportunityScanEntry;
-  isletMatrix?: IsletBenchmarkMatrix;
-}): DomainCallPacket {
-  const { brief, atlas, opportunityScanEntry, isletMatrix } = input;
-  const bestWedge = chooseBestWedge(brief, atlas);
 
   const likelyPainPoint =
     opportunityScanEntry?.painPoint ??
-    bestWedge?.currentPainPoint ??
+    bestWedge.currentPainPoint ??
     "Protocol evidence is still too uneven to support a clean optimization decision.";
 
   return {
@@ -132,9 +114,7 @@ export function buildDomainCallPacket(input: {
     executiveSummary: [
       `${brief.domain} is currently anchored on ${brief.standardPattern.dominantProtocolFamily} protocols built around ${brief.standardPattern.dominantChemicals.join(", ")}${brief.standardPattern.dominantTransitions.length > 0 ? `, with a normalized workflow backbone of ${brief.standardPattern.dominantTransitions.join(", ")}` : ""}.`,
       `The atlas is credible enough to use for wedge-finding: reviewed gates ${brief.evidenceQuality.passesAllGates ? "pass" : "do not pass"}, reviewed outcome coverage is ${brief.evidenceQuality.reviewedOutcomeCoverage}, and reviewed step-phase coverage is ${brief.evidenceQuality.reviewedStepPhaseCoverage}.`,
-      bestWedge
-        ? `The cleanest first wedge is \"${bestWedge.title}\" because it attacks a protocol choice that still looks under-benchmarked rather than inventing a new chemistry story too early.`
-        : "The slice is benchmark-stable, but no single wedge stands out strongly enough yet."
+      `The explicit active wedge is "${bestWedge.title}", selected because it gives the clearest decision question and the most reviewable next experiment under the current evidence.`
     ],
     benchmarkSnapshot: {
       reviewedGatesPassing: brief.evidenceQuality.passesAllGates,
@@ -159,20 +139,13 @@ export function buildDomainCallPacket(input: {
       representativeConditions: brief.standardPattern.representativeConditions,
       summary: brief.standardPattern.explanation
     },
-    bestWedge: bestWedge ?? {
-      title: "No sharp wedge identified yet",
-      category: "unknown",
-      whyThisWedge: "The current slice is still better used for evidence cleanup than opportunity finding.",
-      currentPainPoint: likelyPainPoint,
-      whyNow: "The next gain is better evidence quality, not more autonomy.",
-      evidenceSummary: "n/a",
-      firstExperiment: "Do reviewed source enrichment on the highest-value DOI-backed evidence gaps."
-    },
+    bestWedge,
     literatureGaps: [
       likelyPainPoint,
       `${brief.evidenceQuality.missingOutcomeCount} reviewed papers still lack explicit outcome labels.`,
       `${brief.evidenceQuality.pendingSourceEnrichmentCount} source-enrichment records are still pending.`,
-      `${brief.evidenceQuality.secondarySourceReviewedCount} reviewed source-enrichment records rely on secondary-source evidence rather than the original abstract/full text.`
+      `${brief.evidenceQuality.secondarySourceReviewedCount} reviewed source-enrichment records rely on secondary-source evidence rather than the original abstract/full text.`,
+      ...(brief.evidenceGaps[0] ? [`Top wedge evidence gap: ${brief.evidenceGaps[0].title}`] : [])
     ],
     marketBridge: {
       currentStandardPattern:
@@ -182,26 +155,27 @@ export function buildDomainCallPacket(input: {
       likelyPainPoint,
       whyOptimizationMightMatter:
         opportunityScanEntry?.whyOptimizationMatters ??
-        bestWedge?.whyNow ??
+        bestWedge.whyNow ??
         "Commercial value depends on whether protocol optimization improves reproducibility in a way an operator would actually pay for.",
       likelyBuyerOrUser: commercialBuyerHint(brief.domain)
     },
     wedgeValidation: {
       whatAtlasCanSay:
-        brief.domain === "islets" && isletMatrix
+        wedgeMatrix
           ? [
-              `Atlas now has reviewed additive- or benchmark-relevant rows spanning ${isletMatrix.rows.length} papers in the compact islet matrix.`,
-              `The strongest translational rows are ${isletMatrix.summary.strongestTranslationalRows.join("; ") || "still sparse"}.`,
-              `The additive story is not just one paper now: ${isletMatrix.summary.additiveSignals.slice(0, 4).join("; ")}.`
+              `Atlas now has ${wedgeMatrix.rows.length} wedge-relevant benchmark rows tied to the active wedge.`,
+              `The strongest rows are ${wedgeMatrix.summary.strongestRows.join("; ") || "still sparse"}.`,
+              `The dominant backbones are ${wedgeMatrix.summary.dominantBackbones.join("; ") || "still sparse"}.`
             ]
           : [
               "Atlas can separate the dominant protocol family, the top CPA pattern, and the highest-signal protocol wedge."
             ],
       missingEvidence:
-        brief.domain === "islets" && isletMatrix
+        brief.evidenceGaps.length > 0
           ? [
-              "No fixed-base, head-to-head additive benchmark exists across the strongest adjunct candidates.",
-              "Human or transplant-adjacent evidence is still scattered across different CPA backbones and endpoints.",
+              ...brief.evidenceGaps.slice(0, 3).map(
+                (gap) => `${gap.title}: ${gap.missingFields.join(", ")} still need stronger evidence.`
+              ),
               `${brief.evidenceQuality.missingOutcomeCount} reviewed in-scope papers still lack explicit outcome labels.`,
               `${brief.evidenceQuality.secondarySourceReviewedCount} reviewed labels currently depend on secondary-source evidence and should be treated as lower-authority than primary-source-backed rows.`
             ]
@@ -209,13 +183,10 @@ export function buildDomainCallPacket(input: {
               `${brief.evidenceQuality.missingOutcomeCount} reviewed in-scope papers still lack explicit outcome labels.`
             ],
       unresolvedWatchlist:
-        brief.domain === "islets" && isletMatrix
-          ? isletMatrix.summary.unresolvedTranslationalWatchlist
+        brief.contradictions.length > 0
+          ? brief.contradictions.map((entry) => `${entry.topic}: ${entry.whyItMatters}`)
           : [],
-      currentRead:
-        brief.domain === "islets" && isletMatrix
-          ? isletMatrix.summary.currentRead
-          : "This slice is still better treated as a proving ground than as a committed first commercial wedge."
+      currentRead: brief.activeWedge.currentRead
     }
   };
 }

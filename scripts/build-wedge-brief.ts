@@ -1,11 +1,16 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import {
+  ActiveWedgeSchema,
   BenchmarkFileSchema,
   DomainIdSchema,
+  ExperimentPacketFileSchema,
   ExtractionSnapshotSchema,
   NormalizedProtocolSnapshotSchema,
   SourceEnrichmentFileSchema,
+  WedgeBenchmarkMatrixSchema,
+  WedgeDecisionContradictionReportSchema,
+  WedgeEvidenceGapQueueSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
 import type { AtlasSummary } from "../packages/research/src/atlas.js";
@@ -65,6 +70,21 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const benchmarkAnalysis = JSON.parse(
     await readFile(join(processedDir, "benchmark-analysis.json"), "utf8")
   ) as BenchmarkAnalysis;
+  const activeWedge = ActiveWedgeSchema.parse(
+    JSON.parse(await readFile(join(processedDir, "active-wedge.json"), "utf8"))
+  );
+  const wedgeBenchmarkMatrix = WedgeBenchmarkMatrixSchema.parse(
+    JSON.parse(await readFile(join(processedDir, "wedge-benchmark-matrix.json"), "utf8"))
+  );
+  const evidenceGapQueue = WedgeEvidenceGapQueueSchema.parse(
+    JSON.parse(await readFile(join(processedDir, "wedge-evidence-gap-queue.json"), "utf8"))
+  );
+  const experimentPackets = ExperimentPacketFileSchema.parse(
+    JSON.parse(await readFile(join(processedDir, "experiment-packets.json"), "utf8"))
+  );
+  const contradictionReport = WedgeDecisionContradictionReportSchema.parse(
+    JSON.parse(await readFile(join(processedDir, "wedge-contradiction-report.json"), "utf8"))
+  );
   const sourceEnrichment = await maybeReadSourceEnrichment(
     join(curatedDir, "source-enrichment.json")
   );
@@ -75,8 +95,13 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const brief = buildDomainWedgeBrief({
     snapshot,
     atlas,
+    activeWedge,
     benchmarkAnalysis,
     benchmarkEntries,
+    wedgeBenchmarkMatrix,
+    evidenceGapQueue,
+    experimentPackets,
+    contradictionReport,
     sourceEnrichment,
     normalizedProtocols
   });

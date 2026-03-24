@@ -1,6 +1,16 @@
 # islets wedge brief
 
-Focus question: Where does islet cryopreservation still look operationally generic, and which protocol slice is most likely to yield a commercially meaningful optimization wedge?
+Focus question: What is the strongest first cryopreservation wedge in islets, and what evidence would justify a real entry point?
+
+## Active wedge
+- title: Additive-assisted islet recovery benchmark on a fixed base cryomix
+- category: benchmark
+- scientific relevance: 0.89
+- company relevance: 0.786
+- evidence confidence: 0.786
+- translational potential: 0.733
+- current read: This wedge is sharp enough to use in serious scientific and company-entry conversations, with remaining uncertainty made explicit.
+- recommended next step: Trehalose, curcumin, beraprost, and other adjunct-style titles recur in the curated islet slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw recovery/function would quickly test whether the additive signal is real.
 
 ## Standard pattern
 - dominant family: slow-freezing
@@ -29,15 +39,9 @@ Focus question: Where does islet cryopreservation still look operationally gener
 - vitrification + Dimethyl Sulfoxide + pancreatic islets | papers=5 | outcomes=function, viability, transplantation
 
 ## Contradictions
-- Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets
-  papers=Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro vs Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets
-  why it matters=Comparable species/context with shared outcome readout but different preservation families
-- Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets
-  papers=Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro vs Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets
-  why it matters=Comparable species/context with shared outcome readout but different preservation families
-- Dimethyl Sulfoxide, Sucrose in islets, pancreatic islets
-  papers=Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets vs Bulk Cryopreservation of Isolated Islets of Langerhans
-  why it matters=Comparable species/context with shared outcome readout but different preservation families
+- Dimethyl Sulfoxide in islets, pancreatic islets
+  papers=Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation vs Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method
+  why it matters=Comparable species/context with shared outcome readout but different preservation families. Likely confounds: endpoint mismatch.
 
 ## Evidence quality
 - reviewed gates passing: yes
@@ -54,6 +58,34 @@ Focus question: Where does islet cryopreservation still look operationally gener
 - reviewed primary-supported rows: 42
 - reviewed secondary-supported rows: 2
 - reviewed manual-curation-only rows: 0
+
+## Evidence gaps
+- Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor | impact=high | authority=primary-backed | translational=clinically adjacent
+  missing fields=protocolDetail
+  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
+- Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation | impact=medium | authority=primary-backed | translational=preclinical
+  missing fields=authority
+  rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
+- Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets | impact=medium | authority=abstract-only | translational=preclinical
+  missing fields=stepPhases, authority, protocolDetail
+  rationale=Step phases for "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets" still require manual or fuller-source confirmation before benchmark promotion.
+
+## Next experiments
+- Additive-assisted islet recovery benchmark on a fixed base cryomix | category=benchmark
+  decision question=Should Atlas prioritize "Additive-assisted islet recovery benchmark on a fixed base cryomix" as the main head-to-head wedge benchmark?
+  primary readouts=transplantation, function
+  comparison arms=base cryomix only | base cryomix + Glycerol | base cryomix + Polyvinyl Pyrrolidone | base cryomix + Polyethylene Glycol | base cryomix + Trehalose
+  why now=This wedge is sharp enough to use in serious scientific and company-entry conversations, with remaining uncertainty made explicit.
+- Matched-species islet vitrification vs slow-freezing benchmark | category=benchmark
+  decision question=Would "Matched-species islet vitrification vs slow-freezing benchmark" materially sharpen the wedge decision if tested next?
+  primary readouts=transplantation, function
+  comparison arms=slow-freezing arm | vitrification arm
+  why now=This remains one of the highest-signal next experiments in the current domain slice.
+- Promote islet function-heavy protocols to transplantation endpoints | category=endpoint-upgrade
+  decision question=Would "Promote islet function-heavy protocols to transplantation endpoints" materially sharpen the wedge decision if tested next?
+  primary readouts=transplantation, function
+  comparison arms=current standard protocol | top reported protocol with transplantation endpoint
+  why now=This remains one of the highest-signal next experiments in the current domain slice.
 
 ## Opportunity scan
 - Matched-species islet vitrification vs slow-freezing benchmark
@@ -74,4 +106,4 @@ Focus question: Where does islet cryopreservation still look operationally gener
   commercial why now=A cleaner benchmark wedge maps to transplant and cell-banking workflows where protocol uncertainty still blocks standardization.
 
 ## Callout
-- The islet wedge is now structurally ready for opportunity finding: reviewed gates pass, reviewed depth is adequate, 0 reviewed in-scope papers still need stronger outcome evidence, and 2 reviewed source-enrichment records still rely on secondary-source support.
+- Additive-assisted islet recovery benchmark on a fixed base cryomix is the explicit active wedge. Matrix rows=6, top decision-useful evidence gaps=1, and next experiments are already packetized for review.

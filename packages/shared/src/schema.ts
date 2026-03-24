@@ -708,6 +708,175 @@ export const ResearchHypothesisSchema = z.object({
 });
 export type ResearchHypothesis = z.infer<typeof ResearchHypothesisSchema>;
 
+export const EvidenceAuthorityProfileSchema = z.enum([
+  "primary-backed",
+  "secondary-backed",
+  "manual-curation-backed",
+  "abstract-only"
+]);
+export type EvidenceAuthorityProfile = z.infer<typeof EvidenceAuthorityProfileSchema>;
+
+export const EvidenceStrengthSchema = z.enum(["strong", "moderate", "limited"]);
+export type EvidenceStrength = z.infer<typeof EvidenceStrengthSchema>;
+
+export const TranslationalSignalSchema = z.enum([
+  "research only",
+  "preclinical",
+  "transplant relevant",
+  "clinically adjacent"
+]);
+export type TranslationalSignal = z.infer<typeof TranslationalSignalSchema>;
+
+export const ActiveWedgeStatusSchema = z.enum(["candidate", "reviewed"]);
+export type ActiveWedgeStatus = z.infer<typeof ActiveWedgeStatusSchema>;
+
+export const ActiveWedgeSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  wedgeId: z.string(),
+  status: ActiveWedgeStatusSchema,
+  title: z.string(),
+  category: z.enum(["benchmark", "endpoint-upgrade", "workflow-gap", "scale-up"]),
+  selectedHypothesisId: z.string(),
+  focusQuestion: z.string(),
+  decisionQuestion: z.string(),
+  whyThisWedge: z.string(),
+  claim: z.string(),
+  currentRead: z.string(),
+  recommendedNextStep: z.string(),
+  scientificRelevance: z.number().min(0).max(1),
+  companyRelevance: z.number().min(0).max(1),
+  evidenceConfidence: z.number().min(0).max(1),
+  translationalPotential: z.number().min(0).max(1),
+  supportingPaperTitles: z.array(z.string()),
+  dominantPatterns: z.object({
+    protocolFamilies: z.array(ProtocolFamilySchema),
+    chemicals: z.array(z.string()),
+    specimenTypes: z.array(z.string())
+  }),
+  keyUncertainties: z.array(z.string()),
+  authoritySummary: z.object({
+    reviewedOutcomeCoverage: z.number().min(0).max(1),
+    reviewedStepPhaseCoverage: z.number().min(0).max(1),
+    pendingSourceEnrichmentCount: z.number().int().nonnegative(),
+    reviewedSourceEnrichmentCount: z.number().int().nonnegative(),
+    primarySupportedPaperCount: z.number().int().nonnegative(),
+    secondarySupportedPaperCount: z.number().int().nonnegative(),
+    abstractOnlyPaperCount: z.number().int().nonnegative()
+  })
+});
+export type ActiveWedge = z.infer<typeof ActiveWedgeSchema>;
+
+export const WedgeBenchmarkMatrixRowSchema = z.object({
+  paperId: z.string(),
+  title: z.string(),
+  protocolFamily: ProtocolFamilySchema,
+  baseCpaBackbone: z.string(),
+  adjuncts: z.array(z.string()),
+  species: z.array(z.string()),
+  specimenTypes: z.array(z.string()),
+  endpointClasses: z.array(OutcomeClassSchema),
+  authorityProfile: EvidenceAuthorityProfileSchema,
+  evidenceStrength: EvidenceStrengthSchema,
+  translationalSignal: TranslationalSignalSchema,
+  confoundFlags: z.array(z.string()),
+  wedgeRelevanceScore: z.number().min(0).max(1),
+  whyIncluded: z.string()
+});
+export type WedgeBenchmarkMatrixRow = z.infer<typeof WedgeBenchmarkMatrixRowSchema>;
+
+export const WedgeBenchmarkMatrixSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  wedgeId: z.string(),
+  wedgeTitle: z.string(),
+  rows: z.array(WedgeBenchmarkMatrixRowSchema),
+  summary: z.object({
+    dominantBackbones: z.array(z.string()),
+    dominantAdjuncts: z.array(z.string()),
+    strongestRows: z.array(z.string()),
+    highestConfoundRows: z.array(z.string()),
+    currentRead: z.string()
+  })
+});
+export type WedgeBenchmarkMatrix = z.infer<typeof WedgeBenchmarkMatrixSchema>;
+
+export const WedgeEvidenceGapSchema = z.object({
+  paperId: z.string(),
+  title: z.string(),
+  priority: SourceEnrichmentPrioritySchema,
+  status: SourceEnrichmentStatusSchema,
+  decisionImpact: z.enum(["high", "medium", "low"]),
+  missingFields: z.array(z.enum(["outcomeClasses", "stepPhases", "authority", "protocolDetail"])),
+  authorityProfile: EvidenceAuthorityProfileSchema,
+  translationalSignal: TranslationalSignalSchema,
+  wedgeRelevanceScore: z.number().min(0).max(1),
+  rationale: z.string(),
+  recommendedAction: z.string()
+});
+export type WedgeEvidenceGap = z.infer<typeof WedgeEvidenceGapSchema>;
+
+export const WedgeEvidenceGapQueueSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  wedgeId: z.string(),
+  queue: z.array(WedgeEvidenceGapSchema)
+});
+export type WedgeEvidenceGapQueue = z.infer<typeof WedgeEvidenceGapQueueSchema>;
+
+export const ExperimentPacketSchema = z.object({
+  packetId: z.string(),
+  hypothesisId: z.string(),
+  title: z.string(),
+  category: z.enum(["benchmark", "endpoint-upgrade", "scale-up"]),
+  decisionQuestion: z.string(),
+  whyNow: z.string(),
+  claim: z.string(),
+  proposedExperiment: z.string(),
+  fixedVariables: z.array(z.string()),
+  comparisonArms: z.array(z.string()),
+  primaryReadouts: z.array(z.string()),
+  secondaryReadouts: z.array(z.string()),
+  supportingPaperTitles: z.array(z.string()),
+  keyUncertainties: z.array(z.string()),
+  authorityNotes: z.array(z.string()),
+  translationalRationale: z.string(),
+  priorityScore: z.number().min(0).max(1)
+});
+export type ExperimentPacket = z.infer<typeof ExperimentPacketSchema>;
+
+export const ExperimentPacketFileSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  wedgeId: z.string(),
+  packets: z.array(ExperimentPacketSchema)
+});
+export type ExperimentPacketFile = z.infer<typeof ExperimentPacketFileSchema>;
+
+export const WedgeDecisionContradictionSchema = z.object({
+  topic: z.string(),
+  paperA: z.string(),
+  paperB: z.string(),
+  sharedContext: z.object({
+    chemicals: z.array(z.string()),
+    specimenTypes: z.array(z.string())
+  }),
+  reason: z.string(),
+  likelyConfounds: z.array(z.string()),
+  decisionImpact: z.enum(["high", "medium", "low"]),
+  resolutionPath: z.string(),
+  confidence: z.number().min(0).max(1)
+});
+export type WedgeDecisionContradiction = z.infer<typeof WedgeDecisionContradictionSchema>;
+
+export const WedgeDecisionContradictionReportSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  wedgeId: z.string(),
+  contradictions: z.array(WedgeDecisionContradictionSchema)
+});
+export type WedgeDecisionContradictionReport = z.infer<typeof WedgeDecisionContradictionReportSchema>;
+
 export const ProtocolOverrideSchema = z.object({
   paperId: z.string(),
   excludeFromAtlas: z.boolean().optional(),

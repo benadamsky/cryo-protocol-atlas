@@ -18,18 +18,23 @@ import { formatPercent, getOverviewData } from "@/lib/data";
 const OVERVIEW_SECTIONS = [
   {
     id: "validated-atlas",
-    label: "Validated Atlas",
-    summary: "Current domain slices and the strongest wedge signal"
+    label: "Protocol Intelligence",
+    summary: "Current domain slices and the explicit active wedge"
   },
   {
     id: "benchmarking",
     label: "Benchmarking",
-    summary: "Coverage, gate status, and deltas against the reviewed slice"
+    summary: "Coverage, gate status, and evidence confidence behind the wedge"
   },
   {
     id: "discovery",
     label: "Discovery",
-    summary: "Pain points and next moves the candidate corpus should answer"
+    summary: "Live queue state, review packet pressure, and next-move candidates"
+  },
+  {
+    id: "optimizer",
+    label: "Optimizer",
+    summary: "Policy thresholds, eval health, and bounded loop outputs"
   },
   {
     id: "debug",
@@ -45,8 +50,8 @@ export default async function OverviewPage() {
     <>
       <PageIntro
         eyebrow="Atlas Overview"
-        title="Benchmark-led cryopreservation research, rendered for humans."
-        summary="This console stays tied to the file-backed pipeline. It reads the latest benchmarked artifacts, call packets, review queues, and normalized protocol outputs without creating a second mutable source of truth."
+        title="Decision-useful cryopreservation protocol intelligence."
+        summary="This console stays tied to the file-backed pipeline. It reads the latest active wedge, benchmark matrix, evidence-gap queue, experiment packets, and call artifacts without creating a second mutable source of truth."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={overview.cards[0]?.sourceLabel ?? "worktree"} />
@@ -67,7 +72,7 @@ export default async function OverviewPage() {
         <MetricCard
           label="Domains surfaced"
           value={String(overview.cards.length)}
-          detail="Current vertical slices available for comparison and wedge-finding."
+          detail="Current vertical slices available for protocol comparison and wedge validation."
         />
         <MetricCard
           label="Minimum-depth ready"
@@ -93,7 +98,7 @@ export default async function OverviewPage() {
       <Section
         id="validated-atlas"
         title="Validated Atlas"
-        subtitle="The validated slice. Each card combines market framing with the benchmark signals backing it."
+        subtitle="The protocol-intelligence slice. Each card combines wedge framing with the benchmark signals backing it."
         actions={<Link href="/domains/ovarian-tissue">Open ovarian slice</Link>}
       >
         <div className="domain-grid">
@@ -122,7 +127,7 @@ export default async function OverviewPage() {
               </div>
 
               <div className="domain-card__facts">
-                <span>Top wedge: {card.topWedge}</span>
+                <span>Active wedge: {card.topWedge}</span>
                 <span>Outcome coverage: {formatPercent(card.reviewedOutcomeCoverage)}</span>
                 <span>Step coverage: {formatPercent(card.reviewedStepPhaseCoverage)}</span>
                 <span>Source: {card.sourceLabel}</span>
@@ -144,7 +149,7 @@ export default async function OverviewPage() {
       <Section
         id="benchmarking"
         title="Benchmarking"
-        subtitle="Coverage, gate status, and the delta between baseline extraction and resolved normalization."
+        subtitle="Coverage, gate status, and the evidence confidence behind the active wedge."
         actions={<Link href="/domains/islets/benchmark">Open benchmark view</Link>}
       >
         <div className="split-grid">
@@ -158,8 +163,8 @@ export default async function OverviewPage() {
               ]}
             />
             <p className="surface__detail">
-              Gate-ready coverage is the practical threshold for trust. The remaining work is about tightening the
-              gap between baseline extraction and resolved normalization.
+              Gate-ready coverage is the practical threshold for trust. The remaining work is about tightening evidence
+              density and authority behind the active wedge rather than widening the surface area.
             </p>
           </article>
 
@@ -182,7 +187,8 @@ export default async function OverviewPage() {
       <Section
         id="discovery"
         title="Discovery"
-        subtitle="This is where the next corpus layer should land. For now it is a gap map, showing the questions the current atlas can already answer and the ones it cannot."
+        subtitle="Discovery stays downstream from protocol intelligence. Use the dedicated route for queue recommendations, packet assembly, and provider degradation state."
+        actions={<Link href="/discovery">Open discovery lane</Link>}
       >
         <div className="discovery-grid">
           {overview.cards.map((card) => (
@@ -201,6 +207,32 @@ export default async function OverviewPage() {
               </div>
             </article>
           ))}
+        </div>
+      </Section>
+
+      <Section
+        id="optimizer"
+        title="Optimizer"
+        subtitle="The optimizer lane stays separate from the trusted atlas and tunes only downstream discovery recommendation policy."
+        actions={<Link href="/optimizer">Open optimizer lane</Link>}
+      >
+        <div className="split-grid">
+          <article className="surface">
+            <h3>What it exposes</h3>
+            <ul className="feature-list">
+              <li>current mutable policy thresholds and top weights</li>
+              <li>deterministic evaluation metrics from the local benchmark</li>
+              <li>bounded keep/revert loop attempts when generated</li>
+            </ul>
+          </article>
+
+          <article className="surface">
+            <h3>Why it is separate</h3>
+            <p className="surface__detail">
+              The optimizer lane is allowed to iterate quickly because it does not mutate trusted atlas outputs.
+              It is a sidecar for discovery promotion policy, not a second source of atlas truth.
+            </p>
+          </article>
         </div>
       </Section>
 

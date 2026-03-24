@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { buildAtlasSummary, renderAtlasMarkdown, type AtlasSummary } from "../packages/research/src/atlas.js";
+import { detectContradictions } from "../packages/research/src/contradictions.js";
 import { applyProtocolOverrides, parseOverrideFile } from "../packages/normalize/src/overrides.js";
 import { DomainIdSchema, ExtractionSnapshotSchema, type DomainId } from "../packages/shared/src/schema.js";
 
@@ -139,6 +140,19 @@ async function main(selectedDomain: DomainId): Promise<void> {
 
   await writeFile(join(processedDir, "atlas-summary.json"), JSON.stringify(summary, null, 2), "utf8");
   await writeFile(join(processedDir, "atlas-analysis.json"), JSON.stringify(analysis, null, 2), "utf8");
+  await writeFile(
+    join(processedDir, "contradictions.json"),
+    JSON.stringify(
+      {
+        generatedAt: new Date().toISOString(),
+        domain: selectedDomain,
+        contradictions: detectContradictions(resolvedSnapshot)
+      },
+      null,
+      2
+    ),
+    "utf8"
+  );
   await writeFile(
     join(processedDir, "resolved-extraction-snapshot.json"),
     JSON.stringify(resolvedSnapshot, null, 2),

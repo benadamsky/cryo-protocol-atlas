@@ -16,14 +16,14 @@ export function AppShell({ children }: { children: ReactNode }) {
         <div className="shell-ribbon__copy">
           <span className="shell-ribbon__eyebrow">Lineage</span>
           <p>
-            The console renders generated artifacts directly. Benchmark truth stays in the pipeline; the web layer is
-            a read-only lens.
+            The console renders generated wedge-validation artifacts directly. Benchmark truth stays in the pipeline;
+            the web layer is a read-only lens.
           </p>
         </div>
         <div className="shell-ribbon__chips" aria-label="Atlas state">
           <StatusPill tone="good">validated artifacts</StatusPill>
-          <StatusPill tone="neutral">review-led</StatusPill>
-          <StatusPill tone="warn">candidate discovery later</StatusPill>
+          <StatusPill tone="neutral">protocol intelligence</StatusPill>
+          <StatusPill tone="warn">discovery downstream</StatusPill>
         </div>
       </div>
       <main className="page-shell">{children}</main>
@@ -38,13 +38,14 @@ export function TopBar() {
         <span className="brandmark__signal" />
         <span>
           <strong>Cryo Protocol Atlas</strong>
-          <small>Technical console for validated cryopreservation evidence</small>
+          <small>Technical console for validated cryopreservation protocol intelligence</small>
         </span>
       </Link>
       <nav className="topbar__nav" aria-label="Primary">
         <Link href="/#validated-atlas">Validated Atlas</Link>
         <Link href="/#benchmarking">Benchmarking</Link>
-        <Link href="/#discovery">Discovery</Link>
+        <Link href="/discovery">Discovery</Link>
+        <Link href="/optimizer">Optimizer</Link>
         <Link href="/#debug">Debug</Link>
       </nav>
       <nav className="topbar__meta" aria-label="Status">

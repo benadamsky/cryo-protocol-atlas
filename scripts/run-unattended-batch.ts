@@ -117,6 +117,11 @@ async function main(selectedDomain: DomainId): Promise<void> {
   runStep("scripts/evaluate-domain.ts", [selectedDomain]);
   runStep("scripts/build-source-enrichment-queue.ts", [selectedDomain]);
   runStep("scripts/build-normalized-protocols.ts", [selectedDomain]);
+  runStep("scripts/build-active-wedge.ts", [selectedDomain]);
+  runStep("scripts/build-wedge-benchmark-matrix.ts", [selectedDomain]);
+  runStep("scripts/build-wedge-evidence-gap-queue.ts", [selectedDomain]);
+  runStep("scripts/build-experiment-packets.ts", [selectedDomain]);
+  runStep("scripts/build-wedge-contradiction-report.ts", [selectedDomain]);
   runStep("scripts/build-wedge-brief.ts", [selectedDomain]);
   runStep("scripts/build-call-packet.ts", [selectedDomain]);
   runStep("scripts/run-autoresearch-loop.ts", [selectedDomain]);

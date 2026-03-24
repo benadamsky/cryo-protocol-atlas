@@ -10,7 +10,7 @@ import {
   SourceNote,
   StatusPill
 } from "@/components/atlas-ui";
-import { formatDateTime, formatPercent, formatScore, getDiscoveryData } from "@/lib/data";
+import { formatDateTime, formatScore, getDiscoveryData } from "@/lib/data";
 
 export default async function DiscoveryPage() {
   const data = await getDiscoveryData();
@@ -18,9 +18,9 @@ export default async function DiscoveryPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Discovery"
-        title="Corpus refresh, candidate intake, and source coverage"
-        summary="This view is intentionally conservative. It shows the current discovery snapshot, the run-health state, and the corpus evidence backing each domain without introducing a mutable backend."
+        eyebrow="Discovery Lane"
+        title="Live corpus refresh, queue triage, and review packet assembly"
+        summary="This is the downstream discovery operating surface. It reads the discovery snapshot, promotion queue, and promotion review packet artifacts directly instead of proxying through the trusted protocol-intelligence views."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={data.sourceLabel} />
@@ -28,8 +28,8 @@ export default async function DiscoveryPage() {
             {data.runHealth.overallState}
           </StatusPill>
           <div className="chip-row">
-            <Link className="data-chip data-chip--strong" href="/compare">
-              Compare
+            <Link className="data-chip data-chip--strong" href="/optimizer">
+              Optimizer
             </Link>
             <Link className="data-chip data-chip--strong" href="/history">
               History
@@ -39,47 +39,31 @@ export default async function DiscoveryPage() {
       </PageIntro>
 
       <MetricGrid>
-        <MetricCard label="Available domains" value={String(data.runHealth.availableDomainCount)} />
-        <MetricCard label="Ready domains" value={String(data.overview.readyDomainCount)} detail="Domains already passing the current reviewed depth floor." />
-        <MetricCard
-          label="Total matched"
-          value={String(data.domains.reduce((total, domain) => total + domain.totalMatched, 0))}
-          detail="Corpus slices matched to cryopreservation protocol terms."
-        />
-        <MetricCard
-          label="Total normalized protocols"
-          value={String(data.runHealth.totalNormalizedProtocolCount)}
-          detail="Protocols currently tracked by the autoresearch loop."
-        />
-        <MetricCard
-          label="Pending source enrichment"
-          value={String(data.runHealth.totalPendingSourceEnrichmentCount)}
-          detail="This is the current human gate for deeper corpus progression."
-          tone={data.runHealth.totalPendingSourceEnrichmentCount > 0 ? "warn" : "good"}
-        />
+        <MetricCard label="Domains surfaced" value={String(data.domains.length)} />
+        <MetricCard label="Pending queue items" value={String(data.totalPendingCount)} tone={data.totalPendingCount > 0 ? "warn" : "good"} />
+        <MetricCard label="Promote recommendations" value={String(data.totalPromoteRecommendations)} />
+        <MetricCard label="Review recommendations" value={String(data.totalReviewRecommendations)} />
+        <MetricCard label="Packet items" value={String(data.totalPacketItems)} detail="Candidates currently elevated into the human review packet." />
       </MetricGrid>
 
-      <Section
-        title="Run health"
-        subtitle="A concise snapshot of the current discovery loop state, including stop reasons and backlog pressure."
-      >
+      <Section title="Lane status" subtitle="Per-domain queue pressure, provider failures, and packet volume.">
         <DataTable
-          columns={["Domain", "State", "Stop reason", "Cycles", "Outcome", "Step phase", "Backlog"]}
-          rows={data.runHealth.domains.map((domain) => [
+          columns={["Domain", "State", "Novel", "Promote", "Review", "Packet", "Provider failures"]}
+          rows={data.domains.map((domain) => [
             <DomainBadge key={`${domain.domain}-badge`} domain={domain.domain} />,
-            <StatusPill key={`${domain.domain}-state`} tone={domain.passesAllGates ? "good" : "warn"}>
-              {domain.healthState}
+            <StatusPill key={`${domain.domain}-state`} tone={domain.isDegraded ? "warn" : "good"}>
+              {domain.isDegraded ? "degraded" : "healthy"}
             </StatusPill>,
-            domain.stopReason,
-            domain.cyclesCompleted,
-            formatPercent(domain.reviewedOutcomeCoverage),
-            formatPercent(domain.reviewedStepPhaseCoverage),
-            domain.pendingSourceEnrichmentCount
+            domain.novelCandidateCount,
+            domain.promoteCount,
+            domain.reviewCount,
+            domain.reviewItemCount,
+            domain.providerFailureCount
           ])}
         />
       </Section>
 
-      <Section title="Corpus snapshots" subtitle="The latest search corpus slices, surfaced as technical cards rather than a dead-end data dump.">
+      <Section title="Queue preview" subtitle="The highest-ranked recommendations in the current discovery promotion queue.">
         <div className="split-grid">
           {data.domains.map((domain) => (
             <article className="surface" key={domain.domain}>
@@ -87,49 +71,66 @@ export default async function DiscoveryPage() {
                 <div>
                   <DomainBadge domain={domain.domain} />
                   <h3>{domain.label}</h3>
-                  <p>{domain.strapline}</p>
+                  <p>{domain.queryDescription}</p>
                 </div>
-                <StatusPill tone={domain.matchRate > 0 ? "good" : "warn"}>
-                  {formatPercent(domain.matchRate)} matched
+                <StatusPill tone={domain.promoteCount > 0 ? "good" : "neutral"}>
+                  {domain.promoteCount} promote
                 </StatusPill>
               </div>
 
               <div className="quick-facts">
                 <div className="inline-stat">
                   <span>Snapshot</span>
-                  <strong>{formatDateTime(domain.generatedAt)}</strong>
+                  <strong>{formatDateTime(domain.snapshotGeneratedAt)}</strong>
                 </div>
                 <div className="inline-stat">
-                  <span>Fetched</span>
-                  <strong>{domain.totalFetched}</strong>
+                  <span>Queue</span>
+                  <strong>{formatDateTime(domain.queueGeneratedAt)}</strong>
                 </div>
                 <div className="inline-stat">
-                  <span>Matched</span>
-                  <strong>{domain.totalMatched}</strong>
+                  <span>Total candidates</span>
+                  <strong>{domain.totalCandidates}</strong>
                 </div>
+                <div className="inline-stat">
+                  <span>Tracked</span>
+                  <strong>{domain.trackedCount}</strong>
+                </div>
+              </div>
+
+              <div className="chip-row">
+                {domain.providerSummaries.map((summary) => (
+                  <span className="data-chip" key={`${domain.domain}-${summary.source}`}>
+                    {summary.source}: {summary.acceptedCount}/{summary.fetchedCount}
+                    {summary.failed ? ` failed` : ""}
+                  </span>
+                ))}
               </div>
 
               <div className="table-wrap">
                 <table className="data-table">
                   <thead>
                     <tr>
-                      <th>Top paper</th>
-                      <th>Score</th>
-                      <th>Journal</th>
+                      <th>Candidate</th>
+                      <th>Recommendation</th>
+                      <th>Ranking</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {domain.topPapers.slice(0, 3).map((paper) => (
-                      <tr key={`${domain.domain}-${paper.id}`}>
+                    {domain.topDecisions.map((decision) => (
+                      <tr key={decision.dedupeKey}>
                         <td>
-                          <strong>{paper.title}</strong>
+                          <strong>{decision.title}</strong>
                           <div className="artifact-ledger__meta">
-                            <span>{paper.publishedYear ?? "n/a"}</span>
-                            <span>{paper.matchedKeywords.slice(0, 4).join(", ")}</span>
+                            <span>{decision.matchedKeywords.slice(0, 4).join(", ") || "no keywords"}</span>
+                            <span>{decision.fullTextAvailability}</span>
                           </div>
                         </td>
-                        <td>{formatScore(paper.score)}</td>
-                        <td>{paper.journal ?? "n/a"}</td>
+                        <td>
+                          <StatusPill tone={decision.recommendation === "promote" ? "good" : decision.recommendation === "review" ? "warn" : "neutral"}>
+                            {decision.recommendation}
+                          </StatusPill>
+                        </td>
+                        <td>{formatScore(decision.rankingScore)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -140,17 +141,43 @@ export default async function DiscoveryPage() {
         </div>
       </Section>
 
-      <Section title="Recommendations" subtitle="The current refresh path is explicit about where human review still matters.">
-        <div className="family-grid">
-          {data.runHealth.recommendations.map((recommendation) => (
-            <article className="family-card" key={recommendation}>
-              <p>{recommendation}</p>
+      <Section title="Review packet" subtitle="Candidates already elevated into the human review packet, with reasons and risk context.">
+        <div className="split-grid">
+          {data.domains.map((domain) => (
+            <article className="surface" key={`${domain.domain}-packet`}>
+              <div className="surface__header">
+                <div>
+                  <DomainBadge domain={domain.domain} />
+                  <h3>{domain.label}</h3>
+                  <p>{domain.reviewItemCount} packet items currently generated.</p>
+                </div>
+                <StatusPill tone={domain.reviewItemCount > 0 ? "good" : "neutral"}>
+                  {domain.reviewItemCount} packet items
+                </StatusPill>
+              </div>
+
+              {domain.topReviewItems.length === 0 ? (
+                <p className="surface__detail">No review packet items are available yet for this domain.</p>
+              ) : (
+                <div className="family-grid">
+                  {domain.topReviewItems.map((item) => (
+                    <article className="family-card" key={item.dedupeKey}>
+                      <strong>{item.title}</strong>
+                      <p>{item.recommendationReasons[0] ?? "No recommendation reason recorded."}</p>
+                      <div className="artifact-ledger__meta">
+                        <span>{item.recommendation}</span>
+                        <span>ranking {formatScore(item.rankingScore)}</span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              )}
             </article>
           ))}
         </div>
       </Section>
 
-      <Section title="Artifact ledger" subtitle="These are the files the discovery view is reading right now.">
+      <Section title="Artifact ledger" subtitle="These are the exact discovery lane files the web app is reading right now.">
         <ArtifactLedger artifacts={data.artifacts} />
       </Section>
     </>
