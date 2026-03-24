@@ -54,6 +54,8 @@ The next scaffolded domain is:
 - `bun run cycles:ovarian`
 - `bun run cycles:islets`
 - `bun run cycles:all`
+- `bun run optimizer:evaluate`
+- `bun run optimizer:loop`
 - `bun run health-report`
 - `bun run enrichment-queue:ovarian`
 - `bun run enrichment-queue:islets`
@@ -130,6 +132,17 @@ The repo also includes a scheduler entrypoint in [`.github/workflows/autoresearc
 `apps/web/` is a lightweight static wrapper over that same observer artifact. `apps/web/dashboard-data.json` is generated from `run-health.json`, so a static host can show the current system state without adding a backend. For a local preview, run `python3 -m http.server -d apps/web 4173`.
 
 For scheduled runs, prefer the checked-in `data/processed/<domain>/domain-snapshot.json` inputs so the benchmarked slice stays reproducible. Use `--ingest` only when you intentionally want to refresh the upstream corpus and are ready to absorb any resulting benchmark/override drift.
+
+## Optimizer lane
+
+The repo now also has a narrow optimizer lane under `packages/optimizer/`. This is separate from the trusted atlas loop.
+
+- The only mutable optimization target is `packages/optimizer/src/policy.ts`.
+- `bun run optimizer:evaluate` builds a cheap deterministic benchmark from reviewed gold-set labels joined against the current matched corpus, then writes runtime artifacts under `data/optimizer/`.
+- `bun run optimizer:loop` reads `packages/optimizer/program.md`, hill-climbs one bounded numeric mutation at a time, keeps only objective-improving policy edits that preserve promote precision and recall guardrails, and writes runtime artifacts under `data/optimizer/`.
+- This lane does not mutate benchmark gold sets, source enrichment, overrides, or atlas outputs.
+- The benchmark run fails fast if reviewed papers disappear from the current matched corpus, so benchmark coverage cannot silently shrink.
+- The package exports generic scoring helpers so a later discovery lane can consume the same policy with only light mapping glue.
 
 ## Human-facing outputs
 
