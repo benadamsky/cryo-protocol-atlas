@@ -1,39 +1,49 @@
 import {
+  OptimizerFeatureVectorSchema,
   OptimizerPolicySchema,
   type OptimizerBenchmarkCandidate,
+  type OptimizerFeatureVector,
   type OptimizerPolicy,
   type OptimizerRecommendation
 } from "./schema.js";
 
-export function scoreCandidate(
-  candidate: OptimizerBenchmarkCandidate,
+const WEIGHTED_FEATURE_KEYS = [
+  "retrievalScore",
+  "matchedKeywordCount",
+  "titleProtocolHits",
+  "titleExperimentalHits",
+  "abstractProtocolHits",
+  "abstractOutcomeHits",
+  "negativeSignalHits",
+  "doiPresent",
+  "journalPresent",
+  "recentYear",
+  "discoveryRankingScore",
+  "discoveryRelevanceScore",
+  "authorityScore",
+  "sourceDiversityScore",
+  "multiSourceEvidence",
+  "fullTextLink",
+  "openAccessFullText"
+] as const;
+
+export function scoreFeatureVector(
+  featuresInput: OptimizerFeatureVector,
   policyInput: OptimizerPolicy
 ): {
   score: number;
   recommendation: OptimizerRecommendation;
   featureContributions: Record<string, number>;
 } {
+  const features = OptimizerFeatureVectorSchema.parse(featuresInput);
   const policy = OptimizerPolicySchema.parse(policyInput);
   const featureContributions: Record<string, number> = {
     bias: policy.weights.bias
   };
   let score = policy.weights.bias;
 
-  const weightedFeatures = [
-    "retrievalScore",
-    "matchedKeywordCount",
-    "titleProtocolHits",
-    "titleExperimentalHits",
-    "abstractProtocolHits",
-    "abstractOutcomeHits",
-    "negativeSignalHits",
-    "doiPresent",
-    "journalPresent",
-    "recentYear"
-  ] as const;
-
-  for (const key of weightedFeatures) {
-    const contribution = Number((candidate.features[key] * policy.weights[key]).toFixed(6));
+  for (const key of WEIGHTED_FEATURE_KEYS) {
+    const contribution = Number((features[key] * policy.weights[key]).toFixed(6));
     featureContributions[key] = contribution;
     score += contribution;
   }
@@ -51,4 +61,15 @@ export function scoreCandidate(
     recommendation,
     featureContributions
   };
+}
+
+export function scoreCandidate(
+  candidate: OptimizerBenchmarkCandidate,
+  policyInput: OptimizerPolicy
+): {
+  score: number;
+  recommendation: OptimizerRecommendation;
+  featureContributions: Record<string, number>;
+} {
+  return scoreFeatureVector(candidate.features, policyInput);
 }

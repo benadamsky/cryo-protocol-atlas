@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
@@ -13,7 +14,20 @@ import {
 } from "../../shared/src/schema.js";
 
 const projectRoot = fileURLToPath(new URL("../../../", import.meta.url));
+<<<<<<< HEAD
+const tsxLoaderCandidates = [
+  join(projectRoot, "node_modules", "tsx", "dist", "loader.mjs"),
+  join(dirname(projectRoot), "node_modules", "tsx", "dist", "loader.mjs"),
+  join(dirname(dirname(projectRoot)), "node_modules", "tsx", "dist", "loader.mjs")
+];
+const resolvedTsxLoader = tsxLoaderCandidates.find((candidate) => existsSync(candidate));
+if (!resolvedTsxLoader) {
+  throw new Error(`Unable to locate tsx loader from ${projectRoot}`);
+}
+const tsxLoader = resolvedTsxLoader;
+=======
 const tsxLoader = join(projectRoot, "node_modules", "tsx", "dist", "loader.mjs");
+>>>>>>> main
 const importScript = join(projectRoot, "scripts", "import-discovery-exports.ts");
 const discoverScript = join(projectRoot, "scripts", "discover-domain-corpus.ts");
 const queueScript = join(projectRoot, "scripts", "build-discovery-review-queue.ts");

@@ -4,6 +4,25 @@ import {
   type DiscoveryPromotionReviewItem,
   type DomainSnapshot
 } from "../../shared/src/schema.js";
+import { recommendDiscoveryPaper } from "../../optimizer/src/discovery.js";
+
+const RECOMMENDATION_SCORING = {
+  multiSourceBonus: 2,
+  multiSourceThreshold: 2,
+  openAccessFullTextBonus: 2,
+  fullTextLinkBonus: 1,
+  strongAuthorityThreshold: 0.5,
+  moderateAuthorityThreshold: 0.2,
+  strongAuthorityBonus: 2,
+  moderateAuthorityBonus: 1,
+  highRelevanceThreshold: 8,
+  mediumRelevanceThreshold: 5,
+  highRelevanceBonus: 2,
+  mediumRelevanceBonus: 1,
+  promoteThreshold: 5,
+  reviewThreshold: 3,
+  weakAuthorityRiskThreshold: 0.2
+} as const;
 
 const RECOMMENDATION_SCORING = {
   multiSourceBonus: 2,
@@ -133,6 +152,9 @@ export function recommendationForPaper(paper: DiscoveryPaper): {
   recommendation: "promote" | "review" | "defer";
   reasons: string[];
 } {
+<<<<<<< HEAD
+  const result = recommendDiscoveryPaper(paper);
+=======
   const reasons: string[] = [];
   let score = 0;
 
@@ -168,9 +190,10 @@ export function recommendationForPaper(paper: DiscoveryPaper): {
   if (score >= RECOMMENDATION_SCORING.reviewThreshold) {
     return { recommendation: "review", reasons };
   }
+>>>>>>> main
   return {
-    recommendation: "defer",
-    reasons: reasons.length > 0 ? reasons : ["single-source, low-authority candidate should stay in the discovery backlog"]
+    recommendation: result.recommendation,
+    reasons: result.reasons
   };
 }
 

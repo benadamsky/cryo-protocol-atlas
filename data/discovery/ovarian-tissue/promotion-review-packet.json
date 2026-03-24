@@ -1,25 +1,32 @@
 {
-  "generatedAt": "2026-03-24T00:32:32.097Z",
+  "generatedAt": "2026-03-24T16:15:37.753Z",
   "domain": "ovarian-tissue",
-  "sourceSnapshotGeneratedAt": "2026-03-24T00:27:24.569Z",
-  "queueGeneratedAt": "2026-03-24T00:26:37.981Z",
+  "sourceSnapshotGeneratedAt": "2026-03-24T16:13:53.625Z",
+  "queueGeneratedAt": "2026-03-24T16:15:06.455Z",
   "candidateCount": 30,
-  "reviewItemCount": 1,
+  "reviewItemCount": 2,
+  "isDegraded": true,
+  "degradationReasons": [
+    "live-provider-failures:openalex,crossref,europe-pmc"
+  ],
   "items": [
     {
       "dedupeKey": "doi:10.1186/s12958-025-01422-y",
       "title": "A dual-drug strategy to enhance the function of cryopreserved ovaries by promoting revascularization and inhibiting follicle over-activation",
       "doi": "10.1186/s12958-025-01422-y",
       "pmid": "40611136",
+      "pmcid": null,
+      "titleKey": "title:a dual drug strategy to enhance the function of cryopreserved ovaries by promoting revascularization and inhibiting follicle over activation",
       "journal": "Reproductive Biology and Endocrinology",
       "publishedYear": 2025,
       "decision": "pending",
       "recommendation": "review",
-      "rankingScore": 11.017,
-      "relevanceScore": 10.7,
+      "rankingScore": 8.55,
+      "relevanceScore": 8.233,
       "authorityScore": 0.15,
       "sourceDiversityScore": 0.167,
       "sourceCount": 1,
+      "recordCount": 1,
       "sourceTypes": [
         "pubmed"
       ],
@@ -27,14 +34,15 @@
       "matchedKeywords": [
         "cryopreservation",
         "fertility preservation",
-        "follicle",
+        "follicles",
         "ovarian tissue",
-        "ovaries",
+        "ovary",
         "reproductive",
         "vitrification"
       ],
       "noveltyBasis": [
         "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
         "title-not-in-current-slice",
         "pmid-available-for-review"
       ],
@@ -51,14 +59,76 @@
         "look for corroborating records from a second literature source"
       ],
       "recommendationReasons": [
+        "optimizer score 5.168925 cleared the review threshold 2.2 but stayed below promote 5.2",
         "full-text landing page is available",
         "domain relevance score is high"
       ],
+      "staleEvidence": true,
+      "staleReason": "evidence or recommendation changed since the previous review state",
       "sources": [
         {
           "source": "pubmed",
           "sourceId": "pubmed:40611136",
           "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/40611136/",
+          "rawQuery": "site:pubmed.ncbi.nlm.nih.gov ovarian tissue cryopreservation 2024 2025",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/s00404-024-07484-4",
+      "title": "A retrospective study of ovarian tissue cryopreservation in female patients with hematological diseases for fertility preservation",
+      "doi": "10.1007/s00404-024-07484-4",
+      "pmid": "38575798",
+      "pmcid": null,
+      "titleKey": "title:a retrospective study of ovarian tissue cryopreservation in female patients with hematological diseases for fertility preservation",
+      "journal": "Archives of Gynecology and Obstetrics",
+      "publishedYear": 2024,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 3.684,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "pubmed"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "fertility preservation",
+        "ovarian tissue"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.295805 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "pubmed",
+          "sourceId": "pubmed:38575798",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/38575798/",
           "rawQuery": "site:pubmed.ncbi.nlm.nih.gov ovarian tissue cryopreservation 2024 2025",
           "fullTextAvailability": "full-text-link"
         }
