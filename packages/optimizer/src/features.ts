@@ -5,6 +5,14 @@ import {
   type OptimizerPolicy
 } from "./schema.js";
 
+const DISCOVERY_REASON_THRESHOLDS = {
+  strongAuthority: 0.5,
+  moderateAuthority: 0.2,
+  highRelevance: 8 / 15,
+  mediumRelevance: 5 / 15,
+  strongSourceDiversity: 0.5
+} as const;
+
 function normalizeText(value: string | null | undefined): string {
   return (value ?? "").toLowerCase();
 }
@@ -78,4 +86,33 @@ export function buildOptimizerFeatureVector(
       fullTextAvailability === "open-access-full-text" || fullTextAvailability === "full-text-link" ? 1 : 0,
     openAccessFullText: fullTextAvailability === "open-access-full-text" ? 1 : 0
   });
+}
+
+export function explainDiscoveryFeatureVector(featuresInput: OptimizerFeatureVector): string[] {
+  const features = OptimizerFeatureVectorSchema.parse(featuresInput);
+  const reasons: string[] = [];
+
+  if (features.multiSourceEvidence >= 1) {
+    reasons.push("candidate appears in multiple discovery sources");
+  }
+  if (features.openAccessFullText >= 1) {
+    reasons.push("open-access full text is available");
+  } else if (features.fullTextLink >= 1) {
+    reasons.push("full-text landing page is available");
+  }
+  if (features.authorityScore >= DISCOVERY_REASON_THRESHOLDS.strongAuthority) {
+    reasons.push("authority score is high enough to justify direct promotion review");
+  } else if (features.authorityScore >= DISCOVERY_REASON_THRESHOLDS.moderateAuthority) {
+    reasons.push("authority score is directionally promising");
+  }
+  if (features.discoveryRelevanceScore >= DISCOVERY_REASON_THRESHOLDS.highRelevance) {
+    reasons.push("domain relevance score is high");
+  } else if (features.discoveryRelevanceScore >= DISCOVERY_REASON_THRESHOLDS.mediumRelevance) {
+    reasons.push("domain relevance score is non-trivial");
+  }
+  if (features.sourceDiversityScore >= DISCOVERY_REASON_THRESHOLDS.strongSourceDiversity) {
+    reasons.push("source diversity is strong enough to reduce single-provider bias");
+  }
+
+  return reasons;
 }

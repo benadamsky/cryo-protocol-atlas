@@ -1,5 +1,5 @@
 import { DiscoveryPaperSchema, type DiscoveryPaper } from "../../shared/src/schema.js";
-import { buildOptimizerFeatureVector } from "./features.js";
+import { buildOptimizerFeatureVector, explainDiscoveryFeatureVector } from "./features.js";
 import { optimizerPolicy } from "./policy.js";
 import { scoreFeatureVector } from "./score.js";
 import { type OptimizerPolicy, type OptimizerRecommendation } from "./schema.js";
@@ -44,28 +44,7 @@ export function recommendDiscoveryPaper(
     reasons.push(`optimizer score ${scored.score} stayed below the review threshold ${policy.thresholds.review}`);
   }
 
-  if (paper.sourceCount >= 2) {
-    reasons.push("candidate appears in multiple discovery sources");
-  }
-  if (paper.fullTextAvailability === "open-access-full-text") {
-    reasons.push("open-access full text is available");
-  } else if (paper.fullTextAvailability === "full-text-link") {
-    reasons.push("full-text landing page is available");
-  }
-  if (paper.authorityScore >= 0.5) {
-    reasons.push("authority score is high enough to justify direct promotion review");
-  } else if (paper.authorityScore >= 0.2) {
-    reasons.push("authority score is directionally promising");
-  }
-  if (paper.relevanceScore >= 8) {
-    reasons.push("domain relevance score is high");
-  } else if (paper.relevanceScore >= 5) {
-    reasons.push("domain relevance score is non-trivial");
-  }
-
-  if (paper.sourceDiversityScore >= 0.5) {
-    reasons.push("source diversity is strong enough to reduce single-provider bias");
-  }
+  reasons.push(...explainDiscoveryFeatureVector(features));
   if (scored.recommendation === "defer" && reasons.length === 1) {
     reasons.push("single-source, low-authority candidate should stay in the discovery backlog");
   }
