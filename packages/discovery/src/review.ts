@@ -6,6 +6,11 @@ import {
 } from "../../shared/src/schema.js";
 import { recommendDiscoveryPaper } from "../../optimizer/src/discovery.js";
 
+const RECOMMENDATION_SCORING = {
+  multiSourceThreshold: 2,
+  weakAuthorityRiskThreshold: 0.2
+} as const;
+
 export function normalizeTitle(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
@@ -125,7 +130,7 @@ export function recommendationForPaper(paper: DiscoveryPaper): {
 
 export function promotionRisksForPaper(paper: DiscoveryPaper): string[] {
   const risks: string[] = [];
-  if (paper.sourceTypes.length < 2) {
+  if (paper.sourceTypes.length < RECOMMENDATION_SCORING.multiSourceThreshold) {
     risks.push("single-source evidence; cross-source confirmation is still missing");
   }
   if (paper.fullTextAvailability !== "open-access-full-text") {
@@ -134,7 +139,7 @@ export function promotionRisksForPaper(paper: DiscoveryPaper): string[] {
   if ((paper.abstract ?? "").trim().length === 0) {
     risks.push("abstract is missing; domain relevance relies on sparse metadata");
   }
-  if (paper.authorityScore < 0.2) {
+  if (paper.authorityScore < RECOMMENDATION_SCORING.weakAuthorityRiskThreshold) {
     risks.push("authority score is still weak; novelty may outrun evidentiary strength");
   }
   return risks;
@@ -149,7 +154,7 @@ export function reviewChecklistForPaper(paper: DiscoveryPaper): string[] {
   if (paper.fullTextAvailability !== "open-access-full-text") {
     checklist.push("locate a full-text path or secondary source before trusting protocol detail");
   }
-  if (paper.sourceTypes.length < 2) {
+  if (paper.sourceTypes.length < RECOMMENDATION_SCORING.multiSourceThreshold) {
     checklist.push("look for corroborating records from a second literature source");
   }
   return checklist;

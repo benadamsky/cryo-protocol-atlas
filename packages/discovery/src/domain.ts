@@ -13,6 +13,14 @@ type DiscoveryDomainConfig = {
   supportingConcepts: KeywordConcept[];
 };
 
+const DISCOVERY_SCORING = {
+  anchorCoverageWeight: 7,
+  supportingCoverageWeight: 5,
+  minimumAnchorMatches: 1,
+  minimumSupportingMatches: 1,
+  minimumAnchorMatchesWithoutSupporting: 2
+} as const;
+
 function wordPattern(value: string): RegExp {
   const escaped = value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const normalized = escaped.replace(/\s+/g, "\\s+");
@@ -113,7 +121,12 @@ export function scoreDiscoveryText(
     config.anchorConcepts.length === 0 ? 0 : anchorMatches.length / config.anchorConcepts.length;
   const supportingCoverage =
     config.supportingConcepts.length === 0 ? 0 : supportingMatches.length / config.supportingConcepts.length;
-  const relevanceScore = Number((anchorCoverage * 7 + supportingCoverage * 5).toFixed(3));
+  const relevanceScore = Number(
+    (
+      anchorCoverage * DISCOVERY_SCORING.anchorCoverageWeight +
+      supportingCoverage * DISCOVERY_SCORING.supportingCoverageWeight
+    ).toFixed(3)
+  );
 
   return { matchedKeywords, anchorMatches, supportingMatches, relevanceScore };
 }
@@ -124,5 +137,11 @@ export function shouldKeepDiscoveryCandidate(
   domain: DomainId
 ): boolean {
   const { anchorMatches, supportingMatches } = scoreDiscoveryText(title, abstract, domain);
-  return anchorMatches.length > 0 && (supportingMatches.length > 0 || anchorMatches.length > 1);
+  return (
+    anchorMatches.length >= DISCOVERY_SCORING.minimumAnchorMatches &&
+    (
+      supportingMatches.length >= DISCOVERY_SCORING.minimumSupportingMatches ||
+      anchorMatches.length >= DISCOVERY_SCORING.minimumAnchorMatchesWithoutSupporting
+    )
+  );
 }
