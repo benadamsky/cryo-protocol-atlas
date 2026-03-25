@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { z } from "zod";
 import {
   AutoresearchProposalFileSchema,
@@ -924,7 +925,8 @@ export type DebugData = {
 };
 
 function uniqueRoots() {
-  const worktreeRoot = path.resolve(process.cwd(), "../..");
+  const moduleDir = path.dirname(fileURLToPath(import.meta.url));
+  const worktreeRoot = path.resolve(moduleDir, "../../..");
   const roots = [worktreeRoot];
   const parent = path.dirname(worktreeRoot);
 
