@@ -86,7 +86,7 @@ export function buildDomainCallPacket(input: {
   const bestWedge = {
     title: brief.activeWedge.title,
     category: brief.activeWedge.category,
-    whyThisWedge: brief.callout,
+    whyThisWedge: brief.activeWedge.claim,
     currentPainPoint: wedgePainPoint(
       brief.activeWedge.title,
       preferredOpportunity?.painPoint ??

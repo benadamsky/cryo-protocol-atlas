@@ -9,8 +9,8 @@ Focus question: What is the strongest first cryopreservation wedge in islets, an
 - company relevance: 0.786
 - evidence confidence: 0.786
 - translational potential: 0.733
-- current read: This wedge is sharp enough to use in serious scientific and company-entry conversations, with remaining uncertainty made explicit.
-- recommended next step: Trehalose, curcumin, beraprost, and other adjunct-style titles recur in the curated islet slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw recovery/function would quickly test whether the additive signal is real.
+- current read: Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet.
+- recommended next step: Run a fixed-backbone additive benchmark with p38 MAPK inhibitor, Trehalose, Beraprost Sodium, Polyvinyl Pyrrolidone on a DMSO-centered base mix, using post-thaw function as the primary readout.
 
 ## Standard pattern
 - dominant family: slow-freezing
@@ -73,12 +73,12 @@ Focus question: What is the strongest first cryopreservation wedge in islets, an
 ## Next experiments
 - Additive-assisted islet recovery benchmark on a fixed base cryomix | category=benchmark
   decision question=Should Atlas prioritize "Additive-assisted islet recovery benchmark on a fixed base cryomix" as the main head-to-head wedge benchmark?
-  primary readouts=transplantation, function
-  comparison arms=base cryomix only | base cryomix + Glycerol | base cryomix + Polyvinyl Pyrrolidone | base cryomix + Polyethylene Glycol | base cryomix + Trehalose
-  why now=This wedge is sharp enough to use in serious scientific and company-entry conversations, with remaining uncertainty made explicit.
+  primary readouts=function, viability
+  comparison arms=base cryomix only | base cryomix + p38 MAPK inhibitor | base cryomix + Trehalose | base cryomix + Beraprost Sodium | base cryomix + Polyvinyl Pyrrolidone
+  why now=Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet.
 - Matched-species islet vitrification vs slow-freezing benchmark | category=benchmark
   decision question=Would "Matched-species islet vitrification vs slow-freezing benchmark" materially sharpen the wedge decision if tested next?
-  primary readouts=transplantation, function
+  primary readouts=function, viability
   comparison arms=slow-freezing arm | vitrification arm
   why now=This remains one of the highest-signal next experiments in the current domain slice.
 - Promote islet function-heavy protocols to transplantation endpoints | category=endpoint-upgrade

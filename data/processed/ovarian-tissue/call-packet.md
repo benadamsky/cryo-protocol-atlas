@@ -30,7 +30,7 @@
 ## Best first wedge
 - title: Head-to-head DMSO-centered ovarian tissue benchmark
 - category: benchmark
-- why this wedge: Head-to-head DMSO-centered ovarian tissue benchmark is the explicit active wedge. Matrix rows=6, top decision-useful evidence gaps=0, and next experiments are already packetized for review.
+- why this wedge: A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation.
 - current pain point: Literature looks directionally promising but still underspecified for a clean protocol decision.
 - why now: Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows.
 - evidence summary: scientific=0.673 | company=0.82 | confidence=0.5 | translational=0.8

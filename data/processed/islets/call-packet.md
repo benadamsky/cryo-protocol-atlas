@@ -30,7 +30,7 @@
 ## Best first wedge
 - title: Additive-assisted islet recovery benchmark on a fixed base cryomix
 - category: benchmark
-- why this wedge: Additive-assisted islet recovery benchmark on a fixed base cryomix is the explicit active wedge. Matrix rows=6, top decision-useful evidence gaps=1, and next experiments are already packetized for review.
+- why this wedge: Several islet papers imply that recovery gains may come from adjuncts added around a standard cryomix rather than from entirely new base CPA chemistry.
 - current pain point: Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.
 - why now: A cleaner benchmark wedge maps to transplant and cell-banking workflows where protocol uncertainty still blocks standardization.
 - evidence summary: scientific=0.89 | company=0.786 | confidence=0.786 | translational=0.733
@@ -51,8 +51,8 @@
 
 ## Wedge validation
 - Atlas now has 6 wedge-relevant benchmark rows tied to the active wedge.
-- The strongest rows are Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor [strong; primary-backed; clinically adjacent]; Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation [strong; primary-backed; preclinical].
-- The dominant backbones are Dimethyl Sulfoxide; Dimethyl Sulfoxide + Glycerol.
+- The strongest rows are Polyvinyl Pyrrolidone via Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation; p38 MAPK inhibitor via Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor.
+- The dominant backbones are Dimethyl Sulfoxide + Glycerol; Dimethyl Sulfoxide.
 
 ## Missing evidence
 - Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor: protocolDetail still need stronger evidence.
@@ -65,4 +65,4 @@
 - Dimethyl Sulfoxide in islets, pancreatic islets: Comparable species/context with shared outcome readout but different preservation families. Likely confounds: endpoint mismatch.
 
 ## Current read
-- This wedge is sharp enough to use in serious scientific and company-entry conversations, with remaining uncertainty made explicit.
+- Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet.

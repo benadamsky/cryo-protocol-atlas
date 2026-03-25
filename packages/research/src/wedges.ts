@@ -41,6 +41,7 @@ export type DomainWedgeBrief = {
   activeWedge: {
     title: string;
     category: string;
+    claim: string;
     scientificRelevance: number;
     companyRelevance: number;
     evidenceConfidence: number;
@@ -467,6 +468,7 @@ export function buildDomainWedgeBrief(input: {
     activeWedge: {
       title: activeWedge.title,
       category: activeWedge.category,
+      claim: activeWedge.claim,
       scientificRelevance: activeWedge.scientificRelevance,
       companyRelevance: activeWedge.companyRelevance,
       evidenceConfidence: activeWedge.evidenceConfidence,

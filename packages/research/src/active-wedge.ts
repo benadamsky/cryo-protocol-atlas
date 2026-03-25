@@ -79,9 +79,7 @@ function currentReadFor(input: {
   if (input.pendingSourceEnrichmentCount > 0) {
     return "Best current wedge, but still limited by wedge-relevant source enrichment and thin authority support.";
   }
-  return input.domain === "islets"
-    ? "Best current wedge, but still better treated as a proving ground than a committed entry point."
-    : "Best current wedge, but still better treated as a proving ground than a committed entry point.";
+  return "Best current wedge, but still better treated as a proving ground than a committed entry point.";
 }
 
 function recommendedNextStepFor(hypothesis: ResearchHypothesis, chemicals: string[]): string {
