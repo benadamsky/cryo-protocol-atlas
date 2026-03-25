@@ -3,10 +3,15 @@ import type {
   AtlasHotspot
 } from "./atlas.js";
 import type {
+  ActiveWedge,
   BenchmarkEntry,
+  ExperimentPacketFile,
   ExtractionSnapshot,
   NormalizedProtocolSnapshot,
-  SourceEnrichmentFile
+  SourceEnrichmentFile,
+  WedgeBenchmarkMatrix,
+  WedgeDecisionContradictionReport,
+  WedgeEvidenceGapQueue
 } from "../../shared/src/schema.js";
 
 type BenchmarkAnalysis = {
@@ -33,6 +38,17 @@ type BenchmarkAnalysis = {
 export type DomainWedgeBrief = {
   domain: string;
   focusQuestion: string;
+  activeWedge: {
+    title: string;
+    category: string;
+    claim: string;
+    scientificRelevance: number;
+    companyRelevance: number;
+    evidenceConfidence: number;
+    translationalPotential: number;
+    currentRead: string;
+    recommendedNextStep: string;
+  };
   standardPattern: {
     dominantProtocolFamily: string;
     dominantChemicals: string[];
@@ -77,6 +93,22 @@ export type DomainWedgeBrief = {
     reviewedSecondarySupportedCount: number;
     reviewedManualOnlyCount: number;
   };
+  evidenceGaps: Array<{
+    title: string;
+    decisionImpact: string;
+    authorityProfile: string;
+    translationalSignal: string;
+    missingFields: string[];
+    rationale: string;
+  }>;
+  nextExperiments: Array<{
+    title: string;
+    category: string;
+    decisionQuestion: string;
+    primaryReadouts: string[];
+    comparisonArms: string[];
+    whyNow: string;
+  }>;
   opportunityScan: Array<{
     title: string;
     whyInteresting: string;
@@ -325,12 +357,29 @@ function opportunityPainPoint(title: string, fallback: string): string {
 export function buildDomainWedgeBrief(input: {
   snapshot: ExtractionSnapshot;
   atlas: AtlasSummary;
+  activeWedge: ActiveWedge;
   benchmarkAnalysis: BenchmarkAnalysis;
   benchmarkEntries: BenchmarkEntry[];
+  wedgeBenchmarkMatrix: WedgeBenchmarkMatrix;
+  evidenceGapQueue: WedgeEvidenceGapQueue;
+  experimentPackets: ExperimentPacketFile;
+  contradictionReport: WedgeDecisionContradictionReport;
   sourceEnrichment?: SourceEnrichmentFile;
   normalizedProtocols?: NormalizedProtocolSnapshot;
 }): DomainWedgeBrief {
-  const { snapshot, atlas, benchmarkAnalysis, benchmarkEntries, sourceEnrichment, normalizedProtocols } = input;
+  const {
+    snapshot,
+    atlas,
+    activeWedge,
+    benchmarkAnalysis,
+    benchmarkEntries,
+    wedgeBenchmarkMatrix,
+    evidenceGapQueue,
+    experimentPackets,
+    contradictionReport,
+    sourceEnrichment,
+    normalizedProtocols
+  } = input;
   const reviewedInScopeEntries = benchmarkEntries.filter((entry) => entry.reviewStatus === "reviewed" && entry.expectedInAtlas);
   const dominantFamily = atlas.protocolFamilies[0]?.label ?? "unknown";
   const dominantChemicals =
@@ -396,10 +445,10 @@ export function buildDomainWedgeBrief(input: {
     )
   }));
 
-  const contradictions = atlas.contradictions.slice(0, 3).map((entry) => ({
+  const contradictions = contradictionReport.contradictions.slice(0, 4).map((entry) => ({
     topic: entry.topic,
-    papers: [entry.paperA.title, entry.paperB.title],
-    whyItMatters: entry.reason
+    papers: [entry.paperA, entry.paperB],
+    whyItMatters: `${entry.reason}. Likely confounds: ${entry.likelyConfounds.join(", ")}.`
   }));
 
   const opportunityScan = atlas.researchHypotheses.slice(0, 4).map((hypothesis) => ({
@@ -413,16 +462,20 @@ export function buildDomainWedgeBrief(input: {
     commercialWhyNow: opportunityCommercialWhyNow(snapshot.domain, hypothesis.title)
   }));
 
-  const ambiguousReviewedCount = reviewedInScopeEntries.filter(
-    (entry) => !entry.expectedOutcomeClasses || entry.expectedOutcomeClasses.length === 0
-  ).length;
-
   return {
     domain: snapshot.domain,
-    focusQuestion:
-      snapshot.domain === "islets"
-        ? "Where does islet cryopreservation still look operationally generic, and which protocol slice is most likely to yield a commercially meaningful optimization wedge?"
-        : "Which ovarian cryopreservation slice is mature enough for protocol optimization, and where do the remaining evidence gaps still block confident decisions?",
+    focusQuestion: activeWedge.focusQuestion,
+    activeWedge: {
+      title: activeWedge.title,
+      category: activeWedge.category,
+      claim: activeWedge.claim,
+      scientificRelevance: activeWedge.scientificRelevance,
+      companyRelevance: activeWedge.companyRelevance,
+      evidenceConfidence: activeWedge.evidenceConfidence,
+      translationalPotential: activeWedge.translationalPotential,
+      currentRead: activeWedge.currentRead,
+      recommendedNextStep: activeWedge.recommendedNextStep
+    },
     standardPattern: {
       dominantProtocolFamily: dominantFamily,
       dominantChemicals,
@@ -459,11 +512,25 @@ export function buildDomainWedgeBrief(input: {
       reviewedSecondarySupportedCount,
       reviewedManualOnlyCount
     },
+    evidenceGaps: evidenceGapQueue.queue.slice(0, 5).map((record) => ({
+      title: record.title,
+      decisionImpact: record.decisionImpact,
+      authorityProfile: record.authorityProfile,
+      translationalSignal: record.translationalSignal,
+      missingFields: record.missingFields,
+      rationale: record.rationale
+    })),
+    nextExperiments: experimentPackets.packets.slice(0, 3).map((packet) => ({
+      title: packet.title,
+      category: packet.category,
+      decisionQuestion: packet.decisionQuestion,
+      primaryReadouts: packet.primaryReadouts,
+      comparisonArms: packet.comparisonArms,
+      whyNow: packet.whyNow
+    })),
     opportunityScan,
     callout:
-      snapshot.domain === "islets"
-        ? `The islet wedge is now structurally ready for opportunity finding: reviewed gates pass, reviewed depth is adequate, ${ambiguousReviewedCount} reviewed in-scope papers still need stronger outcome evidence, and ${secondarySourceReviewedCount} reviewed source-enrichment records still rely on secondary-source support.`
-        : `This slice is benchmark-stable enough to support opportunity finding, but the next commercial story still depends on whether fuller-source evidence sharpens the endpoint picture.`
+      `${activeWedge.title} is the explicit active wedge. Matrix rows=${wedgeBenchmarkMatrix.rows.length}, top decision-useful evidence gaps=${evidenceGapQueue.queue.filter((entry) => entry.decisionImpact === "high").length}, and next experiments are already packetized for review.`
   };
 }
 
@@ -472,6 +539,16 @@ export function renderDomainWedgeBriefMarkdown(brief: DomainWedgeBrief): string 
   lines.push(`# ${brief.domain} wedge brief`);
   lines.push("");
   lines.push(`Focus question: ${brief.focusQuestion}`);
+  lines.push("");
+  lines.push("## Active wedge");
+  lines.push(`- title: ${brief.activeWedge.title}`);
+  lines.push(`- category: ${brief.activeWedge.category}`);
+  lines.push(`- scientific relevance: ${brief.activeWedge.scientificRelevance}`);
+  lines.push(`- company relevance: ${brief.activeWedge.companyRelevance}`);
+  lines.push(`- evidence confidence: ${brief.activeWedge.evidenceConfidence}`);
+  lines.push(`- translational potential: ${brief.activeWedge.translationalPotential}`);
+  lines.push(`- current read: ${brief.activeWedge.currentRead}`);
+  lines.push(`- recommended next step: ${brief.activeWedge.recommendedNextStep}`);
   lines.push("");
   lines.push("## Standard pattern");
   lines.push(
@@ -528,6 +605,32 @@ export function renderDomainWedgeBriefMarkdown(brief: DomainWedgeBrief): string 
   lines.push(`- reviewed secondary-supported rows: ${brief.evidenceQuality.reviewedSecondarySupportedCount}`);
   lines.push(`- reviewed manual-curation-only rows: ${brief.evidenceQuality.reviewedManualOnlyCount}`);
   lines.push("");
+  lines.push("## Evidence gaps");
+  if (brief.evidenceGaps.length === 0) {
+    lines.push("- none currently prioritized");
+  } else {
+    for (const gap of brief.evidenceGaps) {
+      lines.push(
+        `- ${gap.title} | impact=${gap.decisionImpact} | authority=${gap.authorityProfile} | translational=${gap.translationalSignal}`
+      );
+      lines.push(`  missing fields=${gap.missingFields.join(", ")}`);
+      lines.push(`  rationale=${gap.rationale}`);
+    }
+  }
+  lines.push("");
+  lines.push("## Next experiments");
+  if (brief.nextExperiments.length === 0) {
+    lines.push("- none packetized yet");
+  } else {
+    for (const experiment of brief.nextExperiments) {
+      lines.push(`- ${experiment.title} | category=${experiment.category}`);
+      lines.push(`  decision question=${experiment.decisionQuestion}`);
+      lines.push(`  primary readouts=${experiment.primaryReadouts.join(", ")}`);
+      lines.push(`  comparison arms=${experiment.comparisonArms.join(" | ")}`);
+      lines.push(`  why now=${experiment.whyNow}`);
+    }
+  }
+  lines.push("");
   lines.push("## Opportunity scan");
   for (const opportunity of brief.opportunityScan) {
     lines.push(`- ${opportunity.title}`);
@@ -550,24 +653,26 @@ export function buildOpportunityScan(entries: DomainWedgeBrief[]): OpportunitySc
         entry.opportunityScan[0];
       const readinessScore = Number(
         (
-          entry.evidenceQuality.reviewedOutcomeCoverage * 0.45 +
-          entry.evidenceQuality.reviewedStepPhaseCoverage * 0.35 +
-          (entry.evidenceQuality.passesAllGates ? 0.2 : 0)
+          entry.activeWedge.evidenceConfidence * 0.4 +
+          entry.evidenceQuality.reviewedOutcomeCoverage * 0.25 +
+          entry.evidenceQuality.reviewedStepPhaseCoverage * 0.2 +
+          (entry.evidenceQuality.passesAllGates ? 0.15 : 0)
         ).toFixed(3)
       );
       const evidenceScore = Number(
         (
-          (1 - Math.min(1, entry.evidenceQuality.pendingSourceEnrichmentCount / 20)) * 0.4 +
-          (1 - Math.min(1, entry.evidenceQuality.missingOutcomeCount / 20)) * 0.4 +
-          (1 - Math.min(1, entry.evidenceQuality.missingStepPhaseCount / 10)) * 0.2
+          entry.activeWedge.evidenceConfidence * 0.5 +
+          (1 - Math.min(1, entry.evidenceQuality.pendingSourceEnrichmentCount / 20)) * 0.3 +
+          (1 - Math.min(1, entry.evidenceQuality.missingOutcomeCount / 20)) * 0.2
         ).toFixed(3)
       );
       const commercialScore = Number(
-        (
-          (entry.opportunityScan.length > 0 ? 0.45 : 0.25) +
-          (entry.standardPattern.dominantProtocolFamily !== "unknown" ? 0.25 : 0.1) +
-          (entry.domain === "islets" ? 0.2 : 0.15) +
-          (entry.evidenceQuality.reviewedOutcomeCoverage >= 0.5 ? 0.1 : 0.05)
+        Math.min(
+          1,
+          entry.activeWedge.companyRelevance * 0.45 +
+            entry.activeWedge.translationalPotential * 0.25 +
+            (entry.standardPattern.dominantProtocolFamily !== "unknown" ? 0.2 : 0.08) +
+            (entry.evidenceQuality.reviewedOutcomeCoverage >= 0.5 ? 0.1 : 0.04)
         ).toFixed(3)
       );
       return {
@@ -581,11 +686,13 @@ export function buildOpportunityScan(entries: DomainWedgeBrief[]): OpportunitySc
           `Still bottlenecked by ${entry.evidenceQuality.pendingSourceEnrichmentCount} pending source-enrichment records.`,
         whyOptimizationMatters:
           preferredOpportunity?.commercialWhyNow ??
-          "Optimization matters only if protocol uncertainty blocks real operational use.",
+          "Optimization matters only if protocol intelligence sharpens a real wedge and gives a credible next experiment.",
         recommendedNextMove:
-          entry.evidenceQuality.pendingSourceEnrichmentCount > 0
-            ? "Do reviewed source enrichment on the highest-value DOI-backed evidence gaps."
-            : "Pressure-test the top-ranked protocol wedge against a sharper human review."
+          entry.nextExperiments[0]?.title
+            ? `Pressure-test "${entry.nextExperiments[0].title}" as the next wedge-defining experiment.`
+            : entry.evidenceQuality.pendingSourceEnrichmentCount > 0
+              ? "Do reviewed source enrichment on the highest-value DOI-backed evidence gaps."
+              : "Pressure-test the active wedge against a sharper human review."
       };
     })
     .sort((left, right) => right.readinessScore - left.readinessScore || right.evidenceScore - left.evidenceScore);

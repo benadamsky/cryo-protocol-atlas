@@ -4,6 +4,7 @@
     "jsx": "preserve",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "types": ["node", "react", "react-dom"],
     "noEmit": true,
     "incremental": true,
     "plugins": [

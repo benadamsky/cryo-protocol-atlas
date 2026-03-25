@@ -1,6 +1,16 @@
 # ovarian-tissue wedge brief
 
-Focus question: Which ovarian cryopreservation slice is mature enough for protocol optimization, and where do the remaining evidence gaps still block confident decisions?
+Focus question: Which protocol comparison is sharp enough to anchor a first commercial cryopreservation wedge?
+
+## Active wedge
+- title: Head-to-head DMSO-centered ovarian tissue benchmark
+- category: benchmark
+- scientific relevance: 0.673
+- company relevance: 0.82
+- evidence confidence: 0.5
+- translational potential: 0.8
+- current read: This wedge is the best current candidate, but it should still be treated as a proving ground rather than a locked-in entry point.
+- recommended next step: DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass.
 
 ## Standard pattern
 - dominant family: slow-freezing
@@ -47,6 +57,37 @@ Focus question: Which ovarian cryopreservation slice is mature enough for protoc
 - reviewed secondary-supported rows: 0
 - reviewed manual-curation-only rows: 0
 
+## Evidence gaps
+- Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep | impact=medium | authority=abstract-only | translational=transplant relevant
+  missing fields=outcomeClasses, authority
+  rationale=no resolved extraction available for this reviewed paper
+- Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries | impact=medium | authority=abstract-only | translational=research only
+  missing fields=outcomeClasses, stepPhases, authority, protocolDetail
+  rationale=no resolved extraction available for this reviewed paper
+- Cryopreservation and in vitro culture of caprine preantral follicles | impact=medium | authority=abstract-only | translational=research only
+  missing fields=outcomeClasses, stepPhases, authority
+  rationale=no resolved extraction available for this reviewed paper
+- Ovarian and oocyte cryopreservation | impact=medium | authority=abstract-only | translational=transplant relevant
+  missing fields=outcomeClasses, stepPhases, authority
+  rationale=no resolved extraction available for this reviewed paper
+
+## Next experiments
+- Head-to-head DMSO-centered ovarian tissue benchmark | category=benchmark
+  decision question=Should Atlas prioritize "Head-to-head DMSO-centered ovarian tissue benchmark" as the main head-to-head wedge benchmark?
+  primary readouts=transplantation, function
+  comparison arms=slow-freezing arm | vitrification arm
+  why now=This wedge is the best current candidate, but it should still be treated as a proving ground rather than a locked-in entry point.
+- Promote morphology-heavy protocols to viability endpoints | category=endpoint-upgrade
+  decision question=Would "Promote morphology-heavy protocols to viability endpoints" materially sharpen the wedge decision if tested next?
+  primary readouts=transplantation, function
+  comparison arms=current standard protocol | top reported protocol with transplantation endpoint
+  why now=This remains one of the highest-signal next experiments in the current domain slice.
+- Same-species DMSO + EG vitrification benchmark | category=benchmark
+  decision question=Would "Same-species DMSO + EG vitrification benchmark" materially sharpen the wedge decision if tested next?
+  primary readouts=transplantation, function
+  comparison arms=slow-freezing arm | vitrification arm
+  why now=This remains one of the highest-signal next experiments in the current domain slice.
+
 ## Opportunity scan
 - Promote morphology-heavy protocols to viability endpoints
   why interesting=Several ovarian tissue protocols that currently look acceptable on morphology alone will reshuffle once they are compared on viability or functional endpoints. Evidence papers=6, strong outcomes=1, contradictions=0.
@@ -66,4 +107,4 @@ Focus question: Which ovarian cryopreservation slice is mature enough for protoc
   commercial why now=Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows.
 
 ## Callout
-- This slice is benchmark-stable enough to support opportunity finding, but the next commercial story still depends on whether fuller-source evidence sharpens the endpoint picture.
+- Head-to-head DMSO-centered ovarian tissue benchmark is the explicit active wedge. Matrix rows=6, top decision-useful evidence gaps=0, and next experiments are already packetized for review.

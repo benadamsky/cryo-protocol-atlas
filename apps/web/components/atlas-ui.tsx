@@ -14,16 +14,16 @@ export function AppShell({ children }: { children: ReactNode }) {
       <TopBar />
       <div className="shell-ribbon">
         <div className="shell-ribbon__copy">
-          <span className="shell-ribbon__eyebrow">Lineage</span>
+          <span className="shell-ribbon__eyebrow">Product Boundary</span>
           <p>
-            The console renders generated artifacts directly. Benchmark truth stays in the pipeline; the web layer is
-            a read-only lens.
+            Atlas is a protocol-intelligence and wedge-validation system. Conclusions come first, evidence comes second,
+            and discovery stays downstream.
           </p>
         </div>
         <div className="shell-ribbon__chips" aria-label="Atlas state">
-          <StatusPill tone="good">validated artifacts</StatusPill>
-          <StatusPill tone="neutral">review-led</StatusPill>
-          <StatusPill tone="warn">candidate discovery later</StatusPill>
+          <StatusPill tone="good">recommendation first</StatusPill>
+          <StatusPill tone="neutral">evidence grounded</StatusPill>
+          <StatusPill tone="warn">discovery downstream</StatusPill>
         </div>
       </div>
       <main className="page-shell">{children}</main>
@@ -38,19 +38,21 @@ export function TopBar() {
         <span className="brandmark__signal" />
         <span>
           <strong>Cryo Protocol Atlas</strong>
-          <small>Technical console for validated cryopreservation evidence</small>
+          <small>Protocol intelligence for wedge validation and experiment planning</small>
         </span>
       </Link>
       <nav className="topbar__nav" aria-label="Primary">
-        <Link href="/#validated-atlas">Validated Atlas</Link>
-        <Link href="/#benchmarking">Benchmarking</Link>
-        <Link href="/#discovery">Discovery</Link>
-        <Link href="/#debug">Debug</Link>
+        <Link href="/">Recommendation</Link>
+        <Link href="/wedges">Wedges</Link>
+        <Link href="/experiments">Experiments</Link>
+        <Link href="/evidence">Evidence</Link>
+        <Link href="/discovery">Discovery</Link>
+        <Link href="/debug">Debug</Link>
       </nav>
       <nav className="topbar__meta" aria-label="Status">
         <StatusPill tone="good">file-backed</StatusPill>
-        <StatusPill tone="neutral">print-ready</StatusPill>
-        <StatusPill tone="warn">no mutable backend</StatusPill>
+        <StatusPill tone="neutral">decision memo UI</StatusPill>
+        <StatusPill tone="warn">no autonomous claims</StatusPill>
       </nav>
     </header>
   );
@@ -188,10 +190,10 @@ export function Section(props: {
 
 export function DomainTabs(props: { domain: DomainId; current: string }) {
   const tabs = [
-    { id: "overview", label: "Summary", href: `/domains/${props.domain}` },
-    { id: "atlas", label: "Atlas", href: `/domains/${props.domain}/atlas` },
+    { id: "overview", label: "Wedge", href: `/domains/${props.domain}` },
+    { id: "atlas", label: "Matrix", href: `/domains/${props.domain}/atlas` },
     { id: "benchmark", label: "Benchmark", href: `/domains/${props.domain}/benchmark` },
-    { id: "review", label: "Review", href: `/domains/${props.domain}/review` },
+    { id: "review", label: "Evidence", href: `/domains/${props.domain}/review` },
     { id: "debug", label: "Debug", href: `/domains/${props.domain}/debug` }
   ];
 

@@ -2,6 +2,13 @@
 
 Cryo Protocol Atlas is an MVP protocol-intelligence layer built on top of CryoRepository.
 
+Its near-term job is wedge validation, not autonomous discovery. Atlas should make it easy for a scientist, operator, or investor to answer:
+
+- what is the best current cryopreservation wedge?
+- how strong is the evidence?
+- where are the biggest contradictions or density gaps?
+- what should be tested next?
+
 The first vertical slice focuses on ovarian tissue vitrification literature:
 
 - ingest papers and chemicals from CryoRepository
@@ -39,8 +46,18 @@ The next scaffolded domain is:
 - `bun run extract:islets`
 - `bun run analyze:ovarian`
 - `bun run analyze:islets`
+- `bun run active-wedge:ovarian`
+- `bun run active-wedge:islets`
 - `bun run wedge:ovarian`
 - `bun run wedge:islets`
+- `bun run matrix:ovarian`
+- `bun run matrix:islets`
+- `bun run gap-queue:ovarian`
+- `bun run gap-queue:islets`
+- `bun run experiments:ovarian`
+- `bun run experiments:islets`
+- `bun run contradictions:ovarian`
+- `bun run contradictions:islets`
 - `bun run call:ovarian`
 - `bun run call:islets`
 - `bun run opportunity-scan`
@@ -96,6 +113,8 @@ The current repo is a protocol-intelligence MVP, not a discovery engine. It esta
 - benchmark seeding for benchmarked slices
 - reviewed-gate evaluation for inclusion/exclusion and field accuracy
 - second-domain scaffold for islet cryopreservation literature
+- explicit active-wedge selection for the current best reviewed protocol wedge
+- wedge benchmark matrices, evidence-density queues, and experiment packets
 
 ## Discovery lane
 
@@ -179,6 +198,16 @@ The repo now also has a narrow optimizer lane under `packages/optimizer/`. This 
 - The deterministic optimizer benchmark is still a proxy benchmark. Discovery review decisions have not yet replaced it as the optimizer gold set.
 
 ## Human-facing outputs
+
+`bun run active-wedge:<domain>` writes `data/processed/<domain>/active-wedge.{json,md}`. This is the explicit reviewed wedge selection artifact with lightweight scoring for scientific relevance, company relevance, evidence confidence, and translational potential.
+
+`bun run matrix:<domain>` writes `data/processed/<domain>/wedge-benchmark-matrix.{json,md}`. This is the decision matrix for the active wedge: protocol family, CPA backbone, adjuncts, endpoints, authority profile, translational signal, confounds, and wedge relevance.
+
+`bun run gap-queue:<domain>` writes `data/processed/<domain>/wedge-evidence-gap-queue.{json,md}`. This is the wedge-scoped evidence-density queue, ranked by decision impact rather than raw backlog.
+
+`bun run experiments:<domain>` writes `data/processed/<domain>/experiment-packets.{json,md}`. These are the decision-useful next-experiment packets for the active wedge.
+
+`bun run contradictions:<domain>` writes `data/processed/<domain>/wedge-contradiction-report.{json,md}`. This is the wedge-specific contradiction view, focused on decision impact rather than generic conflict logging.
 
 `bun run wedge:<domain>` writes a call-ready wedge brief under `data/processed/<domain>/wedge-brief.{json,md}`. This is the current best artifact for a domain-specific conversation: standard protocol pattern, protocol families, dominant CPA clusters, contradictions, evidence quality, and top opportunity framing.
 

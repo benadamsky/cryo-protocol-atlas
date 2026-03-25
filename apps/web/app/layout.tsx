@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s · Cryo Protocol Atlas"
   },
   description:
-    "Read-only internal console for validated cryopreservation evidence, benchmark deltas, discovery signals, and debug lineage."
+    "Decision-first protocol intelligence for wedge validation, evidence review, and experiment planning."
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

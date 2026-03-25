@@ -388,6 +388,201 @@ const RunHealthSchema = z.object({
   recommendations: z.array(z.string())
 });
 
+const DiscoveryUiProviderSummarySchema = z.object({
+  kind: z.enum(["live-provider", "import", "manual"]).optional(),
+  source: z.string(),
+  query: z.string().optional(),
+  label: z.string().optional(),
+  fetchedCount: z.number(),
+  acceptedCount: z.number(),
+  failed: z.boolean().optional().default(false),
+  error: z.string().nullable().optional(),
+  totalHits: z.number().nullable().optional(),
+  truncated: z.boolean().optional().default(false)
+});
+
+const DiscoveryUiPaperSchema = z.object({
+  dedupeKey: z.string(),
+  title: z.string(),
+  journal: z.string().nullable().optional(),
+  publishedYear: z.number().nullable().optional(),
+  matchedKeywords: z.array(z.string()).optional().default([]),
+  sourceTypes: z.array(z.string()).optional().default([]),
+  sourceCount: z.number().optional().default(0),
+  recordCount: z.number().optional(),
+  rankingScore: z.number().optional().default(0),
+  relevanceScore: z.number().optional().default(0),
+  authorityScore: z.number().optional().default(0),
+  fullTextAvailability: z.string().optional().default("unknown")
+});
+
+const DiscoveryUiSnapshotSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  queryDescription: z.string(),
+  totalCandidates: z.number(),
+  isDegraded: z.boolean().optional().default(false),
+  degradationReasons: z.array(z.string()).optional().default([]),
+  providerSummaries: z.array(DiscoveryUiProviderSummarySchema),
+  papers: z.array(DiscoveryUiPaperSchema)
+});
+
+const DiscoveryUiDecisionSchema = z.object({
+  dedupeKey: z.string(),
+  title: z.string(),
+  decision: z.string().optional().default("pending"),
+  recommendation: z.string(),
+  recommendationReasons: z.array(z.string()).optional().default([]),
+  rankingScore: z.number().optional().default(0),
+  relevanceScore: z.number().optional().default(0),
+  authorityScore: z.number().optional().default(0),
+  sourceCount: z.number().optional().default(0),
+  sourceTypes: z.array(z.string()).optional().default([]),
+  fullTextAvailability: z.string().optional().default("unknown"),
+  matchedKeywords: z.array(z.string()).optional().default([]),
+  staleEvidence: z.boolean().optional().default(false),
+  staleReason: z.string().optional()
+});
+
+const DiscoveryUiQueueSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  sourceSnapshotGeneratedAt: z.string(),
+  candidateCount: z.number(),
+  trackedCount: z.number(),
+  novelCandidateCount: z.number(),
+  isDegraded: z.boolean().optional().default(false),
+  degradationReasons: z.array(z.string()).optional().default([]),
+  decisions: z.array(DiscoveryUiDecisionSchema)
+});
+
+const DiscoveryUiReviewItemSchema = z.object({
+  dedupeKey: z.string(),
+  title: z.string(),
+  recommendation: z.string(),
+  decision: z.string(),
+  rankingScore: z.number().optional().default(0),
+  relevanceScore: z.number().optional().default(0),
+  authorityScore: z.number().optional().default(0),
+  matchedKeywords: z.array(z.string()).optional().default([]),
+  recommendationReasons: z.array(z.string()).optional().default([]),
+  noveltyBasis: z.array(z.string()).optional().default([]),
+  promotionRisks: z.array(z.string()).optional().default([]),
+  reviewChecklist: z.array(z.string()).optional().default([])
+});
+
+const DiscoveryUiReviewPacketSchema = z.object({
+  generatedAt: z.string(),
+  domain: DomainIdSchema,
+  sourceSnapshotGeneratedAt: z.string(),
+  queueGeneratedAt: z.string(),
+  candidateCount: z.number(),
+  reviewItemCount: z.number(),
+  isDegraded: z.boolean().optional().default(false),
+  degradationReasons: z.array(z.string()).optional().default([]),
+  items: z.array(DiscoveryUiReviewItemSchema)
+});
+
+const OptimizerUiPolicySchema = z.object({
+  weights: z.record(z.string(), z.number()),
+  thresholds: z.object({
+    promote: z.number(),
+    review: z.number()
+  }),
+  heuristics: z.object({
+    protocolSignals: z.array(z.string()),
+    experimentalSignals: z.array(z.string()),
+    outcomeSignals: z.array(z.string()),
+    negativeSignals: z.array(z.string())
+  })
+});
+
+const OptimizerUiEvaluationSchema = z.object({
+  generatedAt: z.string(),
+  benchmarkGeneratedAt: z.string(),
+  aggregate: z.object({
+    candidateCount: z.number(),
+    positiveCount: z.number(),
+    negativeCount: z.number(),
+    promoteCount: z.number(),
+    reviewCount: z.number(),
+    deferCount: z.number(),
+    rankingAccuracy: z.number(),
+    promotePrecision: z.number(),
+    promoteRecall: z.number(),
+    reviewOrPromoteRecall: z.number(),
+    deferPrecision: z.number(),
+    negativePromoteRate: z.number(),
+    objective: z.number()
+  }),
+  byDomain: z.array(
+    z.object({
+      domain: DomainIdSchema,
+      candidateCount: z.number(),
+      positiveCount: z.number(),
+      negativeCount: z.number(),
+      promoteCount: z.number(),
+      reviewCount: z.number(),
+      deferCount: z.number(),
+      rankingAccuracy: z.number(),
+      promotePrecision: z.number(),
+      promoteRecall: z.number(),
+      reviewOrPromoteRecall: z.number(),
+      deferPrecision: z.number(),
+      negativePromoteRate: z.number(),
+      objective: z.number()
+    })
+  ),
+  topFalsePromotes: z.array(z.any()),
+  missedPositives: z.array(z.any())
+});
+
+const OptimizerUiLoopRunSchema = z.object({
+  generatedAt: z.string(),
+  strategyPath: z.string(),
+  strategySummary: z.object({
+    domains: z.array(DomainIdSchema),
+    maxAttempts: z.number(),
+    maxAcceptedMutations: z.number(),
+    minimumScoreDelta: z.number(),
+    minimumPromotePrecision: z.number(),
+    minimumPromoteRecall: z.number()
+  }),
+  baselineObjective: z.number(),
+  finalObjective: z.number(),
+  acceptedMutationCount: z.number(),
+  attempts: z.array(
+    z.object({
+      attempt: z.number(),
+      mutation: z.object({
+        path: z.string(),
+        from: z.number(),
+        to: z.number(),
+        delta: z.number()
+      }),
+      objectiveBefore: z.number(),
+      objectiveAfter: z.number(),
+      accepted: z.boolean(),
+      rationale: z.string(),
+      metricsAfter: z.object({
+        candidateCount: z.number(),
+        positiveCount: z.number(),
+        negativeCount: z.number(),
+        promoteCount: z.number(),
+        reviewCount: z.number(),
+        deferCount: z.number(),
+        rankingAccuracy: z.number(),
+        promotePrecision: z.number(),
+        promoteRecall: z.number(),
+        reviewOrPromoteRecall: z.number(),
+        deferPrecision: z.number(),
+        negativePromoteRate: z.number(),
+        objective: z.number()
+      })
+    })
+  )
+});
+
 const AutoresearchCycleEntrySchema = z.object({
   cycle: z.number(),
   ingestIncluded: z.boolean(),
@@ -496,12 +691,49 @@ export type DiscoveryDomainCorpus = {
   }>;
 };
 
+export type DiscoveryLaneDomain = {
+  domain: DomainId;
+  label: string;
+  strapline: string;
+  sourceLabel: "worktree" | "primary";
+  snapshotGeneratedAt: string;
+  queueGeneratedAt: string;
+  packetGeneratedAt: string | null;
+  queryDescription: string;
+  totalCandidates: number;
+  trackedCount: number;
+  novelCandidateCount: number;
+  pendingCount: number;
+  promoteCount: number;
+  reviewCount: number;
+  deferCount: number;
+  reviewItemCount: number;
+  isDegraded: boolean;
+  degradationReasons: string[];
+  providerFailureCount: number;
+  providerSummaries: Array<z.output<typeof DiscoveryUiProviderSummarySchema>>;
+  topPapers: Array<z.output<typeof DiscoveryUiPaperSchema>>;
+  topDecisions: Array<z.output<typeof DiscoveryUiDecisionSchema>>;
+  topReviewItems: Array<z.output<typeof DiscoveryUiReviewItemSchema>>;
+};
+
 export type DiscoveryData = {
   sourceLabel: "worktree" | "primary";
-  overview: OverviewData;
   runHealth: RunHealthData;
-  domains: DiscoveryDomainCorpus[];
-  recommendations: string[];
+  domains: DiscoveryLaneDomain[];
+  totalPendingCount: number;
+  totalPromoteRecommendations: number;
+  totalReviewRecommendations: number;
+  totalPacketItems: number;
+  artifacts: ArtifactMeta[];
+};
+
+export type OptimizerData = {
+  sourceLabel: "worktree" | "primary";
+  policy: z.output<typeof OptimizerUiPolicySchema>;
+  evaluation: z.output<typeof OptimizerUiEvaluationSchema> | null;
+  loopRun: z.output<typeof OptimizerUiLoopRunSchema> | null;
+  available: boolean;
   artifacts: ArtifactMeta[];
 };
 
@@ -751,6 +983,39 @@ async function readJsonArtifact<TSchema extends z.ZodTypeAny>(
   throw new Error(`Missing artifact ${relativePath}. Checked: ${attemptedPaths.join(", ")}`);
 }
 
+async function readOptimizerPolicyArtifact(): Promise<DataSource<z.output<typeof OptimizerUiPolicySchema>>> {
+  const relativePath = "packages/optimizer/src/policy.ts";
+  const attemptedPaths: string[] = [];
+
+  for (const root of uniqueRoots()) {
+    const absolutePath = path.join(root, relativePath);
+    attemptedPaths.push(absolutePath);
+
+    try {
+      const raw = await readFile(absolutePath, "utf8");
+      const match = raw.match(/OptimizerPolicySchema\.parse\(\s*({[\s\S]*?})\s*\);/m);
+
+      if (!match) {
+        throw new Error(`Unable to parse optimizer policy payload from ${absolutePath}`);
+      }
+
+      return {
+        data: OptimizerUiPolicySchema.parse(JSON.parse(match[1])),
+        relativePath,
+        absolutePath,
+        sourceLabel: labelForRoot(root)
+      };
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+        continue;
+      }
+      throw error;
+    }
+  }
+
+  throw new Error(`Missing artifact ${relativePath}. Checked: ${attemptedPaths.join(", ")}`);
+}
+
 function pickSourceLabel(...sources: Array<DataSource<unknown> | null>) {
   return sources.find(Boolean)?.sourceLabel ?? "worktree";
 }
@@ -899,64 +1164,118 @@ async function getAutoresearchCyclesArtifact(domain: DomainId) {
 }
 
 export async function getDiscoveryData(): Promise<DiscoveryData> {
-  const [overview, runHealth, snapshots] = await Promise.all([
-    getOverviewData(),
+  const [runHealth, snapshots, queues, packets] = await Promise.all([
     getRunHealthArtifact(),
-    Promise.all(DOMAIN_ORDER.map((domain) => getDomainSnapshotArtifact(domain)))
+    Promise.all(
+      DOMAIN_ORDER.map((domain) =>
+        readJsonArtifact(`data/discovery/${domain}/discovery-snapshot.json`, DiscoveryUiSnapshotSchema)
+      )
+    ),
+    Promise.all(
+      DOMAIN_ORDER.map((domain) =>
+        readJsonArtifact(`data/discovery/${domain}/promotion-queue.json`, DiscoveryUiQueueSchema)
+      )
+    ),
+    Promise.all(
+      DOMAIN_ORDER.map((domain) =>
+        readJsonArtifact(
+          `data/discovery/${domain}/promotion-review-packet.json`,
+          DiscoveryUiReviewPacketSchema,
+          { optional: true }
+        )
+      )
+    )
   ]);
   const runHealthSource = requireArtifact(runHealth, "data/autoresearch/run-health.json");
   const snapshotSources = snapshots.map((source, index) =>
-    requireArtifact(source, `data/processed/${DOMAIN_ORDER[index]}/domain-snapshot.json`)
+    requireArtifact(source, `data/discovery/${DOMAIN_ORDER[index]}/discovery-snapshot.json`)
+  );
+  const queueSources = queues.map((source, index) =>
+    requireArtifact(source, `data/discovery/${DOMAIN_ORDER[index]}/promotion-queue.json`)
   );
 
-  const domains = snapshotSources
-    .map((source) => {
-      const meta = getDomainMeta(source.data.domain);
-      const topPapers = [...source.data.papers]
-        .sort((left, right) => right.score - left.score || right.paper.title.localeCompare(left.paper.title))
-        .slice(0, 5)
-        .map((paper) => ({
-          id: paper.paper.id,
-          title: paper.paper.title,
-          doi: paper.paper.doi,
-          journal: paper.paper.journal,
-          publishedYear: paper.paper.published_year,
-          score: paper.score,
-          matchedKeywords: paper.matchedKeywords,
-          paperUrl: paper.paper.paper_url
-        }));
+  const domains = DOMAIN_ORDER.map((domain, index) => {
+    const snapshot = snapshotSources[index];
+    const queue = queueSources[index];
+    const packet = packets[index];
+    const meta = getDomainMeta(domain);
+    const providerFailureCount = snapshot.data.providerSummaries.filter((summary) => summary.failed).length;
 
-      return {
-        domain: source.data.domain,
-        label: meta.label,
-        strapline: meta.strapline,
-        sourceLabel: source.sourceLabel,
-        generatedAt: source.data.generatedAt,
-        totalFetched: source.data.totalFetched,
-        totalMatched: source.data.totalMatched,
-        matchRate: source.data.totalFetched > 0 ? source.data.totalMatched / source.data.totalFetched : 0,
-        topPapers
-      } satisfies DiscoveryDomainCorpus;
-    })
-    .sort(
-      (left, right) =>
-        DOMAIN_ORDER.indexOf(left.domain) - DOMAIN_ORDER.indexOf(right.domain)
-    );
+    return {
+      domain,
+      label: meta.label,
+      strapline: meta.strapline,
+      sourceLabel: pickSourceLabel(snapshot, queue, packet),
+      snapshotGeneratedAt: snapshot.data.generatedAt,
+      queueGeneratedAt: queue.data.generatedAt,
+      packetGeneratedAt: packet?.data.generatedAt ?? null,
+      queryDescription: snapshot.data.queryDescription,
+      totalCandidates: snapshot.data.totalCandidates,
+      trackedCount: queue.data.trackedCount,
+      novelCandidateCount: queue.data.novelCandidateCount,
+      pendingCount: queue.data.decisions.filter((item) => item.recommendation === "pending" || item.decision === "pending").length,
+      promoteCount: queue.data.decisions.filter((item) => item.recommendation === "promote").length,
+      reviewCount: queue.data.decisions.filter((item) => item.recommendation === "review").length,
+      deferCount: queue.data.decisions.filter((item) => item.recommendation === "defer").length,
+      reviewItemCount: packet?.data.reviewItemCount ?? 0,
+      isDegraded: Boolean(snapshot.data.isDegraded || queue.data.isDegraded || packet?.data.isDegraded),
+      degradationReasons: Array.from(
+        new Set([
+          ...snapshot.data.degradationReasons,
+          ...queue.data.degradationReasons,
+          ...(packet?.data.degradationReasons ?? [])
+        ])
+      ),
+      providerFailureCount,
+      providerSummaries: snapshot.data.providerSummaries,
+      topPapers: [...snapshot.data.papers]
+        .sort((left, right) => right.rankingScore - left.rankingScore || right.title.localeCompare(left.title))
+        .slice(0, 5),
+      topDecisions: [...queue.data.decisions]
+        .sort((left, right) => right.rankingScore - left.rankingScore || right.title.localeCompare(left.title))
+        .slice(0, 5),
+      topReviewItems: [...(packet?.data.items ?? [])]
+        .sort((left, right) => right.rankingScore - left.rankingScore || right.title.localeCompare(left.title))
+        .slice(0, 3)
+    } satisfies DiscoveryLaneDomain;
+  });
 
   return {
-    sourceLabel: pickSourceLabel(runHealthSource, ...snapshotSources),
-    overview,
+    sourceLabel: pickSourceLabel(runHealthSource, ...snapshotSources, ...queueSources, ...packets),
     runHealth: runHealthSource.data,
     domains,
-    recommendations: runHealthSource.data.recommendations,
+    totalPendingCount: sum(domains.map((domain) => domain.pendingCount)),
+    totalPromoteRecommendations: sum(domains.map((domain) => domain.promoteCount)),
+    totalReviewRecommendations: sum(domains.map((domain) => domain.reviewCount)),
+    totalPacketItems: sum(domains.map((domain) => domain.reviewItemCount)),
     artifacts: [
       toArtifactMeta("Run health", runHealthSource),
-      ...snapshotSources.map((source) =>
-        toArtifactMeta(
-          `${getDomainMeta(source.data.domain).label} corpus snapshot`,
-          source
-        )
+      ...snapshotSources.map((source) => toArtifactMeta(`${getDomainMeta(source.data.domain).label} discovery snapshot`, source)),
+      ...queueSources.map((source) => toArtifactMeta(`${getDomainMeta(source.data.domain).label} promotion queue`, source)),
+      ...packets.map((source, index) =>
+        toArtifactMeta(`${getDomainMeta(DOMAIN_ORDER[index]).label} promotion packet`, source)
       )
+    ].filter((artifact): artifact is ArtifactMeta => artifact !== null)
+  };
+}
+
+export async function getOptimizerData(): Promise<OptimizerData> {
+  const [policy, evaluation, loopRun] = await Promise.all([
+    readOptimizerPolicyArtifact(),
+    readJsonArtifact("data/optimizer/evaluation.json", OptimizerUiEvaluationSchema, { optional: true }),
+    readJsonArtifact("data/optimizer/loop-results.json", OptimizerUiLoopRunSchema, { optional: true })
+  ]);
+
+  return {
+    sourceLabel: pickSourceLabel(policy, evaluation, loopRun),
+    policy: policy.data,
+    evaluation: evaluation?.data ?? null,
+    loopRun: loopRun?.data ?? null,
+    available: Boolean(evaluation || loopRun),
+    artifacts: [
+      toArtifactMeta("Optimizer policy", policy),
+      toArtifactMeta("Optimizer evaluation", evaluation),
+      toArtifactMeta("Optimizer loop run", loopRun)
     ].filter((artifact): artifact is ArtifactMeta => artifact !== null)
   };
 }

@@ -1,13 +1,15 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { DomainIdSchema, type DomainId } from "../packages/shared/src/schema.js";
-import type { AtlasSummary } from "../packages/research/src/atlas.js";
+import {
+  DomainIdSchema,
+  WedgeBenchmarkMatrixSchema,
+  type DomainId
+} from "../packages/shared/src/schema.js";
 import type { OpportunityScanEntry } from "../packages/research/src/wedges.js";
 import {
   buildDomainCallPacket,
   renderDomainCallPacketMarkdown
 } from "../packages/research/src/call-packet.js";
-import type { IsletBenchmarkMatrix } from "../packages/research/src/islet-benchmark-matrix.js";
 
 const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
 
@@ -25,15 +27,13 @@ async function maybeReadOpportunityScanEntry(
   }
 }
 
-async function maybeReadIsletMatrix(rootDir: string, selectedDomain: DomainId): Promise<IsletBenchmarkMatrix | undefined> {
-  if (selectedDomain !== "islets") {
-    return undefined;
-  }
-
+async function maybeReadWedgeMatrix(rootDir: string, selectedDomain: DomainId) {
   try {
-    return JSON.parse(
-      await readFile(join(rootDir, "data", "processed", "islets", "benchmark-matrix.json"), "utf8")
-    ) as IsletBenchmarkMatrix;
+    return WedgeBenchmarkMatrixSchema.parse(
+      JSON.parse(
+        await readFile(join(rootDir, "data", "processed", selectedDomain, "wedge-benchmark-matrix.json"), "utf8")
+      )
+    );
   } catch {
     return undefined;
   }
@@ -44,15 +44,13 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const processedDir = join(rootDir, "data", "processed", selectedDomain);
 
   const brief = JSON.parse(await readFile(join(processedDir, "wedge-brief.json"), "utf8"));
-  const atlas = JSON.parse(await readFile(join(processedDir, "atlas-summary.json"), "utf8")) as AtlasSummary;
   const opportunityScanEntry = await maybeReadOpportunityScanEntry(rootDir, selectedDomain);
-  const isletMatrix = await maybeReadIsletMatrix(rootDir, selectedDomain);
+  const wedgeMatrix = await maybeReadWedgeMatrix(rootDir, selectedDomain);
 
   const packet = buildDomainCallPacket({
     brief,
-    atlas,
     opportunityScanEntry,
-    isletMatrix
+    wedgeMatrix
   });
 
   await mkdir(processedDir, { recursive: true });

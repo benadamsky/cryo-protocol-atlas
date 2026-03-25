@@ -1,7 +1,7 @@
 import path from "node:path";
-import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+/** @type {import("next").NextConfig} */
+const nextConfig = {
   experimental: {
     externalDir: true
   },
