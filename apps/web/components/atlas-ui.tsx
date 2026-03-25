@@ -38,9 +38,6 @@ export function TopBar() {
         </span>
       </Link>
       <PrimaryNav />
-      <nav className="topbar__utility" aria-label="Utility">
-        <Link href="/debug">Debug</Link>
-      </nav>
     </header>
   );
 }

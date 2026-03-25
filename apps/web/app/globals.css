@@ -85,7 +85,7 @@ ul {
   top: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) auto auto;
+  grid-template-columns: minmax(260px, 1fr) auto;
   align-items: center;
   gap: 1.25rem;
   padding: 0.9rem 1.5rem;
@@ -127,10 +127,19 @@ ul {
   box-shadow: 0 0 0 7px rgba(14, 165, 164, 0.1);
 }
 
+.topbar__nav-shell {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+}
+
+.topbar__menu-button {
+  display: none;
+}
+
 .topbar__nav {
   display: inline-grid;
   grid-auto-flow: column;
-  flex-wrap: wrap;
   gap: 0.35rem;
   justify-content: center;
   padding: 0.28rem;
@@ -169,24 +178,6 @@ ul {
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.9),
     0 4px 12px rgba(18, 30, 37, 0.08);
-}
-
-.topbar__utility {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.topbar__utility a {
-  padding: 0.55rem 0.75rem;
-  border-radius: 0.8rem;
-  border: 1px solid transparent;
-}
-
-.topbar__utility a:hover,
-.topbar__utility a:focus-visible {
-  border-color: rgba(19, 36, 48, 0.08);
-  background: rgba(19, 36, 48, 0.05);
-  color: var(--ink);
 }
 
 .page-shell {
@@ -1271,9 +1262,8 @@ ul {
     display: none;
   }
 
-  .topbar__nav,
-  .topbar__utility {
-    justify-content: flex-start;
+  .topbar__nav-shell {
+    justify-self: stretch;
   }
 }
 
@@ -1286,7 +1276,7 @@ ul {
   .topbar {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    align-items: start;
+    align-items: center;
     gap: 0.8rem 0.7rem;
     padding: 0.8rem 0.9rem;
   }
@@ -1311,35 +1301,98 @@ ul {
     box-shadow: 0 0 0 5px rgba(14, 165, 164, 0.08);
   }
 
-  .topbar__nav {
-    grid-column: 1 / -1;
-    width: 100%;
+  .topbar__nav-shell {
+    position: relative;
+    justify-self: end;
+  }
+
+  .topbar__menu-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-height: 2.55rem;
+    padding: 0.58rem 0.82rem;
+    border: 1px solid rgba(19, 36, 48, 0.08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .topbar__menu-button-copy {
+    line-height: 1;
+  }
+
+  .topbar__menu-icon {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
-    overflow: visible;
+    gap: 0.22rem;
+  }
+
+  .topbar__menu-icon span {
+    display: block;
+    width: 1rem;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 140ms ease, opacity 140ms ease;
+  }
+
+  .topbar__nav-shell.is-open .topbar__menu-icon span:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .topbar__nav-shell.is-open .topbar__menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .topbar__nav-shell.is-open .topbar__menu-icon span:nth-child(3) {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  .topbar__nav {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    right: 0;
+    left: auto;
+    z-index: 30;
+    width: min(280px, calc(100vw - 1rem));
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 0.4rem;
     border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 14px 30px rgba(18, 30, 37, 0.14);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 140ms ease, transform 140ms ease;
+  }
+
+  .topbar__nav-shell.is-open .topbar__nav {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .topbar__nav-link {
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-height: 2.35rem;
-    padding: 0.52rem 0.45rem;
-    text-align: center;
-    font-size: 0.82rem;
+    justify-content: flex-start;
+    min-height: 2.5rem;
+    padding: 0.7rem 0.8rem;
+    text-align: left;
+    font-size: 0.88rem;
     line-height: 1.2;
   }
 
-  .topbar__utility {
-    grid-column: 2;
-    align-self: start;
-    justify-content: flex-end;
-  }
-
-  .topbar__utility a {
-    padding: 0.38rem 0.52rem;
-    font-size: 0.8rem;
+  .topbar__menu-button:focus-visible,
+  .topbar__nav-link:focus-visible {
+    outline: 2px solid rgba(14, 165, 164, 0.45);
+    outline-offset: 2px;
   }
 
   .shell-ribbon {
