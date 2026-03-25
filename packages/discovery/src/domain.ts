@@ -18,6 +18,20 @@ type DiscoveryDomainConfig = {
   minimumTitleMethodMatches?: number;
 };
 
+type CryoDiscoveryDomainInput = {
+  label: string;
+  queryDescription: string;
+  cryodbQuery: string;
+  liveQueryAnchors: string[];
+  anchorConcepts: KeywordConcept[];
+  contextualSupportingConcepts: KeywordConcept[];
+  extraRequiredSupportingConcepts?: KeywordConcept[];
+  titleMethodConcepts?: KeywordConcept[];
+  blockedTitleConcepts?: KeywordConcept[];
+  minimumTitleRequiredSupportingMatches?: number;
+  minimumTitleMethodMatches?: number;
+};
+
 const DISCOVERY_SCORING = {
   anchorCoverageWeight: 7,
   requiredSupportingCoverageWeight: 5,
@@ -41,20 +55,93 @@ function concept(label: string, phrases: string[]): KeywordConcept {
   };
 }
 
+const COMMON_REQUIRED_SUPPORTING_CONCEPTS = [
+  concept("cryopreservation", ["cryopreservation", "cryopreserved"]),
+  concept("vitrification", ["vitrification", "vitrified"]),
+  concept("freezing", ["freezing", "frozen", "slow freezing", "slow cooling"]),
+  concept("thaw", ["thaw", "thawed", "post-thaw"]),
+  concept("cryoprotectant", ["cryoprotectant", "cryoprotective", "dmsO", "dimethyl sulfoxide", "ethylene glycol"])
+];
+
+const COMMON_LIVE_PROVIDER_SIGNAL_TERMS = [
+  "cryopreservation",
+  "vitrification",
+  "freezing",
+  "thaw",
+  "cryoprotectant"
+];
+
+function quoteQueryPhrase(value: string): string {
+  return `"${value}"`;
+}
+
+function buildLiveProviderQuery(anchorPhrases: string[], signalTerms: string[]): string {
+  return `(${anchorPhrases.map(quoteQueryPhrase).join(" OR ")}) AND (${signalTerms.join(" OR ")})`;
+}
+
+function buildProviderQueries(cryodbQuery: string, liveQueryAnchors: string[]): Record<LiveDiscoveryProvider, string> {
+  const liveQuery = buildLiveProviderQuery(liveQueryAnchors, COMMON_LIVE_PROVIDER_SIGNAL_TERMS);
+  return {
+    cryodb: cryodbQuery,
+    openalex: liveQuery,
+    crossref: liveQuery,
+    "europe-pmc": liveQuery
+  };
+}
+
+function buildCryoDiscoveryDomainConfig(input: CryoDiscoveryDomainInput): DiscoveryDomainConfig {
+  return {
+    label: input.label,
+    queryDescription: input.queryDescription,
+    providerQueries: buildProviderQueries(input.cryodbQuery, input.liveQueryAnchors),
+    anchorConcepts: input.anchorConcepts,
+    requiredSupportingConcepts: [
+      ...COMMON_REQUIRED_SUPPORTING_CONCEPTS,
+      ...(input.extraRequiredSupportingConcepts ?? [])
+    ],
+    contextualSupportingConcepts: input.contextualSupportingConcepts,
+    titleMethodConcepts: input.titleMethodConcepts,
+    blockedTitleConcepts: input.blockedTitleConcepts,
+    minimumTitleRequiredSupportingMatches: input.minimumTitleRequiredSupportingMatches,
+    minimumTitleMethodMatches: input.minimumTitleMethodMatches
+  };
+}
+
+const OVARIAN_TITLE_METHOD_CONCEPTS = [
+  concept("protocol", ["protocol", "procedure", "workflow", "method"]),
+  concept("comparison", ["comparison", "compare", "versus", "vs"]),
+  concept("culture", ["culture", "cultured", "in vitro growth", "ivg"]),
+  concept("cryoprotectant handling", [
+    "cryoprotectant",
+    "cryoprotective agent",
+    "cryoprotective agents",
+    "permeation",
+    "equilibration",
+    "warming"
+  ]),
+  concept("freezing method", ["slow freezing", "slow cooling", "vitrification", "vitrified"])
+];
+
+const OVARIAN_BLOCKED_TITLE_CONCEPTS = [
+  concept("review style", ["systematic review", "meta-analysis", "meta analysis"]),
+  concept("clinical outcome", ["live birth", "pregnancy", "pregnancies", "woman", "women", "children following"]),
+  concept("broad summary", ["overview", "state of the art"])
+];
+
 const DISCOVERY_DOMAIN_CONFIGS: Record<DomainId, DiscoveryDomainConfig> = {
-  "ovarian-tissue": {
+  "ovarian-tissue": buildCryoDiscoveryDomainConfig({
     label: "ovarian tissue",
     queryDescription:
       "Cryopreservation literature for ovarian tissue, ovarian cortex, follicles, and whole-ovary workflows with explicit storage, freezing, vitrification, or thaw signal.",
-    providerQueries: {
-      cryodb: "ovarian tissue cryopreservation",
-      openalex:
-        "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
-      crossref:
-        "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
-      "europe-pmc":
-        "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)"
-    },
+    cryodbQuery: "ovarian tissue cryopreservation",
+    liveQueryAnchors: [
+      "ovarian tissue",
+      "ovarian cortex",
+      "whole ovary",
+      "ovarian follicles",
+      "primordial follicles",
+      "preantral follicles"
+    ],
     anchorConcepts: [
       concept("ovarian tissue", ["ovarian tissue", "ovarian tissues"]),
       concept("ovarian cortex", ["ovarian cortex", "ovarian cortical"]),
@@ -68,66 +155,31 @@ const DISCOVERY_DOMAIN_CONFIGS: Record<DomainId, DiscoveryDomainConfig> = {
         "preantral follicles"
       ])
     ],
-    requiredSupportingConcepts: [
-      concept("cryopreservation", ["cryopreservation", "cryopreserved"]),
-      concept("vitrification", ["vitrification", "vitrified"]),
-      concept("freezing", ["freezing", "frozen", "slow freezing", "slow cooling"]),
-      concept("thaw", ["thaw", "thawed", "post-thaw"]),
-      concept("cryoprotectant", ["cryoprotectant", "cryoprotective", "dimethyl sulfoxide", "dmsO", "ethylene glycol"]),
-      concept("cryostorage", ["cryostorage", "liquid nitrogen"])
-    ],
+    extraRequiredSupportingConcepts: [concept("cryostorage", ["cryostorage", "liquid nitrogen"])],
     contextualSupportingConcepts: [
       concept("fertility preservation", ["fertility preservation"]),
       concept("oocyte", ["oocyte", "oocytes"]),
       concept("transplantation", ["transplantation", "transplant", "autotransplant", "graft"])
     ],
-    titleMethodConcepts: [
-      concept("protocol", ["protocol", "procedure", "workflow", "method"]),
-      concept("comparison", ["comparison", "compare", "versus", "vs"]),
-      concept("culture", ["culture", "cultured", "in vitro growth", "ivg"]),
-      concept("cryoprotectant handling", [
-        "cryoprotectant",
-        "cryoprotective agent",
-        "cryoprotective agents",
-        "permeation",
-        "equilibration",
-        "warming"
-      ]),
-      concept("freezing method", ["slow freezing", "slow cooling", "vitrification", "vitrified"])
-    ],
-    blockedTitleConcepts: [
-      concept("review style", ["systematic review", "meta-analysis", "meta analysis"]),
-      concept("clinical outcome", ["live birth", "pregnancy", "pregnancies", "woman", "women", "children following"]),
-      concept("broad summary", ["overview", "state of the art"])
-    ],
+    titleMethodConcepts: OVARIAN_TITLE_METHOD_CONCEPTS,
+    blockedTitleConcepts: OVARIAN_BLOCKED_TITLE_CONCEPTS,
     minimumTitleRequiredSupportingMatches: 2,
     minimumTitleMethodMatches: 1
-  },
-  islets: {
+  }),
+  islets: buildCryoDiscoveryDomainConfig({
     label: "islets",
     queryDescription:
       "Cryopreservation literature for pancreatic islets with explicit freezing, vitrification, thaw, cryoprotectant, or post-thaw recovery signal.",
-    providerQueries: {
-      cryodb: "islet cryopreservation",
-      openalex:
-        "(\"pancreatic islets\" OR \"pancreatic islet\" OR islets) AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
-      crossref:
-        "(\"pancreatic islets\" OR \"pancreatic islet\" OR islets) AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
-      "europe-pmc":
-        "(\"pancreatic islets\" OR \"pancreatic islet\" OR islets) AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)"
-    },
+    cryodbQuery: "islet cryopreservation",
+    liveQueryAnchors: ["pancreatic islets", "pancreatic islet", "islets"],
     anchorConcepts: [
       concept("pancreatic islets", ["pancreatic islets", "pancreatic islet"]),
       concept("islets", ["islets", "islet"]),
       concept("encapsulated islets", ["encapsulated islets", "encapsulated islet"])
     ],
-    requiredSupportingConcepts: [
-      concept("cryopreservation", ["cryopreservation", "cryopreserved"]),
-      concept("vitrification", ["vitrification", "vitrified"]),
-      concept("freezing", ["freezing", "frozen", "slow freezing", "slow cooling"]),
-      concept("thaw", ["thaw", "thawed", "post-thaw"]),
-      concept("cryoprotectant", ["cryoprotectant", "cryoprotective", "dmsO", "dimethyl sulfoxide", "freezer bag"]),
-      concept("recovery", ["recovery", "viability", "post-thaw recovery"])
+    extraRequiredSupportingConcepts: [
+      concept("recovery", ["recovery", "viability", "post-thaw recovery"]),
+      concept("freezer bag", ["freezer bag"])
     ],
     contextualSupportingConcepts: [
       concept("transplantation", ["transplantation", "transplant"]),
@@ -135,7 +187,7 @@ const DISCOVERY_DOMAIN_CONFIGS: Record<DomainId, DiscoveryDomainConfig> = {
       concept("insulin", ["insulin"]),
       concept("beta cell", ["beta cell", "beta cells"])
     ]
-  }
+  })
 };
 
 export function getDiscoveryDomainConfig(domain: DomainId): DiscoveryDomainConfig {

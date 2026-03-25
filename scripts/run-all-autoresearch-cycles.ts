@@ -1,7 +1,8 @@
 import { execFileSync } from "node:child_process";
+import { ALL_DOMAINS } from "../packages/shared/src/schema.js";
 
 const forwardedArgs = process.argv.slice(2);
-const domains = ["ovarian-tissue", "islets"];
+const domains = [...ALL_DOMAINS];
 
 for (const domain of domains) {
   execFileSync(

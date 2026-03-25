@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import {
+  ALL_DOMAINS,
   DiscoveryImportSummarySchema,
   DiscoveryPromotionQueueSchema,
   DiscoveryPromotionReviewPacketSchema,
@@ -11,9 +12,7 @@ import {
 
 function parseArgs(argv: string[]): DomainId[] {
   const domainArg = argv[2] ?? "all";
-  return domainArg === "all"
-    ? ["ovarian-tissue", "islets"]
-    : [DomainIdSchema.parse(domainArg)];
+  return domainArg === "all" ? [...ALL_DOMAINS] : [DomainIdSchema.parse(domainArg)];
 }
 
 async function readJson<T>(path: string, parser: { parse: (value: unknown) => T }): Promise<T> {

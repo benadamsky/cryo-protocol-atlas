@@ -1,8 +1,8 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { type DomainId } from "../packages/shared/src/schema.js";
+import { ALL_DOMAINS, type DomainId } from "../packages/shared/src/schema.js";
 
-const DOMAINS: DomainId[] = ["ovarian-tissue", "islets"];
+const DOMAINS: DomainId[] = [...ALL_DOMAINS];
 
 type CycleStopReason =
   | "converged"

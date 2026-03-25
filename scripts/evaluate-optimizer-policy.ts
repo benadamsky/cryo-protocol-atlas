@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { DomainIdSchema, type DomainId } from "../packages/shared/src/schema.js";
+import { ALL_DOMAINS, DomainIdSchema, type DomainId } from "../packages/shared/src/schema.js";
 import {
   buildOptimizerBenchmark,
   evaluateOptimizerPolicy,
@@ -16,7 +16,7 @@ function parseDomains(argv: string[]): DomainId[] {
     .filter(Boolean);
   return rawDomains.length > 0
     ? rawDomains.map((domain) => DomainIdSchema.parse(domain))
-    : [DomainIdSchema.enum.islets, DomainIdSchema.enum["ovarian-tissue"]];
+    : [...ALL_DOMAINS];
 }
 
 async function main() {

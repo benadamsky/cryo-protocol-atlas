@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { DomainIdSchema, type DomainId } from "../packages/shared/src/schema.js";
+import { ALL_DOMAINS, DomainIdSchema, type DomainId } from "../packages/shared/src/schema.js";
 
 function runStep(script: string, args: string[] = []) {
   execFileSync(process.execPath, ["--import", "tsx", script, ...args], {
@@ -11,10 +11,7 @@ function runStep(script: string, args: string[] = []) {
 function parseArgs(argv: string[]) {
   const domainArg = argv[2] ?? "all";
   const includeImports = !argv.includes("--skip-imports");
-  const domains: DomainId[] =
-    domainArg === "all"
-      ? ["ovarian-tissue", "islets"]
-      : [DomainIdSchema.parse(domainArg)];
+  const domains: DomainId[] = domainArg === "all" ? [...ALL_DOMAINS] : [DomainIdSchema.parse(domainArg)];
 
   return {
     domains,

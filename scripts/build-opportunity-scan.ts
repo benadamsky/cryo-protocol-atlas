@@ -1,9 +1,9 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { DomainIdSchema } from "../packages/shared/src/schema.js";
+import { ALL_DOMAINS } from "../packages/shared/src/schema.js";
 import { buildOpportunityScan, renderOpportunityScanMarkdown, type DomainWedgeBrief } from "../packages/research/src/wedges.js";
 
-const domains = [DomainIdSchema.parse("ovarian-tissue"), DomainIdSchema.parse("islets")];
+const domains = [...ALL_DOMAINS];
 
 async function main(): Promise<void> {
   const briefs: DomainWedgeBrief[] = [];

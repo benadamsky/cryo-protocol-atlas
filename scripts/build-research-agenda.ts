@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import {
-  DomainIdSchema,
+  ALL_DOMAINS,
   ResearchHypothesisSchema,
   type DomainId,
   type ResearchHypothesis
@@ -61,7 +61,7 @@ async function loadHypotheses(domain: DomainId): Promise<ResearchHypothesis[]> {
 }
 
 async function main(): Promise<void> {
-  const domains = DomainIdSchema.options;
+  const domains = [...ALL_DOMAINS];
   const hypotheses = (await Promise.all(domains.map((domain) => loadHypotheses(domain)))).flat();
   const agenda: ResearchAgenda = {
     generatedAt: new Date().toISOString(),
