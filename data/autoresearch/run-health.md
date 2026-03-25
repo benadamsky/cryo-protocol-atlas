@@ -1,6 +1,6 @@
 # Autoresearch health
 
-- generated at: 2026-03-24T13:51:57.363Z
+- generated at: 2026-03-25T13:51:24.880Z
 - overall state: stalled-human-gate
 - available domains: 2
 - missing domains: none
@@ -26,7 +26,7 @@
 - baseline delta: inclusionF1=0.462 familyAccuracy=0.857 paperTypeAccuracy=0.714 outcomeCoverage=0 stepPhaseCoverage=0 gatePassCount=4
 - best wedge: Head-to-head DMSO-centered ovarian tissue benchmark
 - pain point: Literature looks directionally promising but still underspecified for a clean protocol decision.
-- current read: This slice is still better treated as a proving ground than as a committed first commercial wedge.
+- current read: Best current wedge, but still better treated as a proving ground than a committed entry point.
 - alerts: human-gated source enrichment is blocking further autonomous progress | 3 normalized protocols still carry warnings | 4 reviewed papers still lack outcome labels | 3 reviewed papers still lack step phases
 - artifacts: data/autoresearch/ovarian-tissue/autoresearch-cycles.md, data/autoresearch/ovarian-tissue/unattended-batch.md, data/processed/ovarian-tissue/benchmark-report.md, data/processed/ovarian-tissue/wedge-brief.md, data/processed/ovarian-tissue/call-packet.md
 
@@ -43,6 +43,6 @@
 - baseline delta: inclusionF1=0.077 familyAccuracy=0.824 paperTypeAccuracy=0.119 outcomeCoverage=0 stepPhaseCoverage=0 gatePassCount=2
 - best wedge: Additive-assisted islet recovery benchmark on a fixed base cryomix
 - pain point: Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.
-- current read: This slice is still better treated as a proving ground than as a committed first commercial wedge.
+- current read: Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet.
 - alerts: human-gated source enrichment is blocking further autonomous progress | 5 normalized protocols still carry warnings | 1 reviewed papers still lack step phases
 - artifacts: data/autoresearch/islets/autoresearch-cycles.md, data/autoresearch/islets/unattended-batch.md, data/processed/islets/benchmark-report.md, data/processed/islets/wedge-brief.md, data/processed/islets/call-packet.md

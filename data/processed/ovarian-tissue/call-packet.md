@@ -52,7 +52,7 @@
 ## Wedge validation
 - Atlas now has 6 wedge-relevant benchmark rows tied to the active wedge.
 - The strongest rows are still sparse.
-- The dominant backbones are Dimethyl Sulfoxide + Ethylene Glycol + Sucrose; Dimethyl Sulfoxide + Ethylene Glycol + Propylene Glycol; Dimethyl Sulfoxide + Ethylene Glycol; Dimethyl Sulfoxide + Propylene Glycol.
+- The dominant backbones are Dimethyl Sulfoxide + Ethylene Glycol + Propylene Glycol; Dimethyl Sulfoxide + Ethylene Glycol; Dimethyl Sulfoxide + Sucrose; Dimethyl Sulfoxide + Ethylene Glycol + Sucrose.
 
 ## Missing evidence
 - Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep: outcomeClasses, authority still need stronger evidence.
@@ -62,4 +62,4 @@
 - 0 reviewed labels currently depend on secondary-source evidence and should be treated as lower-authority than primary-source-backed rows.
 
 ## Current read
-- This wedge is the best current candidate, but it should still be treated as a proving ground rather than a locked-in entry point.
+- Best current wedge, but still better treated as a proving ground than a committed entry point.

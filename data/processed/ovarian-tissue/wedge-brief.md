@@ -9,7 +9,7 @@ Focus question: Which protocol comparison is sharp enough to anchor a first comm
 - company relevance: 0.82
 - evidence confidence: 0.5
 - translational potential: 0.8
-- current read: This wedge is the best current candidate, but it should still be treated as a proving ground rather than a locked-in entry point.
+- current read: Best current wedge, but still better treated as a proving ground than a committed entry point.
 - recommended next step: DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass.
 
 ## Standard pattern
@@ -76,7 +76,7 @@ Focus question: Which protocol comparison is sharp enough to anchor a first comm
   decision question=Should Atlas prioritize "Head-to-head DMSO-centered ovarian tissue benchmark" as the main head-to-head wedge benchmark?
   primary readouts=transplantation, function
   comparison arms=slow-freezing arm | vitrification arm
-  why now=This wedge is the best current candidate, but it should still be treated as a proving ground rather than a locked-in entry point.
+  why now=Best current wedge, but still better treated as a proving ground than a committed entry point.
 - Promote morphology-heavy protocols to viability endpoints | category=endpoint-upgrade
   decision question=Would "Promote morphology-heavy protocols to viability endpoints" materially sharpen the wedge decision if tested next?
   primary readouts=transplantation, function
