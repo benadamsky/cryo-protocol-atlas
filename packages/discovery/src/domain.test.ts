@@ -35,6 +35,17 @@ test("ovarian discovery keeps cryopreservation-specific literature", () => {
   );
 });
 
+test("ovarian discovery rejects broad cryopreservation review titles without a second method signal", () => {
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "Cryopreservation of Ovarian Tissue for Fertility Preservation in Young Female Oncological Patients",
+      "Clinical overview of fertility preservation options in oncology patients.",
+      "ovarian-tissue"
+    ),
+    false
+  );
+});
+
 test("ovarian discovery rejects broad fertility-preservation summaries without storage signal", () => {
   assert.equal(
     shouldKeepDiscoveryCandidate(
@@ -70,6 +81,14 @@ test("title-level matching is required to keep candidates", () => {
     shouldKeepDiscoveryCandidate(
       "Pilot study of isolated early human follicles cultured in collagen gels for 24 hours",
       "Cryopreserved ovarian follicles were cultured after thaw for exploratory analysis.",
+      "ovarian-tissue"
+    ),
+    false
+  );
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "Whole Ovary Cryopreservation and Transplantation: A Systematic Review of Challenges and Research Developments in Animal Experiments and Humans",
+      "Review of ovarian tissue cryopreservation programs and transplant experience.",
       "ovarian-tissue"
     ),
     false

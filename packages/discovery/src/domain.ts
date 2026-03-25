@@ -12,6 +12,7 @@ type DiscoveryDomainConfig = {
   anchorConcepts: KeywordConcept[];
   requiredSupportingConcepts: KeywordConcept[];
   contextualSupportingConcepts: KeywordConcept[];
+  minimumTitleRequiredSupportingMatches?: number;
 };
 
 const DISCOVERY_SCORING = {
@@ -21,7 +22,7 @@ const DISCOVERY_SCORING = {
   minimumAnchorMatches: 1,
   minimumRequiredSupportingMatches: 1,
   minimumTitleAnchorMatches: 1,
-  minimumTitleRequiredSupportingMatches: 1
+  defaultMinimumTitleRequiredSupportingMatches: 1
 } as const;
 
 function wordPattern(value: string): RegExp {
@@ -45,17 +46,24 @@ const DISCOVERY_DOMAIN_CONFIGS: Record<DomainId, DiscoveryDomainConfig> = {
     providerQueries: {
       cryodb: "ovarian tissue cryopreservation",
       openalex:
-        "(\"ovarian tissue\" OR \"ovarian cortex\" OR follicles OR \"whole ovary\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+        "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
       crossref:
-        "(\"ovarian tissue\" OR \"ovarian cortex\" OR follicles OR \"whole ovary\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+        "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
       "europe-pmc":
-        "(\"ovarian tissue\" OR \"ovarian cortex\" OR follicles OR \"whole ovary\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)"
+        "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)"
     },
     anchorConcepts: [
       concept("ovarian tissue", ["ovarian tissue", "ovarian tissues"]),
       concept("ovarian cortex", ["ovarian cortex", "ovarian cortical"]),
       concept("whole ovary", ["whole ovary", "whole ovaries"]),
-      concept("follicles", ["follicle", "follicles"])
+      concept("follicles", [
+        "ovarian follicle",
+        "ovarian follicles",
+        "primordial follicle",
+        "primordial follicles",
+        "preantral follicle",
+        "preantral follicles"
+      ])
     ],
     requiredSupportingConcepts: [
       concept("cryopreservation", ["cryopreservation", "cryopreserved"]),
@@ -69,7 +77,8 @@ const DISCOVERY_DOMAIN_CONFIGS: Record<DomainId, DiscoveryDomainConfig> = {
       concept("fertility preservation", ["fertility preservation"]),
       concept("oocyte", ["oocyte", "oocytes"]),
       concept("transplantation", ["transplantation", "transplant", "autotransplant", "graft"])
-    ]
+    ],
+    minimumTitleRequiredSupportingMatches: 2
   },
   islets: {
     label: "islets",
@@ -180,11 +189,13 @@ export function shouldKeepDiscoveryCandidate(
   abstract: string | null | undefined,
   domain: DomainId
 ): boolean {
+  const config = getDiscoveryDomainConfig(domain);
   const { titleAnchorMatches, titleRequiredSupportingMatches, anchorMatches, requiredSupportingMatches } =
     scoreDiscoveryText(title, abstract, domain);
   return (
     titleAnchorMatches.length >= DISCOVERY_SCORING.minimumTitleAnchorMatches &&
-    titleRequiredSupportingMatches.length >= DISCOVERY_SCORING.minimumTitleRequiredSupportingMatches &&
+    titleRequiredSupportingMatches.length >=
+      (config.minimumTitleRequiredSupportingMatches ?? DISCOVERY_SCORING.defaultMinimumTitleRequiredSupportingMatches) &&
     anchorMatches.length >= DISCOVERY_SCORING.minimumAnchorMatches &&
     requiredSupportingMatches.length >= DISCOVERY_SCORING.minimumRequiredSupportingMatches
   );
