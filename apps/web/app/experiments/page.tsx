@@ -31,7 +31,7 @@ function minimumViableExperiment(arms: string[], readouts: string[]) {
 }
 
 function negativeResultImplication(wedgeTitle: string) {
-  return `A negative result would weaken ${wedgeTitle} as the current lead and push Atlas toward the follow-on packets instead of scaling this thesis.`;
+  return `A negative lab result would weaken ${wedgeTitle} as the current lead and push Atlas toward follow-on packets instead of scaling this path first.`;
 }
 
 export default async function ExperimentsPage() {
@@ -42,8 +42,8 @@ export default async function ExperimentsPage() {
     <>
       <PageIntro
         eyebrow="Experiments"
-        title="Experiment packets"
-        summary="This page shows the concrete experiments Atlas can justify from the current literature read, including the decision each one is meant to answer."
+        title="Recommended wet-lab experiments"
+        summary="These are real lab experiments Atlas thinks are worth running next based on the current literature. They are not internal model evaluations."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={data.domains[0]?.sourceLabel ?? "worktree"} />
@@ -64,13 +64,13 @@ export default async function ExperimentsPage() {
 
       <Section
         title="Why Experiment Packets Matter"
-        subtitle="Atlas is most useful when it turns a literature read into a concrete next test."
+        subtitle="Atlas is most useful when it turns a literature read into a concrete lab test."
       >
         <div className="triad-grid">
           <article className="surface">
             <span className="section-kicker">Current recommendation</span>
-            <h3>Atlas turns the call into an experiment</h3>
-            <p>The recommendation is useful because it does not stop at ranking. It outputs a concrete next experiment.</p>
+            <h3>Atlas turns a literature call into a lab plan</h3>
+            <p>The recommendation is only useful if it ends in a real experiment a team could run next.</p>
           </article>
           <article className="surface">
             <span className="section-kicker">Before wet-lab spend</span>
@@ -87,7 +87,7 @@ export default async function ExperimentsPage() {
 
       <Section
         title="Experiment Cards"
-        subtitle="Start with the summary. Expand a card only when you need variables, supporting papers, or detailed rationale."
+        subtitle="Each card is a real lab experiment Atlas recommends. Start with the summary, then expand when you need variables, supporting papers, or detailed rationale."
       >
         <div className="family-grid family-grid--stack">
           {data.packets.map((entry) => (
@@ -119,39 +119,39 @@ export default async function ExperimentsPage() {
 
               <div className="experiment-summary-grid">
                 <div className="summary-cell">
-                  <span>Decision being tested</span>
+                  <span>Question this lab experiment answers</span>
                   <strong>{entry.packet.decisionQuestion}</strong>
                 </div>
                 <div className="summary-cell">
-                  <span>Plain-English significance</span>
+                  <span>Why this matters in plain English</span>
                   <strong>{strategicSignificance(entry.domain)}</strong>
                 </div>
                 <div className="summary-cell">
-                  <span>Minimum viable experiment</span>
+                  <span>Smallest useful lab test</span>
                   <strong>{minimumViableExperiment(entry.packet.comparisonArms, entry.packet.primaryReadouts)}</strong>
                 </div>
                 <div className="summary-cell">
-                  <span>Expected upside if positive</span>
+                  <span>What a positive lab result would unlock</span>
                   <strong>{entry.packet.translationalRationale}</strong>
                 </div>
                 <div className="summary-cell">
-                  <span>If negative</span>
+                  <span>What a negative lab result would mean</span>
                   <strong>{negativeResultImplication(entry.wedgeTitle)}</strong>
                 </div>
               </div>
 
               <details className="detail-panel">
-                <summary>Show packet details</summary>
+                <summary>Show full lab packet</summary>
                 <div className="detail-panel__content">
                   <div className="detail-columns">
                     <div>
-                      <h4>Experiment structure</h4>
+                      <h4>Lab experiment structure</h4>
                       <ul className="feature-list">
                         <li>
-                          <strong>Wedge context:</strong> {entry.wedgeTitle}
+                          <strong>Why Atlas selected this test:</strong> {entry.wedgeTitle}
                         </li>
                         <li>
-                          <strong>Linked experiment:</strong> {experimentBridgeLabel(entry.packet.title)}
+                          <strong>Experiment title:</strong> {experimentBridgeLabel(entry.packet.title)}
                         </li>
                         <li>
                           <strong>Proposed test:</strong> {entry.packet.proposedExperiment}
@@ -172,7 +172,7 @@ export default async function ExperimentsPage() {
                     </div>
 
                     <div>
-                      <h4>Evidence and risks</h4>
+                      <h4>Evidence behind this lab test</h4>
                       <ul className="feature-list">
                         <li>
                           <strong>Supporting papers:</strong> {entry.packet.supportingPaperTitles.slice(0, 4).join("; ")}
@@ -189,7 +189,7 @@ export default async function ExperimentsPage() {
                 </div>
               </details>
 
-              <Link href={`/domains/${entry.domain}`}>Open wedge context</Link>
+              <Link href={`/domains/${entry.domain}`}>Open literature rationale</Link>
             </article>
           ))}
         </div>
