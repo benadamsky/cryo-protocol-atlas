@@ -75,7 +75,7 @@
     "regress:ovarian": "node --import tsx scripts/regress-autoresearch.ts ovarian-tissue",
     "regress:islets": "node --import tsx scripts/regress-autoresearch.ts islets",
     "test:normalize": "node --import tsx --test packages/normalize/src/canonical-protocols.test.ts",
-    "test:discovery": "node --import tsx --test packages/discovery/src/review.test.ts packages/discovery/src/pipeline.test.ts",
+    "test:discovery": "node --import tsx --test packages/discovery/src/domain.test.ts packages/discovery/src/review.test.ts packages/discovery/src/pipeline.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

@@ -10,15 +10,16 @@ type DiscoveryDomainConfig = {
   queryDescription: string;
   providerQueries: Record<LiveDiscoveryProvider, string>;
   anchorConcepts: KeywordConcept[];
-  supportingConcepts: KeywordConcept[];
+  requiredSupportingConcepts: KeywordConcept[];
+  contextualSupportingConcepts: KeywordConcept[];
 };
 
 const DISCOVERY_SCORING = {
   anchorCoverageWeight: 7,
-  supportingCoverageWeight: 5,
+  requiredSupportingCoverageWeight: 5,
+  contextualSupportingCoverageWeight: 2,
   minimumAnchorMatches: 1,
-  minimumSupportingMatches: 1,
-  minimumAnchorMatchesWithoutSupporting: 2
+  minimumRequiredSupportingMatches: 1
 } as const;
 
 function wordPattern(value: string): RegExp {
@@ -38,50 +39,63 @@ const DISCOVERY_DOMAIN_CONFIGS: Record<DomainId, DiscoveryDomainConfig> = {
   "ovarian-tissue": {
     label: "ovarian tissue",
     queryDescription:
-      "Cryopreservation and fertility-preservation literature for ovarian tissue, ovarian cortex, follicles, and whole ovary workflows.",
+      "Cryopreservation literature for ovarian tissue, ovarian cortex, follicles, and whole-ovary workflows with explicit storage, freezing, vitrification, or thaw signal.",
     providerQueries: {
       cryodb: "ovarian tissue cryopreservation",
-      openalex: "\"ovarian tissue\" cryopreservation OR vitrification OR freezing follicles ovary",
-      crossref: "\"ovarian tissue\" cryopreservation vitrification follicles",
-      "europe-pmc": "\"ovarian tissue\" AND (cryopreservation OR vitrification OR freezing)"
+      openalex:
+        "(\"ovarian tissue\" OR \"ovarian cortex\" OR follicles OR \"whole ovary\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+      crossref:
+        "(\"ovarian tissue\" OR \"ovarian cortex\" OR follicles OR \"whole ovary\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+      "europe-pmc":
+        "(\"ovarian tissue\" OR \"ovarian cortex\" OR follicles OR \"whole ovary\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)"
     },
     anchorConcepts: [
       concept("ovarian tissue", ["ovarian tissue", "ovarian tissues"]),
       concept("ovarian cortex", ["ovarian cortex", "ovarian cortical"]),
       concept("whole ovary", ["whole ovary", "whole ovaries"]),
-      concept("follicles", ["follicle", "follicles"]),
-      concept("ovary", ["ovary", "ovaries"])
+      concept("follicles", ["follicle", "follicles"])
     ],
-    supportingConcepts: [
+    requiredSupportingConcepts: [
       concept("cryopreservation", ["cryopreservation", "cryopreserved"]),
       concept("vitrification", ["vitrification", "vitrified"]),
       concept("freezing", ["freezing", "frozen", "slow freezing", "slow cooling"]),
+      concept("thaw", ["thaw", "thawed", "post-thaw"]),
+      concept("cryoprotectant", ["cryoprotectant", "cryoprotective", "dimethyl sulfoxide", "dmsO", "ethylene glycol"]),
+      concept("cryostorage", ["cryostorage", "liquid nitrogen"])
+    ],
+    contextualSupportingConcepts: [
       concept("fertility preservation", ["fertility preservation"]),
       concept("oocyte", ["oocyte", "oocytes"]),
-      concept("reproductive", ["reproductive", "transplantation"])
+      concept("transplantation", ["transplantation", "transplant", "autotransplant", "graft"])
     ]
   },
   islets: {
     label: "islets",
     queryDescription:
-      "Cryopreservation literature for pancreatic islets, islet transplantation, graft function, and post-thaw islet recovery.",
+      "Cryopreservation literature for pancreatic islets with explicit freezing, vitrification, thaw, cryoprotectant, or post-thaw recovery signal.",
     providerQueries: {
       cryodb: "islet cryopreservation",
-      openalex: "\"pancreatic islets\" cryopreservation OR vitrification OR freezing transplantation",
-      crossref: "\"pancreatic islets\" cryopreservation vitrification transplantation",
-      "europe-pmc": "\"pancreatic islets\" AND (cryopreservation OR vitrification OR freezing)"
+      openalex:
+        "(\"pancreatic islets\" OR \"pancreatic islet\" OR islets) AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+      crossref:
+        "(\"pancreatic islets\" OR \"pancreatic islet\" OR islets) AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+      "europe-pmc":
+        "(\"pancreatic islets\" OR \"pancreatic islet\" OR islets) AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)"
     },
     anchorConcepts: [
       concept("pancreatic islets", ["pancreatic islets", "pancreatic islet"]),
       concept("islets", ["islets", "islet"]),
-      concept("islet transplantation", ["islet transplantation"]),
-      concept("islet graft", ["islet graft", "islet grafts"]),
       concept("encapsulated islets", ["encapsulated islets", "encapsulated islet"])
     ],
-    supportingConcepts: [
+    requiredSupportingConcepts: [
       concept("cryopreservation", ["cryopreservation", "cryopreserved"]),
       concept("vitrification", ["vitrification", "vitrified"]),
       concept("freezing", ["freezing", "frozen", "slow freezing", "slow cooling"]),
+      concept("thaw", ["thaw", "thawed", "post-thaw"]),
+      concept("cryoprotectant", ["cryoprotectant", "cryoprotective", "dmsO", "dimethyl sulfoxide", "freezer bag"]),
+      concept("recovery", ["recovery", "viability", "post-thaw recovery"])
+    ],
+    contextualSupportingConcepts: [
       concept("transplantation", ["transplantation", "transplant"]),
       concept("graft", ["graft", "grafts"]),
       concept("insulin", ["insulin"]),
@@ -108,27 +122,45 @@ export function scoreDiscoveryText(
 ): {
   matchedKeywords: string[];
   anchorMatches: string[];
+  requiredSupportingMatches: string[];
+  contextualSupportingMatches: string[];
   supportingMatches: string[];
   relevanceScore: number;
 } {
   const config = getDiscoveryDomainConfig(domain);
   const haystack = `${title} ${abstract ?? ""}`.toLowerCase();
   const anchorMatches = matchedConceptLabels(config.anchorConcepts, haystack);
-  const supportingMatches = matchedConceptLabels(config.supportingConcepts, haystack);
+  const requiredSupportingMatches = matchedConceptLabels(config.requiredSupportingConcepts, haystack);
+  const contextualSupportingMatches = matchedConceptLabels(config.contextualSupportingConcepts, haystack);
+  const supportingMatches = Array.from(new Set([...requiredSupportingMatches, ...contextualSupportingMatches]));
   const matchedKeywords = Array.from(new Set([...anchorMatches, ...supportingMatches]));
 
   const anchorCoverage =
     config.anchorConcepts.length === 0 ? 0 : anchorMatches.length / config.anchorConcepts.length;
-  const supportingCoverage =
-    config.supportingConcepts.length === 0 ? 0 : supportingMatches.length / config.supportingConcepts.length;
+  const requiredSupportingCoverage =
+    config.requiredSupportingConcepts.length === 0
+      ? 0
+      : requiredSupportingMatches.length / config.requiredSupportingConcepts.length;
+  const contextualSupportingCoverage =
+    config.contextualSupportingConcepts.length === 0
+      ? 0
+      : contextualSupportingMatches.length / config.contextualSupportingConcepts.length;
   const relevanceScore = Number(
     (
       anchorCoverage * DISCOVERY_SCORING.anchorCoverageWeight +
-      supportingCoverage * DISCOVERY_SCORING.supportingCoverageWeight
+      requiredSupportingCoverage * DISCOVERY_SCORING.requiredSupportingCoverageWeight +
+      contextualSupportingCoverage * DISCOVERY_SCORING.contextualSupportingCoverageWeight
     ).toFixed(3)
   );
 
-  return { matchedKeywords, anchorMatches, supportingMatches, relevanceScore };
+  return {
+    matchedKeywords,
+    anchorMatches,
+    requiredSupportingMatches,
+    contextualSupportingMatches,
+    supportingMatches,
+    relevanceScore
+  };
 }
 
 export function shouldKeepDiscoveryCandidate(
@@ -136,12 +168,9 @@ export function shouldKeepDiscoveryCandidate(
   abstract: string | null | undefined,
   domain: DomainId
 ): boolean {
-  const { anchorMatches, supportingMatches } = scoreDiscoveryText(title, abstract, domain);
+  const { anchorMatches, requiredSupportingMatches } = scoreDiscoveryText(title, abstract, domain);
   return (
     anchorMatches.length >= DISCOVERY_SCORING.minimumAnchorMatches &&
-    (
-      supportingMatches.length >= DISCOVERY_SCORING.minimumSupportingMatches ||
-      anchorMatches.length >= DISCOVERY_SCORING.minimumAnchorMatchesWithoutSupporting
-    )
+    requiredSupportingMatches.length >= DISCOVERY_SCORING.minimumRequiredSupportingMatches
   );
 }
