@@ -57,6 +57,25 @@ test("ovarian scoring separates cryo requirements from contextual cues", () => {
   assert.ok(result.contextualSupportingMatches.includes("transplantation"));
 });
 
+test("title-level matching is required to keep candidates", () => {
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "Skin Graft Preservation",
+      "This review discusses cryopreservation considerations for pancreatic islets and related cell therapies.",
+      "islets"
+    ),
+    false
+  );
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "Pilot study of isolated early human follicles cultured in collagen gels for 24 hours",
+      "Cryopreserved ovarian follicles were cultured after thaw for exploratory analysis.",
+      "ovarian-tissue"
+    ),
+    false
+  );
+});
+
 test("provider queries stay cryo-focused", () => {
   const islets = getDiscoveryDomainConfig("islets");
   const ovarian = getDiscoveryDomainConfig("ovarian-tissue");

@@ -19,7 +19,9 @@ const DISCOVERY_SCORING = {
   requiredSupportingCoverageWeight: 5,
   contextualSupportingCoverageWeight: 2,
   minimumAnchorMatches: 1,
-  minimumRequiredSupportingMatches: 1
+  minimumRequiredSupportingMatches: 1,
+  minimumTitleAnchorMatches: 1,
+  minimumTitleRequiredSupportingMatches: 1
 } as const;
 
 function wordPattern(value: string): RegExp {
@@ -121,6 +123,9 @@ export function scoreDiscoveryText(
   domain: DomainId
 ): {
   matchedKeywords: string[];
+  titleAnchorMatches: string[];
+  titleRequiredSupportingMatches: string[];
+  titleContextualSupportingMatches: string[];
   anchorMatches: string[];
   requiredSupportingMatches: string[];
   contextualSupportingMatches: string[];
@@ -128,7 +133,11 @@ export function scoreDiscoveryText(
   relevanceScore: number;
 } {
   const config = getDiscoveryDomainConfig(domain);
+  const titleHaystack = title.toLowerCase();
   const haystack = `${title} ${abstract ?? ""}`.toLowerCase();
+  const titleAnchorMatches = matchedConceptLabels(config.anchorConcepts, titleHaystack);
+  const titleRequiredSupportingMatches = matchedConceptLabels(config.requiredSupportingConcepts, titleHaystack);
+  const titleContextualSupportingMatches = matchedConceptLabels(config.contextualSupportingConcepts, titleHaystack);
   const anchorMatches = matchedConceptLabels(config.anchorConcepts, haystack);
   const requiredSupportingMatches = matchedConceptLabels(config.requiredSupportingConcepts, haystack);
   const contextualSupportingMatches = matchedConceptLabels(config.contextualSupportingConcepts, haystack);
@@ -155,6 +164,9 @@ export function scoreDiscoveryText(
 
   return {
     matchedKeywords,
+    titleAnchorMatches,
+    titleRequiredSupportingMatches,
+    titleContextualSupportingMatches,
     anchorMatches,
     requiredSupportingMatches,
     contextualSupportingMatches,
@@ -168,8 +180,11 @@ export function shouldKeepDiscoveryCandidate(
   abstract: string | null | undefined,
   domain: DomainId
 ): boolean {
-  const { anchorMatches, requiredSupportingMatches } = scoreDiscoveryText(title, abstract, domain);
+  const { titleAnchorMatches, titleRequiredSupportingMatches, anchorMatches, requiredSupportingMatches } =
+    scoreDiscoveryText(title, abstract, domain);
   return (
+    titleAnchorMatches.length >= DISCOVERY_SCORING.minimumTitleAnchorMatches &&
+    titleRequiredSupportingMatches.length >= DISCOVERY_SCORING.minimumTitleRequiredSupportingMatches &&
     anchorMatches.length >= DISCOVERY_SCORING.minimumAnchorMatches &&
     requiredSupportingMatches.length >= DISCOVERY_SCORING.minimumRequiredSupportingMatches
   );
