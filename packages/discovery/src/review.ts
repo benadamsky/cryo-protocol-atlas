@@ -24,24 +24,6 @@ const RECOMMENDATION_SCORING = {
   weakAuthorityRiskThreshold: 0.2
 } as const;
 
-const RECOMMENDATION_SCORING = {
-  multiSourceBonus: 2,
-  multiSourceThreshold: 2,
-  openAccessFullTextBonus: 2,
-  fullTextLinkBonus: 1,
-  strongAuthorityThreshold: 0.5,
-  moderateAuthorityThreshold: 0.2,
-  strongAuthorityBonus: 2,
-  moderateAuthorityBonus: 1,
-  highRelevanceThreshold: 8,
-  mediumRelevanceThreshold: 5,
-  highRelevanceBonus: 2,
-  mediumRelevanceBonus: 1,
-  promoteThreshold: 5,
-  reviewThreshold: 3,
-  weakAuthorityRiskThreshold: 0.2
-} as const;
-
 export function normalizeTitle(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
@@ -152,45 +134,7 @@ export function recommendationForPaper(paper: DiscoveryPaper): {
   recommendation: "promote" | "review" | "defer";
   reasons: string[];
 } {
-<<<<<<< HEAD
   const result = recommendDiscoveryPaper(paper);
-=======
-  const reasons: string[] = [];
-  let score = 0;
-
-  if (paper.sourceTypes.length >= RECOMMENDATION_SCORING.multiSourceThreshold) {
-    score += RECOMMENDATION_SCORING.multiSourceBonus;
-    reasons.push("candidate appears in multiple discovery sources");
-  }
-  if (paper.fullTextAvailability === "open-access-full-text") {
-    score += RECOMMENDATION_SCORING.openAccessFullTextBonus;
-    reasons.push("open-access full text is available");
-  } else if (paper.fullTextAvailability === "full-text-link") {
-    score += RECOMMENDATION_SCORING.fullTextLinkBonus;
-    reasons.push("full-text landing page is available");
-  }
-  if (paper.authorityScore >= RECOMMENDATION_SCORING.strongAuthorityThreshold) {
-    score += RECOMMENDATION_SCORING.strongAuthorityBonus;
-    reasons.push("authority score is high enough to justify direct promotion review");
-  } else if (paper.authorityScore >= RECOMMENDATION_SCORING.moderateAuthorityThreshold) {
-    score += RECOMMENDATION_SCORING.moderateAuthorityBonus;
-    reasons.push("authority score is directionally promising");
-  }
-  if (paper.relevanceScore >= RECOMMENDATION_SCORING.highRelevanceThreshold) {
-    score += RECOMMENDATION_SCORING.highRelevanceBonus;
-    reasons.push("domain relevance score is high");
-  } else if (paper.relevanceScore >= RECOMMENDATION_SCORING.mediumRelevanceThreshold) {
-    score += RECOMMENDATION_SCORING.mediumRelevanceBonus;
-    reasons.push("domain relevance score is non-trivial");
-  }
-
-  if (score >= RECOMMENDATION_SCORING.promoteThreshold) {
-    return { recommendation: "promote", reasons };
-  }
-  if (score >= RECOMMENDATION_SCORING.reviewThreshold) {
-    return { recommendation: "review", reasons };
-  }
->>>>>>> main
   return {
     recommendation: result.recommendation,
     reasons: result.reasons
