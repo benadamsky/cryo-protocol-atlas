@@ -9,5 +9,7 @@
   ],
   "sourceBreakdown": {
     "pubmed": 2
-  }
+  },
+  "isDegraded": false,
+  "degradationReasons": []
 }

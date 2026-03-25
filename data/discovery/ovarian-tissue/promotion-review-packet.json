@@ -1,43 +1,1790 @@
 {
-  "generatedAt": "2026-03-24T16:15:37.753Z",
+  "generatedAt": "2026-03-25T03:08:19.722Z",
   "domain": "ovarian-tissue",
-  "sourceSnapshotGeneratedAt": "2026-03-24T16:13:53.625Z",
-  "queueGeneratedAt": "2026-03-24T16:15:06.455Z",
-  "candidateCount": 30,
-  "reviewItemCount": 2,
+  "sourceSnapshotGeneratedAt": "2026-03-25T03:08:19.383Z",
+  "queueGeneratedAt": "2026-03-25T03:08:19.549Z",
+  "candidateCount": 65,
+  "reviewItemCount": 64,
   "isDegraded": true,
   "degradationReasons": [
-    "live-provider-failures:openalex,crossref,europe-pmc"
+    "live-provider-truncation:openalex,crossref,europe-pmc"
   ],
   "items": [
     {
-      "dedupeKey": "doi:10.1186/s12958-025-01422-y",
-      "title": "A dual-drug strategy to enhance the function of cryopreserved ovaries by promoting revascularization and inhibiting follicle over-activation",
-      "doi": "10.1186/s12958-025-01422-y",
-      "pmid": "40611136",
+      "dedupeKey": "pmid:24448772",
+      "title": "In vitro culture thawed human ovarian tissue: NIV versus slow freezing method.",
+      "doi": null,
+      "pmid": "24448772",
       "pmcid": null,
-      "titleKey": "title:a dual drug strategy to enhance the function of cryopreserved ovaries by promoting revascularization and inhibiting follicle over activation",
-      "journal": "Reproductive Biology and Endocrinology",
-      "publishedYear": 2025,
+      "titleKey": "title:in vitro culture thawed human ovarian tissue niv versus slow freezing method",
+      "journal": "PubMed",
+      "publishedYear": 2014,
       "decision": "pending",
       "recommendation": "review",
-      "rankingScore": 8.55,
-      "relevanceScore": 8.233,
-      "authorityScore": 0.15,
+      "rankingScore": 9.69,
+      "relevanceScore": 9.283,
+      "authorityScore": 0.24,
       "sourceDiversityScore": 0.167,
       "sourceCount": 1,
       "recordCount": 1,
       "sourceTypes": [
-        "pubmed"
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "follicles",
+        "freezing",
+        "ovarian cortex",
+        "ovarian tissue",
+        "thaw",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.72942 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W22130790",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/24448772",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/s00404-022-06672-4",
+      "title": "In vitro growth (IVG) of human ovarian follicles in frozen thawed ovarian cortex tissue culture supplemented with follicular fluid under hypoxic conditions",
+      "doi": "10.1007/s00404-022-06672-4",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:in vitro growth ivg of human ovarian follicles in frozen thawed ovarian cortex tissue culture supplemented with follicular fluid under hypoxic conditions",
+      "journal": "Archives of Gynecology and Obstetrics",
+      "publishedYear": 2022,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 9.544,
+      "relevanceScore": 9.117,
+      "authorityScore": 0.26,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
       ],
       "fullTextAvailability": "full-text-link",
       "matchedKeywords": [
         "cryopreservation",
+        "follicles",
+        "freezing",
+        "ovarian cortex",
+        "ovarian tissue",
+        "thaw",
+        "transplantation"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.726715 cleared the promote threshold 5.2",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1007/s00404-022-06672-4",
+          "sourceUrl": "https://doi.org/10.1007/s00404-022-06672-4",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.21203/rs.3.rs-1697197/v1",
+      "title": "In vitro growth (IVG) of human ovarian follicles in frozen thawed ovarian cortex tissue culture supplemented with follicular fluid under hypoxic conditions.",
+      "doi": "10.21203/rs.3.rs-1697197/v1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:in vitro growth ivg of human ovarian follicles in frozen thawed ovarian cortex tissue culture supplemented with follicular fluid under hypoxic conditions",
+      "journal": null,
+      "publishedYear": 2022,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 9.444,
+      "relevanceScore": 9.117,
+      "authorityScore": 0.16,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "follicles",
+        "freezing",
+        "ovarian cortex",
+        "ovarian tissue",
+        "thaw",
+        "transplantation"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.332645 cleared the promote threshold 5.2",
+        "full-text landing page is available",
+        "domain relevance score is high"
+      ],
+      "staleEvidence": true,
+      "staleReason": "evidence or recommendation changed since the previous review state",
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.21203/rs.3.rs-1697197/v1",
+          "sourceUrl": "https://doi.org/10.21203/rs.3.rs-1697197/v1",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1093/humrep/13.2.376",
+      "title": "Permeation of human ovarian tissue with cryoprotective agents in preparation for cryopreservation",
+      "doi": "10.1093/humrep/13.2.376",
+      "pmid": "9557842",
+      "pmcid": null,
+      "titleKey": "title:permeation of human ovarian tissue with cryoprotective agents in preparation for cryopreservation",
+      "journal": "Human Reproduction",
+      "publishedYear": 1998,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 8.9,
+      "relevanceScore": 7.433,
+      "authorityScore": 1.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "ovarian cortex",
+        "ovarian tissue",
+        "thaw"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 7.54463 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2166478627",
+          "sourceUrl": "https://doi.org/10.1093/humrep/13.2.376",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.3390/ijms20133346",
+      "title": "Comparison between Slow Freezing and Vitrification for Human Ovarian Tissue Cryopreservation and Xenotransplantation",
+      "doi": "10.3390/ijms20133346",
+      "pmid": "31288388",
+      "pmcid": null,
+      "titleKey": "title:comparison between slow freezing and vitrification for human ovarian tissue cryopreservation and xenotransplantation",
+      "journal": "International Journal of Molecular Sciences",
+      "publishedYear": 2019,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 8.734,
+      "relevanceScore": 7.267,
+      "authorityScore": 1.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
         "fertility preservation",
         "follicles",
+        "freezing",
         "ovarian tissue",
-        "ovary",
-        "reproductive",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 7.871335 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2955206410",
+          "sourceUrl": "https://doi.org/10.3390/ijms20133346",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1186/s13048-019-0553-x",
+      "title": "Vitrification freezing of large ovarian tissue in the human body",
+      "doi": "10.1186/s13048-019-0553-x",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:vitrification freezing of large ovarian tissue in the human body",
+      "journal": "Journal of Ovarian Research",
+      "publishedYear": 2019,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 8.084,
+      "relevanceScore": 7.417,
+      "authorityScore": 0.5,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "follicles",
+        "freezing",
+        "ovarian cortex",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.238195 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2969936686",
+          "sourceUrl": "https://doi.org/10.1186/s13048-019-0553-x",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1093/humrep/der196",
+      "title": "In vitro development of secondary follicles from cryopreserved rhesus macaque ovarian tissue after slow-rate freeze or vitrification",
+      "doi": "10.1093/humrep/der196",
+      "pmid": "21705370",
+      "pmcid": null,
+      "titleKey": "title:in vitro development of secondary follicles from cryopreserved rhesus macaque ovarian tissue after slow rate freeze or vitrification",
+      "journal": "Human Reproduction",
+      "publishedYear": 2011,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 7.983,
+      "relevanceScore": 6.35,
+      "authorityScore": 1.3,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "fertility preservation",
+        "freezing",
+        "ovarian tissue",
+        "thaw",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal"
+      ],
+      "recommendationReasons": [
+        "optimizer score 9.15901 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2134855625",
+          "sourceUrl": "https://doi.org/10.1093/humrep/der196",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1093/humrep/der196",
+          "sourceUrl": "https://doi.org/10.1093/humrep/der196",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "pmid:12447493",
+      "title": "Cryopreservation of human ovarian tissue by direct plunging into liquid nitrogen: negative effect of disaccharides in vitrification solution.",
+      "doi": null,
+      "pmid": "12447493",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of human ovarian tissue by direct plunging into liquid nitrogen negative effect of disaccharides in vitrification solution",
+      "journal": "PubMed",
+      "publishedYear": 2003,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 7.79,
+      "relevanceScore": 7.283,
+      "authorityScore": 0.34,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "cryostorage",
+        "oocyte",
+        "ovarian tissue",
+        "thaw",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.75948 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2418438101",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/12447493",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1080/01913120701515496",
+      "title": "Healthy Early Preantral Follicle Can Be Obtained in a Culture of Frozen–Thawed Human Ovarian Tissue of 32 Weeks",
+      "doi": "10.1080/01913120701515496",
+      "pmid": "17786826",
+      "pmcid": null,
+      "titleKey": "title:healthy early preantral follicle can be obtained in a culture of frozen thawed human ovarian tissue of 32 weeks",
+      "journal": "Ultrastructural Pathology",
+      "publishedYear": 2007,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 7.724,
+      "relevanceScore": 7.417,
+      "authorityScore": 0.14,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "follicles",
+        "freezing",
+        "ovarian cortex",
+        "ovarian tissue",
+        "thaw"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.81644 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2131102769",
+          "sourceUrl": "https://doi.org/10.1080/01913120701515496",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1038/s41598-019-56585-7",
+      "title": "Stepped vitrification technique for human ovarian tissue cryopreservation",
+      "doi": "10.1038/s41598-019-56585-7",
+      "pmid": "31882972",
+      "pmcid": null,
+      "titleKey": "title:stepped vitrification technique for human ovarian tissue cryopreservation",
+      "journal": "Scientific Reports",
+      "publishedYear": 2019,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 7.507,
+      "relevanceScore": 6.5,
+      "authorityScore": 0.84,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "ovarian cortex",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.957685 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2998613145",
+          "sourceUrl": "https://doi.org/10.1038/s41598-019-56585-7",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1097/md.0000000000004095",
+      "title": "Comparison of vitrification and conventional slow freezing for cryopreservation of ovarian tissue with respect to the number of intact primordial follicles",
+      "doi": "10.1097/md.0000000000004095",
+      "pmid": "27684791",
+      "pmcid": null,
+      "titleKey": "title:comparison of vitrification and conventional slow freezing for cryopreservation of ovarian tissue with respect to the number of intact primordial follicles",
+      "journal": "Medicine",
+      "publishedYear": 2016,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 7.473,
+      "relevanceScore": 6.5,
+      "authorityScore": 0.64,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "follicles",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal"
+      ],
+      "recommendationReasons": [
+        "optimizer score 8.517215 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2523990614",
+          "sourceUrl": "https://doi.org/10.1097/md.0000000000004095",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1097/md.0000000000004095",
+          "sourceUrl": "https://doi.org/10.1097/md.0000000000004095",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1038/s41467-022-34549-2",
+      "title": "Microencapsulation and nanowarming enables vitrification cryopreservation of mouse preantral follicles",
+      "doi": "10.1038/s41467-022-34549-2",
+      "pmid": "36522314",
+      "pmcid": null,
+      "titleKey": "title:microencapsulation and nanowarming enables vitrification cryopreservation of mouse preantral follicles",
+      "journal": "Nature Communications",
+      "publishedYear": 2022,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 7.266,
+      "relevanceScore": 6.183,
+      "authorityScore": 0.75,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "fertility preservation",
+        "follicles",
+        "oocyte",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal"
+      ],
+      "recommendationReasons": [
+        "optimizer score 8.684045 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W4311738435",
+          "sourceUrl": "https://doi.org/10.1038/s41467-022-34549-2",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1038/s41467-022-34549-2",
+          "sourceUrl": "https://doi.org/10.1038/s41467-022-34549-2",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1038/s41598-019-51696-7",
+      "title": "Slow freezing versus vitrification for the cryopreservation of zebrafish (Danio rerio) ovarian tissue",
+      "doi": "10.1038/s41598-019-51696-7",
+      "pmid": "31653925",
+      "pmcid": null,
+      "titleKey": "title:slow freezing versus vitrification for the cryopreservation of zebrafish danio rerio ovarian tissue",
+      "journal": "Scientific Reports",
+      "publishedYear": 2019,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 7.227,
+      "relevanceScore": 6.35,
+      "authorityScore": 0.71,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "oocyte",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 7.06477 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2981973910",
+          "sourceUrl": "https://doi.org/10.1038/s41598-019-51696-7",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.rbmo.2017.05.016",
+      "title": "Residual ethylene glycol and dimethyl sulphoxide concentration in human ovarian tissue during warming/thawing steps following cryopreservation",
+      "doi": "10.1016/j.rbmo.2017.05.016",
+      "pmid": "28645837",
+      "pmcid": null,
+      "titleKey": "title:residual ethylene glycol and dimethyl sulphoxide concentration in human ovarian tissue during warming thawing steps following cryopreservation",
+      "journal": "Reproductive BioMedicine Online",
+      "publishedYear": 2017,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 7.167,
+      "relevanceScore": 6.35,
+      "authorityScore": 0.65,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "ovarian tissue",
+        "transplantation",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.729225 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2623200730",
+          "sourceUrl": "https://doi.org/10.1016/j.rbmo.2017.05.016",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1093/humrep/dep079",
+      "title": "Vitrification versus controlled-rate freezing in cryopreservation of human ovarian tissue",
+      "doi": "10.1093/humrep/dep079",
+      "pmid": "19359339",
+      "pmcid": null,
+      "titleKey": "title:vitrification versus controlled rate freezing in cryopreservation of human ovarian tissue",
+      "journal": "Human Reproduction",
+      "publishedYear": 2009,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 7.05,
+      "relevanceScore": 5.583,
+      "authorityScore": 1.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.924155 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2162942324",
+          "sourceUrl": "https://doi.org/10.1093/humrep/dep079",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1111/j.1749-0774.2003.tb00142.x",
+      "title": "<i>In vitro</i>culture of mouse GV oocytes and preantral follicles isolated from ovarian tissues cryopreserved by vitrification",
+      "doi": "10.1111/j.1749-0774.2003.tb00142.x",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:i in vitro i culture of mouse gv oocytes and preantral follicles isolated from ovarian tissues cryopreserved by vitrification",
+      "journal": "Human Cell",
+      "publishedYear": 2003,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 7.036,
+      "relevanceScore": 6.333,
+      "authorityScore": 0.37,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "follicles",
+        "oocyte",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.14052 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2009193301",
+          "sourceUrl": "https://doi.org/10.1111/j.1749-0774.2003.tb00142.x",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1111/j.1749-0774.2003.tb00142.x",
+          "sourceUrl": "https://doi.org/10.1111/j.1749-0774.2003.tb00142.x",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1530/jrf.0.1120039",
+      "title": "Viability of small preantral ovarian follicles from domestic cats after cryoprotectant exposure and cryopreservation",
+      "doi": "10.1530/jrf.0.1120039",
+      "pmid": "9538328",
+      "pmcid": null,
+      "titleKey": "title:viability of small preantral ovarian follicles from domestic cats after cryoprotectant exposure and cryopreservation",
+      "journal": "Reproduction",
+      "publishedYear": 1998,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 6.89,
+      "relevanceScore": 5.417,
+      "authorityScore": 1.14,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "follicles",
+        "oocyte",
+        "thaw"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal"
+      ],
+      "recommendationReasons": [
+        "optimizer score 8.551065 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2035422019",
+          "sourceUrl": "https://doi.org/10.1530/jrf.0.1120039",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1530/jrf.0.1120039",
+          "sourceUrl": "https://doi.org/10.1530/jrf.0.1120039",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "pmid:20309501",
+      "title": "Cryobanking of human ovarian tissue for anti-cancer treatment: comparison of vitrification and conventional freezing.",
+      "doi": null,
+      "pmid": "20309501",
+      "pmcid": null,
+      "titleKey": "title:cryobanking of human ovarian tissue for anti cancer treatment comparison of vitrification and conventional freezing",
+      "journal": "PubMed",
+      "publishedYear": 2010,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 6.857,
+      "relevanceScore": 6.35,
+      "authorityScore": 0.34,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryostorage",
+        "freezing",
+        "oocyte",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.802295 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1233825967",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/20309501",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1093/humrep/dew134",
+      "title": "Morphological, ultrastructural and functional imaging of frozen/thawed and vitrified/warmed human ovarian tissue retrieved from oncological patients",
+      "doi": "10.1093/humrep/dew134",
+      "pmid": "27282911",
+      "pmcid": null,
+      "titleKey": "title:morphological ultrastructural and functional imaging of frozen thawed and vitrified warmed human ovarian tissue retrieved from oncological patients",
+      "journal": "Human Reproduction",
+      "publishedYear": 2016,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 6.62,
+      "relevanceScore": 5.583,
+      "authorityScore": 0.87,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue",
+        "thaw",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.808635 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2417036301",
+          "sourceUrl": "https://doi.org/10.1093/humrep/dew134",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1530/rep-09-0039",
+      "title": "Human ovarian tissue vitrification versus conventional freezing: morphological, endocrinological, and molecular biological evaluation",
+      "doi": "10.1530/rep-09-0039",
+      "pmid": "19439559",
+      "pmcid": null,
+      "titleKey": "title:human ovarian tissue vitrification versus conventional freezing morphological endocrinological and molecular biological evaluation",
+      "journal": "Reproduction",
+      "publishedYear": 2009,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 6.584,
+      "relevanceScore": 5.417,
+      "authorityScore": 1,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "oocyte",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.363865 cleared the promote threshold 5.2",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1987791880",
+          "sourceUrl": "https://doi.org/10.1530/rep-09-0039",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/s00441-011-1257-8",
+      "title": "Freezing solution containing dimethylsulfoxide and fetal calf serum maintains survival and ultrastructure of goat preantral follicles after cryopreservation and in vitro culture of ovarian tissue",
+      "doi": "10.1007/s00441-011-1257-8",
+      "pmid": "22006251",
+      "pmcid": null,
+      "titleKey": "title:freezing solution containing dimethylsulfoxide and fetal calf serum maintains survival and ultrastructure of goat preantral follicles after cryopreservation and in vitro culture of ovarian tissue",
+      "journal": "Cell and Tissue Research",
+      "publishedYear": 2011,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 6.3,
+      "relevanceScore": 5.567,
+      "authorityScore": 0.4,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "follicles",
+        "freezing",
+        "ovarian tissue"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.45943 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1997234541",
+          "sourceUrl": "https://doi.org/10.1007/s00441-011-1257-8",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1007/s00441-011-1257-8",
+          "sourceUrl": "https://doi.org/10.1007/s00441-011-1257-8",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2015.11.001",
+      "title": "Three dimensional in vitro culture of preantral follicles following slow-freezing and vitrification of mouse ovarian tissue",
+      "doi": "10.1016/j.cryobiol.2015.11.001",
+      "pmid": "26586099",
+      "pmcid": null,
+      "titleKey": "title:three dimensional in vitro culture of preantral follicles following slow freezing and vitrification of mouse ovarian tissue",
+      "journal": "Cryobiology",
+      "publishedYear": 2015,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 6.29,
+      "relevanceScore": 5.567,
+      "authorityScore": 0.39,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "follicles",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.89496 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2175149400",
+          "sourceUrl": "https://doi.org/10.1016/j.cryobiol.2015.11.001",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.cryobiol.2015.11.001",
+          "sourceUrl": "https://doi.org/10.1016/j.cryobiol.2015.11.001",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.3109/19396368.2014.923542",
+      "title": "Ovarian tissue vitrification is more efficient than slow freezing in protecting oocyte and granulosa cell DNA integrity",
+      "doi": "10.3109/19396368.2014.923542",
+      "pmid": "24896655",
+      "pmcid": null,
+      "titleKey": "title:ovarian tissue vitrification is more efficient than slow freezing in protecting oocyte and granulosa cell dna integrity",
+      "journal": "Systems Biology in Reproductive Medicine",
+      "publishedYear": 2014,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 6.224,
+      "relevanceScore": 5.417,
+      "authorityScore": 0.64,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "oocyte",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.20007 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2011695618",
+          "sourceUrl": "https://doi.org/10.3109/19396368.2014.923542",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.fertnstert.2013.11.016",
+      "title": "Improving ovarian tissue cryopreservation for oncologic patients: slow freezing versus vitrification, effect of different procedures and devices",
+      "doi": "10.1016/j.fertnstert.2013.11.016",
+      "pmid": "24359888",
+      "pmcid": null,
+      "titleKey": "title:improving ovarian tissue cryopreservation for oncologic patients slow freezing versus vitrification effect of different procedures and devices",
+      "journal": "Fertility and Sterility",
+      "publishedYear": 2013,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 6.117,
+      "relevanceScore": 4.65,
+      "authorityScore": 1.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.54993 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1971919238",
+          "sourceUrl": "https://doi.org/10.1016/j.fertnstert.2013.11.016",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "pmid:23812312",
+      "title": "Effects of different cryoprotectant combinations on primordial follicle survivability and apoptosis incidence after vitrification of whole rat ovary.",
+      "doi": null,
+      "pmid": "23812312",
+      "pmcid": null,
+      "titleKey": "title:effects of different cryoprotectant combinations on primordial follicle survivability and apoptosis incidence after vitrification of whole rat ovary",
+      "journal": "PubMed",
+      "publishedYear": 2013,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 6.004,
+      "relevanceScore": 5.567,
+      "authorityScore": 0.27,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "follicles",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.36516 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2309520113",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/23812312",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1186/1477-7827-9-150",
+      "title": "Vitrification of in vitro matured oocytes collected from antral follicles at the time of ovarian tissue cryopreservation",
+      "doi": "10.1186/1477-7827-9-150",
+      "pmid": "22112198",
+      "pmcid": null,
+      "titleKey": "title:vitrification of in vitro matured oocytes collected from antral follicles at the time of ovarian tissue cryopreservation",
+      "journal": "Reproductive Biology and Endocrinology",
+      "publishedYear": 2011,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 5.966,
+      "relevanceScore": 4.483,
+      "authorityScore": 1.15,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "oocyte",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal"
+      ],
+      "recommendationReasons": [
+        "optimizer score 7.80264 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2096836402",
+          "sourceUrl": "https://doi.org/10.1186/1477-7827-9-150",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1186/1477-7827-9-150",
+          "sourceUrl": "https://doi.org/10.1186/1477-7827-9-150",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.repbio.2023.100752",
+      "title": "Post-thaw viability of mouse preantral follicles after cryopreservation with cryotube freezing and OPS vitrification procedures",
+      "doi": "10.1016/j.repbio.2023.100752",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:post thaw viability of mouse preantral follicles after cryopreservation with cryotube freezing and ops vitrification procedures",
+      "journal": "Reproductive Biology",
+      "publishedYear": 2023,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.93,
+      "relevanceScore": 5.583,
+      "authorityScore": 0.18,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "follicles",
+        "freezing",
+        "thaw",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.66214 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.repbio.2023.100752",
+          "sourceUrl": "https://doi.org/10.1016/j.repbio.2023.100752",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1093/biolreprod/81.s1.187",
+      "title": "Vitrification of Ovarian Cortex from Prepubertal and Adult Cats Induces Less Damage to the Primordial Follicles than Slow Freezing.",
+      "doi": "10.1093/biolreprod/81.s1.187",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:vitrification of ovarian cortex from prepubertal and adult cats induces less damage to the primordial follicles than slow freezing",
+      "journal": "Biology of Reproduction",
+      "publishedYear": 2009,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.904,
+      "relevanceScore": 5.567,
+      "authorityScore": 0.17,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "follicles",
+        "freezing",
+        "ovarian cortex",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.77109 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1093/biolreprod/81.s1.187",
+          "sourceUrl": "https://doi.org/10.1093/biolreprod/81.s1.187",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2018.01.002",
+      "title": "Evaluation of sheep ovarian tissue cryopreservation with slow freezing or vitrification after chick embryo chorioallantoic membrane transplantation",
+      "doi": "10.1016/j.cryobiol.2018.01.002",
+      "pmid": "29352979",
+      "pmcid": null,
+      "titleKey": "title:evaluation of sheep ovarian tissue cryopreservation with slow freezing or vitrification after chick embryo chorioallantoic membrane transplantation",
+      "journal": "Cryobiology",
+      "publishedYear": 2018,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.754,
+      "relevanceScore": 5.417,
+      "authorityScore": 0.17,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue",
+        "transplantation",
         "vitrification"
       ],
       "noveltyBasis": [
@@ -49,6 +1796,7 @@
       "promotionRisks": [
         "single-source evidence; cross-source confirmation is still missing",
         "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
         "authority score is still weak; novelty may outrun evidentiary strength"
       ],
       "reviewChecklist": [
@@ -59,46 +1807,1053 @@
         "look for corroborating records from a second literature source"
       ],
       "recommendationReasons": [
-        "optimizer score 5.168925 cleared the review threshold 2.2 but stayed below promote 5.2",
-        "full-text landing page is available",
-        "domain relevance score is high"
+        "optimizer score 3.60334 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
       ],
-      "staleEvidence": true,
-      "staleReason": "evidence or recommendation changed since the previous review state",
+      "staleEvidence": false,
       "sources": [
         {
-          "source": "pubmed",
-          "sourceId": "pubmed:40611136",
-          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/40611136/",
-          "rawQuery": "site:pubmed.ncbi.nlm.nih.gov ovarian tissue cryopreservation 2024 2025",
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2784031834",
+          "sourceUrl": "https://doi.org/10.1016/j.cryobiol.2018.01.002",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1186/s12958-015-0065-5",
+      "title": "Vitrification of human ovarian tissue: a practical and relevant alternative to slow freezing",
+      "doi": "10.1186/s12958-015-0065-5",
+      "pmid": "26109179",
+      "pmcid": null,
+      "titleKey": "title:vitrification of human ovarian tissue a practical and relevant alternative to slow freezing",
+      "journal": "Reproductive Biology and Endocrinology",
+      "publishedYear": 2015,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 5.727,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.91,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.317475 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1817801888",
+          "sourceUrl": "https://doi.org/10.1186/s12958-015-0065-5",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.fertnstert.2010.01.011",
+      "title": "Needle immersed vitrification can lower the concentration of cryoprotectant in human ovarian tissue cryopreservation",
+      "doi": "10.1016/j.fertnstert.2010.01.011",
+      "pmid": "20189561",
+      "pmcid": null,
+      "titleKey": "title:needle immersed vitrification can lower the concentration of cryoprotectant in human ovarian tissue cryopreservation",
+      "journal": "Fertility and Sterility",
+      "publishedYear": 2010,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 5.707,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.89,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.92085 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1987899770",
+          "sourceUrl": "https://doi.org/10.1016/j.fertnstert.2010.01.011",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/s43032-021-00591-6",
+      "title": "Methods of Ovarian Tissue Cryopreservation: Is Vitrification Superior to Slow Freezing?—Ovarian Tissue Freezing Methods",
+      "doi": "10.1007/s43032-021-00591-6",
+      "pmid": "33939167",
+      "pmcid": null,
+      "titleKey": "title:methods of ovarian tissue cryopreservation is vitrification superior to slow freezing ovarian tissue freezing methods",
+      "journal": "Reproductive Sciences",
+      "publishedYear": 2021,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 5.583,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.6,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.45157 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W3159940281",
+          "sourceUrl": "https://doi.org/10.1007/s43032-021-00591-6",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1007/s43032-021-00591-6",
+          "sourceUrl": "https://doi.org/10.1007/s43032-021-00591-6",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
           "fullTextAvailability": "full-text-link"
         }
       ]
     },
     {
-      "dedupeKey": "doi:10.1007/s00404-024-07484-4",
-      "title": "A retrospective study of ovarian tissue cryopreservation in female patients with hematological diseases for fertility preservation",
-      "doi": "10.1007/s00404-024-07484-4",
-      "pmid": "38575798",
+      "dedupeKey": "doi:10.1016/s1472-6483(10)62128-1",
+      "title": "Comparison of necrosis in human ovarian tissue after conventional slow freezing or vitrification and transplantation in ovariectomized SCID mice",
+      "doi": "10.1016/s1472-6483(10)62128-1",
+      "pmid": "15333249",
       "pmcid": null,
-      "titleKey": "title:a retrospective study of ovarian tissue cryopreservation in female patients with hematological diseases for fertility preservation",
-      "journal": "Archives of Gynecology and Obstetrics",
-      "publishedYear": 2024,
+      "titleKey": "title:comparison of necrosis in human ovarian tissue after conventional slow freezing or vitrification and transplantation in ovariectomized scid mice",
+      "journal": "Reproductive BioMedicine Online",
+      "publishedYear": 2004,
       "decision": "pending",
-      "recommendation": "review",
-      "rankingScore": 3.684,
-      "relevanceScore": 3.367,
-      "authorityScore": 0.15,
+      "recommendation": "promote",
+      "rankingScore": 5.54,
+      "relevanceScore": 4.483,
+      "authorityScore": 0.89,
       "sourceDiversityScore": 0.167,
       "sourceCount": 1,
       "recordCount": 1,
       "sourceTypes": [
-        "pubmed"
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "freezing",
+        "ovarian tissue",
+        "transplantation",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.85985 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1992076920",
+          "sourceUrl": "https://doi.org/10.1016/s1472-6483(10)62128-1",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/s00404-014-3390-6",
+      "title": "Slow-freezing versus vitrification for human ovarian tissue cryopreservation",
+      "doi": "10.1007/s00404-014-3390-6",
+      "pmid": "25115279",
+      "pmcid": null,
+      "titleKey": "title:slow freezing versus vitrification for human ovarian tissue cryopreservation",
+      "journal": "Archives of Gynecology and Obstetrics",
+      "publishedYear": 2014,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.507,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.69,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.12771 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1991928497",
+          "sourceUrl": "https://doi.org/10.1007/s00404-014-3390-6",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/s10815-021-02297-9",
+      "title": "Comparison of open and a novel closed vitrification system with slow freezing for human ovarian tissue cryopreservation",
+      "doi": "10.1007/s10815-021-02297-9",
+      "pmid": "34398400",
+      "pmcid": null,
+      "titleKey": "title:comparison of open and a novel closed vitrification system with slow freezing for human ovarian tissue cryopreservation",
+      "journal": "Journal of Assisted Reproduction and Genetics",
+      "publishedYear": 2021,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 5.417,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.6,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.74186 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W3195411300",
+          "sourceUrl": "https://doi.org/10.1007/s10815-021-02297-9",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/s10815-011-9539-3",
+      "title": "Cryopreservation of whole ovaries with vascular pedicles: vitrification or conventional freezing?",
+      "doi": "10.1007/s10815-011-9539-3",
+      "pmid": "21287401",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of whole ovaries with vascular pedicles vitrification or conventional freezing",
+      "journal": "Journal of Assisted Reproduction and Genetics",
+      "publishedYear": 2011,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 5.387,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.57,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "vitrification",
+        "whole ovary"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.49116 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2039253499",
+          "sourceUrl": "https://doi.org/10.1007/s10815-011-9539-3",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "pmid:19789827",
+      "title": "Apoptosis in human ovarian tissue after conventional freezing or vitrification and xenotransplantation.",
+      "doi": null,
+      "pmid": "19789827",
+      "pmcid": null,
+      "titleKey": "title:apoptosis in human ovarian tissue after conventional freezing or vitrification and xenotransplantation",
+      "journal": "PubMed",
+      "publishedYear": 2009,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.337,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.52,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.76173 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W46944089",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/19789827",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.fertnstert.2013.03.018",
+      "title": "Preservation of human ovarian follicles within tissue frozen by vitrification in a xeno-free closed system using only ethylene glycol as a permeating cryoprotectant",
+      "doi": "10.1016/j.fertnstert.2013.03.018",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:preservation of human ovarian follicles within tissue frozen by vitrification in a xeno free closed system using only ethylene glycol as a permeating cryoprotectant",
+      "journal": "Fertility and Sterility",
+      "publishedYear": 2013,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.257,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.44,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "follicles",
+        "freezing",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.2516 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "authority score is directionally promising"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.fertnstert.2013.03.018",
+          "sourceUrl": "https://doi.org/10.1016/j.fertnstert.2013.03.018",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2017.09.007",
+      "title": "Slow freezing versus vitrification technique for human ovarian tissue cryopreservation: An evaluation of histological changes, WNT signaling pathway and apoptotic genes expression",
+      "doi": "10.1016/j.cryobiol.2017.09.007",
+      "pmid": "28987775",
+      "pmcid": null,
+      "titleKey": "title:slow freezing versus vitrification technique for human ovarian tissue cryopreservation an evaluation of histological changes wnt signaling pathway and apoptotic genes expression",
+      "journal": "Cryobiology",
+      "publishedYear": 2017,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.237,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.42,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.78766 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2761519852",
+          "sourceUrl": "https://doi.org/10.1016/j.cryobiol.2017.09.007",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1093/humrep/den255",
+      "title": "Novel needle immersed vitrification: a practical and convenient method with potential advantages in mouse and human ovarian tissue cryopreservation",
+      "doi": "10.1093/humrep/den255",
+      "pmid": "18614614",
+      "pmcid": null,
+      "titleKey": "title:novel needle immersed vitrification a practical and convenient method with potential advantages in mouse and human ovarian tissue cryopreservation",
+      "journal": "Human Reproduction",
+      "publishedYear": 2008,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 5.184,
+      "relevanceScore": 3.717,
+      "authorityScore": 1.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.1561 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2101311425",
+          "sourceUrl": "https://doi.org/10.1093/humrep/den255",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.fertnstert.2005.08.062",
+      "title": "Efficiency of equilibrium cooling and vitrification procedures for the cryopreservation of ovarian tissue: comparative analysis between human and animal models",
+      "doi": "10.1016/j.fertnstert.2005.08.062",
+      "pmid": "16616087",
+      "pmcid": null,
+      "titleKey": "title:efficiency of equilibrium cooling and vitrification procedures for the cryopreservation of ovarian tissue comparative analysis between human and animal models",
+      "journal": "Fertility and Sterility",
+      "publishedYear": 2006,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 5.184,
+      "relevanceScore": 3.717,
+      "authorityScore": 1.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.8286 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2056101239",
+          "sourceUrl": "https://doi.org/10.1016/j.fertnstert.2005.08.062",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1111/rda.70064",
+      "title": "Evaluation of Different Cryoprotectant Combinations in Vitrification and Slow Freezing for Ovarian Tissue Preservation in Domestic Cats.",
+      "doi": "10.1111/rda.70064",
+      "pmid": "40265625",
+      "pmcid": "PMC12016461",
+      "titleKey": "title:evaluation of different cryoprotectant combinations in vitrification and slow freezing for ovarian tissue preservation in domestic cats",
+      "journal": "Reprod Domest Anim",
+      "publishedYear": 2025,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.117,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "europe-pmc"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "pmcid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.97486 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "open-access full text is available",
+        "authority score is directionally promising"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "europe-pmc",
+          "sourceId": "40265625",
+          "sourceUrl": null,
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/s10815-019-01532-8",
+      "title": "In vitro survival of follicles in prepubertal ewe ovarian cortex cryopreserved by slow freezing or non-equilibrium vitrification",
+      "doi": "10.1007/s10815-019-01532-8",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:in vitro survival of follicles in prepubertal ewe ovarian cortex cryopreserved by slow freezing or non equilibrium vitrification",
+      "journal": "Journal of Assisted Reproduction and Genetics",
+      "publishedYear": 2019,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.087,
+      "relevanceScore": 4.65,
+      "authorityScore": 0.27,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
       ],
       "fullTextAvailability": "full-text-link",
       "matchedKeywords": [
         "cryopreservation",
-        "fertility preservation",
+        "freezing",
+        "ovarian cortex",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.10916 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "authority score is directionally promising"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1007/s10815-019-01532-8",
+          "sourceUrl": "https://doi.org/10.1007/s10815-019-01532-8",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1097/00029330-200701020-00007",
+      "title": "Modified vitrification method for cryopreservation of human ovarian tissues",
+      "doi": "10.1097/00029330-200701020-00007",
+      "pmid": "17335651",
+      "pmcid": null,
+      "titleKey": "title:modified vitrification method for cryopreservation of human ovarian tissues",
+      "journal": "Chinese Medical Journal",
+      "publishedYear": 2007,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 4.934,
+      "relevanceScore": 3.717,
+      "authorityScore": 1.05,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.11978 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W126575124",
+          "sourceUrl": "https://doi.org/10.1097/00029330-200701020-00007",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.ejogrb.2008.03.002",
+      "title": "Cryopreservation of human ovarian tissue by solid-surface vitrification",
+      "doi": "10.1016/j.ejogrb.2008.03.002",
+      "pmid": "18455864",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of human ovarian tissue by solid surface vitrification",
+      "journal": "European Journal of Obstetrics & Gynecology and Reproductive Biology",
+      "publishedYear": 2008,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.884,
+      "relevanceScore": 3.717,
+      "authorityScore": 1,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.1891 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2163886129",
+          "sourceUrl": "https://doi.org/10.1016/j.ejogrb.2008.03.002",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2026.105591",
+      "title": "Viability of ovarian tissue after cryopreservation by slow freezing or vitrification in sheep.",
+      "doi": "10.1016/j.cryobiol.2026.105591",
+      "pmid": "41691733",
+      "pmcid": null,
+      "titleKey": "title:viability of ovarian tissue after cryopreservation by slow freezing or vitrification in sheep",
+      "journal": "Cryobiology",
+      "publishedYear": 2026,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.817,
+      "relevanceScore": 4.65,
+      "authorityScore": 0,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "europe-pmc"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 2.98411 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "europe-pmc",
+          "sourceId": "41691733",
+          "sourceUrl": null,
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2007.08.008",
+      "title": "Cryopreservation of human ovarian tissue: Comparison of rapid and conventional freezing",
+      "doi": "10.1016/j.cryobiol.2007.08.008",
+      "pmid": "17931616",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of human ovarian tissue comparison of rapid and conventional freezing",
+      "journal": "Cryobiology",
+      "publishedYear": 2007,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.814,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.93,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
         "ovarian tissue"
       ],
       "noveltyBasis": [
@@ -110,6 +2865,65 @@
       "promotionRisks": [
         "single-source evidence; cross-source confirmation is still missing",
         "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.23198 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2076160858",
+          "sourceUrl": "https://doi.org/10.1016/j.cryobiol.2007.08.008",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.26226/morressier.5af300b1738ab10027aa9817",
+      "title": "04 / Assessing the effects of ovarian tissue ultra-rapid cryopreservation by vitrification on primordial-stage oocytes.",
+      "doi": "10.26226/morressier.5af300b1738ab10027aa9817",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:04 assessing the effects of ovarian tissue ultra rapid cryopreservation by vitrification on primordial stage oocytes",
+      "journal": null,
+      "publishedYear": 2018,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.8,
+      "relevanceScore": 4.483,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "oocyte",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
         "authority score is still weak; novelty may outrun evidentiary strength"
       ],
       "reviewChecklist": [
@@ -120,16 +2934,966 @@
         "look for corroborating records from a second literature source"
       ],
       "recommendationReasons": [
-        "optimizer score 3.295805 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "optimizer score 3.81182 cleared the review threshold 2.2 but stayed below promote 5.2",
         "full-text landing page is available"
       ],
       "staleEvidence": false,
       "sources": [
         {
-          "source": "pubmed",
-          "sourceId": "pubmed:38575798",
-          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/38575798/",
-          "rawQuery": "site:pubmed.ncbi.nlm.nih.gov ovarian tissue cryopreservation 2024 2025",
+          "source": "crossref",
+          "sourceId": "10.26226/morressier.5af300b1738ab10027aa9817",
+          "sourceUrl": "https://doi.org/10.26226/morressier.5af300b1738ab10027aa9817",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.fertnstert.2010.12.057",
+      "title": "Vitrified human ovaries have fewer primordial follicles and produce less antimüllerian hormone than slow-frozen ovaries",
+      "doi": "10.1016/j.fertnstert.2010.12.057",
+      "pmid": "21300348",
+      "pmcid": null,
+      "titleKey": "title:vitrified human ovaries have fewer primordial follicles and produce less antim llerian hormone than slow frozen ovaries",
+      "journal": "Fertility and Sterility",
+      "publishedYear": 2011,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 4.784,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.9,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "follicles",
+        "freezing",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.40878 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2170759394",
+          "sourceUrl": "https://doi.org/10.1016/j.fertnstert.2010.12.057",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1093/humrep/deg439",
+      "title": "Cryopreservation of follicles in human ovarian cortical tissue. Comparison of serum and human serum albumin in the cryoprotectant solutions",
+      "doi": "10.1093/humrep/deg439",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of follicles in human ovarian cortical tissue comparison of serum and human serum albumin in the cryoprotectant solutions",
+      "journal": "Human Reproduction",
+      "publishedYear": 2003,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.744,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.86,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "ovarian cortex"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.70132 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1093/humrep/deg439",
+          "sourceUrl": "https://doi.org/10.1093/humrep/deg439",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.fertnstert.2004.11.036",
+      "title": "Coculture of monkey ovarian tissue increases survival after vitrification and slow-rate freezing",
+      "doi": "10.1016/j.fertnstert.2004.11.036",
+      "pmid": "15831299",
+      "pmcid": null,
+      "titleKey": "title:coculture of monkey ovarian tissue increases survival after vitrification and slow rate freezing",
+      "journal": "Fertility and Sterility",
+      "publishedYear": 2005,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.694,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.81,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.80668 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2093164324",
+          "sourceUrl": "https://doi.org/10.1016/j.fertnstert.2004.11.036",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.theriogenology.2009.01.014",
+      "title": "Development of cryopreservation protocols for early stage zebrafish (Danio rerio) ovarian follicles using controlled slow cooling",
+      "doi": "10.1016/j.theriogenology.2009.01.014",
+      "pmid": "19250661",
+      "pmcid": null,
+      "titleKey": "title:development of cryopreservation protocols for early stage zebrafish danio rerio ovarian follicles using controlled slow cooling",
+      "journal": "Theriogenology",
+      "publishedYear": 2009,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 4.6,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.55,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "follicles",
+        "freezing"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.61706 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2137959016",
+          "sourceUrl": "https://doi.org/10.1016/j.theriogenology.2009.01.014",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.theriogenology.2009.01.014",
+          "sourceUrl": "https://doi.org/10.1016/j.theriogenology.2009.01.014",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/s10815-012-9917-5",
+      "title": "Quality and functionality of human ovarian tissue after cryopreservation using an original slow freezing procedure",
+      "doi": "10.1007/s10815-012-9917-5",
+      "pmid": "23263820",
+      "pmcid": null,
+      "titleKey": "title:quality and functionality of human ovarian tissue after cryopreservation using an original slow freezing procedure",
+      "journal": "Journal of Assisted Reproduction and Genetics",
+      "publishedYear": 2012,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 4.594,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.71,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.59157 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2013644989",
+          "sourceUrl": "https://doi.org/10.1007/s10815-012-9917-5",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.theriogenology.2006.02.014",
+      "title": "Cryopreservation of preantral ovarian follicles in situ from domestic cats (Felis catus) using different cryoprotective agents",
+      "doi": "10.1016/j.theriogenology.2006.02.014",
+      "pmid": "16530815",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of preantral ovarian follicles in situ from domestic cats felis catus using different cryoprotective agents",
+      "journal": "Theriogenology",
+      "publishedYear": 2006,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 4.59,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.54,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "follicles"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.59384 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2081038535",
+          "sourceUrl": "https://doi.org/10.1016/j.theriogenology.2006.02.014",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.theriogenology.2006.02.014",
+          "sourceUrl": "https://doi.org/10.1016/j.theriogenology.2006.02.014",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/s10815-015-0543-x",
+      "title": "Damage to fetal bovine ovarian tissue caused by cryoprotectant exposure and vitrification is mitigated during tissue culture",
+      "doi": "10.1007/s10815-015-0543-x",
+      "pmid": "26249553",
+      "pmcid": null,
+      "titleKey": "title:damage to fetal bovine ovarian tissue caused by cryoprotectant exposure and vitrification is mitigated during tissue culture",
+      "journal": "Journal of Assisted Reproduction and Genetics",
+      "publishedYear": 2015,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.424,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.54,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.52538 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1839178067",
+          "sourceUrl": "https://doi.org/10.1007/s10815-015-0543-x",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2016.07.013",
+      "title": "The preservation of vital functions in cat ovarian tissues during vitrification depends more on the temperature of the cryoprotectant exposure than on the sucrose supplementation",
+      "doi": "10.1016/j.cryobiol.2016.07.013",
+      "pmid": "27475292",
+      "pmcid": null,
+      "titleKey": "title:the preservation of vital functions in cat ovarian tissues during vitrification depends more on the temperature of the cryoprotectant exposure than on the sucrose supplementation",
+      "journal": "Cryobiology",
+      "publishedYear": 2016,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.294,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.41,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.04457 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2504795940",
+          "sourceUrl": "https://doi.org/10.1016/j.cryobiol.2016.07.013",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1111/j.1447-0756.2010.01215.x",
+      "title": "Mouse ovarian follicle cryopreservation using vitrification or slow programmed cooling: Assessment of in vitro development, maturation, ultra-structure and meiotic spindle organization",
+      "doi": "10.1111/j.1447-0756.2010.01215.x",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:mouse ovarian follicle cryopreservation using vitrification or slow programmed cooling assessment of in vitro development maturation ultra structure and meiotic spindle organization",
+      "journal": "Journal of Obstetrics and Gynaecology Research",
+      "publishedYear": 2011,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.294,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.41,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "follicles",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.84832 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "authority score is directionally promising"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1111/j.1447-0756.2010.01215.x",
+          "sourceUrl": "https://doi.org/10.1111/j.1447-0756.2010.01215.x",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.5935/1518-0557.20250045",
+      "title": "Comparison of the biomechanical characteristics of human ovarian tissue after vitrification versus slow freezing.",
+      "doi": "10.5935/1518-0557.20250045",
+      "pmid": "41060888",
+      "pmcid": "PMC12695001",
+      "titleKey": "title:comparison of the biomechanical characteristics of human ovarian tissue after vitrification versus slow freezing",
+      "journal": "JBRA Assist Reprod",
+      "publishedYear": 2025,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.184,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "europe-pmc"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "pmcid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.44228 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "open-access full text is available",
+        "authority score is directionally promising"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "europe-pmc",
+          "sourceId": "41060888",
+          "sourceUrl": null,
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.theriogenology.2010.11.012",
+      "title": "Effectiveness of slow freezing and vitrification for long-term preservation of mouse ovarian tissue",
+      "doi": "10.1016/j.theriogenology.2010.11.012",
+      "pmid": "21220167",
+      "pmcid": null,
+      "titleKey": "title:effectiveness of slow freezing and vitrification for long term preservation of mouse ovarian tissue",
+      "journal": "Theriogenology",
+      "publishedYear": 2011,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.134,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.25,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 2.91785 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1986146127",
+          "sourceUrl": "https://doi.org/10.1016/j.theriogenology.2010.11.012",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/b978-0-12-823344-3.00013-3",
+      "title": "Methods of Ovarian Tissue Cryopreservation: Slow Freezing",
+      "doi": "10.1016/b978-0-12-823344-3.00013-3",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:methods of ovarian tissue cryopreservation slow freezing",
+      "journal": "Principles and Practice of Ovarian Tissue Cryopreservation and Transplantation",
+      "publishedYear": 2022,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.044,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.16,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "ovarian tissue"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.377 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/b978-0-12-823344-3.00013-3",
+          "sourceUrl": "https://doi.org/10.1016/b978-0-12-823344-3.00013-3",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/b978-0-12-823344-3.00022-4",
+      "title": "Methods of Ovarian Tissue Cryopreservation: Vitrification",
+      "doi": "10.1016/b978-0-12-823344-3.00022-4",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:methods of ovarian tissue cryopreservation vitrification",
+      "journal": "Principles and Practice of Ovarian Tissue Cryopreservation and Transplantation",
+      "publishedYear": 2022,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.044,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.16,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.377 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/b978-0-12-823344-3.00022-4",
+          "sourceUrl": "https://doi.org/10.1016/b978-0-12-823344-3.00022-4",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.fertnstert.2024.07.806",
+      "title": "A NOVEL APPLICATION OF THE SPERM VITRIFICATION DEVICE FOR CRYOPRESERVATION OF MULTIPLE OVARIAN FOLLICLES",
+      "doi": "10.1016/j.fertnstert.2024.07.806",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:a novel application of the sperm vitrification device for cryopreservation of multiple ovarian follicles",
+      "journal": "Fertility and Sterility",
+      "publishedYear": 2024,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.034,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "follicles",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.36003 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.fertnstert.2024.07.806",
+          "sourceUrl": "https://doi.org/10.1016/j.fertnstert.2024.07.806",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.fertnstert.2007.07.1197",
+      "title": "Effect of procedure slow-freezing and vitrification protocol on ultra microstructure, ER and MHC-II antigen expressions of rabbit ovarian tissues and the proliferative activity of the follicles",
+      "doi": "10.1016/j.fertnstert.2007.07.1197",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:effect of procedure slow freezing and vitrification protocol on ultra microstructure er and mhc ii antigen expressions of rabbit ovarian tissues and the proliferative activity of the follicles",
+      "journal": "Fertility and Sterility",
+      "publishedYear": 2007,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.034,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "freezing",
+        "ovarian tissue",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.32878 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.fertnstert.2007.07.1197",
+          "sourceUrl": "https://doi.org/10.1016/j.fertnstert.2007.07.1197",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.fertnstert.2007.07.1178",
+      "title": "Vitrification of isolated ovarian follicles from the mouse ovary: does temperature of cryoprotectant exposure really matter?",
+      "doi": "10.1016/j.fertnstert.2007.07.1178",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:vitrification of isolated ovarian follicles from the mouse ovary does temperature of cryoprotectant exposure really matter",
+      "journal": "Fertility and Sterility",
+      "publishedYear": 2007,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.034,
+      "relevanceScore": 3.717,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "follicles",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 2.95878 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.fertnstert.2007.07.1178",
+          "sourceUrl": "https://doi.org/10.1016/j.fertnstert.2007.07.1178",
+          "rawQuery": "(\"ovarian tissue\" OR \"ovarian cortex\" OR \"whole ovary\" OR \"ovarian follicles\" OR \"primordial follicles\" OR \"preantral follicles\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
           "fullTextAvailability": "full-text-link"
         }
       ]

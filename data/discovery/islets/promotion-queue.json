@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-24T16:15:06.450Z",
+  "generatedAt": "2026-03-25T03:08:30.045Z",
   "domain": "islets",
-  "sourceSnapshotGeneratedAt": "2026-03-24T16:13:53.635Z",
-  "candidateCount": 57,
-  "trackedCount": 53,
-  "novelCandidateCount": 4,
+  "sourceSnapshotGeneratedAt": "2026-03-25T03:08:29.868Z",
+  "candidateCount": 196,
+  "trackedCount": 47,
+  "novelCandidateCount": 149,
   "isDegraded": true,
   "degradationReasons": [
-    "live-provider-failures:openalex,crossref,europe-pmc"
+    "live-provider-truncation:openalex,crossref,europe-pmc"
   ],
   "decisions": [
     {
@@ -20,36 +20,199 @@
       "decision": "pending",
       "recommendation": "promote",
       "recommendationReasons": [
-        "optimizer score 7.112215 cleared the promote threshold 5.2",
+        "optimizer score 11.118515 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
         "open-access full text is available",
-        "authority score is directionally promising",
+        "authority score is high enough to justify direct promotion review",
         "domain relevance score is high"
       ],
-      "rankingScore": 9.038,
-      "relevanceScore": 8.571,
-      "authorityScore": 0.3,
-      "sourceDiversityScore": 0.167,
-      "sourceCount": 1,
-      "recordCount": 1,
+      "rankingScore": 12.956,
+      "relevanceScore": 11.333,
+      "authorityScore": 1.29,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
       "sourceTypes": [
+        "openalex",
         "pubmed"
       ],
       "fullTextAvailability": "open-access-full-text",
       "matchedKeywords": [
         "beta cell",
         "cryopreservation",
+        "cryoprotectant",
         "insulin",
-        "islet transplantation",
         "islets",
         "pancreatic islets",
+        "recovery",
+        "thaw",
         "transplantation",
         "vitrification"
       ],
       "staleEvidence": false
     },
     {
+      "dedupeKey": "doi:10.3727/000000001783986576",
+      "title": "Development of a Cryopreservation Procedure Employing a Freezer Bag for Pancreatic Islets Using a Newly Developed Cryoprotectant",
+      "doi": "10.3727/000000001783986576",
+      "pmid": "11549055",
+      "pmcid": null,
+      "titleKey": "title:development of a cryopreservation procedure employing a freezer bag for pancreatic islets using a newly developed cryoprotectant",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 9.59736 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 12.046,
+      "relevanceScore": 11.333,
+      "authorityScore": 0.38,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "graft",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.3390/nu13092959",
+      "title": "Fructan Improves Survival and Function of Cryopreserved Rat Islets.",
+      "doi": "10.3390/nu13092959",
+      "pmid": "34578837",
+      "pmcid": "PMC8470660",
+      "titleKey": "title:fructan improves survival and function of cryopreserved rat islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 9.292485 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 11.093,
+      "relevanceScore": 10.4,
+      "authorityScore": 0.36,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "europe-pmc",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "graft",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1177/096368979900800614",
+      "title": "Secretion from Islets and Single Islet Cells following Cryopreservation",
+      "doi": "10.1177/096368979900800614",
+      "pmid": "10701497",
+      "pmcid": null,
+      "titleKey": "title:secretion from islets and single islet cells following cryopreservation",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 7.191725 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 10.73,
+      "relevanceScore": 10.133,
+      "authorityScore": 0.43,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.bbrep.2024.101658",
+      "title": "The effect of hydroxyethyl starch as a cryopreservation agent during freezing of mouse pancreatic islets.",
+      "doi": "10.1016/j.bbrep.2024.101658",
+      "pmid": "38362049",
+      "pmcid": "PMC10867579",
+      "titleKey": "title:the effect of hydroxyethyl starch as a cryopreservation agent during freezing of mouse pancreatic islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 9.003325 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high",
+        "source diversity is strong enough to reduce single-provider bias"
+      ],
+      "rankingScore": 10.64,
+      "relevanceScore": 9.8,
+      "authorityScore": 0.34,
+      "sourceDiversityScore": 0.5,
+      "sourceCount": 3,
+      "recordCount": 3,
+      "sourceTypes": [
+        "europe-pmc",
+        "openalex",
+        "pubmed"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
       "dedupeKey": "doi:10.1186/s13287-025-04168-x",
-      "title": "Reviving hope: unlocking pancreatic islet immortality by optimizing a trehalose-based cryopreservation media and cell-penetrating peptide",
+      "title": "Reviving hope: unlocking pancreatic islet immortality by optimizing a trehalose-based cryopreservation media and cell-penetrating peptide.",
       "doi": "10.1186/s13287-025-04168-x",
       "pmid": "40083015",
       "pmcid": "PMC11908028",
@@ -57,23 +220,382 @@
       "decision": "pending",
       "recommendation": "promote",
       "recommendationReasons": [
-        "optimizer score 5.656115 cleared the promote threshold 5.2",
+        "optimizer score 8.466795 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
         "open-access full text is available",
         "authority score is directionally promising",
-        "domain relevance score is non-trivial"
+        "domain relevance score is high"
       ],
-      "rankingScore": 6.724,
-      "relevanceScore": 6.257,
+      "rankingScore": 10.433,
+      "relevanceScore": 9.8,
       "authorityScore": 0.3,
-      "sourceDiversityScore": 0.167,
-      "sourceCount": 1,
-      "recordCount": 1,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
       "sourceTypes": [
+        "europe-pmc",
         "pubmed"
       ],
       "fullTextAvailability": "open-access-full-text",
       "matchedKeywords": [
         "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1055/s-0042-102628",
+      "title": "An Effective New Cryopreservation Procedure for Pancreatic Islets Using Hollow Fiber Vitrification",
+      "doi": "10.1055/s-0042-102628",
+      "pmid": "27341475",
+      "pmcid": null,
+      "titleKey": "title:an effective new cryopreservation procedure for pancreatic islets using hollow fiber vitrification",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 7.407575 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 10.407,
+      "relevanceScore": 9.8,
+      "authorityScore": 0.44,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1177/2155179019876641",
+      "title": "Cryopreserved Alginate-Encapsulated Islets Can Restore Euglycemia in a Diabetic Animal Model Better than Cryopreserved Non-encapsulated Islets",
+      "doi": "10.1177/2155179019876641",
+      "pmid": "34557325",
+      "pmcid": null,
+      "titleKey": "title:cryopreserved alginate encapsulated islets can restore euglycemia in a diabetic animal model better than cryopreserved non encapsulated islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 7.00977 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 10.377,
+      "relevanceScore": 9.8,
+      "authorityScore": 0.41,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "encapsulated islets",
+        "freezing",
+        "graft",
+        "islets",
+        "recovery",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:3115661",
+      "title": "Selective killing of leucocytes by freezing: potential for reducing the immunogenicity of pancreatic islets.",
+      "doi": null,
+      "pmid": "3115661",
+      "pmcid": null,
+      "titleKey": "title:selective killing of leucocytes by freezing potential for reducing the immunogenicity of pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.391275 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 10.137,
+      "relevanceScore": 9.8,
+      "authorityScore": 0.17,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "graft",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/term.3219",
+      "title": "Fabrication of functional rat pseudo‐islets after cryopreservation of pancreatic islets or dispersed islet cells",
+      "doi": "10.1002/term.3219",
+      "pmid": "33999537",
+      "pmcid": null,
+      "titleKey": "title:fabrication of functional rat pseudo islets after cryopreservation of pancreatic islets or dispersed islet cells",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 7.82731 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.753,
+      "relevanceScore": 9.2,
+      "authorityScore": 0.22,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00007890-199909150-00001",
+      "title": "CRYOPRESERVATION OF HUMAN ISLETS OF LANGERHANS",
+      "doi": "10.1097/00007890-199909150-00001",
+      "pmid": "10507475",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of human islets of langerhans",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.73157 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.747,
+      "relevanceScore": 9.5,
+      "authorityScore": 0.08,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "beta cell",
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "graft",
+        "insulin",
+        "islets",
+        "recovery",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:3916635",
+      "title": "Isolation and cryopreservation of human pancreatic islets.",
+      "doi": null,
+      "pmid": "3916635",
+      "pmcid": null,
+      "titleKey": "title:isolation and cryopreservation of human pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.23639 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.547,
+      "relevanceScore": 9.2,
+      "authorityScore": 0.18,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:2697486",
+      "title": "The effect of rapid cooling and culture on in vitro insulin release in cryopreserved rat islets of Langerhans.",
+      "doi": null,
+      "pmid": "2697486",
+      "pmcid": null,
+      "titleKey": "title:the effect of rapid cooling and culture on in vitro insulin release in cryopreserved rat islets of langerhans",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.326635 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.487,
+      "relevanceScore": 9.2,
+      "authorityScore": 0.12,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "title:cryopreservation of islets of langerhans optimization of protocols using rat pancreatic tissue",
+      "title": "Cryopreservation of islets of Langerhans: Optimization of protocols using rat pancreatic tissue",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of islets of langerhans optimization of protocols using rat pancreatic tissue",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.113945 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.467,
+      "relevanceScore": 9.2,
+      "authorityScore": 0.1,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:6371165",
+      "title": "Cryopreservation of pancreatic islet cells.",
+      "doi": null,
+      "pmid": "6371165",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of pancreatic islet cells",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.28965 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.407,
+      "relevanceScore": 9.2,
+      "authorityScore": 0.04,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/adhm.201500515",
+      "title": "Sensing and Sensibility: Single‐Islet‐based Quality Control Assay of Cryopreserved Pancreatic Islets with Functionalized Hydrogel Microcapsules",
+      "doi": "10.1002/adhm.201500515",
+      "pmid": "26606153",
+      "pmcid": null,
+      "titleKey": "title:sensing and sensibility single islet based quality control assay of cryopreserved pancreatic islets with functionalized hydrogel microcapsules",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 5.177965 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.374,
+      "relevanceScore": 8.867,
+      "authorityScore": 0.34,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
         "freezing",
         "insulin",
         "islets",
@@ -83,28 +605,28 @@
       "staleEvidence": false
     },
     {
-      "dedupeKey": "doi:10.1016/j.bbrep.2024.101658",
-      "title": "The effect of hydroxyethyl starch as a cryopreservation agent during freezing of mouse pancreatic islets",
-      "doi": "10.1016/j.bbrep.2024.101658",
-      "pmid": "38362049",
-      "pmcid": "PMC10867579",
-      "titleKey": "title:the effect of hydroxyethyl starch as a cryopreservation agent during freezing of mouse pancreatic islets",
+      "dedupeKey": "doi:10.5772/intechopen.89363",
+      "title": "Current Advancements in Pancreatic Islet Cryopreservation Techniques",
+      "doi": "10.5772/intechopen.89363",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:current advancements in pancreatic islet cryopreservation techniques",
       "decision": "pending",
       "recommendation": "promote",
       "recommendationReasons": [
-        "optimizer score 5.60492 cleared the promote threshold 5.2",
+        "optimizer score 6.249235 cleared the promote threshold 5.2",
         "open-access full text is available",
         "authority score is directionally promising",
-        "domain relevance score is non-trivial"
+        "domain relevance score is high"
       ],
-      "rankingScore": 5.91,
-      "relevanceScore": 5.443,
-      "authorityScore": 0.3,
+      "rankingScore": 9.354,
+      "relevanceScore": 8.867,
+      "authorityScore": 0.32,
       "sourceDiversityScore": 0.167,
       "sourceCount": 1,
       "recordCount": 1,
       "sourceTypes": [
-        "pubmed"
+        "openalex"
       ],
       "fullTextAvailability": "open-access-full-text",
       "matchedKeywords": [
@@ -112,7 +634,187 @@
         "freezing",
         "insulin",
         "islets",
-        "pancreatic islets"
+        "pancreatic islets",
+        "recovery",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1080/19382014.2017.1405202",
+      "title": "Systematic review of islet cryopreservation",
+      "doi": "10.1080/19382014.2017.1405202",
+      "pmid": "29315020",
+      "pmcid": null,
+      "titleKey": "title:systematic review of islet cryopreservation",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 8.360625 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.27,
+      "relevanceScore": 8.267,
+      "authorityScore": 0.67,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00007890-198707000-00017",
+      "title": "SURVIVAL OF CRYOPRESERVED ISOLATED ADULT HUMAN PANCREATIC ISLETS OF LANGERHANS",
+      "doi": "10.1097/00007890-198707000-00017",
+      "pmid": "3111039",
+      "pmcid": null,
+      "titleKey": "title:survival of cryopreserved isolated adult human pancreatic islets of langerhans",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.586895 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.234,
+      "relevanceScore": 8.867,
+      "authorityScore": 0.2,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.3892/ijmm.12.6.851",
+      "title": "Effects of cryopreservation and coculture with pancreatic ductal epithelial cells on insulin secretion from human pancreatic islets",
+      "doi": "10.3892/ijmm.12.6.851",
+      "pmid": "14612956",
+      "pmcid": null,
+      "titleKey": "title:effects of cryopreservation and coculture with pancreatic ductal epithelial cells on insulin secretion from human pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.934415 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.214,
+      "relevanceScore": 8.867,
+      "authorityScore": 0.18,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.4161/org.5.3.9812",
+      "title": "Review of vitreous islet cryopreservation",
+      "doi": "10.4161/org.5.3.9812",
+      "pmid": "20046679",
+      "pmcid": null,
+      "titleKey": "title:review of vitreous islet cryopreservation",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 6.725975 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.194,
+      "relevanceScore": 8.267,
+      "authorityScore": 0.76,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1038/s41598-021-89853-6",
+      "title": "Accelerating cryoprotectant diffusion kinetics improves cryopreservation of pancreatic islets.",
+      "doi": "10.1038/s41598-021-89853-6",
+      "pmid": "34001961",
+      "pmcid": "PMC8129116",
+      "titleKey": "title:accelerating cryoprotectant diffusion kinetics improves cryopreservation of pancreatic islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 8.175705 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 9.08,
+      "relevanceScore": 8.267,
+      "authorityScore": 0.48,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "europe-pmc",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "transplantation"
       ],
       "staleEvidence": false
     },
@@ -126,18 +828,20 @@
       "decision": "pending",
       "recommendation": "promote",
       "recommendationReasons": [
-        "optimizer score 5.61242 cleared the promote threshold 5.2",
+        "optimizer score 8.682695 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
         "open-access full text is available",
         "authority score is directionally promising",
-        "domain relevance score is non-trivial"
+        "domain relevance score is high"
       ],
-      "rankingScore": 5.91,
-      "relevanceScore": 5.443,
-      "authorityScore": 0.3,
-      "sourceDiversityScore": 0.167,
-      "sourceCount": 1,
-      "recordCount": 1,
+      "rankingScore": 9.07,
+      "relevanceScore": 8.267,
+      "authorityScore": 0.47,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
       "sourceTypes": [
+        "openalex",
         "pubmed"
       ],
       "fullTextAvailability": "open-access-full-text",
@@ -145,8 +849,3976 @@
         "cryopreservation",
         "islets",
         "pancreatic islets",
+        "recovery",
         "transplantation",
         "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1111/j.1365-2818.1993.tb03309.x",
+      "title": "Three‐dimensional distribution of damaged cells in cryopreserved pancreatic islets as determined by laser scanning confocal microscopy",
+      "doi": "10.1111/j.1365-2818.1993.tb03309.x",
+      "pmid": "8478913",
+      "pmcid": null,
+      "titleKey": "title:three dimensional distribution of damaged cells in cryopreserved pancreatic islets as determined by laser scanning confocal microscopy",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.310785 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 8.947,
+      "relevanceScore": 8.6,
+      "authorityScore": 0.18,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "islets",
+        "pancreatic islets",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00007890-199109000-00012",
+      "title": "TRANSPLANTATION OF PURIFIED FROZEN/THAWED CANINE PANCREATIC ISLET ALLOGRAFTS WITH CYCLOSPORINE",
+      "doi": "10.1097/00007890-199109000-00012",
+      "pmid": "1897016",
+      "pmcid": null,
+      "titleKey": "title:transplantation of purified frozen thawed canine pancreatic islet allografts with cyclosporine",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.217185 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 8.86,
+      "relevanceScore": 8.533,
+      "authorityScore": 0.16,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "graft",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1007/bf00337098",
+      "title": "Effect of cooling rate and its interaction with pre-freeze and post-thaw tissue culture on the in vitro and in vivo function of cryopreserved pancreatic islets",
+      "doi": "10.1007/bf00337098",
+      "pmid": "8347264",
+      "pmcid": null,
+      "titleKey": "title:effect of cooling rate and its interaction with pre freeze and post thaw tissue culture on the in vitro and in vivo function of cryopreserved pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.816975 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 8.594,
+      "relevanceScore": 8.267,
+      "authorityScore": 0.16,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1111/j.1432-2277.1993.tb00646.x",
+      "title": "Effect of cooling rate and its interaction with pre-freeze and post-thaw tissue culture on the in vitro and in vivo function of cryopreserved pancreatic islets",
+      "doi": "10.1111/j.1432-2277.1993.tb00646.x",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:effect of cooling rate and its interaction with pre freeze and post thaw tissue culture on the in vitro and in vivo function of cryopreserved pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.758775 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is high"
+      ],
+      "rankingScore": 8.564,
+      "relevanceScore": 8.267,
+      "authorityScore": 0.13,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "thaw"
+      ],
+      "staleEvidence": true,
+      "staleReason": "evidence or recommendation changed since the previous review state"
+    },
+    {
+      "dedupeKey": "doi:10.1177/096368979800700405",
+      "title": "Effect of Cryopreservation on the Survival and Function of Murine Islet Isografts and Allografts",
+      "doi": "10.1177/096368979800700405",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:effect of cryopreservation on the survival and function of murine islet isografts and allografts",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 7.031655 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 8.494,
+      "relevanceScore": 7.967,
+      "authorityScore": 0.36,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "graft",
+        "insulin",
+        "islets",
+        "recovery",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00007890-199601270-00001",
+      "title": "NORMALIZATION OF DIABETES BY XENOTRANSPLANTATION OF CRYOPRESERVED MICROENCAPSULATED PANCREATIC ISLETS",
+      "doi": "10.1097/00007890-199601270-00001",
+      "pmid": "8600618",
+      "pmcid": null,
+      "titleKey": "title:normalization of diabetes by xenotransplantation of cryopreserved microencapsulated pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.184835 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 8.47,
+      "relevanceScore": 7.933,
+      "authorityScore": 0.37,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(87)90032-0",
+      "title": "Cryopreservation of mouse pancreatic islets: Effects of different glucose concentrations in the post-thaw culture medium on islet recovery",
+      "doi": "10.1016/0011-2240(87)90032-0",
+      "pmid": "3304841",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of mouse pancreatic islets effects of different glucose concentrations in the post thaw culture medium on islet recovery",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 7.00151 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 8.36,
+      "relevanceScore": 7.667,
+      "authorityScore": 0.36,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1159/000129193",
+      "title": "Cryopreservation of Islets of Langerhans Does Not Affect Angiogenesis and Revascularization after Free Transplantation",
+      "doi": "10.1159/000129193",
+      "pmid": "1374716",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of islets of langerhans does not affect angiogenesis and revascularization after free transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.326165 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 8.28,
+      "relevanceScore": 7.933,
+      "authorityScore": 0.18,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "graft",
+        "islets",
+        "pancreatic islets",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:6787760",
+      "title": "Transplantation of cryopreserved pancreatic islets into the portal vein.",
+      "doi": null,
+      "pmid": "6787760",
+      "pmcid": null,
+      "titleKey": "title:transplantation of cryopreserved pancreatic islets into the portal vein",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.59755 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 8.27,
+      "relevanceScore": 7.933,
+      "authorityScore": 0.17,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "insulin",
+        "islets",
+        "pancreatic islets",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.3727/000000001783986369",
+      "title": "Islet Cryopreservation Using Intracellular Preservation Solutions",
+      "doi": "10.3727/000000001783986369",
+      "pmid": "11714192",
+      "pmcid": null,
+      "titleKey": "title:islet cryopreservation using intracellular preservation solutions",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 7.02669 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 8.244,
+      "relevanceScore": 7.367,
+      "authorityScore": 0.71,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "insulin",
+        "islets",
+        "recovery",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.3727/000000001783986323",
+      "title": "Osmotic and Cryoprotectant Permeation Characteristics of Islet Cells Isolated from the Newborn Pig Pancreas",
+      "doi": "10.3727/000000001783986323",
+      "pmid": "11714201",
+      "pmcid": null,
+      "titleKey": "title:osmotic and cryoprotectant permeation characteristics of islet cells isolated from the newborn pig pancreas",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 5.733015 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 8.07,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.57,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "islets",
+        "pancreatic islets",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00007890-199710150-00020",
+      "title": "CRYOPRESERVATION OF RAT PANCREATIC ISLETS",
+      "doi": "10.1097/00007890-199710150-00020",
+      "pmid": "9381530",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of rat pancreatic islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 6.73741 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 8.046,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.38,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "graft",
+        "islets",
+        "pancreatic islets",
+        "recovery"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(84)90293-1",
+      "title": "Viability of cryopreserved cultured mouse pancreatic islets using a rapid freezing rate",
+      "doi": "10.1016/0011-2240(84)90293-1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:viability of cryopreserved cultured mouse pancreatic islets using a rapid freezing rate",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.53461 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.984,
+      "relevanceScore": 7.667,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "islets",
+        "pancreatic islets",
+        "recovery"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00007890-198612000-00003",
+      "title": "CRYOPRESERVATION OF MOUSE PANCREATIC ISLETS",
+      "doi": "10.1097/00007890-198612000-00003",
+      "pmid": "3097892",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of mouse pancreatic islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 6.91779 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.976,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.31,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1111/j.1749-6632.1999.tb08504.x",
+      "title": "Islet Cryopreservation Protocols",
+      "doi": "10.1111/j.1749-6632.1999.tb08504.x",
+      "pmid": "10415568",
+      "pmcid": null,
+      "titleKey": "title:islet cryopreservation protocols",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.586815 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.924,
+      "relevanceScore": 7.367,
+      "authorityScore": 0.39,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "recovery",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "title:in vitro function morphology and viability of cryopreserved rat pancreatic islets comparison of vitrification and six cryopreservation protocols",
+      "title": "In vitro function, morphology, and viability of cryopreserved rat pancreatic islets: comparison of vitrification and six cryopreservation protocols.",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:in vitro function morphology and viability of cryopreserved rat pancreatic islets comparison of vitrification and six cryopreservation protocols",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.18501 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.894,
+      "relevanceScore": 7.667,
+      "authorityScore": 0.06,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "recovery",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.3727/000000001783986756",
+      "title": "Islet Cryopreservation: Improved Recovery following Taurine Pretreatment",
+      "doi": "10.3727/000000001783986756",
+      "pmid": "11437070",
+      "pmcid": null,
+      "titleKey": "title:islet cryopreservation improved recovery following taurine pretreatment",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 6.476595 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.69,
+      "relevanceScore": 7.033,
+      "authorityScore": 0.49,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "graft",
+        "insulin",
+        "islets",
+        "recovery",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v4/response1",
+      "title": "Author response for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v4/response1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:author response for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.48782 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v2/response1",
+      "title": "Author response for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v2/response1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:author response for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.48782 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v3/response1",
+      "title": "Author response for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v3/response1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:author response for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.48782 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v3/decision1",
+      "title": "Decision letter for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v3/decision1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:decision letter for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.48782 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v1/decision1",
+      "title": "Decision letter for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v1/decision1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:decision letter for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.48782 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v4/decision1",
+      "title": "Decision letter for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v4/decision1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:decision letter for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.48782 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v2/decision1",
+      "title": "Decision letter for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v2/decision1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:decision letter for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.48782 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v1/review3",
+      "title": "Review for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v1/review3",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:review for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.16282 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v2/review1",
+      "title": "Review for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v2/review1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:review for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.16282 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v1/review2",
+      "title": "Review for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v1/review2",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:review for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.16282 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v1/review1",
+      "title": "Review for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v1/review1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:review for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.16282 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v2/review2",
+      "title": "Review for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v2/review2",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:review for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.16282 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v3/review1",
+      "title": "Review for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v3/review1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:review for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.16282 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/btm2.10416/v3/review2",
+      "title": "Review for \"Nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation\"",
+      "doi": "10.1002/btm2.10416/v3/review2",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:review for nanowarming of vitrified pancreatic islets as a cryopreservation technology for transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.16282 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.65,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1371/journal.pone.0263005",
+      "title": "Cryopreservation and post-thaw characterization of dissociated human islet cells.",
+      "doi": "10.1371/journal.pone.0263005",
+      "pmid": "35081145",
+      "pmcid": "PMC8791532",
+      "titleKey": "title:cryopreservation and post thaw characterization of dissociated human islet cells",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 8.180155 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.61,
+      "relevanceScore": 6.767,
+      "authorityScore": 0.51,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "europe-pmc",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "islets",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:3106856",
+      "title": "Cryopreservation of mouse, monkey and human islets of Langerhans for transplantation purposes.",
+      "doi": null,
+      "pmid": "3106856",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of mouse monkey and human islets of langerhans for transplantation purposes",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.577165 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.564,
+      "relevanceScore": 7.367,
+      "authorityScore": 0.03,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "insulin",
+        "islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1089/153834402765035590",
+      "title": "A Theoretical Examination of the Biophysical Factors for Development of an Optimized Cryopreservation Procedure for Canine Islets",
+      "doi": "10.1089/153834402765035590",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:a theoretical examination of the biophysical factors for development of an optimized cryopreservation procedure for canine islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.505395 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.55,
+      "relevanceScore": 7.333,
+      "authorityScore": 0.05,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "islets",
+        "pancreatic islets",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00006676-199608000-00008",
+      "title": "Improved Insulin Secretion of Cryopreserved Human Islets by Antioxidant Treatment",
+      "doi": "10.1097/00006676-199608000-00008",
+      "pmid": "8829185",
+      "pmcid": null,
+      "titleKey": "title:improved insulin secretion of cryopreserved human islets by antioxidant treatment",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.458695 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.52,
+      "relevanceScore": 7.033,
+      "authorityScore": 0.32,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "beta cell",
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "recovery",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/aja.1001750209",
+      "title": "An excursion through the ultrastructural world of quick‐frozen pancreatic islets",
+      "doi": "10.1002/aja.1001750209",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:an excursion through the ultrastructural world of quick frozen pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.90417 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.517,
+      "relevanceScore": 7,
+      "authorityScore": 0.35,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "beta cell",
+        "freezing",
+        "insulin",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1177/096368979900800510",
+      "title": "Water and Cryoprotectant Permeability Characteristics of Isolated Human and Canine Pancreatic Islets",
+      "doi": "10.1177/096368979900800510",
+      "pmid": "10580349",
+      "pmcid": null,
+      "titleKey": "title:water and cryoprotectant permeability characteristics of isolated human and canine pancreatic islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 5.435785 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.45,
+      "relevanceScore": 6.733,
+      "authorityScore": 0.55,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.jsb.2007.09.015",
+      "title": "Expedited approaches to whole cell electron tomography and organelle mark-up in situ in high-pressure frozen pancreatic islets",
+      "doi": "10.1016/j.jsb.2007.09.015",
+      "pmid": "18069000",
+      "pmcid": null,
+      "titleKey": "title:expedited approaches to whole cell electron tomography and organelle mark up in situ in high pressure frozen pancreatic islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 5.99156 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.267,
+      "relevanceScore": 5.8,
+      "authorityScore": 1.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "freezing",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1007/s00592-003-0100-4",
+      "title": "Size of pancreatic islets of Langerhans: a key parameter for viability after cryopreservation",
+      "doi": "10.1007/s00592-003-0100-4",
+      "pmid": "14605968",
+      "pmcid": null,
+      "titleKey": "title:size of pancreatic islets of langerhans a key parameter for viability after cryopreservation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.6796 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.19,
+      "relevanceScore": 6.733,
+      "authorityScore": 0.29,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "recovery"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(86)90047-7",
+      "title": "Long-term normoglycemia in pancreatectomized dogs transplanted with frozen/thawed pancreatic islets",
+      "doi": "10.1016/0011-2240(86)90047-7",
+      "pmid": "3089686",
+      "pmcid": null,
+      "titleKey": "title:long term normoglycemia in pancreatectomized dogs transplanted with frozen thawed pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.23129 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.06,
+      "relevanceScore": 6.733,
+      "authorityScore": 0.16,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "islets",
+        "pancreatic islets",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:9869940",
+      "title": "Experience with pancreas islets separation, immunoisolation and cryopreservation.",
+      "doi": null,
+      "pmid": "9869940",
+      "pmcid": null,
+      "titleKey": "title:experience with pancreas islets separation immunoisolation and cryopreservation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.62277 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7.004,
+      "relevanceScore": 6.767,
+      "authorityScore": 0.07,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "thaw",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:11912507",
+      "title": "Cryopreservation and xenotransplantation studies of microencapsulated rat pancreatic islets.",
+      "doi": null,
+      "pmid": "11912507",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation and xenotransplantation studies of microencapsulated rat pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.263245 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 7,
+      "relevanceScore": 6.733,
+      "authorityScore": 0.1,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:7491679",
+      "title": "Cryopreservation of purified bovine islets of Langerhans.",
+      "doi": null,
+      "pmid": "7491679",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of purified bovine islets of langerhans",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.435705 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.964,
+      "relevanceScore": 6.767,
+      "authorityScore": 0.03,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "insulin",
+        "islets",
+        "recovery",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00007890-199301000-00029",
+      "title": "THE EFFECT OF CRYOPRESERVATION ON THE SURVIVAL AND MHC ANTIGEN EXPRESSION OF MURINE ISLET ALLOGRAFTS",
+      "doi": "10.1097/00007890-199301000-00029",
+      "pmid": "8420042",
+      "pmcid": null,
+      "titleKey": "title:the effect of cryopreservation on the survival and mhc antigen expression of murine islet allografts",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.538325 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.96,
+      "relevanceScore": 6.433,
+      "authorityScore": 0.36,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "graft",
+        "islets",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1006/cryo.1998.2107",
+      "title": "Cryopreservation of Pancreatic Islets Prior to Transplantation: A Comparison between UW Solution and RPMI Culture Medium",
+      "doi": "10.1006/cryo.1998.2107",
+      "pmid": "9769161",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of pancreatic islets prior to transplantation a comparison between uw solution and rpmi culture medium",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.37344 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.747,
+      "relevanceScore": 6.4,
+      "authorityScore": 0.18,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2017.04.010",
+      "title": "Long-term cryopreservation of reaggregated pancreatic islets resulting in successful transplantation in rats",
+      "doi": "10.1016/j.cryobiol.2017.04.010",
+      "pmid": "28483491",
+      "pmcid": null,
+      "titleKey": "title:long term cryopreservation of reaggregated pancreatic islets resulting in successful transplantation in rats",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.15899 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.717,
+      "relevanceScore": 6.4,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.transproceed.2021.04.012",
+      "title": "All-in-One Silk Fibroin Sponge as the Vitrification Cryodevice of Rat Pancreatic Islets and the VEGF-Embedded Scaffold for Subrenal Transplantation",
+      "doi": "10.1016/j.transproceed.2021.04.012",
+      "pmid": "34052022",
+      "pmcid": null,
+      "titleKey": "title:all in one silk fibroin sponge as the vitrification cryodevice of rat pancreatic islets and the vegf embedded scaffold for subrenal transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.76066 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.607,
+      "relevanceScore": 6.4,
+      "authorityScore": 0.04,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "islets",
+        "pancreatic islets",
+        "transplantation",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1007/978-1-4615-9376-8_28",
+      "title": "Uses of Tissue Culture and Cryopreservation in Pancreatic Islet Transplantation",
+      "doi": "10.1007/978-1-4615-9376-8_28",
+      "pmid": "6428185",
+      "pmcid": null,
+      "titleKey": "title:uses of tissue culture and cryopreservation in pancreatic islet transplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.85371 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.577,
+      "relevanceScore": 6.4,
+      "authorityScore": 0.01,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(84)90048-8",
+      "title": "The significance of culture for successful cryopreservation of isolated pancreatic islets of langerhans",
+      "doi": "10.1016/0011-2240(84)90048-8",
+      "pmid": "6389013",
+      "pmcid": null,
+      "titleKey": "title:the significance of culture for successful cryopreservation of isolated pancreatic islets of langerhans",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 5.88275 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.553,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.42,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00007890-199710270-00005",
+      "title": "CRYOPRESERVATION OF MICROENCAPSULATED PORCINE PANCREATIC ISLETS",
+      "doi": "10.1097/00007890-199710270-00005",
+      "pmid": "9355825",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of microencapsulated porcine pancreatic islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 6.088675 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.543,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.41,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(88)90014-4",
+      "title": "Function of lymphocytes and macrophages after cryopreservation by procedures for pancreatic islets: Potential for reducing tissue immunogenicity",
+      "doi": "10.1016/0011-2240(88)90014-4",
+      "pmid": "3280245",
+      "pmcid": null,
+      "titleKey": "title:function of lymphocytes and macrophages after cryopreservation by procedures for pancreatic islets potential for reducing tissue immunogenicity",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 6.02381 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.533,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.4,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1006/cryo.1997.2018",
+      "title": "The Determination of Membrane Permeability Coefficients of Canine Pancreatic Islet Cells and Their Application to Islet Cryopreservation",
+      "doi": "10.1006/cryo.1997.2018",
+      "pmid": "9245505",
+      "pmcid": null,
+      "titleKey": "title:the determination of membrane permeability coefficients of canine pancreatic islet cells and their application to islet cryopreservation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.63459 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.507,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.54,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.17504/protocols.io.bupanvie",
+      "title": "ADI IsletCore Protocols for the Isolation, Assessment and Cryopreservation of Human Pancreatic Islets of Langerhans for Research Purposes v2",
+      "doi": "10.17504/protocols.io.bupanvie",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:adi isletcore protocols for the isolation assessment and cryopreservation of human pancreatic islets of langerhans for research purposes v2",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 6.621745 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.493,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.36,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.17504/protocols.io.x3mfqk6",
+      "title": "ADI IsletCore Protocols for the Isolation, Assessment and Cryopreservation of Human Pancreatic Islets of Langerhans for Research Purposes v1",
+      "doi": "10.17504/protocols.io.x3mfqk6",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:adi isletcore protocols for the isolation assessment and cryopreservation of human pancreatic islets of langerhans for research purposes v1",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 6.619245 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.493,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.36,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.2337/diab.38.1.s279",
+      "title": "Cryopreservation of Pancreatic Islets",
+      "doi": "10.2337/diab.38.1.s279",
+      "pmid": "8171474",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of pancreatic islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 5.68868 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.453,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.32,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1177/1522162802005005001",
+      "title": "Cryopreservation of Human Pancreatic Islets",
+      "doi": "10.1177/1522162802005005001",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of human pancreatic islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 5.47088 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.333,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.2,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2019.01.003",
+      "title": "Isochoric conditions enable high subfreezing temperature pancreatic islet preservation without osmotic cryoprotective agents",
+      "doi": "10.1016/j.cryobiol.2019.01.003",
+      "pmid": "30629949",
+      "pmcid": null,
+      "titleKey": "title:isochoric conditions enable high subfreezing temperature pancreatic islet preservation without osmotic cryoprotective agents",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.27416 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.307,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.34,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0026-0495(97)90007-x",
+      "title": "Cryopreservation: In vitro results in rat pancreatic islets",
+      "doi": "10.1016/s0026-0495(97)90007-x",
+      "pmid": "9186299",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation in vitro results in rat pancreatic islets",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 5.40643 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.303,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.17,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1111/j.1525-1594.2004.07296.x",
+      "title": "Maintenance of Glucose‐sensitive Insulin Secretion of Cryopreserved Human Islets with University of Wisconsin Solution and Ascorbic Acid‐2 Glucoside",
+      "doi": "10.1111/j.1525-1594.2004.07296.x",
+      "pmid": "15153144",
+      "pmcid": null,
+      "titleKey": "title:maintenance of glucose sensitive insulin secretion of cryopreserved human islets with university of wisconsin solution and ascorbic acid 2 glucoside",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.513275 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.24,
+      "relevanceScore": 5.833,
+      "authorityScore": 0.24,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "insulin",
+        "islets",
+        "recovery",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00007890-199008000-00006",
+      "title": "REVERSAL OF DIABETES IN DOGS BY TRANSPLANTATION OF PURE CRYOPRESERVED ISLETS",
+      "doi": "10.1097/00007890-199008000-00006",
+      "pmid": "2116689",
+      "pmcid": null,
+      "titleKey": "title:reversal of diabetes in dogs by transplantation of pure cryopreserved islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.584595 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.23,
+      "relevanceScore": 5.833,
+      "authorityScore": 0.23,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "islets",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0963-6897(96)82126-9",
+      "title": "Trehalose: A novel cryoprotectant for human fetal and adult pancreatic islets",
+      "doi": "10.1016/0963-6897(96)82126-9",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:trehalose a novel cryoprotectant for human fetal and adult pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.29674 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.117,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(88)90480-4",
+      "title": "Cryopreservation of isolated pancreatic islets using conditions that minimize the survival of passenger lymphoid cells",
+      "doi": "10.1016/0011-2240(88)90480-4",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of isolated pancreatic islets using conditions that minimize the survival of passenger lymphoid cells",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.84924 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.117,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(87)90136-2",
+      "title": "Integrity of isolated pancreatic islets after cryopreservation using fast cooling",
+      "doi": "10.1016/0011-2240(87)90136-2",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:integrity of isolated pancreatic islets after cryopreservation using fast cooling",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.66924 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.117,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.2337/diab.38.1.s185",
+      "title": "Normalization of Hyperglycemia in Diabetic Rats by Intraportal Transplantation of Cryopreserved Islets From Four Donors",
+      "doi": "10.2337/diab.38.1.s185",
+      "pmid": "2492002",
+      "pmcid": null,
+      "titleKey": "title:normalization of hyperglycemia in diabetic rats by intraportal transplantation of cryopreserved islets from four donors",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.351795 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.11,
+      "relevanceScore": 5.833,
+      "authorityScore": 0.11,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "islets",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:2088990",
+      "title": "Islet cryopreservation.",
+      "doi": null,
+      "pmid": "2088990",
+      "pmcid": null,
+      "titleKey": "title:islet cryopreservation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.203065 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.09,
+      "relevanceScore": 5.833,
+      "authorityScore": 0.09,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "islets",
+        "thaw",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.bbrc.2017.03.134",
+      "title": "Oxygenated thawing and rewarming alleviate rewarming injury of cryopreserved pancreatic islets",
+      "doi": "10.1016/j.bbrc.2017.03.134",
+      "pmid": "28351620",
+      "pmcid": null,
+      "titleKey": "title:oxygenated thawing and rewarming alleviate rewarming injury of cryopreserved pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.99606 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.067,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.1,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1007/bf02469839",
+      "title": "Experimental studies on cryopreservation combined with the cultural process of isolated rat pancreatic islets",
+      "doi": "10.1007/bf02469839",
+      "pmid": "6820096",
+      "pmcid": null,
+      "titleKey": "title:experimental studies on cryopreservation combined with the cultural process of isolated rat pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.73337 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.047,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.08,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:1604502",
+      "title": "Successful cryopreservation of porcine pancreatic islets.",
+      "doi": null,
+      "pmid": "1604502",
+      "pmcid": null,
+      "titleKey": "title:successful cryopreservation of porcine pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.39714 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.027,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.06,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:3152695",
+      "title": "Expression of HLA in isolated human pancreatic islets and cryopreservation.",
+      "doi": null,
+      "pmid": "3152695",
+      "pmcid": null,
+      "titleKey": "title:expression of hla in isolated human pancreatic islets and cryopreservation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.39464 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.027,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.06,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00006676-200111000-00008",
+      "title": "Cold Preservation of Rat Pancreatic Islets Just Above the Freezing Point Using University of Wisconsin Solution",
+      "doi": "10.1097/00006676-200111000-00008",
+      "pmid": "11668207",
+      "pmcid": null,
+      "titleKey": "title:cold preservation of rat pancreatic islets just above the freezing point using university of wisconsin solution",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.797275 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 6.017,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.05,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:8539992",
+      "title": "Preparation and long-term storage by culture or cryopreservation of purified bovine pancreatic islets.",
+      "doi": null,
+      "pmid": "8539992",
+      "pmcid": null,
+      "titleKey": "title:preparation and long term storage by culture or cryopreservation of purified bovine pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.34269 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.997,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.03,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2011.09.094",
+      "title": "91. Cryo-isolation: A novel new method for enzyme-free isolation of pancreatic islets involving in situ cryopreservation of islets and selective destruction of acinar tissue",
+      "doi": "10.1016/j.cryobiol.2011.09.094",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:91 cryo isolation a novel new method for enzyme free isolation of pancreatic islets involving in situ cryopreservation of islets and selective destruction of acinar tissue",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.64322 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.987,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.02,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2006.10.103",
+      "title": "102. Improved cryopreservation of pancreatic islets and multicellular spheroids in IBMT-miniaturized cryosubstrates",
+      "doi": "10.1016/j.cryobiol.2006.10.103",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:102 improved cryopreservation of pancreatic islets and multicellular spheroids in ibmt miniaturized cryosubstrates",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.81697 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.987,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.02,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "title:cold preservation of rat pancreatic islets just above the freezing point using university of wisconsin solution",
+      "title": "Cold preservation of rat pancreatic islets just above the freezing point using University of Wisconsin solution",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cold preservation of rat pancreatic islets just above the freezing point using university of wisconsin solution",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.33197 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.987,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.02,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": true,
+      "staleReason": "evidence or recommendation changed since the previous review state"
+    },
+    {
+      "dedupeKey": "pmid:8066800",
+      "title": "Effect of cryopreservation on the immunogenicity of pancreatic islets in xenotransplantation.",
+      "doi": null,
+      "pmid": "8066800",
+      "pmcid": null,
+      "titleKey": "title:effect of cryopreservation on the immunogenicity of pancreatic islets in xenotransplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.50197 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.987,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.02,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1007/bf02470993",
+      "title": "Cryopreservation of hamster pancreatic islets using a rapid cooling rate",
+      "doi": "10.1007/bf02470993",
+      "pmid": "1813692",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of hamster pancreatic islets using a rapid cooling rate",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.61822 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.987,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.02,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:2495655",
+      "title": "Cryopreservation of hamster pancreatic islets using a fairly rapid cooling rate.",
+      "doi": null,
+      "pmid": "2495655",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of hamster pancreatic islets using a fairly rapid cooling rate",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.31697 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.987,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.02,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:2495656",
+      "title": "Experimental studies on cryopreservation of pancreatic islets of Langerhans.",
+      "doi": null,
+      "pmid": "2495656",
+      "pmcid": null,
+      "titleKey": "title:experimental studies on cryopreservation of pancreatic islets of langerhans",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.31697 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.987,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.02,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2017.10.084",
+      "title": "Trehalose and membrane-permeabilising biopolymers PP-50 and PP-75 for cryopreservation of pancreatic islets",
+      "doi": "10.1016/j.cryobiol.2017.10.084",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:trehalose and membrane permeabilising biopolymers pp 50 and pp 75 for cryopreservation of pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.63271 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.977,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.01,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0041-1345(02)03843-5",
+      "title": "Pancreatic islet preservation at temperatures just above the freezing point",
+      "doi": "10.1016/s0041-1345(02)03843-5",
+      "pmid": "12591494",
+      "pmcid": null,
+      "titleKey": "title:pancreatic islet preservation at temperatures just above the freezing point",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.61396 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.977,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.01,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0041-1345(98)00693-9",
+      "title": "Effect of cryopreservation on Galα1-3Gal expression on adult porcine pancreatic islets",
+      "doi": "10.1016/s0041-1345(98)00693-9",
+      "pmid": "9723544",
+      "pmcid": null,
+      "titleKey": "title:effect of cryopreservation on gal 1 3gal expression on adult porcine pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.78771 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.977,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.01,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:1496640",
+      "title": "Optimizing cooling rates for cryopreservation of isolated pancreatic islets.",
+      "doi": null,
+      "pmid": "1496640",
+      "pmcid": null,
+      "titleKey": "title:optimizing cooling rates for cryopreservation of isolated pancreatic islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.30021 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.977,
+      "relevanceScore": 5.8,
+      "authorityScore": 0.01,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "pancreatic islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.4236/jbise.2012.55033",
+      "title": "Poly(ethylene glycol) and poly(N-vinlypyrrolidone) for improved porcine islet cryopreservation",
+      "doi": "10.4236/jbise.2012.55033",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:poly ethylene glycol and poly n vinlypyrrolidone for improved porcine islet cryopreservation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 5.156435 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.71,
+      "relevanceScore": 5.233,
+      "authorityScore": 0.31,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "islets",
+        "recovery"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:7554583",
+      "title": "Microbial surveillance of human islet isolation, in vitro culture, and cryopreservation.",
+      "doi": null,
+      "pmid": "7554583",
+      "pmcid": null,
+      "titleKey": "title:microbial surveillance of human islet isolation in vitro culture and cryopreservation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.155495 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.65,
+      "relevanceScore": 5.233,
+      "authorityScore": 0.25,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "islets",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1007/s001090050330",
+      "title": "Viability and recovery of frozen-thawed human islets and in vivo quality control by xenotransplantation",
+      "doi": "10.1007/s001090050330",
+      "pmid": "9930957",
+      "pmcid": null,
+      "titleKey": "title:viability and recovery of frozen thawed human islets and in vivo quality control by xenotransplantation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.03254 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.56,
+      "relevanceScore": 5.233,
+      "authorityScore": 0.16,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "islets",
+        "recovery",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(89)90106-5",
+      "title": "Cryopreservation of islets of Langerhans—A comparison of freezing with HES and vitrification",
+      "doi": "10.1016/0011-2240(89)90106-5",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of islets of langerhans a comparison of freezing with hes and vitrification",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.18182 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.55,
+      "relevanceScore": 5.233,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "islets",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.transproceed.2005.09.089",
+      "title": "Inhibition of p38 Mitogen-Activated Protein Kinase Protects Human Islets From Cryoinjury and Improves the Yield, Viability, and Quality of Frozen-Thawed Islets",
+      "doi": "10.1016/j.transproceed.2005.09.089",
+      "pmid": "16298615",
+      "pmcid": null,
+      "titleKey": "title:inhibition of p38 mitogen activated protein kinase protects human islets from cryoinjury and improves the yield viability and quality of frozen thawed islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.96777 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "domain relevance score is non-trivial"
+      ],
+      "rankingScore": 5.43,
+      "relevanceScore": 5.233,
+      "authorityScore": 0.03,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "islets",
+        "recovery",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0168-8227(89)90063-6",
+      "title": "Effect of cooling rate on insulin release from frozen-thawed dispersed rat islet cells",
+      "doi": "10.1016/0168-8227(89)90063-6",
+      "pmid": "2666062",
+      "pmcid": null,
+      "titleKey": "title:effect of cooling rate on insulin release from frozen thawed dispersed rat islet cells",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.68244 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 5.097,
+      "relevanceScore": 4.9,
+      "authorityScore": 0.03,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "insulin",
+        "islets",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1097/00006676-199607000-00004",
+      "title": "Influence of Cryopreservation on the Sensitivity of Human Islets to Tumor Necrosis Factor",
+      "doi": "10.1097/00006676-199607000-00004",
+      "pmid": "8783331",
+      "pmcid": null,
+      "titleKey": "title:influence of cryopreservation on the sensitivity of human islets to tumor necrosis factor",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.923825 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 5.087,
+      "relevanceScore": 4.9,
+      "authorityScore": 0.02,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "insulin",
+        "islets",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(83)90006-8",
+      "title": "Transplantation of cryopreserved and fresh rat islets and canine pancreatic fragments: Comparison of cryopreservation protocols",
+      "doi": "10.1016/0011-2240(83)90006-8",
+      "pmid": "6406151",
+      "pmcid": null,
+      "titleKey": "title:transplantation of cryopreserved and fresh rat islets and canine pancreatic fragments comparison of cryopreservation protocols",
+      "decision": "pending",
+      "recommendation": "promote",
+      "recommendationReasons": [
+        "optimizer score 6.31923 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "rankingScore": 5,
+      "relevanceScore": 3.967,
+      "authorityScore": 0.7,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1055/s-2007-996265",
+      "title": "Islet Transplantation in Experimental Diabetes of the Rat VII. Cryopreservation of Rat and Human Islets. Preliminary Results",
+      "doi": "10.1055/s-2007-996265",
+      "pmid": "6773869",
+      "pmcid": null,
+      "titleKey": "title:islet transplantation in experimental diabetes of the rat vii cryopreservation of rat and human islets preliminary results",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.059375 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising"
+      ],
+      "rankingScore": 4.984,
+      "relevanceScore": 4.567,
+      "authorityScore": 0.25,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "graft",
+        "islets",
+        "transplantation"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0041-1345(00)00995-7",
+      "title": "Improved post-cryopreservation recovery following encapsulation of islets in chitosan-alginate microcapsules",
+      "doi": "10.1016/s0041-1345(00)00995-7",
+      "pmid": "10856598",
+      "pmcid": null,
+      "titleKey": "title:improved post cryopreservation recovery following encapsulation of islets in chitosan alginate microcapsules",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.92401 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising"
+      ],
+      "rankingScore": 4.747,
+      "relevanceScore": 4.3,
+      "authorityScore": 0.28,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "recovery"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1002/dmrr.1245",
+      "title": "Comparison of cryopreservation methods on T‐cell responses to islet and control antigens from type 1 diabetic patients and controls",
+      "doi": "10.1002/dmrr.1245",
+      "pmid": "22069253",
+      "pmcid": null,
+      "titleKey": "title:comparison of cryopreservation methods on t cell responses to islet and control antigens from type 1 diabetic patients and controls",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.076735 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising"
+      ],
+      "rankingScore": 4.707,
+      "relevanceScore": 4.3,
+      "authorityScore": 0.24,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1007/s00424-005-1401-y",
+      "title": "Maintenance of stimulus-secretion coupling and single beta-cell function in cryopreserved-thawed human islets of Langerhans",
+      "doi": "10.1007/s00424-005-1401-y",
+      "pmid": "15988591",
+      "pmcid": null,
+      "titleKey": "title:maintenance of stimulus secretion coupling and single beta cell function in cryopreserved thawed human islets of langerhans",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.85259 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising"
+      ],
+      "rankingScore": 4.707,
+      "relevanceScore": 4.3,
+      "authorityScore": 0.24,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:8171675",
+      "title": "Effects of pre-cryopreservation culture on human islet recovery and in vitro function.",
+      "doi": null,
+      "pmid": "8171675",
+      "pmcid": null,
+      "titleKey": "title:effects of pre cryopreservation culture on human islet recovery and in vitro function",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.70477 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 4.607,
+      "relevanceScore": 4.3,
+      "authorityScore": 0.14,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "recovery"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(83)90004-4",
+      "title": "Factors to consider in the assessment of viability of cryopreserved islets of Langerhans",
+      "doi": "10.1016/0011-2240(83)90004-4",
+      "pmid": "6342949",
+      "pmcid": null,
+      "titleKey": "title:factors to consider in the assessment of viability of cryopreserved islets of langerhans",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.43051 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 4.597,
+      "relevanceScore": 4.3,
+      "authorityScore": 0.13,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "recovery"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.transproceed.2004.04.016",
+      "title": "Simplified method for cryopreservation of islets using hydroxyethyl starch and dimethyl sulfoxide as cryoprotectants",
+      "doi": "10.1016/j.transproceed.2004.04.016",
+      "pmid": "15194395",
+      "pmcid": null,
+      "titleKey": "title:simplified method for cryopreservation of islets using hydroxyethyl starch and dimethyl sulfoxide as cryoprotectants",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.43854 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 4.587,
+      "relevanceScore": 4.3,
+      "authorityScore": 0.12,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.transproceed.2004.05.022",
+      "title": "Enhanced recovery of cryopreserved islets using SIS",
+      "doi": "10.1016/j.transproceed.2004.05.022",
+      "pmid": "15194397",
+      "pmcid": null,
+      "titleKey": "title:enhanced recovery of cryopreserved islets using sis",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 2.13214 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 4.527,
+      "relevanceScore": 4.3,
+      "authorityScore": 0.06,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "recovery"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.transproceed.2012.01.143",
+      "title": "Decreasing Loss of Cryopreserved-Thawed Rat Islets by Coculture with Sertoli Cells",
+      "doi": "10.1016/j.transproceed.2012.01.143",
+      "pmid": "22664028",
+      "pmcid": null,
+      "titleKey": "title:decreasing loss of cryopreserved thawed rat islets by coculture with sertoli cells",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.29341 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 4.507,
+      "relevanceScore": 4.3,
+      "authorityScore": 0.04,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "thaw"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1007/978-1-4615-3428-0_98",
+      "title": "Influence of Cryopreservation on Viability and Nutritional Microcirculation of Islets of Langerhans*",
+      "doi": "10.1007/978-1-4615-3428-0_98",
+      "pmid": "1283804",
+      "pmcid": null,
+      "titleKey": "title:influence of cryopreservation on viability and nutritional microcirculation of islets of langerhans",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.42894 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 4.497,
+      "relevanceScore": 4.3,
+      "authorityScore": 0.03,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets",
+        "recovery"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2005.10.010",
+      "title": "Effects of synthetic antifreeze glycoprotein analogue on islet cell survival and function during cryopreservation",
+      "doi": "10.1016/j.cryobiol.2005.10.010",
+      "pmid": "16325794",
+      "pmcid": null,
+      "titleKey": "title:effects of synthetic antifreeze glycoprotein analogue on islet cell survival and function during cryopreservation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 4.26814 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "rankingScore": 4.304,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.77,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1007/s001090050313",
+      "title": "Increased glucagon-stimulated insulin secretion of cryopreserved rat islets transplanted into nude mice",
+      "doi": "10.1007/s001090050313",
+      "pmid": "9930940",
+      "pmcid": null,
+      "titleKey": "title:increased glucagon stimulated insulin secretion of cryopreserved rat islets transplanted into nude mice",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.23338 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 4.294,
+      "relevanceScore": 3.967,
+      "authorityScore": 0.16,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "insulin",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(87)90043-5",
+      "title": "Vitrification of human islets of Langerhans",
+      "doi": "10.1016/0011-2240(87)90043-5",
+      "pmid": "3308319",
+      "pmcid": null,
+      "titleKey": "title:vitrification of human islets of langerhans",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.76146 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "rankingScore": 4.104,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.57,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "islets",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1006/cryo.1997.2045",
+      "title": "Osmotic Behavior and Transport Properties of Human Islets in a Dimethyl Sulfoxide Solution",
+      "doi": "10.1006/cryo.1997.2045",
+      "pmid": "9367611",
+      "pmcid": null,
+      "titleKey": "title:osmotic behavior and transport properties of human islets in a dimethyl sulfoxide solution",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 2.17281 stayed below the review threshold 2.2",
+        "authority score is directionally promising"
+      ],
+      "rankingScore": 3.894,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.36,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.3389/frtra.2025.1614849",
+      "title": "Long-term storage, cryopreservation, and culture of isolated human islets: a systematic review.",
+      "doi": "10.3389/frtra.2025.1614849",
+      "pmid": "40860015",
+      "pmcid": "PMC12370674",
+      "titleKey": "title:long term storage cryopreservation and culture of isolated human islets a systematic review",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.74641 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "open-access full text is available",
+        "authority score is directionally promising"
+      ],
+      "rankingScore": 3.834,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "europe-pmc"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.biomaterials.2007.11.027",
+      "title": "The development of alternative vitrification solutions for microencapsulated islets",
+      "doi": "10.1016/j.biomaterials.2007.11.027",
+      "pmid": "18086496",
+      "pmcid": null,
+      "titleKey": "title:the development of alternative vitrification solutions for microencapsulated islets",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.23944 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising"
+      ],
+      "rankingScore": 3.824,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.29,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "islets",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1007/s10047-014-0777-x",
+      "title": "Optimal method for short-term or long-term islet preservation: comparison of islet culture, cold preservation and cryopreservation",
+      "doi": "10.1007/s10047-014-0777-x",
+      "pmid": "24944122",
+      "pmcid": null,
+      "titleKey": "title:optimal method for short term or long term islet preservation comparison of islet culture cold preservation and cryopreservation",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.48253 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising"
+      ],
+      "rankingScore": 3.754,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.22,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:2495654",
+      "title": "Optimizing cryopreservation of isolated islets.",
+      "doi": null,
+      "pmid": "2495654",
+      "pmcid": null,
+      "titleKey": "title:optimizing cryopreservation of isolated islets",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 1.91433 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.724,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.19,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:8171677",
+      "title": "Islet cryopreservation: a detailed study of total functional losses.",
+      "doi": null,
+      "pmid": "8171677",
+      "pmcid": null,
+      "titleKey": "title:islet cryopreservation a detailed study of total functional losses",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.25986 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 3.714,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.18,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1006/cryo.1996.0057",
+      "title": "Follow-Up Study of the Revascularization Process of Cryopreserved Islets of Langerhans",
+      "doi": "10.1006/cryo.1996.0057",
+      "pmid": "8893512",
+      "pmcid": null,
+      "titleKey": "title:follow up study of the revascularization process of cryopreserved islets of langerhans",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 1.99289 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.704,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.17,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.17504/protocols.io.bhcmj2u6",
+      "title": "Flash Freezing Unclaimed Islets v1",
+      "doi": "10.17504/protocols.io.bhcmj2u6",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:flash freezing unclaimed islets v1",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.692515 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "rankingScore": 3.684,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "freezing",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0963-6897(96)82117-8",
+      "title": "Cryopreservation of fish islets: The effect on function and islet xenograft survival",
+      "doi": "10.1016/0963-6897(96)82117-8",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of fish islets the effect on function and islet xenograft survival",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 3.48416 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "rankingScore": 3.684,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:122615",
+      "title": "Cryopreservation of neonatal rat islet tissue.",
+      "doi": null,
+      "pmid": "122615",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of neonatal rat islet tissue",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 1.79793 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.664,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.13,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0963-6897(98)00013-x",
+      "title": "Effect of Cryopreservation on the Survival and Function of Murine Islet Isografts and Allografts",
+      "doi": "10.1016/s0963-6897(98)00013-x",
+      "pmid": "9710306",
+      "pmcid": null,
+      "titleKey": "title:effect of cryopreservation on the survival and function of murine islet isografts and allografts",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.62846 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 3.654,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.12,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": true,
+      "staleReason": "evidence or recommendation changed since the previous review state"
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0041-1345(97)00200-5",
+      "title": "Cryopreservation of principal islets of teleost fish: The effect on function and islet xenograft survival",
+      "doi": "10.1016/s0041-1345(97)00200-5",
+      "pmid": "9193495",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of principal islets of teleost fish the effect on function and islet xenograft survival",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.58848 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 3.634,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.1,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(85)90043-4",
+      "title": "Preliminary experiments on vitrification of isolated rat islets of Langerhans",
+      "doi": "10.1016/0011-2240(85)90043-4",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:preliminary experiments on vitrification of isolated rat islets of langerhans",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 1.83026 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.624,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.09,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "islets",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "title:impact of culture and cryopreservation on mhc class ii antigen expression in canine and porcine islets",
+      "title": "Impact of culture and cryopreservation on MHC class II antigen expression in canine and porcine islets.",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:impact of culture and cryopreservation on mhc class ii antigen expression in canine and porcine islets",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 2.02579 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.614,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.08,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(83)90013-5",
+      "title": "A high yield method for isolating rat islets of Langerhans using differential sensitivity to freezing",
+      "doi": "10.1016/0011-2240(83)90013-5",
+      "pmid": "6303693",
+      "pmcid": null,
+      "titleKey": "title:a high yield method for isolating rat islets of langerhans using differential sensitivity to freezing",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 1.81079 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.614,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.08,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(83)90008-1",
+      "title": "Application of cryopreservation techniques to islet cell allotransplantation",
+      "doi": "10.1016/0011-2240(83)90008-1",
+      "pmid": "6406153",
+      "pmcid": null,
+      "titleKey": "title:application of cryopreservation techniques to islet cell allotransplantation",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 2.00079 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.614,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.08,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.transproceed.2011.10.039",
+      "title": "Effects of Astragalosides on Cultured Islets After Cryopreservation in Rats",
+      "doi": "10.1016/j.transproceed.2011.10.039",
+      "pmid": "22172871",
+      "pmcid": null,
+      "titleKey": "title:effects of astragalosides on cultured islets after cryopreservation in rats",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.36778 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 3.604,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.07,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "pmid:8540011",
+      "title": "Cryopreservation of microencapsulated canine islets.",
+      "doi": null,
+      "pmid": "8540011",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of microencapsulated canine islets",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 1.68778 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.604,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.07,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(81)90207-8",
+      "title": "Cryopreservation of islets of Langerhans",
+      "doi": "10.1016/0011-2240(81)90207-8",
+      "pmid": "6799248",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of islets of langerhans",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 1.96206 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.594,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.06,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2015.03.005",
+      "title": "Tolerance of human embryonic stem cell derived islet progenitor cells to vitrification-relevant solutions",
+      "doi": "10.1016/j.cryobiol.2015.03.005",
+      "pmid": "25817378",
+      "pmcid": null,
+      "titleKey": "title:tolerance of human embryonic stem cell derived islet progenitor cells to vitrification relevant solutions",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 1.74511 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.564,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.03,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "islets",
+        "vitrification"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1006/cryo.1999.2181",
+      "title": "Cryopreservation of Specific Pathogen-Free (SPF) Pig Islet Cells: Effect of Culture Time before Cryopreservation and after Thawing",
+      "doi": "10.1006/cryo.1999.2181",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of specific pathogen free spf pig islet cells effect of culture time before cryopreservation and after thawing",
+      "decision": "pending",
+      "recommendation": "review",
+      "recommendationReasons": [
+        "optimizer score 2.28511 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "rankingScore": 3.564,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.03,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0168-8227(88)80064-0",
+      "title": "Evaluation of cryopreservation techniques of pancreatic fragments and islets in vitro and in vivo",
+      "doi": "10.1016/s0168-8227(88)80064-0",
+      "pmid": "3148447",
+      "pmcid": null,
+      "titleKey": "title:evaluation of cryopreservation techniques of pancreatic fragments and islets in vitro and in vivo",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 2.06439 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.554,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.02,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
+      ],
+      "staleEvidence": false
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(83)90011-1",
+      "title": "Successful long-term cryopreservation of neonatal rat islet tissue",
+      "doi": "10.1016/0011-2240(83)90011-1",
+      "pmid": "6406154",
+      "pmcid": null,
+      "titleKey": "title:successful long term cryopreservation of neonatal rat islet tissue",
+      "decision": "pending",
+      "recommendation": "defer",
+      "recommendationReasons": [
+        "optimizer score 1.88439 stayed below the review threshold 2.2",
+        "single-source, low-authority candidate should stay in the discovery backlog"
+      ],
+      "rankingScore": 3.554,
+      "relevanceScore": 3.367,
+      "authorityScore": 0.02,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "islets"
       ],
       "staleEvidence": false
     }
