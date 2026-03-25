@@ -23,6 +23,27 @@ function formatImpact(value: "high" | "medium" | "low") {
   return value;
 }
 
+function formatCount(value: number) {
+  return new Intl.NumberFormat("en-US").format(value);
+}
+
+function providerLabel(source: string) {
+  switch (source) {
+    case "cryodb":
+      return "CryoDB / CryoRepository";
+    case "openalex":
+      return "OpenAlex";
+    case "crossref":
+      return "Crossref";
+    case "europe-pmc":
+      return "Europe PMC";
+    case "pubmed":
+      return "PubMed";
+    default:
+      return source;
+  }
+}
+
 export default async function DomainPage({
   params
 }: {
@@ -38,7 +59,7 @@ export default async function DomainPage({
     return (
       <>
         <PageIntro
-          eyebrow={`${data.label} wedge`}
+          eyebrow={`${data.label} recommendation`}
           title={data.title}
           summary={data.thesis}
         >
@@ -56,8 +77,8 @@ export default async function DomainPage({
             <QuickFacts
               items={[
                 { label: "Last updated", value: formatDateTime(data.updatedAt) },
-                { label: "Decision score", value: data.recommendationScore.toFixed(2) },
-                { label: "Next packet", value: topPacket?.title ?? "No packet queued" }
+                { label: "Recommendation score", value: data.recommendationScore.toFixed(2) },
+                { label: "Next experiment", value: topPacket?.title ?? "No packet queued" }
               ]}
             />
           </div>
@@ -66,33 +87,113 @@ export default async function DomainPage({
         <DomainTabs current="overview" domain={domain} />
 
         <MetricGrid>
-          <MetricCard label="Wedge class" value={data.wedgeClass} detail="This is now a first-class product concept, shown consistently across Atlas." tone={data.wedgeClass === "plausible first company wedge" ? "good" : "warn"} />
+          <MetricCard label="Recommendation type" value={data.wedgeClass} detail="This describes how strong and decision-ready the current recommendation is." tone={data.wedgeClass === "plausible first company wedge" ? "good" : "warn"} />
           <MetricCard label="Confidence" value={confidenceLabel(data.confidenceBand)} detail={`${Math.round(data.confidenceScore * 100)}% evidence confidence on the active wedge.`} tone={data.confidenceBand === "high" ? "good" : data.confidenceBand === "medium" ? "default" : "warn"} />
-          <MetricCard label="Translational signal" value={data.translationalSignal} detail={data.translationalRationale} />
-          <MetricCard label="Biggest uncertainty" value={data.biggestUncertainty} detail="The shortest path to changing the current verdict." tone="warn" />
+          <MetricCard label="Why this could matter in practice" value={data.translationalSignal} detail={data.translationalRationale} />
+          <MetricCard label="Biggest reason this could still move" value={data.biggestUncertainty} detail="The shortest path to changing the current recommendation." tone="warn" />
         </MetricGrid>
 
         <Section
-          title="Wedge Summary"
-          subtitle="A concise narrative summary that starts with the strategic read instead of the pipeline."
+          title="Literature Funnel"
+          subtitle="This is the shortest explanation of how Atlas got from a large paper set to one recommended experiment."
+        >
+          <div className="surface">
+            <MetricGrid>
+              <MetricCard label="Papers scanned" value={formatCount(data.provenanceFunnel.papersFetched)} detail="Source papers Atlas started from for this domain." />
+              <MetricCard label="Matched to this domain" value={formatCount(data.provenanceFunnel.papersMatched)} detail="Papers that survived domain filtering." />
+              <MetricCard label="Reviewed trust rows" value={formatCount(data.provenanceFunnel.reviewedBenchmarkRows)} detail="Human-validated benchmark rows Atlas uses to check itself." />
+              <MetricCard label="Reviewed rows in scope" value={formatCount(data.provenanceFunnel.reviewedInScopeRows)} detail="Reviewed rows Atlas currently believes belong in the domain slice." />
+              <MetricCard label="Rows driving the current recommendation" value={formatCount(data.provenanceFunnel.activeWedgeRelevantRows)} detail="Wedge-relevant rows behind the current experiment choice." />
+              <MetricCard label="Recommended experiment" value={data.provenanceFunnel.recommendedExperimentTitle ?? "No packet queued"} detail="The lead experiment Atlas currently recommends." tone="good" />
+            </MetricGrid>
+
+            <details className="detail-panel">
+              <summary>Show source breakdown</summary>
+              <div className="detail-panel__content">
+                <h4>Trusted Atlas corpus</h4>
+                <ul className="feature-list">
+                  <li>
+                    <strong>{data.sourceBreakdown.atlasCorpus.sourceLabel}:</strong> scanned{" "}
+                    {formatCount(data.sourceBreakdown.atlasCorpus.papersFetched)} papers and matched{" "}
+                    {formatCount(data.sourceBreakdown.atlasCorpus.papersMatched)} into this domain.
+                  </li>
+                </ul>
+
+                {data.sourceBreakdown.discoveryProviders.length > 0 ? (
+                  <>
+                    <h4>Broader discovery search coverage</h4>
+                    <p className="surface__detail">
+                      This is the wider discovery lane stored alongside Atlas. It shows where newer candidate papers came from, but it is broader and more provisional than the trusted corpus above.
+                    </p>
+                    <ul className="feature-list">
+                      {data.sourceBreakdown.discoveryQueryDescription ? (
+                        <li>
+                          <strong>Discovery query:</strong> {data.sourceBreakdown.discoveryQueryDescription}
+                        </li>
+                      ) : null}
+                      {data.sourceBreakdown.discoveryTotalCandidates !== null ? (
+                        <li>
+                          <strong>Total discovery candidates:</strong> {formatCount(data.sourceBreakdown.discoveryTotalCandidates)}
+                          {data.sourceBreakdown.discoveryGeneratedAt
+                            ? ` as of ${formatDateTime(data.sourceBreakdown.discoveryGeneratedAt)}`
+                            : ""}
+                        </li>
+                      ) : null}
+                      {data.sourceBreakdown.discoveryProviders.map((provider) => (
+                        <li key={`${provider.source}-${provider.query ?? provider.label ?? "provider"}`}>
+                          <strong>{providerLabel(provider.source)}:</strong> accepted{" "}
+                          {formatCount(provider.acceptedCount)} from {formatCount(provider.fetchedCount)} fetched
+                          {provider.totalHits !== null ? ` out of ${formatCount(provider.totalHits)} total hits` : ""}
+                          {provider.truncated ? "; live provider returned a truncated slice" : ""}
+                          {provider.failed ? `; provider failed${provider.error ? ` (${provider.error})` : ""}` : ""}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : null}
+              </div>
+            </details>
+          </div>
+        </Section>
+
+        <Section
+          title="How Atlas Got Here"
+          subtitle="See how Atlas narrowed the literature into this recommendation before looking at the full matrix and evidence queues."
           actions={<Link href={`/domains/${domain}/review`}>Open evidence view</Link>}
         >
           <div className="split-grid">
             <article className="surface">
-              <h3>Summary</h3>
+              <h3>Why this is the current recommendation</h3>
               <ul className="feature-list">
-                <li><strong>Why interesting:</strong> {data.whyInteresting}</li>
-                <li><strong>Dominant protocol pattern:</strong> {data.standardPattern}</li>
-                <li><strong>Key outcome pattern:</strong> {data.keyOutcomePattern}</li>
-                <li><strong>Main confound:</strong> {data.mainConfound}</li>
-                <li><strong>Current recommendation:</strong> {data.oneSentenceRecommendation}</li>
+                <li>
+                  <strong>Top supporting papers:</strong>{" "}
+                  {data.topSupportingPapers.length > 0
+                    ? data.topSupportingPapers.slice(0, 3).map((paper, index) => (
+                        <span key={paper.paperId}>
+                          {index > 0 ? "; " : null}
+                          {paper.href ? (
+                            <a href={paper.href} rel="noreferrer" target="_blank">
+                              {paper.title}
+                            </a>
+                          ) : (
+                            paper.title
+                          )}
+                        </span>
+                      ))
+                    : "No direct paper links recorded yet."}
+                </li>
+                <li><strong>Why this question rose to the top:</strong> {data.whyInteresting}</li>
+                <li><strong>Current baseline in the literature:</strong> {data.standardPattern}</li>
+                <li><strong>What the strongest papers are measuring:</strong> {data.keyOutcomePattern}</li>
+                <li><strong>What still limits confidence:</strong> {data.mainConfound}</li>
+                <li><strong>What Atlas recommends doing next:</strong> {data.oneSentenceRecommendation}</li>
               </ul>
             </article>
 
             <article className="surface">
-              <h3>Runner-up wedge candidates</h3>
+              <h3>Other strong next questions</h3>
               {data.runnerUps.length === 0 ? (
-                <p className="surface__detail">No runner-up packets are currently available for this wedge.</p>
+                <p className="surface__detail">Atlas does not currently have another next-step question that is close enough to challenge this recommendation.</p>
               ) : (
                 <div className="family-grid family-grid--stack">
                   {data.runnerUps.map((runner) => (
@@ -115,24 +216,24 @@ export default async function DomainPage({
         </Section>
 
         <Section
-          title="Benchmark Matrix"
-          subtitle="Compact, human-readable rows that keep the wedge decision interpretable."
+          title="Papers Driving This Recommendation"
+          subtitle="These are the key rows behind the current experiment choice: the preservation approach, base cryomix, additives, outcomes, and main confounds."
           actions={<Link href={`/domains/${domain}/atlas`}>Open matrix route</Link>}
         >
           <DataTable
             columns={[
               "Paper",
               "Protocol family",
-              "CPA backbone",
-              "Additive / adjunct",
+              "Base cryomix",
+              "Added compound",
               "Species",
               "Specimen",
-              "Endpoint class",
+              "Main outcomes",
               "Transplant?",
-              "Evidence authority",
+              "How direct the evidence is",
               "Evidence strength",
               "Translational",
-              "Wedge relevance",
+              "Relevance to this recommendation",
               "Key confound"
             ]}
             rows={data.wedgeMatrix.rows.map((row) => [
@@ -154,17 +255,17 @@ export default async function DomainPage({
         </Section>
 
         <Section
-          title="Evidence Authority Breakdown"
-          subtitle="Authority counts explain how much of the wedge story is primary-backed versus still abstract-bound."
+          title="How Direct The Evidence Is"
+          subtitle="This shows how much of the recommendation is grounded in primary paper support versus abstract-only or manually clarified evidence."
         >
           <div className="split-grid">
             <article className="surface">
               <QuickFacts
                 items={[
                   { label: "Primary-backed", value: data.authorityBreakdown.primaryBacked },
-                  { label: "Primary-indirect", value: data.authorityBreakdown.primaryIndirect },
-                  { label: "Manual-curation-backed", value: data.authorityBreakdown.manualCurationBacked },
-                  { label: "Secondary-backed", value: data.authorityBreakdown.secondaryBacked },
+                  { label: "Primary paper, indirect support", value: data.authorityBreakdown.primaryIndirect },
+                  { label: "Manual clarification added", value: data.authorityBreakdown.manualCurationBacked },
+                  { label: "Secondary-source supported", value: data.authorityBreakdown.secondaryBacked },
                   { label: "Abstract-only", value: data.authorityBreakdown.abstractOnly }
                 ]}
               />
@@ -181,8 +282,8 @@ export default async function DomainPage({
         </Section>
 
         <Section
-          title="Contradictions and Confounds"
-          subtitle="Conflicts are only useful if the page explains why they matter and what evidence would actually resolve them."
+          title="Conflicts That Still Matter"
+          subtitle="A contradiction only stays here if it could change the recommendation or how the experiment should be designed."
         >
           <div className="family-grid">
             {data.contradictionReport.contradictions.length === 0 ? (
@@ -203,10 +304,10 @@ export default async function DomainPage({
                     </StatusPill>
                   </div>
                   <ul className="feature-list">
-                    <li><strong>What conflicts:</strong> {item.paperA} vs {item.paperB}</li>
+                    <li><strong>Which papers disagree:</strong> {item.paperA} vs {item.paperB}</li>
                     <li><strong>Likely reason:</strong> {item.reason}</li>
-                    <li><strong>Does it matter:</strong> {item.decisionImpact} impact on wedge choice</li>
-                    <li><strong>What evidence would resolve it:</strong> {item.resolutionPath}</li>
+                    <li><strong>Why this could change the recommendation:</strong> {item.decisionImpact} impact on wedge choice</li>
+                    <li><strong>What would resolve it:</strong> {item.resolutionPath}</li>
                   </ul>
                 </article>
               ))
@@ -215,8 +316,8 @@ export default async function DomainPage({
         </Section>
 
         <Section
-          title="Evidence Gap Queue"
-          subtitle="Ranked by decision impact rather than generic completeness."
+          title="Evidence Gaps Most Likely To Change The Call"
+          subtitle="These are ranked by effect on the recommendation, not by generic completeness."
         >
           <DataTable
             columns={["Paper", "Impact", "Authority", "Translational", "Missing fields", "Rationale", "Action"]}
@@ -233,8 +334,8 @@ export default async function DomainPage({
         </Section>
 
         <Section
-          title="Next Experiment Packets"
-          subtitle="Prominent, decision-linked experiments that make Atlas useful for pre-wet-lab planning."
+          title="Recommended Experiments"
+          subtitle="These are the concrete tests Atlas can justify from the current evidence. The first card is the lead recommendation."
           actions={<Link href="/experiments">Open all experiments</Link>}
         >
           <div className="family-grid">
@@ -250,21 +351,21 @@ export default async function DomainPage({
                   </StatusPill>
                 </div>
                 <ul className="feature-list">
-                  <li><strong>Question it answers:</strong> {packet.decisionQuestion}</li>
-                  <li><strong>Fixed variables:</strong> {packet.fixedVariables.join(", ")}</li>
-                  <li><strong>Changed variables:</strong> {packet.comparisonArms.join(", ")}</li>
+                  <li><strong>Question this experiment answers:</strong> {packet.decisionQuestion}</li>
+                  <li><strong>What stays fixed:</strong> {packet.fixedVariables.join(", ")}</li>
+                  <li><strong>What changes:</strong> {packet.comparisonArms.join(", ")}</li>
                   <li><strong>Primary readout:</strong> {packet.primaryReadouts.join(", ")}</li>
-                  <li><strong>Minimum comparison set:</strong> {packet.comparisonArms.slice(0, 3).join(" vs ")}</li>
-                  <li><strong>Supporting papers:</strong> {packet.supportingPaperTitles.slice(0, 3).join("; ")}</li>
-                  <li><strong>Blocking uncertainties:</strong> {packet.keyUncertainties.join("; ") || "No blocker recorded."}</li>
-                  <li><strong>Why high leverage:</strong> {packet.translationalRationale}</li>
+                  <li><strong>Minimum comparison to run:</strong> {packet.comparisonArms.slice(0, 3).join(" vs ")}</li>
+                  <li><strong>Key supporting papers:</strong> {packet.supportingPaperTitles.slice(0, 3).join("; ")}</li>
+                  <li><strong>Main watch-outs:</strong> {packet.keyUncertainties.join("; ") || "No blocker recorded."}</li>
+                  <li><strong>Why this could move the decision:</strong> {packet.translationalRationale}</li>
                 </ul>
               </article>
             ))}
           </div>
         </Section>
 
-        <Section title="Decision Box" subtitle="End the page with a verdict, a confidence read, and explicit disqualifiers.">
+        <Section title="Current Bottom Line" subtitle="A short verdict, what would increase confidence, and what result would weaken this recommendation.">
           <div className="split-grid">
             <article className="surface">
               <h3>Current verdict</h3>
@@ -277,13 +378,17 @@ export default async function DomainPage({
             </article>
 
             <article className="surface">
-              <h3>Direct entry points</h3>
+              <h3>See the underlying evidence</h3>
               <div className="domain-card__actions">
                 <Link href={`/domains/${domain}/review`}>Evidence</Link>
                 <Link href={`/domains/${domain}/benchmark`}>Benchmark</Link>
                 <Link href={`/domains/${domain}/debug`}>Debug</Link>
               </div>
-              <p className="surface__detail">{data.oneSentenceRecommendation}</p>
+              <p className="surface__detail">
+                Atlas narrowed {formatCount(data.provenanceFunnel.papersFetched)} source papers to{" "}
+                {formatCount(data.provenanceFunnel.papersMatched)} domain-matched papers and based this recommendation on{" "}
+                {formatCount(data.provenanceFunnel.activeWedgeRelevantRows)} wedge-driving rows.
+              </p>
             </article>
           </div>
         </Section>

@@ -20,8 +20,8 @@ export default async function DiscoveryPage() {
     <>
       <PageIntro
         eyebrow="Discovery"
-        title="Downstream discovery layer"
-        summary="Discovery is downstream from the recommendation and experiment surfaces. It manages candidate evidence and review packets that may later update Atlas, but it is not current wedge truth."
+        title="Broader discovery search"
+        summary="This page shows the broader search lane Atlas uses to find candidate papers and build review queues. It is useful, but it is not the current trusted recommendation."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={data.sourceLabel} />
@@ -41,7 +41,7 @@ export default async function DiscoveryPage() {
 
       <Section
         title="Where Discovery Fits"
-        subtitle="Recommendation first, experiment packet second, discovery workflow third."
+        subtitle="Recommendation first, experiment second, broader search after that."
       >
         <div className="split-grid discovery-fit-grid">
           <article className="surface discovery-flow-card">
@@ -60,7 +60,7 @@ export default async function DiscoveryPage() {
               <div className="discovery-flow__arrow">→</div>
               <div className="discovery-flow__step">
                 <span className="section-kicker">Step 3</span>
-                <h3>Discovery workflow</h3>
+                <h3>Broader search</h3>
                 <p>This page manages later candidate evidence and review packets.</p>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default async function DiscoveryPage() {
 
       <Section
         title="Lane Status"
-        subtitle="Per-domain queue pressure and provider failures in the downstream discovery layer."
+        subtitle="Per-domain queue pressure and provider failures in the broader search lane."
       >
         <DataTable
           columns={["Domain", "State", "Novel", "Promote", "Review", "Packet", "Provider failures"]}
@@ -119,8 +119,8 @@ export default async function DiscoveryPage() {
       </Section>
 
       <Section
-        title="Queue Preview"
-        subtitle="Highest-ranked items in the discovery promotion queue, shown as a cleaner ranked list rather than nested dashboard tables."
+        title="Discovery Candidates"
+        subtitle="Highest-ranked items in the discovery queue, shown as a cleaner ranked list."
       >
         <div className="split-grid">
           {data.domains.map((domain) => (
@@ -190,8 +190,8 @@ export default async function DiscoveryPage() {
       </Section>
 
       <Section
-        title="Review Packet"
-        subtitle="Items already elevated into the human review packet. The layout here is intentionally stacked for easier reading during a demo."
+        title="Review Candidates"
+        subtitle="Items already elevated into the human review packet."
       >
         <div className="split-grid">
           {data.domains.map((domain) => (
@@ -236,7 +236,7 @@ export default async function DiscoveryPage() {
 
       <Section
         title="Artifact Ledger"
-        subtitle="Exact discovery-lane files the web app is reading right now. Useful, but intentionally secondary."
+        subtitle="Exact discovery files the web app is reading right now."
       >
         <ArtifactLedger artifacts={data.artifacts} />
       </Section>

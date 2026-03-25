@@ -6,7 +6,7 @@ function capitalize(value: string) {
 }
 
 export function shortConfidenceLabel(value: ConfidenceBand) {
-  return `${capitalize(value)} ordering confidence`;
+  return `${capitalize(value)} confidence`;
 }
 
 export function confidenceLabel(value: ConfidenceBand) {
@@ -81,15 +81,15 @@ export function wedgeClassNarrative(wedgeClass: WedgeClass, domainLabel: string)
 
 export function wedgeClassLabel(wedgeClass: WedgeClass) {
   if (wedgeClass === "proving ground") {
-    return "Strong proving ground";
+    return "Proving ground";
   }
 
   if (wedgeClass === "plausible first company wedge") {
-    return "Plausible first company wedge";
+    return "Company-wedge candidate";
   }
 
   if (wedgeClass === "long-term platform wedge") {
-    return "Long-term platform wedge";
+    return "Platform candidate";
   }
 
   return "Watchlist";
@@ -132,14 +132,14 @@ export function strategicSignificance(domain: DomainId) {
 export function systemMapStages(nextExperimentTitle?: string) {
   return [
     {
-      label: "Literature mapping",
+      label: "Scan and narrow the literature",
       state: "Available now",
-      detail: "Atlas maps fragmented cryopreservation literature into comparable protocol families, benchmark rows, and wedge-relevant evidence."
+      detail: "Atlas scans fragmented cryopreservation literature and narrows it into a comparable domain-specific evidence set."
     },
     {
-      label: "Wedge recommendation",
+      label: "Choose the best next question",
       state: "Current output",
-      detail: "Atlas recommends the current lead wedge and explains why it wins on the reviewed slice."
+      detail: "Atlas identifies the strongest narrow question the current reviewed evidence can support."
     },
     {
       label: "Evidence gaps and contradictions",
@@ -147,17 +147,17 @@ export function systemMapStages(nextExperimentTitle?: string) {
       detail: "Atlas shows what still blocks conviction, what conflicts matter, and what evidence work would move the call."
     },
     {
-      label: "Experiment packet generation",
+      label: "Turn the question into an experiment",
       state: "Current output",
       detail: `Atlas turns the current read into a concrete next experiment${nextExperimentTitle ? `: ${nextExperimentTitle}` : ""}.`
     },
     {
-      label: "Discovery workflow",
+      label: "Use the result to guide broader research",
       state: "Downstream queue",
-      detail: "Discovery queues and review packets are fed by Atlas outputs, but they are not current wedge truth."
+      detail: "Discovery queues and broader research work are guided by Atlas outputs, but they are not the same as current validated recommendation truth."
     },
     {
-      label: "Proprietary data feedback",
+      label: "Feed new lab data back into Atlas",
       state: "Future input",
       detail: "Wet-lab results would feed back into Atlas and increase recommendation quality over time."
     }

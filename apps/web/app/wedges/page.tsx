@@ -29,15 +29,10 @@ export default async function WedgesPage() {
       <PageIntro
         eyebrow="Wedges"
         title="Current wedge slate across Atlas"
-        summary="This page should make the portfolio legible fast: each wedge gets a technical title, a plain-English explanation, a strategic significance read, a blocker, and the experiment packet it outputs into."
+        summary="Use this page to compare the current recommended questions across Atlas, see which one leads today, and jump to the linked experiment."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={lead?.sourceLabel ?? "worktree"} />
-          <div className="chip-row">
-            <StatusPill tone="good">wedge comparison</StatusPill>
-            <StatusPill tone="neutral">plain-English framing</StatusPill>
-            <StatusPill tone="warn">linked experiments</StatusPill>
-          </div>
         </div>
       </PageIntro>
 
@@ -64,7 +59,7 @@ export default async function WedgesPage() {
 
       <Section
         title="Wedge Cards"
-        subtitle="Fast-comprehension ordering: technical wedge title, plain-English explanation, strategic significance, blocker, and next experiment."
+        subtitle="Each card shows the current question, why it matters, what still blocks conviction, and the experiment it leads to."
       >
         <div className="domain-grid">
           {domains.map((domain) => (
@@ -114,7 +109,7 @@ export default async function WedgesPage() {
 
       <Section
         title="Compact Comparison"
-        subtitle="Secondary portfolio view for demo narration after the recommendation page has already established the lead."
+        subtitle="A tighter cross-domain table once you have the card-level read."
       >
         <DataTable
           columns={[

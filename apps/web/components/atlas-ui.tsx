@@ -21,11 +21,6 @@ export function AppShell({ children }: { children: ReactNode }) {
             turns the current read into next experiments. Discovery stays downstream.
           </p>
         </div>
-        <div className="shell-ribbon__meta" aria-label="Atlas workflow">
-          <span>Recommendation</span>
-          <span>Evidence</span>
-          <span>Experiments</span>
-        </div>
       </div>
       <main className="page-shell">{children}</main>
     </div>

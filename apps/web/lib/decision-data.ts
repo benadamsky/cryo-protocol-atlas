@@ -71,6 +71,44 @@ export type AuthorityBreakdown = {
   abstractOnly: number;
 };
 
+export type ProvenanceFunnel = {
+  papersFetched: number;
+  papersMatched: number;
+  reviewedBenchmarkRows: number;
+  reviewedInScopeRows: number;
+  activeWedgeRelevantRows: number;
+  recommendedExperimentTitle: string | null;
+};
+
+export type SupportingPaper = {
+  paperId: string;
+  title: string;
+  href: string | null;
+};
+
+export type SourceBreakdown = {
+  atlasCorpus: {
+    sourceLabel: string;
+    papersFetched: number;
+    papersMatched: number;
+  };
+  discoveryGeneratedAt: string | null;
+  discoveryQueryDescription: string | null;
+  discoveryTotalCandidates: number | null;
+  discoveryProviders: Array<{
+    kind: string | null;
+    source: string;
+    fetchedCount: number;
+    acceptedCount: number;
+    totalHits: number | null;
+    truncated: boolean;
+    failed: boolean;
+    error: string | null;
+    query: string | null;
+    label: string | null;
+  }>;
+};
+
 export type DecisionDomainData = {
   domain: DomainId;
   label: string;
@@ -111,6 +149,9 @@ export type DecisionDomainData = {
     | (z.output<typeof ExperimentPacketFileSchema>["packets"][number] & { domain: DomainId })
     | null;
   authorityBreakdown: AuthorityBreakdown;
+  provenanceFunnel: ProvenanceFunnel;
+  topSupportingPapers: SupportingPaper[];
+  sourceBreakdown: SourceBreakdown;
   activeWedge: z.output<typeof ActiveWedgeSchema>;
   wedgeMatrix: z.output<typeof WedgeBenchmarkMatrixSchema>;
   evidenceGapQueue: z.output<typeof WedgeEvidenceGapQueueSchema>["queue"];
@@ -415,6 +456,114 @@ function buildAuthorityBreakdown(rows: z.output<typeof WedgeBenchmarkMatrixSchem
   );
 }
 
+function buildProvenanceFunnel(
+  domainData: Awaited<ReturnType<typeof getDomainData>>,
+  wedgeMatrix: z.output<typeof WedgeBenchmarkMatrixSchema>,
+  nextExperimentTitle: string | null
+): ProvenanceFunnel {
+  const reviewedBenchmarkRows = domainData.benchmarkFile.entries.filter(
+    (entry) => entry.reviewStatus === "reviewed"
+  ).length;
+  const reviewedInScopeRows = domainData.benchmarkFile.entries.filter(
+    (entry) => entry.reviewStatus === "reviewed" && entry.expectedInAtlas
+  ).length;
+
+  return {
+    papersFetched: domainData.domainSnapshot.totalFetched,
+    papersMatched: domainData.domainSnapshot.totalMatched,
+    reviewedBenchmarkRows,
+    reviewedInScopeRows,
+    activeWedgeRelevantRows: wedgeMatrix.rows.length,
+    recommendedExperimentTitle: nextExperimentTitle
+  };
+}
+
+function resolvePaperHref(
+  domainData: Awaited<ReturnType<typeof getDomainData>>,
+  paperId: string
+) {
+  const enrichmentRecord = domainData.sourceEnrichment.records.find((record) => record.paperId === paperId);
+  if (enrichmentRecord?.paperUrl) {
+    return enrichmentRecord.paperUrl;
+  }
+
+  const snapshotPaper = domainData.domainSnapshot.papers.find((entry) => entry.paper.id === paperId)?.paper;
+  if (!snapshotPaper) {
+    return null;
+  }
+
+  if (snapshotPaper.paper_url) {
+    return snapshotPaper.paper_url;
+  }
+
+  if (snapshotPaper.doi) {
+    return `https://doi.org/${snapshotPaper.doi}`;
+  }
+
+  if (snapshotPaper.pmcid) {
+    return `https://pmc.ncbi.nlm.nih.gov/articles/${snapshotPaper.pmcid}/`;
+  }
+
+  if (snapshotPaper.pmid) {
+    return `https://pubmed.ncbi.nlm.nih.gov/${snapshotPaper.pmid}/`;
+  }
+
+  return null;
+}
+
+function topSupportingPapers(
+  rows: z.output<typeof WedgeBenchmarkMatrixSchema>["rows"],
+  domainData: Awaited<ReturnType<typeof getDomainData>>
+): SupportingPaper[] {
+  const authorityRank = {
+    "primary-backed": 0,
+    "manual-curation-backed": 1,
+    "secondary-backed": 2,
+    "abstract-only": 3
+  } as const;
+
+  return [...rows]
+    .sort(
+      (left, right) =>
+        right.wedgeRelevanceScore - left.wedgeRelevanceScore ||
+        authorityRank[left.authorityProfile] - authorityRank[right.authorityProfile] ||
+        left.title.localeCompare(right.title)
+    )
+    .filter((row, index, all) => all.findIndex((candidate) => candidate.paperId === row.paperId) === index)
+    .map((row) => ({
+      paperId: row.paperId,
+      title: row.title,
+      href: resolvePaperHref(domainData, row.paperId)
+    }))
+    .slice(0, 3);
+}
+
+function buildSourceBreakdown(domainData: Awaited<ReturnType<typeof getDomainData>>): SourceBreakdown {
+  return {
+    atlasCorpus: {
+      sourceLabel: "Atlas corpus seed (CryoDB / CryoRepository)",
+      papersFetched: domainData.domainSnapshot.totalFetched,
+      papersMatched: domainData.domainSnapshot.totalMatched
+    },
+    discoveryGeneratedAt: domainData.discoverySnapshot?.generatedAt ?? null,
+    discoveryQueryDescription: domainData.discoverySnapshot?.queryDescription ?? null,
+    discoveryTotalCandidates: domainData.discoverySnapshot?.totalCandidates ?? null,
+    discoveryProviders:
+      domainData.discoverySnapshot?.providerSummaries.map((provider) => ({
+        kind: provider.kind ?? null,
+        source: provider.source,
+        fetchedCount: provider.fetchedCount,
+        acceptedCount: provider.acceptedCount,
+        totalHits: provider.totalHits ?? null,
+        truncated: provider.truncated ?? false,
+        failed: provider.failed ?? false,
+        error: provider.error ?? null,
+        query: provider.query ?? null,
+        label: provider.label ?? null
+      })) ?? []
+  };
+}
+
 function buildRecommendationLine(
   wedgeClass: WedgeClass,
   activeWedge: z.output<typeof ActiveWedgeSchema>,
@@ -493,6 +642,7 @@ export async function getDecisionDomainData(domain: DomainId): Promise<DecisionD
     evidenceGapQueue.filter((entry) => entry.decisionImpact === "high").length,
     contradictionSource.data.contradictions.length
   );
+  const topSupportingPaperList = topSupportingPapers(wedgeMatrixSource.data.rows, domainData);
 
   return {
     domain,
@@ -547,6 +697,13 @@ export async function getDecisionDomainData(domain: DomainId): Promise<DecisionD
     topEvidenceGap,
     nextExperiment,
     authorityBreakdown: buildAuthorityBreakdown(wedgeMatrixSource.data.rows),
+    provenanceFunnel: buildProvenanceFunnel(
+      domainData,
+      wedgeMatrixSource.data,
+      nextExperiment?.title ?? null
+    ),
+    topSupportingPapers: topSupportingPaperList,
+    sourceBreakdown: buildSourceBreakdown(domainData),
     activeWedge: activeWedgeSource.data,
     wedgeMatrix: wedgeMatrixSource.data,
     evidenceGapQueue,

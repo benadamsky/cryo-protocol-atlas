@@ -12,9 +12,7 @@ import {
 import { formatDateTime } from "@/lib/data";
 import { getRecommendationPageData, type DecisionDomainData } from "@/lib/decision-data";
 import {
-  compoundingMoatItems,
   confidenceDetail,
-  currentLimitsItems,
   discoveryBridgeStages,
   experimentBridgeLabel,
   humanizeSystemState,
@@ -115,6 +113,27 @@ function stateTone(state: string) {
   return "neutral" as const;
 }
 
+function formatCount(value: number) {
+  return new Intl.NumberFormat("en-US").format(value);
+}
+
+function providerLabel(source: string) {
+  switch (source) {
+    case "cryodb":
+      return "CryoDB / CryoRepository";
+    case "openalex":
+      return "OpenAlex";
+    case "crossref":
+      return "Crossref";
+    case "europe-pmc":
+      return "Europe PMC";
+    case "pubmed":
+      return "PubMed";
+    default:
+      return source;
+  }
+}
+
 export default async function RecommendationPage() {
   const data = await getRecommendationPageData();
   const current = data.current;
@@ -125,7 +144,7 @@ export default async function RecommendationPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Current Recommendation"
+        eyebrow="Current best next experiment"
         title={current.title}
         summary={plainEnglishWedgeSummary(current.domain, current.title, current.thesis)}
       >
@@ -149,9 +168,9 @@ export default async function RecommendationPage() {
             <StatusPill tone="neutral">{translationalSignalLabel(current.translationalSignal)}</StatusPill>
           </div>
           <ProvenanceCallout
-            eyebrow="Current Decision"
-            title={`Atlas recommends ${current.label} as the current proving ground for learning and experiment design.`}
-            summary={wedgeClassNarrative(current.wedgeClass, current.label)}
+            eyebrow="Why Atlas recommends this"
+            title={`Atlas recommends ${current.label} as the clearest next experiment to reduce uncertainty in the current literature.`}
+            summary="This is the strongest narrow question Atlas can defend today from the reviewed evidence. It is a recommendation for what to test next, not a final scientific truth claim."
             items={[
               { label: "Updated", value: formatDateTime(current.updatedAt) },
               { label: "Evidence state", value: humanizeSystemState(data.overallState) },
@@ -163,15 +182,15 @@ export default async function RecommendationPage() {
 
       <MetricGrid>
         <MetricCard
-          label="Role in Atlas"
+          label="What kind of recommendation this is"
           value={wedgeClassLabel(current.wedgeClass)}
-          detail={wedgeClassNarrative(current.wedgeClass, current.label)}
+          detail="Atlas is choosing the best narrow question to test next, not claiming a final winner across all cryopreservation approaches."
           tone={current.wedgeClass === "plausible first company wedge" ? "good" : "warn"}
         />
         <MetricCard
-          label="Confidence in current wedge ordering"
+          label="Confidence in this recommendation"
           value={shortConfidenceLabel(current.confidenceBand)}
-          detail={`${Math.round(current.confidenceScore * 100)}% evidence confidence on the current reviewed slice. ${confidenceDetail(current.confidenceBand)}`}
+          detail={`${Math.round(current.confidenceScore * 100)}% confidence based on the current reviewed literature slice. ${confidenceDetail(current.confidenceBand)}`}
           tone={
             current.confidenceBand === "high"
               ? "good"
@@ -181,28 +200,125 @@ export default async function RecommendationPage() {
           }
         />
         <MetricCard
-          label="Translational signal in current reviewed slice"
+          label="Why this could matter in practice"
           value={translationalSignalLabel(current.translationalSignal)}
           detail={translationalSignalDetail(current.translationalSignal)}
         />
         <MetricCard
-          label="Linked experiment"
+          label="Experiment Atlas recommends"
           value={current.nextExperiment?.title ?? "No packet queued"}
-          detail={experimentBridgeLabel(current.nextExperiment?.title)}
+          detail="The recommendation is only useful if it turns into a concrete test. This is the current lead experiment packet."
           tone="good"
         />
       </MetricGrid>
 
       <Section
-        title="Current Decision"
-        subtitle="Technical wedge title, plain-English explanation, strategic significance, and the concrete next experiment it already produces."
+        title="How Atlas Got Here"
+        subtitle="This is the shortest path from a large literature set to one recommended next experiment."
+      >
+        <div className="split-grid">
+          <article className="surface">
+            <h3>Literature funnel</h3>
+            <ul className="feature-list">
+              <li><strong>Papers scanned:</strong> {formatCount(current.provenanceFunnel.papersFetched)}</li>
+              <li><strong>Matched to this domain:</strong> {formatCount(current.provenanceFunnel.papersMatched)}</li>
+              <li><strong>Reviewed trust rows:</strong> {formatCount(current.provenanceFunnel.reviewedBenchmarkRows)}</li>
+              <li><strong>Reviewed rows in scope:</strong> {formatCount(current.provenanceFunnel.reviewedInScopeRows)}</li>
+              <li><strong>Rows driving the current recommendation:</strong> {formatCount(current.provenanceFunnel.activeWedgeRelevantRows)}</li>
+              <li><strong>Recommended experiment:</strong> {current.provenanceFunnel.recommendedExperimentTitle ?? "No packet queued"}</li>
+            </ul>
+            <details className="detail-panel">
+              <summary>Show source breakdown</summary>
+              <div className="detail-panel__content">
+                <h4>Trusted Atlas corpus</h4>
+                <ul className="feature-list">
+                  <li>
+                    <strong>{current.sourceBreakdown.atlasCorpus.sourceLabel}:</strong> scanned{" "}
+                    {formatCount(current.sourceBreakdown.atlasCorpus.papersFetched)} papers and matched{" "}
+                    {formatCount(current.sourceBreakdown.atlasCorpus.papersMatched)} into this domain.
+                  </li>
+                </ul>
+
+                {current.sourceBreakdown.discoveryProviders.length > 0 ? (
+                  <>
+                    <h4>Broader discovery search coverage</h4>
+                    <p className="surface__detail">
+                      This is the wider search lane Atlas keeps alongside the trusted corpus. It is broader and more provisional than the atlas funnel above.
+                    </p>
+                    <ul className="feature-list">
+                      {current.sourceBreakdown.discoveryQueryDescription ? (
+                        <li>
+                          <strong>Discovery query:</strong> {current.sourceBreakdown.discoveryQueryDescription}
+                        </li>
+                      ) : null}
+                      {current.sourceBreakdown.discoveryTotalCandidates !== null ? (
+                        <li>
+                          <strong>Total discovery candidates:</strong>{" "}
+                          {formatCount(current.sourceBreakdown.discoveryTotalCandidates)}
+                          {current.sourceBreakdown.discoveryGeneratedAt
+                            ? ` as of ${formatDateTime(current.sourceBreakdown.discoveryGeneratedAt)}`
+                            : ""}
+                        </li>
+                      ) : null}
+                      {current.sourceBreakdown.discoveryProviders.map((provider) => (
+                        <li key={`${provider.source}-${provider.query ?? provider.label ?? "provider"}`}>
+                          <strong>{providerLabel(provider.source)}:</strong> accepted{" "}
+                          {formatCount(provider.acceptedCount)} from {formatCount(provider.fetchedCount)} fetched
+                          {provider.totalHits !== null ? ` out of ${formatCount(provider.totalHits)} total hits` : ""}
+                          {provider.truncated ? "; live provider returned a truncated slice" : ""}
+                          {provider.failed ? `; provider failed${provider.error ? ` (${provider.error})` : ""}` : ""}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : null}
+              </div>
+            </details>
+          </article>
+
+          <article className="surface">
+            <h3>Why this leads to the current call</h3>
+            <p>
+              Atlas narrowed {formatCount(current.provenanceFunnel.papersFetched)} source papers to{" "}
+              {formatCount(current.provenanceFunnel.papersMatched)} domain-matched papers, validated{" "}
+              {formatCount(current.provenanceFunnel.reviewedBenchmarkRows)} reviewed trust rows, and isolated{" "}
+              {formatCount(current.provenanceFunnel.activeWedgeRelevantRows)} rows that directly drive this recommendation.
+            </p>
+            <ul className="feature-list">
+              <li>
+                <strong>Top supporting papers:</strong>{" "}
+                {current.topSupportingPapers.length > 0
+                  ? current.topSupportingPapers.slice(0, 2).map((paper, index) => (
+                      <span key={paper.paperId}>
+                        {index > 0 ? "; " : null}
+                        {paper.href ? (
+                          <a href={paper.href} rel="noreferrer" target="_blank">
+                            {paper.title}
+                          </a>
+                        ) : (
+                          paper.title
+                        )}
+                      </span>
+                    ))
+                  : "No direct paper links recorded yet."}
+              </li>
+              <li><strong>Main blocker:</strong> {current.topEvidenceGap?.title ?? "No ranked blocker"}{current.topEvidenceGap ? ` - ${current.topEvidenceGap.rationale}` : ""}</li>
+              <li><strong>Why this experiment:</strong> {current.nextExperiment?.decisionQuestion ?? current.decisionUnlock}</li>
+            </ul>
+          </article>
+        </div>
+      </Section>
+
+      <Section
+        title="Why Atlas Is Recommending This"
+        subtitle="What Atlas sees in the literature, why this is the strongest current question to test, and what experiment follows from it."
         actions={<Link href={`/domains/${current.domain}`}>Open wedge detail</Link>}
       >
         <div className="split-grid decision-grid">
           <article className="surface emphasis-surface decision-card">
             <div className="surface__header decision-card__header">
               <div className="decision-card__header-copy">
-                <span className="section-kicker">Lead wedge</span>
+                <span className="section-kicker">Current recommendation</span>
                 <h3>{current.title}</h3>
                 <p className="decision-card__lede">{plainEnglishWedgeSummary(current.domain, current.title, current.thesis)}</p>
               </div>
@@ -213,16 +329,16 @@ export default async function RecommendationPage() {
 
             <ul className="feature-list decision-list">
               <li>
-                <strong>Why Atlas is prioritizing this now:</strong> {current.whyInteresting}
+                <strong>Why this stands out in the literature:</strong> {current.whyInteresting}
               </li>
               <li>
-                <strong>Strategic significance:</strong> {strategicSignificance(current.domain)}
+                <strong>Why this matters if the result is positive:</strong> {strategicSignificance(current.domain)}
               </li>
               <li>
-                <strong>Not claiming yet:</strong> {notClaimingYet(current)}
+                <strong>What Atlas is not claiming yet:</strong> {notClaimingYet(current)}
               </li>
               <li>
-                <strong>Decision this unlocks:</strong> {current.decisionUnlock}
+                <strong>What this experiment would help decide:</strong> {current.decisionUnlock}
               </li>
             </ul>
           </article>
@@ -230,18 +346,18 @@ export default async function RecommendationPage() {
           <article className="surface decision-card decision-card--secondary">
             <div className="surface__header decision-card__header">
               <div className="decision-card__header-copy">
-                <span className="section-kicker">Experiment packet</span>
+                <span className="section-kicker">Recommended next experiment</span>
                 <h3>{current.nextExperiment?.title ?? "No packet queued"}</h3>
                 <p className="decision-card__lede">
                   {current.nextExperiment?.proposedExperiment ?? "Atlas does not yet have a next experiment packet for this wedge."}
                 </p>
               </div>
-              <StatusPill tone="good">Lead experiment packet</StatusPill>
+              <StatusPill tone="good">Recommended experiment</StatusPill>
             </div>
 
             <ul className="feature-list decision-list">
               <li>
-                <strong>Why this matters:</strong> Atlas is actionable because the recommendation already outputs into a next experiment.
+                <strong>Why this experiment is the fastest next step:</strong> Atlas is only useful if the literature read turns into a concrete test. This experiment is the shortest path from the current evidence to a sharper decision.
               </li>
               <li>
                 <strong>Decision being tested:</strong> {current.nextExperiment?.decisionQuestion ?? current.decisionUnlock}
@@ -270,13 +386,13 @@ export default async function RecommendationPage() {
       </Section>
 
       <Section
-        title="How Atlas Works"
-        subtitle="This product is a pipeline architecture, not a disconnected set of pages."
+        title="How Atlas Gets From Papers To An Experiment"
+        subtitle="Atlas does not jump from literature to a recommendation. It narrows the papers, checks what it trusts, isolates the most useful question, and then turns that into an experiment."
       >
         <div className="split-grid">
           <article className="surface">
             <p className="pipeline-line">
-              Literature mapping {"->"} Wedge recommendation {"->"} Evidence gaps / contradictions {"->"} Experiment packet {"->"} Discovery workflow {"->"} Proprietary data feedback
+              Scan the literature {"->"} narrow to the domain {"->"} build trusted protocol rows {"->"} choose the best next question {"->"} recommend an experiment {"->"} learn from new evidence
             </p>
             <div className="system-map-grid">
               {systemMapStages(nextExperimentTitle).map((stage, index) => (
@@ -296,7 +412,7 @@ export default async function RecommendationPage() {
 
           <article className="surface">
             <span className="section-kicker">Progression</span>
-            <h3>What Atlas does today, what comes next, and what this becomes later</h3>
+            <h3>What Atlas can do now, what comes after that, and how the system gets smarter</h3>
             <div className="bridge-stack">
               {discoveryBridgeStages().map((stage) => (
                 <div className="bridge-step" key={stage.label}>
@@ -311,8 +427,8 @@ export default async function RecommendationPage() {
       </Section>
 
       <Section
-        title="Why Atlas Is Already Valuable"
-        subtitle="The present-day value is not abstract. Atlas already narrows decisions, surfaces blocker work, and converts the read into the next experiment."
+        title="Why Atlas Is Useful Before You Run The Experiment"
+        subtitle="Atlas already reduces the search space, explains uncertainty, and points to the most informative next test."
       >
         <div className="value-grid">
           {presentDayValueCards(nextExperimentTitle).map((item) => (
@@ -327,13 +443,13 @@ export default async function RecommendationPage() {
 
       <Section
         title="What Atlas Knows, What It Cannot Say Yet, and What Would Change the Call"
-        subtitle="Truth-seeking means making uncertainty explicit, scoped, and decision-relevant."
+        subtitle="Atlas is most useful when it is explicit about what the evidence supports, what it does not support yet, and what new result would change the recommendation."
         actions={<Link href="/evidence">Open evidence page</Link>}
       >
         <div className="triad-grid">
           <article className="surface">
             <span className="section-kicker">What Atlas can say now</span>
-            <h3>Reviewed evidence plus recommendation</h3>
+            <h3>What the evidence supports today</h3>
             <ul className="feature-list">
               {whatAtlasCanSay(current).map((item) => (
                 <li key={item}>{item}</li>
@@ -343,7 +459,7 @@ export default async function RecommendationPage() {
 
           <article className="surface">
             <span className="section-kicker">What Atlas cannot conclude yet</span>
-            <h3>Truth boundary</h3>
+            <h3>What Atlas cannot conclude yet</h3>
             <ul className="feature-list">
               {whatAtlasCannotConclude(current).map((item) => (
                 <li key={item}>{item}</li>
@@ -353,7 +469,7 @@ export default async function RecommendationPage() {
 
           <article className="surface">
             <span className="section-kicker">What would change the recommendation</span>
-            <h3>Recommendation-quality inputs</h3>
+            <h3>What would change the recommendation</h3>
             <ul className="feature-list">
               {whatWouldChange(current).map((item) => (
                 <li key={item}>{item}</li>
@@ -364,8 +480,8 @@ export default async function RecommendationPage() {
       </Section>
 
       <Section
-        title="Why This Wedge Wins Right Now"
-        subtitle="Atlas should force a clear contrast against the next-best alternatives instead of making viewers infer it."
+        title="Why This Recommendation Beats The Alternatives"
+        subtitle="Atlas should make the contrast explicit: why this experiment comes first, and why the other candidates come later."
         actions={<Link href="/wedges">See all wedges</Link>}
       >
         <div className="family-grid">
@@ -401,8 +517,8 @@ export default async function RecommendationPage() {
       </Section>
 
       <Section
-        title="What Would Make Atlas Smarter Over Time"
-        subtitle="Atlas improves through better evidence, better comparisons, better experiment results, and eventually proprietary data."
+        title="What Would Make This Recommendation Stronger"
+        subtitle="Atlas gets better through better evidence, better comparisons, and eventually real lab results."
         actions={<Link href="/experiments">Open experiment packets</Link>}
       >
         <div className="value-grid">
@@ -417,30 +533,50 @@ export default async function RecommendationPage() {
       </Section>
 
       <Section
-        title="Current Limits and Why This Compounds"
-        subtitle="The limits are explicit because Atlas is disciplined. The compounding path is credible because the architecture already exists."
+        title="Current Boundaries and Why Later Runs Matter"
+        subtitle="This separates what Atlas can support today from what would make the system more useful over time."
       >
         <div className="split-grid">
           <article className="surface">
-            <span className="section-kicker">Current limits</span>
-            <h3>Trust features, not marketing problems</h3>
+            <span className="section-kicker">Current boundaries</span>
+            <h3>What Atlas does not claim yet</h3>
             <ul className="feature-list">
-              {currentLimitsItems().map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+              <li>Atlas is currently operating on a narrow domain set.</li>
+              <li>Recommendation confidence is scoped to the current reviewed slice.</li>
+              <li>The reviewed corpus is still limited and uneven across domains.</li>
+              <li>Atlas does not yet have proprietary wet-lab data.</li>
+              <li>Discovery remains downstream and is not yet a validated claim.</li>
             </ul>
           </article>
 
           <article className="surface">
-            <span className="section-kicker">Why this compounds</span>
-            <h3>Hard to copy because the layers reinforce each other</h3>
+            <span className="section-kicker">Why later runs get sharper</span>
+            <h3>Why the system improves instead of restarting</h3>
             <div className="moat-grid">
-              {compoundingMoatItems(nextExperimentTitle).map((item) => (
-                <div className="bridge-step" key={item.title}>
-                  <span className="section-kicker">{item.title}</span>
-                  <p>{item.detail}</p>
-                </div>
-              ))}
+              <div className="bridge-step">
+                <span className="section-kicker">Protocol normalization</span>
+                <p>Comparable protocol structure gets more useful as Atlas sees more papers and higher-quality source review.</p>
+              </div>
+              <div className="bridge-step">
+                <span className="section-kicker">Explicit recommendation ranking</span>
+                <p>Atlas does not just collect papers. It turns them into an ordered decision surface that can be re-evaluated as new evidence arrives.</p>
+              </div>
+              <div className="bridge-step">
+                <span className="section-kicker">Contradictions stay visible</span>
+                <p>Conflicts are tracked as objects that can change the call, instead of disappearing into notes or a hidden backlog.</p>
+              </div>
+              <div className="bridge-step">
+                <span className="section-kicker">Experiments stay linked to evidence</span>
+                <p>
+                  {nextExperimentTitle
+                    ? `${nextExperimentTitle} shows how Atlas keeps the recommendation tied to a concrete next test.`
+                    : "Atlas keeps the recommendation tied to a concrete next test."}
+                </p>
+              </div>
+              <div className="bridge-step">
+                <span className="section-kicker">Future lab results can feed back in</span>
+                <p>Once proprietary wet-lab results exist, Atlas can update from those results instead of resetting on each new question.</p>
+              </div>
             </div>
           </article>
         </div>

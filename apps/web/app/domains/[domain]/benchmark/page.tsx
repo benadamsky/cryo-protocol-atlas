@@ -15,7 +15,12 @@ import {
   QuickFacts
 } from "@/components/atlas-ui";
 import { formatDateTime, formatPercent, getDomainData, getReviewedEntryCounts } from "@/lib/data";
+import { getDecisionDomainData } from "@/lib/decision-data";
 import { getDomainMeta, parseDomainId } from "@/lib/domain";
+
+function formatCount(value: number) {
+  return new Intl.NumberFormat("en-US").format(value);
+}
 
 export default async function BenchmarkPage({
   params
@@ -26,7 +31,7 @@ export default async function BenchmarkPage({
     const { domain: rawDomain } = await params;
     const domain = parseDomainId(rawDomain);
     const meta = getDomainMeta(domain);
-    const data = await getDomainData(domain);
+    const [data, decisionData] = await Promise.all([getDomainData(domain), getDecisionDomainData(domain)]);
     const reviewedSubset = data.benchmarkSummary.subsets.reviewed;
     const entryCounts = getReviewedEntryCounts(data.benchmarkFile);
     const baselineReviewed = data.benchmarkAnalysis.baseline.subsets.reviewed;
@@ -36,8 +41,8 @@ export default async function BenchmarkPage({
       <>
         <PageIntro
           eyebrow={`${meta.label} Benchmark`}
-          title="Trust surface for current atlas outputs"
-          summary={`${data.benchmarkSummary.benchmarkDescription} Use this page to read the trust story, not just the pass/fail badge.`}
+          title="Why Atlas Trusts This Domain Enough To Recommend An Experiment"
+          summary="This page shows whether Atlas is keeping the right papers in scope, labeling them correctly, and extracting enough detail to support the current recommendation."
         >
           <div className="hero__stack">
             <DomainBadge domain={domain} />
@@ -56,8 +61,8 @@ export default async function BenchmarkPage({
                   value: entryCounts.reviewed
                 },
                 {
-                  label: "Seeded rows",
-                  value: entryCounts.seeded
+                  label: "Recommended experiment",
+                  value: decisionData.provenanceFunnel.recommendedExperimentTitle ?? "No packet queued"
                 },
                 {
                   label: "Read path",
@@ -71,8 +76,20 @@ export default async function BenchmarkPage({
         <DomainTabs current="benchmark" domain={domain} />
 
         <Section
-          title="Cross-page compare"
-          subtitle="Use this route together with atlas, review, and debug when you need the underlying evidence instead of a single summary number."
+          title="Recommendation Provenance"
+          subtitle="Before looking at the trust metrics, see how Atlas got from a large paper set to the current recommendation."
+        >
+          <MetricGrid>
+            <MetricCard label="Papers scanned" value={formatCount(decisionData.provenanceFunnel.papersFetched)} detail="Source papers Atlas started from for this domain." />
+            <MetricCard label="Matched to this domain" value={formatCount(decisionData.provenanceFunnel.papersMatched)} detail="Papers that survived domain filtering." />
+            <MetricCard label="Reviewed trust rows" value={formatCount(decisionData.provenanceFunnel.reviewedBenchmarkRows)} detail="Human-validated rows Atlas uses to check itself." />
+            <MetricCard label="Reviewed rows in scope" value={formatCount(decisionData.provenanceFunnel.reviewedInScopeRows)} detail="Reviewed rows Atlas currently believes belong in the domain slice." />
+          </MetricGrid>
+        </Section>
+
+        <Section
+          title="Follow The Recommendation Back To The Evidence"
+          subtitle="Use the matrix, review, and debug pages when you want to trace the recommendation back to specific papers and extracted protocol rows."
         >
           <div className="split-grid">
             <article className="surface">
@@ -104,16 +121,17 @@ export default async function BenchmarkPage({
 
         <MetricGrid>
           <MetricCard
-            label="All gates"
+            label="Trust checks"
             value={data.benchmarkSummary.summary.passesAllGates ? "Pass" : "Fail"}
             tone={data.benchmarkSummary.summary.passesAllGates ? "good" : "warn"}
+            detail="These checks are the guardrails that keep Atlas from looking better by oversimplifying the literature."
           />
-          <MetricCard label="Benchmark entries" value={String(data.benchmarkSummary.benchmarkEntryCount)} />
+          <MetricCard label="Total benchmark rows" value={String(data.benchmarkSummary.benchmarkEntryCount)} />
           <MetricCard label="Reviewed rows" value={String(entryCounts.reviewed)} />
           <MetricCard label="Seeded rows" value={String(entryCounts.seeded)} />
         </MetricGrid>
 
-        <Section title="Resolved vs baseline" subtitle="This is the most important trust story: what the override and normalization path actually fixed.">
+        <Section title="What Atlas Fixed Before Making This Recommendation" subtitle="This shows how much the reviewed override and normalization path improved the literature read compared with the raw baseline pass.">
           <div className="split-grid">
             <article className="surface">
               <ScoreBar
@@ -165,7 +183,7 @@ export default async function BenchmarkPage({
           </div>
         </Section>
 
-        <Section title="Reviewed depth" subtitle="These are the two coverage metrics currently gating how much confidence you should place in the slice.">
+        <Section title="How Complete The Trusted Evidence Is" subtitle="These two coverage numbers determine how much detail Atlas can reliably use when choosing the next experiment.">
           <div className="split-grid">
             <article className="surface">
               <ScoreBar
@@ -225,7 +243,7 @@ export default async function BenchmarkPage({
           />
         </Section>
 
-        <Section title="Gate checks" subtitle="These are the safeguards against making the atlas look cleaner by dropping or relabeling difficult papers.">
+        <Section title="Safeguards Against Fooling Ourselves" subtitle="These checks make sure Atlas is not looking better just because it dropped hard papers or oversimplified the literature.">
           <DataTable
             columns={["Gate", "Status", "Actual", "Threshold", "Why it matters"]}
             rows={data.benchmarkSummary.gates.map((gate) => [
@@ -241,6 +259,15 @@ export default async function BenchmarkPage({
         </Section>
 
         <div className="split-grid">
+          <Section title="Benchmark In Plain English">
+            <ul className="feature-list">
+              <li><strong>Reviewed rows:</strong> human-validated truth rows Atlas trusts most.</li>
+              <li><strong>Seeded rows:</strong> weaker regression rows kept for broader coverage.</li>
+              <li><strong>Coverage:</strong> how often Atlas successfully extracted the field.</li>
+              <li><strong>Gates:</strong> safeguards that stop Atlas from gaming the benchmark.</li>
+            </ul>
+          </Section>
+
           <Section title="Reviewed coverage by field">
             <DataTable
               columns={["Field", "Coverage", "Labeled", "Eligible"]}
@@ -267,7 +294,7 @@ export default async function BenchmarkPage({
         </div>
 
         <div className="split-grid">
-          <Section title="Reviewed depth gaps" subtitle="These are the concrete reviewed papers still limiting the benchmark.">
+          <Section title="Trusted Papers Still Missing Key Detail" subtitle="These are the reviewed papers that still limit confidence in the current recommendation.">
             <DataTable
               columns={["Paper", "Gap type", "Reason"]}
               rows={[

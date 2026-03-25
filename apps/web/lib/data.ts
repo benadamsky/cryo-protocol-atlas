@@ -626,6 +626,9 @@ type DataSource<T> = {
 type ExtractionSnapshotData = z.output<typeof ExtractionSnapshotSchema>;
 type NormalizedProtocolSnapshotData = z.output<typeof NormalizedProtocolSnapshotSchema>;
 type BenchmarkFileData = z.output<typeof BenchmarkFileSchema>;
+type DomainSnapshotData = z.output<typeof DomainSnapshotSchema>;
+export type DiscoveryUiProviderSummaryData = z.output<typeof DiscoveryUiProviderSummarySchema>;
+export type DiscoveryUiSnapshotData = z.output<typeof DiscoveryUiSnapshotSchema>;
 type SourceEnrichmentData = z.output<typeof SourceEnrichmentFileSchema>;
 type ProposalFileData = z.output<typeof AutoresearchProposalFileSchema>;
 type DecisionFileData = z.output<typeof BenchmarkProposalDecisionFileSchema>;
@@ -832,6 +835,8 @@ export type HistoryData = {
 export type DomainData = {
   domain: DomainId;
   sourceLabel: "worktree" | "primary";
+  domainSnapshot: DomainSnapshotData;
+  discoverySnapshot: DiscoveryUiSnapshotData | null;
   callPacket: CallPacketData;
   wedgeBrief: WedgeBriefData;
   atlasSummary: AtlasSummaryData;
@@ -1458,6 +1463,7 @@ export async function getHistoryData(): Promise<HistoryData> {
 
 export async function getDomainData(domain: DomainId): Promise<DomainData> {
   const [
+    domainSnapshot,
     callPacket,
     wedgeBrief,
     atlasSummary,
@@ -1469,10 +1475,12 @@ export async function getDomainData(domain: DomainId): Promise<DomainData> {
     sourceEnrichment,
     proposalFile,
     decisionFile,
+    discoverySnapshot,
     extractionSnapshot,
     resolvedExtractionSnapshot,
     normalizedSnapshot
   ] = await Promise.all([
+    readJsonArtifact(`data/processed/${domain}/domain-snapshot.json`, DomainSnapshotSchema),
     readJsonArtifact(`data/processed/${domain}/call-packet.json`, CallPacketSchema),
     readJsonArtifact(`data/processed/${domain}/wedge-brief.json`, WedgeBriefSchema),
     readJsonArtifact(`data/processed/${domain}/atlas-summary.json`, AtlasSummarySchema),
@@ -1486,6 +1494,11 @@ export async function getDomainData(domain: DomainId): Promise<DomainData> {
     readJsonArtifact(
       `data/autoresearch/${domain}/benchmark-review-decisions.json`,
       BenchmarkProposalDecisionFileSchema
+    ),
+    readJsonArtifact(
+      `data/discovery/${domain}/discovery-snapshot.json`,
+      DiscoveryUiSnapshotSchema,
+      { optional: true }
     ),
     readJsonArtifact(
       `data/processed/${domain}/extraction-snapshot.json`,
@@ -1507,6 +1520,7 @@ export async function getDomainData(domain: DomainId): Promise<DomainData> {
   return {
     domain,
     sourceLabel: pickSourceLabel(
+      domainSnapshot,
       callPacket,
       wedgeBrief,
       atlasSummary,
@@ -1518,10 +1532,13 @@ export async function getDomainData(domain: DomainId): Promise<DomainData> {
       sourceEnrichment,
       proposalFile,
       decisionFile,
+      discoverySnapshot,
       extractionSnapshot,
       resolvedExtractionSnapshot,
       normalizedSnapshot
     ),
+    domainSnapshot: domainSnapshot.data,
+    discoverySnapshot: discoverySnapshot?.data ?? null,
     callPacket: callPacket.data,
     wedgeBrief: wedgeBrief.data,
     atlasSummary: atlasSummary.data,
@@ -1534,6 +1551,7 @@ export async function getDomainData(domain: DomainId): Promise<DomainData> {
     proposalFile: proposalFile.data,
     decisionFile: decisionFile.data,
     artifacts: [
+      toArtifactMeta("Domain snapshot", domainSnapshot),
       toArtifactMeta("Call packet", callPacket),
       toArtifactMeta("Wedge brief", wedgeBrief),
       toArtifactMeta("Atlas summary", atlasSummary),
@@ -1545,6 +1563,7 @@ export async function getDomainData(domain: DomainId): Promise<DomainData> {
       toArtifactMeta("Source enrichment", sourceEnrichment),
       toArtifactMeta("Autoresearch proposals", proposalFile),
       toArtifactMeta("Benchmark decisions", decisionFile),
+      toArtifactMeta("Discovery snapshot", discoverySnapshot),
       toArtifactMeta("Extraction snapshot", extractionSnapshot),
       toArtifactMeta("Resolved extraction", resolvedExtractionSnapshot),
       toArtifactMeta("Normalized protocols", normalizedSnapshot)

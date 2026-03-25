@@ -20,9 +20,9 @@ export default async function OptimizerPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Optimizer Lane"
-        title="Policy tuning, eval metrics, and keep/revert loop state"
-        summary="This view is downstream from the trusted atlas. It surfaces the single mutable discovery-policy file, the latest deterministic evaluation, and the bounded mutation loop outputs when they exist."
+        eyebrow="Optimizer"
+        title="Discovery policy and evaluation"
+        summary="This page shows the mutable discovery policy, the latest evaluation metrics, and the most recent bounded optimizer run when those artifacts exist."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={data.sourceLabel} />
@@ -56,7 +56,7 @@ export default async function OptimizerPage() {
       </MetricGrid>
 
       {!data.available ? (
-        <Section title="Runtime artifacts missing" subtitle="The policy file is present, but local eval artifacts have not been generated yet.">
+        <Section title="Runtime Artifacts Missing" subtitle="The policy file is present, but local evaluation artifacts have not been generated yet.">
           <div className="split-grid">
             <article className="surface">
               <h3>Run locally</h3>
@@ -77,7 +77,7 @@ export default async function OptimizerPage() {
         </Section>
       ) : null}
 
-      <Section title="Policy weights" subtitle="The highest-magnitude parameters in the current mutable policy file.">
+      <Section title="Policy Weights" subtitle="The highest-magnitude parameters in the current mutable policy file.">
         <DataTable
           columns={["Weight", "Value"]}
           rows={weightRows.map(([key, value]) => [key, formatScore(value)])}
@@ -126,7 +126,7 @@ export default async function OptimizerPage() {
       ) : null}
 
       {data.loopRun ? (
-        <Section title="Loop run" subtitle="Latest bounded mutation run against the current policy file.">
+        <Section title="Loop Run" subtitle="Latest bounded mutation run against the current policy file.">
           <div className="split-grid">
             <article className="surface">
               <h3>Run summary</h3>
@@ -165,7 +165,7 @@ export default async function OptimizerPage() {
         </Section>
       ) : null}
 
-      <Section title="Artifact ledger" subtitle="These are the exact optimizer files the web app is reading right now.">
+      <Section title="Artifact Ledger" subtitle="Exact optimizer files the web app is reading right now.">
         <ArtifactLedger artifacts={data.artifacts} />
       </Section>
     </>

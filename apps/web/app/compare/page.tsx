@@ -26,8 +26,8 @@ export default async function ComparePage() {
     <>
       <PageIntro
         eyebrow="Compare"
-        title="Side-by-side atlas posture across domains"
-        summary="A compact comparison surface for founders and technical reviewers. It lines up discovery coverage, benchmark deltas, and the current trust posture without pulling in edit state or a backend."
+        title="Compare domains side by side"
+        summary="Use this page to compare domain readiness, evidence quality, and corpus size side by side."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={data.sourceLabel} />
@@ -49,7 +49,7 @@ export default async function ComparePage() {
         <MetricCard label="Total normalized protocols" value={String(data.runHealth.totalNormalizedProtocolCount)} />
       </MetricGrid>
 
-      <Section title="Domain posture" subtitle="The highest-signal compare surface: review depth, corpus scale, and wedge posture line up side by side.">
+      <Section title="Domain Snapshot" subtitle="Review depth, corpus scale, and current wedge posture side by side.">
         <div className="split-grid">
           {data.domains.map((domain) => (
             <article className="surface" key={domain.domain}>
@@ -107,7 +107,7 @@ export default async function ComparePage() {
         </div>
       </Section>
 
-      <Section title="Benchmark deltas" subtitle="The resolved layer should move the right metrics, not just cosmetically improve the output.">
+      <Section title="Benchmark Deltas" subtitle="These numbers show whether the resolved layer improved the right things, not just the presentation.">
         <DataTable
           columns={["Domain", "Inclusion F1", "Family acc.", "Paper type acc.", "Outcome cov.", "Step cov.", "Gate passes"]}
           rows={data.domains.map((domain) => [
@@ -122,7 +122,7 @@ export default async function ComparePage() {
         />
       </Section>
 
-      <Section title="Corpus comparison" subtitle="Discovery quality and corpus coverage, aligned to the latest search snapshots.">
+      <Section title="Corpus Comparison" subtitle="Corpus size and match rate from the latest saved snapshots.">
         <DataTable
           columns={["Domain", "Fetched", "Matched", "Match rate", "Top snapshot paper", "Latest run"]}
           rows={data.domains.map((domain) => [
@@ -136,7 +136,7 @@ export default async function ComparePage() {
         />
       </Section>
 
-      <Section title="Artifact ledger" subtitle="Comparison pages should be traceable back to the exact generated files that feed them.">
+      <Section title="Artifact Ledger" subtitle="Exact generated files backing this comparison view.">
         <ArtifactLedger artifacts={data.artifacts} />
       </Section>
     </>

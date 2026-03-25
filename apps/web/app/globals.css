@@ -6,7 +6,8 @@
   --line: rgba(19, 36, 48, 0.11);
   --surface: rgba(255, 255, 255, 0.78);
   --surface-strong: rgba(255, 255, 255, 0.95);
-  --shadow: 0 12px 32px rgba(18, 30, 37, 0.07);
+  --shadow: 0 12px 32px rgba(18, 30, 37, 0.06);
+  --shadow-soft: 0 6px 18px rgba(18, 30, 37, 0.045);
   --teal: #0ea5a4;
   --teal-soft: rgba(14, 165, 164, 0.18);
   --amber: #d97706;
@@ -29,6 +30,7 @@
 html {
   min-height: 100%;
   scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
@@ -90,6 +92,7 @@ ul {
   backdrop-filter: blur(18px);
   background: rgba(248, 251, 252, 0.88);
   border-bottom: 1px solid rgba(19, 36, 48, 0.08);
+  box-shadow: 0 6px 20px rgba(18, 30, 37, 0.035);
 }
 
 .brandmark {
@@ -144,6 +147,7 @@ ul {
   color: var(--ink-soft);
   font-size: 0.9rem;
   font-weight: 600;
+  line-height: 1.15;
   transition:
     background-color 140ms ease,
     border-color 140ms ease,
@@ -188,7 +192,7 @@ ul {
 .page-shell {
   width: min(1360px, calc(100vw - 2rem));
   margin: 0 auto;
-  padding: 1.5rem 0 4rem;
+  padding: 1.35rem 0 4.25rem;
 }
 
 .hero {
@@ -196,9 +200,9 @@ ul {
   grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.8fr);
   gap: 1.6rem;
   margin-bottom: 1.4rem;
-  padding: 1.9rem;
+  padding: 1.7rem 1.75rem;
   border: 1px solid var(--line);
-  border-radius: 1.35rem;
+  border-radius: 1.25rem;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(247, 251, 253, 0.82)),
     linear-gradient(145deg, rgba(14, 165, 164, 0.04), transparent 44%);
@@ -222,13 +226,14 @@ ul {
   margin: 0.75rem 0 0.7rem;
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4vw, 4rem);
-  line-height: 0.98;
+  line-height: 1;
   letter-spacing: -0.03em;
 }
 
 .hero p {
   max-width: 70ch;
   font-size: 1rem;
+  line-height: 1.65;
 }
 
 .hero__aside,
@@ -253,7 +258,7 @@ ul {
   gap: 1.2rem;
   width: min(1360px, calc(100vw - 2rem));
   margin: 0 auto;
-  padding: 0.9rem 0 0.2rem;
+  padding: 0.7rem 0 0.15rem;
 }
 
 .shell-ribbon__copy {
@@ -271,7 +276,8 @@ ul {
 
 .shell-ribbon__copy p {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .shell-ribbon__meta {
@@ -307,10 +313,14 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  padding: 0.36rem 0.72rem;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0.36rem 0.66rem;
   border-radius: 999px;
-  font-size: 0.8rem;
-  line-height: 1;
+  font-size: 0.77rem;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
 }
 
 .domain-badge {
@@ -323,6 +333,7 @@ ul {
   border: 1px solid rgba(19, 36, 48, 0.06);
   background: rgba(19, 36, 48, 0.05);
   color: var(--ink-soft);
+  font-weight: 600;
 }
 
 .status-pill--good {
@@ -446,6 +457,7 @@ ul {
 
 .metric-card {
   padding: 1.05rem 1.05rem 1rem;
+  min-height: 10.2rem;
 }
 
 .metric-card__label {
@@ -459,8 +471,9 @@ ul {
 
 .metric-card__value {
   display: block;
-  font-size: 1.7rem;
-  line-height: 1.05;
+  font-size: 1.58rem;
+  line-height: 1.08;
+  text-wrap: balance;
 }
 
 .metric-card__detail {
@@ -487,9 +500,15 @@ ul {
 .surface__header,
 .family-card__header {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.domain-card__header .status-pill,
+.decision-card__header .status-pill {
+  flex: 0 1 12rem;
 }
 
 .section-card__header {
@@ -562,12 +581,27 @@ ul {
   letter-spacing: -0.02em;
 }
 
+.section-card h2 {
+  font-size: clamp(1.55rem, 2vw, 2rem);
+  line-height: 1.08;
+}
+
+.surface h3,
+.domain-card h3,
+.family-card h3,
+.empty-state h3,
+.discovery-card h3 {
+  font-size: 1.28rem;
+  line-height: 1.15;
+}
+
 .section-card p,
 .surface p,
 .domain-card p,
 .family-card p,
 .empty-state p {
   margin-top: 0.4rem;
+  line-height: 1.58;
 }
 
 .domain-card,
@@ -648,6 +682,7 @@ ul {
 .domain-card__lede {
   font-weight: 600;
   color: var(--ink);
+  line-height: 1.55;
 }
 
 .domain-card__scores {
@@ -953,6 +988,22 @@ ul {
   cursor: pointer;
   padding: 0.9rem 1rem;
   font-weight: 600;
+  list-style: none;
+}
+
+.detail-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.detail-panel summary::after {
+  content: "+";
+  float: right;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+.detail-panel[open] summary::after {
+  content: "\2212";
 }
 
 .detail-panel__content {
@@ -966,6 +1017,7 @@ ul {
 
 .domain-card__actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: 1rem;
 }
@@ -975,6 +1027,18 @@ ul {
 .surface a {
   color: var(--ink);
   font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(19, 36, 48, 0.18);
+  text-underline-offset: 0.18em;
+}
+
+.domain-card__actions a:hover,
+.section-card__header a:hover,
+.surface a:hover,
+.domain-card__actions a:focus-visible,
+.section-card__header a:focus-visible,
+.surface a:focus-visible {
+  text-decoration-color: rgba(19, 36, 48, 0.45);
 }
 
 .score-bar {
@@ -1043,6 +1107,7 @@ ul {
   font-size: 0.94rem;
   border-radius: 0.95rem;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.62);
 }
 
 .data-table th,
@@ -1065,8 +1130,12 @@ ul {
   transition: background-color 120ms ease;
 }
 
+.data-table tbody tr:nth-child(even) {
+  background: rgba(19, 36, 48, 0.018);
+}
+
 .data-table tbody tr:hover {
-  background: rgba(19, 36, 48, 0.03);
+  background: rgba(19, 36, 48, 0.045);
 }
 
 .debug-grid {
@@ -1246,7 +1315,7 @@ ul {
     grid-column: 1 / -1;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
     overflow: visible;
     border-radius: 1rem;
   }

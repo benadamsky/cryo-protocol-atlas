@@ -11,6 +11,7 @@ import {
   StatusPill
 } from "@/components/atlas-ui";
 import { formatDateTime, formatPercent, formatSignedScore, getHistoryData } from "@/lib/data";
+import { humanizeSystemState } from "@/lib/ui-copy";
 
 function shortHash(value: string) {
   return value.slice(0, 8);
@@ -28,13 +29,13 @@ export default async function HistoryPage() {
     <>
       <PageIntro
         eyebrow="History"
-        title="Current run history and cycle ledger"
-        summary="This is not a long-lived database history. It is the current autoresearch cycle ledger, plus the benchmark and review deltas that show how the atlas changed in the latest run."
+        title="Recent Atlas runs"
+        summary="This page shows the recent cycle ledger, what changed in the last runs, and what is still blocking progress."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={data.sourceLabel} />
           <StatusPill tone={data.overallState === "stalled-human-gate" ? "warn" : "good"}>
-            {data.overallState}
+            {humanizeSystemState(data.overallState)}
           </StatusPill>
           <div className="chip-row">
             <Link className="data-chip data-chip--strong" href="/discovery">
@@ -51,10 +52,10 @@ export default async function HistoryPage() {
         <MetricCard label="Domains tracked" value={String(data.domains.length)} />
         <MetricCard label="Cycles completed" value={String(totalCycles)} />
         <MetricCard label="Backlog items" value={String(totalBacklog)} tone={totalBacklog > 0 ? "warn" : "good"} />
-        <MetricCard label="Latest state" value={data.overallState} />
+        <MetricCard label="Latest state" value={humanizeSystemState(data.overallState)} />
       </MetricGrid>
 
-      <Section title="Cycle ledger" subtitle="The active loop captured in one row per domain. Hashes stay visible so the state transition is auditable.">
+      <Section title="Cycle Ledger" subtitle="One row per run cycle. Hash changes stay visible so the state transition remains auditable.">
         <DataTable
           columns={["Domain", "Cycle", "State", "Proposals", "Backlog", "Outcome", "Step", "Hash transition", "Apply safe"]}
           rows={data.domains.flatMap((domain) =>
@@ -83,7 +84,7 @@ export default async function HistoryPage() {
         />
       </Section>
 
-      <Section title="Quality deltas" subtitle="This is the real history signal: what the resolved and reviewed layers improved in the latest pass.">
+      <Section title="Quality Deltas" subtitle="What the resolved and reviewed layers improved in the latest pass.">
         <DataTable
           columns={["Domain", "Inclusion F1", "Family acc.", "Paper type acc.", "Gate passes", "Outcome cov.", "Step cov.", "Depth ready"]}
           rows={data.domains.map((domain) => [
@@ -102,7 +103,7 @@ export default async function HistoryPage() {
       </Section>
 
       <div className="split-grid">
-        <Section title="Backlog snapshot" subtitle="The current human gate and what is still missing in the review loop.">
+        <Section title="Backlog Snapshot" subtitle="What is still blocking progress in the review loop.">
           <DataTable
             columns={["Domain", "Pending enrichment", "Missing outcomes", "Missing steps", "Stop reason", "Latest run"]}
             rows={data.domains.map((domain) => [
@@ -116,7 +117,7 @@ export default async function HistoryPage() {
           />
         </Section>
 
-        <Section title="Recommendation trail" subtitle="The loop is explicit about what needs to happen next.">
+        <Section title="Recommendation Trail" subtitle="What the current loop says should happen next.">
           <div className="family-grid">
             {data.recommendations.map((recommendation) => (
               <article className="family-card" key={recommendation}>
@@ -127,7 +128,7 @@ export default async function HistoryPage() {
         </Section>
       </div>
 
-      <Section title="Artifact ledger" subtitle="History is still a file-backed concern, not an app-owned state store.">
+      <Section title="Artifact Ledger" subtitle="Exact generated files backing this history view.">
         <ArtifactLedger artifacts={data.artifacts} />
       </Section>
     </>

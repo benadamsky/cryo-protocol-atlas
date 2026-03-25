@@ -43,15 +43,10 @@ export default async function ExperimentsPage() {
       <PageIntro
         eyebrow="Experiments"
         title="Experiment packets"
-        summary="Atlas is not valuable just because it organizes evidence. It is valuable because it turns the current read into better next experiments. This page is the bridge from protocol intelligence into optimization and downstream discovery."
+        summary="This page shows the concrete experiments Atlas can justify from the current literature read, including the decision each one is meant to answer."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={data.domains[0]?.sourceLabel ?? "worktree"} />
-          <div className="chip-row">
-            <StatusPill tone="good">from recommendation</StatusPill>
-            <StatusPill tone="neutral">wet-lab planning</StatusPill>
-            <StatusPill tone="warn">downstream queue input</StatusPill>
-          </div>
         </div>
       </PageIntro>
 
@@ -69,30 +64,30 @@ export default async function ExperimentsPage() {
 
       <Section
         title="Why Experiment Packets Matter"
-        subtitle="This is the handoff point from literature intelligence to optimization work."
+        subtitle="Atlas is most useful when it turns a literature read into a concrete next test."
       >
         <div className="triad-grid">
           <article className="surface">
-            <span className="section-kicker">Recommendation result</span>
-            <h3>Atlas turns a wedge call into action</h3>
+            <span className="section-kicker">Current recommendation</span>
+            <h3>Atlas turns the call into an experiment</h3>
             <p>The recommendation is useful because it does not stop at ranking. It outputs a concrete next experiment.</p>
           </article>
           <article className="surface">
-            <span className="section-kicker">Optimization bridge</span>
+            <span className="section-kicker">Before wet-lab spend</span>
             <h3>Better framing before wet-lab spend</h3>
             <p>Packets specify the decision, variables, and readouts so teams do not waste cycles on poorly framed experiments.</p>
           </article>
           <article className="surface">
-            <span className="section-kicker">Discovery input</span>
-            <h3>Downstream workflow input</h3>
+            <span className="section-kicker">After the result</span>
+            <h3>Results can feed later research loops</h3>
             <p>Packet results can later feed broader discovery workflows, but that is downstream from the current recommendation.</p>
           </article>
         </div>
       </Section>
 
       <Section
-        title="Experiment Packet Queue"
-        subtitle="Default state is summary-first. Expand each card only when you need fixed variables, supporting papers, or longer rationale."
+        title="Experiment Cards"
+        subtitle="Start with the summary. Expand a card only when you need variables, supporting papers, or detailed rationale."
       >
         <div className="family-grid family-grid--stack">
           {data.packets.map((entry) => (
