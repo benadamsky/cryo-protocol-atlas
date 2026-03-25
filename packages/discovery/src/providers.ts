@@ -17,7 +17,18 @@ type DiscoveryFetchResult = {
 };
 
 const PAGE_SIZE = 50;
-const MAX_PROVIDER_PAGES = 3;
+const MAX_PROVIDER_PAGES = readPositiveIntEnv("DISCOVERY_MAX_PROVIDER_PAGES", 5);
+const FETCH_TIMEOUT_MS = readPositiveIntEnv("DISCOVERY_FETCH_TIMEOUT_MS", 15_000);
+const FETCH_RETRY_ATTEMPTS = readPositiveIntEnv("DISCOVERY_FETCH_RETRY_ATTEMPTS", 2);
+
+function readPositiveIntEnv(name: string, fallback: number): number {
+  const raw = process.env[name];
+  if (!raw) {
+    return fallback;
+  }
+  const parsed = Number.parseInt(raw, 10);
+  return Number.isInteger(parsed) && parsed > 0 ? parsed : fallback;
+}
 
 function normalizeAuthorList(authors: string[]): string | null {
   const normalized = authors.map((author) => author.trim()).filter(Boolean);
@@ -59,18 +70,50 @@ function mapRecord(
   };
 }
 
-async function fetchJson<T>(url: string): Promise<T> {
-  const response = await fetch(url, {
-    headers: {
-      "user-agent": "cryo-protocol-atlas-discovery/1.0"
-    }
-  });
+function shouldRetryResponse(status: number): boolean {
+  return status === 408 || status === 429 || status >= 500;
+}
 
-  if (!response.ok) {
-    throw new Error(`Request failed: ${response.status} ${response.statusText} (${url})`);
+function describeFetchError(error: unknown): string {
+  if (error instanceof Error) {
+    if (error.name === "TimeoutError" || error.name === "AbortError") {
+      return `request timed out after ${FETCH_TIMEOUT_MS}ms`;
+    }
+    return error.message;
+  }
+  return String(error);
+}
+
+async function fetchJson<T>(url: string): Promise<T> {
+  let lastError: string | null = null;
+  for (let attempt = 1; attempt <= FETCH_RETRY_ATTEMPTS; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        headers: {
+          "user-agent": "cryo-protocol-atlas-discovery/1.0"
+        },
+        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
+      });
+
+      if (!response.ok) {
+        const message = `Request failed: ${response.status} ${response.statusText}`;
+        if (attempt < FETCH_RETRY_ATTEMPTS && shouldRetryResponse(response.status)) {
+          lastError = message;
+          continue;
+        }
+        throw new Error(message);
+      }
+
+      return (await response.json()) as T;
+    } catch (error) {
+      lastError = describeFetchError(error);
+      if (attempt === FETCH_RETRY_ATTEMPTS) {
+        break;
+      }
+    }
   }
 
-  return (await response.json()) as T;
+  throw new Error(`Request failed after ${FETCH_RETRY_ATTEMPTS} attempts: ${lastError ?? "unknown error"} (${url})`);
 }
 
 async function fetchCryoDbSnapshot(domain: DomainId): Promise<DiscoveryFetchResult> {

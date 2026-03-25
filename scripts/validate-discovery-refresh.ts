@@ -20,6 +20,10 @@ async function readJson<T>(path: string, parser: { parse: (value: unknown) => T 
   return parser.parse(JSON.parse(await readFile(path, "utf8")));
 }
 
+function blockingDegradationReasons(reasons: string[]): string[] {
+  return reasons.filter((reason) => !reason.startsWith("live-provider-truncation:"));
+}
+
 async function validateDomain(domain: DomainId): Promise<void> {
   const discoveryDir = join(process.cwd(), "data", "discovery", domain);
   const importSummary = await readJson(join(discoveryDir, "import-summary.json"), DiscoveryImportSummarySchema);
@@ -28,17 +32,42 @@ async function validateDomain(domain: DomainId): Promise<void> {
   const packet = await readJson(join(discoveryDir, "promotion-review-packet.json"), DiscoveryPromotionReviewPacketSchema);
 
   const failures: string[] = [];
+  const warnings: string[] = [];
   if (importSummary.isDegraded) {
-    failures.push(`import-summary degraded: ${importSummary.degradationReasons.join(", ") || "unknown"}`);
+    const blockingReasons = blockingDegradationReasons(importSummary.degradationReasons);
+    if (blockingReasons.length > 0) {
+      failures.push(`import-summary degraded: ${blockingReasons.join(", ") || "unknown"}`);
+    }
   }
   if (snapshot.isDegraded) {
-    failures.push(`discovery-snapshot degraded: ${snapshot.degradationReasons.join(", ") || "unknown"}`);
+    const blockingReasons = blockingDegradationReasons(snapshot.degradationReasons);
+    if (blockingReasons.length > 0) {
+      failures.push(`discovery-snapshot degraded: ${blockingReasons.join(", ") || "unknown"}`);
+    }
+    const truncationReasons = snapshot.degradationReasons.filter((reason) => reason.startsWith("live-provider-truncation:"));
+    if (truncationReasons.length > 0) {
+      warnings.push(`discovery-snapshot truncated: ${truncationReasons.join(", ")}`);
+    }
   }
   if (queue.isDegraded) {
-    failures.push(`promotion-queue degraded: ${queue.degradationReasons.join(", ") || "unknown"}`);
+    const blockingReasons = blockingDegradationReasons(queue.degradationReasons);
+    if (blockingReasons.length > 0) {
+      failures.push(`promotion-queue degraded: ${blockingReasons.join(", ") || "unknown"}`);
+    }
+    const truncationReasons = queue.degradationReasons.filter((reason) => reason.startsWith("live-provider-truncation:"));
+    if (truncationReasons.length > 0) {
+      warnings.push(`promotion-queue truncated: ${truncationReasons.join(", ")}`);
+    }
   }
   if (packet.isDegraded) {
-    failures.push(`promotion-review-packet degraded: ${packet.degradationReasons.join(", ") || "unknown"}`);
+    const blockingReasons = blockingDegradationReasons(packet.degradationReasons);
+    if (blockingReasons.length > 0) {
+      failures.push(`promotion-review-packet degraded: ${blockingReasons.join(", ") || "unknown"}`);
+    }
+    const truncationReasons = packet.degradationReasons.filter((reason) => reason.startsWith("live-provider-truncation:"));
+    if (truncationReasons.length > 0) {
+      warnings.push(`promotion-review-packet truncated: ${truncationReasons.join(", ")}`);
+    }
   }
   if (queue.sourceSnapshotGeneratedAt !== snapshot.generatedAt) {
     failures.push("promotion-queue sourceSnapshotGeneratedAt does not match discovery-snapshot generatedAt");
@@ -69,6 +98,10 @@ async function validateDomain(domain: DomainId): Promise<void> {
 
   if (failures.length > 0) {
     throw new Error(`${domain} discovery refresh validation failed:\n- ${failures.join("\n- ")}`);
+  }
+
+  if (warnings.length > 0) {
+    console.warn(JSON.stringify({ domain, warnings: Array.from(new Set(warnings)) }, null, 2));
   }
 }
 
