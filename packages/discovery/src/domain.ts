@@ -12,7 +12,10 @@ type DiscoveryDomainConfig = {
   anchorConcepts: KeywordConcept[];
   requiredSupportingConcepts: KeywordConcept[];
   contextualSupportingConcepts: KeywordConcept[];
+  titleMethodConcepts?: KeywordConcept[];
+  blockedTitleConcepts?: KeywordConcept[];
   minimumTitleRequiredSupportingMatches?: number;
+  minimumTitleMethodMatches?: number;
 };
 
 const DISCOVERY_SCORING = {
@@ -78,7 +81,27 @@ const DISCOVERY_DOMAIN_CONFIGS: Record<DomainId, DiscoveryDomainConfig> = {
       concept("oocyte", ["oocyte", "oocytes"]),
       concept("transplantation", ["transplantation", "transplant", "autotransplant", "graft"])
     ],
-    minimumTitleRequiredSupportingMatches: 2
+    titleMethodConcepts: [
+      concept("protocol", ["protocol", "procedure", "workflow", "method"]),
+      concept("comparison", ["comparison", "compare", "versus", "vs"]),
+      concept("culture", ["culture", "cultured", "in vitro growth", "ivg"]),
+      concept("cryoprotectant handling", [
+        "cryoprotectant",
+        "cryoprotective agent",
+        "cryoprotective agents",
+        "permeation",
+        "equilibration",
+        "warming"
+      ]),
+      concept("freezing method", ["slow freezing", "slow cooling", "vitrification", "vitrified"])
+    ],
+    blockedTitleConcepts: [
+      concept("review style", ["systematic review", "meta-analysis", "meta analysis"]),
+      concept("clinical outcome", ["live birth", "pregnancy", "pregnancies", "woman", "women", "children following"]),
+      concept("broad summary", ["overview", "state of the art"])
+    ],
+    minimumTitleRequiredSupportingMatches: 2,
+    minimumTitleMethodMatches: 1
   },
   islets: {
     label: "islets",
@@ -135,6 +158,8 @@ export function scoreDiscoveryText(
   titleAnchorMatches: string[];
   titleRequiredSupportingMatches: string[];
   titleContextualSupportingMatches: string[];
+  titleMethodMatches: string[];
+  blockedTitleMatches: string[];
   anchorMatches: string[];
   requiredSupportingMatches: string[];
   contextualSupportingMatches: string[];
@@ -147,6 +172,8 @@ export function scoreDiscoveryText(
   const titleAnchorMatches = matchedConceptLabels(config.anchorConcepts, titleHaystack);
   const titleRequiredSupportingMatches = matchedConceptLabels(config.requiredSupportingConcepts, titleHaystack);
   const titleContextualSupportingMatches = matchedConceptLabels(config.contextualSupportingConcepts, titleHaystack);
+  const titleMethodMatches = matchedConceptLabels(config.titleMethodConcepts ?? [], titleHaystack);
+  const blockedTitleMatches = matchedConceptLabels(config.blockedTitleConcepts ?? [], titleHaystack);
   const anchorMatches = matchedConceptLabels(config.anchorConcepts, haystack);
   const requiredSupportingMatches = matchedConceptLabels(config.requiredSupportingConcepts, haystack);
   const contextualSupportingMatches = matchedConceptLabels(config.contextualSupportingConcepts, haystack);
@@ -176,6 +203,8 @@ export function scoreDiscoveryText(
     titleAnchorMatches,
     titleRequiredSupportingMatches,
     titleContextualSupportingMatches,
+    titleMethodMatches,
+    blockedTitleMatches,
     anchorMatches,
     requiredSupportingMatches,
     contextualSupportingMatches,
@@ -190,12 +219,20 @@ export function shouldKeepDiscoveryCandidate(
   domain: DomainId
 ): boolean {
   const config = getDiscoveryDomainConfig(domain);
-  const { titleAnchorMatches, titleRequiredSupportingMatches, anchorMatches, requiredSupportingMatches } =
-    scoreDiscoveryText(title, abstract, domain);
+  const {
+    titleAnchorMatches,
+    titleRequiredSupportingMatches,
+    titleMethodMatches,
+    blockedTitleMatches,
+    anchorMatches,
+    requiredSupportingMatches
+  } = scoreDiscoveryText(title, abstract, domain);
   return (
+    blockedTitleMatches.length === 0 &&
     titleAnchorMatches.length >= DISCOVERY_SCORING.minimumTitleAnchorMatches &&
     titleRequiredSupportingMatches.length >=
       (config.minimumTitleRequiredSupportingMatches ?? DISCOVERY_SCORING.defaultMinimumTitleRequiredSupportingMatches) &&
+    titleMethodMatches.length >= (config.minimumTitleMethodMatches ?? 0) &&
     anchorMatches.length >= DISCOVERY_SCORING.minimumAnchorMatches &&
     requiredSupportingMatches.length >= DISCOVERY_SCORING.minimumRequiredSupportingMatches
   );

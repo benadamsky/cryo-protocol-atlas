@@ -35,6 +35,17 @@ test("ovarian discovery keeps cryopreservation-specific literature", () => {
   );
 });
 
+test("ovarian discovery keeps protocol-heavy preparation papers", () => {
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "Permeation of Human Ovarian Tissue with Cryoprotective Agents in Preparation for Cryopreservation",
+      "Human ovarian cortex samples were equilibrated across cryoprotective agent conditions before storage.",
+      "ovarian-tissue"
+    ),
+    true
+  );
+});
+
 test("ovarian discovery rejects broad cryopreservation review titles without a second method signal", () => {
   assert.equal(
     shouldKeepDiscoveryCandidate(
@@ -57,6 +68,28 @@ test("ovarian discovery rejects broad fertility-preservation summaries without s
   );
 });
 
+test("ovarian discovery rejects review and meta-analysis titles even with cryo keywords", () => {
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "Vitrification versus slow freezing for human ovarian tissue cryopreservation: a systematic review and meta-analysis",
+      "Systematic review of published ovarian tissue cryopreservation studies.",
+      "ovarian-tissue"
+    ),
+    false
+  );
+});
+
+test("ovarian discovery rejects clinical outcome titles without protocol signal", () => {
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "The first woman to give birth to two children following transplantation of frozen/thawed ovarian tissue",
+      "Clinical outcome report following ovarian tissue transplantation.",
+      "ovarian-tissue"
+    ),
+    false
+  );
+});
+
 test("ovarian scoring separates cryo requirements from contextual cues", () => {
   const result = scoreDiscoveryText(
     "Cryopreservation/transplantation of ovarian tissue and in vitro maturation of follicles and oocytes",
@@ -66,6 +99,16 @@ test("ovarian scoring separates cryo requirements from contextual cues", () => {
   assert.ok(result.anchorMatches.includes("ovarian tissue"));
   assert.ok(result.requiredSupportingMatches.includes("cryopreservation"));
   assert.ok(result.contextualSupportingMatches.includes("transplantation"));
+});
+
+test("ovarian scoring surfaces blocked review-style titles", () => {
+  const result = scoreDiscoveryText(
+    "Vitrification versus slow freezing for human ovarian tissue cryopreservation: a systematic review and meta-analysis",
+    "Systematic review of published ovarian tissue cryopreservation studies.",
+    "ovarian-tissue"
+  );
+  assert.ok(result.titleMethodMatches.includes("freezing method"));
+  assert.ok(result.blockedTitleMatches.includes("review style"));
 });
 
 test("title-level matching is required to keep candidates", () => {
