@@ -65,10 +65,12 @@ function statusRank(status: SourceEnrichmentStatus): number {
       return 0;
     case "pending":
       return 1;
-    case "reviewed":
+    case "llm-triaged":
       return 2;
-    case "rejected":
+    case "reviewed":
       return 3;
+    case "rejected":
+      return 4;
   }
 }
 

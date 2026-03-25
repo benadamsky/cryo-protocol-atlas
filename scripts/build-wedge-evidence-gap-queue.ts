@@ -3,8 +3,10 @@ import { join } from "node:path";
 import {
   ActiveWedgeSchema,
   DomainIdSchema,
+  ExperimentPacketFileSchema,
   ExtractionSnapshotSchema,
   SourceEnrichmentFileSchema,
+  WedgeDecisionContradictionReportSchema,
   WedgeEvidenceGapQueueSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
@@ -37,6 +39,14 @@ async function maybeReadSourceEnrichment(path: string) {
   }
 }
 
+async function maybeReadJson<T>(path: string, parser: { parse: (value: unknown) => T }): Promise<T | undefined> {
+  try {
+    return parser.parse(JSON.parse(await readFile(path, "utf8")));
+  } catch {
+    return undefined;
+  }
+}
+
 async function main(selectedDomain: DomainId): Promise<void> {
   const rootDir = process.cwd();
   const processedDir = join(rootDir, "data", "processed", selectedDomain);
@@ -52,12 +62,22 @@ async function main(selectedDomain: DomainId): Promise<void> {
     await readFile(join(processedDir, "benchmark-analysis.json"), "utf8")
   ) as BenchmarkAnalysis;
   const sourceEnrichment = await maybeReadSourceEnrichment(join(curatedDir, "source-enrichment.json"));
+  const contradictionReport = await maybeReadJson(
+    join(processedDir, "wedge-contradiction-report.json"),
+    WedgeDecisionContradictionReportSchema
+  );
+  const experimentPackets = await maybeReadJson(
+    join(processedDir, "experiment-packets.json"),
+    ExperimentPacketFileSchema
+  );
 
   const queue = buildWedgeEvidenceGapQueue({
     snapshot,
     activeWedge,
     benchmarkAnalysis,
-    sourceEnrichment
+    sourceEnrichment,
+    contradictionReport,
+    experimentPackets
   });
 
   await mkdir(processedDir, { recursive: true });

@@ -598,6 +598,7 @@ export const SourceEnrichmentStatusSchema = z.enum([
   "pending",
   "in-progress",
   "reviewed",
+  "llm-triaged",
   "rejected"
 ]);
 export type SourceEnrichmentStatus = z.infer<typeof SourceEnrichmentStatusSchema>;
@@ -612,6 +613,14 @@ export const SourceEnrichmentExcerptSchema = z.object({
 });
 export type SourceEnrichmentExcerpt = z.infer<typeof SourceEnrichmentExcerptSchema>;
 
+export const LlmDraftSchema = z.object({
+  excerpts: z.array(SourceEnrichmentExcerptSchema),
+  safetyTier: z.enum(["draftable", "review-required", "decision-changing"]),
+  draftConfidence: z.number().min(0).max(1),
+  draftedAt: z.string()
+});
+export type LlmDraft = z.infer<typeof LlmDraftSchema>;
+
 export const SourceEnrichmentRecordSchema = z.object({
   paperId: z.string(),
   title: z.string(),
@@ -621,7 +630,8 @@ export const SourceEnrichmentRecordSchema = z.object({
   status: SourceEnrichmentStatusSchema,
   rationale: z.string(),
   reviewerNotes: z.string().optional(),
-  excerpts: z.array(SourceEnrichmentExcerptSchema).default([])
+  excerpts: z.array(SourceEnrichmentExcerptSchema).default([]),
+  llmDraft: LlmDraftSchema.optional()
 });
 export type SourceEnrichmentRecord = z.infer<typeof SourceEnrichmentRecordSchema>;
 
@@ -802,12 +812,26 @@ export const WedgeBenchmarkMatrixSchema = z.object({
 });
 export type WedgeBenchmarkMatrix = z.infer<typeof WedgeBenchmarkMatrixSchema>;
 
+export const DecisionImpactScoreSchema = z.object({
+  score: z.number().min(0).max(1),
+  components: z.object({
+    wedgeRelevance: z.number().min(0).max(1),
+    blockerProximity: z.number().min(0).max(1),
+    experimentPacketEffect: z.number().min(0).max(1),
+    evidenceAuthorityUplift: z.number().min(0).max(1),
+    contradictionResolution: z.number().min(0).max(1)
+  }),
+  rationale: z.string()
+});
+export type DecisionImpactScore = z.infer<typeof DecisionImpactScoreSchema>;
+
 export const WedgeEvidenceGapSchema = z.object({
   paperId: z.string(),
   title: z.string(),
   priority: SourceEnrichmentPrioritySchema,
   status: SourceEnrichmentStatusSchema,
   decisionImpact: z.enum(["high", "medium", "low"]),
+  decisionImpactScore: DecisionImpactScoreSchema.optional(),
   missingFields: z.array(z.enum(["outcomeClasses", "stepPhases", "authority", "protocolDetail"])),
   authorityProfile: EvidenceAuthorityProfileSchema,
   translationalSignal: TranslationalSignalSchema,

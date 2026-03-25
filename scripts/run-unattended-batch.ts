@@ -108,6 +108,8 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const domainSnapshotPath = join(processedDir, "domain-snapshot.json");
   const ingestIncluded = includeIngest || !(await fileExists(domainSnapshotPath));
 
+  runStep("scripts/snapshot-delta-before.ts", [selectedDomain]);
+
   if (ingestIncluded) {
     runStep("scripts/ingest-domain.ts", [selectedDomain]);
   }
@@ -119,9 +121,10 @@ async function main(selectedDomain: DomainId): Promise<void> {
   runStep("scripts/build-normalized-protocols.ts", [selectedDomain]);
   runStep("scripts/build-active-wedge.ts", [selectedDomain]);
   runStep("scripts/build-wedge-benchmark-matrix.ts", [selectedDomain]);
-  runStep("scripts/build-wedge-evidence-gap-queue.ts", [selectedDomain]);
   runStep("scripts/build-experiment-packets.ts", [selectedDomain]);
   runStep("scripts/build-wedge-contradiction-report.ts", [selectedDomain]);
+  runStep("scripts/build-wedge-evidence-gap-queue.ts", [selectedDomain]);
+  runStep("scripts/auto-enrich-sources.ts", [selectedDomain]);
   runStep("scripts/build-wedge-brief.ts", [selectedDomain]);
   runStep("scripts/build-call-packet.ts", [selectedDomain]);
   runStep("scripts/run-autoresearch-loop.ts", [selectedDomain]);
@@ -129,6 +132,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
   runStep("scripts/autopromote-benchmark-recommendations.ts", [selectedDomain]);
   runStep("scripts/build-benchmark-review-queue.ts", [selectedDomain]);
   runStep("scripts/regress-autoresearch.ts", [selectedDomain]);
+  runStep("scripts/build-run-delta.ts", [selectedDomain]);
 
   try {
     runStep("scripts/build-opportunity-scan.ts");

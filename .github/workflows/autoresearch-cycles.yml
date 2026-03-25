@@ -6,14 +6,20 @@ on:
       max_cycles:
         description: Maximum unattended cycles per domain
         required: false
-        default: "5"
+        default: "15"
       ingest_first_cycle:
         description: Include ingest on the first cycle for each domain
         required: false
         default: false
         type: boolean
+      include_discovery:
+        description: Run discovery refresh before bounded cycles
+        required: false
+        default: false
+        type: boolean
   schedule:
     - cron: "17 13 * * 1-5"
+    - cron: "17 2 * * 1-5"
 
 permissions:
   contents: write
@@ -52,10 +58,15 @@ jobs:
       - name: Normalization Tests
         run: bun run test:normalize
 
+      - name: Discovery Refresh
+        if: github.event.inputs.include_discovery == 'true'
+        run: bun run discover-refresh:all
+
       - name: Run Bounded Autoresearch Cycles
         env:
-          MAX_CYCLES: ${{ github.event.inputs.max_cycles || '5' }}
+          MAX_CYCLES: ${{ github.event.inputs.max_cycles || '15' }}
           INGEST_FIRST_CYCLE: ${{ github.event.inputs.ingest_first_cycle || 'false' }}
+          ALLOW_ENRICHMENT_PENDING: "true"
         run: |
           EXTRA_ARGS="--max-cycles ${MAX_CYCLES}"
           if [ "${INGEST_FIRST_CYCLE}" = "true" ]; then

@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ALL_DOMAINS, type DomainId } from "../packages/shared/src/schema.js";
+import { renderRunDeltaMarkdown, type RunDelta } from "../packages/research/src/run-delta.js";
 
 const DOMAINS: DomainId[] = [...ALL_DOMAINS];
 
@@ -103,6 +104,7 @@ type DomainRunHealth = {
   currentRead: string | null;
   likelyPainPoint: string | null;
   alerts: string[];
+  runDelta: RunDelta | null;
   artifactPaths: {
     cycleReport: string;
     unattendedBatch: string;
@@ -300,6 +302,10 @@ function renderMarkdown(report: RunHealthReport): string {
     lines.push(
       `- artifacts: ${domain.artifactPaths.cycleReport}, ${domain.artifactPaths.unattendedBatch}, ${domain.artifactPaths.benchmarkReport}, ${domain.artifactPaths.wedgeBrief}, ${domain.artifactPaths.callPacket}`
     );
+    if (domain.runDelta) {
+      lines.push("");
+      lines.push(renderRunDeltaMarkdown(domain.runDelta));
+    }
     lines.push("");
   }
 
@@ -314,13 +320,16 @@ async function buildDomainHealth(domain: DomainId): Promise<DomainRunHealth | nu
   const regressionPath = join(process.cwd(), "data", "autoresearch", domain, "regression-analysis.json");
   const callPacketPath = join(process.cwd(), "data", "processed", domain, "call-packet.json");
 
-  const [cycles, batch, summary, analysis, regressions, callPacket] = await Promise.all([
+  const deltaPath = join(process.cwd(), "data", "autoresearch", domain, "run-delta.json");
+
+  const [cycles, batch, summary, analysis, regressions, callPacket, runDelta] = await Promise.all([
     readOptionalJson<AutoresearchCycles>(cyclePath),
     readOptionalJson<UnattendedBatchSummary>(batchPath),
     readOptionalJson<BenchmarkSummary>(benchmarkSummaryPath),
     readOptionalJson<BenchmarkAnalysis>(benchmarkAnalysisPath),
     readOptionalJson<RegressionScenario[]>(regressionPath),
-    readOptionalJson<CallPacket>(callPacketPath)
+    readOptionalJson<CallPacket>(callPacketPath),
+    readOptionalJson<RunDelta>(deltaPath)
   ]);
 
   if (!cycles || !batch || !summary || !analysis || !regressions) {
@@ -363,6 +372,7 @@ async function buildDomainHealth(domain: DomainId): Promise<DomainRunHealth | nu
     currentRead: callPacket?.wedgeValidation?.currentRead ?? null,
     likelyPainPoint: callPacket?.marketBridge?.likelyPainPoint ?? null,
     alerts,
+    runDelta: runDelta ?? null,
     artifactPaths: {
       cycleReport: `data/autoresearch/${domain}/autoresearch-cycles.md`,
       unattendedBatch: `data/autoresearch/${domain}/unattended-batch.md`,

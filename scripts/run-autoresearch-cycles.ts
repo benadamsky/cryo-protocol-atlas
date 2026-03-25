@@ -72,11 +72,18 @@ function parseArgs(argv: string[]) {
   const selectedDomain = DomainIdSchema.parse(argv[2] ?? "islets");
   let maxCycles = 5;
   let ingestFirstCycle = argv.includes("--ingest");
+  let allowEnrichmentPending =
+    argv.includes("--allow-enrichment-pending") ||
+    process.env.ALLOW_ENRICHMENT_PENDING === "true";
 
   for (let index = 3; index < argv.length; index += 1) {
     const arg = argv[index];
     if (arg === "--ingest") {
       ingestFirstCycle = true;
+      continue;
+    }
+    if (arg === "--allow-enrichment-pending") {
+      allowEnrichmentPending = true;
       continue;
     }
     if (arg === "--max-cycles" && argv[index + 1]) {
@@ -96,7 +103,8 @@ function parseArgs(argv: string[]) {
   return {
     domain: selectedDomain,
     maxCycles,
-    ingestFirstCycle
+    ingestFirstCycle,
+    allowEnrichmentPending
   };
 }
 
@@ -234,6 +242,7 @@ function determineStopReason(input: {
   pendingSourceEnrichmentCount: number;
   overrideProposalCount: number;
   autoApplySafe: boolean;
+  allowEnrichmentPending: boolean;
 }): CycleStopReason | null {
   if (input.autonomousStateChanged) {
     return input.cycle >= input.maxCycles ? "max-cycles-reached" : null;
@@ -244,14 +253,14 @@ function determineStopReason(input: {
   if (input.overrideProposalCount > 0 && !input.autoApplySafe) {
     return "unsafe-override-proposals";
   }
-  if (input.pendingSourceEnrichmentCount > 0) {
+  if (input.pendingSourceEnrichmentCount > 0 && !input.allowEnrichmentPending) {
     return "pending-source-enrichment";
   }
   return "converged";
 }
 
 async function main(): Promise<void> {
-  const { domain, maxCycles, ingestFirstCycle } = parseArgs(process.argv);
+  const { domain, maxCycles, ingestFirstCycle, allowEnrichmentPending } = parseArgs(process.argv);
   const loopDir = join(process.cwd(), "data", "autoresearch", domain);
   const reportJsonPath = join(loopDir, "autoresearch-cycles.json");
   const reportMarkdownPath = join(loopDir, "autoresearch-cycles.md");
@@ -303,7 +312,8 @@ async function main(): Promise<void> {
       pendingBenchmarkProposalCount,
       pendingSourceEnrichmentCount: summary.pendingSourceEnrichmentCount,
       overrideProposalCount: refreshedProposalCounts.overrideProposalCount,
-      autoApplySafe
+      autoApplySafe,
+      allowEnrichmentPending
     });
 
     if (nextStopReason) {
