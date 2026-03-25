@@ -1,0 +1,291 @@
+{
+  "domain": "ovarian-tissue",
+  "focusQuestion": "Which protocol comparison is sharp enough to anchor a first commercial cryopreservation wedge?",
+  "activeWedge": {
+    "title": "Head-to-head DMSO-centered ovarian tissue benchmark",
+    "category": "benchmark",
+    "claim": "A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation.",
+    "scientificRelevance": 0.673,
+    "companyRelevance": 0.82,
+    "evidenceConfidence": 0.5,
+    "translationalPotential": 0.8,
+    "currentRead": "This wedge is the best current candidate, but it should still be treated as a proving ground rather than a locked-in entry point.",
+    "recommendedNextStep": "DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass."
+  },
+  "standardPattern": {
+    "dominantProtocolFamily": "slow-freezing",
+    "dominantChemicals": [
+      "Dimethyl Sulfoxide",
+      "Sucrose",
+      "Ethylene Glycol"
+    ],
+    "dominantSpecimenTypes": [
+      "follicles",
+      "ovarian tissue"
+    ],
+    "dominantTransitions": [],
+    "representativeConditions": [
+      "Dimethyl Sulfoxide 1.5 M"
+    ],
+    "explanation": "Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol in follicles, ovarian tissue workflows. Normalized workflow signal is still sparse, with repeated condition mentions such as Dimethyl Sulfoxide 1.5 M."
+  },
+  "protocolFamilies": [
+    {
+      "family": "slow-freezing",
+      "paperCount": 6,
+      "topChemicals": [
+        "Dimethyl Sulfoxide",
+        "Sucrose",
+        "Ethylene Glycol"
+      ],
+      "topOutcomes": [
+        "viability",
+        "morphology",
+        "function"
+      ],
+      "topTransitions": [],
+      "interpretation": "Most common preserved workflow in-slice, centered on Dimethyl Sulfoxide, Sucrose, Ethylene Glycol. Outcome emphasis is viability, morphology, function, suggesting this is the baseline to beat rather than the frontier."
+    },
+    {
+      "family": "comparative",
+      "paperCount": 5,
+      "topChemicals": [
+        "Dimethyl Sulfoxide"
+      ],
+      "topOutcomes": [
+        "morphology",
+        "reproductive",
+        "transplantation"
+      ],
+      "topTransitions": [
+        "loading -> storage",
+        "cooling -> storage"
+      ],
+      "interpretation": "Direct comparison slice is small (5 papers) but high-value because it anchors head-to-head decisions instead of isolated protocol claims."
+    },
+    {
+      "family": "vitrification",
+      "paperCount": 5,
+      "topChemicals": [
+        "Dimethyl Sulfoxide",
+        "Ethylene Glycol",
+        "Propylene Glycol"
+      ],
+      "topOutcomes": [
+        "morphology",
+        "viability",
+        "transplantation"
+      ],
+      "topTransitions": [
+        "loading -> culture",
+        "loading -> warming"
+      ],
+      "interpretation": "Smaller but sharper cluster, often tied to Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol. This is the likely optimization frontier if post-warm outcomes can be made more comparable."
+    }
+  ],
+  "dominantCpaPatterns": [
+    {
+      "family": "slow-freezing",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "ovarian tissue",
+      "paperCount": 3,
+      "outcomeClasses": [
+        "viability",
+        "morphology",
+        "function"
+      ]
+    },
+    {
+      "family": "vitrification",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "ovarian tissue",
+      "paperCount": 3,
+      "outcomeClasses": [
+        "morphology",
+        "viability",
+        "transplantation"
+      ]
+    },
+    {
+      "family": "vitrification",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "follicles",
+      "paperCount": 3,
+      "outcomeClasses": [
+        "morphology",
+        "viability",
+        "transplantation"
+      ]
+    },
+    {
+      "family": "vitrification",
+      "chemical": "Ethylene Glycol",
+      "specimenType": "ovarian tissue",
+      "paperCount": 3,
+      "outcomeClasses": [
+        "morphology",
+        "viability",
+        "transplantation"
+      ]
+    },
+    {
+      "family": "vitrification",
+      "chemical": "Ethylene Glycol",
+      "specimenType": "follicles",
+      "paperCount": 3,
+      "outcomeClasses": [
+        "morphology",
+        "viability",
+        "transplantation"
+      ]
+    },
+    {
+      "family": "slow-freezing",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "follicles",
+      "paperCount": 2,
+      "outcomeClasses": [
+        "viability",
+        "morphology"
+      ]
+    }
+  ],
+  "contradictions": [],
+  "evidenceQuality": {
+    "passesAllGates": true,
+    "reviewedOutcomeCoverage": 0.429,
+    "reviewedStepPhaseCoverage": 0.571,
+    "reviewedMinimumDepthReady": true,
+    "normalizedProtocolCount": 16,
+    "protocolsWithNormalizationWarnings": 3,
+    "missingOutcomeCount": 4,
+    "missingStepPhaseCount": 3,
+    "pendingSourceEnrichmentCount": 4,
+    "reviewedSourceEnrichmentCount": 0,
+    "secondarySourceReviewedCount": 0,
+    "reviewedPrimarySupportedCount": 7,
+    "reviewedSecondarySupportedCount": 0,
+    "reviewedManualOnlyCount": 0
+  },
+  "evidenceGaps": [
+    {
+      "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+      "decisionImpact": "medium",
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "transplant relevant",
+      "missingFields": [
+        "outcomeClasses",
+        "authority"
+      ],
+      "rationale": "no resolved extraction available for this reviewed paper"
+    },
+    {
+      "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+      "decisionImpact": "medium",
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "research only",
+      "missingFields": [
+        "outcomeClasses",
+        "stepPhases",
+        "authority",
+        "protocolDetail"
+      ],
+      "rationale": "no resolved extraction available for this reviewed paper"
+    },
+    {
+      "title": "Cryopreservation and in vitro culture of caprine preantral follicles",
+      "decisionImpact": "medium",
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "research only",
+      "missingFields": [
+        "outcomeClasses",
+        "stepPhases",
+        "authority"
+      ],
+      "rationale": "no resolved extraction available for this reviewed paper"
+    },
+    {
+      "title": "Ovarian and oocyte cryopreservation",
+      "decisionImpact": "medium",
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "transplant relevant",
+      "missingFields": [
+        "outcomeClasses",
+        "stepPhases",
+        "authority"
+      ],
+      "rationale": "no resolved extraction available for this reviewed paper"
+    }
+  ],
+  "nextExperiments": [
+    {
+      "title": "Head-to-head DMSO-centered ovarian tissue benchmark",
+      "category": "benchmark",
+      "decisionQuestion": "Should Atlas prioritize \"Head-to-head DMSO-centered ovarian tissue benchmark\" as the main head-to-head wedge benchmark?",
+      "primaryReadouts": [
+        "transplantation",
+        "function"
+      ],
+      "comparisonArms": [
+        "slow-freezing arm",
+        "vitrification arm"
+      ],
+      "whyNow": "This wedge is the best current candidate, but it should still be treated as a proving ground rather than a locked-in entry point."
+    },
+    {
+      "title": "Promote morphology-heavy protocols to viability endpoints",
+      "category": "endpoint-upgrade",
+      "decisionQuestion": "Would \"Promote morphology-heavy protocols to viability endpoints\" materially sharpen the wedge decision if tested next?",
+      "primaryReadouts": [
+        "transplantation",
+        "function"
+      ],
+      "comparisonArms": [
+        "current standard protocol",
+        "top reported protocol with transplantation endpoint"
+      ],
+      "whyNow": "This remains one of the highest-signal next experiments in the current domain slice."
+    },
+    {
+      "title": "Same-species DMSO + EG vitrification benchmark",
+      "category": "benchmark",
+      "decisionQuestion": "Would \"Same-species DMSO + EG vitrification benchmark\" materially sharpen the wedge decision if tested next?",
+      "primaryReadouts": [
+        "transplantation",
+        "function"
+      ],
+      "comparisonArms": [
+        "slow-freezing arm",
+        "vitrification arm"
+      ],
+      "whyNow": "This remains one of the highest-signal next experiments in the current domain slice."
+    }
+  ],
+  "opportunityScan": [
+    {
+      "title": "Promote morphology-heavy protocols to viability endpoints",
+      "whyInteresting": "Several ovarian tissue protocols that currently look acceptable on morphology alone will reshuffle once they are compared on viability or functional endpoints. Evidence papers=6, strong outcomes=1, contradictions=0.",
+      "painPoint": "Promising protocols are still over-indexed on viability or in-vitro function rather than transplantation-grade outcomes.",
+      "commercialWhyNow": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows."
+    },
+    {
+      "title": "Head-to-head DMSO-centered ovarian tissue benchmark",
+      "whyInteresting": "A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation. Evidence papers=6, strong outcomes=0, contradictions=0.",
+      "painPoint": "Literature looks directionally promising but still underspecified for a clean protocol decision.",
+      "commercialWhyNow": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows."
+    },
+    {
+      "title": "Same-species DMSO + EG vitrification benchmark",
+      "whyInteresting": "The apparent promise of DMSO + ethylene glycol in ovarian tissue is currently species-confounded and should be tested within one species and one specimen format. Evidence papers=4, strong outcomes=0, contradictions=0.",
+      "painPoint": "Literature looks directionally promising but still underspecified for a clean protocol decision.",
+      "commercialWhyNow": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows."
+    },
+    {
+      "title": "Whole-ovary perfusion and rewarming workflow benchmark",
+      "whyInteresting": "Whole-ovary success is currently limited more by perfusion/loading workflow quality than by entirely new chemistry. Evidence papers=2, strong outcomes=1, contradictions=0.",
+      "painPoint": "A small number of promising papers still lack enough procedural detail to compare fairly.",
+      "commercialWhyNow": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows."
+    }
+  ],
+  "callout": "Head-to-head DMSO-centered ovarian tissue benchmark is the explicit active wedge. Matrix rows=6, top decision-useful evidence gaps=0, and next experiments are already packetized for review."
+}

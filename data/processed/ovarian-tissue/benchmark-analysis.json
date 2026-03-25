@@ -1,0 +1,1276 @@
+{
+  "domain": "ovarian-tissue",
+  "baseline": {
+    "domain": "ovarian-tissue",
+    "generatedAt": "2026-03-23T21:25:52.905Z",
+    "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
+    "benchmarkEntryCount": 28,
+    "subsets": {
+      "all": {
+        "subset": "all",
+        "entryCount": 28,
+        "expectedIncludedCount": 16,
+        "inclusion": {
+          "truePositive": 16,
+          "trueNegative": 0,
+          "falsePositive": 12,
+          "falseNegative": 0,
+          "accuracy": 0.571,
+          "precision": 0.571,
+          "recall": 1,
+          "f1": 0.727
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 16,
+            "exactMatchCount": 11,
+            "accuracy": 0.688,
+            "mismatches": [
+              {
+                "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+                "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+                "expected": "experimental",
+                "actual": "methods"
+              },
+              {
+                "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+                "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+                "expected": "experimental",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": "experimental",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+                "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+                "expected": "experimental",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+                "title": "Ovarian and oocyte cryopreservation",
+                "expected": "review",
+                "actual": "unknown"
+              }
+            ]
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 16,
+            "exactMatchCount": 10,
+            "accuracy": 0.625,
+            "mismatches": [
+              {
+                "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+                "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+                "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+                "expected": "vitrification",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": "vitrification",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+                "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+                "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+                "title": "Ovarian and oocyte cryopreservation",
+                "expected": "comparative",
+                "actual": "slow-freezing"
+              }
+            ]
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 16,
+            "exactMatchCount": 16,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 16,
+            "exactMatchCount": 14,
+            "averageF1": 0.958,
+            "averagePrecision": 1,
+            "averageRecall": 0.938,
+            "mismatches": [
+              {
+                "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+                "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+                "expected": [
+                  "ovarian tissue",
+                  "whole ovary"
+                ],
+                "actual": [
+                  "ovarian tissue"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+                "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+                "expected": [
+                  "follicles",
+                  "ovarian tissue"
+                ],
+                "actual": [
+                  "follicles"
+                ],
+                "f1": 0.667
+              }
+            ]
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 12,
+            "exactMatchCount": 10,
+            "averageF1": 0.833,
+            "averagePrecision": 0.833,
+            "averageRecall": 0.833,
+            "mismatches": [
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": [
+                  "morphology",
+                  "transplantation",
+                  "viability"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+                "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+                "expected": [
+                  "function",
+                  "viability"
+                ],
+                "actual": [
+                  "reproductive"
+                ],
+                "f1": 0
+              }
+            ]
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 13,
+            "exactMatchCount": 9,
+            "averageF1": 0.862,
+            "averagePrecision": 0.838,
+            "averageRecall": 0.923,
+            "mismatches": [
+              {
+                "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+                "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+                "expected": [
+                  "assessment",
+                  "loading",
+                  "warming"
+                ],
+                "actual": [
+                  "unknown",
+                  "warming"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+                "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+                "expected": [
+                  "cooling",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "assessment",
+                  "storage",
+                  "unknown",
+                  "warming"
+                ],
+                "f1": 0.571
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": [
+                  "equilibration",
+                  "loading"
+                ],
+                "actual": [
+                  "assessment",
+                  "equilibration",
+                  "loading",
+                  "storage",
+                  "unknown"
+                ],
+                "f1": 0.571
+              },
+              {
+                "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+                "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+                "expected": [
+                  "cooling",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage",
+                  "unknown",
+                  "warming"
+                ],
+                "f1": 0.667
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 16,
+            "labeledCount": 12,
+            "coverageRate": 0.75
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 16,
+            "labeledCount": 13,
+            "coverageRate": 0.813
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.713,
+          "averageOnCorrectIncluded": 0.713,
+          "averageOnIncorrectIncluded": 0.465
+        },
+        "unexpectedIncludedPaperIds": [
+          "f18dbca4-01e4-46da-9416-ec324e26ca55",
+          "e6aaf317-52fc-441c-bac4-5143fbb9e54c",
+          "fdef775d-8d93-4bdc-a7fe-7f9074ce47fb",
+          "dc753166-c837-4fe4-af6a-28cd82058473",
+          "e7d80563-9f61-460d-b7da-53f60ef58b50",
+          "e263dbc7-c35b-47ce-8d9b-57e1e6ac34e4",
+          "fea34b3b-4387-4267-bc1c-8bfc5c6d4034",
+          "fbf690db-1d63-48f7-89cb-afa7bd81b16f",
+          "db1f328f-841d-4b71-b786-aaa958133cce",
+          "fb9f4b85-d77c-49e6-976e-ded1ec242b61",
+          "e7fe405f-8033-4260-bad8-2041ac9b2ac0",
+          "ef159502-8cd1-433a-9c83-1576490b3a43"
+        ],
+        "unexpectedExcludedPaperIds": []
+      },
+      "reviewed": {
+        "subset": "reviewed",
+        "entryCount": 19,
+        "expectedIncludedCount": 7,
+        "inclusion": {
+          "truePositive": 7,
+          "trueNegative": 0,
+          "falsePositive": 12,
+          "falseNegative": 0,
+          "accuracy": 0.368,
+          "precision": 0.368,
+          "recall": 1,
+          "f1": 0.538
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 7,
+            "exactMatchCount": 2,
+            "accuracy": 0.286,
+            "mismatches": [
+              {
+                "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+                "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+                "expected": "experimental",
+                "actual": "methods"
+              },
+              {
+                "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+                "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+                "expected": "experimental",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": "experimental",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+                "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+                "expected": "experimental",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+                "title": "Ovarian and oocyte cryopreservation",
+                "expected": "review",
+                "actual": "unknown"
+              }
+            ]
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 7,
+            "exactMatchCount": 1,
+            "accuracy": 0.143,
+            "mismatches": [
+              {
+                "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+                "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+                "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+                "expected": "vitrification",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": "vitrification",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+                "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+                "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+                "title": "Ovarian and oocyte cryopreservation",
+                "expected": "comparative",
+                "actual": "slow-freezing"
+              }
+            ]
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 7,
+            "exactMatchCount": 7,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 7,
+            "exactMatchCount": 5,
+            "averageF1": 0.905,
+            "averagePrecision": 1,
+            "averageRecall": 0.857,
+            "mismatches": [
+              {
+                "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+                "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+                "expected": [
+                  "ovarian tissue",
+                  "whole ovary"
+                ],
+                "actual": [
+                  "ovarian tissue"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+                "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+                "expected": [
+                  "follicles",
+                  "ovarian tissue"
+                ],
+                "actual": [
+                  "follicles"
+                ],
+                "f1": 0.667
+              }
+            ]
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 3,
+            "exactMatchCount": 1,
+            "averageF1": 0.333,
+            "averagePrecision": 0.333,
+            "averageRecall": 0.333,
+            "mismatches": [
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": [
+                  "morphology",
+                  "transplantation",
+                  "viability"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+                "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+                "expected": [
+                  "function",
+                  "viability"
+                ],
+                "actual": [
+                  "reproductive"
+                ],
+                "f1": 0
+              }
+            ]
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 4,
+            "exactMatchCount": 0,
+            "averageF1": 0.552,
+            "averagePrecision": 0.475,
+            "averageRecall": 0.75,
+            "mismatches": [
+              {
+                "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+                "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+                "expected": [
+                  "assessment",
+                  "loading",
+                  "warming"
+                ],
+                "actual": [
+                  "unknown",
+                  "warming"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+                "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+                "expected": [
+                  "cooling",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "assessment",
+                  "storage",
+                  "unknown",
+                  "warming"
+                ],
+                "f1": 0.571
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": [
+                  "equilibration",
+                  "loading"
+                ],
+                "actual": [
+                  "assessment",
+                  "equilibration",
+                  "loading",
+                  "storage",
+                  "unknown"
+                ],
+                "f1": 0.571
+              },
+              {
+                "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+                "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+                "expected": [
+                  "cooling",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage",
+                  "unknown",
+                  "warming"
+                ],
+                "f1": 0.667
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 7,
+            "labeledCount": 3,
+            "coverageRate": 0.429
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 7,
+            "labeledCount": 4,
+            "coverageRate": 0.571
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.577,
+          "averageOnCorrectIncluded": 0.577,
+          "averageOnIncorrectIncluded": 0.465
+        },
+        "unexpectedIncludedPaperIds": [
+          "f18dbca4-01e4-46da-9416-ec324e26ca55",
+          "e6aaf317-52fc-441c-bac4-5143fbb9e54c",
+          "fdef775d-8d93-4bdc-a7fe-7f9074ce47fb",
+          "dc753166-c837-4fe4-af6a-28cd82058473",
+          "e7d80563-9f61-460d-b7da-53f60ef58b50",
+          "e263dbc7-c35b-47ce-8d9b-57e1e6ac34e4",
+          "fea34b3b-4387-4267-bc1c-8bfc5c6d4034",
+          "fbf690db-1d63-48f7-89cb-afa7bd81b16f",
+          "db1f328f-841d-4b71-b786-aaa958133cce",
+          "fb9f4b85-d77c-49e6-976e-ded1ec242b61",
+          "e7fe405f-8033-4260-bad8-2041ac9b2ac0",
+          "ef159502-8cd1-433a-9c83-1576490b3a43"
+        ],
+        "unexpectedExcludedPaperIds": []
+      },
+      "seeded": {
+        "subset": "seeded",
+        "entryCount": 9,
+        "expectedIncludedCount": 9,
+        "inclusion": {
+          "truePositive": 9,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.818,
+          "averageOnCorrectIncluded": 0.818,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      }
+    },
+    "gates": [
+      {
+        "name": "reviewed inclusion F1",
+        "passed": false,
+        "actual": 0.538,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against gaming the corpus by excluding reviewed in-scope papers."
+      },
+      {
+        "name": "reviewed inclusion precision",
+        "passed": false,
+        "actual": 0.368,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against keeping clearly excluded reviewed papers in the atlas."
+      },
+      {
+        "name": "reviewed protocol family accuracy",
+        "passed": false,
+        "actual": 0.143,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Reviewed family labels should stay stable before autonomous updates are trusted."
+      },
+      {
+        "name": "reviewed paper type accuracy",
+        "passed": false,
+        "actual": 0.286,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Paper-type drift is a common failure mode when extraction gets too eager."
+      },
+      {
+        "name": "reviewed specimen macro F1",
+        "passed": true,
+        "actual": 0.905,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+      },
+      {
+        "name": "reviewed species macro F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Species leakage is another easy way for the system to look cleaner than it is."
+      }
+    ],
+    "summary": {
+      "passesAllGates": false,
+      "reviewedInclusionF1DeltaVsAll": -0.189,
+      "reviewedOutcomeCoverage": 0.429,
+      "reviewedStepPhaseCoverage": 0.571,
+      "reviewedMinimumDepthReady": true
+    }
+  },
+  "resolved": {
+    "domain": "ovarian-tissue",
+    "generatedAt": "2026-03-23T21:25:52.906Z",
+    "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
+    "benchmarkEntryCount": 28,
+    "subsets": {
+      "all": {
+        "subset": "all",
+        "entryCount": 28,
+        "expectedIncludedCount": 16,
+        "inclusion": {
+          "truePositive": 16,
+          "trueNegative": 12,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 16,
+            "exactMatchCount": 16,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 16,
+            "exactMatchCount": 16,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 16,
+            "exactMatchCount": 16,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 16,
+            "exactMatchCount": 16,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 12,
+            "exactMatchCount": 12,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 13,
+            "exactMatchCount": 13,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 16,
+            "labeledCount": 16,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 16,
+            "labeledCount": 12,
+            "coverageRate": 0.75
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 16,
+            "labeledCount": 13,
+            "coverageRate": 0.813
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.795,
+          "averageOnCorrectIncluded": 0.795,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "reviewed": {
+        "subset": "reviewed",
+        "entryCount": 19,
+        "expectedIncludedCount": 7,
+        "inclusion": {
+          "truePositive": 7,
+          "trueNegative": 12,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 7,
+            "exactMatchCount": 7,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 7,
+            "exactMatchCount": 7,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 7,
+            "exactMatchCount": 7,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 7,
+            "exactMatchCount": 7,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 3,
+            "exactMatchCount": 3,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 7,
+            "labeledCount": 7,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 7,
+            "labeledCount": 3,
+            "coverageRate": 0.429
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 7,
+            "labeledCount": 4,
+            "coverageRate": 0.571
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.766,
+          "averageOnCorrectIncluded": 0.766,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "seeded": {
+        "subset": "seeded",
+        "entryCount": 9,
+        "expectedIncludedCount": 9,
+        "inclusion": {
+          "truePositive": 9,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 9,
+            "exactMatchCount": 9,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 9,
+            "labeledCount": 9,
+            "coverageRate": 1
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.818,
+          "averageOnCorrectIncluded": 0.818,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      }
+    },
+    "gates": [
+      {
+        "name": "reviewed inclusion F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against gaming the corpus by excluding reviewed in-scope papers."
+      },
+      {
+        "name": "reviewed inclusion precision",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against keeping clearly excluded reviewed papers in the atlas."
+      },
+      {
+        "name": "reviewed protocol family accuracy",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Reviewed family labels should stay stable before autonomous updates are trusted."
+      },
+      {
+        "name": "reviewed paper type accuracy",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Paper-type drift is a common failure mode when extraction gets too eager."
+      },
+      {
+        "name": "reviewed specimen macro F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+      },
+      {
+        "name": "reviewed species macro F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Species leakage is another easy way for the system to look cleaner than it is."
+      }
+    ],
+    "summary": {
+      "passesAllGates": true,
+      "reviewedInclusionF1DeltaVsAll": 0,
+      "reviewedOutcomeCoverage": 0.429,
+      "reviewedStepPhaseCoverage": 0.571,
+      "reviewedMinimumDepthReady": true
+    }
+  },
+  "reviewedDepth": {
+    "outcomeCoverageDelta": 0,
+    "stepPhaseCoverageDelta": 0,
+    "missingOutcomeCount": 4,
+    "missingStepPhaseCount": 3,
+    "missingOutcomeAudit": {
+      "extractorGapCount": 0,
+      "ambiguousEvidenceCount": 0,
+      "evidenceThinCount": 4
+    },
+    "missingOutcomes": [
+      {
+        "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+        "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+        "protocolFamily": "slow-freezing",
+        "paperType": "experimental",
+        "evidenceStatus": "evidence-thin",
+        "evidenceReason": "no resolved extraction available for this reviewed paper"
+      },
+      {
+        "paperId": "eb9d9be6-4244-4e4b-892e-ba809925613a",
+        "title": "Cryopreservation and in vitro culture of caprine preantral follicles",
+        "protocolFamily": "comparative",
+        "paperType": "review",
+        "evidenceStatus": "evidence-thin",
+        "evidenceReason": "no resolved extraction available for this reviewed paper"
+      },
+      {
+        "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+        "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+        "protocolFamily": "slow-freezing",
+        "paperType": "experimental",
+        "evidenceStatus": "evidence-thin",
+        "evidenceReason": "no resolved extraction available for this reviewed paper"
+      },
+      {
+        "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+        "title": "Ovarian and oocyte cryopreservation",
+        "protocolFamily": "comparative",
+        "paperType": "review",
+        "evidenceStatus": "evidence-thin",
+        "evidenceReason": "no resolved extraction available for this reviewed paper"
+      }
+    ],
+    "missingStepPhases": [
+      {
+        "paperId": "eb9d9be6-4244-4e4b-892e-ba809925613a",
+        "title": "Cryopreservation and in vitro culture of caprine preantral follicles",
+        "protocolFamily": "comparative",
+        "paperType": "review"
+      },
+      {
+        "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+        "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+        "protocolFamily": "slow-freezing",
+        "paperType": "experimental"
+      },
+      {
+        "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+        "title": "Ovarian and oocyte cryopreservation",
+        "protocolFamily": "comparative",
+        "paperType": "review"
+      }
+    ]
+  },
+  "delta": {
+    "reviewedInclusionF1": 0.462,
+    "reviewedProtocolFamilyAccuracy": 0.857,
+    "reviewedPaperTypeAccuracy": 0.714,
+    "reviewedSpeciesMacroF1": 0,
+    "reviewedSpecimenMacroF1": 0.095,
+    "reviewedOutcomeCoverage": 0,
+    "reviewedStepPhaseCoverage": 0,
+    "gatePassCount": 4
+  }
+}

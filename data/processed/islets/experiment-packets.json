@@ -1,0 +1,159 @@
+{
+  "generatedAt": "2026-03-24T22:28:31.292Z",
+  "domain": "islets",
+  "wedgeId": "islets:additive-assisted-islet-recovery-benchmark-on-a-fixed-base-cryomix",
+  "packets": [
+    {
+      "packetId": "islets:additive-assisted-islet-recovery-benchmark-on-a-fixed-base-cryomix",
+      "hypothesisId": "islets:additive-assisted-islet-recovery-benchmark-on-a-fixed-base-cryomix",
+      "title": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+      "category": "benchmark",
+      "decisionQuestion": "Should Atlas prioritize \"Additive-assisted islet recovery benchmark on a fixed base cryomix\" as the main head-to-head wedge benchmark?",
+      "whyNow": "Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet.",
+      "claim": "Several islet papers imply that recovery gains may come from adjuncts added around a standard cryomix rather than from entirely new base CPA chemistry.",
+      "proposedExperiment": "Run a fixed-backbone additive benchmark with p38 MAPK inhibitor, Trehalose, Beraprost Sodium, Polyvinyl Pyrrolidone on a DMSO-centered base mix, using post-thaw function as the primary readout.",
+      "fixedVariables": [
+        "base CPA backbone",
+        "species",
+        "specimen format",
+        "assessment window",
+        "specimen handling",
+        "post-thaw evaluation rubric"
+      ],
+      "comparisonArms": [
+        "base cryomix only",
+        "base cryomix + p38 MAPK inhibitor",
+        "base cryomix + Trehalose",
+        "base cryomix + Beraprost Sodium",
+        "base cryomix + Polyvinyl Pyrrolidone"
+      ],
+      "primaryReadouts": [
+        "function",
+        "viability"
+      ],
+      "secondaryReadouts": [
+        "yield",
+        "transplantation"
+      ],
+      "supportingPaperTitles": [
+        "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+        "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+        "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+        "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+        "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+        "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium"
+      ],
+      "keyUncertainties": [
+        "1 relevant papers still have sparse step structure",
+        "1 unresolved contradictions remain in the relevant evidence slice",
+        "Benchmark still lacks balanced evidence from both vitrification and slow-freezing"
+      ],
+      "authorityNotes": [
+        "supporting papers=6",
+        "strong outcomes=3",
+        "contradictions=1",
+        "transplantation papers=1"
+      ],
+      "translationalRationale": "Useful if the goal is to justify a first islets wedge around post-thaw recovery and standardization.",
+      "priorityScore": 0.699
+    },
+    {
+      "packetId": "islets:matched-species-islet-vitrification-vs-slow-freezing-benchmark",
+      "hypothesisId": "islets:matched-species-islet-vitrification-vs-slow-freezing-benchmark",
+      "title": "Matched-species islet vitrification vs slow-freezing benchmark",
+      "category": "benchmark",
+      "decisionQuestion": "Would \"Matched-species islet vitrification vs slow-freezing benchmark\" materially sharpen the wedge decision if tested next?",
+      "whyNow": "This remains one of the highest-signal next experiments in the current domain slice.",
+      "claim": "The current islet corpus overweights slow-freezing, so a matched-species comparison is needed to separate real vitrification gains from endpoint and species confounding.",
+      "proposedExperiment": "The cleaned islet slice contains many slow-freezing studies, a smaller vitrification set, and a few comparative papers. A direct benchmark with the same species and the same post-thaw function readout is the fastest way to convert that literature asymmetry into actionable signal.",
+      "fixedVariables": [
+        "species",
+        "specimen format",
+        "assessment window",
+        "specimen handling",
+        "post-thaw evaluation rubric"
+      ],
+      "comparisonArms": [
+        "slow-freezing arm",
+        "vitrification arm"
+      ],
+      "primaryReadouts": [
+        "function",
+        "viability"
+      ],
+      "secondaryReadouts": [
+        "transplantation",
+        "yield",
+        "morphology"
+      ],
+      "supportingPaperTitles": [
+        "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+        "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+        "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+        "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+        "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+        "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets"
+      ],
+      "keyUncertainties": [
+        "1 relevant papers still have sparse step structure",
+        "20 unresolved contradictions remain in the relevant evidence slice"
+      ],
+      "authorityNotes": [
+        "supporting papers=6",
+        "strong outcomes=4",
+        "contradictions=20",
+        "transplantation papers=1"
+      ],
+      "translationalRationale": "Useful if the goal is to justify a first islets wedge around post-thaw recovery and standardization.",
+      "priorityScore": 0.919
+    },
+    {
+      "packetId": "islets:promote-islet-function-heavy-protocols-to-transplantation-endpoints",
+      "hypothesisId": "islets:promote-islet-function-heavy-protocols-to-transplantation-endpoints",
+      "title": "Promote islet function-heavy protocols to transplantation endpoints",
+      "category": "endpoint-upgrade",
+      "decisionQuestion": "Would \"Promote islet function-heavy protocols to transplantation endpoints\" materially sharpen the wedge decision if tested next?",
+      "whyNow": "This remains one of the highest-signal next experiments in the current domain slice.",
+      "claim": "Several islet protocols that look promising on insulin secretion or in-vitro function will reorder once they are compared on graft or transplantation outcomes.",
+      "proposedExperiment": "The curated islet slice now has better function labeling than transplantation coverage. Converting the strongest in-vitro function protocols into a small transplantation benchmark is likely higher-signal than inventing a new chemistry path immediately.",
+      "fixedVariables": [
+        "assessment window",
+        "specimen handling",
+        "post-thaw evaluation rubric"
+      ],
+      "comparisonArms": [
+        "current standard protocol",
+        "top reported protocol with transplantation endpoint"
+      ],
+      "primaryReadouts": [
+        "transplantation",
+        "function"
+      ],
+      "secondaryReadouts": [
+        "viability",
+        "yield",
+        "morphology"
+      ],
+      "supportingPaperTitles": [
+        "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+        "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+        "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+        "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+        "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+        "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets"
+      ],
+      "keyUncertainties": [
+        "1 relevant papers still have sparse step structure",
+        "10 unresolved contradictions remain in the relevant evidence slice"
+      ],
+      "authorityNotes": [
+        "supporting papers=6",
+        "strong outcomes=4",
+        "contradictions=10",
+        "transplantation papers=1"
+      ],
+      "translationalRationale": "Useful if the goal is to turn a plausible islets wedge into a more decision-ready one.",
+      "priorityScore": 0.879
+    }
+  ]
+}

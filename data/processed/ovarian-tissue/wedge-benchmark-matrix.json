@@ -1,0 +1,163 @@
+{
+  "generatedAt": "2026-03-24T22:19:11.515Z",
+  "domain": "ovarian-tissue",
+  "wedgeId": "ovarian-tissue:head-to-head-dmso-centered-ovarian-tissue-benchmark",
+  "wedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
+  "rows": [
+    {
+      "paperId": "e60a0ee8-afa8-449c-bbab-60f04b2fdf09",
+      "title": "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide + Ethylene Glycol + Sucrose",
+      "adjuncts": [],
+      "species": [
+        "cat"
+      ],
+      "specimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "endpointClasses": [
+        "viability",
+        "morphology"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "preclinical",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 1,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
+      "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+      "protocolFamily": "vitrification",
+      "baseCpaBackbone": "Dimethyl Sulfoxide + Ethylene Glycol + Propylene Glycol",
+      "adjuncts": [],
+      "species": [
+        "human"
+      ],
+      "specimenTypes": [
+        "ovarian tissue",
+        "follicles"
+      ],
+      "endpointClasses": [
+        "morphology"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 1,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+      "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+      "protocolFamily": "vitrification",
+      "baseCpaBackbone": "Dimethyl Sulfoxide + Ethylene Glycol",
+      "adjuncts": [],
+      "species": [
+        "human"
+      ],
+      "specimenTypes": [
+        "ovarian tissue",
+        "follicles"
+      ],
+      "endpointClasses": [
+        "morphology",
+        "viability",
+        "transplantation"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 1,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "da34cec8-3a6e-460b-ae3b-62afb90c6e4e",
+      "title": "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide + Propylene Glycol",
+      "adjuncts": [],
+      "species": [
+        "sheep"
+      ],
+      "specimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "endpointClasses": [
+        "viability",
+        "morphology"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "preclinical",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 1,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+      "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide + Sucrose",
+      "adjuncts": [],
+      "species": [
+        "human"
+      ],
+      "specimenTypes": [
+        "ovarian tissue"
+      ],
+      "endpointClasses": [
+        "viability",
+        "function"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 1,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "f74836db-46fb-4ca6-b619-a505fc30d0a0",
+      "title": "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants",
+      "protocolFamily": "vitrification",
+      "baseCpaBackbone": "Dimethyl Sulfoxide + Ethylene Glycol",
+      "adjuncts": [],
+      "species": [
+        "peccary"
+      ],
+      "specimenTypes": [
+        "ovarian tissue",
+        "follicles"
+      ],
+      "endpointClasses": [
+        "viability",
+        "morphology"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "preclinical",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 1,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    }
+  ],
+  "summary": {
+    "dominantBackbones": [
+      "Dimethyl Sulfoxide + Ethylene Glycol + Sucrose",
+      "Dimethyl Sulfoxide + Ethylene Glycol + Propylene Glycol",
+      "Dimethyl Sulfoxide + Ethylene Glycol",
+      "Dimethyl Sulfoxide + Propylene Glycol"
+    ],
+    "dominantAdjuncts": [],
+    "strongestRows": [],
+    "highestConfoundRows": [],
+    "currentRead": "Head-to-head DMSO-centered ovarian tissue benchmark is currently grounded in 6 wedge-relevant papers, with authority and confounds visible row by row."
+  }
+}

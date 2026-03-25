@@ -1,0 +1,2315 @@
+{
+  "domain": "islets",
+  "baseline": {
+    "domain": "islets",
+    "generatedAt": "2026-03-23T21:25:55.232Z",
+    "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
+    "benchmarkEntryCount": 53,
+    "subsets": {
+      "all": {
+        "subset": "all",
+        "entryCount": 53,
+        "expectedIncludedCount": 46,
+        "inclusion": {
+          "truePositive": 46,
+          "trueNegative": 0,
+          "falsePositive": 7,
+          "falseNegative": 0,
+          "accuracy": 0.868,
+          "precision": 0.868,
+          "recall": 1,
+          "f1": 0.929
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 46,
+            "exactMatchCount": 41,
+            "accuracy": 0.891,
+            "mismatches": [
+              {
+                "paperId": "f2002bfc-a9e1-45b3-99b7-cff44eee4194",
+                "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+                "expected": "experimental",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "571357d4-0860-494b-8a6a-23814bacb5a0",
+                "title": "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+                "expected": "experimental",
+                "actual": "methods"
+              },
+              {
+                "paperId": "341ba0bf-982b-48aa-88b0-a8d57ec8199e",
+                "title": "Human islet mass, morphology, and survival after cryopreservation using the Edmonton protocol",
+                "expected": "experimental",
+                "actual": "methods"
+              },
+              {
+                "paperId": "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
+                "title": "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets",
+                "expected": "experimental",
+                "actual": "methods"
+              },
+              {
+                "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+                "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+                "expected": "experimental",
+                "actual": "unknown"
+              }
+            ]
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 38,
+            "exactMatchCount": 10,
+            "accuracy": 0.263,
+            "mismatches": [
+              {
+                "paperId": "8171cfdd-b8b3-488a-ba11-a919b71c1d2c",
+                "title": "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "b52df02d-5796-4b24-ba2c-e76c9f6ebd93",
+                "title": "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+                "title": "CRYOPRESERVATION OF CHICK ISLETS",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
+                "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "571357d4-0860-494b-8a6a-23814bacb5a0",
+                "title": "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
+                "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
+                "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "c05ceecd-014d-4e09-9dfa-5e095dc5de93",
+                "title": "Effect of thawing rate and post-thaw culture on the cryopreserved fetal rat islets: Functional and morphological correlation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "341ba0bf-982b-48aa-88b0-a8d57ec8199e",
+                "title": "Human islet mass, morphology, and survival after cryopreservation using the Edmonton protocol",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f68c40d9-4184-4dc8-b527-095353b5c290",
+                "title": "Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f91b7060-e698-46e7-8746-3d40eb683357",
+                "title": "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
+                "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",
+                "title": "Interaction of Cooling Rate, Warming Rate, and Extent of Permeation of Cryoprotectant in Determining Survival of Isolated Rat Islets of Langerhans During Cryopreservation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "b293075d-011c-4c8d-95a6-215ae7952c72",
+                "title": "Intraportal Autotransplantation of Cryopreserved Porcine Islets of Langerhans",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+                "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "72b969f2-a34b-439a-9300-511e3309b5d2",
+                "title": "Murine Islet Cryopreservation and Corticosteroids: Functional Studies",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "c10110ba-e282-4d66-80f6-bebbfcedbbfa",
+                "title": "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+                "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+                "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              }
+            ]
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 38,
+            "exactMatchCount": 34,
+            "averageF1": 0.947,
+            "averagePrecision": 0.934,
+            "averageRecall": 0.974,
+            "mismatches": [
+              {
+                "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+                "title": "CRYOPRESERVATION OF CHICK ISLETS",
+                "expected": [
+                  "chick"
+                ],
+                "actual": [
+                  "mouse"
+                ],
+                "f1": 0
+              },
+              {
+                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+                "expected": [
+                  "human"
+                ],
+                "actual": [
+                  "dog",
+                  "human"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "571357d4-0860-494b-8a6a-23814bacb5a0",
+                "title": "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+                "expected": [
+                  "mouse"
+                ],
+                "actual": [
+                  "human",
+                  "mouse"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "1453f932-2e03-42a3-968a-9efaf2b3233e",
+                "title": "USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION",
+                "expected": [
+                  "pig"
+                ],
+                "actual": [
+                  "mouse",
+                  "pig"
+                ],
+                "f1": 0.667
+              }
+            ]
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 38,
+            "exactMatchCount": 37,
+            "averageF1": 0.991,
+            "averagePrecision": 1,
+            "averageRecall": 0.987,
+            "mismatches": [
+              {
+                "paperId": "8171cfdd-b8b3-488a-ba11-a919b71c1d2c",
+                "title": "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation",
+                "expected": [
+                  "islets",
+                  "pancreatic islets"
+                ],
+                "actual": [
+                  "islets"
+                ],
+                "f1": 0.667
+              }
+            ]
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 46,
+            "exactMatchCount": 36,
+            "averageF1": 0.893,
+            "averagePrecision": 0.861,
+            "averageRecall": 1,
+            "mismatches": [
+              {
+                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+                "expected": [
+                  "function"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+                "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+                "expected": [
+                  "viability"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
+                "title": "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+                "expected": [
+                  "function"
+                ],
+                "actual": [
+                  "function",
+                  "viability"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "2c3150ae-558a-49b0-b989-676d25c27884",
+                "title": "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+                "expected": [
+                  "transplantation"
+                ],
+                "actual": [
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
+                "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
+                "expected": [
+                  "viability"
+                ],
+                "actual": [
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
+                "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+                "expected": [
+                  "function",
+                  "viability"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.8
+              },
+              {
+                "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
+                "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+                "expected": [
+                  "function",
+                  "transplantation"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.8
+              },
+              {
+                "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+                "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+                "expected": [
+                  "function",
+                  "viability"
+                ],
+                "actual": [
+                  "function",
+                  "morphology",
+                  "viability"
+                ],
+                "f1": 0.8
+              },
+              {
+                "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+                "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+                "expected": [
+                  "function",
+                  "viability"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.8
+              },
+              {
+                "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+                "title": "Successful Cryopreservation of Fetal Porcine Proislets",
+                "expected": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "actual": [
+                  "function",
+                  "morphology",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.857
+              }
+            ]
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 45,
+            "exactMatchCount": 11,
+            "averageF1": 0.638,
+            "averagePrecision": 0.617,
+            "averageRecall": 0.754,
+            "mismatches": [
+              {
+                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0
+              },
+              {
+                "paperId": "f2002bfc-a9e1-45b3-99b7-cff44eee4194",
+                "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+                "expected": [
+                  "assessment",
+                  "loading",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "culture",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.286
+              },
+              {
+                "paperId": "b52df02d-5796-4b24-ba2c-e76c9f6ebd93",
+                "title": "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "loading",
+                  "storage"
+                ],
+                "actual": [
+                  "culture",
+                  "storage"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
+                "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+                "expected": [
+                  "cooling",
+                  "loading"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
+                "title": "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "culture",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",
+                "title": "Interaction of Cooling Rate, Warming Rate, and Extent of Permeation of Cryoprotectant in Determining Survival of Isolated Rat Islets of Langerhans During Cryopreservation",
+                "expected": [
+                  "cooling",
+                  "loading"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "6c01e238-01b1-444d-ba8c-cbfb77cd7181",
+                "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+                "expected": [
+                  "loading",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",
+                "title": "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "assessment",
+                  "cooling",
+                  "culture",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "68dc5ee9-dd99-4f47-8e58-a59a28089fb7",
+                "title": "Transplantation of Cryopreserved Human Pancreatic Islets into Diabetic Nude Mice",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "loading",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "f68c40d9-4184-4dc8-b527-095353b5c290",
+                "title": "Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents",
+                "expected": [
+                  "cooling",
+                  "loading",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+                "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+                "expected": [
+                  "loading",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "c10110ba-e282-4d66-80f6-bebbfcedbbfa",
+                "title": "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "loading",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+                "title": "Successful Cryopreservation of Fetal Porcine Proislets",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+                "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [
+                  "warming"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "e8acf4c0-f208-4ee5-ac4e-1fe7221b0a48",
+                "title": "Viability Studies on Frozen-Thawed Rat Islets of Langerhans",
+                "expected": [
+                  "cooling",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
+                "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+                "expected": [
+                  "cooling",
+                  "loading"
+                ],
+                "actual": [
+                  "cooling",
+                  "culture",
+                  "equilibration",
+                  "loading",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.5
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 46,
+            "labeledCount": 46,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 46,
+            "labeledCount": 44,
+            "coverageRate": 0.957
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 46,
+            "labeledCount": 45,
+            "coverageRate": 0.978
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.935,
+          "averageOnCorrectIncluded": 0.935,
+          "averageOnIncorrectIncluded": 0.714
+        },
+        "unexpectedIncludedPaperIds": [
+          "f826780f-d21c-44df-b0ea-cf0c175038b3",
+          "0afd5156-4444-4294-a8de-8c29c35b03a5",
+          "cc7ce88a-94b0-4ca4-97b0-2a31e0bd98c9",
+          "df288637-aaad-454a-9595-156c7db96495",
+          "02eddb39-be9a-4bbb-b814-5952e78e3145",
+          "beb603fe-8522-4842-99a9-fba1195cc973",
+          "3fbb6bbb-96a2-48bf-9bd3-53166a7a2250"
+        ],
+        "unexpectedExcludedPaperIds": []
+      },
+      "reviewed": {
+        "subset": "reviewed",
+        "entryCount": 49,
+        "expectedIncludedCount": 42,
+        "inclusion": {
+          "truePositive": 42,
+          "trueNegative": 0,
+          "falsePositive": 7,
+          "falseNegative": 0,
+          "accuracy": 0.857,
+          "precision": 0.857,
+          "recall": 1,
+          "f1": 0.923
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 42,
+            "exactMatchCount": 37,
+            "accuracy": 0.881,
+            "mismatches": [
+              {
+                "paperId": "f2002bfc-a9e1-45b3-99b7-cff44eee4194",
+                "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+                "expected": "experimental",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "571357d4-0860-494b-8a6a-23814bacb5a0",
+                "title": "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+                "expected": "experimental",
+                "actual": "methods"
+              },
+              {
+                "paperId": "341ba0bf-982b-48aa-88b0-a8d57ec8199e",
+                "title": "Human islet mass, morphology, and survival after cryopreservation using the Edmonton protocol",
+                "expected": "experimental",
+                "actual": "methods"
+              },
+              {
+                "paperId": "04d69565-e62e-4dc8-9ba3-a9ae6f5832ff",
+                "title": "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets",
+                "expected": "experimental",
+                "actual": "methods"
+              },
+              {
+                "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+                "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+                "expected": "experimental",
+                "actual": "unknown"
+              }
+            ]
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 34,
+            "exactMatchCount": 6,
+            "accuracy": 0.176,
+            "mismatches": [
+              {
+                "paperId": "8171cfdd-b8b3-488a-ba11-a919b71c1d2c",
+                "title": "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "b52df02d-5796-4b24-ba2c-e76c9f6ebd93",
+                "title": "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+                "title": "CRYOPRESERVATION OF CHICK ISLETS",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
+                "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "571357d4-0860-494b-8a6a-23814bacb5a0",
+                "title": "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
+                "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
+                "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "c05ceecd-014d-4e09-9dfa-5e095dc5de93",
+                "title": "Effect of thawing rate and post-thaw culture on the cryopreserved fetal rat islets: Functional and morphological correlation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "341ba0bf-982b-48aa-88b0-a8d57ec8199e",
+                "title": "Human islet mass, morphology, and survival after cryopreservation using the Edmonton protocol",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f68c40d9-4184-4dc8-b527-095353b5c290",
+                "title": "Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "f91b7060-e698-46e7-8746-3d40eb683357",
+                "title": "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
+                "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",
+                "title": "Interaction of Cooling Rate, Warming Rate, and Extent of Permeation of Cryoprotectant in Determining Survival of Isolated Rat Islets of Langerhans During Cryopreservation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "b293075d-011c-4c8d-95a6-215ae7952c72",
+                "title": "Intraportal Autotransplantation of Cryopreserved Porcine Islets of Langerhans",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+                "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "72b969f2-a34b-439a-9300-511e3309b5d2",
+                "title": "Murine Islet Cryopreservation and Corticosteroids: Functional Studies",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "c10110ba-e282-4d66-80f6-bebbfcedbbfa",
+                "title": "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+                "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+                "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+                "expected": "slow-freezing",
+                "actual": "unknown"
+              }
+            ]
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 34,
+            "exactMatchCount": 30,
+            "averageF1": 0.941,
+            "averagePrecision": 0.926,
+            "averageRecall": 0.971,
+            "mismatches": [
+              {
+                "paperId": "2b5fe0eb-5bea-4514-88d5-b6926936277e",
+                "title": "CRYOPRESERVATION OF CHICK ISLETS",
+                "expected": [
+                  "chick"
+                ],
+                "actual": [
+                  "mouse"
+                ],
+                "f1": 0
+              },
+              {
+                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+                "expected": [
+                  "human"
+                ],
+                "actual": [
+                  "dog",
+                  "human"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "571357d4-0860-494b-8a6a-23814bacb5a0",
+                "title": "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+                "expected": [
+                  "mouse"
+                ],
+                "actual": [
+                  "human",
+                  "mouse"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "1453f932-2e03-42a3-968a-9efaf2b3233e",
+                "title": "USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION",
+                "expected": [
+                  "pig"
+                ],
+                "actual": [
+                  "mouse",
+                  "pig"
+                ],
+                "f1": 0.667
+              }
+            ]
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 34,
+            "exactMatchCount": 33,
+            "averageF1": 0.99,
+            "averagePrecision": 1,
+            "averageRecall": 0.985,
+            "mismatches": [
+              {
+                "paperId": "8171cfdd-b8b3-488a-ba11-a919b71c1d2c",
+                "title": "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation",
+                "expected": [
+                  "islets",
+                  "pancreatic islets"
+                ],
+                "actual": [
+                  "islets"
+                ],
+                "f1": 0.667
+              }
+            ]
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 42,
+            "exactMatchCount": 32,
+            "averageF1": 0.93,
+            "averagePrecision": 0.895,
+            "averageRecall": 1,
+            "mismatches": [
+              {
+                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+                "expected": [
+                  "function"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+                "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+                "expected": [
+                  "viability"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
+                "title": "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+                "expected": [
+                  "function"
+                ],
+                "actual": [
+                  "function",
+                  "viability"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "2c3150ae-558a-49b0-b989-676d25c27884",
+                "title": "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+                "expected": [
+                  "transplantation"
+                ],
+                "actual": [
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "9ec86ab7-5e07-4437-bac6-a67b159a6540",
+                "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
+                "expected": [
+                  "viability"
+                ],
+                "actual": [
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "d865c65c-b6a7-431c-941c-c23d68f30469",
+                "title": "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+                "expected": [
+                  "function",
+                  "viability"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.8
+              },
+              {
+                "paperId": "51afcf7d-1bff-4630-808a-40407290f0d2",
+                "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+                "expected": [
+                  "function",
+                  "transplantation"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.8
+              },
+              {
+                "paperId": "6e4ea940-2dbd-4790-b848-c453f6a0f42a",
+                "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+                "expected": [
+                  "function",
+                  "viability"
+                ],
+                "actual": [
+                  "function",
+                  "morphology",
+                  "viability"
+                ],
+                "f1": 0.8
+              },
+              {
+                "paperId": "e61a3868-8fcf-4024-96f7-eb4ae8a9456a",
+                "title": "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+                "expected": [
+                  "function",
+                  "viability"
+                ],
+                "actual": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.8
+              },
+              {
+                "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+                "title": "Successful Cryopreservation of Fetal Porcine Proislets",
+                "expected": [
+                  "function",
+                  "transplantation",
+                  "viability"
+                ],
+                "actual": [
+                  "function",
+                  "morphology",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.857
+              }
+            ]
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 41,
+            "exactMatchCount": 11,
+            "averageF1": 0.657,
+            "averagePrecision": 0.627,
+            "averageRecall": 0.771,
+            "mismatches": [
+              {
+                "paperId": "319d4b4f-5170-4966-a582-75463fe725d7",
+                "title": "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0
+              },
+              {
+                "paperId": "f2002bfc-a9e1-45b3-99b7-cff44eee4194",
+                "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+                "expected": [
+                  "assessment",
+                  "loading",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "culture",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.286
+              },
+              {
+                "paperId": "b52df02d-5796-4b24-ba2c-e76c9f6ebd93",
+                "title": "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "loading",
+                  "storage"
+                ],
+                "actual": [
+                  "culture",
+                  "storage"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "2c726492-625a-4f6a-bd48-f8d3e9b465c3",
+                "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+                "expected": [
+                  "cooling",
+                  "loading"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "0690eaf4-00bb-4b65-b277-9c85d4e8bfcd",
+                "title": "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "culture",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "7b4f02c9-5f26-4dff-a6b4-d98235a3ddf5",
+                "title": "Interaction of Cooling Rate, Warming Rate, and Extent of Permeation of Cryoprotectant in Determining Survival of Isolated Rat Islets of Langerhans During Cryopreservation",
+                "expected": [
+                  "cooling",
+                  "loading"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "6c01e238-01b1-444d-ba8c-cbfb77cd7181",
+                "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+                "expected": [
+                  "loading",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "5657b492-dd6b-491f-935b-6248369afbb2",
+                "title": "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "assessment",
+                  "cooling",
+                  "culture",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "68dc5ee9-dd99-4f47-8e58-a59a28089fb7",
+                "title": "Transplantation of Cryopreserved Human Pancreatic Islets into Diabetic Nude Mice",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "loading",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "f68c40d9-4184-4dc8-b527-095353b5c290",
+                "title": "Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents",
+                "expected": [
+                  "cooling",
+                  "loading",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "d00ca668-e6a5-4d1d-bb5c-334d7de37c34",
+                "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+                "expected": [
+                  "loading",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "c10110ba-e282-4d66-80f6-bebbfcedbbfa",
+                "title": "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "loading",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "a24a1702-5dad-4428-b962-27cd59e2e6e8",
+                "title": "Successful Cryopreservation of Fetal Porcine Proislets",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "80be44da-a725-4051-9d4e-0c5881409006",
+                "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "e8acf4c0-f208-4ee5-ac4e-1fe7221b0a48",
+                "title": "Viability Studies on Frozen-Thawed Rat Islets of Langerhans",
+                "expected": [
+                  "cooling",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "3e158dec-5b97-46f4-8b40-57e009e02cc0",
+                "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+                "expected": [
+                  "cooling",
+                  "loading"
+                ],
+                "actual": [
+                  "cooling",
+                  "culture",
+                  "equilibration",
+                  "loading",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "c7c65868-ac9d-4b95-805b-d30e02dadd0c",
+                "title": "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+                "expected": [
+                  "cooling",
+                  "equilibration"
+                ],
+                "actual": [
+                  "assessment",
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.571
+              },
+              {
+                "paperId": "b3a4d36a-35fd-4937-9c34-24cf63da3346",
+                "title": "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "loading",
+                  "storage"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.571
+              },
+              {
+                "paperId": "f557f75c-4101-43d0-8f0e-66ea6a6f0515",
+                "title": "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "loading",
+                  "storage"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.571
+              },
+              {
+                "paperId": "2c3150ae-558a-49b0-b989-676d25c27884",
+                "title": "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "loading",
+                  "storage",
+                  "warming"
+                ],
+                "actual": [
+                  "cooling",
+                  "culture",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.6
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 42,
+            "labeledCount": 42,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 42,
+            "labeledCount": 34,
+            "coverageRate": 0.81
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 42,
+            "labeledCount": 34,
+            "coverageRate": 0.81
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 42,
+            "labeledCount": 34,
+            "coverageRate": 0.81
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 42,
+            "labeledCount": 42,
+            "coverageRate": 1
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 42,
+            "labeledCount": 41,
+            "coverageRate": 0.976
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.938,
+          "averageOnCorrectIncluded": 0.938,
+          "averageOnIncorrectIncluded": 0.714
+        },
+        "unexpectedIncludedPaperIds": [
+          "f826780f-d21c-44df-b0ea-cf0c175038b3",
+          "0afd5156-4444-4294-a8de-8c29c35b03a5",
+          "cc7ce88a-94b0-4ca4-97b0-2a31e0bd98c9",
+          "df288637-aaad-454a-9595-156c7db96495",
+          "02eddb39-be9a-4bbb-b814-5952e78e3145",
+          "beb603fe-8522-4842-99a9-fba1195cc973",
+          "3fbb6bbb-96a2-48bf-9bd3-53166a7a2250"
+        ],
+        "unexpectedExcludedPaperIds": []
+      },
+      "seeded": {
+        "subset": "seeded",
+        "entryCount": 4,
+        "expectedIncludedCount": 4,
+        "inclusion": {
+          "truePositive": 4,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "averageF1": 0.5,
+            "averagePrecision": 0.5,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 4,
+            "exactMatchCount": 0,
+            "averageF1": 0.45,
+            "averagePrecision": 0.521,
+            "averageRecall": 0.583,
+            "mismatches": [
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [
+                  "warming"
+                ],
+                "f1": 0.5
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 4,
+            "labeledCount": 2,
+            "coverageRate": 0.5
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.902,
+          "averageOnCorrectIncluded": 0.902,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      }
+    },
+    "gates": [
+      {
+        "name": "reviewed inclusion F1",
+        "passed": true,
+        "actual": 0.923,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against gaming the corpus by excluding reviewed in-scope papers."
+      },
+      {
+        "name": "reviewed inclusion precision",
+        "passed": false,
+        "actual": 0.857,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against keeping clearly excluded reviewed papers in the atlas."
+      },
+      {
+        "name": "reviewed protocol family accuracy",
+        "passed": false,
+        "actual": 0.176,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Reviewed family labels should stay stable before autonomous updates are trusted."
+      },
+      {
+        "name": "reviewed paper type accuracy",
+        "passed": true,
+        "actual": 0.881,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Paper-type drift is a common failure mode when extraction gets too eager."
+      },
+      {
+        "name": "reviewed specimen macro F1",
+        "passed": true,
+        "actual": 0.99,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+      },
+      {
+        "name": "reviewed species macro F1",
+        "passed": true,
+        "actual": 0.941,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Species leakage is another easy way for the system to look cleaner than it is."
+      }
+    ],
+    "summary": {
+      "passesAllGates": false,
+      "reviewedInclusionF1DeltaVsAll": -0.006,
+      "reviewedOutcomeCoverage": 1,
+      "reviewedStepPhaseCoverage": 0.976,
+      "reviewedMinimumDepthReady": true
+    }
+  },
+  "resolved": {
+    "domain": "islets",
+    "generatedAt": "2026-03-23T21:25:55.233Z",
+    "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
+    "benchmarkEntryCount": 53,
+    "subsets": {
+      "all": {
+        "subset": "all",
+        "entryCount": 53,
+        "expectedIncludedCount": 46,
+        "inclusion": {
+          "truePositive": 46,
+          "trueNegative": 7,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 46,
+            "exactMatchCount": 46,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 38,
+            "exactMatchCount": 38,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 38,
+            "exactMatchCount": 38,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 38,
+            "exactMatchCount": 38,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 46,
+            "exactMatchCount": 46,
+            "averageF1": 0.957,
+            "averagePrecision": 0.957,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 45,
+            "exactMatchCount": 41,
+            "averageF1": 0.951,
+            "averagePrecision": 0.957,
+            "averageRecall": 0.963,
+            "mismatches": [
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [
+                  "warming"
+                ],
+                "f1": 0.5
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 46,
+            "labeledCount": 46,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 46,
+            "labeledCount": 38,
+            "coverageRate": 0.826
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 46,
+            "labeledCount": 44,
+            "coverageRate": 0.957
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 46,
+            "labeledCount": 45,
+            "coverageRate": 0.978
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.85,
+          "averageOnCorrectIncluded": 0.85,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "reviewed": {
+        "subset": "reviewed",
+        "entryCount": 49,
+        "expectedIncludedCount": 42,
+        "inclusion": {
+          "truePositive": 42,
+          "trueNegative": 7,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 42,
+            "exactMatchCount": 42,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 34,
+            "exactMatchCount": 34,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 42,
+            "exactMatchCount": 42,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 41,
+            "exactMatchCount": 41,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 42,
+            "labeledCount": 42,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 42,
+            "labeledCount": 34,
+            "coverageRate": 0.81
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 42,
+            "labeledCount": 34,
+            "coverageRate": 0.81
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 42,
+            "labeledCount": 34,
+            "coverageRate": 0.81
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 42,
+            "labeledCount": 42,
+            "coverageRate": 1
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 42,
+            "labeledCount": 41,
+            "coverageRate": 0.976
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.845,
+          "averageOnCorrectIncluded": 0.845,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "seeded": {
+        "subset": "seeded",
+        "entryCount": 4,
+        "expectedIncludedCount": 4,
+        "inclusion": {
+          "truePositive": 4,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 4,
+            "exactMatchCount": 4,
+            "averageF1": 0.5,
+            "averagePrecision": 0.5,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 4,
+            "exactMatchCount": 0,
+            "averageF1": 0.45,
+            "averagePrecision": 0.521,
+            "averageRecall": 0.583,
+            "mismatches": [
+              {
+                "paperId": "cee20c2c-d629-47d4-a641-3337d1c83c1a",
+                "title": "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+                "expected": [
+                  "cooling",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "09c94224-a694-419d-a858-0168cf6f5f51",
+                "title": "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+                "expected": [
+                  "cooling"
+                ],
+                "actual": [
+                  "cooling",
+                  "equilibration",
+                  "storage",
+                  "warming"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "7076767f-b08c-437f-976b-85cbda543865",
+                "title": "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+                "expected": [
+                  "storage",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling",
+                  "storage"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "411ab6b7-af7c-4ef3-b823-a3167a2b2531",
+                "title": "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+                "expected": [
+                  "cooling",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [
+                  "warming"
+                ],
+                "f1": 0.5
+              }
+            ]
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 4,
+            "labeledCount": 2,
+            "coverageRate": 0.5
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 4,
+            "labeledCount": 4,
+            "coverageRate": 1
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.902,
+          "averageOnCorrectIncluded": 0.902,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      }
+    },
+    "gates": [
+      {
+        "name": "reviewed inclusion F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against gaming the corpus by excluding reviewed in-scope papers."
+      },
+      {
+        "name": "reviewed inclusion precision",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against keeping clearly excluded reviewed papers in the atlas."
+      },
+      {
+        "name": "reviewed protocol family accuracy",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Reviewed family labels should stay stable before autonomous updates are trusted."
+      },
+      {
+        "name": "reviewed paper type accuracy",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Paper-type drift is a common failure mode when extraction gets too eager."
+      },
+      {
+        "name": "reviewed specimen macro F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+      },
+      {
+        "name": "reviewed species macro F1",
+        "passed": true,
+        "actual": 1,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Species leakage is another easy way for the system to look cleaner than it is."
+      }
+    ],
+    "summary": {
+      "passesAllGates": true,
+      "reviewedInclusionF1DeltaVsAll": 0,
+      "reviewedOutcomeCoverage": 1,
+      "reviewedStepPhaseCoverage": 0.976,
+      "reviewedMinimumDepthReady": true
+    }
+  },
+  "reviewedDepth": {
+    "outcomeCoverageDelta": 0,
+    "stepPhaseCoverageDelta": 0,
+    "missingOutcomeCount": 0,
+    "missingStepPhaseCount": 1,
+    "missingOutcomeAudit": {
+      "extractorGapCount": 0,
+      "ambiguousEvidenceCount": 0,
+      "evidenceThinCount": 0
+    },
+    "missingOutcomes": [],
+    "missingStepPhases": [
+      {
+        "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
+        "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+        "paperType": "experimental",
+        "doi": "10.1016/s0041-1345(01)02875-5"
+      }
+    ]
+  },
+  "delta": {
+    "reviewedInclusionF1": 0.077,
+    "reviewedProtocolFamilyAccuracy": 0.824,
+    "reviewedPaperTypeAccuracy": 0.119,
+    "reviewedSpeciesMacroF1": 0.059,
+    "reviewedSpecimenMacroF1": 0.01,
+    "reviewedOutcomeCoverage": 0,
+    "reviewedStepPhaseCoverage": 0,
+    "gatePassCount": 2
+  }
+}

@@ -1,0 +1,759 @@
+{
+  "domain": "ovarian-tissue",
+  "totalPapers": 16,
+  "protocolFamilies": [
+    {
+      "label": "slow-freezing",
+      "count": 6
+    },
+    {
+      "label": "comparative",
+      "count": 5
+    },
+    {
+      "label": "vitrification",
+      "count": 5
+    }
+  ],
+  "topChemicals": [
+    {
+      "label": "Dimethyl Sulfoxide",
+      "count": 7
+    },
+    {
+      "label": "Ethylene Glycol",
+      "count": 4
+    },
+    {
+      "label": "Propylene Glycol",
+      "count": 2
+    },
+    {
+      "label": "Sucrose",
+      "count": 2
+    },
+    {
+      "label": "Ringer-Acetate",
+      "count": 1
+    }
+  ],
+  "topSpecimenTypes": [
+    {
+      "label": "follicles",
+      "count": 12
+    },
+    {
+      "label": "ovarian tissue",
+      "count": 12
+    },
+    {
+      "label": "oocytes",
+      "count": 4
+    },
+    {
+      "label": "whole ovary",
+      "count": 4
+    },
+    {
+      "label": "ovarian cortex",
+      "count": 1
+    }
+  ],
+  "topOutcomes": [
+    {
+      "label": "morphology",
+      "count": 11
+    },
+    {
+      "label": "viability",
+      "count": 8
+    },
+    {
+      "label": "transplantation",
+      "count": 4
+    },
+    {
+      "label": "reproductive",
+      "count": 3
+    },
+    {
+      "label": "function",
+      "count": 2
+    }
+  ],
+  "topStepPhases": [
+    {
+      "label": "loading",
+      "count": 30
+    },
+    {
+      "label": "storage",
+      "count": 14
+    },
+    {
+      "label": "cooling",
+      "count": 11
+    },
+    {
+      "label": "culture",
+      "count": 9
+    },
+    {
+      "label": "unknown",
+      "count": 6
+    },
+    {
+      "label": "warming",
+      "count": 6
+    },
+    {
+      "label": "perfusion",
+      "count": 5
+    },
+    {
+      "label": "assessment",
+      "count": 4
+    },
+    {
+      "label": "equilibration",
+      "count": 2
+    }
+  ],
+  "highConfidencePapers": [
+    {
+      "title": "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+      "paperType": "methods",
+      "protocolFamily": "slow-freezing",
+      "extractionConfidence": 0.95,
+      "species": [
+        "sheep"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Propylene Glycol"
+      ],
+      "specimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "stepPhases": [
+        "equilibration",
+        "unknown",
+        "cooling",
+        "assessment"
+      ]
+    },
+    {
+      "title": "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "extractionConfidence": 0.95,
+      "species": [
+        "cat"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Ethylene Glycol",
+        "Sucrose"
+      ],
+      "specimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "stepPhases": [
+        "storage",
+        "perfusion"
+      ]
+    },
+    {
+      "title": "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants",
+      "paperType": "experimental",
+      "protocolFamily": "vitrification",
+      "extractionConfidence": 0.9,
+      "species": [
+        "peccary"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Ethylene Glycol"
+      ],
+      "specimenTypes": [
+        "ovarian tissue",
+        "follicles"
+      ],
+      "stepPhases": [
+        "loading",
+        "warming"
+      ]
+    },
+    {
+      "title": "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+      "paperType": "experimental",
+      "protocolFamily": "comparative",
+      "extractionConfidence": 0.83,
+      "species": [
+        "human",
+        "sheep",
+        "pig",
+        "primate"
+      ],
+      "chemicals": [],
+      "specimenTypes": [
+        "ovarian tissue",
+        "whole ovary",
+        "follicles",
+        "oocytes"
+      ],
+      "stepPhases": [
+        "loading",
+        "storage",
+        "cooling",
+        "perfusion"
+      ]
+    },
+    {
+      "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+      "paperType": "experimental",
+      "protocolFamily": "vitrification",
+      "extractionConfidence": 0.82,
+      "species": [
+        "human"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Ethylene Glycol"
+      ],
+      "specimenTypes": [
+        "ovarian tissue",
+        "follicles"
+      ],
+      "stepPhases": [
+        "equilibration",
+        "loading"
+      ]
+    },
+    {
+      "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+      "paperType": "methods",
+      "protocolFamily": "slow-freezing",
+      "extractionConfidence": 0.8,
+      "species": [
+        "human"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Sucrose"
+      ],
+      "specimenTypes": [
+        "ovarian tissue"
+      ],
+      "stepPhases": [
+        "cooling",
+        "warming"
+      ]
+    },
+    {
+      "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+      "paperType": "experimental",
+      "protocolFamily": "vitrification",
+      "extractionConfidence": 0.78,
+      "species": [
+        "human"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Ethylene Glycol",
+        "Propylene Glycol"
+      ],
+      "specimenTypes": [
+        "ovarian tissue",
+        "follicles"
+      ],
+      "stepPhases": [
+        "loading",
+        "warming",
+        "assessment"
+      ]
+    },
+    {
+      "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+      "paperType": "experimental",
+      "protocolFamily": "comparative",
+      "extractionConfidence": 0.77,
+      "species": [
+        "rat"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide"
+      ],
+      "specimenTypes": [
+        "follicles"
+      ],
+      "stepPhases": [
+        "loading",
+        "unknown",
+        "warming",
+        "assessment",
+        "storage"
+      ]
+    },
+    {
+      "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+      "paperType": "experimental",
+      "protocolFamily": "vitrification",
+      "extractionConfidence": 0.77,
+      "species": [
+        "sheep"
+      ],
+      "chemicals": [],
+      "specimenTypes": [
+        "follicles",
+        "ovarian tissue",
+        "oocytes"
+      ],
+      "stepPhases": [
+        "loading",
+        "culture"
+      ]
+    },
+    {
+      "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "extractionConfidence": 0.76,
+      "species": [
+        "sheep"
+      ],
+      "chemicals": [],
+      "specimenTypes": [
+        "ovarian tissue",
+        "whole ovary"
+      ],
+      "stepPhases": [
+        "cooling",
+        "storage",
+        "warming"
+      ]
+    }
+  ],
+  "uncertaintyHotspots": [
+    {
+      "protocolFamily": "slow-freezing",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "ovarian tissue",
+      "paperCount": 3,
+      "outcomeClasses": [
+        "viability",
+        "morphology",
+        "function"
+      ],
+      "titles": [
+        "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+        "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+        "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry"
+      ]
+    },
+    {
+      "protocolFamily": "vitrification",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "ovarian tissue",
+      "paperCount": 3,
+      "outcomeClasses": [
+        "morphology",
+        "viability",
+        "transplantation"
+      ],
+      "titles": [
+        "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+        "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+        "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants"
+      ]
+    },
+    {
+      "protocolFamily": "vitrification",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "follicles",
+      "paperCount": 3,
+      "outcomeClasses": [
+        "morphology",
+        "viability",
+        "transplantation"
+      ],
+      "titles": [
+        "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+        "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+        "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants"
+      ]
+    },
+    {
+      "protocolFamily": "vitrification",
+      "chemical": "Ethylene Glycol",
+      "specimenType": "ovarian tissue",
+      "paperCount": 3,
+      "outcomeClasses": [
+        "morphology",
+        "viability",
+        "transplantation"
+      ],
+      "titles": [
+        "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+        "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+        "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants"
+      ]
+    },
+    {
+      "protocolFamily": "vitrification",
+      "chemical": "Ethylene Glycol",
+      "specimenType": "follicles",
+      "paperCount": 3,
+      "outcomeClasses": [
+        "morphology",
+        "viability",
+        "transplantation"
+      ],
+      "titles": [
+        "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+        "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+        "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants"
+      ]
+    },
+    {
+      "protocolFamily": "slow-freezing",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "follicles",
+      "paperCount": 2,
+      "outcomeClasses": [
+        "viability",
+        "morphology"
+      ],
+      "titles": [
+        "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+        "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide"
+      ]
+    },
+    {
+      "protocolFamily": "slow-freezing",
+      "chemical": "Sucrose",
+      "specimenType": "ovarian tissue",
+      "paperCount": 2,
+      "outcomeClasses": [
+        "viability",
+        "morphology",
+        "function"
+      ],
+      "titles": [
+        "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+        "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry"
+      ]
+    }
+  ],
+  "contradictions": [],
+  "experimentSuggestions": [
+    {
+      "title": "Head-to-head DMSO-centered ovarian tissue benchmark",
+      "category": "benchmark",
+      "hypothesis": "A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation.",
+      "rationale": "DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide"
+        ],
+        "specimenTypes": [
+          "ovarian tissue"
+        ],
+        "protocolFamilies": [
+          "slow-freezing",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+          "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+          "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+          "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+          "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants",
+          "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry"
+        ]
+      },
+      "confidence": 0.84
+    },
+    {
+      "title": "Same-species DMSO + EG vitrification benchmark",
+      "category": "benchmark",
+      "hypothesis": "The apparent promise of DMSO + ethylene glycol in ovarian tissue is currently species-confounded and should be tested within one species and one specimen format.",
+      "rationale": "The corpus shows DMSO + EG in ovarian tissue, but the strongest papers are spread across different species. A same-species benchmark would tell us whether the signal is chemistry-driven or model-driven.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol"
+        ],
+        "specimenTypes": [
+          "ovarian tissue",
+          "follicles"
+        ],
+        "protocolFamilies": [
+          "slow-freezing",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+          "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+          "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+          "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants"
+        ]
+      },
+      "confidence": 0.79
+    },
+    {
+      "title": "Promote morphology-heavy protocols to viability endpoints",
+      "category": "endpoint-upgrade",
+      "hypothesis": "Several ovarian tissue protocols that currently look acceptable on morphology alone will reshuffle once they are compared on viability or functional endpoints.",
+      "rationale": "The current corpus is still dominated by morphology outcomes. Running the same preservation conditions with viability-focused readouts is likely higher signal than inventing a new formulation immediately.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Propylene Glycol",
+          "Ethylene Glycol",
+          "Sucrose"
+        ],
+        "specimenTypes": [
+          "ovarian tissue",
+          "follicles"
+        ],
+        "protocolFamilies": [
+          "comparative",
+          "slow-freezing",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+          "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+          "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+          "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+          "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+          "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation"
+        ]
+      },
+      "confidence": 0.82
+    },
+    {
+      "title": "Whole-ovary perfusion and rewarming workflow benchmark",
+      "category": "scale-up",
+      "hypothesis": "Whole-ovary success is currently limited more by perfusion/loading workflow quality than by entirely new chemistry.",
+      "rationale": "Whole-ovary papers are sparse but repeatedly mention perfusion, controlled gradients, and rewarming. A workflow benchmark around loading/unloading plus perfusion measurements is a plausible scale-up experiment.",
+      "supportingContext": {
+        "chemicals": [
+          "Ringer-Acetate"
+        ],
+        "specimenTypes": [
+          "whole ovary"
+        ],
+        "protocolFamilies": [
+          "comparative",
+          "slow-freezing"
+        ],
+        "paperTitles": [
+          "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+          "Whole sheep ovary cryopreservation: evaluation of a slow freezing protocol with dimethylsulphoxide"
+        ]
+      },
+      "confidence": 0.76
+    }
+  ],
+  "researchHypotheses": [
+    {
+      "id": "ovarian-tissue:promote-morphology-heavy-protocols-to-viability-endpoints",
+      "domain": "ovarian-tissue",
+      "title": "Promote morphology-heavy protocols to viability endpoints",
+      "category": "endpoint-upgrade",
+      "claim": "Several ovarian tissue protocols that currently look acceptable on morphology alone will reshuffle once they are compared on viability or functional endpoints.",
+      "proposedExperiment": "The current corpus is still dominated by morphology outcomes. Running the same preservation conditions with viability-focused readouts is likely higher signal than inventing a new formulation immediately.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Propylene Glycol",
+          "Ethylene Glycol",
+          "Sucrose"
+        ],
+        "specimenTypes": [
+          "ovarian tissue",
+          "follicles"
+        ],
+        "protocolFamilies": [
+          "comparative",
+          "slow-freezing",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+          "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+          "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+          "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+          "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+          "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation"
+        ]
+      },
+      "evidence": {
+        "totalPaperCount": 6,
+        "experimentalPaperCount": 4,
+        "comparativePaperCount": 2,
+        "distinctSpeciesCount": 5,
+        "strongOutcomePaperCount": 1,
+        "transplantationPaperCount": 2,
+        "contradictionCount": 0,
+        "sparseProtocolPaperCount": 0
+      },
+      "scores": {
+        "evidenceScore": 0.867,
+        "uncertaintyScore": 0,
+        "actionabilityScore": 0.8,
+        "priorityScore": 0.623
+      },
+      "blockers": [],
+      "rationale": "The current corpus is still dominated by morphology outcomes. Running the same preservation conditions with viability-focused readouts is likely higher signal than inventing a new formulation immediately."
+    },
+    {
+      "id": "ovarian-tissue:head-to-head-dmso-centered-ovarian-tissue-benchmark",
+      "domain": "ovarian-tissue",
+      "title": "Head-to-head DMSO-centered ovarian tissue benchmark",
+      "category": "benchmark",
+      "claim": "A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation.",
+      "proposedExperiment": "DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide"
+        ],
+        "specimenTypes": [
+          "ovarian tissue"
+        ],
+        "protocolFamilies": [
+          "slow-freezing",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+          "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+          "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+          "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+          "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants",
+          "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry"
+        ]
+      },
+      "evidence": {
+        "totalPaperCount": 6,
+        "experimentalPaperCount": 4,
+        "comparativePaperCount": 0,
+        "distinctSpeciesCount": 4,
+        "strongOutcomePaperCount": 0,
+        "transplantationPaperCount": 1,
+        "contradictionCount": 0,
+        "sparseProtocolPaperCount": 0
+      },
+      "scores": {
+        "evidenceScore": 0.583,
+        "uncertaintyScore": 0,
+        "actionabilityScore": 0.84,
+        "priorityScore": 0.54
+      },
+      "blockers": [],
+      "rationale": "DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass."
+    },
+    {
+      "id": "ovarian-tissue:same-species-dmso-eg-vitrification-benchmark",
+      "domain": "ovarian-tissue",
+      "title": "Same-species DMSO + EG vitrification benchmark",
+      "category": "benchmark",
+      "claim": "The apparent promise of DMSO + ethylene glycol in ovarian tissue is currently species-confounded and should be tested within one species and one specimen format.",
+      "proposedExperiment": "The corpus shows DMSO + EG in ovarian tissue, but the strongest papers are spread across different species. A same-species benchmark would tell us whether the signal is chemistry-driven or model-driven.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol"
+        ],
+        "specimenTypes": [
+          "ovarian tissue",
+          "follicles"
+        ],
+        "protocolFamilies": [
+          "slow-freezing",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+          "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
+          "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+          "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants"
+        ]
+      },
+      "evidence": {
+        "totalPaperCount": 4,
+        "experimentalPaperCount": 4,
+        "comparativePaperCount": 0,
+        "distinctSpeciesCount": 3,
+        "strongOutcomePaperCount": 0,
+        "transplantationPaperCount": 1,
+        "contradictionCount": 0,
+        "sparseProtocolPaperCount": 0
+      },
+      "scores": {
+        "evidenceScore": 0.517,
+        "uncertaintyScore": 0,
+        "actionabilityScore": 0.84,
+        "priorityScore": 0.517
+      },
+      "blockers": [],
+      "rationale": "The corpus shows DMSO + EG in ovarian tissue, but the strongest papers are spread across different species. A same-species benchmark would tell us whether the signal is chemistry-driven or model-driven."
+    },
+    {
+      "id": "ovarian-tissue:whole-ovary-perfusion-and-rewarming-workflow-benchmark",
+      "domain": "ovarian-tissue",
+      "title": "Whole-ovary perfusion and rewarming workflow benchmark",
+      "category": "scale-up",
+      "claim": "Whole-ovary success is currently limited more by perfusion/loading workflow quality than by entirely new chemistry.",
+      "proposedExperiment": "Whole-ovary papers are sparse but repeatedly mention perfusion, controlled gradients, and rewarming. A workflow benchmark around loading/unloading plus perfusion measurements is a plausible scale-up experiment.",
+      "supportingContext": {
+        "chemicals": [
+          "Ringer-Acetate"
+        ],
+        "specimenTypes": [
+          "whole ovary"
+        ],
+        "protocolFamilies": [
+          "comparative",
+          "slow-freezing"
+        ],
+        "paperTitles": [
+          "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+          "Whole sheep ovary cryopreservation: evaluation of a slow freezing protocol with dimethylsulphoxide"
+        ]
+      },
+      "evidence": {
+        "totalPaperCount": 2,
+        "experimentalPaperCount": 1,
+        "comparativePaperCount": 1,
+        "distinctSpeciesCount": 4,
+        "strongOutcomePaperCount": 1,
+        "transplantationPaperCount": 1,
+        "contradictionCount": 0,
+        "sparseProtocolPaperCount": 0
+      },
+      "scores": {
+        "evidenceScore": 0.55,
+        "uncertaintyScore": 0,
+        "actionabilityScore": 0.72,
+        "priorityScore": 0.48
+      },
+      "blockers": [],
+      "rationale": "Whole-ovary papers are sparse but repeatedly mention perfusion, controlled gradients, and rewarming. A workflow benchmark around loading/unloading plus perfusion measurements is a plausible scale-up experiment."
+    }
+  ],
+  "qualitySignals": {
+    "unknownProtocolFamilyCount": 0,
+    "unknownProtocolFamilyRate": 0,
+    "unknownStepPhaseCount": 6,
+    "contradictionCount": 0,
+    "experimentalPaperCount": 9,
+    "methodsPaperCount": 5,
+    "reviewPaperCount": 2,
+    "commentaryPaperCount": 0
+  }
+}

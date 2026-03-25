@@ -1,0 +1,297 @@
+{
+  "domain": "islets",
+  "focusQuestion": "What is the strongest first cryopreservation wedge in islets, and what evidence would justify a real entry point?",
+  "activeWedge": {
+    "title": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+    "category": "benchmark",
+    "claim": "Several islet papers imply that recovery gains may come from adjuncts added around a standard cryomix rather than from entirely new base CPA chemistry.",
+    "scientificRelevance": 0.89,
+    "companyRelevance": 0.786,
+    "evidenceConfidence": 0.786,
+    "translationalPotential": 0.733,
+    "currentRead": "Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet.",
+    "recommendedNextStep": "Run a fixed-backbone additive benchmark with p38 MAPK inhibitor, Trehalose, Beraprost Sodium, Polyvinyl Pyrrolidone on a DMSO-centered base mix, using post-thaw function as the primary readout."
+  },
+  "standardPattern": {
+    "dominantProtocolFamily": "slow-freezing",
+    "dominantChemicals": [
+      "Dimethyl Sulfoxide",
+      "Sucrose",
+      "Ethylene Glycol"
+    ],
+    "dominantSpecimenTypes": [
+      "islets",
+      "pancreatic islets"
+    ],
+    "dominantTransitions": [
+      "cooling -> storage",
+      "cooling -> warming",
+      "loading -> cooling"
+    ],
+    "representativeConditions": [
+      "Dimethyl Sulfoxide 2 M",
+      "Dimethyl Sulfoxide 1 M",
+      "Dimethyl Sulfoxide 0.67 M"
+    ],
+    "explanation": "Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol in islets, pancreatic islets workflows. Normalized workflow signal is cooling -> storage, cooling -> warming, loading -> cooling, with repeated condition mentions such as Dimethyl Sulfoxide 2 M, Dimethyl Sulfoxide 1 M, Dimethyl Sulfoxide 0.67 M."
+  },
+  "protocolFamilies": [
+    {
+      "family": "slow-freezing",
+      "paperCount": 39,
+      "topChemicals": [
+        "Dimethyl Sulfoxide",
+        "Sucrose",
+        "Ethylene Glycol"
+      ],
+      "topOutcomes": [
+        "viability",
+        "function",
+        "transplantation"
+      ],
+      "topTransitions": [
+        "cooling -> storage",
+        "cooling -> warming",
+        "loading -> cooling"
+      ],
+      "interpretation": "Most common preserved workflow in-slice, centered on Dimethyl Sulfoxide, Sucrose, Ethylene Glycol. Outcome emphasis is viability, function, transplantation, suggesting this is the baseline to beat rather than the frontier."
+    },
+    {
+      "family": "vitrification",
+      "paperCount": 6,
+      "topChemicals": [
+        "Dimethyl Sulfoxide",
+        "Ethylene Glycol",
+        "Sucrose"
+      ],
+      "topOutcomes": [
+        "function",
+        "viability",
+        "transplantation"
+      ],
+      "topTransitions": [
+        "loading -> storage",
+        "storage -> warming"
+      ],
+      "interpretation": "Smaller but sharper cluster, often tied to Dimethyl Sulfoxide, Ethylene Glycol, Sucrose. This is the likely optimization frontier if post-warm outcomes can be made more comparable."
+    },
+    {
+      "family": "comparative",
+      "paperCount": 1,
+      "topChemicals": [
+        "Dimethyl Sulfoxide",
+        "Ethylene Glycol",
+        "Sucrose"
+      ],
+      "topOutcomes": [
+        "function"
+      ],
+      "topTransitions": [],
+      "interpretation": "Direct comparison slice is small (1 papers) but high-value because it anchors head-to-head decisions instead of isolated protocol claims."
+    }
+  ],
+  "dominantCpaPatterns": [
+    {
+      "family": "slow-freezing",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "islets",
+      "paperCount": 32,
+      "outcomeClasses": [
+        "function",
+        "viability",
+        "transplantation",
+        "morphology"
+      ]
+    },
+    {
+      "family": "slow-freezing",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "pancreatic islets",
+      "paperCount": 26,
+      "outcomeClasses": [
+        "function",
+        "viability",
+        "transplantation",
+        "morphology"
+      ]
+    },
+    {
+      "family": "slow-freezing",
+      "chemical": "Sucrose",
+      "specimenType": "islets",
+      "paperCount": 7,
+      "outcomeClasses": [
+        "function",
+        "transplantation",
+        "viability"
+      ]
+    },
+    {
+      "family": "slow-freezing",
+      "chemical": "Sucrose",
+      "specimenType": "pancreatic islets",
+      "paperCount": 6,
+      "outcomeClasses": [
+        "function",
+        "transplantation",
+        "viability"
+      ]
+    },
+    {
+      "family": "vitrification",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "islets",
+      "paperCount": 5,
+      "outcomeClasses": [
+        "function",
+        "viability",
+        "transplantation"
+      ]
+    },
+    {
+      "family": "vitrification",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "pancreatic islets",
+      "paperCount": 5,
+      "outcomeClasses": [
+        "function",
+        "viability",
+        "transplantation"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+      "papers": [
+        "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+        "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method"
+      ],
+      "whyItMatters": "Comparable species/context with shared outcome readout but different preservation families. Likely confounds: endpoint mismatch."
+    }
+  ],
+  "evidenceQuality": {
+    "passesAllGates": true,
+    "reviewedOutcomeCoverage": 1,
+    "reviewedStepPhaseCoverage": 0.976,
+    "reviewedMinimumDepthReady": true,
+    "normalizedProtocolCount": 46,
+    "protocolsWithNormalizationWarnings": 5,
+    "missingOutcomeCount": 0,
+    "missingStepPhaseCount": 1,
+    "pendingSourceEnrichmentCount": 1,
+    "reviewedSourceEnrichmentCount": 18,
+    "secondarySourceReviewedCount": 2,
+    "reviewedPrimarySupportedCount": 42,
+    "reviewedSecondarySupportedCount": 2,
+    "reviewedManualOnlyCount": 0
+  },
+  "evidenceGaps": [
+    {
+      "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+      "decisionImpact": "high",
+      "authorityProfile": "primary-backed",
+      "translationalSignal": "clinically adjacent",
+      "missingFields": [
+        "protocolDetail"
+      ],
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class"
+    },
+    {
+      "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+      "decisionImpact": "medium",
+      "authorityProfile": "primary-backed",
+      "translationalSignal": "preclinical",
+      "missingFields": [
+        "authority"
+      ],
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class"
+    },
+    {
+      "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+      "decisionImpact": "medium",
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "preclinical",
+      "missingFields": [
+        "stepPhases",
+        "authority",
+        "protocolDetail"
+      ],
+      "rationale": "Step phases for \"Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets\" still require manual or fuller-source confirmation before benchmark promotion."
+    }
+  ],
+  "nextExperiments": [
+    {
+      "title": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+      "category": "benchmark",
+      "decisionQuestion": "Should Atlas prioritize \"Additive-assisted islet recovery benchmark on a fixed base cryomix\" as the main head-to-head wedge benchmark?",
+      "primaryReadouts": [
+        "function",
+        "viability"
+      ],
+      "comparisonArms": [
+        "base cryomix only",
+        "base cryomix + p38 MAPK inhibitor",
+        "base cryomix + Trehalose",
+        "base cryomix + Beraprost Sodium",
+        "base cryomix + Polyvinyl Pyrrolidone"
+      ],
+      "whyNow": "Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet."
+    },
+    {
+      "title": "Matched-species islet vitrification vs slow-freezing benchmark",
+      "category": "benchmark",
+      "decisionQuestion": "Would \"Matched-species islet vitrification vs slow-freezing benchmark\" materially sharpen the wedge decision if tested next?",
+      "primaryReadouts": [
+        "function",
+        "viability"
+      ],
+      "comparisonArms": [
+        "slow-freezing arm",
+        "vitrification arm"
+      ],
+      "whyNow": "This remains one of the highest-signal next experiments in the current domain slice."
+    },
+    {
+      "title": "Promote islet function-heavy protocols to transplantation endpoints",
+      "category": "endpoint-upgrade",
+      "decisionQuestion": "Would \"Promote islet function-heavy protocols to transplantation endpoints\" materially sharpen the wedge decision if tested next?",
+      "primaryReadouts": [
+        "transplantation",
+        "function"
+      ],
+      "comparisonArms": [
+        "current standard protocol",
+        "top reported protocol with transplantation endpoint"
+      ],
+      "whyNow": "This remains one of the highest-signal next experiments in the current domain slice."
+    }
+  ],
+  "opportunityScan": [
+    {
+      "title": "Matched-species islet vitrification vs slow-freezing benchmark",
+      "whyInteresting": "The current islet corpus overweights slow-freezing, so a matched-species comparison is needed to separate real vitrification gains from endpoint and species confounding. Evidence papers=6, strong outcomes=4, contradictions=20.",
+      "painPoint": "Vitrification and slow-freezing remain confounded by species and endpoint differences.",
+      "commercialWhyNow": "A cleaner benchmark wedge maps to transplant and cell-banking workflows where protocol uncertainty still blocks standardization."
+    },
+    {
+      "title": "Promote islet function-heavy protocols to transplantation endpoints",
+      "whyInteresting": "Several islet protocols that look promising on insulin secretion or in-vitro function will reorder once they are compared on graft or transplantation outcomes. Evidence papers=6, strong outcomes=4, contradictions=10.",
+      "painPoint": "Promising protocols are still over-indexed on viability or in-vitro function rather than transplantation-grade outcomes.",
+      "commercialWhyNow": "Moving from viability-only claims to transplantation/function claims is what makes an optimization story commercially credible."
+    },
+    {
+      "title": "Full-text protocol resolution for sparse islet thaw/loading workflows",
+      "whyInteresting": "A small number of islet papers still look interesting, but their step structure is too thin to compare fairly against the rest of the corpus. Evidence papers=6, strong outcomes=3, contradictions=1.",
+      "painPoint": "A small number of promising papers still lack enough procedural detail to compare fairly.",
+      "commercialWhyNow": "This is close enough to real preservation workflows that better protocol evidence could matter commercially, not just academically."
+    },
+    {
+      "title": "Scale-up benchmark for banked or bulk islet handling",
+      "whyInteresting": "Scale-up losses in islet banking may come from handling and thaw workflow variance rather than core cryomix choice alone. Evidence papers=3, strong outcomes=3, contradictions=10.",
+      "painPoint": "10 unresolved contradictions remain in the relevant evidence slice",
+      "commercialWhyNow": "A cleaner benchmark wedge maps to transplant and cell-banking workflows where protocol uncertainty still blocks standardization."
+    }
+  ],
+  "callout": "Additive-assisted islet recovery benchmark on a fixed base cryomix is the explicit active wedge. Matrix rows=6, top decision-useful evidence gaps=1, and next experiments are already packetized for review."
+}

@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-03-24T22:28:31.146Z",
+  "domain": "islets",
+  "wedgeId": "islets:additive-assisted-islet-recovery-benchmark-on-a-fixed-base-cryomix",
+  "status": "candidate",
+  "title": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+  "category": "benchmark",
+  "selectedHypothesisId": "islets:additive-assisted-islet-recovery-benchmark-on-a-fixed-base-cryomix",
+  "focusQuestion": "What is the strongest first cryopreservation wedge in islets, and what evidence would justify a real entry point?",
+  "decisionQuestion": "Should Atlas prioritize \"Additive-assisted islet recovery benchmark on a fixed base cryomix\" as the main head-to-head wedge benchmark?",
+  "whyThisWedge": "Several islet papers imply that recovery gains may come from adjuncts added around a standard cryomix rather than from entirely new base CPA chemistry.",
+  "claim": "Several islet papers imply that recovery gains may come from adjuncts added around a standard cryomix rather than from entirely new base CPA chemistry.",
+  "currentRead": "Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet.",
+  "recommendedNextStep": "Run a fixed-backbone additive benchmark with p38 MAPK inhibitor, Trehalose, Beraprost Sodium, Polyvinyl Pyrrolidone on a DMSO-centered base mix, using post-thaw function as the primary readout.",
+  "scientificRelevance": 0.89,
+  "companyRelevance": 0.786,
+  "evidenceConfidence": 0.786,
+  "translationalPotential": 0.733,
+  "supportingPaperTitles": [
+    "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+    "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+    "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+    "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+    "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+    "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium"
+  ],
+  "dominantPatterns": {
+    "protocolFamilies": [
+      "slow-freezing"
+    ],
+    "chemicals": [
+      "Dimethyl Sulfoxide",
+      "p38 MAPK inhibitor",
+      "Trehalose",
+      "Beraprost Sodium",
+      "Polyvinyl Pyrrolidone",
+      "Curcumin"
+    ],
+    "specimenTypes": [
+      "islets",
+      "pancreatic islets"
+    ]
+  },
+  "keyUncertainties": [
+    "1 relevant papers still have sparse step structure",
+    "1 unresolved contradictions remain in the relevant evidence slice",
+    "Benchmark still lacks balanced evidence from both vitrification and slow-freezing"
+  ],
+  "authoritySummary": {
+    "reviewedOutcomeCoverage": 1,
+    "reviewedStepPhaseCoverage": 0.976,
+    "pendingSourceEnrichmentCount": 0,
+    "reviewedSourceEnrichmentCount": 2,
+    "primarySupportedPaperCount": 2,
+    "secondarySupportedPaperCount": 0,
+    "abstractOnlyPaperCount": 4
+  }
+}

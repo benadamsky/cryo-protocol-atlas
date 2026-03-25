@@ -1,0 +1,188 @@
+{
+  "generatedAt": "2026-03-24T22:28:46.570Z",
+  "domain": "islets",
+  "wedgeId": "islets:additive-assisted-islet-recovery-benchmark-on-a-fixed-base-cryomix",
+  "wedgeTitle": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+  "rows": [
+    {
+      "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+      "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide + Glycerol",
+      "adjuncts": [
+        "Polyvinyl Pyrrolidone",
+        "Polyethylene Glycol"
+      ],
+      "species": [
+        "rat"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets",
+        "islet cells"
+      ],
+      "endpointClasses": [
+        "function",
+        "viability"
+      ],
+      "authorityProfile": "primary-backed",
+      "evidenceStrength": "strong",
+      "translationalSignal": "preclinical",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 0.988,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
+      "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide",
+      "adjuncts": [
+        "p38 MAPK inhibitor"
+      ],
+      "species": [
+        "human"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "endpointClasses": [
+        "transplantation",
+        "function",
+        "viability",
+        "morphology"
+      ],
+      "authorityProfile": "primary-backed",
+      "evidenceStrength": "strong",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [
+        "sparse-protocol"
+      ],
+      "wedgeRelevanceScore": 0.95,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "f805778c-f7b5-422e-978a-cf3d986f008c",
+      "title": "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide",
+      "adjuncts": [
+        "Trehalose"
+      ],
+      "species": [
+        "human"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "endpointClasses": [
+        "function",
+        "viability"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 0.892,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "b52df02d-5796-4b24-ba2c-e76c9f6ebd93",
+      "title": "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide",
+      "adjuncts": [
+        "Beraprost Sodium"
+      ],
+      "species": [
+        "dog"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "endpointClasses": [
+        "viability"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "preclinical",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 0.86,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "0008fd20-cb99-4666-b48d-c24bd4abd4d1",
+      "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide",
+      "adjuncts": [
+        "Curcumin"
+      ],
+      "species": [
+        "mouse"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "endpointClasses": [
+        "viability"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "preclinical",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 0.86,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "f91b7060-e698-46e7-8746-3d40eb683357",
+      "title": "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide",
+      "adjuncts": [
+        "Beraprost Sodium"
+      ],
+      "species": [
+        "dog"
+      ],
+      "specimenTypes": [
+        "islets",
+        "pancreatic islets"
+      ],
+      "endpointClasses": [
+        "viability"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "preclinical",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 0.86,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    }
+  ],
+  "summary": {
+    "dominantBackbones": [
+      "Dimethyl Sulfoxide + Glycerol",
+      "Dimethyl Sulfoxide"
+    ],
+    "dominantAdjuncts": [
+      "Polyvinyl Pyrrolidone",
+      "p38 MAPK inhibitor",
+      "Trehalose",
+      "Beraprost Sodium",
+      "Curcumin"
+    ],
+    "strongestRows": [
+      "Polyvinyl Pyrrolidone via Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+      "p38 MAPK inhibitor via Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor"
+    ],
+    "highestConfoundRows": [
+      "p38 MAPK inhibitor via Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor [sparse-protocol]"
+    ],
+    "currentRead": "6 papers are directly relevant to this wedge. 2 are primary-backed, 2 are human-relevant, and 4 still rely on abstract-only evidence."
+  }
+}

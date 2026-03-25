@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-03-24T22:19:11.679Z",
+  "domain": "ovarian-tissue",
+  "wedgeId": "ovarian-tissue:head-to-head-dmso-centered-ovarian-tissue-benchmark",
+  "queue": [
+    {
+      "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+      "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "decisionImpact": "medium",
+      "missingFields": [
+        "outcomeClasses",
+        "authority"
+      ],
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "transplant relevant",
+      "wedgeRelevanceScore": 0.55,
+      "rationale": "no resolved extraction available for this reviewed paper",
+      "recommendedAction": "review source enrichment for wedge-relevant evidence"
+    },
+    {
+      "paperId": "f6f60dca-4106-4aa1-9353-f5c7a818d72c",
+      "title": "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "decisionImpact": "medium",
+      "missingFields": [
+        "outcomeClasses",
+        "stepPhases",
+        "authority",
+        "protocolDetail"
+      ],
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "research only",
+      "wedgeRelevanceScore": 0.55,
+      "rationale": "no resolved extraction available for this reviewed paper",
+      "recommendedAction": "review source enrichment for wedge-relevant evidence"
+    },
+    {
+      "paperId": "eb9d9be6-4244-4e4b-892e-ba809925613a",
+      "title": "Cryopreservation and in vitro culture of caprine preantral follicles",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "decisionImpact": "medium",
+      "missingFields": [
+        "outcomeClasses",
+        "stepPhases",
+        "authority"
+      ],
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "research only",
+      "wedgeRelevanceScore": 0.25,
+      "rationale": "no resolved extraction available for this reviewed paper",
+      "recommendedAction": "review source enrichment for wedge-relevant evidence"
+    },
+    {
+      "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+      "title": "Ovarian and oocyte cryopreservation",
+      "priority": "evidence-thin",
+      "status": "pending",
+      "decisionImpact": "medium",
+      "missingFields": [
+        "outcomeClasses",
+        "stepPhases",
+        "authority"
+      ],
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "transplant relevant",
+      "wedgeRelevanceScore": 0.25,
+      "rationale": "no resolved extraction available for this reviewed paper",
+      "recommendedAction": "review source enrichment for wedge-relevant evidence"
+    }
+  ]
+}

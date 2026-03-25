@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-03-24T22:18:59.891Z",
+  "domain": "islets",
+  "wedgeId": "islets:additive-assisted-islet-recovery-benchmark-on-a-fixed-base-cryomix",
+  "contradictions": [
+    {
+      "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+      "paperA": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+      "paperB": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+      "sharedContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ]
+      },
+      "reason": "Comparable species/context with shared outcome readout but different preservation families",
+      "likelyConfounds": [
+        "endpoint mismatch"
+      ],
+      "decisionImpact": "low",
+      "resolutionPath": "Carry this as an explicit caveat in wedge and experiment artifacts until better evidence arrives.",
+      "confidence": 0.72
+    }
+  ]
+}

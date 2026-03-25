@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-03-24T22:18:59.553Z",
+  "domain": "islets",
+  "wedgeId": "islets:additive-assisted-islet-recovery-benchmark-on-a-fixed-base-cryomix",
+  "queue": [
+    {
+      "paperId": "7cbe1db5-5f6a-4519-9713-bddca96212f7",
+      "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+      "priority": "ambiguous-evidence",
+      "status": "reviewed",
+      "decisionImpact": "high",
+      "missingFields": [
+        "protocolDetail"
+      ],
+      "authorityProfile": "primary-backed",
+      "translationalSignal": "clinically adjacent",
+      "wedgeRelevanceScore": 1,
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "recommendedAction": "monitor"
+    },
+    {
+      "paperId": "4056fdf9-3483-40ce-9ef4-ccd534962039",
+      "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+      "priority": "ambiguous-evidence",
+      "status": "reviewed",
+      "decisionImpact": "medium",
+      "missingFields": [
+        "authority"
+      ],
+      "authorityProfile": "primary-backed",
+      "translationalSignal": "preclinical",
+      "wedgeRelevanceScore": 1,
+      "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class",
+      "recommendedAction": "monitor"
+    },
+    {
+      "paperId": "5f8b44a6-e05c-4bdd-ac73-18c0411696dc",
+      "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+      "priority": "step-phase-manual",
+      "status": "pending",
+      "decisionImpact": "medium",
+      "missingFields": [
+        "stepPhases",
+        "authority",
+        "protocolDetail"
+      ],
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "preclinical",
+      "wedgeRelevanceScore": 0.55,
+      "rationale": "Step phases for \"Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets\" still require manual or fuller-source confirmation before benchmark promotion.",
+      "recommendedAction": "review source enrichment for wedge-relevant evidence"
+    }
+  ]
+}

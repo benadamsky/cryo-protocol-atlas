@@ -1,0 +1,22 @@
+[
+  {
+    "domain": "islets",
+    "readinessScore": 0.992,
+    "evidenceScore": 0.96,
+    "commercialScore": 1,
+    "standardPattern": "slow-freezing via Dimethyl Sulfoxide, Sucrose, Ethylene Glycol",
+    "painPoint": "Vitrification and slow-freezing remain confounded by species and endpoint differences.",
+    "whyOptimizationMatters": "A cleaner benchmark wedge maps to transplant and cell-banking workflows where protocol uncertainty still blocks standardization.",
+    "recommendedNextMove": "Do reviewed source enrichment on the highest-value DOI-backed evidence gaps."
+  },
+  {
+    "domain": "ovarian-tissue",
+    "readinessScore": 0.593,
+    "evidenceScore": 0.78,
+    "commercialScore": 0.9,
+    "standardPattern": "slow-freezing via Dimethyl Sulfoxide, Sucrose, Ethylene Glycol",
+    "painPoint": "Promising protocols are still over-indexed on viability or in-vitro function rather than transplantation-grade outcomes.",
+    "whyOptimizationMatters": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows.",
+    "recommendedNextMove": "Do reviewed source enrichment on the highest-value DOI-backed evidence gaps."
+  }
+]

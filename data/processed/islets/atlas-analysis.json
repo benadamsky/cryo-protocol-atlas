@@ -1,0 +1,2822 @@
+{
+  "domain": "islets",
+  "baselineSummary": {
+    "domain": "islets",
+    "totalPapers": 53,
+    "protocolFamilies": [
+      {
+        "label": "unknown",
+        "count": 33
+      },
+      {
+        "label": "slow-freezing",
+        "count": 11
+      },
+      {
+        "label": "vitrification",
+        "count": 8
+      },
+      {
+        "label": "comparative",
+        "count": 1
+      }
+    ],
+    "topChemicals": [
+      {
+        "label": "Dimethyl Sulfoxide",
+        "count": 41
+      },
+      {
+        "label": "Sucrose",
+        "count": 12
+      },
+      {
+        "label": "Ethylene Glycol",
+        "count": 10
+      },
+      {
+        "label": "Glycerol",
+        "count": 4
+      },
+      {
+        "label": "Polyethylene Glycol",
+        "count": 4
+      },
+      {
+        "label": "Trehalose",
+        "count": 4
+      },
+      {
+        "label": "Beraprost Sodium",
+        "count": 2
+      },
+      {
+        "label": "Carboxylated epsilon-poly-L-lysine",
+        "count": 1
+      },
+      {
+        "label": "Curcumin",
+        "count": 1
+      },
+      {
+        "label": "Hydroxyethyl Starch",
+        "count": 1
+      },
+      {
+        "label": "Polyvinyl Pyrrolidone",
+        "count": 1
+      },
+      {
+        "label": "Propylene Glycol",
+        "count": 1
+      }
+    ],
+    "topSpecimenTypes": [
+      {
+        "label": "islets",
+        "count": 53
+      },
+      {
+        "label": "pancreatic islets",
+        "count": 46
+      },
+      {
+        "label": "islet cells",
+        "count": 3
+      },
+      {
+        "label": "encapsulated islets",
+        "count": 2
+      },
+      {
+        "label": "beta cells",
+        "count": 1
+      }
+    ],
+    "topOutcomes": [
+      {
+        "label": "viability",
+        "count": 30
+      },
+      {
+        "label": "function",
+        "count": 27
+      },
+      {
+        "label": "transplantation",
+        "count": 21
+      },
+      {
+        "label": "morphology",
+        "count": 8
+      }
+    ],
+    "topStepPhases": [
+      {
+        "label": "cooling",
+        "count": 227
+      },
+      {
+        "label": "storage",
+        "count": 147
+      },
+      {
+        "label": "equilibration",
+        "count": 84
+      },
+      {
+        "label": "warming",
+        "count": 76
+      },
+      {
+        "label": "culture",
+        "count": 32
+      },
+      {
+        "label": "assessment",
+        "count": 8
+      },
+      {
+        "label": "perfusion",
+        "count": 4
+      },
+      {
+        "label": "loading",
+        "count": 2
+      }
+    ],
+    "highConfidencePapers": [
+      {
+        "title": "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+        "paperType": "experimental",
+        "protocolFamily": "unknown",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Glycerol",
+          "Polyvinyl Pyrrolidone",
+          "Polyethylene Glycol"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets",
+          "islet cells"
+        ],
+        "stepPhases": [
+          "equilibration",
+          "cooling",
+          "storage",
+          "warming",
+          "culture",
+          "assessment"
+        ]
+      },
+      {
+        "title": "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+        "paperType": "experimental",
+        "protocolFamily": "slow-freezing",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "warming",
+          "storage"
+        ]
+      },
+      {
+        "title": "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+        "paperType": "experimental",
+        "protocolFamily": "comparative",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol",
+          "Sucrose"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "storage",
+          "equilibration"
+        ]
+      },
+      {
+        "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+        "paperType": "experimental",
+        "protocolFamily": "vitrification",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol",
+          "Sucrose"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "storage",
+          "equilibration"
+        ]
+      },
+      {
+        "title": "Storage and Microencapsulation of Islets for Transplantation",
+        "paperType": "experimental",
+        "protocolFamily": "unknown",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "storage"
+        ]
+      },
+      {
+        "title": "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+        "paperType": "experimental",
+        "protocolFamily": "unknown",
+        "extractionConfidence": 0.95,
+        "species": [
+          "human"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Trehalose"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "culture",
+          "cooling",
+          "storage"
+        ]
+      },
+      {
+        "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+        "paperType": "unknown",
+        "protocolFamily": "vitrification",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Ethylene Glycol",
+          "Sucrose"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "equilibration",
+          "storage",
+          "culture"
+        ]
+      },
+      {
+        "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+        "paperType": "experimental",
+        "protocolFamily": "slow-freezing",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat",
+          "dog"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Sucrose"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "equilibration",
+          "storage",
+          "warming"
+        ]
+      },
+      {
+        "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+        "paperType": "experimental",
+        "protocolFamily": "unknown",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "warming",
+          "storage"
+        ]
+      },
+      {
+        "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+        "paperType": "experimental",
+        "protocolFamily": "unknown",
+        "extractionConfidence": 0.95,
+        "species": [
+          "mouse"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Curcumin"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "storage",
+          "warming"
+        ]
+      }
+    ],
+    "uncertaintyHotspots": [
+      {
+        "protocolFamily": "unknown",
+        "chemical": "Dimethyl Sulfoxide",
+        "specimenType": "islets",
+        "paperCount": 25,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation",
+          "morphology"
+        ],
+        "titles": [
+          "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+          "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets",
+          "Storage and Microencapsulation of Islets for Transplantation",
+          "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+          "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+          "Cryo-isolation: A Novel Method for Enzyme-Free Isolation of Pancreatic Islets Involving In Situ Cryopreservation of Islets and Selective Destruction of Acinar Tissue",
+          "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+          "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+          "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+          "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+          "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+          "Murine Islet Cryopreservation and Corticosteroids: Functional Studies",
+          "Nonenzymatic Cryogenic Isolation of Therapeutic Cells: Novel Approach for Enzyme-Free Isolation of Pancreatic Islets Using In Situ Cryopreservation of Islets and Concurrent Selective Freeze Destruction of Acinar Tissue",
+          "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+          "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+          "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+          "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium",
+          "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+          "ESTABLISHING BASELINE CONTROL WATER VALUES FOR DIFFERENTIAL SCANNING CALORIMETRY (DSC) IN CRYOPROTECTANT EXPLORATION",
+          "Successful Cryopreservation of Fetal Porcine Proislets",
+          "CRYOPRESERVATION OF CHICK ISLETS",
+          "Intraportal Autotransplantation of Cryopreserved Porcine Islets of Langerhans",
+          "USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION",
+          "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation",
+          "Viability Studies on Frozen-Thawed Rat Islets of Langerhans"
+        ]
+      },
+      {
+        "protocolFamily": "unknown",
+        "chemical": "Dimethyl Sulfoxide",
+        "specimenType": "pancreatic islets",
+        "paperCount": 19,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation",
+          "morphology"
+        ],
+        "titles": [
+          "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+          "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets",
+          "Storage and Microencapsulation of Islets for Transplantation",
+          "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+          "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+          "Cryo-isolation: A Novel Method for Enzyme-Free Isolation of Pancreatic Islets Involving In Situ Cryopreservation of Islets and Selective Destruction of Acinar Tissue",
+          "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+          "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+          "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+          "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+          "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+          "Murine Islet Cryopreservation and Corticosteroids: Functional Studies",
+          "Nonenzymatic Cryogenic Isolation of Therapeutic Cells: Novel Approach for Enzyme-Free Isolation of Pancreatic Islets Using In Situ Cryopreservation of Islets and Concurrent Selective Freeze Destruction of Acinar Tissue",
+          "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+          "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+          "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium",
+          "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+          "ESTABLISHING BASELINE CONTROL WATER VALUES FOR DIFFERENTIAL SCANNING CALORIMETRY (DSC) IN CRYOPROTECTANT EXPLORATION",
+          "Successful Cryopreservation of Fetal Porcine Proislets"
+        ]
+      },
+      {
+        "protocolFamily": "slow-freezing",
+        "chemical": "Dimethyl Sulfoxide",
+        "specimenType": "islets",
+        "paperCount": 10,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation",
+          "morphology"
+        ],
+        "titles": [
+          "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+          "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+          "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+          "Prolongation of Islet Xenograft Survival by Cryopreservation",
+          "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+          "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+          "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+          "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+          "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide"
+        ]
+      },
+      {
+        "protocolFamily": "slow-freezing",
+        "chemical": "Dimethyl Sulfoxide",
+        "specimenType": "pancreatic islets",
+        "paperCount": 9,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation",
+          "morphology"
+        ],
+        "titles": [
+          "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+          "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+          "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+          "Prolongation of Islet Xenograft Survival by Cryopreservation",
+          "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+          "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+          "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+          "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Dimethyl Sulfoxide",
+        "specimenType": "islets",
+        "paperCount": 5,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+          "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Dimethyl Sulfoxide",
+        "specimenType": "pancreatic islets",
+        "paperCount": 5,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+          "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Ethylene Glycol",
+        "specimenType": "islets",
+        "paperCount": 5,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Ethylene Glycol",
+        "specimenType": "pancreatic islets",
+        "paperCount": 5,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets"
+        ]
+      },
+      {
+        "protocolFamily": "slow-freezing",
+        "chemical": "Sucrose",
+        "specimenType": "islets",
+        "paperCount": 4,
+        "outcomeClasses": [
+          "function",
+          "transplantation",
+          "viability"
+        ],
+        "titles": [
+          "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+          "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+          "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing"
+        ]
+      },
+      {
+        "protocolFamily": "slow-freezing",
+        "chemical": "Sucrose",
+        "specimenType": "pancreatic islets",
+        "paperCount": 4,
+        "outcomeClasses": [
+          "function",
+          "transplantation",
+          "viability"
+        ],
+        "titles": [
+          "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+          "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+          "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Sucrose",
+        "specimenType": "islets",
+        "paperCount": 4,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Sucrose",
+        "specimenType": "pancreatic islets",
+        "paperCount": 4,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "topic": "Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets",
+        "paperA": {
+          "title": "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.85
+      },
+      {
+        "topic": "Dimethyl Sulfoxide, Sucrose in islets, pancreatic islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "transplantation",
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Sucrose"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.85
+      },
+      {
+        "topic": "Dimethyl Sulfoxide, Sucrose in islets, pancreatic islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "transplantation",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Sucrose"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.85
+      },
+      {
+        "topic": "Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "function",
+            "morphology"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.85
+      },
+      {
+        "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "transplantation",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      }
+    ],
+    "experimentSuggestions": [
+      {
+        "title": "Matched-species islet vitrification vs slow-freezing benchmark",
+        "category": "benchmark",
+        "hypothesis": "The current islet corpus overweights slow-freezing, so a matched-species comparison is needed to separate real vitrification gains from endpoint and species confounding.",
+        "rationale": "The cleaned islet slice contains many slow-freezing studies, a smaller vitrification set, and a few comparative papers. A direct benchmark with the same species and the same post-thaw function readout is the fastest way to convert that literature asymmetry into actionable signal.",
+        "supportingContext": {
+          "chemicals": [
+            "Sucrose",
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol",
+            "Propylene Glycol",
+            "Polyethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing",
+            "vitrification",
+            "comparative"
+          ],
+          "paperTitles": [
+            "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+            "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+            "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+            "Bulk Cryopreservation of Isolated Islets of Langerhans"
+          ]
+        },
+        "confidence": 0.86
+      },
+      {
+        "title": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+        "category": "benchmark",
+        "hypothesis": "Several islet papers imply that recovery gains may come from adjuncts added around a standard cryomix rather than from entirely new base CPA chemistry.",
+        "rationale": "Trehalose, curcumin, beraprost, and other adjunct-style titles recur in the curated islet slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw recovery/function would quickly test whether the additive signal is real.",
+        "supportingContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Glycerol",
+            "Polyvinyl Pyrrolidone",
+            "Polyethylene Glycol",
+            "Trehalose",
+            "Beraprost Sodium"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "unknown"
+          ],
+          "paperTitles": [
+            "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+            "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+            "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+            "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+            "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+            "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium"
+          ]
+        },
+        "confidence": 0.83
+      },
+      {
+        "title": "Promote islet function-heavy protocols to transplantation endpoints",
+        "category": "endpoint-upgrade",
+        "hypothesis": "Several islet protocols that look promising on insulin secretion or in-vitro function will reorder once they are compared on graft or transplantation outcomes.",
+        "rationale": "The curated islet slice now has better function labeling than transplantation coverage. Converting the strongest in-vitro function protocols into a small transplantation benchmark is likely higher-signal than inventing a new chemistry path immediately.",
+        "supportingContext": {
+          "chemicals": [
+            "Sucrose",
+            "Dimethyl Sulfoxide",
+            "Glycerol",
+            "Polyvinyl Pyrrolidone",
+            "Polyethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing",
+            "unknown",
+            "comparative",
+            "vitrification"
+          ],
+          "paperTitles": [
+            "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+            "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+            "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+            "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage"
+          ]
+        },
+        "confidence": 0.81
+      },
+      {
+        "title": "Scale-up benchmark for banked or bulk islet handling",
+        "category": "scale-up",
+        "hypothesis": "Scale-up losses in islet banking may come from handling and thaw workflow variance rather than core cryomix choice alone.",
+        "rationale": "The islet corpus includes bulk/banking/transport titles, but those papers are scattered across sparse workflow descriptions. A scale-up benchmark focused on loading, storage, thaw, and handling variance would test whether operational workflow dominates the observed recovery losses.",
+        "supportingContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol",
+            "Sucrose"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "vitrification",
+            "slow-freezing",
+            "unknown"
+          ],
+          "paperTitles": [
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Bulk Cryopreservation of Isolated Islets of Langerhans",
+            "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers"
+          ]
+        },
+        "confidence": 0.78
+      }
+    ],
+    "researchHypotheses": [
+      {
+        "id": "islets:promote-islet-function-heavy-protocols-to-transplantation-endpoints",
+        "domain": "islets",
+        "title": "Promote islet function-heavy protocols to transplantation endpoints",
+        "category": "endpoint-upgrade",
+        "claim": "Several islet protocols that look promising on insulin secretion or in-vitro function will reorder once they are compared on graft or transplantation outcomes.",
+        "proposedExperiment": "The curated islet slice now has better function labeling than transplantation coverage. Converting the strongest in-vitro function protocols into a small transplantation benchmark is likely higher-signal than inventing a new chemistry path immediately.",
+        "supportingContext": {
+          "chemicals": [
+            "Sucrose",
+            "Dimethyl Sulfoxide",
+            "Glycerol",
+            "Polyvinyl Pyrrolidone",
+            "Polyethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing",
+            "unknown",
+            "comparative",
+            "vitrification"
+          ],
+          "paperTitles": [
+            "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+            "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+            "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+            "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage"
+          ]
+        },
+        "evidence": {
+          "totalPaperCount": 6,
+          "experimentalPaperCount": 6,
+          "comparativePaperCount": 1,
+          "distinctSpeciesCount": 2,
+          "strongOutcomePaperCount": 6,
+          "transplantationPaperCount": 0,
+          "contradictionCount": 5,
+          "sparseProtocolPaperCount": 1
+        },
+        "scores": {
+          "evidenceScore": 1,
+          "uncertaintyScore": 0.75,
+          "actionabilityScore": 0.8,
+          "priorityScore": 0.858
+        },
+        "blockers": [
+          "2 relevant papers still have unknown preservation family labels",
+          "1 relevant papers still have sparse step structure",
+          "5 unresolved contradictions remain in the relevant evidence slice",
+          "No transplantation endpoint is present in the directly supporting slice yet"
+        ],
+        "rationale": "The curated islet slice now has better function labeling than transplantation coverage. Converting the strongest in-vitro function protocols into a small transplantation benchmark is likely higher-signal than inventing a new chemistry path immediately."
+      },
+      {
+        "id": "islets:matched-species-islet-vitrification-vs-slow-freezing-benchmark",
+        "domain": "islets",
+        "title": "Matched-species islet vitrification vs slow-freezing benchmark",
+        "category": "benchmark",
+        "claim": "The current islet corpus overweights slow-freezing, so a matched-species comparison is needed to separate real vitrification gains from endpoint and species confounding.",
+        "proposedExperiment": "The cleaned islet slice contains many slow-freezing studies, a smaller vitrification set, and a few comparative papers. A direct benchmark with the same species and the same post-thaw function readout is the fastest way to convert that literature asymmetry into actionable signal.",
+        "supportingContext": {
+          "chemicals": [
+            "Sucrose",
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol",
+            "Propylene Glycol",
+            "Polyethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing",
+            "vitrification",
+            "comparative"
+          ],
+          "paperTitles": [
+            "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+            "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+            "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+            "Bulk Cryopreservation of Isolated Islets of Langerhans"
+          ]
+        },
+        "evidence": {
+          "totalPaperCount": 6,
+          "experimentalPaperCount": 6,
+          "comparativePaperCount": 1,
+          "distinctSpeciesCount": 3,
+          "strongOutcomePaperCount": 6,
+          "transplantationPaperCount": 2,
+          "contradictionCount": 5,
+          "sparseProtocolPaperCount": 1
+        },
+        "scores": {
+          "evidenceScore": 1,
+          "uncertaintyScore": 0.633,
+          "actionabilityScore": 0.84,
+          "priorityScore": 0.844
+        },
+        "blockers": [
+          "1 relevant papers still have sparse step structure",
+          "5 unresolved contradictions remain in the relevant evidence slice"
+        ],
+        "rationale": "The cleaned islet slice contains many slow-freezing studies, a smaller vitrification set, and a few comparative papers. A direct benchmark with the same species and the same post-thaw function readout is the fastest way to convert that literature asymmetry into actionable signal."
+      },
+      {
+        "id": "islets:additive-assisted-islet-recovery-benchmark-on-a-fixed-base-cryomix",
+        "domain": "islets",
+        "title": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+        "category": "benchmark",
+        "claim": "Several islet papers imply that recovery gains may come from adjuncts added around a standard cryomix rather than from entirely new base CPA chemistry.",
+        "proposedExperiment": "Trehalose, curcumin, beraprost, and other adjunct-style titles recur in the curated islet slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw recovery/function would quickly test whether the additive signal is real.",
+        "supportingContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Glycerol",
+            "Polyvinyl Pyrrolidone",
+            "Polyethylene Glycol",
+            "Trehalose",
+            "Beraprost Sodium"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "unknown"
+          ],
+          "paperTitles": [
+            "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+            "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+            "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+            "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+            "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+            "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium"
+          ]
+        },
+        "evidence": {
+          "totalPaperCount": 6,
+          "experimentalPaperCount": 6,
+          "comparativePaperCount": 0,
+          "distinctSpeciesCount": 4,
+          "strongOutcomePaperCount": 3,
+          "transplantationPaperCount": 1,
+          "contradictionCount": 0,
+          "sparseProtocolPaperCount": 2
+        },
+        "scores": {
+          "evidenceScore": 0.917,
+          "uncertaintyScore": 0.45,
+          "actionabilityScore": 0.84,
+          "priorityScore": 0.769
+        },
+        "blockers": [
+          "6 relevant papers still have unknown preservation family labels",
+          "2 relevant papers still have sparse step structure",
+          "Benchmark still lacks balanced evidence from both vitrification and slow-freezing"
+        ],
+        "rationale": "Trehalose, curcumin, beraprost, and other adjunct-style titles recur in the curated islet slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw recovery/function would quickly test whether the additive signal is real."
+      },
+      {
+        "id": "islets:scale-up-benchmark-for-banked-or-bulk-islet-handling",
+        "domain": "islets",
+        "title": "Scale-up benchmark for banked or bulk islet handling",
+        "category": "scale-up",
+        "claim": "Scale-up losses in islet banking may come from handling and thaw workflow variance rather than core cryomix choice alone.",
+        "proposedExperiment": "The islet corpus includes bulk/banking/transport titles, but those papers are scattered across sparse workflow descriptions. A scale-up benchmark focused on loading, storage, thaw, and handling variance would test whether operational workflow dominates the observed recovery losses.",
+        "supportingContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol",
+            "Sucrose"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "vitrification",
+            "slow-freezing",
+            "unknown"
+          ],
+          "paperTitles": [
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Bulk Cryopreservation of Isolated Islets of Langerhans",
+            "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers"
+          ]
+        },
+        "evidence": {
+          "totalPaperCount": 3,
+          "experimentalPaperCount": 3,
+          "comparativePaperCount": 0,
+          "distinctSpeciesCount": 2,
+          "strongOutcomePaperCount": 3,
+          "transplantationPaperCount": 2,
+          "contradictionCount": 5,
+          "sparseProtocolPaperCount": 0
+        },
+        "scores": {
+          "evidenceScore": 0.633,
+          "uncertaintyScore": 0.7,
+          "actionabilityScore": 0.72,
+          "priorityScore": 0.685
+        },
+        "blockers": [
+          "1 relevant papers still have unknown preservation family labels",
+          "5 unresolved contradictions remain in the relevant evidence slice"
+        ],
+        "rationale": "The islet corpus includes bulk/banking/transport titles, but those papers are scattered across sparse workflow descriptions. A scale-up benchmark focused on loading, storage, thaw, and handling variance would test whether operational workflow dominates the observed recovery losses."
+      }
+    ],
+    "qualitySignals": {
+      "unknownProtocolFamilyCount": 33,
+      "unknownProtocolFamilyRate": 0.62,
+      "unknownStepPhaseCount": 0,
+      "contradictionCount": 5,
+      "experimentalPaperCount": 40,
+      "methodsPaperCount": 8,
+      "reviewPaperCount": 0,
+      "commentaryPaperCount": 0
+    }
+  },
+  "resolvedSummary": {
+    "domain": "islets",
+    "totalPapers": 46,
+    "protocolFamilies": [
+      {
+        "label": "slow-freezing",
+        "count": 39
+      },
+      {
+        "label": "vitrification",
+        "count": 6
+      },
+      {
+        "label": "comparative",
+        "count": 1
+      }
+    ],
+    "topChemicals": [
+      {
+        "label": "Dimethyl Sulfoxide",
+        "count": 38
+      },
+      {
+        "label": "Sucrose",
+        "count": 12
+      },
+      {
+        "label": "Ethylene Glycol",
+        "count": 10
+      },
+      {
+        "label": "Glycerol",
+        "count": 3
+      },
+      {
+        "label": "Polyethylene Glycol",
+        "count": 3
+      },
+      {
+        "label": "Beraprost Sodium",
+        "count": 2
+      },
+      {
+        "label": "Trehalose",
+        "count": 2
+      },
+      {
+        "label": "Carboxylated epsilon-poly-L-lysine",
+        "count": 1
+      },
+      {
+        "label": "Curcumin",
+        "count": 1
+      },
+      {
+        "label": "Hydroxyethyl Starch",
+        "count": 1
+      },
+      {
+        "label": "Polyvinyl Pyrrolidone",
+        "count": 1
+      },
+      {
+        "label": "Propylene Glycol",
+        "count": 1
+      }
+    ],
+    "topSpecimenTypes": [
+      {
+        "label": "islets",
+        "count": 46
+      },
+      {
+        "label": "pancreatic islets",
+        "count": 40
+      },
+      {
+        "label": "encapsulated islets",
+        "count": 2
+      },
+      {
+        "label": "islet cells",
+        "count": 2
+      }
+    ],
+    "topOutcomes": [
+      {
+        "label": "function",
+        "count": 26
+      },
+      {
+        "label": "viability",
+        "count": 26
+      },
+      {
+        "label": "transplantation",
+        "count": 15
+      },
+      {
+        "label": "morphology",
+        "count": 6
+      }
+    ],
+    "topStepPhases": [
+      {
+        "label": "cooling",
+        "count": 74
+      },
+      {
+        "label": "storage",
+        "count": 48
+      },
+      {
+        "label": "warming",
+        "count": 25
+      },
+      {
+        "label": "loading",
+        "count": 17
+      },
+      {
+        "label": "assessment",
+        "count": 12
+      },
+      {
+        "label": "equilibration",
+        "count": 7
+      },
+      {
+        "label": "culture",
+        "count": 4
+      }
+    ],
+    "highConfidencePapers": [
+      {
+        "title": "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+        "paperType": "experimental",
+        "protocolFamily": "comparative",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol",
+          "Sucrose"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "loading",
+          "cooling",
+          "storage",
+          "assessment"
+        ]
+      },
+      {
+        "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+        "paperType": "experimental",
+        "protocolFamily": "vitrification",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol",
+          "Sucrose"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "loading",
+          "storage",
+          "warming"
+        ]
+      },
+      {
+        "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+        "paperType": "experimental",
+        "protocolFamily": "vitrification",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Ethylene Glycol",
+          "Sucrose"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "loading",
+          "storage",
+          "warming",
+          "assessment"
+        ]
+      },
+      {
+        "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+        "paperType": "experimental",
+        "protocolFamily": "slow-freezing",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat",
+          "dog"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Sucrose"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "loading"
+        ]
+      },
+      {
+        "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
+        "paperType": "experimental",
+        "protocolFamily": "slow-freezing",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "storage",
+          "warming"
+        ]
+      },
+      {
+        "title": "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+        "paperType": "experimental",
+        "protocolFamily": "slow-freezing",
+        "extractionConfidence": 0.95,
+        "species": [
+          "human"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling"
+        ]
+      },
+      {
+        "title": "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+        "paperType": "experimental",
+        "protocolFamily": "slow-freezing",
+        "extractionConfidence": 0.95,
+        "species": [
+          "dog"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling"
+        ]
+      },
+      {
+        "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+        "paperType": "experimental",
+        "protocolFamily": "vitrification",
+        "extractionConfidence": 0.95,
+        "species": [
+          "rat"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol",
+          "Sucrose",
+          "Carboxylated epsilon-poly-L-lysine"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "loading",
+          "storage",
+          "warming"
+        ]
+      },
+      {
+        "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+        "paperType": "experimental",
+        "protocolFamily": "vitrification",
+        "extractionConfidence": 0.95,
+        "species": [
+          "mouse"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Propylene Glycol",
+          "Polyethylene Glycol"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "loading"
+        ]
+      },
+      {
+        "title": "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+        "paperType": "experimental",
+        "protocolFamily": "slow-freezing",
+        "extractionConfidence": 0.95,
+        "species": [
+          "pig"
+        ],
+        "chemicals": [
+          "Dimethyl Sulfoxide"
+        ],
+        "specimenTypes": [
+          "islets",
+          "pancreatic islets"
+        ],
+        "stepPhases": [
+          "cooling",
+          "equilibration"
+        ]
+      }
+    ],
+    "uncertaintyHotspots": [
+      {
+        "protocolFamily": "slow-freezing",
+        "chemical": "Dimethyl Sulfoxide",
+        "specimenType": "islets",
+        "paperCount": 32,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation",
+          "morphology"
+        ],
+        "titles": [
+          "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+          "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+          "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets",
+          "Storage and Microencapsulation of Islets for Transplantation",
+          "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+          "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+          "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+          "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+          "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+          "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+          "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+          "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+          "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+          "Murine Islet Cryopreservation and Corticosteroids: Functional Studies",
+          "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+          "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+          "Prolongation of Islet Xenograft Survival by Cryopreservation",
+          "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+          "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+          "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+          "Cryopreservation of Freshly Isolated Porcine Islet Cells",
+          "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+          "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium",
+          "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+          "Successful Cryopreservation of Fetal Porcine Proislets",
+          "CRYOPRESERVATION OF CHICK ISLETS",
+          "Intraportal Autotransplantation of Cryopreserved Porcine Islets of Langerhans",
+          "Transplantation and in Vitro Perifusion of Rat Islets of Langerhans after Slow Cooling and Warming in the Presence of Either Glycerol or Dimethyl Sulfoxide",
+          "USE OF POLYETHYLENEGLYCOL FOR PORCINE ISLET CRYOPRESERVATION",
+          "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation",
+          "Viability Studies on Frozen-Thawed Rat Islets of Langerhans"
+        ]
+      },
+      {
+        "protocolFamily": "slow-freezing",
+        "chemical": "Dimethyl Sulfoxide",
+        "specimenType": "pancreatic islets",
+        "paperCount": 26,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation",
+          "morphology"
+        ],
+        "titles": [
+          "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+          "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+          "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets",
+          "Storage and Microencapsulation of Islets for Transplantation",
+          "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+          "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+          "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+          "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+          "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+          "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+          "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+          "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+          "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+          "Murine Islet Cryopreservation and Corticosteroids: Functional Studies",
+          "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+          "Pancreatic islets from non-heart-beating donor pig: Two-layer preservation method in an in vitro porcine model",
+          "Prolongation of Islet Xenograft Survival by Cryopreservation",
+          "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+          "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+          "CRYOGENIC STORAGE OF ISOLATED, PURIFIED PORCINE PANCREATIC ISLETS",
+          "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation",
+          "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium",
+          "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+          "Successful Cryopreservation of Fetal Porcine Proislets",
+          "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation"
+        ]
+      },
+      {
+        "protocolFamily": "slow-freezing",
+        "chemical": "Sucrose",
+        "specimenType": "islets",
+        "paperCount": 7,
+        "outcomeClasses": [
+          "function",
+          "transplantation",
+          "viability"
+        ],
+        "titles": [
+          "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+          "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets",
+          "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+          "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+          "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers",
+          "Cryopreservation of Freshly Isolated Porcine Islet Cells"
+        ]
+      },
+      {
+        "protocolFamily": "slow-freezing",
+        "chemical": "Sucrose",
+        "specimenType": "pancreatic islets",
+        "paperCount": 6,
+        "outcomeClasses": [
+          "function",
+          "transplantation",
+          "viability"
+        ],
+        "titles": [
+          "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+          "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets",
+          "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "COMPARISON OF METHODS USED FOR THE REMOVAL OF DMSO FOLLOWING CRYOPRESERVATION AND THE DEVELOPMENT OF AN AUTOMATED PROTOCOL",
+          "Effects of Precryopreservation Culture on Survival of Rat Islets Transplanted after Slow Cooling and Rapid Thawing",
+          "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Dimethyl Sulfoxide",
+        "specimenType": "islets",
+        "paperCount": 5,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+          "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Dimethyl Sulfoxide",
+        "specimenType": "pancreatic islets",
+        "paperCount": 5,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+          "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Ethylene Glycol",
+        "specimenType": "islets",
+        "paperCount": 5,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Ethylene Glycol",
+        "specimenType": "pancreatic islets",
+        "paperCount": 5,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Cryopreservation of rat islets of Langerhans by vitriﬁcation",
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets"
+        ]
+      },
+      {
+        "protocolFamily": "slow-freezing",
+        "chemical": "Ethylene Glycol",
+        "specimenType": "islets",
+        "paperCount": 4,
+        "outcomeClasses": [
+          "viability",
+          "function",
+          "transplantation",
+          "morphology"
+        ],
+        "titles": [
+          "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+          "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+          "Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents",
+          "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation"
+        ]
+      },
+      {
+        "protocolFamily": "slow-freezing",
+        "chemical": "Ethylene Glycol",
+        "specimenType": "pancreatic islets",
+        "paperCount": 4,
+        "outcomeClasses": [
+          "viability",
+          "function",
+          "transplantation",
+          "morphology"
+        ],
+        "titles": [
+          "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+          "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+          "Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents",
+          "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Sucrose",
+        "specimenType": "islets",
+        "paperCount": 4,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets"
+        ]
+      },
+      {
+        "protocolFamily": "vitrification",
+        "chemical": "Sucrose",
+        "specimenType": "pancreatic islets",
+        "paperCount": 4,
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "transplantation"
+        ],
+        "titles": [
+          "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "Transplantation of rat pancreatic islets vitrified-warmed on the nylon mesh device and the silk fibroin sponge disc",
+          "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "topic": "Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets",
+        "paperA": {
+          "title": "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "viability",
+            "function"
+          ]
+        },
+        "paperB": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.85
+      },
+      {
+        "topic": "Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets",
+        "paperA": {
+          "title": "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "viability",
+            "function"
+          ]
+        },
+        "paperB": {
+          "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.85
+      },
+      {
+        "topic": "Dimethyl Sulfoxide, Sucrose in islets, pancreatic islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "transplantation",
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Sucrose"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.85
+      },
+      {
+        "topic": "Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "function",
+            "transplantation"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.85
+      },
+      {
+        "topic": "Dimethyl Sulfoxide, Sucrose in islets, pancreatic islets",
+        "paperA": {
+          "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "transplantation",
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Sucrose"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.85
+      },
+      {
+        "topic": "Dimethyl Sulfoxide, Ethylene Glycol in islets, pancreatic islets",
+        "paperA": {
+          "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "function",
+            "transplantation"
+          ]
+        },
+        "paperB": {
+          "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.85
+      },
+      {
+        "topic": "Ethylene Glycol in islets, pancreatic islets",
+        "paperA": {
+          "title": "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "viability",
+            "function"
+          ]
+        },
+        "paperB": {
+          "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Ethylene Glycol in islets, pancreatic islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "A Functional Analysis on Isolated Rat Islets of Langerhans: Effects of Dimethylsulfoxide and Low-Temperature Preservation",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "function"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Dimethyl Sulfoxide in islets",
+        "paperA": {
+          "title": "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Viability Studies on Frozen-Thawed Rat Islets of Langerhans",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "specimenTypes": [
+            "islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Sucrose in islets, pancreatic islets",
+        "paperA": {
+          "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function"
+          ]
+        },
+        "paperB": {
+          "title": "Bulk Cryopreservation of Isolated Islets of Langerhans",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "transplantation",
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Sucrose"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Ethylene Glycol in islets, pancreatic islets",
+        "paperA": {
+          "title": "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function"
+          ]
+        },
+        "paperB": {
+          "title": "Cryopreservation of Rat Islets of Langerhans: A Comparison of Two Techniques",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "function",
+            "transplantation"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+        "paperA": {
+          "title": "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "transplantation",
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+        "paperA": {
+          "title": "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "transplantation",
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Ethylene Glycol in islets, pancreatic islets",
+        "paperA": {
+          "title": "Improved cryopreservation yield of pancreatic islets using combination of lower dose permeable cryoprotective agents",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+        "paperA": {
+          "title": "Murine Islet Cryopreservation and Corticosteroids: Functional Studies",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "function"
+          ]
+        },
+        "paperB": {
+          "title": "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "transplantation",
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+        "paperA": {
+          "title": "Prolongation of Islet Xenograft Survival by Cryopreservation",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      },
+      {
+        "topic": "Dimethyl Sulfoxide in islets, pancreatic islets",
+        "paperA": {
+          "title": "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+          "protocolFamily": "vitrification",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "paperB": {
+          "title": "Isolation and Long Term Preservation of Pancreatic Islets from Mouse, Rat and Guinea Pig",
+          "protocolFamily": "slow-freezing",
+          "outcomeClasses": [
+            "function",
+            "viability"
+          ]
+        },
+        "sharedContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ]
+        },
+        "reason": "Comparable species/context with shared outcome readout but different preservation families",
+        "confidence": 0.72
+      }
+    ],
+    "experimentSuggestions": [
+      {
+        "title": "Matched-species islet vitrification vs slow-freezing benchmark",
+        "category": "benchmark",
+        "hypothesis": "The current islet corpus overweights slow-freezing, so a matched-species comparison is needed to separate real vitrification gains from endpoint and species confounding.",
+        "rationale": "The cleaned islet slice contains many slow-freezing studies, a smaller vitrification set, and a few comparative papers. A direct benchmark with the same species and the same post-thaw function readout is the fastest way to convert that literature asymmetry into actionable signal.",
+        "supportingContext": {
+          "chemicals": [
+            "Sucrose",
+            "Dimethyl Sulfoxide",
+            "Glycerol",
+            "Polyvinyl Pyrrolidone",
+            "Polyethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing",
+            "vitrification",
+            "comparative"
+          ],
+          "paperTitles": [
+            "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+            "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+            "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+            "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets"
+          ]
+        },
+        "confidence": 0.86
+      },
+      {
+        "title": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+        "category": "benchmark",
+        "hypothesis": "Several islet papers imply that recovery gains may come from adjuncts added around a standard cryomix rather than from entirely new base CPA chemistry.",
+        "rationale": "Trehalose, curcumin, beraprost, and other adjunct-style titles recur in the curated islet slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw recovery/function would quickly test whether the additive signal is real.",
+        "supportingContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Glycerol",
+            "Polyvinyl Pyrrolidone",
+            "Polyethylene Glycol",
+            "Trehalose",
+            "Beraprost Sodium"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing"
+          ],
+          "paperTitles": [
+            "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+            "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+            "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+            "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+            "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+            "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium"
+          ]
+        },
+        "confidence": 0.83
+      },
+      {
+        "title": "Promote islet function-heavy protocols to transplantation endpoints",
+        "category": "endpoint-upgrade",
+        "hypothesis": "Several islet protocols that look promising on insulin secretion or in-vitro function will reorder once they are compared on graft or transplantation outcomes.",
+        "rationale": "The curated islet slice now has better function labeling than transplantation coverage. Converting the strongest in-vitro function protocols into a small transplantation benchmark is likely higher-signal than inventing a new chemistry path immediately.",
+        "supportingContext": {
+          "chemicals": [
+            "Sucrose",
+            "Dimethyl Sulfoxide",
+            "Glycerol",
+            "Polyvinyl Pyrrolidone",
+            "Polyethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing",
+            "comparative",
+            "vitrification"
+          ],
+          "paperTitles": [
+            "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+            "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+            "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+            "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets"
+          ]
+        },
+        "confidence": 0.81
+      },
+      {
+        "title": "Full-text protocol resolution for sparse islet thaw/loading workflows",
+        "category": "workflow-gap",
+        "hypothesis": "A small number of islet papers still look interesting, but their step structure is too thin to compare fairly against the rest of the corpus.",
+        "rationale": "The benchmarked islet slice is now minimum-depth ready, and the remaining weak points are concentrated in a few papers where only thawing or one procedural phase is explicit. Full-text resolution there is likely higher signal than another broad extraction pass.",
+        "supportingContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Hydroxyethyl Starch",
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing"
+          ],
+          "paperTitles": [
+            "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+            "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+            "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+            "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+            "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+            "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation"
+          ]
+        },
+        "confidence": 0.84
+      },
+      {
+        "title": "Scale-up benchmark for banked or bulk islet handling",
+        "category": "scale-up",
+        "hypothesis": "Scale-up losses in islet banking may come from handling and thaw workflow variance rather than core cryomix choice alone.",
+        "rationale": "The islet corpus includes bulk/banking/transport titles, but those papers are scattered across sparse workflow descriptions. A scale-up benchmark focused on loading, storage, thaw, and handling variance would test whether operational workflow dominates the observed recovery losses.",
+        "supportingContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol",
+            "Sucrose"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "vitrification",
+            "slow-freezing"
+          ],
+          "paperTitles": [
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Bulk Cryopreservation of Isolated Islets of Langerhans",
+            "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers"
+          ]
+        },
+        "confidence": 0.78
+      }
+    ],
+    "researchHypotheses": [
+      {
+        "id": "islets:matched-species-islet-vitrification-vs-slow-freezing-benchmark",
+        "domain": "islets",
+        "title": "Matched-species islet vitrification vs slow-freezing benchmark",
+        "category": "benchmark",
+        "claim": "The current islet corpus overweights slow-freezing, so a matched-species comparison is needed to separate real vitrification gains from endpoint and species confounding.",
+        "proposedExperiment": "The cleaned islet slice contains many slow-freezing studies, a smaller vitrification set, and a few comparative papers. A direct benchmark with the same species and the same post-thaw function readout is the fastest way to convert that literature asymmetry into actionable signal.",
+        "supportingContext": {
+          "chemicals": [
+            "Sucrose",
+            "Dimethyl Sulfoxide",
+            "Glycerol",
+            "Polyvinyl Pyrrolidone",
+            "Polyethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing",
+            "vitrification",
+            "comparative"
+          ],
+          "paperTitles": [
+            "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Acellular matrix derived from rat liver improves the functionality of rat pancreatic islets before or after vitrification",
+            "Supplementary cryoprotective effect of carboxylated ε-poly-L-lysine during vitriﬁcation of rat pancreatic islets",
+            "Vitrification of Mouse Islets of Langerhans: Comparison with a More Conventional Freezing Method",
+            "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets"
+          ]
+        },
+        "evidence": {
+          "totalPaperCount": 6,
+          "experimentalPaperCount": 6,
+          "comparativePaperCount": 1,
+          "distinctSpeciesCount": 2,
+          "strongOutcomePaperCount": 4,
+          "transplantationPaperCount": 1,
+          "contradictionCount": 20,
+          "sparseProtocolPaperCount": 1
+        },
+        "scores": {
+          "evidenceScore": 0.95,
+          "uncertaintyScore": 1,
+          "actionabilityScore": 0.84,
+          "priorityScore": 0.919
+        },
+        "blockers": [
+          "1 relevant papers still have sparse step structure",
+          "20 unresolved contradictions remain in the relevant evidence slice"
+        ],
+        "rationale": "The cleaned islet slice contains many slow-freezing studies, a smaller vitrification set, and a few comparative papers. A direct benchmark with the same species and the same post-thaw function readout is the fastest way to convert that literature asymmetry into actionable signal."
+      },
+      {
+        "id": "islets:promote-islet-function-heavy-protocols-to-transplantation-endpoints",
+        "domain": "islets",
+        "title": "Promote islet function-heavy protocols to transplantation endpoints",
+        "category": "endpoint-upgrade",
+        "claim": "Several islet protocols that look promising on insulin secretion or in-vitro function will reorder once they are compared on graft or transplantation outcomes.",
+        "proposedExperiment": "The curated islet slice now has better function labeling than transplantation coverage. Converting the strongest in-vitro function protocols into a small transplantation benchmark is likely higher-signal than inventing a new chemistry path immediately.",
+        "supportingContext": {
+          "chemicals": [
+            "Sucrose",
+            "Dimethyl Sulfoxide",
+            "Glycerol",
+            "Polyvinyl Pyrrolidone",
+            "Polyethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing",
+            "comparative",
+            "vitrification"
+          ],
+          "paperTitles": [
+            "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+            "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+            "Cryopreservation of Isolated Rat Islets of Langerhans in the Presence of Ethylene Glycol or Dimethyl Sulfoxide: Evaluation of Toxicity and the Dynamic Pattern of Subsequent Insulin Release in Vitro",
+            "Direct comparison of Cryotop® vitriﬁcation and Bicell® freezing on recovery of functional rat pancreatic islets",
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Preserved insulin secretion capacity and graft function of cryostored encapsulated rat islets"
+          ]
+        },
+        "evidence": {
+          "totalPaperCount": 6,
+          "experimentalPaperCount": 6,
+          "comparativePaperCount": 1,
+          "distinctSpeciesCount": 1,
+          "strongOutcomePaperCount": 4,
+          "transplantationPaperCount": 1,
+          "contradictionCount": 10,
+          "sparseProtocolPaperCount": 1
+        },
+        "scores": {
+          "evidenceScore": 0.883,
+          "uncertaintyScore": 1,
+          "actionabilityScore": 0.8,
+          "priorityScore": 0.879
+        },
+        "blockers": [
+          "1 relevant papers still have sparse step structure",
+          "10 unresolved contradictions remain in the relevant evidence slice"
+        ],
+        "rationale": "The curated islet slice now has better function labeling than transplantation coverage. Converting the strongest in-vitro function protocols into a small transplantation benchmark is likely higher-signal than inventing a new chemistry path immediately."
+      },
+      {
+        "id": "islets:full-text-protocol-resolution-for-sparse-islet-thaw-loading-workflows",
+        "domain": "islets",
+        "title": "Full-text protocol resolution for sparse islet thaw/loading workflows",
+        "category": "workflow-gap",
+        "claim": "A small number of islet papers still look interesting, but their step structure is too thin to compare fairly against the rest of the corpus.",
+        "proposedExperiment": "The benchmarked islet slice is now minimum-depth ready, and the remaining weak points are concentrated in a few papers where only thawing or one procedural phase is explicit. Full-text resolution there is likely higher signal than another broad extraction pass.",
+        "supportingContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Hydroxyethyl Starch",
+            "Ethylene Glycol"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing"
+          ],
+          "paperTitles": [
+            "Cryopreservation of Human Pancreatic Islets From Non-Heart-Beating Donors Using Hydroxyethyl Starch and Dimethyl Sulfoxide as Cryoprotectants",
+            "Cryopreservation of Mouse Pancreatic Islets: Effects of Human Serum on Islet Survival",
+            "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+            "Prolonged Cryopreservation of Purified Human Pancreatic Islets",
+            "Successful Long-Term Cryopreservation of Highly Purified Canine Islets",
+            "Differential Freezing Tolerance of Rat Pancreatic Islets Depending on Their Size Variation"
+          ]
+        },
+        "evidence": {
+          "totalPaperCount": 6,
+          "experimentalPaperCount": 6,
+          "comparativePaperCount": 0,
+          "distinctSpeciesCount": 4,
+          "strongOutcomePaperCount": 3,
+          "transplantationPaperCount": 1,
+          "contradictionCount": 1,
+          "sparseProtocolPaperCount": 6
+        },
+        "scores": {
+          "evidenceScore": 0.917,
+          "uncertaintyScore": 0.417,
+          "actionabilityScore": 0.92,
+          "priorityScore": 0.793
+        },
+        "blockers": [
+          "6 relevant papers still have sparse step structure",
+          "1 unresolved contradictions remain in the relevant evidence slice"
+        ],
+        "rationale": "The benchmarked islet slice is now minimum-depth ready, and the remaining weak points are concentrated in a few papers where only thawing or one procedural phase is explicit. Full-text resolution there is likely higher signal than another broad extraction pass."
+      },
+      {
+        "id": "islets:scale-up-benchmark-for-banked-or-bulk-islet-handling",
+        "domain": "islets",
+        "title": "Scale-up benchmark for banked or bulk islet handling",
+        "category": "scale-up",
+        "claim": "Scale-up losses in islet banking may come from handling and thaw workflow variance rather than core cryomix choice alone.",
+        "proposedExperiment": "The islet corpus includes bulk/banking/transport titles, but those papers are scattered across sparse workflow descriptions. A scale-up benchmark focused on loading, storage, thaw, and handling variance would test whether operational workflow dominates the observed recovery losses.",
+        "supportingContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Ethylene Glycol",
+            "Sucrose"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "vitrification",
+            "slow-freezing"
+          ],
+          "paperTitles": [
+            "Nylon Mesh Device for Vitriﬁcation of Large Quantities of Rat Pancreatic Islets",
+            "Bulk Cryopreservation of Isolated Islets of Langerhans",
+            "Pancreatic Islet Banking: The Transplantation of Frozen-Thawed Rat Islets Transported between Centers"
+          ]
+        },
+        "evidence": {
+          "totalPaperCount": 3,
+          "experimentalPaperCount": 3,
+          "comparativePaperCount": 0,
+          "distinctSpeciesCount": 2,
+          "strongOutcomePaperCount": 3,
+          "transplantationPaperCount": 2,
+          "contradictionCount": 10,
+          "sparseProtocolPaperCount": 0
+        },
+        "scores": {
+          "evidenceScore": 0.633,
+          "uncertaintyScore": 1,
+          "actionabilityScore": 0.72,
+          "priorityScore": 0.76
+        },
+        "blockers": [
+          "10 unresolved contradictions remain in the relevant evidence slice"
+        ],
+        "rationale": "The islet corpus includes bulk/banking/transport titles, but those papers are scattered across sparse workflow descriptions. A scale-up benchmark focused on loading, storage, thaw, and handling variance would test whether operational workflow dominates the observed recovery losses."
+      },
+      {
+        "id": "islets:additive-assisted-islet-recovery-benchmark-on-a-fixed-base-cryomix",
+        "domain": "islets",
+        "title": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+        "category": "benchmark",
+        "claim": "Several islet papers imply that recovery gains may come from adjuncts added around a standard cryomix rather than from entirely new base CPA chemistry.",
+        "proposedExperiment": "Trehalose, curcumin, beraprost, and other adjunct-style titles recur in the curated islet slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw recovery/function would quickly test whether the additive signal is real.",
+        "supportingContext": {
+          "chemicals": [
+            "Dimethyl Sulfoxide",
+            "Glycerol",
+            "Polyvinyl Pyrrolidone",
+            "Polyethylene Glycol",
+            "Trehalose",
+            "Beraprost Sodium"
+          ],
+          "specimenTypes": [
+            "islets",
+            "pancreatic islets"
+          ],
+          "protocolFamilies": [
+            "slow-freezing"
+          ],
+          "paperTitles": [
+            "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation",
+            "Trehalose: A Cryoprotectant That Enhances Recovery and Preserves Function of Human Pancreatic Islets After Long-Term Storage",
+            "Beraprost Sodium Improves Islet Yield and Viability in Canine Islet Cryopreservation",
+            "Curcumin treatment enhances islet recovery by induction of heat shock response proteins, Hsp70 and heme oxygenase-1, during cryopreservation",
+            "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+            "Improved Recovery of Cryopreserved Canine Islets by Use of Beraprost Sodium"
+          ]
+        },
+        "evidence": {
+          "totalPaperCount": 6,
+          "experimentalPaperCount": 6,
+          "comparativePaperCount": 0,
+          "distinctSpeciesCount": 4,
+          "strongOutcomePaperCount": 3,
+          "transplantationPaperCount": 1,
+          "contradictionCount": 1,
+          "sparseProtocolPaperCount": 1
+        },
+        "scores": {
+          "evidenceScore": 0.917,
+          "uncertaintyScore": 0.167,
+          "actionabilityScore": 0.84,
+          "priorityScore": 0.699
+        },
+        "blockers": [
+          "1 relevant papers still have sparse step structure",
+          "1 unresolved contradictions remain in the relevant evidence slice",
+          "Benchmark still lacks balanced evidence from both vitrification and slow-freezing"
+        ],
+        "rationale": "Trehalose, curcumin, beraprost, and other adjunct-style titles recur in the curated islet slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw recovery/function would quickly test whether the additive signal is real."
+      }
+    ],
+    "qualitySignals": {
+      "unknownProtocolFamilyCount": 0,
+      "unknownProtocolFamilyRate": 0,
+      "unknownStepPhaseCount": 0,
+      "contradictionCount": 20,
+      "experimentalPaperCount": 42,
+      "methodsPaperCount": 4,
+      "reviewPaperCount": 0,
+      "commentaryPaperCount": 0
+    }
+  },
+  "overrideImpact": {
+    "overridesApplied": 49,
+    "excludedPaperCount": 7,
+    "unknownProtocolFamiliesResolved": 33,
+    "unknownProtocolFamilyRateDelta": 0.62,
+    "unknownStepPhaseDelta": 0,
+    "experimentalPaperDelta": 2,
+    "methodsPaperDelta": -4,
+    "reviewPaperDelta": 0,
+    "commentaryPaperDelta": 0
+  }
+}
