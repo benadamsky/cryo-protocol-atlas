@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import {
   ArtifactLedger,
   DataTable,
@@ -11,9 +12,14 @@ import {
 } from "@/components/atlas-ui";
 import { formatDateTime } from "@/lib/data";
 import { getDebugLandingData } from "@/lib/decision-data";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 import { humanizeSystemState } from "@/lib/ui-copy";
 
 export default async function DebugPage() {
+  if (!INTERNAL_DEBUG_ENABLED) {
+    notFound();
+  }
+
   const data = await getDebugLandingData();
   const artifacts = [
     ...data.compare.artifacts,

@@ -11,6 +11,7 @@ import {
   StatusPill
 } from "@/components/atlas-ui";
 import { formatDateTime, formatScore, getDiscoveryData } from "@/lib/data";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 import { humanizeSystemState, recommendationTone } from "@/lib/ui-copy";
 
 export default async function DiscoveryPage() {
@@ -234,12 +235,14 @@ export default async function DiscoveryPage() {
         </div>
       </Section>
 
-      <Section
-        title="Artifact Ledger"
-        subtitle="Exact discovery files the web app is reading right now."
-      >
-        <ArtifactLedger artifacts={data.artifacts} />
-      </Section>
+      {INTERNAL_DEBUG_ENABLED ? (
+        <Section
+          title="Artifact Ledger"
+          subtitle="Exact discovery files the web app is reading right now."
+        >
+          <ArtifactLedger artifacts={data.artifacts} />
+        </Section>
+      ) : null}
     </>
   );
 }

@@ -15,6 +15,7 @@ import {
 } from "@/components/atlas-ui";
 import { formatDateTime, getDomainData } from "@/lib/data";
 import { getDomainMeta, parseDomainId, staticDomainParams } from "@/lib/domain";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 
 export const dynamicParams = false;
 
@@ -59,10 +60,6 @@ export default async function AtlasPage({
                 {
                   label: "Unknown families resolved",
                   value: data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
-                },
-                {
-                  label: "Source",
-                  value: data.sourceLabel
                 }
               ]}
             />
@@ -73,7 +70,7 @@ export default async function AtlasPage({
 
         <Section
           title="Cross-page compare"
-          subtitle="Use the benchmark and debug pages alongside this atlas view when you need to interrogate the underlying trust surface."
+          subtitle="Use the benchmark and evidence pages alongside this atlas view when you need to interrogate the current trust surface."
         >
           <div className="split-grid">
             <article className="surface">
@@ -86,11 +83,11 @@ export default async function AtlasPage({
             </article>
             <article className="surface">
               <div className="surface__header">
-                <h3>Debug</h3>
-                <StatusPill tone="warn">paper-level provenance</StatusPill>
+                <h3>Evidence</h3>
+                <StatusPill tone="neutral">review priorities</StatusPill>
               </div>
-              <p>Shows the normalized protocol, representative conditions, and raw evidence snapshots.</p>
-              <Link href={`/domains/${domain}/debug`}>Open debug</Link>
+              <p>Shows the current evidence gaps, contradictions, and enrichment work that could still change the read.</p>
+              <Link href={`/domains/${domain}/review`}>Open evidence</Link>
             </article>
           </div>
         </Section>
@@ -232,18 +229,20 @@ export default async function AtlasPage({
             </div>
           </Section>
 
-          <Section title="Artifact ledger" subtitle="Atlas views should stay traceable back to generated artifacts.">
-            <ArtifactLedger
-              artifacts={data.artifacts.filter((artifact) =>
-                [
-                  "Atlas summary",
-                  "Atlas analysis",
-                  "Wedge brief",
-                  "Normalized protocols"
-                ].includes(artifact.label)
-              )}
-            />
-          </Section>
+          {INTERNAL_DEBUG_ENABLED ? (
+            <Section title="Artifact ledger" subtitle="Atlas views should stay traceable back to generated artifacts.">
+              <ArtifactLedger
+                artifacts={data.artifacts.filter((artifact) =>
+                  [
+                    "Atlas summary",
+                    "Atlas analysis",
+                    "Wedge brief",
+                    "Normalized protocols"
+                  ].includes(artifact.label)
+                )}
+              />
+            </Section>
+          ) : null}
         </div>
       </>
     );

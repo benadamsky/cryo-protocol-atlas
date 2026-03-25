@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 
 const PRIMARY_ITEMS = [
   { href: "/", label: "Recommendation" },
@@ -11,7 +12,7 @@ const PRIMARY_ITEMS = [
   { href: "/evidence", label: "Evidence" },
   { href: "/discovery", label: "Discovery" },
   { href: "/debug", label: "Debug" }
-];
+].filter((item) => INTERNAL_DEBUG_ENABLED || item.href !== "/debug");
 
 function isActive(pathname: string, href: string) {
   if (href === "/") {

@@ -18,6 +18,7 @@ import {
   formatSignedScore,
   getCompareData
 } from "@/lib/data";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 
 export default async function ComparePage() {
   const data = await getCompareData();
@@ -136,9 +137,11 @@ export default async function ComparePage() {
         />
       </Section>
 
-      <Section title="Artifact Ledger" subtitle="Exact generated files backing this comparison view.">
-        <ArtifactLedger artifacts={data.artifacts} />
-      </Section>
+      {INTERNAL_DEBUG_ENABLED ? (
+        <Section title="Artifact Ledger" subtitle="Exact generated files backing this comparison view.">
+          <ArtifactLedger artifacts={data.artifacts} />
+        </Section>
+      ) : null}
     </>
   );
 }

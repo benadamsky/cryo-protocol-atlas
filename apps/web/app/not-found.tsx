@@ -7,12 +7,12 @@ export default function NotFound() {
       <PageIntro
         eyebrow="Route Not Found"
         title="This atlas view does not exist."
-        summary="The requested route is outside the current domain and artifact surface."
+        summary="The requested route is outside the current public Atlas surface."
       />
       <Section title="Available routes">
         <EmptyState
           title="Use the top navigation or jump back to the overview."
-          detail="The current scaffold supports overview, domain summaries, atlas views, benchmark views, review queues, and protocol debugging."
+          detail="The current scaffold supports overview, domain summaries, atlas views, benchmark views, and review queues."
         />
         <p>
           <Link href="/">Return to overview</Link>

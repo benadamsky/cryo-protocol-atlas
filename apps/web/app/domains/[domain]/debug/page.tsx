@@ -16,6 +16,7 @@ import {
 } from "@/components/atlas-ui";
 import { formatScore, getDebugData, getDomainData } from "@/lib/data";
 import { getDomainMeta, parseDomainId, staticDomainParams } from "@/lib/domain";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 
 export const dynamicParams = false;
 
@@ -30,6 +31,10 @@ export default async function DebugPage({
   params: Promise<{ domain: string }>;
   searchParams: Promise<{ paper?: string }>;
 }) {
+  if (!INTERNAL_DEBUG_ENABLED) {
+    notFound();
+  }
+
   try {
     const { domain: rawDomain } = await params;
     const domain = parseDomainId(rawDomain);

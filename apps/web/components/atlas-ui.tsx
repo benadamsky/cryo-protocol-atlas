@@ -3,6 +3,7 @@ import Link from "next/link";
 import { formatDateTime, formatPercent, formatScore } from "@/lib/data";
 import { getDomainMeta } from "@/lib/domain";
 import { PrimaryNav } from "@/components/primary-nav";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 import type { DomainId } from "../../../packages/shared/src/schema";
 
 function joinClasses(...values: Array<string | false | null | undefined>) {
@@ -124,6 +125,10 @@ export function DomainBadge({ domain }: { domain: DomainId }) {
 }
 
 export function SourceNote({ sourceLabel }: { sourceLabel: "worktree" | "primary" }) {
+  if (!INTERNAL_DEBUG_ENABLED) {
+    return null;
+  }
+
   return (
     <div className="source-note">
       <span className="source-note__label">artifact source</span>
@@ -179,7 +184,7 @@ export function DomainTabs(props: { domain: DomainId; current: string }) {
     { id: "benchmark", label: "Benchmark", href: `/domains/${props.domain}/benchmark` },
     { id: "review", label: "Evidence", href: `/domains/${props.domain}/review` },
     { id: "debug", label: "Debug", href: `/domains/${props.domain}/debug` }
-  ];
+  ].filter((tab) => INTERNAL_DEBUG_ENABLED || tab.id !== "debug");
 
   return (
     <nav className="tab-strip">

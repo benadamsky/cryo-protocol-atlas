@@ -14,6 +14,7 @@ import {
 import { formatDateTime } from "@/lib/data";
 import { getDecisionDomainData } from "@/lib/decision-data";
 import { parseDomainId, staticDomainParams } from "@/lib/domain";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 
 function confidenceLabel(value: "high" | "medium" | "low") {
   return `${value} confidence`;
@@ -388,7 +389,7 @@ export default async function DomainPage({
               <div className="domain-card__actions">
                 <Link href={`/domains/${domain}/review`}>Evidence</Link>
                 <Link href={`/domains/${domain}/benchmark`}>Benchmark</Link>
-                <Link href={`/domains/${domain}/debug`}>Debug</Link>
+                {INTERNAL_DEBUG_ENABLED ? <Link href={`/domains/${domain}/debug`}>Debug</Link> : null}
               </div>
               <p className="surface__detail">
                 Atlas narrowed {formatCount(data.provenanceFunnel.papersFetched)} source papers to{" "}

@@ -11,6 +11,7 @@ import {
   StatusPill
 } from "@/components/atlas-ui";
 import { formatDateTime, formatPercent, formatSignedScore, getHistoryData } from "@/lib/data";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 import { humanizeSystemState } from "@/lib/ui-copy";
 
 function shortHash(value: string) {
@@ -128,9 +129,11 @@ export default async function HistoryPage() {
         </Section>
       </div>
 
-      <Section title="Artifact Ledger" subtitle="Exact generated files backing this history view.">
-        <ArtifactLedger artifacts={data.artifacts} />
-      </Section>
+      {INTERNAL_DEBUG_ENABLED ? (
+        <Section title="Artifact Ledger" subtitle="Exact generated files backing this history view.">
+          <ArtifactLedger artifacts={data.artifacts} />
+        </Section>
+      ) : null}
     </>
   );
 }

@@ -17,6 +17,7 @@ import {
 import { formatDateTime, formatPercent, getDomainData, getReviewedEntryCounts } from "@/lib/data";
 import { getDecisionDomainData } from "@/lib/decision-data";
 import { getDomainMeta, parseDomainId, staticDomainParams } from "@/lib/domain";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 
 function formatCount(value: number) {
   return new Intl.NumberFormat("en-US").format(value);
@@ -69,10 +70,6 @@ export default async function BenchmarkPage({
                 {
                   label: "Recommended experiment",
                   value: decisionData.provenanceFunnel.recommendedExperimentTitle ?? "No packet queued"
-                },
-                {
-                  label: "Read path",
-                  value: data.sourceLabel
                 }
               ]}
             />
@@ -95,7 +92,7 @@ export default async function BenchmarkPage({
 
         <Section
           title="Follow The Recommendation Back To The Evidence"
-          subtitle="Use the matrix, review, and debug pages when you want to trace the recommendation back to specific papers and extracted protocol rows."
+          subtitle="Use the matrix and evidence pages when you want to trace the recommendation back to specific papers and extracted protocol rows."
         >
           <div className="split-grid">
             <article className="surface">
@@ -113,14 +110,6 @@ export default async function BenchmarkPage({
               </div>
               <p>Use this to see how human review and benchmark decisions support the same slice.</p>
               <Link href={`/domains/${domain}/review`}>Open review</Link>
-            </article>
-            <article className="surface">
-              <div className="surface__header">
-                <h3>Debug</h3>
-                <StatusPill tone="warn">paper-level trace</StatusPill>
-              </div>
-              <p>Use this when you need the per-paper view of extraction, resolution, and normalization.</p>
-              <Link href={`/domains/${domain}/debug`}>Open debug</Link>
             </article>
           </div>
         </Section>
@@ -339,18 +328,20 @@ export default async function BenchmarkPage({
           </Section>
         </div>
 
-        <Section title="Artifact ledger" subtitle="Benchmark pages should be inspectable down to the exact generated artifact set.">
-          <ArtifactLedger
-            artifacts={data.artifacts.filter((artifact) =>
-              [
-                "Benchmark summary",
-                "Benchmark analysis",
-                "Benchmark gold set",
-                "Unattended batch"
-              ].includes(artifact.label)
-            )}
-          />
-        </Section>
+        {INTERNAL_DEBUG_ENABLED ? (
+          <Section title="Artifact ledger" subtitle="Benchmark pages should be inspectable down to the exact generated artifact set.">
+            <ArtifactLedger
+              artifacts={data.artifacts.filter((artifact) =>
+                [
+                  "Benchmark summary",
+                  "Benchmark analysis",
+                  "Benchmark gold set",
+                  "Unattended batch"
+                ].includes(artifact.label)
+              )}
+            />
+          </Section>
+        ) : null}
       </>
     );
   } catch {

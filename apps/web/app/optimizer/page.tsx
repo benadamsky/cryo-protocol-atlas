@@ -10,6 +10,7 @@ import {
   StatusPill
 } from "@/components/atlas-ui";
 import { formatPercent, formatScore, getOptimizerData } from "@/lib/data";
+import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 
 export default async function OptimizerPage() {
   const data = await getOptimizerData();
@@ -165,9 +166,11 @@ export default async function OptimizerPage() {
         </Section>
       ) : null}
 
-      <Section title="Artifact Ledger" subtitle="Exact optimizer files the web app is reading right now.">
-        <ArtifactLedger artifacts={data.artifacts} />
-      </Section>
+      {INTERNAL_DEBUG_ENABLED ? (
+        <Section title="Artifact Ledger" subtitle="Exact optimizer files the web app is reading right now.">
+          <ArtifactLedger artifacts={data.artifacts} />
+        </Section>
+      ) : null}
     </>
   );
 }
