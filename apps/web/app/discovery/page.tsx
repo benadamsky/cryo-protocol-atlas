@@ -18,9 +18,9 @@ export default async function DiscoveryPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Discovery Lane"
-        title="Live corpus refresh, queue triage, and review packet assembly"
-        summary="This is the downstream discovery operating surface. It reads the discovery snapshot, promotion queue, and promotion review packet artifacts directly instead of proxying through the trusted protocol-intelligence views."
+        eyebrow="Discovery"
+        title="Downstream discovery queue and review packet assembly"
+        summary="This is a provisional downstream surface, not the main Atlas product claim. Use it for corpus refresh, queue triage, and review packet assembly after you understand the current recommendation and evidence posture."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={data.sourceLabel} />
@@ -28,11 +28,11 @@ export default async function DiscoveryPage() {
             {data.runHealth.overallState}
           </StatusPill>
           <div className="chip-row">
-            <Link className="data-chip data-chip--strong" href="/optimizer">
-              Optimizer
+            <Link className="data-chip data-chip--strong" href="/experiments">
+              Experiments
             </Link>
-            <Link className="data-chip data-chip--strong" href="/history">
-              History
+            <Link className="data-chip data-chip--strong" href="/debug">
+              Debug
             </Link>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default async function DiscoveryPage() {
         <MetricCard label="Packet items" value={String(data.totalPacketItems)} detail="Candidates currently elevated into the human review packet." />
       </MetricGrid>
 
-      <Section title="Lane status" subtitle="Per-domain queue pressure, provider failures, and packet volume.">
+      <Section title="Lane status" subtitle="Per-domain queue pressure, provider failures, and packet volume in the downstream discovery layer.">
         <DataTable
           columns={["Domain", "State", "Novel", "Promote", "Review", "Packet", "Provider failures"]}
           rows={data.domains.map((domain) => [
@@ -63,7 +63,7 @@ export default async function DiscoveryPage() {
         />
       </Section>
 
-      <Section title="Queue preview" subtitle="The highest-ranked recommendations in the current discovery promotion queue.">
+      <Section title="Queue preview" subtitle="The highest-ranked recommendations in the current discovery promotion queue. This should stay secondary to the validated wedge narrative.">
         <div className="split-grid">
           {data.domains.map((domain) => (
             <article className="surface" key={domain.domain}>
@@ -141,7 +141,7 @@ export default async function DiscoveryPage() {
         </div>
       </Section>
 
-      <Section title="Review packet" subtitle="Candidates already elevated into the human review packet, with reasons and risk context.">
+      <Section title="Review packet" subtitle="Candidates already elevated into the human review packet, with reasons and risk context. Treat this as input to later Atlas updates, not as current wedge truth.">
         <div className="split-grid">
           {data.domains.map((domain) => (
             <article className="surface" key={`${domain.domain}-packet`}>

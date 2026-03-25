@@ -345,6 +345,10 @@ ul {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.family-grid--stack {
+  grid-template-columns: 1fr;
+}
+
 .split-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
