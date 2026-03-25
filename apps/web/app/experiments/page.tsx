@@ -11,7 +11,6 @@ import { getExperimentsPageData } from "@/lib/decision-data";
 import {
   experimentBridgeLabel,
   shortConfidenceLabel,
-  strategicSignificance,
   translationalSignalLabel,
   wedgeClassLabel
 } from "@/lib/ui-copy";
@@ -30,8 +29,28 @@ function minimumViableExperiment(arms: string[], readouts: string[]) {
   return `${armList || "Minimal arm set"} on ${readoutList || "the primary readout set"}.`;
 }
 
-function negativeResultImplication(wedgeTitle: string) {
-  return `A negative lab result would weaken ${wedgeTitle} as the current lead and push Atlas toward follow-on packets instead of scaling this path first.`;
+function packetStatusLabel(isLead: boolean, priorityScore: number) {
+  if (isLead) {
+    return "Current lead";
+  }
+
+  if (priorityScore >= 0.75) {
+    return "Strong follow-on";
+  }
+
+  return "Follow-on";
+}
+
+function leadUncertainty(uncertainties: string[]) {
+  return uncertainties[0] ?? "No explicit blocker recorded yet.";
+}
+
+function supportingPaperSummary(titles: string[]) {
+  if (titles.length === 0) {
+    return "No supporting papers surfaced yet.";
+  }
+
+  return titles.slice(0, 2).join("; ");
 }
 
 export default async function ExperimentsPage() {
@@ -90,7 +109,10 @@ export default async function ExperimentsPage() {
         subtitle="Each card is a real lab experiment Atlas recommends. Start with the summary, then expand when you need variables, supporting papers, or detailed rationale."
       >
         <div className="family-grid family-grid--stack">
-          {data.packets.map((entry) => (
+          {data.packets.map((entry) => {
+            const isLead = entry.packet.packetId === lead?.packet.packetId;
+
+            return (
             <article className="family-card experiment-card" key={entry.packet.packetId}>
               <div className="surface__header">
                 <div>
@@ -100,14 +122,14 @@ export default async function ExperimentsPage() {
                 </div>
                 <StatusPill
                   tone={
-                    entry.packet.priorityScore >= 0.8
+                    isLead
                       ? "good"
-                      : entry.packet.priorityScore >= 0.6
+                      : entry.packet.priorityScore >= 0.75
                         ? "neutral"
                         : "warn"
                   }
                 >
-                  Priority {entry.packet.priorityScore.toFixed(2)}
+                  {packetStatusLabel(isLead, entry.packet.priorityScore)}
                 </StatusPill>
               </div>
 
@@ -119,34 +141,33 @@ export default async function ExperimentsPage() {
 
               <div className="experiment-summary-grid">
                 <div className="summary-cell">
-                  <span>Question this lab experiment answers</span>
-                  <strong>{entry.packet.decisionQuestion}</strong>
+                  <span>Why this rose to the top</span>
+                  <strong>{entry.packet.whyNow}</strong>
                 </div>
                 <div className="summary-cell">
-                  <span>Why this matters in plain English</span>
-                  <strong>{strategicSignificance(entry.domain)}</strong>
-                </div>
-                <div className="summary-cell">
-                  <span>Smallest useful lab test</span>
+                  <span>What you would actually run</span>
                   <strong>{minimumViableExperiment(entry.packet.comparisonArms, entry.packet.primaryReadouts)}</strong>
                 </div>
                 <div className="summary-cell">
-                  <span>What a positive lab result would unlock</span>
-                  <strong>{entry.packet.translationalRationale}</strong>
+                  <span>Strongest supporting papers</span>
+                  <strong>{supportingPaperSummary(entry.packet.supportingPaperTitles)}</strong>
                 </div>
                 <div className="summary-cell">
-                  <span>What a negative lab result would mean</span>
-                  <strong>{negativeResultImplication(entry.wedgeTitle)}</strong>
+                  <span>Main watch-out</span>
+                  <strong>{leadUncertainty(entry.packet.keyUncertainties)}</strong>
                 </div>
               </div>
 
               <details className="detail-panel">
-                <summary>Show full lab packet</summary>
+                <summary>Show design details</summary>
                 <div className="detail-panel__content">
                   <div className="detail-columns">
                     <div>
-                      <h4>Lab experiment structure</h4>
+                      <h4>Experiment plan</h4>
                       <ul className="feature-list">
+                        <li>
+                          <strong>Strategic question:</strong> {entry.packet.decisionQuestion}
+                        </li>
                         <li>
                           <strong>Why Atlas selected this test:</strong> {entry.wedgeTitle}
                         </li>
@@ -183,15 +204,19 @@ export default async function ExperimentsPage() {
                         <li>
                           <strong>Authority notes:</strong> {entry.packet.authorityNotes.join("; ") || "No extra authority notes recorded."}
                         </li>
+                        <li>
+                          <strong>What success would unlock:</strong> {entry.packet.translationalRationale}
+                        </li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </details>
 
-              <Link href={`/domains/${entry.domain}`}>Open literature rationale</Link>
+              <Link href={`/domains/${entry.domain}`}>Open full rationale</Link>
             </article>
-          ))}
+            );
+          })}
         </div>
       </Section>
     </>
