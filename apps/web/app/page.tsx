@@ -383,7 +383,7 @@ export default async function RecommendationPage() {
           ) : null}
 
           {packetRunners.map((runner) => (
-            <article className="family-card" key={runner.title}>
+            <article className="family-card" key={runner.packetId}>
               <span className="section-kicker">Versus {runner.category}</span>
               <h3>{runner.title}</h3>
               <p>{runner.whyInteresting}</p>

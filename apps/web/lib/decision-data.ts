@@ -98,6 +98,7 @@ export type DecisionDomainData = {
   translationalRationale: string;
   decisionUnlock: string;
   runnerUps: Array<{
+    packetId: string;
     title: string;
     category: string;
     whyInteresting: string;
@@ -436,6 +437,7 @@ function buildRecommendationLine(
 
 function buildRunnerUps(packets: z.output<typeof ExperimentPacketFileSchema>["packets"]) {
   return packets.slice(1, 3).map((packet) => ({
+    packetId: packet.packetId,
     title: packet.title,
     category: packet.category,
     whyInteresting: packet.claim,

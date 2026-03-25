@@ -11,7 +11,7 @@ import {
   StatusPill
 } from "@/components/atlas-ui";
 import { formatDateTime, formatScore, getDiscoveryData } from "@/lib/data";
-import { humanizeSystemState } from "@/lib/ui-copy";
+import { humanizeSystemState, recommendationTone } from "@/lib/ui-copy";
 
 export default async function DiscoveryPage() {
   const data = await getDiscoveryData();
@@ -171,15 +171,7 @@ export default async function DiscoveryPage() {
                     <div className="candidate-row__body">
                       <div className="candidate-row__header">
                         <strong>{decision.title}</strong>
-                        <StatusPill
-                          tone={
-                            decision.recommendation === "promote"
-                              ? "good"
-                              : decision.recommendation === "review"
-                                ? "warn"
-                                : "neutral"
-                          }
-                        >
+                        <StatusPill tone={recommendationTone(decision.recommendation)}>
                           {decision.recommendation}
                         </StatusPill>
                       </div>
@@ -223,15 +215,7 @@ export default async function DiscoveryPage() {
                     <article className="review-item" key={item.dedupeKey}>
                       <div className="review-item__header">
                         <strong>{item.title}</strong>
-                        <StatusPill
-                          tone={
-                            item.recommendation === "promote"
-                              ? "good"
-                              : item.recommendation === "review"
-                                ? "warn"
-                                : "neutral"
-                          }
-                        >
+                        <StatusPill tone={recommendationTone(item.recommendation)}>
                           {item.recommendation}
                         </StatusPill>
                       </div>

@@ -51,6 +51,18 @@ export function translationalSignalDetail(value: TranslationalSignal) {
   }
 }
 
+export function recommendationTone(recommendation: string): "good" | "warn" | "neutral" {
+  if (recommendation === "promote") {
+    return "good";
+  }
+
+  if (recommendation === "review") {
+    return "warn";
+  }
+
+  return "neutral";
+}
+
 export function wedgeClassNarrative(wedgeClass: WedgeClass, domainLabel: string) {
   if (wedgeClass === "plausible first company wedge") {
     return `${domainLabel} is the strongest current candidate for a first company wedge, but it still needs benchmark pressure-testing.`;
