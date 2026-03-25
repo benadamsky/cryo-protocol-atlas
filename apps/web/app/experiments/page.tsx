@@ -8,10 +8,13 @@ import {
   StatusPill
 } from "@/components/atlas-ui";
 import { getExperimentsPageData } from "@/lib/decision-data";
-
-function confidenceLabel(value: "high" | "medium" | "low") {
-  return `${value} confidence`;
-}
+import {
+  experimentBridgeLabel,
+  shortConfidenceLabel,
+  strategicSignificance,
+  translationalSignalLabel,
+  wedgeClassLabel
+} from "@/lib/ui-copy";
 
 function variableUnderTest(arms: string[]) {
   if (arms.length <= 1) {
@@ -23,73 +26,173 @@ function variableUnderTest(arms: string[]) {
 
 function minimumViableExperiment(arms: string[], readouts: string[]) {
   const armList = arms.slice(0, Math.min(arms.length, 3)).join(" vs ");
-  return `${armList || "Minimal arm set"} on ${readouts.join(", ") || "the primary readout set"}.`;
+  const readoutList = readouts.join(", ");
+  return `${armList || "Minimal arm set"} on ${readoutList || "the primary readout set"}.`;
 }
 
-function negativeResultImplication(packetTitle: string, wedgeTitle: string) {
-  return `A negative result would weaken ${wedgeTitle} as the current lead and push Atlas toward follow-on packets instead of scaling this thesis.`;
+function negativeResultImplication(wedgeTitle: string) {
+  return `A negative result would weaken ${wedgeTitle} as the current lead and push Atlas toward the follow-on packets instead of scaling this thesis.`;
 }
 
 export default async function ExperimentsPage() {
   const data = await getExperimentsPageData();
+  const lead = data.packets[0];
 
   return (
     <>
       <PageIntro
         eyebrow="Experiments"
-        title="Experiment packets that bridge literature to pre-wet-lab planning"
-        summary="Atlas should feel useful before wet-lab work starts. Each packet below makes the strategic decision explicit, defines the minimum viable test, and shows what a positive or negative result would mean."
+        title="Experiment packets"
+        summary="Atlas is not valuable just because it organizes evidence. It is valuable because it turns the current read into better next experiments. This page is the bridge from protocol intelligence into optimization and downstream discovery."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={data.domains[0]?.sourceLabel ?? "worktree"} />
           <div className="chip-row">
-            <StatusPill tone="good">experiment planning</StatusPill>
-            <StatusPill tone="neutral">decision-linked</StatusPill>
-            <StatusPill tone="warn">not autonomous discovery</StatusPill>
+            <StatusPill tone="good">from recommendation</StatusPill>
+            <StatusPill tone="neutral">wet-lab planning</StatusPill>
+            <StatusPill tone="warn">downstream queue input</StatusPill>
           </div>
         </div>
       </PageIntro>
 
       <MetricGrid>
         <MetricCard label="Packets" value={String(data.packets.length)} />
-        <MetricCard label="Domains" value={String(data.domains.length)} />
-        <MetricCard label="Top packet" value={data.packets[0]?.packet.title ?? "n/a"} detail={data.packets[0]?.domainLabel ?? "No packet loaded."} tone="good" />
+        <MetricCard label="Domains covered" value={String(data.domains.length)} />
+        <MetricCard
+          label="Lead packet"
+          value={lead?.packet.title ?? "n/a"}
+          detail={lead ? `${lead.domainLabel}. ${experimentBridgeLabel(lead.packet.title)}` : "No packet loaded."}
+          tone="good"
+        />
         <MetricCard label="Generated" value={new Date(data.generatedAt).toLocaleDateString("en-US")} />
       </MetricGrid>
 
-      <Section title="Experiment Packet Queue" subtitle="Ranked by leverage and framed around the decision each packet is meant to unlock.">
-        <div className="family-grid">
+      <Section
+        title="Why Experiment Packets Matter"
+        subtitle="This is the handoff point from literature intelligence to optimization work."
+      >
+        <div className="triad-grid">
+          <article className="surface">
+            <span className="section-kicker">Recommendation result</span>
+            <h3>Atlas turns a wedge call into action</h3>
+            <p>The recommendation is useful because it does not stop at ranking. It outputs a concrete next experiment.</p>
+          </article>
+          <article className="surface">
+            <span className="section-kicker">Optimization bridge</span>
+            <h3>Better framing before wet-lab spend</h3>
+            <p>Packets specify the decision, variables, and readouts so teams do not waste cycles on poorly framed experiments.</p>
+          </article>
+          <article className="surface">
+            <span className="section-kicker">Discovery input</span>
+            <h3>Downstream workflow input</h3>
+            <p>Packet results can later feed broader discovery workflows, but that is downstream from the current recommendation.</p>
+          </article>
+        </div>
+      </Section>
+
+      <Section
+        title="Experiment Packet Queue"
+        subtitle="Default state is summary-first. Expand each card only when you need fixed variables, supporting papers, or longer rationale."
+      >
+        <div className="family-grid family-grid--stack">
           {data.packets.map((entry) => (
-            <article className="family-card" key={entry.packet.packetId}>
+            <article className="family-card experiment-card" key={entry.packet.packetId}>
               <div className="surface__header">
                 <div>
+                  <span className="section-kicker">{entry.domainLabel}</span>
                   <h3>{entry.packet.title}</h3>
-                  <p>{entry.domainLabel}</p>
+                  <p>{entry.packet.claim}</p>
                 </div>
-                <StatusPill tone={entry.packet.priorityScore >= 0.8 ? "good" : entry.packet.priorityScore >= 0.6 ? "neutral" : "warn"}>
-                  priority {entry.packet.priorityScore.toFixed(2)}
+                <StatusPill
+                  tone={
+                    entry.packet.priorityScore >= 0.8
+                      ? "good"
+                      : entry.packet.priorityScore >= 0.6
+                        ? "neutral"
+                        : "warn"
+                  }
+                >
+                  Priority {entry.packet.priorityScore.toFixed(2)}
                 </StatusPill>
               </div>
 
               <div className="chip-row">
-                <span className="data-chip">{entry.wedgeClass}</span>
-                <span className="data-chip">{confidenceLabel(entry.confidenceBand)}</span>
-                <span className="data-chip">{entry.translationalSignal}</span>
+                <span className="data-chip">{wedgeClassLabel(entry.wedgeClass)}</span>
+                <span className="data-chip">{shortConfidenceLabel(entry.confidenceBand)}</span>
+                <span className="data-chip">{translationalSignalLabel(entry.translationalSignal)}</span>
               </div>
 
-              <ul className="feature-list">
-                <li><strong>Decision being tested:</strong> {entry.packet.decisionQuestion}</li>
-                <li><strong>Wedge context:</strong> {entry.wedgeTitle}</li>
-                <li><strong>Hypothesis:</strong> {entry.packet.claim}</li>
-                <li><strong>Fixed variables:</strong> {entry.packet.fixedVariables.join(", ")}</li>
-                <li><strong>Variable under test:</strong> {variableUnderTest(entry.packet.comparisonArms)}</li>
-                <li><strong>Readouts:</strong> {[...entry.packet.primaryReadouts, ...entry.packet.secondaryReadouts].join(", ")}</li>
-                <li><strong>Minimum viable experiment:</strong> {minimumViableExperiment(entry.packet.comparisonArms, entry.packet.primaryReadouts)}</li>
-                <li><strong>Supporting evidence:</strong> {entry.packet.supportingPaperTitles.slice(0, 3).join("; ")}</li>
-                <li><strong>Blocking uncertainties:</strong> {entry.packet.keyUncertainties.join("; ") || "No explicit blocker recorded."}</li>
-                <li><strong>Expected upside if positive:</strong> {entry.packet.translationalRationale}</li>
-                <li><strong>What a negative result implies:</strong> {negativeResultImplication(entry.packet.title, entry.wedgeTitle)}</li>
-              </ul>
+              <div className="experiment-summary-grid">
+                <div className="summary-cell">
+                  <span>Decision being tested</span>
+                  <strong>{entry.packet.decisionQuestion}</strong>
+                </div>
+                <div className="summary-cell">
+                  <span>Plain-English significance</span>
+                  <strong>{strategicSignificance(entry.domain)}</strong>
+                </div>
+                <div className="summary-cell">
+                  <span>Minimum viable experiment</span>
+                  <strong>{minimumViableExperiment(entry.packet.comparisonArms, entry.packet.primaryReadouts)}</strong>
+                </div>
+                <div className="summary-cell">
+                  <span>Expected upside if positive</span>
+                  <strong>{entry.packet.translationalRationale}</strong>
+                </div>
+                <div className="summary-cell">
+                  <span>If negative</span>
+                  <strong>{negativeResultImplication(entry.wedgeTitle)}</strong>
+                </div>
+              </div>
+
+              <details className="detail-panel">
+                <summary>Show packet details</summary>
+                <div className="detail-panel__content">
+                  <div className="detail-columns">
+                    <div>
+                      <h4>Experiment structure</h4>
+                      <ul className="feature-list">
+                        <li>
+                          <strong>Wedge context:</strong> {entry.wedgeTitle}
+                        </li>
+                        <li>
+                          <strong>Linked experiment:</strong> {experimentBridgeLabel(entry.packet.title)}
+                        </li>
+                        <li>
+                          <strong>Proposed test:</strong> {entry.packet.proposedExperiment}
+                        </li>
+                        <li>
+                          <strong>Fixed variables:</strong> {entry.packet.fixedVariables.join(", ") || "n/a"}
+                        </li>
+                        <li>
+                          <strong>Changed variables:</strong> {variableUnderTest(entry.packet.comparisonArms)}
+                        </li>
+                        <li>
+                          <strong>Primary readouts:</strong> {entry.packet.primaryReadouts.join(", ") || "n/a"}
+                        </li>
+                        <li>
+                          <strong>Secondary readouts:</strong> {entry.packet.secondaryReadouts.join(", ") || "n/a"}
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4>Evidence and risks</h4>
+                      <ul className="feature-list">
+                        <li>
+                          <strong>Supporting papers:</strong> {entry.packet.supportingPaperTitles.slice(0, 4).join("; ")}
+                        </li>
+                        <li>
+                          <strong>Main uncertainties:</strong> {entry.packet.keyUncertainties.join("; ") || "No explicit blocker recorded."}
+                        </li>
+                        <li>
+                          <strong>Authority notes:</strong> {entry.packet.authorityNotes.join("; ") || "No extra authority notes recorded."}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </details>
 
               <Link href={`/domains/${entry.domain}`}>Open wedge context</Link>
             </article>

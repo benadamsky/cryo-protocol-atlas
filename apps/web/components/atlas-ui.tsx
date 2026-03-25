@@ -2,6 +2,7 @@ import type { CSSProperties, ReactNode } from "react";
 import Link from "next/link";
 import { formatDateTime, formatPercent, formatScore } from "@/lib/data";
 import { getDomainMeta } from "@/lib/domain";
+import { PrimaryNav } from "@/components/primary-nav";
 import type { DomainId } from "../../../packages/shared/src/schema";
 
 function joinClasses(...values: Array<string | false | null | undefined>) {
@@ -14,16 +15,16 @@ export function AppShell({ children }: { children: ReactNode }) {
       <TopBar />
       <div className="shell-ribbon">
         <div className="shell-ribbon__copy">
-          <span className="shell-ribbon__eyebrow">Product Boundary</span>
+          <span className="shell-ribbon__eyebrow">Atlas Scope</span>
           <p>
-            Atlas is a protocol-intelligence and wedge-validation system. Conclusions come first, evidence comes second,
-            and discovery stays downstream.
+            Atlas already narrows cryopreservation wedges, shows what the literature can and cannot support, and
+            turns the current read into next experiments. Discovery stays downstream.
           </p>
         </div>
-        <div className="shell-ribbon__chips" aria-label="Atlas state">
-          <StatusPill tone="good">recommendation first</StatusPill>
-          <StatusPill tone="neutral">evidence grounded</StatusPill>
-          <StatusPill tone="warn">discovery downstream</StatusPill>
+        <div className="shell-ribbon__meta" aria-label="Atlas workflow">
+          <span>Recommendation</span>
+          <span>Evidence</span>
+          <span>Experiments</span>
         </div>
       </div>
       <main className="page-shell">{children}</main>
@@ -41,18 +42,9 @@ export function TopBar() {
           <small>Protocol intelligence for wedge validation and experiment planning</small>
         </span>
       </Link>
-      <nav className="topbar__nav" aria-label="Primary">
-        <Link href="/">Recommendation</Link>
-        <Link href="/wedges">Wedges</Link>
-        <Link href="/experiments">Experiments</Link>
-        <Link href="/evidence">Evidence</Link>
-        <Link href="/discovery">Discovery</Link>
+      <PrimaryNav />
+      <nav className="topbar__utility" aria-label="Utility">
         <Link href="/debug">Debug</Link>
-      </nav>
-      <nav className="topbar__meta" aria-label="Status">
-        <StatusPill tone="good">file-backed</StatusPill>
-        <StatusPill tone="neutral">decision memo UI</StatusPill>
-        <StatusPill tone="warn">no autonomous claims</StatusPill>
       </nav>
     </header>
   );

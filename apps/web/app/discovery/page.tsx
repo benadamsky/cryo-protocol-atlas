@@ -11,6 +11,7 @@ import {
   StatusPill
 } from "@/components/atlas-ui";
 import { formatDateTime, formatScore, getDiscoveryData } from "@/lib/data";
+import { humanizeSystemState, recommendationTone } from "@/lib/ui-copy";
 
 export default async function DiscoveryPage() {
   const data = await getDiscoveryData();
@@ -19,34 +20,88 @@ export default async function DiscoveryPage() {
     <>
       <PageIntro
         eyebrow="Discovery"
-        title="Downstream discovery queue and review packet assembly"
-        summary="This is a provisional downstream surface, not the main Atlas product claim. Use it for corpus refresh, queue triage, and review packet assembly after you understand the current recommendation and evidence posture."
+        title="Downstream discovery layer"
+        summary="Discovery is downstream from the recommendation and experiment surfaces. It manages candidate evidence and review packets that may later update Atlas, but it is not current wedge truth."
       >
         <div className="hero__stack">
           <SourceNote sourceLabel={data.sourceLabel} />
           <StatusPill tone={data.runHealth.overallState === "stalled-human-gate" ? "warn" : "good"}>
-            {data.runHealth.overallState}
+            {humanizeSystemState(data.runHealth.overallState)}
           </StatusPill>
           <div className="chip-row">
-            <Link className="data-chip data-chip--strong" href="/experiments">
-              Experiments
+            <Link className="data-chip data-chip--strong" href="/">
+              Recommendation
             </Link>
-            <Link className="data-chip data-chip--strong" href="/debug">
-              Debug
+            <Link className="data-chip data-chip--strong" href="/experiments">
+              Experiment packets
             </Link>
           </div>
         </div>
       </PageIntro>
 
+      <Section
+        title="Where Discovery Fits"
+        subtitle="Recommendation first, experiment packet second, discovery workflow third."
+      >
+        <div className="split-grid discovery-fit-grid">
+          <article className="surface discovery-flow-card">
+            <div className="discovery-flow">
+              <div className="discovery-flow__step">
+                <span className="section-kicker">Step 1</span>
+                <h3>Recommendation</h3>
+                <p>Atlas ranks the current wedge on the reviewed slice.</p>
+              </div>
+              <div className="discovery-flow__arrow">→</div>
+              <div className="discovery-flow__step">
+                <span className="section-kicker">Step 2</span>
+                <h3>Experiment packet</h3>
+                <p>The recommendation becomes a concrete next experiment.</p>
+              </div>
+              <div className="discovery-flow__arrow">→</div>
+              <div className="discovery-flow__step">
+                <span className="section-kicker">Step 3</span>
+                <h3>Discovery workflow</h3>
+                <p>This page manages later candidate evidence and review packets.</p>
+              </div>
+            </div>
+          </article>
+
+          <div className="truth-strip truth-strip--compact">
+            <article className="truth-card">
+              <span className="section-kicker">Current truth</span>
+              <p>The recommendation and evidence pages define the current Atlas claim.</p>
+            </article>
+            <article className="truth-card">
+              <span className="section-kicker">This page</span>
+              <p>Promotion and review recommendations are candidate inputs to later human review.</p>
+            </article>
+            <article className="truth-card">
+              <span className="section-kicker">Later update</span>
+              <p>If reviewed and promoted later, this work can change Atlas. Until then it remains provisional.</p>
+            </article>
+          </div>
+        </div>
+      </Section>
+
       <MetricGrid>
         <MetricCard label="Domains surfaced" value={String(data.domains.length)} />
-        <MetricCard label="Pending queue items" value={String(data.totalPendingCount)} tone={data.totalPendingCount > 0 ? "warn" : "good"} />
+        <MetricCard
+          label="Pending downstream items"
+          value={String(data.totalPendingCount)}
+          tone={data.totalPendingCount > 0 ? "warn" : "good"}
+        />
         <MetricCard label="Promote recommendations" value={String(data.totalPromoteRecommendations)} />
-        <MetricCard label="Review recommendations" value={String(data.totalReviewRecommendations)} />
-        <MetricCard label="Packet items" value={String(data.totalPacketItems)} detail="Candidates currently elevated into the human review packet." />
+        <MetricCard
+          label="Review packet items"
+          value={String(data.totalPacketItems)}
+          detail="Candidates already elevated into the human review packet."
+        />
       </MetricGrid>
 
-      <Section title="Lane status" subtitle="Per-domain queue pressure, provider failures, and packet volume in the downstream discovery layer.">
+      <Section
+        title="Lane Status"
+        subtitle="Per-domain queue pressure and provider failures in the downstream discovery layer."
+      >
         <DataTable
           columns={["Domain", "State", "Novel", "Promote", "Review", "Packet", "Provider failures"]}
           rows={data.domains.map((domain) => [
@@ -63,10 +118,13 @@ export default async function DiscoveryPage() {
         />
       </Section>
 
-      <Section title="Queue preview" subtitle="The highest-ranked recommendations in the current discovery promotion queue. This should stay secondary to the validated wedge narrative.">
+      <Section
+        title="Queue Preview"
+        subtitle="Highest-ranked items in the discovery promotion queue, shown as a cleaner ranked list rather than nested dashboard tables."
+      >
         <div className="split-grid">
           {data.domains.map((domain) => (
-            <article className="surface" key={domain.domain}>
+            <article className="surface discovery-lane-card" key={domain.domain}>
               <div className="surface__header">
                 <div>
                   <DomainBadge domain={domain.domain} />
@@ -88,12 +146,12 @@ export default async function DiscoveryPage() {
                   <strong>{formatDateTime(domain.queueGeneratedAt)}</strong>
                 </div>
                 <div className="inline-stat">
-                  <span>Total candidates</span>
-                  <strong>{domain.totalCandidates}</strong>
-                </div>
-                <div className="inline-stat">
                   <span>Tracked</span>
                   <strong>{domain.trackedCount}</strong>
+                </div>
+                <div className="inline-stat">
+                  <span>Novel</span>
+                  <strong>{domain.novelCandidateCount}</strong>
                 </div>
               </div>
 
@@ -101,47 +159,40 @@ export default async function DiscoveryPage() {
                 {domain.providerSummaries.map((summary) => (
                   <span className="data-chip" key={`${domain.domain}-${summary.source}`}>
                     {summary.source}: {summary.acceptedCount}/{summary.fetchedCount}
-                    {summary.failed ? ` failed` : ""}
+                    {summary.failed ? " failed" : ""}
                   </span>
                 ))}
               </div>
 
-              <div className="table-wrap">
-                <table className="data-table">
-                  <thead>
-                    <tr>
-                      <th>Candidate</th>
-                      <th>Recommendation</th>
-                      <th>Ranking</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {domain.topDecisions.map((decision) => (
-                      <tr key={decision.dedupeKey}>
-                        <td>
-                          <strong>{decision.title}</strong>
-                          <div className="artifact-ledger__meta">
-                            <span>{decision.matchedKeywords.slice(0, 4).join(", ") || "no keywords"}</span>
-                            <span>{decision.fullTextAvailability}</span>
-                          </div>
-                        </td>
-                        <td>
-                          <StatusPill tone={decision.recommendation === "promote" ? "good" : decision.recommendation === "review" ? "warn" : "neutral"}>
-                            {decision.recommendation}
-                          </StatusPill>
-                        </td>
-                        <td>{formatScore(decision.rankingScore)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="candidate-list">
+                {domain.topDecisions.map((decision, index) => (
+                  <article className="candidate-row" key={decision.dedupeKey}>
+                    <div className="candidate-row__rank">{index + 1}</div>
+                    <div className="candidate-row__body">
+                      <div className="candidate-row__header">
+                        <strong>{decision.title}</strong>
+                        <StatusPill tone={recommendationTone(decision.recommendation)}>
+                          {decision.recommendation}
+                        </StatusPill>
+                      </div>
+                      <div className="candidate-row__meta">
+                        <span>{decision.matchedKeywords.slice(0, 4).join(", ") || "no keywords"}</span>
+                        <span>{decision.fullTextAvailability}</span>
+                        <span>ranking {formatScore(decision.rankingScore)}</span>
+                      </div>
+                    </div>
+                  </article>
+                ))}
               </div>
             </article>
           ))}
         </div>
       </Section>
 
-      <Section title="Review packet" subtitle="Candidates already elevated into the human review packet, with reasons and risk context. Treat this as input to later Atlas updates, not as current wedge truth.">
+      <Section
+        title="Review Packet"
+        subtitle="Items already elevated into the human review packet. The layout here is intentionally stacked for easier reading during a demo."
+      >
         <div className="split-grid">
           {data.domains.map((domain) => (
             <article className="surface" key={`${domain.domain}-packet`}>
@@ -159,14 +210,20 @@ export default async function DiscoveryPage() {
               {domain.topReviewItems.length === 0 ? (
                 <p className="surface__detail">No review packet items are available yet for this domain.</p>
               ) : (
-                <div className="family-grid">
+                <div className="review-item-list">
                   {domain.topReviewItems.map((item) => (
-                    <article className="family-card" key={item.dedupeKey}>
-                      <strong>{item.title}</strong>
+                    <article className="review-item" key={item.dedupeKey}>
+                      <div className="review-item__header">
+                        <strong>{item.title}</strong>
+                        <StatusPill tone={recommendationTone(item.recommendation)}>
+                          {item.recommendation}
+                        </StatusPill>
+                      </div>
                       <p>{item.recommendationReasons[0] ?? "No recommendation reason recorded."}</p>
-                      <div className="artifact-ledger__meta">
+                      <div className="candidate-row__meta">
                         <span>{item.recommendation}</span>
                         <span>ranking {formatScore(item.rankingScore)}</span>
+                        <span>{item.matchedKeywords.slice(0, 3).join(", ") || "no keywords"}</span>
                       </div>
                     </article>
                   ))}
@@ -177,7 +234,10 @@ export default async function DiscoveryPage() {
         </div>
       </Section>
 
-      <Section title="Artifact ledger" subtitle="These are the exact discovery lane files the web app is reading right now.">
+      <Section
+        title="Artifact Ledger"
+        subtitle="Exact discovery-lane files the web app is reading right now. Useful, but intentionally secondary."
+      >
         <ArtifactLedger artifacts={data.artifacts} />
       </Section>
     </>
