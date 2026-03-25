@@ -38,3 +38,7 @@ export function parseDomainId(value: string): DomainId {
 export function getDomainMeta(domain: DomainId) {
   return DOMAIN_META[domain];
 }
+
+export function staticDomainParams() {
+  return DOMAIN_ORDER.map((domain) => ({ domain }));
+}

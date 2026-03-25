@@ -13,7 +13,7 @@ import {
 } from "@/components/atlas-ui";
 import { formatDateTime } from "@/lib/data";
 import { getDecisionDomainData } from "@/lib/decision-data";
-import { parseDomainId } from "@/lib/domain";
+import { parseDomainId, staticDomainParams } from "@/lib/domain";
 
 function confidenceLabel(value: "high" | "medium" | "low") {
   return `${value} confidence`;
@@ -42,6 +42,12 @@ function providerLabel(source: string) {
     default:
       return source;
   }
+}
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return staticDomainParams();
 }
 
 export default async function DomainPage({

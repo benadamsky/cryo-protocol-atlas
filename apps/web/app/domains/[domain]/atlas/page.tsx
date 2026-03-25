@@ -14,7 +14,13 @@ import {
   StatusPill
 } from "@/components/atlas-ui";
 import { formatDateTime, getDomainData } from "@/lib/data";
-import { getDomainMeta, parseDomainId } from "@/lib/domain";
+import { getDomainMeta, parseDomainId, staticDomainParams } from "@/lib/domain";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return staticDomainParams();
+}
 
 export default async function AtlasPage({
   params

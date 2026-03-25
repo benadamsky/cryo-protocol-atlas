@@ -16,10 +16,16 @@ import {
 } from "@/components/atlas-ui";
 import { formatDateTime, formatPercent, getDomainData, getReviewedEntryCounts } from "@/lib/data";
 import { getDecisionDomainData } from "@/lib/decision-data";
-import { getDomainMeta, parseDomainId } from "@/lib/domain";
+import { getDomainMeta, parseDomainId, staticDomainParams } from "@/lib/domain";
 
 function formatCount(value: number) {
   return new Intl.NumberFormat("en-US").format(value);
+}
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return staticDomainParams();
 }
 
 export default async function BenchmarkPage({

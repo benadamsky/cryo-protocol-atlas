@@ -11,7 +11,13 @@ import {
   StatusPill
 } from "@/components/atlas-ui";
 import { getDecisionDomainData } from "@/lib/decision-data";
-import { parseDomainId } from "@/lib/domain";
+import { parseDomainId, staticDomainParams } from "@/lib/domain";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return staticDomainParams();
+}
 
 export default async function DomainEvidencePage({
   params
