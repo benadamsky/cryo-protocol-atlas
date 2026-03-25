@@ -1104,10 +1104,62 @@ export function formatDateTime(value: string | null) {
   }).format(date);
 }
 
+function clamp(value: number, min = 0, max = 1) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function deriveOverviewCardFromCommittedArtifacts(
+  domain: DomainId,
+  meta: ReturnType<typeof getDomainMeta>,
+  callPacket: CallPacketData,
+  batchSummary: UnattendedBatchData,
+  sourceLabel: "worktree" | "primary"
+): OverviewCard {
+  const reviewedCoverage =
+    (batchSummary.reviewedOutcomeCoverage + batchSummary.reviewedStepPhaseCoverage) / 2;
+  const protocolSignal = clamp(batchSummary.normalizedProtocolCount / 40);
+  const enrichmentSignal = clamp(batchSummary.reviewedSourceEnrichmentCount / 10);
+  const pendingPenalty = clamp(batchSummary.pendingSourceEnrichmentCount / 12, 0, 0.22);
+  const marketBridgeText = [
+    callPacket.marketBridge.whyOptimizationMightMatter,
+    callPacket.marketBridge.likelyBuyerOrUser,
+    callPacket.marketBridge.currentStandardPattern
+  ]
+    .join(" ")
+    .toLowerCase();
+  const marketSignal =
+    (/transplant|clinical|bank|fertility|workflow|buyer|user/.test(marketBridgeText) ? 0.18 : 0) +
+    (/standardization|adjacent|human|trial|platform|scale/.test(marketBridgeText) ? 0.12 : 0) +
+    (domain === "islets" ? 0.08 : 0);
+
+  return {
+    domain,
+    label: meta.label,
+    strapline: meta.strapline,
+    accent: meta.accent,
+    readinessScore: clamp(reviewedCoverage * 0.5 + protocolSignal * 0.25 + enrichmentSignal * 0.15 - pendingPenalty),
+    evidenceScore: clamp(reviewedCoverage * 0.7 + protocolSignal * 0.2 + enrichmentSignal * 0.1),
+    commercialScore: clamp(0.5 + marketSignal),
+    standardPattern: callPacket.standardOfCareView.summary,
+    topWedge: callPacket.bestWedge.title,
+    currentPainPoint: callPacket.marketBridge.likelyPainPoint,
+    nextMove:
+      batchSummary.pendingSourceEnrichmentCount > 0
+        ? "Review the highest-value source enrichment backlog."
+        : callPacket.bestWedge.firstExperiment,
+    reviewedOutcomeCoverage: batchSummary.reviewedOutcomeCoverage,
+    reviewedStepPhaseCoverage: batchSummary.reviewedStepPhaseCoverage,
+    normalizedProtocolCount: batchSummary.normalizedProtocolCount,
+    pendingSourceEnrichments: batchSummary.pendingSourceEnrichmentCount,
+    sourceLabel
+  };
+}
+
 export async function getOverviewData(): Promise<OverviewData> {
   const opportunitySource = await readJsonArtifact(
     "data/processed/opportunity-scan.json",
-    OpportunityScanSchema
+    OpportunityScanSchema,
+    { optional: true }
   );
 
   const cards = await Promise.all(
@@ -1117,13 +1169,18 @@ export async function getOverviewData(): Promise<OverviewData> {
         readJsonArtifact(`data/autoresearch/${domain}/unattended-batch.json`, UnattendedBatchSchema)
       ]);
 
-      const opportunity = opportunitySource.data.find((entry) => entry.domain === domain);
+      const meta = getDomainMeta(domain);
+      const opportunity = opportunitySource?.data.find((entry) => entry.domain === domain);
 
       if (!opportunity) {
-        throw new Error(`Opportunity scan missing domain ${domain}`);
+        return deriveOverviewCardFromCommittedArtifacts(
+          domain,
+          meta,
+          callPacketSource.data,
+          batchSource.data,
+          pickSourceLabel(callPacketSource, batchSource, opportunitySource)
+        );
       }
-
-      const meta = getDomainMeta(domain);
 
       return {
         domain,
