@@ -1,10 +1,10 @@
 # islets autoresearch cycles
 
-- generated at: 2026-03-24T13:51:57.146Z
-- max cycles: 5
+- generated at: 2026-03-26T03:25:41.659Z
+- max cycles: 15
 - ingest first cycle: no
 - cycles completed: 1
-- stop reason: pending-source-enrichment
+- stop reason: converged
 
 ## Cycles
 - cycle 1

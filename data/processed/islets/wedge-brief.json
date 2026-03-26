@@ -188,6 +188,18 @@
   },
   "evidenceGaps": [
     {
+      "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+      "decisionImpact": "medium",
+      "authorityProfile": "abstract-only",
+      "translationalSignal": "preclinical",
+      "missingFields": [
+        "stepPhases",
+        "authority",
+        "protocolDetail"
+      ],
+      "rationale": "Step phases for \"Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets\" still require manual or fuller-source confirmation before benchmark promotion."
+    },
+    {
       "title": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
       "decisionImpact": "high",
       "authorityProfile": "primary-backed",
@@ -206,18 +218,6 @@
         "authority"
       ],
       "rationale": "title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class"
-    },
-    {
-      "title": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
-      "decisionImpact": "medium",
-      "authorityProfile": "abstract-only",
-      "translationalSignal": "preclinical",
-      "missingFields": [
-        "stepPhases",
-        "authority",
-        "protocolDetail"
-      ],
-      "rationale": "Step phases for \"Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets\" still require manual or fuller-source confirmation before benchmark promotion."
     }
   ],
   "nextExperiments": [

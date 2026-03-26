@@ -9,7 +9,7 @@
     "companyRelevance": 0.82,
     "evidenceConfidence": 0.5,
     "translationalPotential": 0.8,
-    "currentRead": "This wedge is the best current candidate, but it should still be treated as a proving ground rather than a locked-in entry point.",
+    "currentRead": "Best current wedge, but still better treated as a proving ground than a committed entry point.",
     "recommendedNextStep": "DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass."
   },
   "standardPattern": {
@@ -230,7 +230,7 @@
         "slow-freezing arm",
         "vitrification arm"
       ],
-      "whyNow": "This wedge is the best current candidate, but it should still be treated as a proving ground rather than a locked-in entry point."
+      "whyNow": "Best current wedge, but still better treated as a proving ground than a committed entry point."
     },
     {
       "title": "Promote morphology-heavy protocols to viability endpoints",

@@ -1,33 +1,9 @@
 {
-  "generatedAt": "2026-03-24T22:19:11.515Z",
+  "generatedAt": "2026-03-26T03:25:30.653Z",
   "domain": "ovarian-tissue",
   "wedgeId": "ovarian-tissue:head-to-head-dmso-centered-ovarian-tissue-benchmark",
   "wedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
   "rows": [
-    {
-      "paperId": "e60a0ee8-afa8-449c-bbab-60f04b2fdf09",
-      "title": "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
-      "protocolFamily": "slow-freezing",
-      "baseCpaBackbone": "Dimethyl Sulfoxide + Ethylene Glycol + Sucrose",
-      "adjuncts": [],
-      "species": [
-        "cat"
-      ],
-      "specimenTypes": [
-        "follicles",
-        "ovarian tissue"
-      ],
-      "endpointClasses": [
-        "viability",
-        "morphology"
-      ],
-      "authorityProfile": "abstract-only",
-      "evidenceStrength": "moderate",
-      "translationalSignal": "preclinical",
-      "confoundFlags": [],
-      "wedgeRelevanceScore": 1,
-      "whyIncluded": "Explicitly named in the active wedge support set."
-    },
     {
       "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
       "title": "Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue",
@@ -48,7 +24,7 @@
       "evidenceStrength": "moderate",
       "translationalSignal": "clinically adjacent",
       "confoundFlags": [],
-      "wedgeRelevanceScore": 1,
+      "wedgeRelevanceScore": 0.892,
       "whyIncluded": "Explicitly named in the active wedge support set."
     },
     {
@@ -73,7 +49,54 @@
       "evidenceStrength": "moderate",
       "translationalSignal": "clinically adjacent",
       "confoundFlags": [],
-      "wedgeRelevanceScore": 1,
+      "wedgeRelevanceScore": 0.892,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
+      "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide + Sucrose",
+      "adjuncts": [],
+      "species": [
+        "human"
+      ],
+      "specimenTypes": [
+        "ovarian tissue"
+      ],
+      "endpointClasses": [
+        "viability",
+        "function"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 0.892,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "e60a0ee8-afa8-449c-bbab-60f04b2fdf09",
+      "title": "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+      "protocolFamily": "slow-freezing",
+      "baseCpaBackbone": "Dimethyl Sulfoxide + Ethylene Glycol + Sucrose",
+      "adjuncts": [],
+      "species": [
+        "cat"
+      ],
+      "specimenTypes": [
+        "follicles",
+        "ovarian tissue"
+      ],
+      "endpointClasses": [
+        "viability",
+        "morphology"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "preclinical",
+      "confoundFlags": [],
+      "wedgeRelevanceScore": 0.86,
       "whyIncluded": "Explicitly named in the active wedge support set."
     },
     {
@@ -97,30 +120,7 @@
       "evidenceStrength": "moderate",
       "translationalSignal": "preclinical",
       "confoundFlags": [],
-      "wedgeRelevanceScore": 1,
-      "whyIncluded": "Explicitly named in the active wedge support set."
-    },
-    {
-      "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
-      "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
-      "protocolFamily": "slow-freezing",
-      "baseCpaBackbone": "Dimethyl Sulfoxide + Sucrose",
-      "adjuncts": [],
-      "species": [
-        "human"
-      ],
-      "specimenTypes": [
-        "ovarian tissue"
-      ],
-      "endpointClasses": [
-        "viability",
-        "function"
-      ],
-      "authorityProfile": "abstract-only",
-      "evidenceStrength": "moderate",
-      "translationalSignal": "clinically adjacent",
-      "confoundFlags": [],
-      "wedgeRelevanceScore": 1,
+      "wedgeRelevanceScore": 0.86,
       "whyIncluded": "Explicitly named in the active wedge support set."
     },
     {
@@ -144,20 +144,20 @@
       "evidenceStrength": "moderate",
       "translationalSignal": "preclinical",
       "confoundFlags": [],
-      "wedgeRelevanceScore": 1,
+      "wedgeRelevanceScore": 0.86,
       "whyIncluded": "Explicitly named in the active wedge support set."
     }
   ],
   "summary": {
     "dominantBackbones": [
-      "Dimethyl Sulfoxide + Ethylene Glycol + Sucrose",
       "Dimethyl Sulfoxide + Ethylene Glycol + Propylene Glycol",
       "Dimethyl Sulfoxide + Ethylene Glycol",
-      "Dimethyl Sulfoxide + Propylene Glycol"
+      "Dimethyl Sulfoxide + Sucrose",
+      "Dimethyl Sulfoxide + Ethylene Glycol + Sucrose"
     ],
     "dominantAdjuncts": [],
     "strongestRows": [],
     "highestConfoundRows": [],
-    "currentRead": "Head-to-head DMSO-centered ovarian tissue benchmark is currently grounded in 6 wedge-relevant papers, with authority and confounds visible row by row."
+    "currentRead": "6 papers are directly relevant to this wedge. 0 are primary-backed, 3 are human-relevant, and 6 still rely on abstract-only evidence."
   }
 }

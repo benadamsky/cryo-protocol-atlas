@@ -58,7 +58,7 @@
     "0 reviewed papers still lack explicit outcome labels.",
     "1 source-enrichment records are still pending.",
     "2 reviewed source-enrichment records rely on secondary-source evidence rather than the original abstract/full text.",
-    "Top wedge evidence gap: Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor"
+    "Top wedge evidence gap: Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets"
   ],
   "marketBridge": {
     "currentStandardPattern": "slow-freezing via Dimethyl Sulfoxide, Sucrose, Ethylene Glycol with cooling -> storage, cooling -> warming, loading -> cooling",
@@ -73,9 +73,9 @@
       "The dominant backbones are Dimethyl Sulfoxide + Glycerol; Dimethyl Sulfoxide."
     ],
     "missingEvidence": [
+      "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets: stepPhases, authority, protocolDetail still need stronger evidence.",
       "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor: protocolDetail still need stronger evidence.",
       "Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation: authority still need stronger evidence.",
-      "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets: stepPhases, authority, protocolDetail still need stronger evidence.",
       "0 reviewed in-scope papers still lack explicit outcome labels.",
       "2 reviewed labels currently depend on secondary-source evidence and should be treated as lower-authority than primary-source-backed rows."
     ],

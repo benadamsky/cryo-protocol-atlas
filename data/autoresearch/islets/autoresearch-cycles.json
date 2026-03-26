@@ -1,10 +1,10 @@
 {
   "domain": "islets",
-  "generatedAt": "2026-03-24T13:51:57.146Z",
-  "maxCycles": 5,
+  "generatedAt": "2026-03-26T03:25:41.659Z",
+  "maxCycles": 15,
   "ingestFirstCycle": false,
   "cyclesCompleted": 1,
-  "stopReason": "pending-source-enrichment",
+  "stopReason": "converged",
   "cycles": [
     {
       "cycle": 1,

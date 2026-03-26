@@ -60,15 +60,15 @@ Focus question: What is the strongest first cryopreservation wedge in islets, an
 - reviewed manual-curation-only rows: 0
 
 ## Evidence gaps
+- Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets | impact=medium | authority=abstract-only | translational=preclinical
+  missing fields=stepPhases, authority, protocolDetail
+  rationale=Step phases for "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets" still require manual or fuller-source confirmation before benchmark promotion.
 - Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor | impact=high | authority=primary-backed | translational=clinically adjacent
   missing fields=protocolDetail
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
 - Polyvinyl Pyrrolidone: A Novel Cryoprotectant in Islet Cell Cryopreservation | impact=medium | authority=primary-backed | translational=preclinical
   missing fields=authority
   rationale=title/abstract suggests a positive result but does not state a concrete benchmark-safe outcome class
-- Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets | impact=medium | authority=abstract-only | translational=preclinical
-  missing fields=stepPhases, authority, protocolDetail
-  rationale=Step phases for "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets" still require manual or fuller-source confirmation before benchmark promotion.
 
 ## Next experiments
 - Additive-assisted islet recovery benchmark on a fixed base cryomix | category=benchmark

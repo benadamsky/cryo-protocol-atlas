@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-25T13:51:24.880Z",
+  "generatedAt": "2026-03-26T03:25:41.888Z",
   "overallState": "stalled-human-gate",
   "availableDomainCount": 2,
   "missingDomains": [],
@@ -9,9 +9,9 @@
   "domains": [
     {
       "domain": "ovarian-tissue",
-      "latestRunGeneratedAt": "2026-03-24T13:51:51.717Z",
+      "latestRunGeneratedAt": "2026-03-26T03:25:34.364Z",
       "healthState": "stalled-human-gate",
-      "stopReason": "pending-source-enrichment",
+      "stopReason": "converged",
       "cyclesCompleted": 1,
       "passesAllGates": true,
       "reviewedMinimumDepthReady": true,
@@ -44,6 +44,48 @@
         "4 reviewed papers still lack outcome labels",
         "3 reviewed papers still lack step phases"
       ],
+      "runDelta": {
+        "generatedAt": "2026-03-26T03:25:34.032Z",
+        "domain": "ovarian-tissue",
+        "comparedTo": "2026-03-24T22:19:11.350Z",
+        "wedgeDelta": {
+          "wedgeChanged": false,
+          "previousWedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
+          "currentWedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
+          "confidenceDeltas": {
+            "scientificRelevance": 0,
+            "companyRelevance": 0,
+            "evidenceConfidence": 0,
+            "translationalPotential": 0
+          },
+          "supportingPaperCountDelta": 0,
+          "blockerSummary": "Best current wedge, but still better treated as a proving ground than a committed entry point."
+        },
+        "evidenceGapDelta": {
+          "highImpactGapsBefore": 0,
+          "highImpactGapsAfter": 0,
+          "netHighImpactChange": 0,
+          "topGapBefore": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+          "topGapAfter": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+          "gapsNarrowed": []
+        },
+        "experimentPacketDelta": {
+          "topPacketChanged": false,
+          "previousTopPacket": "Head-to-head DMSO-centered ovarian tissue benchmark",
+          "currentTopPacket": "Head-to-head DMSO-centered ovarian tissue benchmark",
+          "packetCount": 3
+        },
+        "enrichmentDelta": {
+          "pendingBefore": 4,
+          "pendingAfter": 4,
+          "llmDraftsGenerated": 0,
+          "llmAutoTriaged": 0,
+          "decisionChangingPending": 0
+        },
+        "summary": "No material changes detected.",
+        "productiveRun": false,
+        "progressAssessment": "flat"
+      },
       "artifactPaths": {
         "cycleReport": "data/autoresearch/ovarian-tissue/autoresearch-cycles.md",
         "unattendedBatch": "data/autoresearch/ovarian-tissue/unattended-batch.md",
@@ -54,9 +96,9 @@
     },
     {
       "domain": "islets",
-      "latestRunGeneratedAt": "2026-03-24T13:51:57.146Z",
+      "latestRunGeneratedAt": "2026-03-26T03:25:41.659Z",
       "healthState": "stalled-human-gate",
-      "stopReason": "pending-source-enrichment",
+      "stopReason": "converged",
       "cyclesCompleted": 1,
       "passesAllGates": true,
       "reviewedMinimumDepthReady": true,
@@ -88,6 +130,48 @@
         "5 normalized protocols still carry warnings",
         "1 reviewed papers still lack step phases"
       ],
+      "runDelta": {
+        "generatedAt": "2026-03-26T03:25:41.269Z",
+        "domain": "islets",
+        "comparedTo": "2026-03-24T22:28:31.146Z",
+        "wedgeDelta": {
+          "wedgeChanged": false,
+          "previousWedgeTitle": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+          "currentWedgeTitle": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+          "confidenceDeltas": {
+            "scientificRelevance": 0,
+            "companyRelevance": 0,
+            "evidenceConfidence": 0,
+            "translationalPotential": 0
+          },
+          "supportingPaperCountDelta": 0,
+          "blockerSummary": "Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet."
+        },
+        "evidenceGapDelta": {
+          "highImpactGapsBefore": 1,
+          "highImpactGapsAfter": 1,
+          "netHighImpactChange": 0,
+          "topGapBefore": "Improvement of Human Islet Cryopreservation by a p38 MAPK Inhibitor",
+          "topGapAfter": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+          "gapsNarrowed": []
+        },
+        "experimentPacketDelta": {
+          "topPacketChanged": false,
+          "previousTopPacket": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+          "currentTopPacket": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+          "packetCount": 3
+        },
+        "enrichmentDelta": {
+          "pendingBefore": 1,
+          "pendingAfter": 1,
+          "llmDraftsGenerated": 0,
+          "llmAutoTriaged": 0,
+          "decisionChangingPending": 0
+        },
+        "summary": "No material changes detected.",
+        "productiveRun": false,
+        "progressAssessment": "flat"
+      },
       "artifactPaths": {
         "cycleReport": "data/autoresearch/islets/autoresearch-cycles.md",
         "unattendedBatch": "data/autoresearch/islets/unattended-batch.md",

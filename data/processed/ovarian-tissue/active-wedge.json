@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-24T22:19:11.350Z",
+  "generatedAt": "2026-03-26T03:25:30.350Z",
   "domain": "ovarian-tissue",
   "wedgeId": "ovarian-tissue:head-to-head-dmso-centered-ovarian-tissue-benchmark",
   "status": "candidate",
@@ -10,7 +10,7 @@
   "decisionQuestion": "Should Atlas prioritize \"Head-to-head DMSO-centered ovarian tissue benchmark\" as the main head-to-head wedge benchmark?",
   "whyThisWedge": "A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation.",
   "claim": "A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation.",
-  "currentRead": "This wedge is the best current candidate, but it should still be treated as a proving ground rather than a locked-in entry point.",
+  "currentRead": "Best current wedge, but still better treated as a proving ground than a committed entry point.",
   "recommendedNextStep": "DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass.",
   "scientificRelevance": 0.673,
   "companyRelevance": 0.82,
