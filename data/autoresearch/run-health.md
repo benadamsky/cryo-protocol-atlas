@@ -1,6 +1,6 @@
 # Autoresearch health
 
-- generated at: 2026-04-09T13:58:47.250Z
+- generated at: 2026-04-10T03:29:28.603Z
 - overall state: stalled-human-gate
 - available domains: 2
 - missing domains: none
