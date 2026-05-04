@@ -1,6 +1,6 @@
 {
   "domain": "ovarian-tissue",
-  "generatedAt": "2026-05-04T03:29:45.722Z",
+  "generatedAt": "2026-05-04T13:59:41.763Z",
   "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "benchmarkEntryCount": 28,
   "subsets": {
