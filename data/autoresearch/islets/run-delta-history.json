@@ -1,47 +1,5 @@
 [
   {
-    "generatedAt": "2026-05-04T03:30:00.285Z",
-    "domain": "islets",
-    "comparedTo": "2026-05-01T13:53:12.287Z",
-    "wedgeDelta": {
-      "wedgeChanged": false,
-      "previousWedgeTitle": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
-      "currentWedgeTitle": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
-      "confidenceDeltas": {
-        "scientificRelevance": 0,
-        "companyRelevance": 0,
-        "evidenceConfidence": 0,
-        "translationalPotential": 0
-      },
-      "supportingPaperCountDelta": 0,
-      "blockerSummary": "Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet."
-    },
-    "evidenceGapDelta": {
-      "highImpactGapsBefore": 1,
-      "highImpactGapsAfter": 1,
-      "netHighImpactChange": 0,
-      "topGapBefore": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
-      "topGapAfter": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
-      "gapsNarrowed": []
-    },
-    "experimentPacketDelta": {
-      "topPacketChanged": false,
-      "previousTopPacket": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
-      "currentTopPacket": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
-      "packetCount": 3
-    },
-    "enrichmentDelta": {
-      "pendingBefore": 1,
-      "pendingAfter": 1,
-      "llmDraftsGenerated": 0,
-      "llmAutoTriaged": 0,
-      "decisionChangingPending": 0
-    },
-    "summary": "No material changes detected.",
-    "productiveRun": false,
-    "progressAssessment": "flat"
-  },
-  {
     "generatedAt": "2026-05-04T13:59:57.116Z",
     "domain": "islets",
     "comparedTo": "2026-05-04T03:29:54.756Z",
@@ -2061,6 +2019,48 @@
     "generatedAt": "2026-06-08T03:31:13.468Z",
     "domain": "islets",
     "comparedTo": "2026-06-05T14:08:45.752Z",
+    "wedgeDelta": {
+      "wedgeChanged": false,
+      "previousWedgeTitle": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+      "currentWedgeTitle": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+      "confidenceDeltas": {
+        "scientificRelevance": 0,
+        "companyRelevance": 0,
+        "evidenceConfidence": 0,
+        "translationalPotential": 0
+      },
+      "supportingPaperCountDelta": 0,
+      "blockerSummary": "Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet."
+    },
+    "evidenceGapDelta": {
+      "highImpactGapsBefore": 1,
+      "highImpactGapsAfter": 1,
+      "netHighImpactChange": 0,
+      "topGapBefore": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+      "topGapAfter": "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets",
+      "gapsNarrowed": []
+    },
+    "experimentPacketDelta": {
+      "topPacketChanged": false,
+      "previousTopPacket": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+      "currentTopPacket": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
+      "packetCount": 3
+    },
+    "enrichmentDelta": {
+      "pendingBefore": 1,
+      "pendingAfter": 1,
+      "llmDraftsGenerated": 0,
+      "llmAutoTriaged": 0,
+      "decisionChangingPending": 0
+    },
+    "summary": "No material changes detected.",
+    "productiveRun": false,
+    "progressAssessment": "flat"
+  },
+  {
+    "generatedAt": "2026-06-08T14:38:22.283Z",
+    "domain": "islets",
+    "comparedTo": "2026-06-08T03:31:09.563Z",
     "wedgeDelta": {
       "wedgeChanged": false,
       "previousWedgeTitle": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
