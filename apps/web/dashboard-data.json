@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T03:31:34.847Z",
+  "generatedAt": "2026-06-22T15:08:37.338Z",
   "overallState": "stalled-human-gate",
   "availableDomainCount": 2,
   "missingDomains": [],
@@ -45,9 +45,9 @@
         "3 reviewed papers still lack step phases"
       ],
       "runDelta": {
-        "generatedAt": "2026-06-22T03:31:26.691Z",
+        "generatedAt": "2026-06-22T15:08:28.966Z",
         "domain": "ovarian-tissue",
-        "comparedTo": "2026-06-19T14:21:22.337Z",
+        "comparedTo": "2026-06-22T03:31:22.980Z",
         "wedgeDelta": {
           "wedgeChanged": false,
           "previousWedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
@@ -131,9 +131,9 @@
         "1 reviewed papers still lack step phases"
       ],
       "runDelta": {
-        "generatedAt": "2026-06-22T03:31:34.215Z",
+        "generatedAt": "2026-06-22T15:08:36.697Z",
         "domain": "islets",
-        "comparedTo": "2026-06-19T14:21:27.913Z",
+        "comparedTo": "2026-06-22T03:31:30.228Z",
         "wedgeDelta": {
           "wedgeChanged": false,
           "previousWedgeTitle": "Additive-assisted islet recovery benchmark on a fixed base cryomix",
