@@ -1,47 +1,5 @@
 [
   {
-    "generatedAt": "2026-05-22T03:30:46.705Z",
-    "domain": "ovarian-tissue",
-    "comparedTo": "2026-05-21T14:18:39.506Z",
-    "wedgeDelta": {
-      "wedgeChanged": false,
-      "previousWedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
-      "currentWedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
-      "confidenceDeltas": {
-        "scientificRelevance": 0,
-        "companyRelevance": 0,
-        "evidenceConfidence": 0,
-        "translationalPotential": 0
-      },
-      "supportingPaperCountDelta": 0,
-      "blockerSummary": "Best current wedge, but still better treated as a proving ground than a committed entry point."
-    },
-    "evidenceGapDelta": {
-      "highImpactGapsBefore": 0,
-      "highImpactGapsAfter": 0,
-      "netHighImpactChange": 0,
-      "topGapBefore": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
-      "topGapAfter": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
-      "gapsNarrowed": []
-    },
-    "experimentPacketDelta": {
-      "topPacketChanged": false,
-      "previousTopPacket": "Head-to-head DMSO-centered ovarian tissue benchmark",
-      "currentTopPacket": "Head-to-head DMSO-centered ovarian tissue benchmark",
-      "packetCount": 3
-    },
-    "enrichmentDelta": {
-      "pendingBefore": 4,
-      "pendingAfter": 4,
-      "llmDraftsGenerated": 0,
-      "llmAutoTriaged": 0,
-      "decisionChangingPending": 0
-    },
-    "summary": "No material changes detected.",
-    "productiveRun": false,
-    "progressAssessment": "flat"
-  },
-  {
     "generatedAt": "2026-05-22T14:04:06.118Z",
     "domain": "ovarian-tissue",
     "comparedTo": "2026-05-22T03:30:43.071Z",
@@ -2061,6 +2019,48 @@
     "generatedAt": "2026-06-25T14:00:57.122Z",
     "domain": "ovarian-tissue",
     "comparedTo": "2026-06-25T03:30:11.447Z",
+    "wedgeDelta": {
+      "wedgeChanged": false,
+      "previousWedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
+      "currentWedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
+      "confidenceDeltas": {
+        "scientificRelevance": 0,
+        "companyRelevance": 0,
+        "evidenceConfidence": 0,
+        "translationalPotential": 0
+      },
+      "supportingPaperCountDelta": 0,
+      "blockerSummary": "Best current wedge, but still better treated as a proving ground than a committed entry point."
+    },
+    "evidenceGapDelta": {
+      "highImpactGapsBefore": 0,
+      "highImpactGapsAfter": 0,
+      "netHighImpactChange": 0,
+      "topGapBefore": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+      "topGapAfter": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+      "gapsNarrowed": []
+    },
+    "experimentPacketDelta": {
+      "topPacketChanged": false,
+      "previousTopPacket": "Head-to-head DMSO-centered ovarian tissue benchmark",
+      "currentTopPacket": "Head-to-head DMSO-centered ovarian tissue benchmark",
+      "packetCount": 3
+    },
+    "enrichmentDelta": {
+      "pendingBefore": 4,
+      "pendingAfter": 4,
+      "llmDraftsGenerated": 0,
+      "llmAutoTriaged": 0,
+      "decisionChangingPending": 0
+    },
+    "summary": "No material changes detected.",
+    "productiveRun": false,
+    "progressAssessment": "flat"
+  },
+  {
+    "generatedAt": "2026-06-26T03:30:32.834Z",
+    "domain": "ovarian-tissue",
+    "comparedTo": "2026-06-25T14:00:53.528Z",
     "wedgeDelta": {
       "wedgeChanged": false,
       "previousWedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
