@@ -39,9 +39,15 @@ async function readJson<T>(path: string, parser: { parse: (value: unknown) => T 
   return parser.parse(JSON.parse(await readFile(path, "utf8")));
 }
 
+// Pipeline tests must not depend on live upstream APIs: their result counts drift
+// with whatever OpenAlex/Crossref/Europe PMC happen to return. `cryodb` reads the
+// local domain snapshot, so it is the only provider these tests query.
+const OFFLINE_PROVIDER_ENV = { DISCOVERY_LIVE_PROVIDERS: "cryodb" } as const;
+
 function runScript(scriptPath: string, cwd: string, args: string[]): void {
   execFileSync(process.execPath, ["--import", tsxLoader, scriptPath, ...args], {
     cwd,
+    env: { ...process.env, ...OFFLINE_PROVIDER_ENV },
     stdio: "pipe"
   });
 }
