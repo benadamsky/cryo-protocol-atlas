@@ -276,10 +276,17 @@ The purpose of the discovery lane is to widen the candidate evidence frontier wi
 
 The first discovery providers are:
 
-- `cryodb`
-- `openalex`
-- `crossref`
-- `europe-pmc`
+- `cryodb` (local: reads `data/processed/<domain>/domain-snapshot.json`)
+- `openalex` (network)
+- `crossref` (network)
+- `europe-pmc` (network)
+
+`DISCOVERY_LIVE_PROVIDERS` narrows the refresh to a comma-separated subset of those
+providers, e.g. `DISCOVERY_LIVE_PROVIDERS=cryodb` for an offline run and
+`DISCOVERY_LIVE_PROVIDERS=cryodb,europe-pmc` to skip a misbehaving upstream. Unset
+means all providers; an empty value means no live providers. The discovery pipeline
+tests set it to `cryodb` so they stay deterministic instead of drifting with whatever
+the upstream APIs return that day.
 
 ### Discovery file conventions
 

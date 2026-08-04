@@ -5,7 +5,7 @@ import {
   scoreDiscoveryText,
   shouldKeepDiscoveryCandidate
 } from "../packages/discovery/src/domain.js";
-import { LIVE_DISCOVERY_PROVIDERS, fetchDiscoverySource } from "../packages/discovery/src/providers.js";
+import { fetchDiscoverySource, resolveLiveDiscoveryProviders } from "../packages/discovery/src/providers.js";
 import {
   DiscoveryImportSummarySchema,
   DiscoveryPaperSchema,
@@ -296,7 +296,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
   const recordBuckets = new Map<string, DiscoverySourceRecord[]>();
   const discoveryDir = join(process.cwd(), "data", "discovery", selectedDomain);
 
-  for (const source of LIVE_DISCOVERY_PROVIDERS) {
+  for (const source of resolveLiveDiscoveryProviders()) {
     try {
       const result = await fetchDiscoverySource(source, selectedDomain);
       for (const record of result.records) {

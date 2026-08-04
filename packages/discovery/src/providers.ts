@@ -5,7 +5,8 @@ import {
   FullTextAvailabilitySchema,
   LiveDiscoveryProviderSchema,
   type DiscoverySourceRecord,
-  type DomainId
+  type DomainId,
+  type LiveDiscoveryProvider
 } from "../../shared/src/schema.js";
 import { getDiscoveryDomainConfig, scoreDiscoveryText, shouldKeepDiscoveryCandidate } from "./domain.js";
 
@@ -392,3 +393,34 @@ export async function fetchDiscoverySource(
 }
 
 export const LIVE_DISCOVERY_PROVIDERS = LiveDiscoveryProviderSchema.options;
+
+/**
+ * Resolves which live providers a refresh should query.
+ *
+ * Defaults to every provider. `DISCOVERY_LIVE_PROVIDERS` narrows that set to a
+ * comma-separated allowlist, which lets pipeline tests run against the local
+ * `cryodb` snapshot only instead of the network, and lets an operator re-run a
+ * refresh against a subset when one upstream API is misbehaving. An empty value
+ * selects no live providers at all.
+ */
+export function resolveLiveDiscoveryProviders(
+  raw: string | undefined = process.env.DISCOVERY_LIVE_PROVIDERS
+): LiveDiscoveryProvider[] {
+  if (raw === undefined) {
+    return [...LIVE_DISCOVERY_PROVIDERS];
+  }
+
+  const requested = raw
+    .split(",")
+    .map((entry) => entry.trim())
+    .filter(Boolean);
+  const unknown = requested.filter((entry) => !LiveDiscoveryProviderSchema.safeParse(entry).success);
+  if (unknown.length > 0) {
+    throw new Error(
+      `Unknown DISCOVERY_LIVE_PROVIDERS entries: ${unknown.join(", ")}. Known providers: ${LIVE_DISCOVERY_PROVIDERS.join(", ")}`
+    );
+  }
+
+  const selected = new Set(requested as LiveDiscoveryProvider[]);
+  return LIVE_DISCOVERY_PROVIDERS.filter((source) => selected.has(source));
+}
