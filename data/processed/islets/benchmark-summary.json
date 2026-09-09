@@ -1,6 +1,6 @@
 {
   "domain": "islets",
-  "generatedAt": "2026-09-09T02:36:01.801Z",
+  "generatedAt": "2026-09-09T13:28:08.208Z",
   "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "benchmarkEntryCount": 53,
   "subsets": {
