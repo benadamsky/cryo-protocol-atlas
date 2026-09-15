@@ -13,6 +13,7 @@
     "web:typecheck": "bun run --cwd apps/web typecheck",
     "list-domains": "node --import tsx scripts/list-domains.ts",
     "ingest": "node --import tsx scripts/ingest-domain.ts",
+    "fetch-pubmed": "node --import tsx scripts/fetch-pubmed-import.ts",
     "discover-imports": "node --import tsx scripts/import-discovery-exports.ts",
     "discover": "node --import tsx scripts/discover-domain-corpus.ts",
     "discover-queue": "node --import tsx scripts/build-discovery-review-queue.ts",

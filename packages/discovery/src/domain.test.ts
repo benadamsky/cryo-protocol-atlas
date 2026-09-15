@@ -147,3 +147,44 @@ test("provider queries stay cryo-focused", () => {
   assert.ok(ovarian.providerQueries.openalex.includes("cryopreservation"));
   assert.ok(ovarian.providerQueries.openalex.includes("cryoprotectant"));
 });
+
+test("hepatocytes discovery keeps cryopreservation protocol papers", () => {
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "Cryopreservation of primary human hepatocytes: effect of trehalose on post-thaw viability and attachment",
+      "Primary human hepatocytes were cryopreserved in DMSO with or without trehalose and assessed for viability, plating efficiency, and albumin secretion after thaw.",
+      "hepatocytes"
+    ),
+    true
+  );
+});
+
+test("hepatocytes discovery rejects whole-organ liver transplantation outcomes", () => {
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "Outcomes of liver transplantation with cryopreserved hepatocytes as a bridge therapy",
+      "Clinical outcomes after liver transplantation were reviewed; hepatocyte viability after thaw was not assessed.",
+      "hepatocytes"
+    ),
+    false
+  );
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "Hepatocyte cryopreservation: a systematic review and meta-analysis",
+      "Systematic review of hepatocyte cryopreservation studies.",
+      "hepatocytes"
+    ),
+    false
+  );
+});
+
+test("hepatocytes discovery rejects drug-metabolism papers without cryo signal", () => {
+  assert.equal(
+    shouldKeepDiscoveryCandidate(
+      "CYP3A4 induction in primary human hepatocytes by rifampicin",
+      "Primary human hepatocytes were cultured and CYP3A4 activity was measured after induction.",
+      "hepatocytes"
+    ),
+    false
+  );
+});

@@ -1,3 +1,4 @@
+import { hepatocytes } from "./hepatocytes.js";
 import { islets } from "./islets.js";
 import { ovarianTissue } from "./ovarian-tissue.js";
 import type { DomainDefinition } from "./types.js";
@@ -9,7 +10,7 @@ export type * from "./types.js";
  * listing it here; every id-keyed schema, script, workflow, and console tab
  * derives from this list.
  */
-const DOMAIN_LIST = [ovarianTissue, islets] as const;
+const DOMAIN_LIST = [ovarianTissue, islets, hepatocytes] as const;
 
 export type DomainId = (typeof DOMAIN_LIST)[number]["id"];
 
