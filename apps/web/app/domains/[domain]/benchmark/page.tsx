@@ -1,27 +1,10 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  ArtifactLedger,
-  DataTable,
-  DomainBadge,
-  DomainTabs,
-  MetricCard,
-  MetricGrid,
-  PageIntro,
-  ScoreBar,
-  Section,
-  SourceNote,
-  StatusPill,
-  QuickFacts
-} from "@/components/atlas-ui";
-import { formatDateTime, formatPercent, getDomainData, getReviewedEntryCounts } from "@/lib/data";
+import { ArtifactList, Facts, Funnel, PageHeader, Section, Table } from "@/components/atlas-ui";
+import { DomainCrumbs } from "@/components/domain-crumbs";
+import { formatPercent, getDomainData, getReviewedEntryCounts } from "@/lib/data";
 import { getDecisionDomainData } from "@/lib/decision-data";
 import { getDomainMeta, parseDomainId, staticDomainParams } from "@/lib/domain";
 import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
-
-function formatCount(value: number) {
-  return new Intl.NumberFormat("en-US").format(value);
-}
 
 export const dynamicParams = false;
 
@@ -29,322 +12,171 @@ export function generateStaticParams() {
   return staticDomainParams();
 }
 
-export default async function BenchmarkPage({
-  params
-}: {
-  params: Promise<{ domain: string }>;
-}) {
+function delta(before: number, after: number) {
+  return `${before.toFixed(3)} → ${after.toFixed(3)}`;
+}
+
+export default async function BenchmarkPage({ params }: { params: Promise<{ domain: string }> }) {
+  const { domain: rawDomain } = await params;
+  let domain;
+
   try {
-    const { domain: rawDomain } = await params;
-    const domain = parseDomainId(rawDomain);
-    const meta = getDomainMeta(domain);
-    const [data, decisionData] = await Promise.all([getDomainData(domain), getDecisionDomainData(domain)]);
-    const reviewedSubset = data.benchmarkSummary.subsets.reviewed;
-    const entryCounts = getReviewedEntryCounts(data.benchmarkFile);
-    const baselineReviewed = data.benchmarkAnalysis.baseline.subsets.reviewed;
-    const resolvedReviewed = data.benchmarkAnalysis.resolved.subsets.reviewed;
-
-    return (
-      <>
-        <PageIntro
-          eyebrow={`${meta.label} Benchmark`}
-          title="Why Atlas Trusts This Domain Enough To Recommend An Experiment"
-          summary="This page shows whether Atlas is keeping the right papers in scope, labeling them correctly, and extracting enough detail to support the current recommendation."
-        >
-          <div className="hero__stack">
-            <DomainBadge domain={domain} />
-            <SourceNote sourceLabel={data.sourceLabel} />
-            <StatusPill tone={data.benchmarkSummary.summary.passesAllGates ? "good" : "warn"}>
-              {data.benchmarkSummary.summary.passesAllGates ? "all gates pass" : "gate failure"}
-            </StatusPill>
-            <QuickFacts
-              items={[
-                {
-                  label: "Generated",
-                  value: formatDateTime(data.benchmarkSummary.generatedAt)
-                },
-                {
-                  label: "Reviewed rows",
-                  value: entryCounts.reviewed
-                },
-                {
-                  label: "Recommended experiment",
-                  value: decisionData.provenanceFunnel.recommendedExperimentTitle ?? "No packet queued"
-                }
-              ]}
-            />
-          </div>
-        </PageIntro>
-
-        <DomainTabs current="benchmark" domain={domain} />
-
-        <Section
-          title="Recommendation Provenance"
-          subtitle="Before looking at the trust metrics, see how Atlas got from a large paper set to the current recommendation."
-        >
-          <MetricGrid>
-            <MetricCard label="Papers scanned" value={formatCount(decisionData.provenanceFunnel.papersFetched)} detail="Source papers Atlas started from for this domain." />
-            <MetricCard label="Matched to this domain" value={formatCount(decisionData.provenanceFunnel.papersMatched)} detail="Papers that survived domain filtering." />
-            <MetricCard label="Reviewed trust rows" value={formatCount(decisionData.provenanceFunnel.reviewedBenchmarkRows)} detail="Human-validated rows Atlas uses to check itself." />
-            <MetricCard label="Reviewed rows in scope" value={formatCount(decisionData.provenanceFunnel.reviewedInScopeRows)} detail="Reviewed rows Atlas currently believes belong in the domain slice." />
-          </MetricGrid>
-        </Section>
-
-        <Section
-          title="Follow The Recommendation Back To The Evidence"
-          subtitle="Use the matrix and evidence pages when you want to trace the recommendation back to specific papers and extracted protocol rows."
-        >
-          <div className="split-grid">
-            <article className="surface">
-              <div className="surface__header">
-                <h3>Validated atlas</h3>
-                <StatusPill tone="neutral">print-friendly summary</StatusPill>
-              </div>
-              <p>Use this to compare family structure, uncertainty hotspots, and the resolved literature shape.</p>
-              <Link href={`/domains/${domain}/atlas`}>Open atlas</Link>
-            </article>
-            <article className="surface">
-              <div className="surface__header">
-                <h3>Review queue</h3>
-                <StatusPill tone="good">candidate provenance</StatusPill>
-              </div>
-              <p>Use this to see how human review and benchmark decisions support the same slice.</p>
-              <Link href={`/domains/${domain}/review`}>Open review</Link>
-            </article>
-          </div>
-        </Section>
-
-        <MetricGrid>
-          <MetricCard
-            label="Trust checks"
-            value={data.benchmarkSummary.summary.passesAllGates ? "Pass" : "Fail"}
-            tone={data.benchmarkSummary.summary.passesAllGates ? "good" : "warn"}
-            detail="These checks are the guardrails that keep Atlas from looking better by oversimplifying the literature."
-          />
-          <MetricCard label="Total benchmark rows" value={String(data.benchmarkSummary.benchmarkEntryCount)} />
-          <MetricCard label="Reviewed rows" value={String(entryCounts.reviewed)} />
-          <MetricCard label="Seeded rows" value={String(entryCounts.seeded)} />
-        </MetricGrid>
-
-        <Section title="What Atlas Fixed Before Making This Recommendation" subtitle="This shows how much the reviewed override and normalization path improved the literature read compared with the raw baseline pass.">
-          <div className="split-grid">
-            <article className="surface">
-              <ScoreBar
-                label="Reviewed inclusion F1 delta"
-                value={Math.max(resolvedReviewed.inclusion.f1 - baselineReviewed.inclusion.f1, 0)}
-                tone="teal"
-                detail={`baseline ${baselineReviewed.inclusion.f1.toFixed(3)} -> resolved ${resolvedReviewed.inclusion.f1.toFixed(3)}`}
-              />
-              <ScoreBar
-                label="Reviewed protocol-family accuracy delta"
-                value={
-                  Math.max(
-                    resolvedReviewed.exactFields.protocolFamily.accuracy -
-                      baselineReviewed.exactFields.protocolFamily.accuracy,
-                    0
-                  )
-                }
-                tone="amber"
-                detail={`baseline ${baselineReviewed.exactFields.protocolFamily.accuracy.toFixed(3)} -> resolved ${resolvedReviewed.exactFields.protocolFamily.accuracy.toFixed(3)}`}
-              />
-            </article>
-
-            <article className="surface">
-              <ScoreBar
-                label="Reviewed paper-type accuracy delta"
-                value={
-                  Math.max(
-                    resolvedReviewed.exactFields.paperType.accuracy -
-                      baselineReviewed.exactFields.paperType.accuracy,
-                    0
-                  )
-                }
-                tone="rose"
-                detail={`baseline ${baselineReviewed.exactFields.paperType.accuracy.toFixed(3)} -> resolved ${resolvedReviewed.exactFields.paperType.accuracy.toFixed(3)}`}
-              />
-              <ScoreBar
-                label="Reviewed specimen macro F1 delta"
-                value={
-                  Math.max(
-                    resolvedReviewed.setFields.specimenTypes.averageF1 -
-                      baselineReviewed.setFields.specimenTypes.averageF1,
-                    0
-                  )
-                }
-                tone="teal"
-                detail={`baseline ${baselineReviewed.setFields.specimenTypes.averageF1.toFixed(3)} -> resolved ${resolvedReviewed.setFields.specimenTypes.averageF1.toFixed(3)}`}
-              />
-            </article>
-          </div>
-        </Section>
-
-        <Section title="How Complete The Trusted Evidence Is" subtitle="These two coverage numbers determine how much detail Atlas can reliably use when choosing the next experiment.">
-          <div className="split-grid">
-            <article className="surface">
-              <ScoreBar
-                label="Outcome coverage"
-                value={data.benchmarkSummary.summary.reviewedOutcomeCoverage}
-                tone="teal"
-              />
-              <ScoreBar
-                label="Step-phase coverage"
-                value={data.benchmarkSummary.summary.reviewedStepPhaseCoverage}
-                tone="amber"
-              />
-            </article>
-
-            <article className="surface">
-              <h3>Reviewed subset</h3>
-              <p>
-                Inclusion F1 <strong>{reviewedSubset.inclusion.f1.toFixed(2)}</strong> with precision{" "}
-                <strong>{reviewedSubset.inclusion.precision.toFixed(2)}</strong> and recall{" "}
-                <strong>{reviewedSubset.inclusion.recall.toFixed(2)}</strong>.
-              </p>
-              <div className="quick-facts">
-                <div className="inline-stat">
-                  <span>Expected included</span>
-                  <strong>{reviewedSubset.expectedIncludedCount}</strong>
-                </div>
-                <div className="inline-stat">
-                  <span>Labeled outcomes</span>
-                  <strong>{reviewedSubset.coverage.outcomeClasses?.labeledCount ?? 0}</strong>
-                </div>
-                <div className="inline-stat">
-                  <span>Labeled steps</span>
-                  <strong>{reviewedSubset.coverage.stepPhases?.labeledCount ?? 0}</strong>
-                </div>
-              </div>
-            </article>
-          </div>
-          <QuickFacts
-            items={[
-              {
-                label: "Inclusion F1 delta vs all",
-                value: data.benchmarkSummary.summary.reviewedInclusionF1DeltaVsAll.toFixed(3)
-              },
-              {
-                label: "Minimum depth ready",
-                value: data.benchmarkSummary.summary.reviewedMinimumDepthReady ? "yes" : "no"
-              },
-              {
-                label: "Outcome coverage delta",
-                value: formatPercent(data.benchmarkAnalysis.reviewedDepth.outcomeCoverageDelta)
-              },
-              {
-                label: "Step-phase coverage delta",
-                value: formatPercent(data.benchmarkAnalysis.reviewedDepth.stepPhaseCoverageDelta)
-              }
-            ]}
-          />
-        </Section>
-
-        <Section title="Safeguards Against Fooling Ourselves" subtitle="These checks make sure Atlas is not looking better just because it dropped hard papers or oversimplified the literature.">
-          <DataTable
-            columns={["Gate", "Status", "Actual", "Threshold", "Why it matters"]}
-            rows={data.benchmarkSummary.gates.map((gate) => [
-              gate.name,
-              <StatusPill tone={gate.passed ? "good" : "hot"}>
-                {gate.passed ? "pass" : "fail"}
-              </StatusPill>,
-              formatPercent(gate.actual),
-              `${gate.comparator} ${formatPercent(gate.threshold)}`,
-              gate.notes
-            ])}
-          />
-        </Section>
-
-        <div className="split-grid">
-          <Section title="Benchmark In Plain English">
-            <ul className="feature-list">
-              <li><strong>Reviewed rows:</strong> human-validated truth rows Atlas trusts most.</li>
-              <li><strong>Seeded rows:</strong> weaker regression rows kept for broader coverage.</li>
-              <li><strong>Coverage:</strong> how often Atlas successfully extracted the field.</li>
-              <li><strong>Gates:</strong> safeguards that stop Atlas from gaming the benchmark.</li>
-            </ul>
-          </Section>
-
-          <Section title="Reviewed coverage by field">
-            <DataTable
-              columns={["Field", "Coverage", "Labeled", "Eligible"]}
-              rows={Object.values(reviewedSubset.coverage).map((field) => [
-                field.field,
-                formatPercent(field.coverageRate),
-                field.labeledCount,
-                field.eligibleCount
-              ])}
-            />
-          </Section>
-
-          <Section title="Reviewed exact metrics">
-            <DataTable
-              columns={["Field", "Accuracy", "Exact matches", "Labeled"]}
-              rows={Object.values(reviewedSubset.exactFields).map((field) => [
-                field.field,
-                formatPercent(field.accuracy),
-                field.exactMatchCount,
-                field.labeledCount
-              ])}
-            />
-          </Section>
-        </div>
-
-        <div className="split-grid">
-          <Section title="Trusted Papers Still Missing Key Detail" subtitle="These are the reviewed papers that still limit confidence in the current recommendation.">
-            <DataTable
-              columns={["Paper", "Gap type", "Reason"]}
-              rows={[
-                ...data.benchmarkAnalysis.reviewedDepth.missingOutcomes.map((row) => [
-                  row.title,
-                  `missing outcomes · ${row.evidenceStatus}`,
-                  row.evidenceReason
-                ]),
-                ...data.benchmarkAnalysis.reviewedDepth.missingStepPhases.map((row) => [
-                  row.title,
-                  "missing step phases",
-                  `${row.protocolFamily} · ${row.paperType}`
-                ])
-              ]}
-            />
-          </Section>
-
-          <Section title="Baseline mismatch watchlist" subtitle="What the baseline pass got wrong before overrides and reviewed repair.">
-            <DataTable
-              columns={["Field", "Paper", "Expected", "Actual"]}
-              rows={[
-                ...baselineReviewed.exactFields.protocolFamily.mismatches.slice(0, 4).map((mismatch) => [
-                  "protocolFamily",
-                  mismatch.title,
-                  mismatch.expected,
-                  mismatch.actual
-                ]),
-                ...baselineReviewed.exactFields.paperType.mismatches.slice(0, 3).map((mismatch) => [
-                  "paperType",
-                  mismatch.title,
-                  mismatch.expected,
-                  mismatch.actual
-                ])
-              ]}
-            />
-          </Section>
-        </div>
-
-        {INTERNAL_DEBUG_ENABLED ? (
-          <Section title="Artifact ledger" subtitle="Benchmark pages should be inspectable down to the exact generated artifact set.">
-            <ArtifactLedger
-              artifacts={data.artifacts.filter((artifact) =>
-                [
-                  "Benchmark summary",
-                  "Benchmark analysis",
-                  "Benchmark gold set",
-                  "Unattended batch"
-                ].includes(artifact.label)
-              )}
-            />
-          </Section>
-        ) : null}
-      </>
-    );
+    domain = parseDomainId(rawDomain);
   } catch {
     notFound();
   }
+
+  const meta = getDomainMeta(domain);
+  const [data, decision] = await Promise.all([getDomainData(domain), getDecisionDomainData(domain)]);
+  const reviewed = data.benchmarkSummary.subsets.reviewed;
+  const counts = getReviewedEntryCounts(data.benchmarkFile);
+  const baselineReviewed = data.benchmarkAnalysis.baseline.subsets.reviewed;
+  const resolvedReviewed = data.benchmarkAnalysis.resolved.subsets.reviewed;
+  const funnel = decision.provenanceFunnel;
+
+  return (
+    <>
+      <PageHeader
+        note="Whether Atlas keeps the right papers in scope, labels them correctly, and extracts enough detail to back the recommendation."
+        title={`${meta.label} benchmark`}
+      />
+      <DomainCrumbs current="benchmark" domain={domain} />
+
+      <Facts
+        items={[
+          { label: "Gates", value: data.benchmarkSummary.summary.passesAllGates ? "all pass" : "failing" },
+          { label: "Benchmark rows", value: data.benchmarkSummary.benchmarkEntryCount },
+          { label: "Reviewed rows", value: counts.reviewed },
+          { label: "Seeded rows", value: counts.seeded }
+        ]}
+      />
+
+      <Section label="Provenance" first>
+        <Funnel
+          steps={[
+            { value: funnel.papersFetched, label: "papers scanned" },
+            { value: funnel.papersMatched, label: `matched to ${meta.shortLabel.toLowerCase()}` },
+            { value: funnel.reviewedBenchmarkRows, label: "reviewed" },
+            { value: funnel.reviewedInScopeRows, label: "in scope" },
+            { value: funnel.activeWedgeRelevantRows, label: "drive the call" }
+          ]}
+        />
+      </Section>
+
+      <Section label="Resolved vs baseline">
+        <Table
+          columns={["Metric", { label: "Baseline → resolved", className: "mono" }]}
+          rows={[
+            ["Reviewed inclusion F1", delta(baselineReviewed.inclusion.f1, resolvedReviewed.inclusion.f1)],
+            [
+              "Reviewed protocol-family accuracy",
+              delta(baselineReviewed.exactFields.protocolFamily.accuracy, resolvedReviewed.exactFields.protocolFamily.accuracy)
+            ],
+            [
+              "Reviewed paper-type accuracy",
+              delta(baselineReviewed.exactFields.paperType.accuracy, resolvedReviewed.exactFields.paperType.accuracy)
+            ],
+            [
+              "Reviewed specimen macro F1",
+              delta(baselineReviewed.setFields.specimenTypes.averageF1, resolvedReviewed.setFields.specimenTypes.averageF1)
+            ]
+          ]}
+        />
+      </Section>
+
+      <Section label="Coverage">
+        <Table
+          columns={["Field", { label: "Coverage", className: "num" }, { label: "Labeled", className: "num" }, { label: "Eligible", className: "num" }]}
+          rows={Object.values(reviewed.coverage).map((field) => [
+            field.field,
+            formatPercent(field.coverageRate),
+            field.labeledCount,
+            field.eligibleCount
+          ])}
+        />
+        <p className="muted small" style={{ marginTop: 12 }}>
+          Inclusion F1 {reviewed.inclusion.f1.toFixed(2)} (precision {reviewed.inclusion.precision.toFixed(2)}, recall{" "}
+          {reviewed.inclusion.recall.toFixed(2)}); outcome coverage delta{" "}
+          {formatPercent(data.benchmarkAnalysis.reviewedDepth.outcomeCoverageDelta)}, step-phase coverage delta{" "}
+          {formatPercent(data.benchmarkAnalysis.reviewedDepth.stepPhaseCoverageDelta)}; minimum depth{" "}
+          {data.benchmarkSummary.summary.reviewedMinimumDepthReady ? "ready" : "not ready"}.
+        </p>
+      </Section>
+
+      <Section label="Exact metrics">
+        <Table
+          columns={["Field", { label: "Accuracy", className: "num" }, { label: "Exact", className: "num" }, { label: "Labeled", className: "num" }]}
+          rows={Object.values(reviewed.exactFields).map((field) => [
+            field.field,
+            formatPercent(field.accuracy),
+            field.exactMatchCount,
+            field.labeledCount
+          ])}
+        />
+      </Section>
+
+      <Section label="Gates">
+        <Table
+          columns={["Gate", { label: "Status", className: "mono" }, { label: "Actual", className: "num" }, { label: "Threshold", className: "mono nowrap" }, { label: "Notes", className: "small" }]}
+          rows={data.benchmarkSummary.gates.map((gate) => [
+            gate.name,
+            gate.passed ? "pass" : "fail",
+            formatPercent(gate.actual),
+            `${gate.comparator} ${formatPercent(gate.threshold)}`,
+            gate.notes
+          ])}
+        />
+      </Section>
+
+      <Section label="Missing detail">
+        <Table
+          columns={["Paper", { label: "Gap", className: "tag" }, { label: "Reason", className: "small" }]}
+          empty="No reviewed papers are missing outcomes or step phases."
+          rows={[
+            ...data.benchmarkAnalysis.reviewedDepth.missingOutcomes.map((row) => [
+              row.title,
+              `missing outcomes · ${row.evidenceStatus}`,
+              row.evidenceReason
+            ]),
+            ...data.benchmarkAnalysis.reviewedDepth.missingStepPhases.map((row) => [
+              row.title,
+              "missing step phases",
+              `${row.protocolFamily} · ${row.paperType}`
+            ])
+          ]}
+        />
+      </Section>
+
+      <Section label="Baseline mismatches">
+        <Table
+          columns={[{ label: "Field", className: "tag" }, "Paper", { label: "Expected", className: "tag" }, { label: "Actual", className: "tag" }]}
+          empty="No baseline mismatches recorded."
+          rows={[
+            ...baselineReviewed.exactFields.protocolFamily.mismatches.slice(0, 4).map((mismatch) => [
+              "protocolFamily",
+              mismatch.title,
+              mismatch.expected,
+              mismatch.actual
+            ]),
+            ...baselineReviewed.exactFields.paperType.mismatches.slice(0, 3).map((mismatch) => [
+              "paperType",
+              mismatch.title,
+              mismatch.expected,
+              mismatch.actual
+            ])
+          ]}
+        />
+      </Section>
+
+      {INTERNAL_DEBUG_ENABLED ? (
+        <Section label="Artifacts">
+          <ArtifactList
+            artifacts={data.artifacts.filter((artifact) =>
+              ["Benchmark summary", "Benchmark analysis", "Benchmark gold set", "Unattended batch"].includes(artifact.label)
+            )}
+          />
+        </Section>
+      ) : null}
+    </>
+  );
 }

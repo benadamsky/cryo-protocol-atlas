@@ -1,118 +1,69 @@
-import Link from "next/link";
-import {
-  ArtifactLedger,
-  DataTable,
-  DomainBadge,
-  MetricCard,
-  MetricGrid,
-  PageIntro,
-  Section,
-  SourceNote,
-  StatusPill
-} from "@/components/atlas-ui";
-import {
-  formatDateTime,
-  formatPercent,
-  formatScore,
-  formatSignedPercent,
-  formatSignedScore,
-  getCompareData
-} from "@/lib/data";
+import { ArtifactList, Facts, PageHeader, Section, Table } from "@/components/atlas-ui";
+import { formatPercent, formatScore, formatSignedPercent, formatSignedScore, getCompareData } from "@/lib/data";
 import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
+import { shortDate } from "@/lib/ui-copy";
 
 export default async function ComparePage() {
   const data = await getCompareData();
 
   return (
     <>
-      <PageIntro
-        eyebrow="Compare"
-        title="Compare domains side by side"
-        summary="Use this page to compare domain readiness, evidence quality, and corpus size side by side."
-      >
-        <div className="hero__stack">
-          <SourceNote sourceLabel={data.sourceLabel} />
-          <div className="chip-row">
-            <Link className="data-chip data-chip--strong" href="/discovery">
-              Discovery
-            </Link>
-            <Link className="data-chip data-chip--strong" href="/history">
-              History
-            </Link>
-          </div>
-        </div>
-      </PageIntro>
+      <PageHeader note="Readiness, evidence quality, and corpus size for each domain side by side." title="Compare" />
 
-      <MetricGrid>
-        <MetricCard label="Domains compared" value={String(data.runHealth.availableDomainCount)} />
-        <MetricCard label="Ready domains" value={String(data.overview.readyDomainCount)} />
-        <MetricCard label="Pending source enrichment" value={String(data.runHealth.totalPendingSourceEnrichmentCount)} tone={data.runHealth.totalPendingSourceEnrichmentCount > 0 ? "warn" : "good"} />
-        <MetricCard label="Total normalized protocols" value={String(data.runHealth.totalNormalizedProtocolCount)} />
-      </MetricGrid>
+      <Facts
+        items={[
+          { label: "Domains", value: data.runHealth.availableDomainCount },
+          { label: "Ready", value: data.overview.readyDomainCount },
+          { label: "Pending enrichment", value: data.runHealth.totalPendingSourceEnrichmentCount },
+          { label: "Normalized protocols", value: data.runHealth.totalNormalizedProtocolCount }
+        ]}
+      />
 
-      <Section title="Domain Snapshot" subtitle="Review depth, corpus scale, and current wedge posture side by side.">
-        <div className="split-grid">
-          {data.domains.map((domain) => (
-            <article className="surface" key={domain.domain}>
-              <div className="surface__header">
-                <div>
-                  <DomainBadge domain={domain.domain} />
-                  <h3>{domain.label}</h3>
-                  <p>{domain.strapline}</p>
-                </div>
-                <StatusPill tone={domain.reviewedMinimumDepthReady ? "good" : "warn"}>
-                  {domain.reviewedMinimumDepthReady ? "ready" : "depth gap"}
-                </StatusPill>
-              </div>
-
-              <div className="quick-facts">
-                <div className="inline-stat">
-                  <span>Readiness</span>
-                  <strong>{formatScore(domain.readinessScore)}</strong>
-                </div>
-                <div className="inline-stat">
-                  <span>Evidence</span>
-                  <strong>{formatScore(domain.evidenceScore)}</strong>
-                </div>
-                <div className="inline-stat">
-                  <span>Commercial</span>
-                  <strong>{formatScore(domain.commercialScore)}</strong>
-                </div>
-                <div className="inline-stat">
-                  <span>Reviewed F1</span>
-                  <strong>{formatScore(domain.reviewedInclusionF1)}</strong>
-                </div>
-                <div className="inline-stat">
-                  <span>Family acc.</span>
-                  <strong>{formatScore(domain.reviewedProtocolFamilyAccuracy)}</strong>
-                </div>
-                <div className="inline-stat">
-                  <span>Paper type</span>
-                  <strong>{formatScore(domain.reviewedPaperTypeAccuracy)}</strong>
-                </div>
-                <div className="inline-stat">
-                  <span>Matched corpus</span>
-                  <strong>{formatPercent(domain.matchRate)}</strong>
-                </div>
-              </div>
-
-              <p className="surface__detail">{domain.bestWedgeTitle}</p>
-              <p>{domain.likelyPainPoint}</p>
-
-              <div className="chip-row">
-                <span className="data-chip">{domain.healthState}</span>
-                <span className="data-chip data-chip--strong">{domain.stopReason}</span>
-              </div>
-            </article>
-          ))}
-        </div>
+      <Section label="Scores" first>
+        <Table
+          columns={[
+            "Domain",
+            { label: "Readiness", className: "num" },
+            { label: "Evidence", className: "num" },
+            { label: "Commercial", className: "num" },
+            { label: "Inclusion F1", className: "num" },
+            { label: "Family acc.", className: "num" },
+            { label: "Paper type", className: "num" },
+            { label: "Depth", className: "tag" }
+          ]}
+          rows={data.domains.map((domain) => [
+            domain.label,
+            formatScore(domain.readinessScore),
+            formatScore(domain.evidenceScore),
+            formatScore(domain.commercialScore),
+            formatScore(domain.reviewedInclusionF1),
+            formatScore(domain.reviewedProtocolFamilyAccuracy),
+            formatScore(domain.reviewedPaperTypeAccuracy),
+            domain.reviewedMinimumDepthReady ? "ready" : "depth gap"
+          ])}
+        />
       </Section>
 
-      <Section title="Benchmark Deltas" subtitle="These numbers show whether the resolved layer improved the right things, not just the presentation.">
-        <DataTable
-          columns={["Domain", "Inclusion F1", "Family acc.", "Paper type acc.", "Outcome cov.", "Step cov.", "Gate passes"]}
+      <Section label="Wedge posture">
+        <Table
+          columns={["Domain", "Current wedge", { label: "Pain point", className: "small" }, { label: "State", className: "tag" }]}
+          rows={data.domains.map((domain) => [domain.label, domain.bestWedgeTitle, domain.likelyPainPoint, `${domain.healthState} · ${domain.stopReason}`])}
+        />
+      </Section>
+
+      <Section label="Benchmark deltas">
+        <Table
+          columns={[
+            "Domain",
+            { label: "Inclusion F1", className: "num" },
+            { label: "Family acc.", className: "num" },
+            { label: "Paper type", className: "num" },
+            { label: "Outcome cov.", className: "num" },
+            { label: "Step cov.", className: "num" },
+            { label: "Gate passes", className: "num" }
+          ]}
           rows={data.domains.map((domain) => [
-            <DomainBadge key={`${domain.domain}-badge`} domain={domain.domain} />,
+            domain.label,
             formatSignedScore(domain.reviewedInclusionF1Delta),
             formatSignedScore(domain.reviewedProtocolFamilyAccuracyDelta),
             formatSignedScore(domain.reviewedPaperTypeAccuracyDelta),
@@ -123,23 +74,23 @@ export default async function ComparePage() {
         />
       </Section>
 
-      <Section title="Corpus Comparison" subtitle="Corpus size and match rate from the latest saved snapshots.">
-        <DataTable
-          columns={["Domain", "Fetched", "Matched", "Match rate", "Top snapshot paper", "Latest run"]}
+      <Section label="Corpus">
+        <Table
+          columns={["Domain", { label: "Fetched", className: "num" }, { label: "Matched", className: "num" }, { label: "Match rate", className: "num" }, "Top snapshot paper", { label: "Latest run", className: "tag nowrap" }]}
           rows={data.domains.map((domain) => [
-            <DomainBadge key={`${domain.domain}-snapshot`} domain={domain.domain} />,
+            domain.label,
             domain.totalFetched,
             domain.totalMatched,
             formatPercent(domain.matchRate),
             domain.topSnapshotTitle,
-            formatDateTime(domain.latestRunGeneratedAt)
+            shortDate(domain.latestRunGeneratedAt)
           ])}
         />
       </Section>
 
       {INTERNAL_DEBUG_ENABLED ? (
-        <Section title="Artifact Ledger" subtitle="Exact generated files backing this comparison view.">
-          <ArtifactLedger artifacts={data.artifacts} />
+        <Section label="Artifacts">
+          <ArtifactList artifacts={data.artifacts} />
         </Section>
       ) : null}
     </>

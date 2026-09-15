@@ -1,19 +1,7 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  ArtifactLedger,
-  DataTable,
-  DomainBadge,
-  DomainTabs,
-  MetricCard,
-  MetricGrid,
-  PageIntro,
-  Section,
-  SourceNote,
-  QuickFacts,
-  StatusPill
-} from "@/components/atlas-ui";
-import { formatDateTime, getDomainData } from "@/lib/data";
+import { ArtifactList, Facts, PageHeader, Section, Table } from "@/components/atlas-ui";
+import { DomainCrumbs } from "@/components/domain-crumbs";
+import { getDomainData } from "@/lib/data";
 import { getDomainMeta, parseDomainId, staticDomainParams } from "@/lib/domain";
 import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 
@@ -23,230 +11,144 @@ export function generateStaticParams() {
   return staticDomainParams();
 }
 
-export default async function AtlasPage({
-  params
-}: {
-  params: Promise<{ domain: string }>;
-}) {
+export default async function AtlasPage({ params }: { params: Promise<{ domain: string }> }) {
+  const { domain: rawDomain } = await params;
+  let domain;
+
   try {
-    const { domain: rawDomain } = await params;
-    const domain = parseDomainId(rawDomain);
-    const meta = getDomainMeta(domain);
-    const data = await getDomainData(domain);
-    const baselineQualitySignals = data.atlasAnalysis.baselineSummary.qualitySignals;
-    const resolvedQualitySignals = data.atlasAnalysis.resolvedSummary.qualitySignals;
-
-    return (
-      <>
-        <PageIntro
-          eyebrow={`${meta.label} Atlas`}
-          title={`${meta.label} protocol structure`}
-          summary="Literature clusters, dominant chemicals, outcomes, and high-confidence papers derived from the resolved extraction layer. This page is the print-friendly, validated atlas view."
-        >
-          <div className="hero__stack">
-            <DomainBadge domain={domain} />
-            <SourceNote sourceLabel={data.sourceLabel} />
-            <StatusPill tone="neutral">last benchmark {formatDateTime(data.benchmarkSummary.generatedAt)}</StatusPill>
-            <QuickFacts
-              items={[
-                {
-                  label: "Total papers",
-                  value: data.atlasSummary.totalPapers
-                },
-                {
-                  label: "Families",
-                  value: data.atlasSummary.protocolFamilies.length
-                },
-                {
-                  label: "Unknown families resolved",
-                  value: data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
-                }
-              ]}
-            />
-          </div>
-        </PageIntro>
-
-        <DomainTabs current="atlas" domain={domain} />
-
-        <Section
-          title="Cross-page compare"
-          subtitle="Use the benchmark and evidence pages alongside this atlas view when you need to interrogate the current trust surface."
-        >
-          <div className="split-grid">
-            <article className="surface">
-              <div className="surface__header">
-                <h3>Benchmark</h3>
-                <StatusPill tone="good">baseline vs resolved</StatusPill>
-              </div>
-              <p>Shows gate checks, reviewed-depth deltas, and mismatch watchlists.</p>
-              <Link href={`/domains/${domain}/benchmark`}>Open benchmark</Link>
-            </article>
-            <article className="surface">
-              <div className="surface__header">
-                <h3>Evidence</h3>
-                <StatusPill tone="neutral">review priorities</StatusPill>
-              </div>
-              <p>Shows the current evidence gaps, contradictions, and enrichment work that could still change the read.</p>
-              <Link href={`/domains/${domain}/review`}>Open evidence</Link>
-            </article>
-          </div>
-        </Section>
-
-        <MetricGrid>
-          <MetricCard label="Total papers" value={String(data.atlasSummary.totalPapers)} />
-          <MetricCard label="Protocol families" value={String(data.atlasSummary.protocolFamilies.length)} />
-          <MetricCard label="Top chemicals" value={String(data.atlasSummary.topChemicals.length)} />
-          <MetricCard
-            label="Unknown families resolved"
-            value={String(data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved)}
-            detail="Overrides and benchmark repairs that converted ambiguous family labels into explicit protocol structure."
-          />
-        </MetricGrid>
-
-        <Section title="Protocol families" subtitle="Current literature clusters in the resolved atlas slice.">
-          <DataTable
-            columns={["Family", "Papers"]}
-            rows={data.atlasSummary.protocolFamilies.map((entry) => [entry.label, entry.count])}
-          />
-        </Section>
-
-        <Section title="Dominant CPA patterns" subtitle="These are the recurring family + chemical + specimen combinations behind the current wedge story.">
-          <DataTable
-            columns={["Family", "Chemical", "Specimen", "Papers", "Outcomes"]}
-            rows={data.wedgeBrief.dominantCpaPatterns.map((pattern) => [
-              pattern.family,
-              pattern.chemical,
-              pattern.specimenType,
-              pattern.paperCount,
-              pattern.outcomeClasses.join(", ")
-            ])}
-          />
-        </Section>
-
-        <div className="split-grid">
-          <Section title="Top chemicals">
-            <DataTable
-              columns={["Chemical", "Count"]}
-              rows={data.atlasSummary.topChemicals.map((entry) => [entry.label, entry.count])}
-            />
-          </Section>
-
-          <Section title="Top outcomes">
-            <DataTable
-              columns={["Outcome", "Count"]}
-              rows={data.atlasSummary.topOutcomes.map((entry) => [entry.label, entry.count])}
-            />
-          </Section>
-        </div>
-
-        <Section title="High-confidence papers" subtitle="Useful drill-in list for demo and literature review.">
-          <DataTable
-            columns={["Paper", "Type", "Family", "Confidence", "Species"]}
-            rows={data.atlasSummary.highConfidencePapers.map((paper) => [
-              paper.title,
-              paper.paperType,
-              paper.protocolFamily,
-              paper.extractionConfidence.toFixed(2),
-              paper.species.join(", ") || "unspecified"
-            ])}
-          />
-        </Section>
-
-        <Section title="Uncertainty hotspots" subtitle="Where the corpus still bunches around the same chemistry/specimen context but points to multiple outcomes.">
-          <DataTable
-            columns={["Family", "Chemical", "Specimen", "Papers", "Outcomes"]}
-            rows={data.atlasAnalysis.resolvedSummary.uncertaintyHotspots.map((hotspot) => [
-              hotspot.protocolFamily,
-              hotspot.chemical,
-              hotspot.specimenType,
-              hotspot.paperCount,
-              hotspot.outcomeClasses.join(", ")
-            ])}
-          />
-        </Section>
-
-        <Section
-          title="Resolved vs baseline"
-          subtitle="The atlas should not only say what exists, but also show what the resolved pass changed."
-        >
-          <DataTable
-            columns={["Signal", "Baseline", "Resolved", "Delta"]}
-            rows={[
-              [
-                "Total papers",
-                data.atlasAnalysis.baselineSummary.totalPapers,
-                data.atlasAnalysis.resolvedSummary.totalPapers,
-                data.atlasAnalysis.resolvedSummary.totalPapers - data.atlasAnalysis.baselineSummary.totalPapers
-              ],
-              [
-                "Unknown protocol families",
-                baselineQualitySignals?.unknownProtocolFamilyCount ?? 0,
-                resolvedQualitySignals?.unknownProtocolFamilyCount ?? 0,
-                data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
-              ],
-              [
-                "Unknown step phases",
-                baselineQualitySignals?.unknownStepPhaseCount ?? 0,
-                resolvedQualitySignals?.unknownStepPhaseCount ?? 0,
-                data.atlasAnalysis.overrideImpact.unknownStepPhaseDelta
-              ],
-              [
-                "Contradictions",
-                baselineQualitySignals?.contradictionCount ?? 0,
-                resolvedQualitySignals?.contradictionCount ?? 0,
-                (resolvedQualitySignals?.contradictionCount ?? 0) - (baselineQualitySignals?.contradictionCount ?? 0)
-              ]
-            ]}
-          />
-          <QuickFacts
-            items={[
-              {
-                label: "Overrides applied",
-                value: data.atlasAnalysis.overrideImpact.overridesApplied
-              },
-              {
-                label: "Excluded papers",
-                value: data.atlasAnalysis.overrideImpact.excludedPaperCount
-              },
-              {
-                label: "Families resolved",
-                value: data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
-              }
-            ]}
-          />
-        </Section>
-
-        <div className="split-grid">
-          <Section title="Opportunity scan" subtitle="Current high-signal questions surfaced from the wedge builder.">
-            <div className="family-grid">
-              {data.wedgeBrief.opportunityScan.map((item) => (
-                <article className="family-card" key={item.title}>
-                  <h3>{item.title}</h3>
-                  <p>{item.whyInteresting}</p>
-                  <p className="surface__detail">{item.painPoint}</p>
-                </article>
-              ))}
-            </div>
-          </Section>
-
-          {INTERNAL_DEBUG_ENABLED ? (
-            <Section title="Artifact ledger" subtitle="Atlas views should stay traceable back to generated artifacts.">
-              <ArtifactLedger
-                artifacts={data.artifacts.filter((artifact) =>
-                  [
-                    "Atlas summary",
-                    "Atlas analysis",
-                    "Wedge brief",
-                    "Normalized protocols"
-                  ].includes(artifact.label)
-                )}
-              />
-            </Section>
-          ) : null}
-        </div>
-      </>
-    );
+    domain = parseDomainId(rawDomain);
   } catch {
     notFound();
   }
+
+  const meta = getDomainMeta(domain);
+  const data = await getDomainData(domain);
+  const baseline = data.atlasAnalysis.baselineSummary.qualitySignals;
+  const resolved = data.atlasAnalysis.resolvedSummary.qualitySignals;
+  const countCols = ["Family", { label: "Papers", className: "num" }];
+
+  return (
+    <>
+      <PageHeader
+        note="Literature clusters, dominant chemicals, outcomes, and high-confidence papers from the resolved extraction layer."
+        title={`${meta.label} protocol structure`}
+      />
+      <DomainCrumbs current="atlas" domain={domain} />
+
+      <Facts
+        items={[
+          { label: "Papers", value: data.atlasSummary.totalPapers },
+          { label: "Families", value: data.atlasSummary.protocolFamilies.length },
+          { label: "Top chemicals", value: data.atlasSummary.topChemicals.length },
+          { label: "Families resolved", value: data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved }
+        ]}
+      />
+
+      <Section label="Protocol families" first>
+        <Table columns={countCols} rows={data.atlasSummary.protocolFamilies.map((entry) => [entry.label, entry.count])} />
+      </Section>
+
+      <Section label="Dominant CPA patterns">
+        <Table
+          columns={["Family", "Chemical", "Specimen", { label: "Papers", className: "num" }, { label: "Outcomes", className: "tag" }]}
+          rows={data.wedgeBrief.dominantCpaPatterns.map((pattern) => [
+            pattern.family,
+            pattern.chemical,
+            pattern.specimenType,
+            pattern.paperCount,
+            pattern.outcomeClasses.join(", ")
+          ])}
+        />
+      </Section>
+
+      <Section label="Top chemicals">
+        <Table columns={["Chemical", { label: "Count", className: "num" }]} rows={data.atlasSummary.topChemicals.map((entry) => [entry.label, entry.count])} />
+      </Section>
+
+      <Section label="Top outcomes">
+        <Table columns={["Outcome", { label: "Count", className: "num" }]} rows={data.atlasSummary.topOutcomes.map((entry) => [entry.label, entry.count])} />
+      </Section>
+
+      <Section label="High-confidence papers">
+        <Table
+          columns={["Paper", { label: "Type", className: "tag" }, { label: "Family", className: "tag" }, { label: "Confidence", className: "num" }, { label: "Species", className: "tag" }]}
+          rows={data.atlasSummary.highConfidencePapers.map((paper) => [
+            paper.title,
+            paper.paperType,
+            paper.protocolFamily,
+            paper.extractionConfidence.toFixed(2),
+            paper.species.join(", ") || "unspecified"
+          ])}
+        />
+      </Section>
+
+      <Section label="Uncertainty hotspots">
+        <Table
+          columns={["Family", "Chemical", "Specimen", { label: "Papers", className: "num" }, { label: "Outcomes", className: "tag" }]}
+          empty="No hotspots in the resolved slice."
+          rows={data.atlasAnalysis.resolvedSummary.uncertaintyHotspots.map((hotspot) => [
+            hotspot.protocolFamily,
+            hotspot.chemical,
+            hotspot.specimenType,
+            hotspot.paperCount,
+            hotspot.outcomeClasses.join(", ")
+          ])}
+        />
+      </Section>
+
+      <Section label="Resolved vs baseline">
+        <Table
+          columns={["Signal", { label: "Baseline", className: "num" }, { label: "Resolved", className: "num" }, { label: "Delta", className: "num" }]}
+          rows={[
+            [
+              "Total papers",
+              data.atlasAnalysis.baselineSummary.totalPapers,
+              data.atlasAnalysis.resolvedSummary.totalPapers,
+              data.atlasAnalysis.resolvedSummary.totalPapers - data.atlasAnalysis.baselineSummary.totalPapers
+            ],
+            [
+              "Unknown protocol families",
+              baseline?.unknownProtocolFamilyCount ?? 0,
+              resolved?.unknownProtocolFamilyCount ?? 0,
+              data.atlasAnalysis.overrideImpact.unknownProtocolFamiliesResolved
+            ],
+            [
+              "Unknown step phases",
+              baseline?.unknownStepPhaseCount ?? 0,
+              resolved?.unknownStepPhaseCount ?? 0,
+              data.atlasAnalysis.overrideImpact.unknownStepPhaseDelta
+            ],
+            [
+              "Contradictions",
+              baseline?.contradictionCount ?? 0,
+              resolved?.contradictionCount ?? 0,
+              (resolved?.contradictionCount ?? 0) - (baseline?.contradictionCount ?? 0)
+            ],
+            ["Overrides applied", "", data.atlasAnalysis.overrideImpact.overridesApplied, ""],
+            ["Excluded papers", "", data.atlasAnalysis.overrideImpact.excludedPaperCount, ""]
+          ]}
+        />
+      </Section>
+
+      <Section label="Opportunity scan">
+        <ul>
+          {data.wedgeBrief.opportunityScan.map((item) => (
+            <li key={item.title}>
+              {item.title}. <span className="muted">{item.whyInteresting}</span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      {INTERNAL_DEBUG_ENABLED ? (
+        <Section label="Artifacts">
+          <ArtifactList
+            artifacts={data.artifacts.filter((artifact) =>
+              ["Atlas summary", "Atlas analysis", "Wedge brief", "Normalized protocols"].includes(artifact.label)
+            )}
+          />
+        </Section>
+      ) : null}
+    </>
+  );
 }
