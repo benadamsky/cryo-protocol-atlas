@@ -16,7 +16,7 @@ export const DOMAIN_META: Record<
   }
 > = {
   "ovarian-tissue": {
-    label: "Ovarian Tissue",
+    label: "Ovarian tissue",
     shortLabel: "Ovarian",
     strapline: "Fertility-preservation tissue workflows with unresolved depth gaps.",
     accent: "#e36b4a",

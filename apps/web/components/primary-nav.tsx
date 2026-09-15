@@ -6,20 +6,24 @@ import { useEffect, useState } from "react";
 import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
 
 const PRIMARY_ITEMS = [
-  { href: "/", label: "Recommendation" },
-  { href: "/wedges", label: "Wedges" },
-  { href: "/experiments", label: "Experiments" },
-  { href: "/evidence", label: "Evidence" },
-  { href: "/discovery", label: "Discovery" },
-  { href: "/debug", label: "Debug" }
+  { href: "/", label: "Recommendation", prefixes: ["/domains"] },
+  { href: "/wedges", label: "Wedges", prefixes: [] },
+  { href: "/experiments", label: "Experiments", prefixes: [] },
+  { href: "/evidence", label: "Evidence", prefixes: [] },
+  { href: "/discovery", label: "Discovery", prefixes: [] },
+  { href: "/debug", label: "Debug", prefixes: ["/compare", "/history", "/optimizer"] }
 ].filter((item) => INTERNAL_DEBUG_ENABLED || item.href !== "/debug");
 
-function isActive(pathname: string, href: string) {
-  if (href === "/") {
-    return pathname === "/";
+function isActive(pathname: string, item: (typeof PRIMARY_ITEMS)[number]) {
+  if (pathname === item.href) {
+    return true;
   }
 
-  return pathname === href || pathname.startsWith(`${href}/`);
+  if (item.href !== "/" && pathname.startsWith(`${item.href}/`)) {
+    return true;
+  }
+
+  return item.prefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
 }
 
 export function PrimaryNav() {
@@ -46,31 +50,27 @@ export function PrimaryNav() {
   }, [isOpen]);
 
   return (
-    <div className={`topbar__nav-shell${isOpen ? " is-open" : ""}`}>
+    <header className={`nav${isOpen ? " is-open" : ""}`}>
+      <Link className="nav__brand" href="/">
+        Cryo Protocol Atlas
+      </Link>
       <button
         aria-controls="primary-nav"
         aria-expanded={isOpen}
-        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-        className="topbar__menu-button"
+        className="nav__toggle"
         onClick={() => setIsOpen((current) => !current)}
         type="button"
       >
-        <span className="topbar__menu-button-copy">Menu</span>
-        <span aria-hidden="true" className="topbar__menu-icon">
-          <span />
-          <span />
-          <span />
-        </span>
+        {isOpen ? "Close" : "Menu"}
       </button>
-
-      <nav className="topbar__nav" id="primary-nav" aria-label="Primary">
+      <nav className="nav__links" id="primary-nav" aria-label="Primary">
         {PRIMARY_ITEMS.map((item) => {
-          const active = isActive(pathname, item.href);
+          const active = isActive(pathname, item);
 
           return (
             <Link
               aria-current={active ? "page" : undefined}
-              className={`topbar__nav-link${active ? " is-active" : ""}`}
+              className={active ? "is-active" : undefined}
               href={item.href}
               key={item.href}
             >
@@ -79,6 +79,6 @@ export function PrimaryNav() {
           );
         })}
       </nav>
-    </div>
+    </header>
   );
 }

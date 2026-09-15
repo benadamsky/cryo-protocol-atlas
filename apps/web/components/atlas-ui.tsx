@@ -1,198 +1,42 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
-import { formatDateTime, formatPercent, formatScore } from "@/lib/data";
-import { getDomainMeta } from "@/lib/domain";
 import { PrimaryNav } from "@/components/primary-nav";
-import { INTERNAL_DEBUG_ENABLED } from "@/lib/runtime-flags";
-import type { DomainId } from "../../../packages/shared/src/schema";
 
 function joinClasses(...values: Array<string | false | null | undefined>) {
   return values.filter(Boolean).join(" ");
 }
 
-export function AppShell({ children }: { children: ReactNode }) {
+export function Shell({ children }: { children: ReactNode }) {
   return (
-    <div className="app-shell">
-      <TopBar />
-      <div className="shell-ribbon">
-        <div className="shell-ribbon__copy">
-          <span className="shell-ribbon__eyebrow">Atlas Scope</span>
-          <p>
-            Atlas already narrows cryopreservation wedges, shows what the literature can and cannot support, and
-            turns the current read into next experiments. Discovery stays downstream.
-          </p>
-        </div>
+    <div className="shell">
+      <div className="column">
+        <PrimaryNav />
+        <main>{children}</main>
       </div>
-      <main className="page-shell">{children}</main>
     </div>
   );
 }
 
-export function TopBar() {
+export function PageHeader(props: { title: string; note: string }) {
   return (
-    <header className="topbar">
-      <Link className="brandmark" href="/">
-        <span className="brandmark__signal" />
-        <span>
-          <strong>Cryo Protocol Atlas</strong>
-          <small>Protocol intelligence for wedge validation and experiment planning</small>
-        </span>
-      </Link>
-      <PrimaryNav />
-    </header>
-  );
-}
-
-export function PageIntro(props: {
-  eyebrow: string;
-  title: string;
-  summary: string;
-  children?: ReactNode;
-}) {
-  return (
-    <section className="hero">
-      <div className="hero__copy">
-        <span className="eyebrow">{props.eyebrow}</span>
-        <h1>{props.title}</h1>
-        <p>{props.summary}</p>
-      </div>
-      {props.children ? <div className="hero__aside">{props.children}</div> : null}
-    </section>
-  );
-}
-
-export function SectionNav(props: {
-  items: Array<{
-    id: string;
-    label: string;
-    summary: string;
-  }>;
-}) {
-  return (
-    <nav className="section-nav" aria-label="Atlas sections">
-      {props.items.map((item) => (
-        <a className="section-nav__item" href={`#${item.id}`} key={item.id}>
-          <strong>{item.label}</strong>
-          <span>{item.summary}</span>
-        </a>
-      ))}
-    </nav>
-  );
-}
-
-export function ProvenanceCallout(props: {
-  eyebrow: string;
-  title: string;
-  summary: string;
-  items: Array<{
-    label: string;
-    value: string;
-  }>;
-}) {
-  return (
-    <aside className="provenance-callout">
-      <span className="eyebrow">{props.eyebrow}</span>
-      <h3>{props.title}</h3>
-      <p>{props.summary}</p>
-      <div className="provenance-callout__items">
-        {props.items.map((item) => (
-          <div className="inline-stat" key={item.label}>
-            <span>{item.label}</span>
-            <strong>{item.value}</strong>
-          </div>
-        ))}
-      </div>
-    </aside>
-  );
-}
-
-export function DomainBadge({ domain }: { domain: DomainId }) {
-  const meta = getDomainMeta(domain);
-
-  return (
-    <span
-      className="domain-badge"
-      style={
-        {
-          "--accent": meta.accent,
-          "--accent-soft": meta.accentSoft
-        } as CSSProperties
-      }
-    >
-      {meta.label}
-    </span>
-  );
-}
-
-export function SourceNote({ sourceLabel }: { sourceLabel: "worktree" | "primary" }) {
-  if (!INTERNAL_DEBUG_ENABLED) {
-    return null;
-  }
-
-  return (
-    <div className="source-note">
-      <span className="source-note__label">artifact source</span>
-      <strong>{sourceLabel === "worktree" ? "web-atlas worktree" : "primary checkout"}</strong>
+    <div className="page-header">
+      <h1>{props.title}</h1>
+      <p>{props.note}</p>
     </div>
   );
 }
 
-export function MetricGrid({ children }: { children: ReactNode }) {
-  return <div className="metric-grid">{children}</div>;
-}
-
-export function MetricCard(props: {
-  label: string;
-  value: string;
-  detail?: string;
-  tone?: "default" | "good" | "warn";
+export function DomainTabs(props: {
+  tabs: Array<{ label: string; href: string; active: boolean }>;
 }) {
   return (
-    <article className={joinClasses("metric-card", props.tone && `metric-card--${props.tone}`)}>
-      <span className="metric-card__label">{props.label}</span>
-      <strong className="metric-card__value">{props.value}</strong>
-      {props.detail ? <p className="metric-card__detail">{props.detail}</p> : null}
-    </article>
-  );
-}
-
-export function Section(props: {
-  id?: string;
-  title: string;
-  subtitle?: string;
-  actions?: ReactNode;
-  children: ReactNode;
-}) {
-  return (
-    <section className="section-card" id={props.id}>
-      <div className="section-card__header">
-        <div>
-          <h2>{props.title}</h2>
-          {props.subtitle ? <p>{props.subtitle}</p> : null}
-        </div>
-        {props.actions ? <div>{props.actions}</div> : null}
-      </div>
-      {props.children}
-    </section>
-  );
-}
-
-export function DomainTabs(props: { domain: DomainId; current: string }) {
-  const tabs = [
-    { id: "overview", label: "Wedge", href: `/domains/${props.domain}` },
-    { id: "atlas", label: "Matrix", href: `/domains/${props.domain}/atlas` },
-    { id: "benchmark", label: "Benchmark", href: `/domains/${props.domain}/benchmark` },
-    { id: "review", label: "Evidence", href: `/domains/${props.domain}/review` },
-    { id: "debug", label: "Debug", href: `/domains/${props.domain}/debug` }
-  ].filter((tab) => INTERNAL_DEBUG_ENABLED || tab.id !== "debug");
-
-  return (
-    <nav className="tab-strip">
-      {tabs.map((tab) => (
+    <nav className="tabs" aria-label="Domain">
+      {props.tabs.map((tab) => (
         <Link
-          className={joinClasses("tab-strip__link", tab.id === props.current && "is-active")}
+          aria-current={tab.active ? "page" : undefined}
+          className={tab.active ? "is-active" : undefined}
           href={tab.href}
-          key={tab.id}
+          key={tab.href}
         >
           {tab.label}
         </Link>
@@ -201,65 +45,103 @@ export function DomainTabs(props: { domain: DomainId; current: string }) {
   );
 }
 
-export function ScoreBar(props: {
-  label: string;
-  value: number;
-  detail?: string;
-  tone?: "teal" | "amber" | "rose";
-}) {
+export function Section(props: { label: string; first?: boolean; children: ReactNode }) {
   return (
-    <div className="score-bar">
-      <div className="score-bar__header">
-        <span>{props.label}</span>
-        <strong>{formatPercent(props.value)}</strong>
-      </div>
-      <div className={joinClasses("score-bar__track", props.tone && `score-bar__track--${props.tone}`)}>
-        <span className="score-bar__fill" style={{ width: `${Math.max(props.value * 100, 3)}%` }} />
-      </div>
-      {props.detail ? <p className="score-bar__detail">{props.detail}</p> : null}
+    <section className={joinClasses("section", props.first && "section--first")}>
+      <div className="k">{props.label}</div>
+      <div className="section__body">{props.children}</div>
+    </section>
+  );
+}
+
+export function Facts(props: { items: Array<{ label: string; value: ReactNode }> }) {
+  return (
+    <dl className="facts">
+      {props.items.map((item) => (
+        <div key={item.label}>
+          <dt className="k">{item.label}</dt>
+          <dd className="facts__value">{item.value}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+export function Funnel(props: { steps: Array<{ value: number; label: string }> }) {
+  return (
+    <div className="funnel">
+      {props.steps.map((step, index) => (
+        <div className="funnel__step" key={step.label}>
+          <div>
+            <div className="funnel__value">{new Intl.NumberFormat("en-US").format(step.value)}</div>
+            <div className="funnel__label">{step.label}</div>
+          </div>
+          {index < props.steps.length - 1 ? (
+            <div className="funnel__arrow" aria-hidden="true">
+              →
+            </div>
+          ) : null}
+        </div>
+      ))}
     </div>
   );
 }
 
-export function StatusPill(props: {
-  children: ReactNode;
-  tone?: "neutral" | "good" | "warn" | "hot";
-}) {
+export function Status(props: { tone: "ok" | "warn"; children: ReactNode }) {
   return (
-    <span className={joinClasses("status-pill", props.tone && `status-pill--${props.tone}`)}>
+    <span className={`status status--${props.tone}`}>
+      <span className="status__dot" aria-hidden="true" />
       {props.children}
     </span>
   );
 }
 
-export function EmptyState(props: { title: string; detail: string }) {
-  return (
-    <div className="empty-state">
-      <h3>{props.title}</h3>
-      <p>{props.detail}</p>
-    </div>
-  );
+export function Tag(props: { children: ReactNode }) {
+  return <span className="tag">{props.children}</span>;
 }
 
-export function DataTable(props: {
-  columns: string[];
+export function Kicker(props: { children: ReactNode }) {
+  return <div className="k">{props.children}</div>;
+}
+
+export type TableColumn = string | { label: string; className?: string };
+
+export function Table(props: {
+  columns: TableColumn[];
   rows: Array<Array<ReactNode>>;
+  rowClassName?: (index: number) => string | undefined;
+  empty?: string;
 }) {
+  const columns = props.columns.map((column) =>
+    typeof column === "string" ? { label: column, className: undefined } : column
+  );
+
   return (
     <div className="table-wrap">
-      <table className="data-table">
+      <table>
         <thead>
           <tr>
-            {props.columns.map((column) => (
-              <th key={column}>{column}</th>
+            {columns.map((column) => (
+              <th className={column.className} key={column.label}>
+                {column.label}
+              </th>
             ))}
           </tr>
         </thead>
         <tbody>
+          {props.rows.length === 0 && props.empty ? (
+            <tr>
+              <td className="empty" colSpan={columns.length}>
+                {props.empty}
+              </td>
+            </tr>
+          ) : null}
           {props.rows.map((row, rowIndex) => (
-            <tr key={rowIndex}>
+            <tr className={props.rowClassName?.(rowIndex)} key={rowIndex}>
               {row.map((cell, cellIndex) => (
-                <td key={cellIndex}>{cell}</td>
+                <td className={columns[cellIndex]?.className} key={cellIndex}>
+                  {cell}
+                </td>
               ))}
             </tr>
           ))}
@@ -269,35 +151,63 @@ export function DataTable(props: {
   );
 }
 
-export function InlineStat(props: { label: string; value: string }) {
+export function Defs(props: { items: Array<{ label: string; value: ReactNode }> }) {
   return (
-    <div className="inline-stat">
-      <span>{props.label}</span>
-      <strong>{props.value}</strong>
-    </div>
-  );
-}
-
-export function QuickFacts(props: { items: Array<{ label: string; value: number | string }> }) {
-  return (
-    <div className="quick-facts">
+    <dl className="defs">
       {props.items.map((item) => (
-        <InlineStat key={item.label} label={item.label} value={String(item.value)} />
+        <div style={{ display: "contents" }} key={item.label}>
+          <dt className="k">{item.label}</dt>
+          <dd>{item.value}</dd>
+        </div>
       ))}
-    </div>
+    </dl>
   );
 }
 
-export function ScoreTuple(props: { label: string; value: number }) {
+export function Packet(props: {
+  kicker: ReactNode;
+  title: string;
+  lead?: boolean;
+  why: string;
+  items: Array<{ label: string; value: ReactNode }>;
+  details?: ReactNode;
+}) {
   return (
-    <div className="score-tuple">
-      <span>{props.label}</span>
-      <strong>{formatScore(props.value)}</strong>
-    </div>
+    <article className="packet">
+      <div className="k">{props.kicker}</div>
+      <h2>
+        {props.title}
+        {props.lead ? <Status tone="ok">lead</Status> : null}
+      </h2>
+      <p className="packet__why">{props.why}</p>
+      <Defs items={props.items} />
+      {props.details ? (
+        <details>
+          <summary>Design details</summary>
+          <div className="packet__details">{props.details}</div>
+        </details>
+      ) : null}
+    </article>
   );
 }
 
-export function ArtifactLedger(props: {
+export function Footnote(props: { children: ReactNode }) {
+  return <p className="footnote">{props.children}</p>;
+}
+
+export function Crumbs(props: { items: Array<{ label: string; href: string; active?: boolean }>; foot?: boolean }) {
+  return (
+    <nav className={joinClasses("crumbs", props.foot && "crumbs--foot")} aria-label="Domain views">
+      {props.items.map((item) => (
+        <Link className={item.active ? "is-active" : undefined} href={item.href} key={item.href}>
+          {item.label}
+        </Link>
+      ))}
+    </nav>
+  );
+}
+
+export function ArtifactList(props: {
   artifacts: Array<{
     label: string;
     relativePath: string;
@@ -306,32 +216,35 @@ export function ArtifactLedger(props: {
   }>;
 }) {
   return (
-    <div className="artifact-ledger">
-      {props.artifacts.map((artifact) => (
-        <div className="artifact-ledger__row" key={`${artifact.label}-${artifact.relativePath}`}>
-          <div>
-            <strong>{artifact.label}</strong>
-            <small>{artifact.relativePath}</small>
-          </div>
-          <div className="artifact-ledger__meta">
-            <span>{artifact.sourceLabel}</span>
-            <span>{formatDateTime(artifact.generatedAt)}</span>
-          </div>
-        </div>
-      ))}
-    </div>
+    <Table
+      columns={["Artifact", { label: "Path", className: "tag" }, { label: "Source", className: "tag" }, { label: "Generated", className: "tag" }]}
+      rows={props.artifacts.map((artifact) => [
+        artifact.label,
+        artifact.relativePath,
+        artifact.sourceLabel,
+        artifact.generatedAt ?? "n/a"
+      ])}
+    />
   );
 }
 
-export function RawArtifactPanel(props: {
-  title: string;
-  data: unknown;
-  open?: boolean;
-}) {
+export function RawJson(props: { title: string; data: unknown; open?: boolean }) {
   return (
-    <details className="raw-panel" open={props.open}>
-      <summary>{props.title}</summary>
+    <details open={props.open}>
+      <summary className="small">{props.title}</summary>
       <pre>{JSON.stringify(props.data, null, 2)}</pre>
     </details>
+  );
+}
+
+export function PaperLink(props: { title: string; href: string | null }) {
+  if (!props.href) {
+    return <>{props.title}</>;
+  }
+
+  return (
+    <a href={props.href} rel="noreferrer" target="_blank">
+      {props.title}
+    </a>
   );
 }
