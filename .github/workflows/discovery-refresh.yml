@@ -8,8 +8,6 @@ on:
         required: false
         default: false
         type: boolean
-  schedule:
-    - cron: "11 15 * * 1-5"
 
 permissions:
   contents: write
@@ -83,4 +81,4 @@ jobs:
           body: |
             Automated discovery refresh.
 
-            This PR was opened by the scheduled discovery workflow and includes only `data/discovery/` updates.
+            This PR was opened by the discovery workflow and includes only `data/discovery/` updates.
