@@ -1,0 +1,275 @@
+{
+  "domain": "hepatocytes",
+  "focusQuestion": "What is the strongest first cryopreservation wedge in hepatocytes, and what evidence would justify a real entry point?",
+  "activeWedge": {
+    "title": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix",
+    "category": "benchmark",
+    "claim": "Several hepatocyte papers imply that post-thaw attachment and function gains come from adjuncts added around a standard DMSO-centered mix rather than from new base CPA chemistry.",
+    "scientificRelevance": 0.944,
+    "companyRelevance": 0.92,
+    "evidenceConfidence": 0.087,
+    "translationalPotential": 1,
+    "currentRead": "Best current wedge, but still better treated as a proving ground than a committed entry point.",
+    "recommendedNextStep": "Run a fixed-backbone additive benchmark with Trehalose, Alginate, Fetal Bovine Serum, University of Wisconsin Solution on a DMSO-centered base mix, using post-thaw function as the primary readout."
+  },
+  "standardPattern": {
+    "dominantProtocolFamily": "unknown",
+    "dominantChemicals": [
+      "Dimethyl Sulfoxide",
+      "Fetal Bovine Serum",
+      "University of Wisconsin Solution"
+    ],
+    "dominantSpecimenTypes": [
+      "hepatocytes",
+      "human hepatocytes"
+    ],
+    "dominantTransitions": [
+      "warming -> culture",
+      "storage -> warming",
+      "cooling -> storage"
+    ],
+    "representativeConditions": [
+      "Dimethyl Sulfoxide 300 mM",
+      "Dimethyl Sulfoxide 5 mM",
+      "Dimethyl Sulfoxide 1.8 M"
+    ],
+    "explanation": "Current default literature center of gravity is unknown, usually built around Dimethyl Sulfoxide, Fetal Bovine Serum, University of Wisconsin Solution in hepatocytes, human hepatocytes workflows. Normalized workflow signal is warming -> culture, storage -> warming, cooling -> storage, with repeated condition mentions such as Dimethyl Sulfoxide 300 mM, Dimethyl Sulfoxide 5 mM, Dimethyl Sulfoxide 1.8 M."
+  },
+  "protocolFamilies": [
+    {
+      "family": "unknown",
+      "paperCount": 287,
+      "topChemicals": [
+        "Dimethyl Sulfoxide",
+        "Fetal Bovine Serum",
+        "University of Wisconsin Solution"
+      ],
+      "topOutcomes": [
+        "function",
+        "viability",
+        "transplantation"
+      ],
+      "topTransitions": [
+        "warming -> culture",
+        "storage -> warming",
+        "cooling -> storage"
+      ],
+      "interpretation": "Family labeling is still diffuse here, which is a sign of either broad legacy literature or evidence that remains too abstract-level to classify safely."
+    },
+    {
+      "family": "vitrification",
+      "paperCount": 15,
+      "topChemicals": [
+        "Ethylene Glycol",
+        "Sucrose",
+        "Dimethyl Sulfoxide"
+      ],
+      "topOutcomes": [
+        "viability",
+        "function",
+        "transplantation"
+      ],
+      "topTransitions": [],
+      "interpretation": "Smaller but sharper cluster, often tied to Ethylene Glycol, Sucrose, Dimethyl Sulfoxide. This is the likely optimization frontier if post-warm outcomes can be made more comparable."
+    },
+    {
+      "family": "slow-freezing",
+      "paperCount": 4,
+      "topChemicals": [
+        "Dimethyl Sulfoxide",
+        "Fetal Bovine Serum",
+        "University of Wisconsin Solution"
+      ],
+      "topOutcomes": [
+        "function",
+        "viability",
+        "morphology"
+      ],
+      "topTransitions": [],
+      "interpretation": "Most common preserved workflow in-slice, centered on Dimethyl Sulfoxide, Fetal Bovine Serum, University of Wisconsin Solution. Outcome emphasis is function, viability, morphology, suggesting this is the baseline to beat rather than the frontier."
+    }
+  ],
+  "dominantCpaPatterns": [
+    {
+      "family": "unknown",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "hepatocytes",
+      "paperCount": 71,
+      "outcomeClasses": [
+        "transplantation",
+        "viability",
+        "function",
+        "morphology"
+      ]
+    },
+    {
+      "family": "unknown",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "human hepatocytes",
+      "paperCount": 23,
+      "outcomeClasses": [
+        "transplantation",
+        "viability",
+        "function",
+        "morphology"
+      ]
+    },
+    {
+      "family": "unknown",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "primary hepatocytes",
+      "paperCount": 20,
+      "outcomeClasses": [
+        "transplantation",
+        "viability",
+        "function",
+        "morphology"
+      ]
+    },
+    {
+      "family": "unknown",
+      "chemical": "Fetal Bovine Serum",
+      "specimenType": "hepatocytes",
+      "paperCount": 19,
+      "outcomeClasses": [
+        "transplantation",
+        "function",
+        "viability",
+        "morphology"
+      ]
+    },
+    {
+      "family": "unknown",
+      "chemical": "University of Wisconsin Solution",
+      "specimenType": "hepatocytes",
+      "paperCount": 13,
+      "outcomeClasses": [
+        "function",
+        "viability",
+        "transplantation",
+        "morphology"
+      ]
+    },
+    {
+      "family": "unknown",
+      "chemical": "Alginate",
+      "specimenType": "hepatocytes",
+      "paperCount": 12,
+      "outcomeClasses": [
+        "transplantation",
+        "function",
+        "viability",
+        "morphology"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "topic": "Dimethyl Sulfoxide, Fetal Bovine Serum in hepatocytes",
+      "papers": [
+        "Biochemical functionality and recovery of hepatocytes after deep freezing storage",
+        "Drug metabolism and viability studies in cryopreserved rat hepatocytes"
+      ],
+      "whyItMatters": "Comparable species/context with shared outcome readout but different preservation families. Likely confounds: endpoint mismatch, sparse protocol detail."
+    },
+    {
+      "topic": "Dimethyl Sulfoxide in hepatocytes",
+      "papers": [
+        "Biochemical functionality and recovery of hepatocytes after deep freezing storage",
+        "Influence of cell culture configuration on the post-cryopreservation viability of primary rat hepatocytes"
+      ],
+      "whyItMatters": "Comparable species/context with shared outcome readout but different preservation families. Likely confounds: endpoint mismatch, sparse protocol detail."
+    }
+  ],
+  "evidenceQuality": {
+    "passesAllGates": false,
+    "reviewedOutcomeCoverage": 0,
+    "reviewedStepPhaseCoverage": 0,
+    "reviewedMinimumDepthReady": false,
+    "normalizedProtocolCount": 306,
+    "protocolsWithNormalizationWarnings": 13,
+    "missingOutcomeCount": 0,
+    "missingStepPhaseCount": 0,
+    "pendingSourceEnrichmentCount": 0,
+    "reviewedSourceEnrichmentCount": 0,
+    "secondarySourceReviewedCount": 0,
+    "reviewedPrimarySupportedCount": 0,
+    "reviewedSecondarySupportedCount": 0,
+    "reviewedManualOnlyCount": 0
+  },
+  "evidenceGaps": [],
+  "nextExperiments": [
+    {
+      "title": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix",
+      "category": "benchmark",
+      "decisionQuestion": "Should Atlas prioritize \"Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix\" as the main head-to-head wedge benchmark?",
+      "primaryReadouts": [
+        "function",
+        "viability"
+      ],
+      "comparisonArms": [
+        "base cryomix only",
+        "base cryomix + Trehalose",
+        "base cryomix + Alginate",
+        "base cryomix + Fetal Bovine Serum",
+        "base cryomix + University of Wisconsin Solution"
+      ],
+      "whyNow": "Best current wedge, but still better treated as a proving ground than a committed entry point."
+    },
+    {
+      "title": "Promote hepatocyte function-heavy protocols to transplantation endpoints",
+      "category": "endpoint-upgrade",
+      "decisionQuestion": "Would \"Promote hepatocyte function-heavy protocols to transplantation endpoints\" materially sharpen the wedge decision if tested next?",
+      "primaryReadouts": [
+        "transplantation",
+        "function"
+      ],
+      "comparisonArms": [
+        "current standard protocol",
+        "top reported protocol with transplantation endpoint"
+      ],
+      "whyNow": "This remains one of the highest-signal next experiments in the current domain slice."
+    },
+    {
+      "title": "Scale-up benchmark for banked or bulk hepatocyte handling",
+      "category": "scale-up",
+      "decisionQuestion": "Would \"Scale-up benchmark for banked or bulk hepatocyte handling\" materially sharpen the wedge decision if tested next?",
+      "primaryReadouts": [
+        "post-thaw recovery",
+        "workflow reproducibility"
+      ],
+      "comparisonArms": [
+        "current handling workflow",
+        "workflow with staged loading/unloading controls"
+      ],
+      "whyNow": "This remains one of the highest-signal next experiments in the current domain slice."
+    }
+  ],
+  "opportunityScan": [
+    {
+      "title": "Full-text protocol resolution for sparse hepatocyte thaw/loading workflows",
+      "whyInteresting": "A number of hepatocyte papers look relevant, but their step structure is too thin to compare fairly against the rest of the corpus. Evidence papers=6, strong outcomes=5, contradictions=0.",
+      "painPoint": "A small number of promising papers still lack enough procedural detail to compare fairly.",
+      "commercialWhyNow": "This is close enough to real hepatocyte supply and transplant workflows that better protocol evidence could matter commercially, not just academically."
+    },
+    {
+      "title": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix",
+      "whyInteresting": "Several hepatocyte papers imply that post-thaw attachment and function gains come from adjuncts added around a standard DMSO-centered mix rather than from new base CPA chemistry. Evidence papers=6, strong outcomes=6, contradictions=0.",
+      "painPoint": "Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.",
+      "commercialWhyNow": "A cleaner benchmark wedge maps to hepatocyte supply, cell-therapy, and drug-metabolism workflows where post-thaw attachment and function still vary lot to lot."
+    },
+    {
+      "title": "Promote hepatocyte function-heavy protocols to transplantation endpoints",
+      "whyInteresting": "Several hepatocyte protocols that look promising on attachment or in-vitro metabolic function will reorder once they are compared on engraftment or transplantation outcomes. Evidence papers=6, strong outcomes=6, contradictions=0.",
+      "painPoint": "Promising protocols are still over-indexed on viability or in-vitro function rather than transplantation-grade outcomes.",
+      "commercialWhyNow": "Moving from viability-only claims to attachment, function, and engraftment claims is what makes a hepatocyte optimization story commercially credible."
+    },
+    {
+      "title": "Scale-up benchmark for banked or bulk hepatocyte handling",
+      "whyInteresting": "Scale-up losses in hepatocyte banking may come from handling and thaw workflow variance rather than core cryomix choice alone. Evidence papers=4, strong outcomes=4, contradictions=0.",
+      "painPoint": "2 relevant papers still have unknown preservation family labels",
+      "commercialWhyNow": "A cleaner benchmark wedge maps to hepatocyte supply, cell-therapy, and drug-metabolism workflows where post-thaw attachment and function still vary lot to lot."
+    }
+  ],
+  "callout": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix is the explicit active wedge. Matrix rows=6, top decision-useful evidence gaps=0, and next experiments are already packetized for review."
+}

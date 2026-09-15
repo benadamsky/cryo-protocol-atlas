@@ -1,0 +1,15 @@
+{
+  "domain": "hepatocytes",
+  "importFileCount": 1,
+  "importedRecordCount": 500,
+  "mergedImportedRecordCount": 500,
+  "manualOnlyRecordCount": 0,
+  "importedSources": [
+    "pubmed:pubmed-eutils.json"
+  ],
+  "sourceBreakdown": {
+    "pubmed": 500
+  },
+  "isDegraded": false,
+  "degradationReasons": []
+}

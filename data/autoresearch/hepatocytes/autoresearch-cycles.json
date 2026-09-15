@@ -1,0 +1,32 @@
+{
+  "domain": "hepatocytes",
+  "generatedAt": "2026-09-15T16:58:12.799Z",
+  "maxCycles": 5,
+  "ingestFirstCycle": false,
+  "cyclesCompleted": 1,
+  "stopReason": "converged",
+  "cycles": [
+    {
+      "cycle": 1,
+      "ingestIncluded": false,
+      "beforeState": {
+        "benchmarkHash": "2c72a29840ebb302d5196c310cf457765b4a33d1d92f78a5f4a198cb5a6e5aed",
+        "overrideHash": "76ed8c343bf3b742a80c3e39eb2ca0147af0685cd96ff88c6af64761325235a5"
+      },
+      "afterState": {
+        "benchmarkHash": "2c72a29840ebb302d5196c310cf457765b4a33d1d92f78a5f4a198cb5a6e5aed",
+        "overrideHash": "76ed8c343bf3b742a80c3e39eb2ca0147af0685cd96ff88c6af64761325235a5"
+      },
+      "autonomousStateChanged": false,
+      "actions": [],
+      "proposalCount": 0,
+      "overrideProposalCount": 0,
+      "benchmarkProposalCount": 0,
+      "autoApplySafe": false,
+      "pendingBenchmarkProposalCount": 0,
+      "pendingSourceEnrichmentCount": 0,
+      "reviewedOutcomeCoverage": 0,
+      "reviewedStepPhaseCoverage": 0
+    }
+  ]
+}

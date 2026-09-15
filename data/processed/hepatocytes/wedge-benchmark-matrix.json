@@ -1,0 +1,211 @@
+{
+  "generatedAt": "2026-09-15T16:58:10.718Z",
+  "domain": "hepatocytes",
+  "wedgeId": "hepatocytes:additive-assisted-hepatocyte-attachment-and-function-benchmark-on-a-fixed-base-cryomix",
+  "wedgeTitle": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix",
+  "rows": [
+    {
+      "paperId": "pubmed:16405071",
+      "title": "A novel method of cryopreservation of rat and human hepatocytes by using encapsulation technique and possible use for cell transplantation",
+      "protocolFamily": "unknown",
+      "baseCpaBackbone": "Dimethyl Sulfoxide",
+      "adjuncts": [
+        "Fetal Bovine Serum"
+      ],
+      "species": [
+        "human",
+        "rat"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "human hepatocytes"
+      ],
+      "endpointClasses": [
+        "transplantation",
+        "function",
+        "viability",
+        "morphology"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [
+        "unknown-family",
+        "sparse-protocol"
+      ],
+      "wedgeRelevanceScore": 0.752,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "pubmed:18589177",
+      "title": "Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes",
+      "protocolFamily": "unknown",
+      "baseCpaBackbone": "Dimethyl Sulfoxide",
+      "adjuncts": [
+        "Trehalose",
+        "University of Wisconsin Solution"
+      ],
+      "species": [
+        "human"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "human hepatocytes",
+        "primary hepatocytes",
+        "liver cells"
+      ],
+      "endpointClasses": [
+        "transplantation",
+        "function",
+        "viability"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [
+        "unknown-family",
+        "sparse-protocol"
+      ],
+      "wedgeRelevanceScore": 0.752,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "pubmed:17154395",
+      "title": "Cryopreservation of primary human hepatocytes: the benefit of trehalose as an additional cryoprotective agent",
+      "protocolFamily": "unknown",
+      "baseCpaBackbone": "Dimethyl Sulfoxide",
+      "adjuncts": [
+        "Trehalose"
+      ],
+      "species": [
+        "human"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "human hepatocytes",
+        "primary hepatocytes",
+        "liver cells"
+      ],
+      "endpointClasses": [
+        "transplantation",
+        "viability"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [
+        "unknown-family",
+        "sparse-protocol"
+      ],
+      "wedgeRelevanceScore": 0.752,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "pubmed:20070514",
+      "title": "In vitro analysis of cryopreserved alginate-poly-L-lysine-alginate-microencapsulated human hepatocytes",
+      "protocolFamily": "unknown",
+      "baseCpaBackbone": "Dimethyl Sulfoxide",
+      "adjuncts": [
+        "Alginate"
+      ],
+      "species": [
+        "human"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "human hepatocytes"
+      ],
+      "endpointClasses": [
+        "function",
+        "viability",
+        "morphology"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [
+        "unknown-family",
+        "sparse-protocol"
+      ],
+      "wedgeRelevanceScore": 0.752,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "pubmed:20400908",
+      "title": "Bilirubin, a physiological antioxidant, can improve cryopreservation of human hepatocytes",
+      "protocolFamily": "unknown",
+      "baseCpaBackbone": "unspecified",
+      "adjuncts": [],
+      "species": [
+        "human"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "human hepatocytes"
+      ],
+      "endpointClasses": [
+        "transplantation",
+        "function",
+        "viability"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [
+        "unknown-family",
+        "sparse-protocol"
+      ],
+      "wedgeRelevanceScore": 0.612,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    },
+    {
+      "paperId": "pubmed:15185140",
+      "title": "Serum-free cryopreservation of porcine hepatocytes",
+      "protocolFamily": "unknown",
+      "baseCpaBackbone": "unspecified",
+      "adjuncts": [],
+      "species": [
+        "human",
+        "pig"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "primary hepatocytes",
+        "human hepatocytes"
+      ],
+      "endpointClasses": [
+        "function",
+        "viability"
+      ],
+      "authorityProfile": "abstract-only",
+      "evidenceStrength": "moderate",
+      "translationalSignal": "clinically adjacent",
+      "confoundFlags": [
+        "unknown-family",
+        "sparse-protocol"
+      ],
+      "wedgeRelevanceScore": 0.612,
+      "whyIncluded": "Explicitly named in the active wedge support set."
+    }
+  ],
+  "summary": {
+    "dominantBackbones": [
+      "Dimethyl Sulfoxide"
+    ],
+    "dominantAdjuncts": [
+      "Fetal Bovine Serum",
+      "Trehalose",
+      "University of Wisconsin Solution",
+      "Alginate"
+    ],
+    "strongestRows": [],
+    "highestConfoundRows": [
+      "Fetal Bovine Serum via A novel method of cryopreservation of rat and human hepatocytes by using encapsulation technique and possible use for cell transplantation [unknown-family, sparse-protocol]",
+      "Trehalose via Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes [unknown-family, sparse-protocol]",
+      "Trehalose via Cryopreservation of primary human hepatocytes: the benefit of trehalose as an additional cryoprotective agent [unknown-family, sparse-protocol]",
+      "Alginate via In vitro analysis of cryopreserved alginate-poly-L-lysine-alginate-microencapsulated human hepatocytes [unknown-family, sparse-protocol]",
+      "base protocol only via Bilirubin, a physiological antioxidant, can improve cryopreservation of human hepatocytes [unknown-family, sparse-protocol]"
+    ],
+    "currentRead": "6 papers are directly relevant to this wedge. 0 are primary-backed, 6 are human-relevant, and 6 still rely on abstract-only evidence."
+  }
+}

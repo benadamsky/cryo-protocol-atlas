@@ -1,0 +1,44 @@
+[
+  {
+    "generatedAt": "2026-09-15T16:58:12.576Z",
+    "domain": "hepatocytes",
+    "comparedTo": null,
+    "wedgeDelta": {
+      "wedgeChanged": true,
+      "previousWedgeTitle": null,
+      "currentWedgeTitle": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix",
+      "confidenceDeltas": {
+        "scientificRelevance": 0.944,
+        "companyRelevance": 0.92,
+        "evidenceConfidence": 0.087,
+        "translationalPotential": 1
+      },
+      "supportingPaperCountDelta": 6,
+      "blockerSummary": "Best current wedge, but still better treated as a proving ground than a committed entry point."
+    },
+    "evidenceGapDelta": {
+      "highImpactGapsBefore": 0,
+      "highImpactGapsAfter": 0,
+      "netHighImpactChange": 0,
+      "topGapBefore": null,
+      "topGapAfter": null,
+      "gapsNarrowed": []
+    },
+    "experimentPacketDelta": {
+      "topPacketChanged": true,
+      "previousTopPacket": null,
+      "currentTopPacket": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix",
+      "packetCount": 3
+    },
+    "enrichmentDelta": {
+      "pendingBefore": 0,
+      "pendingAfter": 0,
+      "llmDraftsGenerated": 0,
+      "llmAutoTriaged": 0,
+      "decisionChangingPending": 0
+    },
+    "summary": "Wedge changed from \"none\" to \"Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix\". Confidence improved in: scientificRelevance, companyRelevance, evidenceConfidence, translationalPotential.",
+    "productiveRun": true,
+    "progressAssessment": "improved"
+  }
+]

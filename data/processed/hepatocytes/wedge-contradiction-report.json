@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-09-15T16:58:11.018Z",
+  "domain": "hepatocytes",
+  "wedgeId": "hepatocytes:additive-assisted-hepatocyte-attachment-and-function-benchmark-on-a-fixed-base-cryomix",
+  "contradictions": [
+    {
+      "topic": "Dimethyl Sulfoxide, Fetal Bovine Serum in hepatocytes",
+      "paperA": "Biochemical functionality and recovery of hepatocytes after deep freezing storage",
+      "paperB": "Drug metabolism and viability studies in cryopreserved rat hepatocytes",
+      "sharedContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Fetal Bovine Serum"
+        ],
+        "specimenTypes": [
+          "hepatocytes"
+        ]
+      },
+      "reason": "Comparable species/context with shared outcome readout but different preservation families",
+      "likelyConfounds": [
+        "endpoint mismatch",
+        "sparse protocol detail"
+      ],
+      "decisionImpact": "medium",
+      "resolutionPath": "Carry this as an explicit caveat in wedge and experiment artifacts until better evidence arrives.",
+      "confidence": 0.72
+    },
+    {
+      "topic": "Dimethyl Sulfoxide in hepatocytes",
+      "paperA": "Biochemical functionality and recovery of hepatocytes after deep freezing storage",
+      "paperB": "Influence of cell culture configuration on the post-cryopreservation viability of primary rat hepatocytes",
+      "sharedContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide"
+        ],
+        "specimenTypes": [
+          "hepatocytes"
+        ]
+      },
+      "reason": "Comparable species/context with shared outcome readout but different preservation families",
+      "likelyConfounds": [
+        "endpoint mismatch",
+        "sparse protocol detail"
+      ],
+      "decisionImpact": "medium",
+      "resolutionPath": "Carry this as an explicit caveat in wedge and experiment artifacts until better evidence arrives.",
+      "confidence": 0.72
+    }
+  ]
+}

@@ -18,5 +18,15 @@
     "painPoint": "Promising protocols are still over-indexed on viability or in-vitro function rather than transplantation-grade outcomes.",
     "whyOptimizationMatters": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows.",
     "recommendedNextMove": "Pressure-test \"Head-to-head DMSO-centered ovarian tissue benchmark\" as the next wedge-defining experiment."
+  },
+  {
+    "domain": "hepatocytes",
+    "readinessScore": 0.035,
+    "evidenceScore": 0.543,
+    "commercialScore": 0.784,
+    "standardPattern": "unknown via Dimethyl Sulfoxide, Fetal Bovine Serum, University of Wisconsin Solution",
+    "painPoint": "Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.",
+    "whyOptimizationMatters": "A cleaner benchmark wedge maps to hepatocyte supply, cell-therapy, and drug-metabolism workflows where post-thaw attachment and function still vary lot to lot.",
+    "recommendedNextMove": "Pressure-test \"Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix\" as the next wedge-defining experiment."
   }
 ]

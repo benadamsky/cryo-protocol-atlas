@@ -1,0 +1,1555 @@
+{
+  "generatedAt": "2026-09-15T17:02:14.861Z",
+  "domain": "hepatocytes",
+  "sourceSnapshotGeneratedAt": "2026-09-15T17:02:14.430Z",
+  "queueGeneratedAt": "2026-09-15T17:02:14.662Z",
+  "candidateCount": 339,
+  "reviewItemCount": 26,
+  "isDegraded": true,
+  "degradationReasons": [
+    "live-provider-truncation:openalex,crossref,europe-pmc"
+  ],
+  "items": [
+    {
+      "dedupeKey": "doi:10.3727/096368913x674080",
+      "title": "Coculture with Mesenchymal Stem Cells Results in Improved Viability and Function of Human Hepatocytes",
+      "doi": "10.3727/096368913x674080",
+      "pmid": "24143888",
+      "pmcid": null,
+      "titleKey": "title:coculture with mesenchymal stem cells results in improved viability and function of human hepatocytes",
+      "journal": "Cell Transplantation",
+      "publishedYear": 2013,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 9.546,
+      "relevanceScore": 8.479,
+      "authorityScore": 0.9,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "albumin",
+        "cryopreservation",
+        "hepatocytes",
+        "human hepatocytes",
+        "primary hepatocytes",
+        "transplantation",
+        "urea",
+        "viability"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 7.417885 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is high"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2030709554",
+          "sourceUrl": "https://doi.org/10.3727/096368913x674080",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.3389/fvets.2023.1211135",
+      "title": "Comparative cryopreservation of bovine and porcine primary hepatocytes.",
+      "doi": "10.3389/fvets.2023.1211135",
+      "pmid": "37614462",
+      "pmcid": "PMC10442649",
+      "titleKey": "title:comparative cryopreservation of bovine and porcine primary hepatocytes",
+      "journal": "Frontiers in Veterinary Science",
+      "publishedYear": 2023,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 7.61,
+      "relevanceScore": 6.957,
+      "authorityScore": 0.32,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "europe-pmc"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryopreservation",
+        "cryoprotectant",
+        "freezing",
+        "hepatocytes",
+        "primary hepatocytes",
+        "viability"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "pmcid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal"
+      ],
+      "recommendationReasons": [
+        "optimizer score 7.78062 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "open-access full text is available",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": true,
+      "staleReason": "evidence or recommendation changed since the previous review state",
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.3389/fvets.2023.1211135",
+          "sourceUrl": "https://doi.org/10.3389/fvets.2023.1211135",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        },
+        {
+          "source": "europe-pmc",
+          "sourceId": "37614462",
+          "sourceUrl": null,
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1097/01.sla.0000149303.48692.0f",
+      "title": "Cryopreservation of Isolated Primary Rat Hepatocytes",
+      "doi": "10.1097/01.sla.0000149303.48692.0f",
+      "pmid": "15622000",
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of isolated primary rat hepatocytes",
+      "journal": "Annals of Surgery",
+      "publishedYear": 2005,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 7.564,
+      "relevanceScore": 6.407,
+      "authorityScore": 0.99,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "albumin",
+        "cell therapy",
+        "cryopreservation",
+        "cryoprotectant",
+        "hepatocytes",
+        "thaw",
+        "urea",
+        "viability"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 7.317005 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1858842697",
+          "sourceUrl": "https://doi.org/10.1097/01.sla.0000149303.48692.0f",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.3109/00498254.2012.706725",
+      "title": "Evaluation of seven drug metabolisms and clearances by cryopreserved human primary hepatocytes cultivated in microfluidic biochips",
+      "doi": "10.3109/00498254.2012.706725",
+      "pmid": "22830982",
+      "pmcid": null,
+      "titleKey": "title:evaluation of seven drug metabolisms and clearances by cryopreserved human primary hepatocytes cultivated in microfluidic biochips",
+      "journal": "Xenobiotica",
+      "publishedYear": 2012,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 6.802,
+      "relevanceScore": 6.195,
+      "authorityScore": 0.44,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "CYP",
+        "attachment",
+        "cryopreservation",
+        "drug metabolism",
+        "hepatocytes",
+        "primary hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.068695 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2047747203",
+          "sourceUrl": "https://doi.org/10.3109/00498254.2012.706725",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.2133/dmpk.18.33",
+      "title": "Function of Uptake Transporters for Taurocholate and Estradiol 17β-D-Glucuronide in Cryopreserved Human Hepatocytes",
+      "doi": "10.2133/dmpk.18.33",
+      "pmid": "15618717",
+      "pmcid": null,
+      "titleKey": "title:function of uptake transporters for taurocholate and estradiol 17 d glucuronide in cryopreserved human hepatocytes",
+      "journal": "Drug Metabolism and Pharmacokinetics",
+      "publishedYear": 2003,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.681,
+      "relevanceScore": 4.514,
+      "authorityScore": 1,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes",
+        "human hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.51494 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2078158358",
+          "sourceUrl": "https://doi.org/10.2133/dmpk.18.33",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0168-8278(85)80671-1",
+      "title": "The influence of cryopreservation on the viability, morphology and some functional aspects of adult human hepatocytes in primary cultures",
+      "doi": "10.1016/s0168-8278(85)80671-1",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:the influence of cryopreservation on the viability morphology and some functional aspects of adult human hepatocytes in primary cultures",
+      "journal": "Journal of Hepatology",
+      "publishedYear": 1985,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.646,
+      "relevanceScore": 5.329,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes",
+        "human hepatocytes",
+        "viability"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.36678 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available",
+        "domain relevance score is non-trivial"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/s0168-8278(85)80671-1",
+          "sourceUrl": "https://doi.org/10.1016/s0168-8278(85)80671-1",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2009.10.063",
+      "title": "49. Improvement in the preservation of human hepatocytes for transplantation in liver diseases: The cryoprotectant and supercooling method",
+      "doi": "10.1016/j.cryobiol.2009.10.063",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:49 improvement in the preservation of human hepatocytes for transplantation in liver diseases the cryoprotectant and supercooling method",
+      "journal": "Cryobiology",
+      "publishedYear": 2009,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.265,
+      "relevanceScore": 4.948,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "hepatocytes",
+        "human hepatocytes",
+        "transplantation"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.38147 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.cryobiol.2009.10.063",
+          "sourceUrl": "https://doi.org/10.1016/j.cryobiol.2009.10.063",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1023/a:1010175906791",
+      "title": "Investigation of Functional and Morphological Integrity of Freshly Isolated and Cryopreserved Human Hepatocytes",
+      "doi": "10.1023/a:1010175906791",
+      "pmid": "15256968",
+      "pmcid": null,
+      "titleKey": "title:investigation of functional and morphological integrity of freshly isolated and cryopreserved human hepatocytes",
+      "journal": "Cell and Tissue Banking",
+      "publishedYear": 2000,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 5.241,
+      "relevanceScore": 4.514,
+      "authorityScore": 0.56,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes",
+        "human hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.51266 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W43872182",
+          "sourceUrl": "https://doi.org/10.1023/a:1010175906791",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0006-3495(93)81319-5",
+      "title": "Nucleation and growth of ice crystals inside cultured hepatocytes during freezing in the presence of dimethyl sulfoxide",
+      "doi": "10.1016/s0006-3495(93)81319-5",
+      "pmid": "8312489",
+      "pmcid": null,
+      "titleKey": "title:nucleation and growth of ice crystals inside cultured hepatocytes during freezing in the presence of dimethyl sulfoxide",
+      "journal": "Biophysical Journal",
+      "publishedYear": 1993,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 4.946,
+      "relevanceScore": 3.479,
+      "authorityScore": 1.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "cryoprotectant",
+        "freezing",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 5.37034 cleared the promote threshold 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1990787278",
+          "sourceUrl": "https://doi.org/10.1016/s0006-3495(93)81319-5",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/0887-2333(91)90076-p",
+      "title": "Use of cryopreserved animal and human hepatocytes for cytotoxicity studies",
+      "doi": "10.1016/0887-2333(91)90076-p",
+      "pmid": "20732060",
+      "pmcid": null,
+      "titleKey": "title:use of cryopreserved animal and human hepatocytes for cytotoxicity studies",
+      "journal": "Toxicology in Vitro",
+      "publishedYear": 1991,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.851,
+      "relevanceScore": 4.514,
+      "authorityScore": 0.17,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes",
+        "human hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 2.38481 cleared the review threshold 2.2 but stayed below promote 5.2"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2061671306",
+          "sourceUrl": "https://doi.org/10.1016/0887-2333(91)90076-p",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2019.10.087",
+      "title": "Bulk Droplet Vitrification Of Primary Hepatocytes",
+      "doi": "10.1016/j.cryobiol.2019.10.087",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:bulk droplet vitrification of primary hepatocytes",
+      "journal": "Cryobiology",
+      "publishedYear": 2019,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.831,
+      "relevanceScore": 4.514,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "hepatocytes",
+        "primary hepatocytes",
+        "vitrification"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.18108 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.cryobiol.2019.10.087",
+          "sourceUrl": "https://doi.org/10.1016/j.cryobiol.2019.10.087",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/j.cryobiol.2009.10.036",
+      "title": "22. Direct cryopreservation of primary hepatocytes and ES cells using a collagen vitrigel membrane",
+      "doi": "10.1016/j.cryobiol.2009.10.036",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:22 direct cryopreservation of primary hepatocytes and es cells using a collagen vitrigel membrane",
+      "journal": "Cryobiology",
+      "publishedYear": 2009,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.831,
+      "relevanceScore": 4.514,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes",
+        "primary hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.35858 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/j.cryobiol.2009.10.036",
+          "sourceUrl": "https://doi.org/10.1016/j.cryobiol.2009.10.036",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/0011-2240(89)90254-x",
+      "title": "Cryopreservation of human hepatocytes",
+      "doi": "10.1016/0011-2240(89)90254-x",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of human hepatocytes",
+      "journal": "Cryobiology",
+      "publishedYear": 1989,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.831,
+      "relevanceScore": 4.514,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes",
+        "human hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.33483 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/0011-2240(89)90254-x",
+          "sourceUrl": "https://doi.org/10.1016/0011-2240(89)90254-x",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.18297/etd/3487",
+      "title": "N-Acetyltranserase 2 (NAT2) genotype polymorphism in cryopreserved human hepatocytes and Chinese hamster ovary (CHO) cells.",
+      "doi": "10.18297/etd/3487",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:n acetyltranserase 2 nat2 genotype polymorphism in cryopreserved human hepatocytes and chinese hamster ovary cho cells",
+      "journal": null,
+      "publishedYear": null,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.831,
+      "relevanceScore": 4.514,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes",
+        "human hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 2.94483 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.18297/etd/3487",
+          "sourceUrl": "https://doi.org/10.18297/etd/3487",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/1-4020-3103-3_32",
+      "title": "Non-Freezing Preservation and Subsequent Recovery of Hepatocytes Under PO2- and pH-Controlled Conditions for Continuous Supply of Cells for Bioartificial Liver Support",
+      "doi": "10.1007/1-4020-3103-3_32",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:non freezing preservation and subsequent recovery of hepatocytes under po2 and ph controlled conditions for continuous supply of cells for bioartificial liver support",
+      "journal": "ESACT Proceedings",
+      "publishedYear": null,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.229,
+      "relevanceScore": 3.912,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cell therapy",
+        "freezing",
+        "hepatocytes",
+        "viability"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.27823 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1007/1-4020-3103-3_32",
+          "sourceUrl": "https://doi.org/10.1007/1-4020-3103-3_32",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/0014-4827(76)90448-1",
+      "title": "Ultrastructural and biochemical studies of isolated adult rat hepatocytes prepared under hypoxic conditions Cryopreservation of hepatocytes",
+      "doi": "10.1016/0014-4827(76)90448-1",
+      "pmid": "1253851",
+      "pmcid": null,
+      "titleKey": "title:ultrastructural and biochemical studies of isolated adult rat hepatocytes prepared under hypoxic conditions cryopreservation of hepatocytes",
+      "journal": "Experimental Cell Research",
+      "publishedYear": 1976,
+      "decision": "pending",
+      "recommendation": "promote",
+      "rankingScore": 4.147,
+      "relevanceScore": 2.664,
+      "authorityScore": 1.15,
+      "sourceDiversityScore": 0.333,
+      "sourceCount": 2,
+      "recordCount": 2,
+      "sourceTypes": [
+        "crossref",
+        "openalex"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail"
+      ],
+      "recommendationReasons": [
+        "optimizer score 6.11353 cleared the promote threshold 5.2",
+        "candidate appears in multiple discovery sources",
+        "full-text landing page is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1984178141",
+          "sourceUrl": "https://doi.org/10.1016/0014-4827(76)90448-1",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        },
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/0014-4827(76)90448-1",
+          "sourceUrl": "https://doi.org/10.1016/0014-4827(76)90448-1",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1053/j.gastro.2005.03.090",
+      "title": "Mapping of the Hepatitis B Virus Attachment Site by Use of Infection-Inhibiting preS1 Lipopeptides and Tupaia Hepatocytes",
+      "doi": "10.1053/j.gastro.2005.03.090",
+      "pmid": "16012950",
+      "pmcid": null,
+      "titleKey": "title:mapping of the hepatitis b virus attachment site by use of infection inhibiting pres1 lipopeptides and tupaia hepatocytes",
+      "journal": "Gastroenterology",
+      "publishedYear": 2005,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 4.131,
+      "relevanceScore": 2.664,
+      "authorityScore": 1.3,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "open-access-full-text",
+      "matchedKeywords": [
+        "attachment",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 4.88357 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "open-access full text is available",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2061594530",
+          "sourceUrl": "https://doi.org/10.1053/j.gastro.2005.03.090",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "open-access-full-text"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0142-9612(01)00399-4",
+      "title": "Preparation of alginate/galactosylated chitosan scaffold for hepatocyte attachment",
+      "doi": "10.1016/s0142-9612(01)00399-4",
+      "pmid": "12069321",
+      "pmcid": null,
+      "titleKey": "title:preparation of alginate galactosylated chitosan scaffold for hepatocyte attachment",
+      "journal": "Biomaterials",
+      "publishedYear": 2002,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 3.831,
+      "relevanceScore": 2.664,
+      "authorityScore": 1,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "attachment",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.23782 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1991753765",
+          "sourceUrl": "https://doi.org/10.1016/s0142-9612(01)00399-4",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/0270-9139(93)90026-j",
+      "title": "Viability and function in primary culture of adult hepatocytes from various animal species and human beings after cryopreservation*1",
+      "doi": "10.1016/0270-9139(93)90026-j",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:viability and function in primary culture of adult hepatocytes from various animal species and human beings after cryopreservation 1",
+      "journal": "Hepatology",
+      "publishedYear": 1993,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 3.826,
+      "relevanceScore": 3.479,
+      "authorityScore": 0.18,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes",
+        "viability"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.48768 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/0270-9139(93)90026-j",
+          "sourceUrl": "https://doi.org/10.1016/0270-9139(93)90026-j",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1385/0-89603-516-6:303",
+      "title": "Cryopreservation of Rat Hepatocytes in a Three- Dimensional Culture Configuration Using a Controlled-Rate Freezing Device",
+      "doi": "10.1385/0-89603-516-6:303",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of rat hepatocytes in a three dimensional culture configuration using a controlled rate freezing device",
+      "journal": "Tissue Engineering",
+      "publishedYear": null,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 3.796,
+      "relevanceScore": 3.479,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "freezing",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.25573 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1385/0-89603-516-6:303",
+          "sourceUrl": "https://doi.org/10.1385/0-89603-516-6:303",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1002/aic.690381004",
+      "title": "Transport phenomena during freezing of isolated hepatocytes",
+      "doi": "10.1002/aic.690381004",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:transport phenomena during freezing of isolated hepatocytes",
+      "journal": "AIChE Journal",
+      "publishedYear": 1992,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 3.521,
+      "relevanceScore": 2.664,
+      "authorityScore": 0.69,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "freezing",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 2.922205 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1966620864",
+          "sourceUrl": "https://doi.org/10.1002/aic.690381004",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/s0168-8278(00)00086-6",
+      "title": "Maintenance of primary murine hepatocyte functions in multicomponent polymer capsules – in vitro cryopreservation studies",
+      "doi": "10.1016/s0168-8278(00)00086-6",
+      "pmid": "11211886",
+      "pmcid": null,
+      "titleKey": "title:maintenance of primary murine hepatocyte functions in multicomponent polymer capsules in vitro cryopreservation studies",
+      "journal": "Journal of Hepatology",
+      "publishedYear": 2001,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 3.431,
+      "relevanceScore": 2.664,
+      "authorityScore": 0.6,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.0205 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is high enough to justify direct promotion review"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W2033260947",
+          "sourceUrl": "https://doi.org/10.1016/s0168-8278(00)00086-6",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/1-4020-3741-4_16",
+      "title": "Cryopreservation of Hepatocytes for Bioartificial Liver Devices",
+      "doi": "10.1007/1-4020-3741-4_16",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of hepatocytes for bioartificial liver devices",
+      "journal": "Bioreactors for Tissue Engineering",
+      "publishedYear": 2005,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 3.425,
+      "relevanceScore": 3.098,
+      "authorityScore": 0.16,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cell therapy",
+        "cryopreservation",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.00468 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1007/1-4020-3741-4_16",
+          "sourceUrl": "https://doi.org/10.1007/1-4020-3741-4_16",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/0887-2333(91)90046-g",
+      "title": "Development of an optimal method for the cryopreservation of hepatocytes and their subsequent monolayer culture",
+      "doi": "10.1016/0887-2333(91)90046-g",
+      "pmid": "20731996",
+      "pmcid": null,
+      "titleKey": "title:development of an optimal method for the cryopreservation of hepatocytes and their subsequent monolayer culture",
+      "journal": "Toxicology in Vitro",
+      "publishedYear": 1991,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 3.191,
+      "relevanceScore": 2.664,
+      "authorityScore": 0.36,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "openalex"
+      ],
+      "fullTextAvailability": "abstract-only",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "pmid-not-in-current-slice",
+        "title-not-in-current-slice",
+        "pmid-available-for-review"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 2.3624 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "authority score is directionally promising"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "openalex",
+          "sourceId": "https://openalex.org/W1993005923",
+          "sourceUrl": "https://doi.org/10.1016/0887-2333(91)90046-g",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "abstract-only"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1016/0963-6897(96)82132-4",
+      "title": "Large scale cryopreservation of porcine hepatocytes for the clinical treatmentof acute liver failure",
+      "doi": "10.1016/0963-6897(96)82132-4",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:large scale cryopreservation of porcine hepatocytes for the clinical treatmentof acute liver failure",
+      "journal": "Cell Transplantation",
+      "publishedYear": 1996,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 3.001,
+      "relevanceScore": 2.664,
+      "authorityScore": 0.17,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 2.80019 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1016/0963-6897(96)82132-4",
+          "sourceUrl": "https://doi.org/10.1016/0963-6897(96)82132-4",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    },
+    {
+      "dedupeKey": "doi:10.1007/978-4-431-38208-9_3",
+      "title": "Cryopreservation of hepatocytes -Is it effective to cryopreserved hepatocytes using a new cryopreservation procedure combining a bioartificial approach? -",
+      "doi": "10.1007/978-4-431-38208-9_3",
+      "pmid": null,
+      "pmcid": null,
+      "titleKey": "title:cryopreservation of hepatocytes is it effective to cryopreserved hepatocytes using a new cryopreservation procedure combining a bioartificial approach",
+      "journal": "New Frontiers in Regenerative Medicine",
+      "publishedYear": null,
+      "decision": "pending",
+      "recommendation": "review",
+      "rankingScore": 2.981,
+      "relevanceScore": 2.664,
+      "authorityScore": 0.15,
+      "sourceDiversityScore": 0.167,
+      "sourceCount": 1,
+      "recordCount": 1,
+      "sourceTypes": [
+        "crossref"
+      ],
+      "fullTextAvailability": "full-text-link",
+      "matchedKeywords": [
+        "cryopreservation",
+        "hepatocytes"
+      ],
+      "noveltyBasis": [
+        "doi-not-in-current-slice",
+        "title-not-in-current-slice"
+      ],
+      "promotionRisks": [
+        "single-source evidence; cross-source confirmation is still missing",
+        "full experimental detail may still require a landing-page or subscription review",
+        "abstract is missing; domain relevance relies on sparse metadata",
+        "authority score is still weak; novelty may outrun evidentiary strength"
+      ],
+      "reviewChecklist": [
+        "confirm the paper is genuinely outside the current domain slice",
+        "verify the protocol and endpoint signal from the full text before promotion",
+        "check whether the paper adds a new protocol family, additive, or endpoint signal",
+        "locate a full-text path or secondary source before trusting protocol detail",
+        "look for corroborating records from a second literature source"
+      ],
+      "recommendationReasons": [
+        "optimizer score 3.12375 cleared the review threshold 2.2 but stayed below promote 5.2",
+        "full-text landing page is available"
+      ],
+      "staleEvidence": false,
+      "sources": [
+        {
+          "source": "crossref",
+          "sourceId": "10.1007/978-4-431-38208-9_3",
+          "sourceUrl": "https://doi.org/10.1007/978-4-431-38208-9_3",
+          "rawQuery": "(\"hepatocytes\" OR \"primary hepatocytes\" OR \"human hepatocytes\" OR \"liver cells\") AND (cryopreservation OR vitrification OR freezing OR thaw OR cryoprotectant)",
+          "fullTextAvailability": "full-text-link"
+        }
+      ]
+    }
+  ]
+}

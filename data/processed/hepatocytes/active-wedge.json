@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-09-15T16:58:10.503Z",
+  "domain": "hepatocytes",
+  "wedgeId": "hepatocytes:additive-assisted-hepatocyte-attachment-and-function-benchmark-on-a-fixed-base-cryomix",
+  "status": "candidate",
+  "title": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix",
+  "category": "benchmark",
+  "selectedHypothesisId": "hepatocytes:additive-assisted-hepatocyte-attachment-and-function-benchmark-on-a-fixed-base-cryomix",
+  "focusQuestion": "What is the strongest first cryopreservation wedge in hepatocytes, and what evidence would justify a real entry point?",
+  "decisionQuestion": "Should Atlas prioritize \"Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix\" as the main head-to-head wedge benchmark?",
+  "whyThisWedge": "Several hepatocyte papers imply that post-thaw attachment and function gains come from adjuncts added around a standard DMSO-centered mix rather than from new base CPA chemistry.",
+  "claim": "Several hepatocyte papers imply that post-thaw attachment and function gains come from adjuncts added around a standard DMSO-centered mix rather than from new base CPA chemistry.",
+  "currentRead": "Best current wedge, but still better treated as a proving ground than a committed entry point.",
+  "recommendedNextStep": "Run a fixed-backbone additive benchmark with Trehalose, Alginate, Fetal Bovine Serum, University of Wisconsin Solution on a DMSO-centered base mix, using post-thaw function as the primary readout.",
+  "scientificRelevance": 0.944,
+  "companyRelevance": 0.92,
+  "evidenceConfidence": 0.087,
+  "translationalPotential": 1,
+  "supportingPaperTitles": [
+    "Cryopreservation of primary human hepatocytes: the benefit of trehalose as an additional cryoprotective agent",
+    "A novel method of cryopreservation of rat and human hepatocytes by using encapsulation technique and possible use for cell transplantation",
+    "Serum-free cryopreservation of porcine hepatocytes",
+    "Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes",
+    "In vitro analysis of cryopreserved alginate-poly-L-lysine-alginate-microencapsulated human hepatocytes",
+    "Bilirubin, a physiological antioxidant, can improve cryopreservation of human hepatocytes"
+  ],
+  "dominantPatterns": {
+    "protocolFamilies": [
+      "unknown",
+      "vitrification"
+    ],
+    "chemicals": [
+      "Dimethyl Sulfoxide",
+      "Trehalose",
+      "Alginate",
+      "Fetal Bovine Serum",
+      "University of Wisconsin Solution"
+    ],
+    "specimenTypes": [
+      "hepatocytes",
+      "primary hepatocytes"
+    ]
+  },
+  "keyUncertainties": [
+    "6 relevant papers still have unknown preservation family labels",
+    "6 relevant papers still have sparse step structure",
+    "Benchmark still lacks balanced evidence from both vitrification and slow-freezing"
+  ],
+  "authoritySummary": {
+    "reviewedOutcomeCoverage": 0,
+    "reviewedStepPhaseCoverage": 0,
+    "pendingSourceEnrichmentCount": 0,
+    "reviewedSourceEnrichmentCount": 0,
+    "primarySupportedPaperCount": 0,
+    "secondarySupportedPaperCount": 0,
+    "abstractOnlyPaperCount": 6
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "domain": "hepatocytes",
+  "title": "Hepatocytes wedge call packet",
+  "executiveSummary": [
+    "hepatocytes is currently anchored on unknown protocols built around Dimethyl Sulfoxide, Fetal Bovine Serum, University of Wisconsin Solution, with a normalized workflow backbone of warming -> culture, storage -> warming, cooling -> storage.",
+    "The atlas is credible enough to use for wedge-finding: reviewed gates do not pass, reviewed outcome coverage is 0, and reviewed step-phase coverage is 0.",
+    "The explicit active wedge is \"Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix\", selected because it gives the clearest decision question and the most reviewable next experiment under the current evidence."
+  ],
+  "benchmarkSnapshot": {
+    "reviewedGatesPassing": false,
+    "reviewedOutcomeCoverage": 0,
+    "reviewedStepPhaseCoverage": 0,
+    "reviewedMinimumDepthReady": false,
+    "normalizedProtocolCount": 306,
+    "protocolsWithNormalizationWarnings": 13,
+    "pendingSourceEnrichments": 0,
+    "reviewedSourceEnrichments": 0,
+    "secondarySourceReviewedCount": 0,
+    "reviewedPrimarySupportedCount": 0,
+    "reviewedSecondarySupportedCount": 0,
+    "reviewedManualOnlyCount": 0,
+    "contradictionCount": 2
+  },
+  "standardOfCareView": {
+    "dominantProtocolFamily": "unknown",
+    "dominantChemicals": [
+      "Dimethyl Sulfoxide",
+      "Fetal Bovine Serum",
+      "University of Wisconsin Solution"
+    ],
+    "dominantSpecimenTypes": [
+      "hepatocytes",
+      "human hepatocytes"
+    ],
+    "dominantTransitions": [
+      "warming -> culture",
+      "storage -> warming",
+      "cooling -> storage"
+    ],
+    "representativeConditions": [
+      "Dimethyl Sulfoxide 300 mM",
+      "Dimethyl Sulfoxide 5 mM",
+      "Dimethyl Sulfoxide 1.8 M"
+    ],
+    "summary": "Current default literature center of gravity is unknown, usually built around Dimethyl Sulfoxide, Fetal Bovine Serum, University of Wisconsin Solution in hepatocytes, human hepatocytes workflows. Normalized workflow signal is warming -> culture, storage -> warming, cooling -> storage, with repeated condition mentions such as Dimethyl Sulfoxide 300 mM, Dimethyl Sulfoxide 5 mM, Dimethyl Sulfoxide 1.8 M."
+  },
+  "bestWedge": {
+    "title": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix",
+    "category": "benchmark",
+    "whyThisWedge": "Several hepatocyte papers imply that post-thaw attachment and function gains come from adjuncts added around a standard DMSO-centered mix rather than from new base CPA chemistry.",
+    "currentPainPoint": "Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.",
+    "whyNow": "A cleaner benchmark wedge maps to hepatocyte supply, cell-therapy, and drug-metabolism workflows where post-thaw attachment and function still vary lot to lot.",
+    "evidenceSummary": "scientific=0.944 | company=0.92 | confidence=0.087 | translational=1",
+    "firstExperiment": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix"
+  },
+  "literatureGaps": [
+    "Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.",
+    "0 reviewed papers still lack explicit outcome labels.",
+    "0 source-enrichment records are still pending.",
+    "0 reviewed source-enrichment records rely on secondary-source evidence rather than the original abstract/full text."
+  ],
+  "marketBridge": {
+    "currentStandardPattern": "unknown via Dimethyl Sulfoxide, Fetal Bovine Serum, University of Wisconsin Solution with warming -> culture, storage -> warming, cooling -> storage",
+    "likelyPainPoint": "Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.",
+    "whyOptimizationMightMatter": "A cleaner benchmark wedge maps to hepatocyte supply, cell-therapy, and drug-metabolism workflows where post-thaw attachment and function still vary lot to lot.",
+    "likelyBuyerOrUser": "hepatocyte suppliers, cell-therapy and bioartificial-liver groups, and drug-metabolism labs that depend on plateable post-thaw hepatocytes"
+  },
+  "wedgeValidation": {
+    "whatAtlasCanSay": [
+      "Atlas now has 6 wedge-relevant benchmark rows tied to the active wedge.",
+      "The strongest rows are still sparse.",
+      "The dominant backbones are Dimethyl Sulfoxide."
+    ],
+    "missingEvidence": [
+      "0 reviewed in-scope papers still lack explicit outcome labels."
+    ],
+    "unresolvedWatchlist": [
+      "Dimethyl Sulfoxide, Fetal Bovine Serum in hepatocytes: Comparable species/context with shared outcome readout but different preservation families. Likely confounds: endpoint mismatch, sparse protocol detail.",
+      "Dimethyl Sulfoxide in hepatocytes: Comparable species/context with shared outcome readout but different preservation families. Likely confounds: endpoint mismatch, sparse protocol detail."
+    ],
+    "currentRead": "Best current wedge, but still better treated as a proving ground than a committed entry point."
+  }
+}

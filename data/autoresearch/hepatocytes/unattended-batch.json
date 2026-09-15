@@ -1,0 +1,15 @@
+{
+  "domain": "hepatocytes",
+  "includeIngest": false,
+  "extractionCount": 306,
+  "resolvedExtractionCount": 306,
+  "normalizedProtocolCount": 306,
+  "protocolsWithNormalizationWarnings": 13,
+  "reviewedOutcomeCoverage": 0,
+  "reviewedStepPhaseCoverage": 0,
+  "loopProposalCount": 0,
+  "pendingBenchmarkProposalCount": 0,
+  "pendingSourceEnrichmentCount": 0,
+  "reviewedSourceEnrichmentCount": 0,
+  "minimumDepthReady": false
+}

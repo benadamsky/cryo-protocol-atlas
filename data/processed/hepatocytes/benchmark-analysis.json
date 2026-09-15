@@ -1,0 +1,840 @@
+{
+  "domain": "hepatocytes",
+  "baseline": {
+    "domain": "hepatocytes",
+    "generatedAt": "2026-09-15T16:58:10.010Z",
+    "benchmarkDescription": "Seed benchmark for the hepatocytes atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
+    "benchmarkEntryCount": 306,
+    "subsets": {
+      "all": {
+        "subset": "all",
+        "entryCount": 306,
+        "expectedIncludedCount": 306,
+        "inclusion": {
+          "truePositive": 306,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.843,
+            "averagePrecision": 0.843,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.824,
+            "averagePrecision": 0.824,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.301,
+            "averagePrecision": 0.301,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 306,
+            "labeledCount": 258,
+            "coverageRate": 0.843
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 306,
+            "labeledCount": 252,
+            "coverageRate": 0.824
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 306,
+            "labeledCount": 92,
+            "coverageRate": 0.301
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.726,
+          "averageOnCorrectIncluded": 0.726,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "reviewed": {
+        "subset": "reviewed",
+        "entryCount": 0,
+        "expectedIncludedCount": 0,
+        "inclusion": {
+          "truePositive": 0,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "accuracy": 0,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "accuracy": 0,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "averageF1": 0,
+            "averagePrecision": 0,
+            "averageRecall": 0,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "averageF1": 0,
+            "averagePrecision": 0,
+            "averageRecall": 0,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "averageF1": 0,
+            "averagePrecision": 0,
+            "averageRecall": 0,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "averageF1": 0,
+            "averagePrecision": 0,
+            "averageRecall": 0,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": null,
+          "averageOnCorrectIncluded": null,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "seeded": {
+        "subset": "seeded",
+        "entryCount": 306,
+        "expectedIncludedCount": 306,
+        "inclusion": {
+          "truePositive": 306,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.843,
+            "averagePrecision": 0.843,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.824,
+            "averagePrecision": 0.824,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.301,
+            "averagePrecision": 0.301,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 306,
+            "labeledCount": 258,
+            "coverageRate": 0.843
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 306,
+            "labeledCount": 252,
+            "coverageRate": 0.824
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 306,
+            "labeledCount": 92,
+            "coverageRate": 0.301
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.726,
+          "averageOnCorrectIncluded": 0.726,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      }
+    },
+    "gates": [
+      {
+        "name": "reviewed inclusion F1",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against gaming the corpus by excluding reviewed in-scope papers."
+      },
+      {
+        "name": "reviewed inclusion precision",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against keeping clearly excluded reviewed papers in the atlas."
+      },
+      {
+        "name": "reviewed protocol family accuracy",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Reviewed family labels should stay stable before autonomous updates are trusted."
+      },
+      {
+        "name": "reviewed paper type accuracy",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Paper-type drift is a common failure mode when extraction gets too eager."
+      },
+      {
+        "name": "reviewed specimen macro F1",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+      },
+      {
+        "name": "reviewed species macro F1",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Species leakage is another easy way for the system to look cleaner than it is."
+      }
+    ],
+    "summary": {
+      "passesAllGates": false,
+      "reviewedInclusionF1DeltaVsAll": -1,
+      "reviewedOutcomeCoverage": 0,
+      "reviewedStepPhaseCoverage": 0,
+      "reviewedMinimumDepthReady": false
+    }
+  },
+  "resolved": {
+    "domain": "hepatocytes",
+    "generatedAt": "2026-09-15T16:58:10.016Z",
+    "benchmarkDescription": "Seed benchmark for the hepatocytes atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
+    "benchmarkEntryCount": 306,
+    "subsets": {
+      "all": {
+        "subset": "all",
+        "entryCount": 306,
+        "expectedIncludedCount": 306,
+        "inclusion": {
+          "truePositive": 306,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.843,
+            "averagePrecision": 0.843,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.824,
+            "averagePrecision": 0.824,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.301,
+            "averagePrecision": 0.301,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 306,
+            "labeledCount": 258,
+            "coverageRate": 0.843
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 306,
+            "labeledCount": 252,
+            "coverageRate": 0.824
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 306,
+            "labeledCount": 92,
+            "coverageRate": 0.301
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.726,
+          "averageOnCorrectIncluded": 0.726,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "reviewed": {
+        "subset": "reviewed",
+        "entryCount": 0,
+        "expectedIncludedCount": 0,
+        "inclusion": {
+          "truePositive": 0,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 0,
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "accuracy": 0,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "accuracy": 0,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "averageF1": 0,
+            "averagePrecision": 0,
+            "averageRecall": 0,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "averageF1": 0,
+            "averagePrecision": 0,
+            "averageRecall": 0,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "averageF1": 0,
+            "averagePrecision": 0,
+            "averageRecall": 0,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 0,
+            "exactMatchCount": 0,
+            "averageF1": 0,
+            "averagePrecision": 0,
+            "averageRecall": 0,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 0,
+            "labeledCount": 0,
+            "coverageRate": 0
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": null,
+          "averageOnCorrectIncluded": null,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      },
+      "seeded": {
+        "subset": "seeded",
+        "entryCount": 306,
+        "expectedIncludedCount": 306,
+        "inclusion": {
+          "truePositive": 306,
+          "trueNegative": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "accuracy": 1,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "exactFields": {
+          "paperType": {
+            "field": "paperType",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "accuracy": 1,
+            "mismatches": []
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "accuracy": 1,
+            "mismatches": []
+          }
+        },
+        "setFields": {
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.843,
+            "averagePrecision": 0.843,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 1,
+            "averagePrecision": 1,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.824,
+            "averagePrecision": 0.824,
+            "averageRecall": 1,
+            "mismatches": []
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "labeledCount": 306,
+            "exactMatchCount": 306,
+            "averageF1": 0.301,
+            "averagePrecision": 0.301,
+            "averageRecall": 1,
+            "mismatches": []
+          }
+        },
+        "coverage": {
+          "paperType": {
+            "field": "paperType",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "protocolFamily": {
+            "field": "protocolFamily",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "speciesMentions": {
+            "field": "speciesMentions",
+            "eligibleCount": 306,
+            "labeledCount": 258,
+            "coverageRate": 0.843
+          },
+          "specimenTypes": {
+            "field": "specimenTypes",
+            "eligibleCount": 306,
+            "labeledCount": 306,
+            "coverageRate": 1
+          },
+          "outcomeClasses": {
+            "field": "outcomeClasses",
+            "eligibleCount": 306,
+            "labeledCount": 252,
+            "coverageRate": 0.824
+          },
+          "stepPhases": {
+            "field": "stepPhases",
+            "eligibleCount": 306,
+            "labeledCount": 92,
+            "coverageRate": 0.301
+          }
+        },
+        "confidence": {
+          "averageOnExpectedIncluded": 0.726,
+          "averageOnCorrectIncluded": 0.726,
+          "averageOnIncorrectIncluded": null
+        },
+        "unexpectedIncludedPaperIds": [],
+        "unexpectedExcludedPaperIds": []
+      }
+    },
+    "gates": [
+      {
+        "name": "reviewed inclusion F1",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against gaming the corpus by excluding reviewed in-scope papers."
+      },
+      {
+        "name": "reviewed inclusion precision",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.9,
+        "comparator": ">=",
+        "notes": "Guard against keeping clearly excluded reviewed papers in the atlas."
+      },
+      {
+        "name": "reviewed protocol family accuracy",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Reviewed family labels should stay stable before autonomous updates are trusted."
+      },
+      {
+        "name": "reviewed paper type accuracy",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.85,
+        "comparator": ">=",
+        "notes": "Paper-type drift is a common failure mode when extraction gets too eager."
+      },
+      {
+        "name": "reviewed specimen macro F1",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+      },
+      {
+        "name": "reviewed species macro F1",
+        "passed": false,
+        "actual": 0,
+        "threshold": 0.75,
+        "comparator": ">=",
+        "notes": "Species leakage is another easy way for the system to look cleaner than it is."
+      }
+    ],
+    "summary": {
+      "passesAllGates": false,
+      "reviewedInclusionF1DeltaVsAll": -1,
+      "reviewedOutcomeCoverage": 0,
+      "reviewedStepPhaseCoverage": 0,
+      "reviewedMinimumDepthReady": false
+    }
+  },
+  "reviewedDepth": {
+    "outcomeCoverageDelta": 0,
+    "stepPhaseCoverageDelta": 0,
+    "missingOutcomeCount": 0,
+    "missingStepPhaseCount": 0,
+    "missingOutcomeAudit": {
+      "extractorGapCount": 0,
+      "ambiguousEvidenceCount": 0,
+      "evidenceThinCount": 0
+    },
+    "missingOutcomes": [],
+    "missingStepPhases": []
+  },
+  "delta": {
+    "reviewedInclusionF1": 0,
+    "reviewedProtocolFamilyAccuracy": 0,
+    "reviewedPaperTypeAccuracy": 0,
+    "reviewedSpeciesMacroF1": 0,
+    "reviewedSpecimenMacroF1": 0,
+    "reviewedOutcomeCoverage": 0,
+    "reviewedStepPhaseCoverage": 0,
+    "gatePassCount": 0
+  }
+}

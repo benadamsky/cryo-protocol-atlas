@@ -1,0 +1,1157 @@
+{
+  "domain": "hepatocytes",
+  "totalPapers": 306,
+  "protocolFamilies": [
+    {
+      "label": "unknown",
+      "count": 287
+    },
+    {
+      "label": "vitrification",
+      "count": 15
+    },
+    {
+      "label": "slow-freezing",
+      "count": 4
+    }
+  ],
+  "topChemicals": [
+    {
+      "label": "Dimethyl Sulfoxide",
+      "count": 77
+    },
+    {
+      "label": "Fetal Bovine Serum",
+      "count": 21
+    },
+    {
+      "label": "University of Wisconsin Solution",
+      "count": 15
+    },
+    {
+      "label": "Alginate",
+      "count": 12
+    },
+    {
+      "label": "Sucrose",
+      "count": 9
+    },
+    {
+      "label": "Ethylene Glycol",
+      "count": 8
+    },
+    {
+      "label": "Trehalose",
+      "count": 7
+    },
+    {
+      "label": "Glycerol",
+      "count": 5
+    },
+    {
+      "label": "Ficoll",
+      "count": 4
+    },
+    {
+      "label": "Propylene Glycol",
+      "count": 4
+    },
+    {
+      "label": "Polyethylene Glycol",
+      "count": 3
+    },
+    {
+      "label": "Polyvinyl Pyrrolidone",
+      "count": 2
+    }
+  ],
+  "topSpecimenTypes": [
+    {
+      "label": "hepatocytes",
+      "count": 306
+    },
+    {
+      "label": "human hepatocytes",
+      "count": 148
+    },
+    {
+      "label": "primary hepatocytes",
+      "count": 69
+    },
+    {
+      "label": "liver cells",
+      "count": 28
+    },
+    {
+      "label": "hepatocyte-like cells",
+      "count": 5
+    },
+    {
+      "label": "hepatocyte spheroids",
+      "count": 3
+    },
+    {
+      "label": "liver tissue",
+      "count": 3
+    }
+  ],
+  "topOutcomes": [
+    {
+      "label": "function",
+      "count": 211
+    },
+    {
+      "label": "viability",
+      "count": 158
+    },
+    {
+      "label": "transplantation",
+      "count": 65
+    },
+    {
+      "label": "morphology",
+      "count": 45
+    }
+  ],
+  "topStepPhases": [
+    {
+      "label": "culture",
+      "count": 78
+    },
+    {
+      "label": "assessment",
+      "count": 66
+    },
+    {
+      "label": "warming",
+      "count": 40
+    },
+    {
+      "label": "storage",
+      "count": 35
+    },
+    {
+      "label": "cooling",
+      "count": 30
+    },
+    {
+      "label": "loading",
+      "count": 8
+    },
+    {
+      "label": "perfusion",
+      "count": 6
+    },
+    {
+      "label": "equilibration",
+      "count": 1
+    }
+  ],
+  "highConfidencePapers": [
+    {
+      "title": "A simple isolation and cryopreservation method for adult human hepatocytes",
+      "paperType": "experimental",
+      "protocolFamily": "unknown",
+      "extractionConfidence": 0.95,
+      "species": [
+        "human"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Fetal Bovine Serum"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "human hepatocytes",
+        "primary hepatocytes"
+      ],
+      "stepPhases": [
+        "loading",
+        "cooling",
+        "storage"
+      ]
+    },
+    {
+      "title": "1H NMR spectroscopy as a tool to evaluate key metabolic functions of primary porcine hepatocytes after cryopreservation",
+      "paperType": "experimental",
+      "protocolFamily": "slow-freezing",
+      "extractionConfidence": 0.95,
+      "species": [
+        "pig"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "primary hepatocytes"
+      ],
+      "stepPhases": [
+        "assessment",
+        "cooling",
+        "warming",
+        "culture"
+      ]
+    },
+    {
+      "title": "The viability and function of cryopreserved hepatocyte spheroids with different cryopreservation solutions",
+      "paperType": "experimental",
+      "protocolFamily": "unknown",
+      "extractionConfidence": 0.95,
+      "species": [
+        "rat"
+      ],
+      "chemicals": [
+        "University of Wisconsin Solution",
+        "Fetal Bovine Serum"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "hepatocyte spheroids"
+      ],
+      "stepPhases": [
+        "culture",
+        "cooling",
+        "storage",
+        "warming"
+      ]
+    },
+    {
+      "title": "Cryopreservation of isolated rat hepatocytes: a critical evaluation of freezing and thawing conditions",
+      "paperType": "experimental",
+      "protocolFamily": "unknown",
+      "extractionConfidence": 0.95,
+      "species": [
+        "rat"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide"
+      ],
+      "specimenTypes": [
+        "hepatocytes"
+      ],
+      "stepPhases": [
+        "cooling",
+        "warming",
+        "culture",
+        "assessment"
+      ]
+    },
+    {
+      "title": "Ultrastructural assessment of cryopreserved hepatocytes after prolonged ectopic transplantation",
+      "paperType": "experimental",
+      "protocolFamily": "unknown",
+      "extractionConfidence": 0.95,
+      "species": [
+        "rat"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide"
+      ],
+      "specimenTypes": [
+        "hepatocytes"
+      ],
+      "stepPhases": [
+        "cooling",
+        "storage",
+        "assessment"
+      ]
+    },
+    {
+      "title": "Cryopreservation of hepatocyte (HepG2) cell monolayers: impact of trehalose",
+      "paperType": "experimental",
+      "protocolFamily": "unknown",
+      "extractionConfidence": 0.95,
+      "species": [
+        "human"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Trehalose"
+      ],
+      "specimenTypes": [
+        "hepatocytes"
+      ],
+      "stepPhases": [
+        "loading",
+        "culture",
+        "cooling",
+        "warming",
+        "assessment"
+      ]
+    },
+    {
+      "title": "[Cryopreservation of microencapsulated human hepatocytes]",
+      "paperType": "methods",
+      "protocolFamily": "unknown",
+      "extractionConfidence": 0.93,
+      "species": [
+        "human"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Alginate"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "human hepatocytes",
+        "primary hepatocytes"
+      ],
+      "stepPhases": [
+        "perfusion",
+        "loading",
+        "cooling",
+        "storage",
+        "warming",
+        "culture",
+        "assessment"
+      ]
+    },
+    {
+      "title": "A new approach to the cryopreservation of hepatocytes in a sandwich culture configuration",
+      "paperType": "experimental",
+      "protocolFamily": "unknown",
+      "extractionConfidence": 0.92,
+      "species": [
+        "rat"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "liver cells"
+      ],
+      "stepPhases": [
+        "warming",
+        "culture",
+        "assessment",
+        "cooling"
+      ]
+    },
+    {
+      "title": "Cryopreservation of adult human hepatocytes. The influence of deep freezing storage on the viability, cell seeding, survival, fine structures and albumin synthesis in primary cultures",
+      "paperType": "experimental",
+      "protocolFamily": "unknown",
+      "extractionConfidence": 0.92,
+      "species": [
+        "human"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Fetal Bovine Serum"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "human hepatocytes",
+        "liver cells"
+      ],
+      "stepPhases": [
+        "cooling",
+        "storage"
+      ]
+    },
+    {
+      "title": "Thawed human hepatocytes in primary culture",
+      "paperType": "experimental",
+      "protocolFamily": "unknown",
+      "extractionConfidence": 0.92,
+      "species": [
+        "human"
+      ],
+      "chemicals": [
+        "Dimethyl Sulfoxide",
+        "Fetal Bovine Serum"
+      ],
+      "specimenTypes": [
+        "hepatocytes",
+        "human hepatocytes"
+      ],
+      "stepPhases": [
+        "cooling",
+        "warming",
+        "assessment"
+      ]
+    }
+  ],
+  "uncertaintyHotspots": [
+    {
+      "protocolFamily": "unknown",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "hepatocytes",
+      "paperCount": 71,
+      "outcomeClasses": [
+        "transplantation",
+        "viability",
+        "function",
+        "morphology"
+      ],
+      "titles": [
+        "Cryopreservation of primary human hepatocytes: the benefit of trehalose as an additional cryoprotective agent",
+        "[Cryopreservation of microencapsulated human hepatocytes]",
+        "A novel method of cryopreservation of rat and human hepatocytes by using encapsulation technique and possible use for cell transplantation",
+        "A simple isolation and cryopreservation method for adult human hepatocytes",
+        "Incubation with dimethyl sulfoxide prior to cryopreservation improves functionality of thawed human primary hepatocytes",
+        "Influence of platelet lysate on the recovery and metabolic performance of cryopreserved human hepatocytes upon thawing",
+        "Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes",
+        "Cryopreservation of immobilized rat hepatocytes for the development of a bioartificial liver system",
+        "Effect of Dimethyl Sulfoxide and Melatonin on the Isolation of Human Primary Hepatocytes",
+        "Optimization of the cryopreservation and thawing protocol for human hepatocytes for use in cell transplantation",
+        "Positive effects of cryopreserved adult or fetal liver cell transplants on hypercholesterolemia and hepatic antioxidant defenses in cholesterol-fed rabbits",
+        "A new approach to the cryopreservation of hepatocytes in a sandwich culture configuration",
+        "Cryopreservation of adult human hepatocytes. The influence of deep freezing storage on the viability, cell seeding, survival, fine structures and albumin synthesis in primary cultures",
+        "Cryopreservation of assay-ready hepatocyte monolayers by chemically-induced ice nucleation: preservation of hepatic function and hepatotoxicity screening capabilities",
+        "Cryopreserved primary hepatocytes as a constantly available in vitro model for the evaluation of human and animal drug metabolism and enzyme induction",
+        "Effect of spheroid aggregation on susceptibility of primary pig hepatocytes to cryopreservation",
+        "In vitro analysis of cryopreserved alginate-poly-L-lysine-alginate-microencapsulated human hepatocytes",
+        "Woodchuck hepatocytes remain permissive for hepadnavirus infection and mouse liver repopulation after cryopreservation",
+        "Cryopreservation of Hepatocyte Microbeads for Clinical Transplantation",
+        "Effective cryopreservation and long-term storage of primary human hepatocytes with recovery of viability, differentiation, and replicative potential",
+        "Enhanced metabolic function of human hepatocytes cryopreserved with low concentration me2so and polyol additives at -80C",
+        "Improved cryopreservation of human hepatocytes using a new xeno free cryoprotectant solution",
+        "Improvement of hepatocyte viability after cryopreservation by supplementation of long-chain oligosaccharide in the freezing medium in rats and humans",
+        "Optimizing human hepatocyte models for metabolic phenotype and function: effects of treatment with dimethyl sulfoxide (DMSO)",
+        "Thawed human hepatocytes in primary culture",
+        "Cryopreservation and gel collagen culture of porcine hepatocytes",
+        "Cryopreservation of rat and dog hepatocytes for studies of xenobiotic metabolism and activation",
+        "Cryopreservation of rat, dog and human hepatocytes: influence of preculture and cryoprotectants on recovery, cytochrome P450 activities and induction upon thawing",
+        "Optimization of cryopreservation procedures for rat and human hepatocytes",
+        "Serum-Free Cryopreservation of Primary Rat Hepatocytes in a Modified Cold Storage Solution: Improvement of Cell Attachment and Function",
+        "Viability and function in primary culture of adult hepatocytes from various animal species and human beings after cryopreservation",
+        "[Study of cryopreservation of differentiated hepatocyte derived from human bone marrow stem cells]",
+        "An 'all-inclusive' 96-well cytochrome P450 induction method: measuring enzyme activity, mRNA levels, protein levels, and cytotoxicity from one well using cryopreserved human hepatocytes",
+        "An improvement in the attaching capability of cryopreserved human hepatocytes by a proteinaceous high molecule, sericin, in the serum-free solution",
+        "Cryopreservation of human hepatocytes for clinical use",
+        "Cryopreservation of primarily isolated porcine hepatocytes with UW solution",
+        "Cryopreservation of suckling pig hepatocytes",
+        "Cryopreservation of viable hepatocyte monolayers in cryoprotectant media with high serum content: metabolism of testosterone and kaempherol post-cryopreservation",
+        "Cryopreserved porcine hepatocytes: expression and induction of cytochrome P450, isoform CYP2E1",
+        "Postthaw viability of precultured hepatocytes",
+        "UW solution: a promising tool for cryopreservation of primarily isolated rat hepatocytes",
+        "Wheat proteins improve cryopreservation of rat hepatocytes",
+        "[The protective effect of Astragalus membranaceus extraction on cryopreserved primary-cultured human fetal hepatocytes]",
+        "Cryopreservation in situ of cell monolayers on collagen vitrigel membrane culture substrata: ready-to-use preparation of primary hepatocytes and ES cells",
+        "Effects of dimethyl sulfoxide on cultured rat hepatocytes in sandwich configuration",
+        "Immobilization of cryopreserved primary rat hepatocytes for the development of a bioartificial liver system",
+        "Long-term maintenance of drug-metabolizing enzyme activities in rat hepatocytes after cryopreservation",
+        "Metabolic activity of cytochrome p450 isoforms in hepatocytes cryopreserved with wheat protein extract",
+        "Optimization of cryoprotectants for cryopreservation of rat hepatocyte",
+        "Wheat proteins enhance stability and function of adhesion molecules in cryopreserved hepatocytes",
+        "Cryopreservation of isolated rat hepatocytes",
+        "Cryopreservation of isolated rat hepatocytes: a critical evaluation of freezing and thawing conditions",
+        "Exposure of primary rat hepatocytes in long-term DMSO culture to selected transition metals induces hepatocyte proliferation and formation of duct-like structures",
+        "Functional recovery of porcine hepatocytes after hypothermic or cryogenic preservation for liver support systems",
+        "Functional testing of hepatocytes following their recovery from cryopreservation",
+        "In vitro cultivation and cryopreservation of duck embryonic hepatocytes",
+        "Inhibition of biotransformation of xenobiotic p-nitroanisole after cryopreservation of isolated rat hepatocytes",
+        "Large-scale cryopreservation of isolated dog hepatocytes",
+        "Metabolic activity of freshly prepared and cryopreserved hepatocytes in monolayer culture",
+        "The effect of dimethylsulfoxide on the water transport response of rat hepatocytes during freezing",
+        "Ultrastructural assessment of cryopreserved hepatocytes after prolonged ectopic transplantation",
+        "Beneficial effect of S-adenosylmethionine during both cold storage and cryopreservation of isolated hepatocytes",
+        "Control of stress-induced apoptosis by freezing tolerance-associated wheat proteins during cryopreservation of rat hepatocytes",
+        "Cryoprotectant-dependent control of intracellular ice recrystallization in hepatocytes using small molecule carbohydrate derivatives",
+        "Intracellular ice formation during the freezing of hepatocytes cultured in a double collagen gel",
+        "Metabolic activity of fresh and cryopreserved dog hepatocyte suspensions",
+        "The effects of cryopreservation on membrane integrity, membrane transport, and protein synthesis in rat hepatocytes",
+        "[Primary study on the effect of different dimethyl sulfoxide concentrations on -80 degrees C cryopreserved porcine hepatocytes]",
+        "Cryopreservation of hepatocyte (HepG2) cell monolayers: impact of trehalose",
+        "[Permeability of isolated rat hepatocyte plasma membranes for molecules of dimethyl sulfoxide]",
+        "Transient loss of membrane integrity following intracellular ice formation in dimethyl sulfoxide-treated hepatocyte and endothelial cell monolayers"
+      ]
+    },
+    {
+      "protocolFamily": "unknown",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "human hepatocytes",
+      "paperCount": 23,
+      "outcomeClasses": [
+        "transplantation",
+        "viability",
+        "function",
+        "morphology"
+      ],
+      "titles": [
+        "Cryopreservation of primary human hepatocytes: the benefit of trehalose as an additional cryoprotective agent",
+        "[Cryopreservation of microencapsulated human hepatocytes]",
+        "A novel method of cryopreservation of rat and human hepatocytes by using encapsulation technique and possible use for cell transplantation",
+        "A simple isolation and cryopreservation method for adult human hepatocytes",
+        "Incubation with dimethyl sulfoxide prior to cryopreservation improves functionality of thawed human primary hepatocytes",
+        "Influence of platelet lysate on the recovery and metabolic performance of cryopreserved human hepatocytes upon thawing",
+        "Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes",
+        "Effect of Dimethyl Sulfoxide and Melatonin on the Isolation of Human Primary Hepatocytes",
+        "Optimization of the cryopreservation and thawing protocol for human hepatocytes for use in cell transplantation",
+        "Cryopreservation of adult human hepatocytes. The influence of deep freezing storage on the viability, cell seeding, survival, fine structures and albumin synthesis in primary cultures",
+        "In vitro analysis of cryopreserved alginate-poly-L-lysine-alginate-microencapsulated human hepatocytes",
+        "Effective cryopreservation and long-term storage of primary human hepatocytes with recovery of viability, differentiation, and replicative potential",
+        "Enhanced metabolic function of human hepatocytes cryopreserved with low concentration me2so and polyol additives at -80C",
+        "Improved cryopreservation of human hepatocytes using a new xeno free cryoprotectant solution",
+        "Optimizing human hepatocyte models for metabolic phenotype and function: effects of treatment with dimethyl sulfoxide (DMSO)",
+        "Thawed human hepatocytes in primary culture",
+        "Cryopreservation of rat and dog hepatocytes for studies of xenobiotic metabolism and activation",
+        "Cryopreservation of rat, dog and human hepatocytes: influence of preculture and cryoprotectants on recovery, cytochrome P450 activities and induction upon thawing",
+        "Optimization of cryopreservation procedures for rat and human hepatocytes",
+        "An 'all-inclusive' 96-well cytochrome P450 induction method: measuring enzyme activity, mRNA levels, protein levels, and cytotoxicity from one well using cryopreserved human hepatocytes",
+        "An improvement in the attaching capability of cryopreserved human hepatocytes by a proteinaceous high molecule, sericin, in the serum-free solution",
+        "Cryopreservation of human hepatocytes for clinical use",
+        "[The protective effect of Astragalus membranaceus extraction on cryopreserved primary-cultured human fetal hepatocytes]"
+      ]
+    },
+    {
+      "protocolFamily": "unknown",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "primary hepatocytes",
+      "paperCount": 20,
+      "outcomeClasses": [
+        "transplantation",
+        "viability",
+        "function",
+        "morphology"
+      ],
+      "titles": [
+        "Cryopreservation of primary human hepatocytes: the benefit of trehalose as an additional cryoprotective agent",
+        "[Cryopreservation of microencapsulated human hepatocytes]",
+        "A simple isolation and cryopreservation method for adult human hepatocytes",
+        "Incubation with dimethyl sulfoxide prior to cryopreservation improves functionality of thawed human primary hepatocytes",
+        "Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes",
+        "Cryopreservation of immobilized rat hepatocytes for the development of a bioartificial liver system",
+        "Effect of Dimethyl Sulfoxide and Melatonin on the Isolation of Human Primary Hepatocytes",
+        "Cryopreservation of assay-ready hepatocyte monolayers by chemically-induced ice nucleation: preservation of hepatic function and hepatotoxicity screening capabilities",
+        "Cryopreserved primary hepatocytes as a constantly available in vitro model for the evaluation of human and animal drug metabolism and enzyme induction",
+        "Effect of spheroid aggregation on susceptibility of primary pig hepatocytes to cryopreservation",
+        "Effective cryopreservation and long-term storage of primary human hepatocytes with recovery of viability, differentiation, and replicative potential",
+        "Improved cryopreservation of human hepatocytes using a new xeno free cryoprotectant solution",
+        "Improvement of hepatocyte viability after cryopreservation by supplementation of long-chain oligosaccharide in the freezing medium in rats and humans",
+        "Optimizing human hepatocyte models for metabolic phenotype and function: effects of treatment with dimethyl sulfoxide (DMSO)",
+        "Serum-Free Cryopreservation of Primary Rat Hepatocytes in a Modified Cold Storage Solution: Improvement of Cell Attachment and Function",
+        "Cryopreservation of viable hepatocyte monolayers in cryoprotectant media with high serum content: metabolism of testosterone and kaempherol post-cryopreservation",
+        "UW solution: a promising tool for cryopreservation of primarily isolated rat hepatocytes",
+        "Cryopreservation in situ of cell monolayers on collagen vitrigel membrane culture substrata: ready-to-use preparation of primary hepatocytes and ES cells",
+        "Immobilization of cryopreserved primary rat hepatocytes for the development of a bioartificial liver system",
+        "Exposure of primary rat hepatocytes in long-term DMSO culture to selected transition metals induces hepatocyte proliferation and formation of duct-like structures"
+      ]
+    },
+    {
+      "protocolFamily": "unknown",
+      "chemical": "Fetal Bovine Serum",
+      "specimenType": "hepatocytes",
+      "paperCount": 19,
+      "outcomeClasses": [
+        "transplantation",
+        "function",
+        "viability",
+        "morphology"
+      ],
+      "titles": [
+        "A novel method of cryopreservation of rat and human hepatocytes by using encapsulation technique and possible use for cell transplantation",
+        "A simple isolation and cryopreservation method for adult human hepatocytes",
+        "Cryopreservation of immobilized rat hepatocytes for the development of a bioartificial liver system",
+        "Cryopreservation of adult human hepatocytes. The influence of deep freezing storage on the viability, cell seeding, survival, fine structures and albumin synthesis in primary cultures",
+        "Effect of spheroid aggregation on susceptibility of primary pig hepatocytes to cryopreservation",
+        "Effective cryopreservation and long-term storage of primary human hepatocytes with recovery of viability, differentiation, and replicative potential",
+        "Thawed human hepatocytes in primary culture",
+        "Viability and function in primary culture of adult hepatocytes from various animal species and human beings after cryopreservation",
+        "[Study of cryopreservation of differentiated hepatocyte derived from human bone marrow stem cells]",
+        "Cryopreservation of cynomolgus monkey (Macaca fascicularis) hepatocytes for subsequent culture and protein synthesis studies",
+        "Cryopreservation of primarily isolated porcine hepatocytes with UW solution",
+        "Cryopreservation of viable hepatocyte monolayers in cryoprotectant media with high serum content: metabolism of testosterone and kaempherol post-cryopreservation",
+        "UW solution: a promising tool for cryopreservation of primarily isolated rat hepatocytes",
+        "Immobilization of cryopreserved primary rat hepatocytes for the development of a bioartificial liver system",
+        "Influence of alginate gel entrapment and cryopreservation on survival and xenobiotic metabolism capacity of rat hepatocytes",
+        "Long-term maintenance of drug-metabolizing enzyme activities in rat hepatocytes after cryopreservation",
+        "Optimization of cryoprotectants for cryopreservation of rat hepatocyte",
+        "The viability and function of cryopreserved hepatocyte spheroids with different cryopreservation solutions",
+        "In vitro cultivation and cryopreservation of duck embryonic hepatocytes"
+      ]
+    },
+    {
+      "protocolFamily": "unknown",
+      "chemical": "University of Wisconsin Solution",
+      "specimenType": "hepatocytes",
+      "paperCount": 13,
+      "outcomeClasses": [
+        "function",
+        "viability",
+        "transplantation",
+        "morphology"
+      ],
+      "titles": [
+        "Incubation with dimethyl sulfoxide prior to cryopreservation improves functionality of thawed human primary hepatocytes",
+        "Influence of platelet lysate on the recovery and metabolic performance of cryopreserved human hepatocytes upon thawing",
+        "Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes",
+        "Optimization of the cryopreservation and thawing protocol for human hepatocytes for use in cell transplantation",
+        "Effect of spheroid aggregation on susceptibility of primary pig hepatocytes to cryopreservation",
+        "Effective cryopreservation and long-term storage of primary human hepatocytes with recovery of viability, differentiation, and replicative potential",
+        "[Study of cryopreservation of differentiated hepatocyte derived from human bone marrow stem cells]",
+        "Cryopreservation of human hepatocytes for clinical use",
+        "Cryopreservation of primarily isolated porcine hepatocytes with UW solution",
+        "UW solution: a promising tool for cryopreservation of primarily isolated rat hepatocytes",
+        "Long-term maintenance of drug-metabolizing enzyme activities in rat hepatocytes after cryopreservation",
+        "The viability and function of cryopreserved hepatocyte spheroids with different cryopreservation solutions",
+        "Functional recovery of porcine hepatocytes after hypothermic or cryogenic preservation for liver support systems"
+      ]
+    },
+    {
+      "protocolFamily": "unknown",
+      "chemical": "Alginate",
+      "specimenType": "hepatocytes",
+      "paperCount": 12,
+      "outcomeClasses": [
+        "transplantation",
+        "function",
+        "viability",
+        "morphology"
+      ],
+      "titles": [
+        "[Cryopreservation of microencapsulated human hepatocytes]",
+        "Cryopreservation of immobilized rat hepatocytes for the development of a bioartificial liver system",
+        "In vitro analysis of cryopreserved alginate-poly-L-lysine-alginate-microencapsulated human hepatocytes",
+        "Cryopreservation of Hepatocyte Microbeads for Clinical Transplantation",
+        "Improved survival of fulminant liver failure by transplantation of microencapsulated cryopreserved porcine hepatocytes in mice",
+        "Long-term maintenance of the drug transport activity in cryopreservation of microencapsulated rat hepatocytes",
+        "In vitro evaluation of encapsulated primary rat hepatocytes pre- and post-cryopreservation at -80&#xb0;C and in liquid nitrogen",
+        "Viability and drug metabolism capacity of alginate-entrapped hepatocytes after cryopreservation",
+        "Hypothermic storage and cryopreservation of hepatocytes: the protective effect of alginate gel against cell damages",
+        "Immobilization of cryopreserved primary rat hepatocytes for the development of a bioartificial liver system",
+        "Influence of alginate gel entrapment and cryopreservation on survival and xenobiotic metabolism capacity of rat hepatocytes",
+        "Cryobiological aspects of upscaling cryopreservation for encapsulated liver cell therapies"
+      ]
+    },
+    {
+      "protocolFamily": "unknown",
+      "chemical": "Fetal Bovine Serum",
+      "specimenType": "primary hepatocytes",
+      "paperCount": 7,
+      "outcomeClasses": [
+        "transplantation",
+        "function",
+        "viability",
+        "morphology"
+      ],
+      "titles": [
+        "A simple isolation and cryopreservation method for adult human hepatocytes",
+        "Cryopreservation of immobilized rat hepatocytes for the development of a bioartificial liver system",
+        "Effect of spheroid aggregation on susceptibility of primary pig hepatocytes to cryopreservation",
+        "Effective cryopreservation and long-term storage of primary human hepatocytes with recovery of viability, differentiation, and replicative potential",
+        "Cryopreservation of viable hepatocyte monolayers in cryoprotectant media with high serum content: metabolism of testosterone and kaempherol post-cryopreservation",
+        "UW solution: a promising tool for cryopreservation of primarily isolated rat hepatocytes",
+        "Immobilization of cryopreserved primary rat hepatocytes for the development of a bioartificial liver system"
+      ]
+    },
+    {
+      "protocolFamily": "unknown",
+      "chemical": "Trehalose",
+      "specimenType": "hepatocytes",
+      "paperCount": 7,
+      "outcomeClasses": [
+        "transplantation",
+        "viability",
+        "function"
+      ],
+      "titles": [
+        "Cryopreservation of primary human hepatocytes: the benefit of trehalose as an additional cryoprotective agent",
+        "Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes",
+        "Cryopreservation of rat hepatocytes with disaccharides for cell therapy",
+        "Enhanced metabolic function of human hepatocytes cryopreserved with low concentration me2so and polyol additives at -80C",
+        "Improvement of hepatocyte viability after cryopreservation by supplementation of long-chain oligosaccharide in the freezing medium in rats and humans",
+        "Cryoprotectant-dependent control of intracellular ice recrystallization in hepatocytes using small molecule carbohydrate derivatives",
+        "Cryopreservation of hepatocyte (HepG2) cell monolayers: impact of trehalose"
+      ]
+    },
+    {
+      "protocolFamily": "unknown",
+      "chemical": "Alginate",
+      "specimenType": "primary hepatocytes",
+      "paperCount": 6,
+      "outcomeClasses": [
+        "transplantation",
+        "function",
+        "viability",
+        "morphology"
+      ],
+      "titles": [
+        "[Cryopreservation of microencapsulated human hepatocytes]",
+        "Cryopreservation of immobilized rat hepatocytes for the development of a bioartificial liver system",
+        "Improved survival of fulminant liver failure by transplantation of microencapsulated cryopreserved porcine hepatocytes in mice",
+        "Long-term maintenance of the drug transport activity in cryopreservation of microencapsulated rat hepatocytes",
+        "In vitro evaluation of encapsulated primary rat hepatocytes pre- and post-cryopreservation at -80&#xb0;C and in liquid nitrogen",
+        "Immobilization of cryopreserved primary rat hepatocytes for the development of a bioartificial liver system"
+      ]
+    },
+    {
+      "protocolFamily": "unknown",
+      "chemical": "Dimethyl Sulfoxide",
+      "specimenType": "liver cells",
+      "paperCount": 6,
+      "outcomeClasses": [
+        "transplantation",
+        "viability",
+        "function",
+        "morphology"
+      ],
+      "titles": [
+        "Cryopreservation of primary human hepatocytes: the benefit of trehalose as an additional cryoprotective agent",
+        "Influence of platelet lysate on the recovery and metabolic performance of cryopreserved human hepatocytes upon thawing",
+        "Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes",
+        "Positive effects of cryopreserved adult or fetal liver cell transplants on hypercholesterolemia and hepatic antioxidant defenses in cholesterol-fed rabbits",
+        "A new approach to the cryopreservation of hepatocytes in a sandwich culture configuration",
+        "Cryopreservation of adult human hepatocytes. The influence of deep freezing storage on the viability, cell seeding, survival, fine structures and albumin synthesis in primary cultures"
+      ]
+    },
+    {
+      "protocolFamily": "vitrification",
+      "chemical": "Ethylene Glycol",
+      "specimenType": "hepatocytes",
+      "paperCount": 6,
+      "outcomeClasses": [
+        "function",
+        "viability",
+        "transplantation"
+      ],
+      "titles": [
+        "The use of vitrification to preserve primary rat hepatocyte monolayer on collagen-coated poly(ethylene-terephthalate) surfaces for a hybrid liver support system",
+        "Development of a modified vitrification strategy suitable for subsequent scale-up for hepatocyte preservation",
+        "Influence of cell culture configuration on the post-cryopreservation viability of primary rat hepatocytes",
+        "Vitrification successfully preserves hepatocyte spheroids",
+        "Vitreous cryopreservation of cell-biomaterial constructs involving encapsulated hepatocytes",
+        "Vitrification of encapsulated hepatocytes with reduced cooling and warming rates"
+      ]
+    },
+    {
+      "protocolFamily": "vitrification",
+      "chemical": "Sucrose",
+      "specimenType": "hepatocytes",
+      "paperCount": 6,
+      "outcomeClasses": [
+        "function",
+        "viability",
+        "transplantation"
+      ],
+      "titles": [
+        "The use of vitrification to preserve primary rat hepatocyte monolayer on collagen-coated poly(ethylene-terephthalate) surfaces for a hybrid liver support system",
+        "Development of a modified vitrification strategy suitable for subsequent scale-up for hepatocyte preservation",
+        "Influence of cell culture configuration on the post-cryopreservation viability of primary rat hepatocytes",
+        "Vitrification successfully preserves hepatocyte spheroids",
+        "Vitreous cryopreservation of cell-biomaterial constructs involving encapsulated hepatocytes",
+        "Vitrification of encapsulated hepatocytes with reduced cooling and warming rates"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "topic": "Dimethyl Sulfoxide, Fetal Bovine Serum in hepatocytes",
+      "paperA": {
+        "title": "Biochemical functionality and recovery of hepatocytes after deep freezing storage",
+        "protocolFamily": "slow-freezing",
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "morphology"
+        ]
+      },
+      "paperB": {
+        "title": "Drug metabolism and viability studies in cryopreserved rat hepatocytes",
+        "protocolFamily": "vitrification",
+        "outcomeClasses": [
+          "function",
+          "viability"
+        ]
+      },
+      "sharedContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Fetal Bovine Serum"
+        ],
+        "specimenTypes": [
+          "hepatocytes"
+        ]
+      },
+      "reason": "Comparable species/context with shared outcome readout but different preservation families",
+      "confidence": 0.72
+    },
+    {
+      "topic": "Dimethyl Sulfoxide in hepatocytes",
+      "paperA": {
+        "title": "Biochemical functionality and recovery of hepatocytes after deep freezing storage",
+        "protocolFamily": "slow-freezing",
+        "outcomeClasses": [
+          "function",
+          "viability",
+          "morphology"
+        ]
+      },
+      "paperB": {
+        "title": "Influence of cell culture configuration on the post-cryopreservation viability of primary rat hepatocytes",
+        "protocolFamily": "vitrification",
+        "outcomeClasses": [
+          "viability"
+        ]
+      },
+      "sharedContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide"
+        ],
+        "specimenTypes": [
+          "hepatocytes"
+        ]
+      },
+      "reason": "Comparable species/context with shared outcome readout but different preservation families",
+      "confidence": 0.72
+    }
+  ],
+  "experimentSuggestions": [
+    {
+      "title": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix",
+      "category": "benchmark",
+      "hypothesis": "Several hepatocyte papers imply that post-thaw attachment and function gains come from adjuncts added around a standard DMSO-centered mix rather than from new base CPA chemistry.",
+      "rationale": "Trehalose, serum, ROCK inhibitor, antioxidant, and other adjunct-style titles recur in the hepatocyte slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw attachment and function would test whether the additive signal is real.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Trehalose",
+          "Fetal Bovine Serum",
+          "University of Wisconsin Solution",
+          "Alginate",
+          "Sericin"
+        ],
+        "specimenTypes": [
+          "hepatocytes",
+          "primary hepatocytes"
+        ],
+        "protocolFamilies": [
+          "unknown",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Cryopreservation of primary human hepatocytes: the benefit of trehalose as an additional cryoprotective agent",
+          "A novel method of cryopreservation of rat and human hepatocytes by using encapsulation technique and possible use for cell transplantation",
+          "Serum-free cryopreservation of porcine hepatocytes",
+          "Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes",
+          "In vitro analysis of cryopreserved alginate-poly-L-lysine-alginate-microencapsulated human hepatocytes",
+          "Bilirubin, a physiological antioxidant, can improve cryopreservation of human hepatocytes"
+        ]
+      },
+      "confidence": 0.78
+    },
+    {
+      "title": "Promote hepatocyte function-heavy protocols to transplantation endpoints",
+      "category": "endpoint-upgrade",
+      "hypothesis": "Several hepatocyte protocols that look promising on attachment or in-vitro metabolic function will reorder once they are compared on engraftment or transplantation outcomes.",
+      "rationale": "The hepatocyte slice labels function more often than transplantation. Converting the strongest in-vitro function protocols into a small engraftment benchmark is likely higher-signal than inventing a new chemistry path immediately.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Fetal Bovine Serum",
+          "University of Wisconsin Solution",
+          "Trehalose",
+          "Alginate"
+        ],
+        "specimenTypes": [
+          "hepatocytes",
+          "primary hepatocytes"
+        ],
+        "protocolFamilies": [
+          "unknown",
+          "slow-freezing",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Analysis of the functional integrity of cryopreserved human liver cells including xenografting in immunodeficient mice to address suitability for clinical applications",
+          "A novel method of cryopreservation of rat and human hepatocytes by using encapsulation technique and possible use for cell transplantation",
+          "A simple isolation and cryopreservation method for adult human hepatocytes",
+          "Cryopreservation of adult human hepatocytes obtained from resected liver biopsies",
+          "Incubation with dimethyl sulfoxide prior to cryopreservation improves functionality of thawed human primary hepatocytes",
+          "Influence of platelet lysate on the recovery and metabolic performance of cryopreserved human hepatocytes upon thawing"
+        ]
+      },
+      "confidence": 0.76
+    },
+    {
+      "title": "Full-text protocol resolution for sparse hepatocyte thaw/loading workflows",
+      "category": "workflow-gap",
+      "hypothesis": "A number of hepatocyte papers look relevant, but their step structure is too thin to compare fairly against the rest of the corpus.",
+      "rationale": "The hepatocyte slice is provisional and abstract-level, and its weak points concentrate in papers where only thawing or one procedural phase is explicit. Full-text resolution there is likely higher signal than another broad extraction pass.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "University of Wisconsin Solution",
+          "Alginate",
+          "Fetal Bovine Serum",
+          "Ethylene Glycol"
+        ],
+        "specimenTypes": [
+          "hepatocytes",
+          "primary hepatocytes"
+        ],
+        "protocolFamilies": [
+          "unknown",
+          "slow-freezing",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Influence of platelet lysate on the recovery and metabolic performance of cryopreserved human hepatocytes upon thawing",
+          "Gene expression in human hepatocytes in suspension after isolation is similar to the liver of origin, is not affected by hepatocyte cold storage and cryopreservation, but is strongly changed after hepatocyte plating",
+          "Cryopreservation of rat hepatocyte monolayer cultures",
+          "Expression and induction potential of cytochromes P450 in human cryopreserved hepatocytes",
+          "Heterotypic spheroids as a strategy for 3D culture of cryopreserved primary human hepatocytes in stirred-tank systems",
+          "Increase of cytochrome P-450 1A and glutathione transferase transcripts in cultured hepatocytes from dogs, monkeys, and humans after cryopreservation"
+        ]
+      },
+      "confidence": 0.8
+    },
+    {
+      "title": "Scale-up benchmark for banked or bulk hepatocyte handling",
+      "category": "scale-up",
+      "hypothesis": "Scale-up losses in hepatocyte banking may come from handling and thaw workflow variance rather than core cryomix choice alone.",
+      "rationale": "The hepatocyte corpus includes banking, bulk, and large-scale titles, but those papers are scattered across sparse workflow descriptions. A scale-up benchmark focused on loading, storage, thaw, and handling variance would test whether operational workflow dominates the observed attachment losses.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol"
+        ],
+        "specimenTypes": [
+          "hepatocytes",
+          "primary hepatocytes"
+        ],
+        "protocolFamilies": [
+          "unknown",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Cryopreserved human hepatocytes from cell bank: in vitro function and clinical application",
+          "Bulk Droplet Vitrification: An Approach to Improve Large-Scale Hepatocyte Cryopreservation Outcome",
+          "Large-scale cryopreservation of isolated dog hepatocytes",
+          "Bulk Droplet Vitrification for Primary Hepatocyte Preservation"
+        ]
+      },
+      "confidence": 0.72
+    }
+  ],
+  "researchHypotheses": [
+    {
+      "id": "hepatocytes:full-text-protocol-resolution-for-sparse-hepatocyte-thaw-loading-workflows",
+      "domain": "hepatocytes",
+      "title": "Full-text protocol resolution for sparse hepatocyte thaw/loading workflows",
+      "category": "workflow-gap",
+      "claim": "A number of hepatocyte papers look relevant, but their step structure is too thin to compare fairly against the rest of the corpus.",
+      "proposedExperiment": "The hepatocyte slice is provisional and abstract-level, and its weak points concentrate in papers where only thawing or one procedural phase is explicit. Full-text resolution there is likely higher signal than another broad extraction pass.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "University of Wisconsin Solution",
+          "Alginate",
+          "Fetal Bovine Serum",
+          "Ethylene Glycol"
+        ],
+        "specimenTypes": [
+          "hepatocytes",
+          "primary hepatocytes"
+        ],
+        "protocolFamilies": [
+          "unknown",
+          "slow-freezing",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Influence of platelet lysate on the recovery and metabolic performance of cryopreserved human hepatocytes upon thawing",
+          "Gene expression in human hepatocytes in suspension after isolation is similar to the liver of origin, is not affected by hepatocyte cold storage and cryopreservation, but is strongly changed after hepatocyte plating",
+          "Cryopreservation of rat hepatocyte monolayer cultures",
+          "Expression and induction potential of cytochromes P450 in human cryopreserved hepatocytes",
+          "Heterotypic spheroids as a strategy for 3D culture of cryopreserved primary human hepatocytes in stirred-tank systems",
+          "Increase of cytochrome P-450 1A and glutathione transferase transcripts in cultured hepatocytes from dogs, monkeys, and humans after cryopreservation"
+        ]
+      },
+      "evidence": {
+        "totalPaperCount": 6,
+        "experimentalPaperCount": 6,
+        "comparativePaperCount": 0,
+        "distinctSpeciesCount": 4,
+        "strongOutcomePaperCount": 5,
+        "transplantationPaperCount": 1,
+        "contradictionCount": 0,
+        "sparseProtocolPaperCount": 6
+      },
+      "scores": {
+        "evidenceScore": 1,
+        "uncertaintyScore": 0.65,
+        "actionabilityScore": 0.92,
+        "priorityScore": 0.881
+      },
+      "blockers": [
+        "6 relevant papers still have unknown preservation family labels",
+        "6 relevant papers still have sparse step structure"
+      ],
+      "rationale": "The hepatocyte slice is provisional and abstract-level, and its weak points concentrate in papers where only thawing or one procedural phase is explicit. Full-text resolution there is likely higher signal than another broad extraction pass."
+    },
+    {
+      "id": "hepatocytes:additive-assisted-hepatocyte-attachment-and-function-benchmark-on-a-fixed-base-cryomix",
+      "domain": "hepatocytes",
+      "title": "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix",
+      "category": "benchmark",
+      "claim": "Several hepatocyte papers imply that post-thaw attachment and function gains come from adjuncts added around a standard DMSO-centered mix rather than from new base CPA chemistry.",
+      "proposedExperiment": "Trehalose, serum, ROCK inhibitor, antioxidant, and other adjunct-style titles recur in the hepatocyte slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw attachment and function would test whether the additive signal is real.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Trehalose",
+          "Fetal Bovine Serum",
+          "University of Wisconsin Solution",
+          "Alginate",
+          "Sericin"
+        ],
+        "specimenTypes": [
+          "hepatocytes",
+          "primary hepatocytes"
+        ],
+        "protocolFamilies": [
+          "unknown",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Cryopreservation of primary human hepatocytes: the benefit of trehalose as an additional cryoprotective agent",
+          "A novel method of cryopreservation of rat and human hepatocytes by using encapsulation technique and possible use for cell transplantation",
+          "Serum-free cryopreservation of porcine hepatocytes",
+          "Comparison of University of Wisconsin and ET-Kyoto preservation solutions for the cryopreservation of primary human hepatocytes",
+          "In vitro analysis of cryopreserved alginate-poly-L-lysine-alginate-microencapsulated human hepatocytes",
+          "Bilirubin, a physiological antioxidant, can improve cryopreservation of human hepatocytes"
+        ]
+      },
+      "evidence": {
+        "totalPaperCount": 6,
+        "experimentalPaperCount": 6,
+        "comparativePaperCount": 0,
+        "distinctSpeciesCount": 3,
+        "strongOutcomePaperCount": 6,
+        "transplantationPaperCount": 4,
+        "contradictionCount": 0,
+        "sparseProtocolPaperCount": 6
+      },
+      "scores": {
+        "evidenceScore": 1,
+        "uncertaintyScore": 0.65,
+        "actionabilityScore": 0.84,
+        "priorityScore": 0.849
+      },
+      "blockers": [
+        "6 relevant papers still have unknown preservation family labels",
+        "6 relevant papers still have sparse step structure",
+        "Benchmark still lacks balanced evidence from both vitrification and slow-freezing"
+      ],
+      "rationale": "Trehalose, serum, ROCK inhibitor, antioxidant, and other adjunct-style titles recur in the hepatocyte slice, but they are not benchmarked against one another on the same base protocol. Holding the core cryomix fixed and comparing post-thaw attachment and function would test whether the additive signal is real."
+    },
+    {
+      "id": "hepatocytes:promote-hepatocyte-function-heavy-protocols-to-transplantation-endpoints",
+      "domain": "hepatocytes",
+      "title": "Promote hepatocyte function-heavy protocols to transplantation endpoints",
+      "category": "endpoint-upgrade",
+      "claim": "Several hepatocyte protocols that look promising on attachment or in-vitro metabolic function will reorder once they are compared on engraftment or transplantation outcomes.",
+      "proposedExperiment": "The hepatocyte slice labels function more often than transplantation. Converting the strongest in-vitro function protocols into a small engraftment benchmark is likely higher-signal than inventing a new chemistry path immediately.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Fetal Bovine Serum",
+          "University of Wisconsin Solution",
+          "Trehalose",
+          "Alginate"
+        ],
+        "specimenTypes": [
+          "hepatocytes",
+          "primary hepatocytes"
+        ],
+        "protocolFamilies": [
+          "unknown",
+          "slow-freezing",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Analysis of the functional integrity of cryopreserved human liver cells including xenografting in immunodeficient mice to address suitability for clinical applications",
+          "A novel method of cryopreservation of rat and human hepatocytes by using encapsulation technique and possible use for cell transplantation",
+          "A simple isolation and cryopreservation method for adult human hepatocytes",
+          "Cryopreservation of adult human hepatocytes obtained from resected liver biopsies",
+          "Incubation with dimethyl sulfoxide prior to cryopreservation improves functionality of thawed human primary hepatocytes",
+          "Influence of platelet lysate on the recovery and metabolic performance of cryopreserved human hepatocytes upon thawing"
+        ]
+      },
+      "evidence": {
+        "totalPaperCount": 6,
+        "experimentalPaperCount": 6,
+        "comparativePaperCount": 0,
+        "distinctSpeciesCount": 2,
+        "strongOutcomePaperCount": 6,
+        "transplantationPaperCount": 5,
+        "contradictionCount": 0,
+        "sparseProtocolPaperCount": 4
+      },
+      "scores": {
+        "evidenceScore": 1,
+        "uncertaintyScore": 0.55,
+        "actionabilityScore": 0.8,
+        "priorityScore": 0.807
+      },
+      "blockers": [
+        "6 relevant papers still have unknown preservation family labels",
+        "4 relevant papers still have sparse step structure"
+      ],
+      "rationale": "The hepatocyte slice labels function more often than transplantation. Converting the strongest in-vitro function protocols into a small engraftment benchmark is likely higher-signal than inventing a new chemistry path immediately."
+    },
+    {
+      "id": "hepatocytes:scale-up-benchmark-for-banked-or-bulk-hepatocyte-handling",
+      "domain": "hepatocytes",
+      "title": "Scale-up benchmark for banked or bulk hepatocyte handling",
+      "category": "scale-up",
+      "claim": "Scale-up losses in hepatocyte banking may come from handling and thaw workflow variance rather than core cryomix choice alone.",
+      "proposedExperiment": "The hepatocyte corpus includes banking, bulk, and large-scale titles, but those papers are scattered across sparse workflow descriptions. A scale-up benchmark focused on loading, storage, thaw, and handling variance would test whether operational workflow dominates the observed attachment losses.",
+      "supportingContext": {
+        "chemicals": [
+          "Dimethyl Sulfoxide",
+          "Ethylene Glycol"
+        ],
+        "specimenTypes": [
+          "hepatocytes",
+          "primary hepatocytes"
+        ],
+        "protocolFamilies": [
+          "unknown",
+          "vitrification"
+        ],
+        "paperTitles": [
+          "Cryopreserved human hepatocytes from cell bank: in vitro function and clinical application",
+          "Bulk Droplet Vitrification: An Approach to Improve Large-Scale Hepatocyte Cryopreservation Outcome",
+          "Large-scale cryopreservation of isolated dog hepatocytes",
+          "Bulk Droplet Vitrification for Primary Hepatocyte Preservation"
+        ]
+      },
+      "evidence": {
+        "totalPaperCount": 4,
+        "experimentalPaperCount": 4,
+        "comparativePaperCount": 0,
+        "distinctSpeciesCount": 2,
+        "strongOutcomePaperCount": 4,
+        "transplantationPaperCount": 1,
+        "contradictionCount": 0,
+        "sparseProtocolPaperCount": 4
+      },
+      "scores": {
+        "evidenceScore": 0.717,
+        "uncertaintyScore": 0.475,
+        "actionabilityScore": 0.72,
+        "priorityScore": 0.658
+      },
+      "blockers": [
+        "2 relevant papers still have unknown preservation family labels",
+        "4 relevant papers still have sparse step structure"
+      ],
+      "rationale": "The hepatocyte corpus includes banking, bulk, and large-scale titles, but those papers are scattered across sparse workflow descriptions. A scale-up benchmark focused on loading, storage, thaw, and handling variance would test whether operational workflow dominates the observed attachment losses."
+    }
+  ],
+  "qualitySignals": {
+    "unknownProtocolFamilyCount": 287,
+    "unknownProtocolFamilyRate": 0.94,
+    "unknownStepPhaseCount": 0,
+    "contradictionCount": 2,
+    "experimentalPaperCount": 237,
+    "methodsPaperCount": 43,
+    "reviewPaperCount": 6,
+    "commentaryPaperCount": 0
+  }
+}

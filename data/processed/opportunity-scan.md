@@ -17,3 +17,12 @@
 - pain point: Promising protocols are still over-indexed on viability or in-vitro function rather than transplantation-grade outcomes.
 - why optimization matters: Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows.
 - recommended next move: Pressure-test "Head-to-head DMSO-centered ovarian tissue benchmark" as the next wedge-defining experiment.
+
+## hepatocytes
+- readiness score: 0.035
+- evidence score: 0.543
+- commercial score: 0.784
+- standard pattern: unknown via Dimethyl Sulfoxide, Fetal Bovine Serum, University of Wisconsin Solution
+- pain point: Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.
+- why optimization matters: A cleaner benchmark wedge maps to hepatocyte supply, cell-therapy, and drug-metabolism workflows where post-thaw attachment and function still vary lot to lot.
+- recommended next move: Pressure-test "Additive-assisted hepatocyte attachment and function benchmark on a fixed base cryomix" as the next wedge-defining experiment.
