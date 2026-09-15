@@ -17,7 +17,7 @@ export default async function HistoryPage() {
 
   return (
     <>
-      <PageHeader note="The recent cycle ledger, what changed, and what still blocks progress." title="History" />
+      <PageHeader note="Recent cycles: what changed and what still blocks progress." title="History" />
 
       <Facts
         items={[

@@ -23,7 +23,7 @@ export default async function DebugPage() {
 
   return (
     <>
-      <PageHeader note="Artifact lineage, pipeline health, and the secondary compare, history, and optimizer views." title="Debug" />
+      <PageHeader note="Artifact lineage, pipeline health, and the compare, history, and optimizer views." title="Debug" />
 
       <Facts
         items={[

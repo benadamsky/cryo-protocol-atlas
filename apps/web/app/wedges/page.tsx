@@ -8,7 +8,7 @@ export default async function WedgesPage() {
 
   return (
     <>
-      <PageHeader note="The current recommended question in each domain, with the one that leads today first." title="Wedges" />
+      <PageHeader note="The recommended question in each domain, lead first." title="Wedges" />
 
       <Table
         columns={[

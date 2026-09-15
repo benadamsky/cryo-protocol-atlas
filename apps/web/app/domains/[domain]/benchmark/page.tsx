@@ -37,7 +37,7 @@ export default async function BenchmarkPage({ params }: { params: Promise<{ doma
   return (
     <>
       <PageHeader
-        note="Whether Atlas keeps the right papers in scope, labels them correctly, and extracts enough detail to back the recommendation."
+        note="Whether the right papers are in scope, labeled correctly, and extracted in enough detail to back the call."
         title={`${meta.label} benchmark`}
       />
       <DomainCrumbs current="benchmark" domain={domain} />

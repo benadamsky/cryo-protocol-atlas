@@ -277,7 +277,7 @@ export const islets: DomainDefinition<"islets"> = {
 
   console: {
     shortLabel: "Islets",
-    strapline: "Transplant-adjacent cryomix benchmarking with stronger benchmark depth.",
+    strapline: "Transplant-adjacent cryomix benchmarking; the deepest benchmark of the three.",
     accent: "#0ea5a4",
     accentSoft: "rgba(14, 165, 164, 0.18)",
     plainWedgeSummary:

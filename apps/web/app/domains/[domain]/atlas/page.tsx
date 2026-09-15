@@ -30,7 +30,7 @@ export default async function AtlasPage({ params }: { params: Promise<{ domain: 
   return (
     <>
       <PageHeader
-        note="Literature clusters, dominant chemicals, outcomes, and high-confidence papers from the resolved extraction layer."
+        note="Literature clusters, dominant chemicals, outcomes, and the highest-confidence papers."
         title={`${meta.label} protocol structure`}
       />
       <DomainCrumbs current="atlas" domain={domain} />

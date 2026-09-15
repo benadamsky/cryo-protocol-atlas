@@ -35,7 +35,7 @@ export function DiscoveryView(props: {
   return (
     <>
       <PageHeader
-        note="Candidate papers from the broader search, ranked as inputs to review rather than as the current recommendation."
+        note="Candidate papers from the broader search, ranked as inputs to review, not as the recommendation."
         title="Discovery"
       />
 

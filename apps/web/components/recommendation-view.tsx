@@ -203,7 +203,7 @@ export function RecommendationView(props: { domains: DecisionDomainData[]; domai
 
       <Crumbs foot items={detailLinks} />
 
-      <Footnote>Scoped to the reviewed literature slice. Not experimental validation.</Footnote>
+      <Footnote>Scoped to the reviewed literature slice, not to experimental validation.</Footnote>
     </>
   );
 }

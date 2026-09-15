@@ -312,7 +312,7 @@ export const hepatocytes: DomainDefinition<"hepatocytes"> = {
 
   console: {
     shortLabel: "Hepatocytes",
-    strapline: "Transplant- and drug-metabolism-relevant cell-suspension cryopreservation; benchmark still provisional.",
+    strapline: "Cell-suspension cryopreservation for transplant and drug metabolism; benchmark provisional.",
     accent: "#7c6cd6",
     accentSoft: "rgba(124, 108, 214, 0.18)"
   },

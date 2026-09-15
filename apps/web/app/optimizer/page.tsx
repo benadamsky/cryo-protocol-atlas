@@ -10,7 +10,7 @@ export default async function OptimizerPage() {
 
   return (
     <>
-      <PageHeader note="The mutable discovery policy, its latest evaluation, and the most recent bounded optimizer run." title="Optimizer" />
+      <PageHeader note="The discovery policy, its latest evaluation, and the last optimizer run." title="Optimizer" />
 
       <Facts
         items={[

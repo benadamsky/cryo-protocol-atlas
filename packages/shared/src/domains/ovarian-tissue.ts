@@ -267,7 +267,7 @@ export const ovarianTissue: DomainDefinition<"ovarian-tissue"> = {
 
   console: {
     shortLabel: "Ovarian",
-    strapline: "Fertility-preservation tissue workflows with unresolved depth gaps.",
+    strapline: "Fertility-preservation tissue workflows; benchmark depth still thin.",
     accent: "#e36b4a",
     accentSoft: "rgba(227, 107, 74, 0.18)",
     plainWedgeSummary:
