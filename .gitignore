@@ -5,3 +5,5 @@ node_modules
 .worktrees
 data/raw/**/*.json
 data/processed/**/*.json
+.vercel
+.env*
