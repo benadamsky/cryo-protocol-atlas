@@ -20,7 +20,10 @@ type DiscoveryFetchResult = {
 const PAGE_SIZE = 50;
 const MAX_PROVIDER_PAGES = readPositiveIntEnv("DISCOVERY_MAX_PROVIDER_PAGES", 5);
 const FETCH_TIMEOUT_MS = readPositiveIntEnv("DISCOVERY_FETCH_TIMEOUT_MS", 15_000);
-const FETCH_RETRY_ATTEMPTS = readPositiveIntEnv("DISCOVERY_FETCH_RETRY_ATTEMPTS", 2);
+const FETCH_RETRY_ATTEMPTS = readPositiveIntEnv("DISCOVERY_FETCH_RETRY_ATTEMPTS", 3);
+// OpenAlex and Crossref rate-limit anonymous clients; pace pages and back off on 429/5xx.
+const PAGE_DELAY_MS = readPositiveIntEnv("DISCOVERY_PAGE_DELAY_MS", 500);
+const RETRY_BASE_DELAY_MS = readPositiveIntEnv("DISCOVERY_RETRY_BASE_DELAY_MS", 2_000);
 
 function readPositiveIntEnv(name: string, fallback: number): number {
   const raw = process.env[name];
@@ -75,6 +78,18 @@ function shouldRetryResponse(status: number): boolean {
   return status === 408 || status === 429 || status >= 500;
 }
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function retryDelayMs(response: Response, attempt: number): number {
+  const retryAfter = Number.parseInt(response.headers.get("retry-after") ?? "", 10);
+  if (Number.isInteger(retryAfter) && retryAfter > 0) {
+    return Math.min(retryAfter * 1_000, 60_000);
+  }
+  return RETRY_BASE_DELAY_MS * attempt;
+}
+
 function describeFetchError(error: unknown): string {
   if (error instanceof Error) {
     if (error.name === "TimeoutError" || error.name === "AbortError") {
@@ -100,6 +115,7 @@ async function fetchJson<T>(url: string): Promise<T> {
         const message = `Request failed: ${response.status} ${response.statusText}`;
         if (attempt < FETCH_RETRY_ATTEMPTS && shouldRetryResponse(response.status)) {
           lastError = message;
+          await sleep(retryDelayMs(response, attempt));
           continue;
         }
         throw new Error(message);
@@ -226,6 +242,7 @@ async function fetchOpenAlex(domain: DomainId): Promise<DiscoveryFetchResult> {
       break;
     }
     page += 1;
+    await sleep(PAGE_DELAY_MS);
   }
 
   return {
@@ -297,6 +314,7 @@ async function fetchCrossref(domain: DomainId): Promise<DiscoveryFetchResult> {
     if (items.length < PAGE_SIZE) {
       break;
     }
+    await sleep(PAGE_DELAY_MS);
   }
 
   return {
@@ -366,6 +384,7 @@ async function fetchEuropePmc(domain: DomainId): Promise<DiscoveryFetchResult> {
     if (results.length < PAGE_SIZE) {
       break;
     }
+    await sleep(PAGE_DELAY_MS);
   }
 
   return {

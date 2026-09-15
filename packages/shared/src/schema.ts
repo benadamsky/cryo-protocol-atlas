@@ -85,6 +85,8 @@ export type DomainPaper = z.infer<typeof DomainPaperSchema>;
 export const DomainSnapshotSchema = z.object({
   generatedAt: z.string(),
   domain: DomainIdSchema,
+  /** Where the corpus came from: the CryoDB listing, or the domain's discovery import files. */
+  corpusSource: z.enum(["cryodb", "imports"]).default("cryodb"),
   totalFetched: z.number(),
   totalMatched: z.number(),
   papers: z.array(DomainPaperSchema)
