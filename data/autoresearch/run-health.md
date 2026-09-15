@@ -1,6 +1,6 @@
 # Autoresearch health
 
-- generated at: 2026-09-15T16:58:12.940Z
+- generated at: 2026-09-15T17:05:13.628Z
 - overall state: needs-attention
 - available domains: 3
 - missing domains: none
@@ -13,7 +13,7 @@
 
 ## Domains
 ### ovarian-tissue
-- state: stalled-human-gate
+- state: stalled-enrichment-gate
 - latest run: 2026-03-26T03:25:34.364Z
 - stop reason: converged
 - cycles completed: 1
@@ -26,7 +26,7 @@
 - best wedge: Head-to-head DMSO-centered ovarian tissue benchmark
 - pain point: 2 relevant papers still have sparse step structure
 - current read: Best current wedge, but still better treated as a proving ground than a committed entry point.
-- alerts: human-gated source enrichment is blocking further autonomous progress | 4 reviewed papers still lack outcome labels | 3 reviewed papers still lack step phases
+- alerts: pending source enrichment is blocking further autonomous progress | 4 reviewed papers still lack outcome labels | 3 reviewed papers still lack step phases
 - artifacts: data/autoresearch/ovarian-tissue/autoresearch-cycles.md, data/autoresearch/ovarian-tissue/unattended-batch.md, data/processed/ovarian-tissue/benchmark-report.md, data/processed/ovarian-tissue/wedge-brief.md, data/processed/ovarian-tissue/call-packet.md
 
 ### Delta (vs. previous run)
@@ -40,7 +40,7 @@
 
 
 ### islets
-- state: stalled-human-gate
+- state: stalled-enrichment-gate
 - latest run: 2026-03-26T03:25:41.659Z
 - stop reason: converged
 - cycles completed: 1
@@ -53,7 +53,7 @@
 - best wedge: Additive-assisted islet recovery benchmark on a fixed base cryomix
 - pain point: Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.
 - current read: Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet.
-- alerts: human-gated source enrichment is blocking further autonomous progress | 5 normalized protocols still carry warnings | 1 reviewed papers still lack step phases
+- alerts: pending source enrichment is blocking further autonomous progress | 5 normalized protocols still carry warnings | 1 reviewed papers still lack step phases
 - artifacts: data/autoresearch/islets/autoresearch-cycles.md, data/autoresearch/islets/unattended-batch.md, data/processed/islets/benchmark-report.md, data/processed/islets/wedge-brief.md, data/processed/islets/call-packet.md
 
 ### Delta (vs. previous run)

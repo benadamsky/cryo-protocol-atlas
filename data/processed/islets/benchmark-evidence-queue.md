@@ -8,7 +8,7 @@ Tighten outcome extraction or promotion policy; current source likely already co
 - none
 
 ## Ambiguous evidence
-Needs manual review or fuller source text before benchmark promotion.
+Needs fuller source text or an LLM enrichment pass before benchmark promotion.
 - none
 
 ## Evidence-thin

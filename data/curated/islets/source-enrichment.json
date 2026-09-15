@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T20:34:02.980Z",
+  "generatedAt": "2026-09-15T17:05:12.934Z",
   "domain": "islets",
   "records": [
     {
@@ -623,7 +623,7 @@
       "doi": "10.1016/s0041-1345(01)02875-5",
       "priority": "step-phase-manual",
       "status": "pending",
-      "rationale": "Step phases for \"Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets\" still require manual or fuller-source confirmation before benchmark promotion.",
+      "rationale": "Step phases for \"Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets\" still require fuller-source confirmation before benchmark promotion.",
       "excerpts": []
     }
   ]

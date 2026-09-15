@@ -501,7 +501,7 @@ function buildGates(reviewed: BenchmarkSubsetMetrics): BenchmarkGate[] {
       actual: reviewed.setFields.specimenTypes.averageF1,
       threshold: 0.75,
       comparator: ">=",
-      notes: "Specimen context must remain anchored to the ovarian-tissue slice."
+      notes: "Specimen context must remain anchored to the domain slice."
     },
     {
       name: "reviewed species macro F1",

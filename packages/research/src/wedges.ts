@@ -692,7 +692,7 @@ export function buildOpportunityScan(entries: DomainWedgeBrief[]): OpportunitySc
             ? `Pressure-test "${entry.nextExperiments[0].title}" as the next wedge-defining experiment.`
             : entry.evidenceQuality.pendingSourceEnrichmentCount > 0
               ? "Do reviewed source enrichment on the highest-value DOI-backed evidence gaps."
-              : "Pressure-test the active wedge against a sharper human review."
+              : "Pressure-test the active wedge against a sharper enrichment pass."
       };
     })
     .sort((left, right) => right.readinessScore - left.readinessScore || right.evidenceScore - left.evidenceScore);

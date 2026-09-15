@@ -9,5 +9,5 @@
 ## Evidence-thin
 - none
 
-## Step-phase manual review
+## Step-phase confirmation
 - none

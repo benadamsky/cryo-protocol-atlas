@@ -2,7 +2,7 @@
   "domain": "hepatocytes",
   "baseline": {
     "domain": "hepatocytes",
-    "generatedAt": "2026-09-15T16:58:10.010Z",
+    "generatedAt": "2026-09-15T17:05:13.161Z",
     "benchmarkDescription": "Seed benchmark for the hepatocytes atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 306,
     "subsets": {
@@ -388,7 +388,7 @@
         "actual": 0,
         "threshold": 0.75,
         "comparator": ">=",
-        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+        "notes": "Specimen context must remain anchored to the domain slice."
       },
       {
         "name": "reviewed species macro F1",
@@ -409,7 +409,7 @@
   },
   "resolved": {
     "domain": "hepatocytes",
-    "generatedAt": "2026-09-15T16:58:10.016Z",
+    "generatedAt": "2026-09-15T17:05:13.166Z",
     "benchmarkDescription": "Seed benchmark for the hepatocytes atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 306,
     "subsets": {
@@ -795,7 +795,7 @@
         "actual": 0,
         "threshold": 0.75,
         "comparator": ">=",
-        "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+        "notes": "Specimen context must remain anchored to the domain slice."
       },
       {
         "name": "reviewed species macro F1",

@@ -12,7 +12,7 @@ type CycleStopReason =
   | "unsafe-override-proposals"
   | "max-cycles-reached";
 
-type HealthState = "healthy" | "stalled-human-gate" | "needs-attention";
+type HealthState = "healthy" | "stalled-enrichment-gate" | "needs-attention";
 
 type AutoresearchCycles = {
   generatedAt: string;
@@ -185,7 +185,7 @@ function buildAlerts(input: {
     alerts.push("override proposals exist but are not auto-apply safe");
   }
   if (input.batch.pendingSourceEnrichmentCount > 0) {
-    alerts.push("human-gated source enrichment is blocking further autonomous progress");
+    alerts.push("pending source enrichment is blocking further autonomous progress");
   }
   if (input.batch.protocolsWithNormalizationWarnings > 0) {
     alerts.push(`${input.batch.protocolsWithNormalizationWarnings} normalized protocols still carry warnings`);
@@ -219,7 +219,7 @@ function determineHealthState(input: {
     input.batch.pendingSourceEnrichmentCount > 0 ||
     input.cycles.stopReason === "pending-source-enrichment"
   ) {
-    return "stalled-human-gate";
+    return "stalled-enrichment-gate";
   }
 
   return "healthy";
@@ -233,9 +233,9 @@ function buildRecommendations(domains: DomainRunHealth[]): string[] {
     );
   }
 
-  const humanGateBlocked = domains.filter((domain) => domain.pendingSourceEnrichmentCount > 0);
-  if (humanGateBlocked.length > 0) {
-    return humanGateBlocked.map(
+  const enrichmentBlocked = domains.filter((domain) => domain.pendingSourceEnrichmentCount > 0);
+  if (enrichmentBlocked.length > 0) {
+    return enrichmentBlocked.map(
       (domain) =>
         `${domain.domain}: next progress depends on clearing ${domain.pendingSourceEnrichmentCount} pending source-enrichment records`
     );
@@ -392,8 +392,8 @@ async function main(): Promise<void> {
 
   const overallState: HealthState = domains.some((domain) => domain.healthState === "needs-attention")
     ? "needs-attention"
-    : domains.some((domain) => domain.healthState === "stalled-human-gate")
-      ? "stalled-human-gate"
+    : domains.some((domain) => domain.healthState === "stalled-enrichment-gate")
+      ? "stalled-enrichment-gate"
       : "healthy";
 
   const report: RunHealthReport = {

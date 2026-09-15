@@ -77,8 +77,8 @@ export function accessLabel(value: string) {
 export function humanizeSystemState(value: string) {
   const normalized = value.toLowerCase();
 
-  if (normalized === "stalled-human-gate") {
-    return "waiting on reviewed source evidence";
+  if (normalized === "stalled-enrichment-gate") {
+    return "waiting on source enrichment";
   }
 
   return value.replace(/[-_]/g, " ");

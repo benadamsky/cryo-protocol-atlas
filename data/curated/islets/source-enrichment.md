@@ -114,8 +114,8 @@
   reviewerNotes=Reviewed from the accessible PubMed abstract on 2026-03-23. The abstract explicitly supports in vitro function and transplantation relevance for PEG relative to the standard dimethyl sulfoxide procedure.
   reviewedExcerpts=3
 
-## Step-phase manual review
+## Step-phase confirmation
 - [pending] Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets
   paperId=5f8b44a6-e05c-4bdd-ac73-18c0411696dc
-  rationale=Step phases for "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets" still require manual or fuller-source confirmation before benchmark promotion.
+  rationale=Step phases for "Effects of Encapsulation on In Vitro Function of Cryopreserved Rat Islets" still require fuller-source confirmation before benchmark promotion.
   doi=10.1016/s0041-1345(01)02875-5

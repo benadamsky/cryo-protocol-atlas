@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T16:58:12.940Z",
+  "generatedAt": "2026-09-15T17:05:13.628Z",
   "overallState": "needs-attention",
   "availableDomainCount": 3,
   "missingDomains": [],
@@ -10,7 +10,7 @@
     {
       "domain": "ovarian-tissue",
       "latestRunGeneratedAt": "2026-03-26T03:25:34.364Z",
-      "healthState": "stalled-human-gate",
+      "healthState": "stalled-enrichment-gate",
       "stopReason": "converged",
       "cyclesCompleted": 1,
       "passesAllGates": true,
@@ -39,7 +39,7 @@
       "currentRead": "Best current wedge, but still better treated as a proving ground than a committed entry point.",
       "likelyPainPoint": "2 relevant papers still have sparse step structure",
       "alerts": [
-        "human-gated source enrichment is blocking further autonomous progress",
+        "pending source enrichment is blocking further autonomous progress",
         "4 reviewed papers still lack outcome labels",
         "3 reviewed papers still lack step phases"
       ],
@@ -96,7 +96,7 @@
     {
       "domain": "islets",
       "latestRunGeneratedAt": "2026-03-26T03:25:41.659Z",
-      "healthState": "stalled-human-gate",
+      "healthState": "stalled-enrichment-gate",
       "stopReason": "converged",
       "cyclesCompleted": 1,
       "passesAllGates": true,
@@ -125,7 +125,7 @@
       "currentRead": "Best current wedge in islets. The literature is strong enough to justify a focused additive benchmark, but not strong enough to claim a winning adjunct yet.",
       "likelyPainPoint": "Adjunct compounds recur in the literature, but they are not benchmarked head-to-head on a fixed base cryomix.",
       "alerts": [
-        "human-gated source enrichment is blocking further autonomous progress",
+        "pending source enrichment is blocking further autonomous progress",
         "5 normalized protocols still carry warnings",
         "1 reviewed papers still lack step phases"
       ],

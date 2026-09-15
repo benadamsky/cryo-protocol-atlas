@@ -1,41 +1,38 @@
-# Web Atlas
+# Atlas console
 
-`apps/web` now contains the richer internal atlas console for Cryo Protocol Atlas.
+`apps/web` is the read-only Next.js console over the artifacts checked in under `data/`. It has no backend and never mutates data; every page reads JSON from the repo at build time through `lib/data.ts` and `lib/decision-data.ts`. Domains come from the registry in `packages/shared/src/domains/`, so a new domain shows up in every tab once its artifacts exist.
 
-Current boundary:
+## Routes
 
-- read-only UI
-- file-backed artifact reads
-- falls back from the `web-atlas` worktree to the primary checkout artifact tree
-- optimized for benchmark inspection, demo readiness, normalization debugging, and run-health visibility
+- `/`: the recommendation for the lead domain (the one whose wedge scores highest today)
+- `/domains/[domain]`: the same recommendation view for any domain
+- `/domains/[domain]/atlas`: the wedge benchmark matrix
+- `/domains/[domain]/benchmark`: benchmark gates, gold-set counts, and the review queue
+- `/domains/[domain]/review`: evidence gaps, source-enrichment backlog, and contradictions
+- `/wedges`: one row per domain, lead first
+- `/experiments`: every experiment packet across domains
+- `/evidence`: evidence gaps and contradictions across domains, ordered by impact
+- `/discovery` and `/discovery/[domain]`: the discovery lane (candidate papers, promotion queue, packet)
+- `/compare`, `/history`, `/optimizer`, `/debug`, `/domains/[domain]/debug`: internal views, only linked when `NODE_ENV !== "production"` (`lib/runtime-flags.ts`)
 
-Primary routes in the Next.js console:
+## Layout
 
-- `/`
-- `/domains/[domain]`
-- `/domains/[domain]/atlas`
-- `/domains/[domain]/benchmark`
-- `/domains/[domain]/review`
-- `/domains/[domain]/debug`
+- `app/`: the routes above; `layout.tsx` loads IBM Plex and wraps everything in `Shell`
+- `components/atlas-ui.tsx`: the shared primitives (`Shell`, `PageHeader`, `DomainTabs`, `Section`, `Facts`, `Funnel`, `Status`, `Tag`, `Table`, `Defs`, `Packet`, `Crumbs`, `Footnote`, `PaperLink`, `ArtifactList`, `RawJson`)
+- `components/primary-nav.tsx`: the top nav; `domain-crumbs.tsx`: per-domain sub-navigation
+- `components/recommendation-view.tsx` and `discovery-view.tsx`: the two views shared between the lead-domain route and the per-domain route
+- `components/truncated.tsx`: collapses long tables past a limit
+- `lib/data.ts`: schema-validated readers for every artifact; `lib/decision-data.ts`: the recommendation model built from them
+- `lib/domain.ts`: domain order and console metadata from the registry; `lib/ui-copy.ts`: labels and plain-English copy; `lib/paper-links.ts`: DOI, PMC, and PubMed links; `lib/discovery-queue.ts` and `lib/discovery-tabs.ts`: discovery page helpers
+- `app/globals.css`: the one stylesheet
 
-Related repo artifacts:
-
-- `bun run health-report` writes `data/autoresearch/run-health.{json,md}`
-- the same command refreshes `apps/web/dashboard-data.json`
-- `bun run cycles:all` refreshes the health report automatically after both domain loops complete
-
-The dashboard remains read-only. It is a thin wrapper over repo artifacts rather than a separate backend or control plane.
-
-For the Next.js app:
+## Run it
 
 ```bash
-cd apps/web
 bun install
-bun run dev
+bun run web          # from the repo root, http://localhost:3000
+bun run web:build
+bun run web:typecheck
 ```
 
-For a quick static preview of the simpler generated dashboard assets:
-
-```bash
-python3 -m http.server -d apps/web 4173
-```
+Vercel builds from this directory (project root directory `apps/web`); `next.config.mjs` sets `outputFileTracingRoot` to the repo root so `data/` and `packages/` are available at build time.

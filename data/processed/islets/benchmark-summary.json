@@ -1,6 +1,6 @@
 {
   "domain": "islets",
-  "generatedAt": "2026-09-15T16:50:33.732Z",
+  "generatedAt": "2026-09-15T17:05:12.742Z",
   "benchmarkDescription": "Seed benchmark for the islets atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
   "benchmarkEntryCount": 53,
   "subsets": {
@@ -496,7 +496,7 @@
       "actual": 1,
       "threshold": 0.75,
       "comparator": ">=",
-      "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
+      "notes": "Specimen context must remain anchored to the domain slice."
     },
     {
       "name": "reviewed species macro F1",

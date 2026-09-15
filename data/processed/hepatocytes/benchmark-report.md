@@ -42,7 +42,7 @@ All gates passed: no
 - reviewed paper type accuracy: fail (actual=0 >= threshold=0.85)
   Paper-type drift is a common failure mode when extraction gets too eager.
 - reviewed specimen macro F1: fail (actual=0 >= threshold=0.75)
-  Specimen context must remain anchored to the ovarian-tissue slice.
+  Specimen context must remain anchored to the domain slice.
 - reviewed species macro F1: fail (actual=0 >= threshold=0.75)
   Species leakage is another easy way for the system to look cleaner than it is.
 

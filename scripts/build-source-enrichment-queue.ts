@@ -83,7 +83,7 @@ function defaultRationale(priority: SourceEnrichmentPriority, title: string): st
     case "evidence-thin":
       return `Current title/abstract for "${title}" is mostly procedural. Enrich only if fuller source text is available; otherwise keep unlabeled.`;
     case "step-phase-manual":
-      return `Step phases for "${title}" still require manual or fuller-source confirmation before benchmark promotion.`;
+      return `Step phases for "${title}" still require fuller-source confirmation before benchmark promotion.`;
   }
 }
 
@@ -109,7 +109,7 @@ function renderMarkdown(domainId: DomainId, enrichmentFile: SourceEnrichmentFile
     { priority: "extractor-gap", title: "Extractor gaps" },
     { priority: "ambiguous-evidence", title: "Ambiguous evidence" },
     { priority: "evidence-thin", title: "Evidence-thin" },
-    { priority: "step-phase-manual", title: "Step-phase manual review" }
+    { priority: "step-phase-manual", title: "Step-phase confirmation" }
   ];
 
   for (const group of groups) {

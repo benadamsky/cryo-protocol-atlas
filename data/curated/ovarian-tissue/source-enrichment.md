@@ -20,5 +20,5 @@
   paperId=f45485d1-4ae1-4952-87f5-c42f47e5d445
   rationale=no resolved extraction available for this reviewed paper
 
-## Step-phase manual review
+## Step-phase confirmation
 - none

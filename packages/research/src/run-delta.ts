@@ -258,7 +258,7 @@ export function renderRunDeltaMarkdown(delta: RunDelta): string {
     lines.push(`  llm drafts: ${delta.enrichmentDelta.llmDraftsGenerated} generated, ${delta.enrichmentDelta.llmAutoTriaged} auto-triaged`);
   }
   if (delta.enrichmentDelta.decisionChangingPending > 0) {
-    lines.push(`  decision-changing records still pending human review: ${delta.enrichmentDelta.decisionChangingPending}`);
+    lines.push(`  decision-changing records still pending enrichment review: ${delta.enrichmentDelta.decisionChangingPending}`);
   }
 
   lines.push(`- summary: ${delta.summary}`);

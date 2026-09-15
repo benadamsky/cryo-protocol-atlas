@@ -1,6 +1,6 @@
 # Cryo Protocol Atlas
 
-Cryo Protocol Atlas reads cryopreservation papers and turns them into structured protocol evidence, then uses that evidence to pick the one experiment most worth running next. It covers two domains, pancreatic islets and ovarian tissue, and stays deliberately conservative about what the literature does and does not support.
+Cryo Protocol Atlas reads cryopreservation papers and turns them into structured protocol evidence, then uses that evidence to pick the one experiment most worth running next. It covers three domains, pancreatic islets, ovarian tissue, and hepatocytes, and stays deliberately conservative about what the literature does and does not support.
 
 ![Atlas console, islets recommendation](docs/console.png)
 
@@ -21,7 +21,7 @@ Proposed next test: a fixed-backbone additive benchmark with p38 MAPK inhibitor,
 Evidence behind that call:
 
 - 3,157 papers fetched from CryoDB, 53 matched to the islets domain, 46 normalized protocols
-- 53 benchmark entries, 49 of them human-reviewed; all six reviewed gates pass
+- 53 benchmark entries, 49 of them reviewed by the pipeline; all six reviewed gates pass
 - 6 papers directly relevant to the wedge: 2 primary-backed, 2 human-relevant, 4 abstract-only
 - strongest signals: polyvinyl pyrrolidone (primary-backed, rat) and a p38 MAPK inhibitor (primary-backed, human)
 - evidence confidence 0.79, scientific relevance 0.89, translational potential 0.73
@@ -30,14 +30,18 @@ The read is that the literature justifies a focused additive benchmark. It does 
 
 Ovarian tissue is the comparison domain. Its wedge is a head-to-head DMSO-centered benchmark, but reviewed outcome coverage there is 0.43, so treat it as a proposal rather than a call.
 
+Hepatocytes is the newest domain (September 2026) and is provisional. Its corpus is 306 PubMed papers that passed the cryo filter (CryoDB was offline when it was built), none of its benchmark rows are reviewed yet, and the pipeline's first wedge, an additive-assisted attachment and function benchmark on a fixed DMSO-centered mix, carries an evidence confidence of 0.09. It is there to show the registry working end to end, not to be acted on.
+
 ## Truth boundary
 
 Atlas is designed to stay conservative.
 
-- Reviewed evidence is the basis of wedge truth.
+Nothing in this repository is human-reviewed. "Reviewed" means pipeline-reviewed: a benchmark row counts as reviewed when the pipeline has a curated override for it, and a source-enrichment record counts as reviewed when the scripts and the LLM enrichment step have attached excerpts to it and re-scored the row against the benchmark gates. The gold sets, the reviewed trust rows, and the source-enrichment records are all produced that way.
+
+- Pipeline-reviewed evidence is the basis of wedge truth.
 - Seeded and abstract-only evidence can inform prioritization, but should not be overread.
 - Discovery outputs are additive and downstream.
-- LLM-assisted drafting may help triage or prefill structured artifacts, but it does not automatically become reviewed truth.
+- LLM enrichment drafts are triaged before they count as reviewed; auto-triage is off until the drafts clear an F1 of 0.85 against existing reviewed records.
 - Recommendation confidence is always scoped to the current reviewed slice, not experimental validation.
 
 Atlas is not a discovery engine, an autonomous science system, a molecule-design platform, a wet-lab automation platform, or a source of validated biological truth beyond the reviewed slice.
@@ -52,7 +56,7 @@ bun run web          # Next.js console at http://localhost:3000
 bun run web:build    # production build
 ```
 
-Every pipeline script takes the domain id as its argument (`bun run list-domains` prints them):
+Every pipeline script takes the domain id as its argument (`bun run list-domains` prints them). CryoDB (`cryodb.replit.app`) has been offline since September 2026; `bun run fetch-pubmed <domain>` followed by `bun run ingest <domain> --corpus imports` builds the corpus from PubMed instead, which is how the hepatocytes slice was made.
 
 ```bash
 bun run ingest islets        # refresh the corpus from CryoDB (network)
@@ -84,7 +88,7 @@ bun run test:optimizer
 
 Optional environment variables, none needed for the web app or the checked-in artifacts:
 
-- `ANTHROPIC_API_KEY` lets `scripts/validate-llm-enrichment.ts` draft source-enrichment records with Claude. Without it the step is skipped.
+- `ANTHROPIC_API_KEY` lets `bun run enrich-sources <domain>` (run inside every batch) draft source-enrichment records with Claude, and `bun run validate-llm-enrichment <domain>` score those drafts against records that already carry excerpts. Without it both steps are skipped.
 - `ENABLE_LLM_AUTO_TRIAGE=true` lets those drafts be applied automatically. Off by default and meant to stay off until the drafts clear an F1 of 0.85 on reviewed records.
 - `DISCOVERY_LIVE_PROVIDERS` narrows discovery to a comma-separated subset of `cryodb,openalex,crossref,europe-pmc`.
 - `ALLOW_ENRICHMENT_PENDING=true` lets a cycle run while source-enrichment records are still pending review.
@@ -95,7 +99,7 @@ For each domain:
 
 1. ingest and refresh literature
 2. extract protocol evidence into structured artifacts
-3. evaluate against the reviewed benchmark
+3. evaluate against the pipeline-reviewed benchmark
 4. select the active wedge
 5. build the wedge matrix, evidence gap queue, contradiction report, and experiment packets
 6. run a bounded conservative loop to improve the current slice
@@ -112,7 +116,7 @@ The main outputs per domain live in `data/processed/<domain>/`:
 - `wedge-brief.{json,md}`: domain strategy summary
 - `call-packet.{json,md}`: one-page discussion artifact
 
-`data/processed/opportunity-scan.{json,md}` compares the two domains.
+`data/processed/opportunity-scan.{json,md}` compares the domains.
 
 ## Layout
 

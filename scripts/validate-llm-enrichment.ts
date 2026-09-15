@@ -2,7 +2,7 @@
  * Validation script for LLM enrichment auto-triage.
  *
  * Runs LLM drafting against the reviewed islet enrichment records and
- * compares the drafts to the human-reviewed excerpts. Reports agreement
+ * compares the drafts to the excerpts already on reviewed records. Reports agreement
  * rates per signal category so we can decide which fields (if any) are
  * safe for auto-triage.
  *
@@ -64,7 +64,7 @@ function combineExcerptText(excerpts: Array<{ text: string; label: string }>): s
 type PerRecordResult = {
   paperId: string;
   title: string;
-  humanSignals: SignalCategory[];
+  reviewedSignals: SignalCategory[];
   llmSignals: SignalCategory[];
   matchedSignals: SignalCategory[];
   missedSignals: SignalCategory[];
@@ -73,20 +73,20 @@ type PerRecordResult = {
   recall: number;
   f1: number;
   llmExcerptCount: number;
-  humanExcerptCount: number;
+  reviewedExcerptCount: number;
   llmConfidence: number;
 };
 
 function computeAgreement(
-  humanSignals: Set<SignalCategory>,
+  reviewedSignals: Set<SignalCategory>,
   llmSignals: Set<SignalCategory>
 ): { matched: SignalCategory[]; missed: SignalCategory[]; hallucinated: SignalCategory[]; precision: number; recall: number; f1: number } {
-  const matched = [...humanSignals].filter((s) => llmSignals.has(s));
-  const missed = [...humanSignals].filter((s) => !llmSignals.has(s));
-  const hallucinated = [...llmSignals].filter((s) => !humanSignals.has(s));
+  const matched = [...reviewedSignals].filter((s) => llmSignals.has(s));
+  const missed = [...reviewedSignals].filter((s) => !llmSignals.has(s));
+  const hallucinated = [...llmSignals].filter((s) => !reviewedSignals.has(s));
 
   const precision = llmSignals.size === 0 ? 0 : matched.length / llmSignals.size;
-  const recall = humanSignals.size === 0 ? 1 : matched.length / humanSignals.size;
+  const recall = reviewedSignals.size === 0 ? 1 : matched.length / reviewedSignals.size;
   const f1 = precision + recall === 0 ? 0 : (2 * precision * recall) / (precision + recall);
 
   return { matched, missed, hallucinated, precision, recall, f1 };
@@ -149,8 +149,8 @@ async function main(selectedDomain: DomainId): Promise<void> {
 
   for (const record of reviewedRecords) {
     const result = resultByPaperId.get(record.paperId);
-    const humanText = combineExcerptText(record.excerpts);
-    const humanSignals = extractSignals(humanText);
+    const reviewedText = combineExcerptText(record.excerpts);
+    const reviewedSignals = extractSignals(reviewedText);
 
     let llmSignals: Set<SignalCategory>;
     let llmExcerptCount: number;
@@ -167,21 +167,21 @@ async function main(selectedDomain: DomainId): Promise<void> {
       llmConfidence = 0;
     }
 
-    const agreement = computeAgreement(humanSignals, llmSignals);
+    const agreement = computeAgreement(reviewedSignals, llmSignals);
 
     // Accumulate per-category stats
     for (const category of Object.keys(categoryTotals) as SignalCategory[]) {
-      const humanHas = humanSignals.has(category);
+      const reviewedHas = reviewedSignals.has(category);
       const llmHas = llmSignals.has(category);
-      if (humanHas && llmHas) categoryTotals[category].tp += 1;
-      if (!humanHas && llmHas) categoryTotals[category].fp += 1;
-      if (humanHas && !llmHas) categoryTotals[category].fn += 1;
+      if (reviewedHas && llmHas) categoryTotals[category].tp += 1;
+      if (!reviewedHas && llmHas) categoryTotals[category].fp += 1;
+      if (reviewedHas && !llmHas) categoryTotals[category].fn += 1;
     }
 
     perRecord.push({
       paperId: record.paperId,
       title: record.title.slice(0, 70),
-      humanSignals: [...humanSignals],
+      reviewedSignals: [...reviewedSignals],
       llmSignals: [...llmSignals],
       matchedSignals: agreement.matched,
       missedSignals: agreement.missed,
@@ -190,7 +190,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
       recall: Number(agreement.recall.toFixed(3)),
       f1: Number(agreement.f1.toFixed(3)),
       llmExcerptCount,
-      humanExcerptCount: record.excerpts.length,
+      reviewedExcerptCount: record.excerpts.length,
       llmConfidence
     });
   }
@@ -199,9 +199,9 @@ async function main(selectedDomain: DomainId): Promise<void> {
   console.log("## Per-record results\n");
   for (const r of perRecord) {
     console.log(`${r.title}`);
-    console.log(`  human=${r.humanSignals.join(",")} | llm=${r.llmSignals.join(",")}`);
+    console.log(`  reviewed=${r.reviewedSignals.join(",")} | llm=${r.llmSignals.join(",")}`);
     console.log(`  matched=${r.matchedSignals.join(",") || "none"} | missed=${r.missedSignals.join(",") || "none"} | hallucinated=${r.hallucinatedSignals.join(",") || "none"}`);
-    console.log(`  precision=${r.precision} recall=${r.recall} f1=${r.f1} | excerpts: human=${r.humanExcerptCount} llm=${r.llmExcerptCount} | confidence=${r.llmConfidence}`);
+    console.log(`  precision=${r.precision} recall=${r.recall} f1=${r.f1} | excerpts: reviewed=${r.reviewedExcerptCount} llm=${r.llmExcerptCount} | confidence=${r.llmConfidence}`);
     console.log();
   }
 
@@ -246,7 +246,7 @@ async function main(selectedDomain: DomainId): Promise<void> {
   if (clearingCategories.length === 0) {
     console.log("No signal categories cleared the 0.85 F1 threshold.");
     console.log("Auto-triage should remain DISABLED for all fields.");
-    console.log("LLM drafts can still be used as review aids (pre-filled for human inspection).");
+    console.log("LLM drafts can still be attached to records as enrichment aids; they do not count as reviewed until triage passes.");
   } else {
     console.log(`The following categories cleared 0.85 F1: ${clearingCategories.join(", ")}`);
     console.log("Auto-triage COULD be enabled for these narrow categories only,");

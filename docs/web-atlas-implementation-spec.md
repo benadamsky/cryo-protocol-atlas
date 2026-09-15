@@ -34,7 +34,7 @@ The current repo already has the right truth model:
 - scripts generate deterministic artifacts
 - schemas validate the artifact shape
 - reviewed benchmark entries define quality gates
-- source enrichment remains human-reviewed
+- source enrichment records are curated by the pipeline and the LLM enrichment step; nothing is human-reviewed
 
 The web app should preserve that structure. It should visualize current state, not mutate it.
 
@@ -218,7 +218,7 @@ Primary data:
 
 Purpose:
 
-- human review backlog surface
+- source-enrichment backlog surface
 
 Content:
 

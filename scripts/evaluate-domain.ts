@@ -288,7 +288,7 @@ function renderEvidenceResolutionQueue(analysis: BenchmarkAnalysis): string {
     {
       title: "Ambiguous evidence",
       items: analysis.reviewedDepth.missingOutcomes.filter((entry) => entry.evidenceStatus === "ambiguous-evidence"),
-      recommendation: "Needs manual review or fuller source text before benchmark promotion."
+      recommendation: "Needs fuller source text or an LLM enrichment pass before benchmark promotion."
     },
     {
       title: "Evidence-thin",
