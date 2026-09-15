@@ -1,3 +1,4 @@
+import { getDomain } from "../../shared/src/domains/index.js";
 import {
   type CryoPaper,
   type DomainId,
@@ -42,8 +43,7 @@ export function buildAugmentedSourceText(
     ...reviewedExcerpts.map((excerpt) => `${excerpt.label}: ${excerpt.text}`)
   ].filter((part) => part.trim().length > 0);
 
-  const prefix = domain === "islets" ? "Islet source context" : "Ovarian source context";
-  return `${prefix}. ${parts.join(" ")}`;
+  return `${getDomain(domain).extraction.sourceContextPrefix}. ${parts.join(" ")}`;
 }
 
 export function enrichmentEvidenceSnippets(

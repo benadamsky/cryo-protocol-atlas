@@ -1,3 +1,4 @@
+import { getDomain } from "../../shared/src/domains/index.js";
 import {
   ResearchHypothesisSchema,
   type Contradiction,
@@ -98,7 +99,7 @@ function blockersFor(
     blockers.push("Scale-up evidence is still light on strong post-warm outcomes");
   }
 
-  if (domain === "islets" && suggestion.category === "benchmark") {
+  if (getDomain(domain).research.benchmarkNeedsBothFamilies && suggestion.category === "benchmark") {
     const vitrificationCount = relevant.filter((extraction) => extraction.protocolFamily === "vitrification").length;
     const slowFreezingCount = relevant.filter((extraction) => extraction.protocolFamily === "slow-freezing").length;
     if (vitrificationCount === 0 || slowFreezingCount === 0) {

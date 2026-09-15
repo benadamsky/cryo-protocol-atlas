@@ -1132,7 +1132,7 @@ function deriveOverviewCardFromCommittedArtifacts(
   const marketSignal =
     (/transplant|clinical|bank|fertility|workflow|buyer|user/.test(marketBridgeText) ? 0.18 : 0) +
     (/standardization|adjacent|human|trial|platform|scale/.test(marketBridgeText) ? 0.12 : 0) +
-    (domain === "islets" ? 0.08 : 0);
+    meta.commercialSignalBonus;
 
   return {
     domain,

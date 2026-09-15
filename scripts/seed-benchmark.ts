@@ -1,9 +1,9 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { applyProtocolOverrides, parseOverrideFile } from "../packages/normalize/src/overrides.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   BenchmarkFileSchema,
-  DomainIdSchema,
   ExtractionSnapshotSchema,
   type ExtractionSnapshot,
   type BenchmarkEntry,
@@ -13,7 +13,7 @@ import {
   type ProtocolOverride
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "seed-benchmark <domain>");
 
 function uniqueSorted(values: string[]): string[] {
   return Array.from(new Set(values.map((value) => value.trim()).filter(Boolean))).sort((a, b) =>

@@ -64,10 +64,10 @@ jobs:
         run: |
           echo "# Discovery refresh" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          cat data/discovery/ovarian-tissue/import-summary.md >> "$GITHUB_STEP_SUMMARY"
-          cat data/discovery/ovarian-tissue/promotion-review-packet.md >> "$GITHUB_STEP_SUMMARY"
-          cat data/discovery/islets/import-summary.md >> "$GITHUB_STEP_SUMMARY"
-          cat data/discovery/islets/promotion-review-packet.md >> "$GITHUB_STEP_SUMMARY"
+          for domain in $(bun run --silent list-domains); do
+            cat "data/discovery/${domain}/import-summary.md" >> "$GITHUB_STEP_SUMMARY"
+            cat "data/discovery/${domain}/promotion-review-packet.md" >> "$GITHUB_STEP_SUMMARY"
+          done
 
       - name: Create Discovery Refresh Pull Request
         uses: peter-evans/create-pull-request@v7

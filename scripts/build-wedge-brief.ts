@@ -1,9 +1,9 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   ActiveWedgeSchema,
   BenchmarkFileSchema,
-  DomainIdSchema,
   ExperimentPacketFileSchema,
   ExtractionSnapshotSchema,
   NormalizedProtocolSnapshotSchema,
@@ -16,7 +16,7 @@ import {
 import type { AtlasSummary } from "../packages/research/src/atlas.js";
 import { buildDomainWedgeBrief, renderDomainWedgeBriefMarkdown } from "../packages/research/src/wedges.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "build-wedge-brief <domain>");
 
 type BenchmarkAnalysis = {
   domain: string;

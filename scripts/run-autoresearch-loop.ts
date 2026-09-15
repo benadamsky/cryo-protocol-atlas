@@ -2,14 +2,14 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { mergeProtocolOverrides, parseOverrideFile } from "../packages/normalize/src/overrides.js";
 import { runAutoresearchLoop } from "../packages/research/src/autoresearch.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   BenchmarkFileSchema,
-  DomainIdSchema,
   ExtractionSnapshotSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "run-autoresearch-loop <domain>");
 const applyChanges = process.argv.includes("--apply");
 
 async function readOptionalFile(path: string): Promise<string | null> {
@@ -180,6 +180,7 @@ async function main(selectedDomain: DomainId, shouldApply: boolean): Promise<voi
 
   if (shouldApply && result.autoApplySafe && result.proposalFile.proposals.length > 0) {
     const nextOverrideFile = mergeProtocolOverrides(
+      selectedDomain,
       overrideFile,
       result.proposalFile.proposals
         .map((proposal) => proposal.override)

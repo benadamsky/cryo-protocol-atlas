@@ -1,13 +1,13 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { buildNormalizedProtocolSnapshot, renderNormalizedProtocolReport } from "../packages/normalize/src/canonical-protocols.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
-  DomainIdSchema,
   ExtractionSnapshotSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "build-normalized-protocols <domain>");
 
 async function main(selectedDomain: DomainId): Promise<void> {
   const processedDir = join(process.cwd(), "data", "processed", selectedDomain);

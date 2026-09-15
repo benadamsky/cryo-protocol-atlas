@@ -1,5 +1,6 @@
 import type { DomainWedgeBrief, OpportunityScanEntry } from "./wedges.js";
-import type { WedgeBenchmarkMatrix } from "../../shared/src/schema.js";
+import { getDomain } from "../../shared/src/domains/index.js";
+import type { DomainId, WedgeBenchmarkMatrix } from "../../shared/src/schema.js";
 
 export type DomainCallPacket = {
   domain: string;
@@ -52,11 +53,8 @@ export type DomainCallPacket = {
     };
   };
 
-function commercialBuyerHint(domain: string): string {
-  if (domain === "islets") {
-    return "transplant researchers, islet-banking teams, and cell-therapy groups trying to standardize post-thaw recovery";
-  }
-  return "fertility preservation, ovarian tissue banking, and transplant-adjacent preservation groups";
+function commercialBuyerHint(domain: DomainId): string {
+  return getDomain(domain).research.likelyBuyers;
 }
 
 function wedgePainPoint(title: string, fallback: string): string {
@@ -107,10 +105,7 @@ export function buildDomainCallPacket(input: {
 
   return {
     domain: brief.domain,
-    title:
-      brief.domain === "islets"
-        ? "Islets wedge call packet"
-        : `${brief.domain} wedge call packet`,
+    title: `${getDomain(brief.domain).label} wedge call packet`,
     executiveSummary: [
       `${brief.domain} is currently anchored on ${brief.standardPattern.dominantProtocolFamily} protocols built around ${brief.standardPattern.dominantChemicals.join(", ")}${brief.standardPattern.dominantTransitions.length > 0 ? `, with a normalized workflow backbone of ${brief.standardPattern.dominantTransitions.join(", ")}` : ""}.`,
       `The atlas is credible enough to use for wedge-finding: reviewed gates ${brief.evidenceQuality.passesAllGates ? "pass" : "do not pass"}, reviewed outcome coverage is ${brief.evidenceQuality.reviewedOutcomeCoverage}, and reviewed step-phase coverage is ${brief.evidenceQuality.reviewedStepPhaseCoverage}.`,

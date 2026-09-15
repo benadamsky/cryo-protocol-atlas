@@ -11,6 +11,7 @@
 - secondary readouts: viability, yield, morphology
 - strongest supporting papers: Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols | Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide | Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue | Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation
 - evidence read: supporting papers=6 | strong outcomes=0 | contradictions=0 | transplantation papers=1
+- main watch-outs: 2 relevant papers still have sparse step structure
 - translational value: This packet is useful if Atlas is being used to justify a wedge in fertility preservation, ovarian tissue banking, or transplant-adjacent preservation workflows.
 
 ## Alternative: Promote morphology-heavy protocols to viability endpoints
@@ -22,19 +23,21 @@
 - compare: current standard protocol | top reported protocol with transplantation endpoint
 - primary readouts: transplantation, function
 - secondary readouts: viability, yield, morphology
-- strongest supporting papers: FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS | Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients | Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols | Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide
-- evidence read: supporting papers=6 | strong outcomes=1 | contradictions=0 | transplantation papers=2
+- strongest supporting papers: FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS | Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients | Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols | Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep
+- evidence read: supporting papers=6 | strong outcomes=3 | contradictions=0 | transplantation papers=3
+- main watch-outs: 3 relevant papers still have sparse step structure
 - translational value: This packet is useful if Atlas is being used to justify a wedge in fertility preservation, ovarian tissue banking, or transplant-adjacent preservation workflows.
 
-## Alternative: Same-species DMSO + EG vitrification benchmark
-- decision this answers: Would "Same-species DMSO + EG vitrification benchmark" materially sharpen the wedge decision if tested next?
+## Alternative: Whole-ovary perfusion and rewarming workflow benchmark
+- decision this answers: Would "Whole-ovary perfusion and rewarming workflow benchmark" materially sharpen the wedge decision if tested next?
 - why this is worth running: This remains one of the highest-signal next experiments in the current domain slice.
-- core claim: The apparent promise of DMSO + ethylene glycol in ovarian tissue is currently species-confounded and should be tested within one species and one specimen format.
-- proposed test: The corpus shows DMSO + EG in ovarian tissue, but the strongest papers are spread across different species. A same-species benchmark would tell us whether the signal is chemistry-driven or model-driven.
-- keep fixed: species, specimen format, assessment window, specimen handling, post-thaw evaluation rubric
-- compare: slow-freezing arm | vitrification arm
-- primary readouts: transplantation, function
-- secondary readouts: viability, yield, morphology
-- strongest supporting papers: Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide | Clinical grade vitriﬁcation of human ovarian tissue: an ultrastructural analysis of follicles and stroma in vitriﬁed tissue | Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation | Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants
-- evidence read: supporting papers=4 | strong outcomes=0 | contradictions=0 | transplantation papers=1
+- core claim: Whole-ovary success is currently limited more by perfusion/loading workflow quality than by entirely new chemistry.
+- proposed test: Whole-ovary papers are sparse but repeatedly mention perfusion, controlled gradients, and rewarming. A workflow benchmark around loading/unloading plus perfusion measurements is a plausible scale-up experiment.
+- keep fixed: assessment window, specimen handling, post-thaw evaluation rubric
+- compare: current handling workflow | workflow with staged loading/unloading controls
+- primary readouts: post-thaw recovery, workflow reproducibility
+- secondary readouts: viability, yield, handling loss
+- strongest supporting papers: 
+- evidence read: supporting papers=4 | strong outcomes=3 | contradictions=0 | transplantation papers=3
+- main watch-outs: 3 relevant papers still have sparse step structure
 - translational value: This packet is useful if Atlas is being used to justify a wedge in fertility preservation, ovarian tissue banking, or transplant-adjacent preservation workflows.

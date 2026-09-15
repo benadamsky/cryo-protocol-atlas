@@ -1,7 +1,9 @@
 import type { AtlasSummary } from "./atlas.js";
+import { getDomain } from "../../shared/src/domains/index.js";
 import {
   ExperimentPacketFileSchema,
   type ActiveWedge,
+  type DomainId,
   type ExperimentPacketFile,
   type ResearchHypothesis
 } from "../../shared/src/schema.js";
@@ -78,17 +80,13 @@ function fixedVariablesFor(hypothesis: ResearchHypothesis): string[] {
   return fixedVariables;
 }
 
-function translationalRationaleFor(domain: string, hypothesis: ResearchHypothesis): string {
-  if (domain === "islets") {
-    return hypothesis.category === "benchmark"
-      ? "Useful if the goal is to justify a first islets wedge around post-thaw recovery and standardization."
-      : "Useful if the goal is to turn a plausible islets wedge into a more decision-ready one.";
-  }
-  return "This packet is useful if Atlas is being used to justify a wedge in fertility preservation, ovarian tissue banking, or transplant-adjacent preservation workflows.";
+function translationalRationaleFor(domain: DomainId, hypothesis: ResearchHypothesis): string {
+  const rationale = getDomain(domain).research.packetTranslationalRationale;
+  return hypothesis.category === "benchmark" ? rationale.benchmark : rationale.default;
 }
 
 export function buildExperimentPacketFile(input: {
-  domain: string;
+  domain: DomainId;
   activeWedge: ActiveWedge;
   atlas: AtlasSummary;
 }): ExperimentPacketFile {

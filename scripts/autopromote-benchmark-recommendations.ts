@@ -1,14 +1,14 @@
 import { execFileSync } from "node:child_process";
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   AutoresearchProposalFileSchema,
   BenchmarkProposalDecisionFileSchema,
-  DomainIdSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "autopromote-benchmark-recommendations <domain>");
 const MIN_AUTOPROMOTE_POLICY_CONFIDENCE = 0.9;
 
 async function main(selectedDomain: DomainId): Promise<void> {

@@ -11,8 +11,8 @@
   },
   {
     "domain": "ovarian-tissue",
-    "readinessScore": 0.571,
-    "evidenceScore": 0.65,
+    "readinessScore": 0.561,
+    "evidenceScore": 0.637,
     "commercialScore": 0.809,
     "standardPattern": "slow-freezing via Dimethyl Sulfoxide, Sucrose, Ethylene Glycol",
     "painPoint": "Promising protocols are still over-indexed on viability or in-vitro function rather than transplantation-grade outcomes.",

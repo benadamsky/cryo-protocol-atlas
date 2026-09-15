@@ -6,11 +6,11 @@ import {
   shouldKeepDiscoveryCandidate
 } from "../packages/discovery/src/domain.js";
 import { fetchDiscoverySource, resolveLiveDiscoveryProviders } from "../packages/discovery/src/providers.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   DiscoveryImportSummarySchema,
   DiscoveryPaperSchema,
   DiscoverySnapshotSchema,
-  DomainIdSchema,
   ManualDiscoveryImportFileSchema,
   MergedDiscoveryImportFileSchema,
   type DiscoveryImportRecord,
@@ -22,7 +22,7 @@ import {
   type ManualDiscoveryRecord
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "discover-domain-corpus <domain>");
 const SOURCE_DIVERSITY_BASELINE = [
   "cryodb",
   "pubmed",

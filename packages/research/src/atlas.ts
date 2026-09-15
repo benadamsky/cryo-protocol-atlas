@@ -1,5 +1,6 @@
 import type {
   Contradiction,
+  DomainId,
   ExperimentSuggestion,
   ExtractionSnapshot,
   OutcomeClass,
@@ -26,7 +27,7 @@ export type AtlasHotspot = {
 };
 
 export type AtlasSummary = {
-  domain: string;
+  domain: DomainId;
   totalPapers: number;
   protocolFamilies: CountEntry[];
   topChemicals: CountEntry[];

@@ -422,8 +422,8 @@ function summarizeMainConfound(
       !row.endpointClasses.includes("function")
   ).length;
 
-  if (domain === "ovarian-tissue" && morphologyHeavyCount >= Math.ceil(rows.length / 2)) {
-    return "Most supporting ovarian rows are still morphology-heavy, so protocol-family signal is sharper than endpoint signal.";
+  if (rows.length > 0 && morphologyHeavyCount >= Math.ceil(rows.length / 2)) {
+    return `Most supporting ${getDomainMeta(domain).shortLabel.toLowerCase()} rows are still morphology-heavy, so protocol-family signal is sharper than endpoint signal.`;
   }
 
   if (evidenceGaps[0]) {

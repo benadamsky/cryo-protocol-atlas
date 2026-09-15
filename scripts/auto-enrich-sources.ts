@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
-  DomainIdSchema,
   ExtractionSnapshotSchema,
   SourceEnrichmentFileSchema,
   WedgeEvidenceGapQueueSchema,
@@ -11,7 +11,7 @@ import {
 } from "../packages/shared/src/schema.js";
 import { draftEnrichments } from "../packages/extract/src/llm-enrichment.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "auto-enrich-sources <domain>");
 
 async function maybeReadJson<T>(path: string, parser: { parse: (value: unknown) => T }): Promise<T | undefined> {
   try {

@@ -1,9 +1,9 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   ActiveWedgeSchema,
   ContradictionSnapshotSchema,
-  DomainIdSchema,
   ExtractionSnapshotSchema,
   WedgeDecisionContradictionReportSchema,
   type DomainId
@@ -14,7 +14,7 @@ import {
 } from "../packages/research/src/contradiction-report.js";
 import { detectContradictions } from "../packages/research/src/contradictions.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "build-wedge-contradiction-report <domain>");
 
 async function maybeReadContradictionSnapshot(path: string, selectedDomain: DomainId) {
   try {

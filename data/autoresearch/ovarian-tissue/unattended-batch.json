@@ -4,7 +4,7 @@
   "extractionCount": 28,
   "resolvedExtractionCount": 16,
   "normalizedProtocolCount": 16,
-  "protocolsWithNormalizationWarnings": 3,
+  "protocolsWithNormalizationWarnings": 0,
   "reviewedOutcomeCoverage": 0.429,
   "reviewedStepPhaseCoverage": 0.571,
   "loopProposalCount": 0,

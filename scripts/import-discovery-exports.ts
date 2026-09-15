@@ -1,9 +1,9 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   DiscoveryImportFileSchema,
   DiscoveryImportSummarySchema,
-  DomainIdSchema,
   MergedDiscoveryImportFileSchema,
   ManualDiscoveryImportFileSchema,
   type DomainId,
@@ -11,7 +11,7 @@ import {
   type ManualDiscoveryRecord
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "import-discovery-exports <domain>");
 const allowEmpty = process.argv.includes("--allow-empty");
 
 async function readOptionalFile(path: string): Promise<string | null> {

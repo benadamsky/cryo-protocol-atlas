@@ -1,17 +1,16 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { selectReviewedEnrichmentRecord } from "../packages/extract/src/enrichment.js";
-import { extractIsletProtocol } from "../packages/extract/src/islets.js";
-import { extractOvarianProtocol } from "../packages/extract/src/ovarian.js";
+import { extractProtocol } from "../packages/extract/src/protocol.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
-  DomainIdSchema,
   DomainSnapshotSchema,
   ExtractionSnapshotSchema,
   SourceEnrichmentFileSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "extract-domain <domain>");
 
 async function main(selectedDomain: DomainId): Promise<void> {
   const processedDir = join(process.cwd(), "data", "processed", selectedDomain);
@@ -31,18 +30,9 @@ async function main(selectedDomain: DomainId): Promise<void> {
     sourceEnrichment = undefined;
   }
 
-  const extractions = domainSnapshot.papers.map((paper) => {
-    const enrichmentRecord = selectReviewedEnrichmentRecord(sourceEnrichment, paper.paper);
-    if (selectedDomain === "ovarian-tissue") {
-      return extractOvarianProtocol(paper, enrichmentRecord);
-    }
-
-    if (selectedDomain === "islets") {
-      return extractIsletProtocol(paper, enrichmentRecord);
-    }
-
-    throw new Error(`No extractor implemented yet for domain: ${selectedDomain}`);
-  });
+  const extractions = domainSnapshot.papers.map((paper) =>
+    extractProtocol(selectedDomain, paper, selectReviewedEnrichmentRecord(sourceEnrichment, paper.paper))
+  );
   const protocolFamilyCounts = extractions.reduce<Record<string, number>>((counts, extraction) => {
     counts[extraction.protocolFamily] = (counts[extraction.protocolFamily] ?? 0) + 1;
     return counts;

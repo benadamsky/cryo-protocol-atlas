@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { getDomain, parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
-  DomainIdSchema,
   ExtractionSnapshotSchema,
   type DomainId,
   type ProtocolExtraction,
@@ -9,7 +9,7 @@ import {
 } from "../packages/shared/src/schema.js";
 import { applyProtocolOverrides, parseOverrideFile } from "../packages/normalize/src/overrides.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "build-resolution-queue <domain>");
 
 type ResolutionReason =
   | "unknown-protocol-family"
@@ -59,11 +59,10 @@ function getPriorityScore(extraction: ProtocolExtraction, reasons: ResolutionRea
   if (reasons.includes("low-confidence")) {
     score += 2;
   }
-  if (extraction.specimenTypes.includes("ovarian tissue")) {
-    score += 2;
-  }
-  if (extraction.specimenTypes.includes("whole ovary")) {
-    score += 1;
+  for (const entry of getDomain(extraction.domain).research.resolutionPriorityBonus) {
+    if (extraction.specimenTypes.includes(entry.specimenType)) {
+      score += entry.bonus;
+    }
   }
   if (extraction.chemicalMentions.length > 0) {
     score += 1;

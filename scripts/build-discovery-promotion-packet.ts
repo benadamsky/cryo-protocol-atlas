@@ -5,16 +5,16 @@ import {
   buildTrackedKeys,
   identityHintsForPaperLike
 } from "../packages/discovery/src/review.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   DiscoveryPromotionQueueSchema,
   DiscoveryPromotionReviewPacketSchema,
   DiscoverySnapshotSchema,
-  DomainIdSchema,
   DomainSnapshotSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "build-discovery-promotion-packet <domain>");
 
 async function readOptionalFile(path: string): Promise<string | null> {
   try {

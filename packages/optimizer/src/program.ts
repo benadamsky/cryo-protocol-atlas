@@ -1,9 +1,9 @@
 import { readFile } from "node:fs/promises";
-import { DomainIdSchema } from "../../shared/src/schema.js";
+import { ALL_DOMAINS, DomainIdSchema } from "../../shared/src/schema.js";
 import { OptimizerProgramSchema, type OptimizerProgram } from "./schema.js";
 
 const DEFAULT_PROGRAM: OptimizerProgram = {
-  domains: ["islets", "ovarian-tissue"],
+  domains: [...ALL_DOMAINS],
   maxAttempts: 40,
   maxAcceptedMutations: 4,
   minimumScoreDelta: 0.001,

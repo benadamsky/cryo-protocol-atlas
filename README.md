@@ -52,24 +52,24 @@ bun run web          # Next.js console at http://localhost:3000
 bun run web:build    # production build
 ```
 
-Rebuild artifacts for a domain (`islets` or `ovarian`):
+Every pipeline script takes the domain id as its argument (`bun run list-domains` prints them):
 
 ```bash
-bun run ingest:islets        # refresh the corpus from CryoDB (network)
-bun run extract:islets       # heuristic protocol extraction with evidence snippets
-bun run evaluate:islets      # score against the reviewed benchmark
-bun run active-wedge:islets  # pick the wedge
-bun run matrix:islets        # wedge benchmark matrix
-bun run gap-queue:islets     # ranked evidence gaps
-bun run experiments:islets   # next-experiment packets
-bun run cycles:islets        # one bounded, benchmark-gated improvement loop
+bun run ingest islets        # refresh the corpus from CryoDB (network)
+bun run extract islets       # heuristic protocol extraction with evidence snippets
+bun run evaluate islets      # score against the reviewed benchmark
+bun run active-wedge islets  # pick the wedge
+bun run matrix islets        # wedge benchmark matrix
+bun run gap-queue islets     # ranked evidence gaps
+bun run experiments islets   # next-experiment packets
+bun run cycles islets        # one bounded, benchmark-gated improvement loop
 ```
 
 Discovery widens the candidate paper set without touching the reviewed slice:
 
 ```bash
-bun run discover:islets          # query OpenAlex, Crossref, Europe PMC, CryoDB
-bun run discover-refresh:all     # full refresh for both domains
+bun run discover islets          # query OpenAlex, Crossref, Europe PMC, CryoDB
+bun run discover-refresh:all     # full refresh for every domain
 bun run validate-discovery-refresh
 ```
 
@@ -117,11 +117,11 @@ The main outputs per domain live in `data/processed/<domain>/`:
 ## Layout
 
 - `packages/ingest`: CryoDB client and domain ingest
-- `packages/extract`: heuristic title/abstract extraction, optional LLM enrichment drafting
+- `packages/extract`: one heuristic title/abstract extractor parameterized by the domain registry, optional LLM enrichment drafting
 - `packages/normalize`: canonical chemical names, unit parsing, step transitions
 - `packages/discovery`: broader literature discovery lane, kept downstream of the reviewed slice
 - `packages/optimizer`: a narrow hill-climber whose only mutable target is `packages/optimizer/src/policy.ts`
-- `packages/shared`: schemas and shared types
+- `packages/shared`: schemas, shared types, and the domain registry (`src/domains/<id>.ts`: one file per domain holding its ingest keywords, discovery config, extraction profile, hypothesis templates, console copy, and regression scenarios; `DomainIdSchema` and every domain loop derive from it)
 - `packages/research`, `packages/db`: placeholders
 - `scripts/`: every `bun run` entrypoint
 - `data/`: benchmarks, curated review records, discovery snapshots, processed artifacts, autoresearch run history

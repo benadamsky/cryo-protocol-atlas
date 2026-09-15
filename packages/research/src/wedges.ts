@@ -2,9 +2,11 @@ import type {
   AtlasSummary,
   AtlasHotspot
 } from "./atlas.js";
+import { getDomain } from "../../shared/src/domains/index.js";
 import type {
   ActiveWedge,
   BenchmarkEntry,
+  DomainId,
   ExperimentPacketFile,
   ExtractionSnapshot,
   NormalizedProtocolSnapshot,
@@ -36,7 +38,7 @@ type BenchmarkAnalysis = {
 };
 
 export type DomainWedgeBrief = {
-  domain: string;
+  domain: DomainId;
   focusQuestion: string;
   activeWedge: {
     title: string;
@@ -119,7 +121,7 @@ export type DomainWedgeBrief = {
 };
 
 export type OpportunityScanEntry = {
-  domain: string;
+  domain: DomainId;
   readinessScore: number;
   evidenceScore: number;
   commercialScore: number;
@@ -322,20 +324,18 @@ function hotspotPainPoint(hotspot: AtlasHotspot): string {
   return "Protocol family is clearer than the post-warm endpoint story.";
 }
 
-function opportunityCommercialWhyNow(domain: string, title: string): string {
-  if (domain === "islets") {
-    if (/benchmark/i.test(title)) {
-      return "A cleaner benchmark wedge maps to transplant and cell-banking workflows where protocol uncertainty still blocks standardization.";
-    }
-    if (/endpoint/i.test(title)) {
-      return "Moving from viability-only claims to transplantation/function claims is what makes an optimization story commercially credible.";
-    }
-    if (/scale/i.test(title)) {
-      return "Scale-up matters if the workflow is ever meant to support real banking rather than artisanal lab success cases.";
-    }
-    return "This is close enough to real preservation workflows that better protocol evidence could matter commercially, not just academically.";
+function opportunityCommercialWhyNow(domain: DomainId, title: string): string {
+  const copy = getDomain(domain).research.commercialWhyNow;
+  if (/benchmark/i.test(title) && copy.benchmark) {
+    return copy.benchmark;
   }
-  return "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows.";
+  if (/endpoint/i.test(title) && copy.endpoint) {
+    return copy.endpoint;
+  }
+  if (/scale/i.test(title) && copy.scale) {
+    return copy.scale;
+  }
+  return copy.default;
 }
 
 function opportunityPainPoint(title: string, fallback: string): string {

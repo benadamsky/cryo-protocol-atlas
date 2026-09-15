@@ -3,9 +3,10 @@ import { join } from "node:path";
 import { buildAtlasSummary, renderAtlasMarkdown, type AtlasSummary } from "../packages/research/src/atlas.js";
 import { detectContradictions } from "../packages/research/src/contradictions.js";
 import { applyProtocolOverrides, parseOverrideFile } from "../packages/normalize/src/overrides.js";
-import { DomainIdSchema, ExtractionSnapshotSchema, type DomainId } from "../packages/shared/src/schema.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
+import { ExtractionSnapshotSchema, type DomainId } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "analyze-domain <domain>");
 
 type AtlasAnalysis = {
   domain: DomainId;

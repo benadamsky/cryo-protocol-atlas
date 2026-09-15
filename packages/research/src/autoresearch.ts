@@ -513,7 +513,7 @@ export function runAutoresearchLoop(
   const proposalOverrides = proposals
     .filter((proposal): proposal is AutoresearchProposal & { override: ProtocolOverride } => proposal.target === "override" && Boolean(proposal.override))
     .map((proposal) => proposal.override);
-  const mergedOverrideFile = mergeProtocolOverrides(overrideFile, proposalOverrides);
+  const mergedOverrideFile = mergeProtocolOverrides(extractionSnapshot.domain, overrideFile, proposalOverrides);
   const candidateSnapshot = applyProtocolOverrides(extractionSnapshot, mergedOverrideFile);
   const candidateEvaluation = evaluateBenchmark(candidateSnapshot, benchmark);
   const candidateBenchmark = applyBenchmarkPatches(benchmark, proposals);

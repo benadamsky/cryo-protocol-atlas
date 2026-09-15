@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
-  DomainIdSchema,
   SourceEnrichmentFileSchema,
   SourceEnrichmentPrioritySchema,
   SourceEnrichmentStatusSchema,
@@ -12,7 +12,7 @@ import {
   type SourceEnrichmentStatus
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "build-source-enrichment-queue <domain>");
 
 async function readOptionalFile(path: string): Promise<string | null> {
   try {

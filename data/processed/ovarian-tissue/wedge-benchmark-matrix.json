@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T13:29:40.674Z",
+  "generatedAt": "2026-09-15T16:50:38.064Z",
   "domain": "ovarian-tissue",
   "wedgeId": "ovarian-tissue:head-to-head-dmso-centered-ovarian-tissue-benchmark",
   "wedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
@@ -119,8 +119,10 @@
       "authorityProfile": "abstract-only",
       "evidenceStrength": "moderate",
       "translationalSignal": "preclinical",
-      "confoundFlags": [],
-      "wedgeRelevanceScore": 0.86,
+      "confoundFlags": [
+        "sparse-protocol"
+      ],
+      "wedgeRelevanceScore": 0.79,
       "whyIncluded": "Explicitly named in the active wedge support set."
     },
     {
@@ -143,8 +145,10 @@
       "authorityProfile": "abstract-only",
       "evidenceStrength": "moderate",
       "translationalSignal": "preclinical",
-      "confoundFlags": [],
-      "wedgeRelevanceScore": 0.86,
+      "confoundFlags": [
+        "sparse-protocol"
+      ],
+      "wedgeRelevanceScore": 0.79,
       "whyIncluded": "Explicitly named in the active wedge support set."
     }
   ],
@@ -157,7 +161,10 @@
     ],
     "dominantAdjuncts": [],
     "strongestRows": [],
-    "highestConfoundRows": [],
+    "highestConfoundRows": [
+      "base only (Dimethyl Sulfoxide + Propylene Glycol) via Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols [sparse-protocol]",
+      "base only (Dimethyl Sulfoxide + Ethylene Glycol) via Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants [sparse-protocol]"
+    ],
     "currentRead": "6 papers are directly relevant to this wedge. 0 are primary-backed, 3 are human-relevant, and 6 still rely on abstract-only evidence."
   }
 }

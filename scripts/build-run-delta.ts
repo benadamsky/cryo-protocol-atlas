@@ -1,8 +1,8 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   ActiveWedgeSchema,
-  DomainIdSchema,
   ExperimentPacketFileSchema,
   SourceEnrichmentFileSchema,
   WedgeEvidenceGapQueueSchema,
@@ -10,7 +10,7 @@ import {
 } from "../packages/shared/src/schema.js";
 import { computeRunDelta, renderRunDeltaMarkdown, type RunDelta } from "../packages/research/src/run-delta.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "build-run-delta <domain>");
 
 const MAX_DELTA_HISTORY = 50;
 

@@ -7,7 +7,7 @@
     "claim": "A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation.",
     "scientificRelevance": 0.673,
     "companyRelevance": 0.82,
-    "evidenceConfidence": 0.5,
+    "evidenceConfidence": 0.475,
     "translationalPotential": 0.8,
     "currentRead": "Best current wedge, but still better treated as a proving ground than a committed entry point.",
     "recommendedNextStep": "DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass."
@@ -23,11 +23,13 @@
       "follicles",
       "ovarian tissue"
     ],
-    "dominantTransitions": [],
+    "dominantTransitions": [
+      "cooling -> warming"
+    ],
     "representativeConditions": [
       "Dimethyl Sulfoxide 1.5 M"
     ],
-    "explanation": "Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol in follicles, ovarian tissue workflows. Normalized workflow signal is still sparse, with repeated condition mentions such as Dimethyl Sulfoxide 1.5 M."
+    "explanation": "Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol in follicles, ovarian tissue workflows. Normalized workflow signal is cooling -> warming, with repeated condition mentions such as Dimethyl Sulfoxide 1.5 M."
   },
   "protocolFamilies": [
     {
@@ -39,12 +41,14 @@
         "Ethylene Glycol"
       ],
       "topOutcomes": [
-        "viability",
         "morphology",
+        "viability",
         "function"
       ],
-      "topTransitions": [],
-      "interpretation": "Most common preserved workflow in-slice, centered on Dimethyl Sulfoxide, Sucrose, Ethylene Glycol. Outcome emphasis is viability, morphology, function, suggesting this is the baseline to beat rather than the frontier."
+      "topTransitions": [
+        "cooling -> warming"
+      ],
+      "interpretation": "Most common preserved workflow in-slice, centered on Dimethyl Sulfoxide, Sucrose, Ethylene Glycol. Outcome emphasis is morphology, viability, function, suggesting this is the baseline to beat rather than the frontier."
     },
     {
       "family": "comparative",
@@ -54,13 +58,10 @@
       ],
       "topOutcomes": [
         "morphology",
-        "reproductive",
-        "transplantation"
+        "transplantation",
+        "reproductive"
       ],
-      "topTransitions": [
-        "loading -> storage",
-        "cooling -> storage"
-      ],
+      "topTransitions": [],
       "interpretation": "Direct comparison slice is small (5 papers) but high-value because it anchors head-to-head decisions instead of isolated protocol claims."
     },
     {
@@ -76,10 +77,7 @@
         "viability",
         "transplantation"
       ],
-      "topTransitions": [
-        "loading -> culture",
-        "loading -> warming"
-      ],
+      "topTransitions": [],
       "interpretation": "Smaller but sharper cluster, often tied to Dimethyl Sulfoxide, Ethylene Glycol, Propylene Glycol. This is the likely optimization frontier if post-warm outcomes can be made more comparable."
     }
   ],
@@ -157,7 +155,7 @@
     "reviewedStepPhaseCoverage": 0.571,
     "reviewedMinimumDepthReady": true,
     "normalizedProtocolCount": 16,
-    "protocolsWithNormalizationWarnings": 3,
+    "protocolsWithNormalizationWarnings": 0,
     "missingOutcomeCount": 4,
     "missingStepPhaseCount": 3,
     "pendingSourceEnrichmentCount": 4,
@@ -200,7 +198,8 @@
       "missingFields": [
         "outcomeClasses",
         "stepPhases",
-        "authority"
+        "authority",
+        "protocolDetail"
       ],
       "rationale": "no resolved extraction available for this reviewed paper"
     },
@@ -212,7 +211,8 @@
       "missingFields": [
         "outcomeClasses",
         "stepPhases",
-        "authority"
+        "authority",
+        "protocolDetail"
       ],
       "rationale": "no resolved extraction available for this reviewed paper"
     }
@@ -247,16 +247,16 @@
       "whyNow": "This remains one of the highest-signal next experiments in the current domain slice."
     },
     {
-      "title": "Same-species DMSO + EG vitrification benchmark",
-      "category": "benchmark",
-      "decisionQuestion": "Would \"Same-species DMSO + EG vitrification benchmark\" materially sharpen the wedge decision if tested next?",
+      "title": "Whole-ovary perfusion and rewarming workflow benchmark",
+      "category": "scale-up",
+      "decisionQuestion": "Would \"Whole-ovary perfusion and rewarming workflow benchmark\" materially sharpen the wedge decision if tested next?",
       "primaryReadouts": [
-        "transplantation",
-        "function"
+        "post-thaw recovery",
+        "workflow reproducibility"
       ],
       "comparisonArms": [
-        "slow-freezing arm",
-        "vitrification arm"
+        "current handling workflow",
+        "workflow with staged loading/unloading controls"
       ],
       "whyNow": "This remains one of the highest-signal next experiments in the current domain slice."
     }
@@ -264,26 +264,26 @@
   "opportunityScan": [
     {
       "title": "Promote morphology-heavy protocols to viability endpoints",
-      "whyInteresting": "Several ovarian tissue protocols that currently look acceptable on morphology alone will reshuffle once they are compared on viability or functional endpoints. Evidence papers=6, strong outcomes=1, contradictions=0.",
+      "whyInteresting": "Several ovarian tissue protocols that currently look acceptable on morphology alone will reshuffle once they are compared on viability or functional endpoints. Evidence papers=6, strong outcomes=3, contradictions=0.",
       "painPoint": "Promising protocols are still over-indexed on viability or in-vitro function rather than transplantation-grade outcomes.",
+      "commercialWhyNow": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows."
+    },
+    {
+      "title": "Whole-ovary perfusion and rewarming workflow benchmark",
+      "whyInteresting": "Whole-ovary success is currently limited more by perfusion/loading workflow quality than by entirely new chemistry. Evidence papers=4, strong outcomes=3, contradictions=0.",
+      "painPoint": "A small number of promising papers still lack enough procedural detail to compare fairly.",
       "commercialWhyNow": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows."
     },
     {
       "title": "Head-to-head DMSO-centered ovarian tissue benchmark",
       "whyInteresting": "A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation. Evidence papers=6, strong outcomes=0, contradictions=0.",
-      "painPoint": "Literature looks directionally promising but still underspecified for a clean protocol decision.",
+      "painPoint": "2 relevant papers still have sparse step structure",
       "commercialWhyNow": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows."
     },
     {
       "title": "Same-species DMSO + EG vitrification benchmark",
       "whyInteresting": "The apparent promise of DMSO + ethylene glycol in ovarian tissue is currently species-confounded and should be tested within one species and one specimen format. Evidence papers=4, strong outcomes=0, contradictions=0.",
-      "painPoint": "Literature looks directionally promising but still underspecified for a clean protocol decision.",
-      "commercialWhyNow": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows."
-    },
-    {
-      "title": "Whole-ovary perfusion and rewarming workflow benchmark",
-      "whyInteresting": "Whole-ovary success is currently limited more by perfusion/loading workflow quality than by entirely new chemistry. Evidence papers=2, strong outcomes=1, contradictions=0.",
-      "painPoint": "A small number of promising papers still lack enough procedural detail to compare fairly.",
+      "painPoint": "1 relevant papers still have sparse step structure",
       "commercialWhyNow": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows."
     }
   ],

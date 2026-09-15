@@ -1,8 +1,8 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   ActiveWedgeSchema,
-  DomainIdSchema,
   ExtractionSnapshotSchema,
   SourceEnrichmentFileSchema,
   WedgeBenchmarkMatrixSchema,
@@ -13,7 +13,7 @@ import {
   renderWedgeBenchmarkMatrixMarkdown
 } from "../packages/research/src/wedge-benchmark-matrix.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "build-wedge-benchmark-matrix <domain>");
 
 async function maybeReadSourceEnrichment(path: string) {
   try {

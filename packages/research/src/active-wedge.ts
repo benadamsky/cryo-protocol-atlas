@@ -1,7 +1,9 @@
 import type { AtlasSummary } from "./atlas.js";
+import { getDomain } from "../../shared/src/domains/index.js";
 import {
   type ActiveWedge,
   ActiveWedgeSchema,
+  type DomainId,
   type ExtractionSnapshot,
   type ResearchHypothesis,
   type SourceEnrichmentFile
@@ -40,9 +42,10 @@ function wedgeIdFor(domain: string, hypothesis: ResearchHypothesis): string {
     .replace(/^-|-$/g, "")}`;
 }
 
-function focusQuestionFor(domain: string, hypothesis: ResearchHypothesis): string {
-  if (domain === "islets") {
-    return "What is the strongest first cryopreservation wedge in islets, and what evidence would justify a real entry point?";
+function focusQuestionFor(domain: DomainId, hypothesis: ResearchHypothesis): string {
+  const focusQuestion = getDomain(domain).research.focusQuestion;
+  if (focusQuestion) {
+    return focusQuestion;
   }
   if (hypothesis.category === "benchmark") {
     return "Which protocol comparison is sharp enough to anchor a first commercial cryopreservation wedge?";
@@ -128,12 +131,12 @@ function dominantChemicalsFor(
 }
 
 function chooseActiveHypothesis(atlas: AtlasSummary): ResearchHypothesis | null {
-  const additivePreferred =
-    atlas.domain === "islets"
-      ? atlas.researchHypotheses.find((hypothesis) => /additive-assisted/i.test(hypothesis.title))
-      : undefined;
+  const preferredWedgeTitle = getDomain(atlas.domain).research.preferredWedgeTitle;
+  const titlePreferred = preferredWedgeTitle
+    ? atlas.researchHypotheses.find((hypothesis) => preferredWedgeTitle.test(hypothesis.title))
+    : undefined;
   const preferred =
-    additivePreferred ??
+    titlePreferred ??
     atlas.researchHypotheses.find((hypothesis) => hypothesis.category === "benchmark");
   const fallback = atlas.researchHypotheses.find((hypothesis) => hypothesis.category !== "workflow-gap");
 

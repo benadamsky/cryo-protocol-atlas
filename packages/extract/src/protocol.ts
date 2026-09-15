@@ -1,3 +1,4 @@
+import { getDomain, type ChemicalAlias, type ExtractionProfile } from "../../shared/src/domains/index.js";
 import {
   EvidenceSnippetSchema,
   OutcomeMentionSchema,
@@ -5,10 +6,9 @@ import {
   PaperTypeSchema,
   ProtocolStepSchema,
   type CryoPaper,
+  type DomainId,
   type DomainPaper,
   type EvidenceSnippet,
-  type OutcomeClass,
-  type OutcomeStrength,
   type PaperType,
   type ProtocolExtraction,
   type ProtocolFamily,
@@ -20,18 +20,13 @@ import {
   summarizeEvidenceAuthority
 } from "./enrichment.js";
 
-type ChemicalAliasEntry = {
-  canonicalName: string;
-  aliases: string[];
-};
+/**
+ * Heuristic title/abstract extraction shared by every domain. The domain
+ * registry supplies specimen patterns, outcome rules, and classifier hints;
+ * everything else (chemistry, species, phases, measurements) is common.
+ */
 
-type SpecimenPatternEntry = {
-  label: string;
-  pattern: RegExp;
-  weight: number;
-};
-
-const CHEMICAL_ALIASES: ChemicalAliasEntry[] = [
+const SHARED_CHEMICAL_ALIASES: ChemicalAlias[] = [
   { canonicalName: "Dimethyl Sulfoxide", aliases: ["dmso", "me2so", "dimethyl sulfoxide", "dimethyl sulphoxide"] },
   { canonicalName: "Ethylene Glycol", aliases: ["eg", "ethylene glycol"] },
   { canonicalName: "Propylene Glycol", aliases: ["proh", "propylene glycol", "1,2-propanediol", "1,2 propanediol"] },
@@ -41,7 +36,7 @@ const CHEMICAL_ALIASES: ChemicalAliasEntry[] = [
   { canonicalName: "Curcumin", aliases: ["curcumin"] },
   { canonicalName: "Beraprost Sodium", aliases: ["beraprost sodium", "beraprost"] },
   { canonicalName: "Hydroxyethyl Starch", aliases: ["hydroxyethyl starch", "hes"] },
-  { canonicalName: "Polyvinyl Pyrrolidone", aliases: ["polyvinyl pyrrolidone", "pvp"] },
+  { canonicalName: "Polyvinyl Pyrrolidone", aliases: ["polyvinyl pyrrolidone", "polyvinylpyrrolidone", "pvp"] },
   { canonicalName: "Polyethylene Glycol", aliases: ["polyethylene glycol", "peg"] },
   {
     canonicalName: "Carboxylated epsilon-poly-L-lysine",
@@ -52,76 +47,18 @@ const CHEMICAL_ALIASES: ChemicalAliasEntry[] = [
   { canonicalName: "Raffinose", aliases: ["raffinose"] }
 ];
 
-const SPECIMEN_PATTERNS: SpecimenPatternEntry[] = [
-  { label: "pancreatic islets", pattern: /\bpancreatic islets?\b/i, weight: 3 },
-  { label: "islets", pattern: /\bislets?\b/i, weight: 3 },
-  { label: "islet cells", pattern: /\bislet cells?\b/i, weight: 2 },
-  { label: "encapsulated islets", pattern: /\bencapsulat(?:ed|ion)(?:\s+\w+){0,2}\s+islets?\b/i, weight: 3 },
-  { label: "islet grafts", pattern: /\bislet grafts?\b/i, weight: 2 },
-  { label: "beta cells", pattern: /\bbeta cells?\b/i, weight: 1 }
-];
-
 const SPECIES_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
   { label: "human", pattern: /\bhuman\b/i },
   { label: "mouse", pattern: /\bmouse\b|\bmurine\b/i },
   { label: "rat", pattern: /\brat\b/i },
+  { label: "sheep", pattern: /\bsheep\b|\bovine\b/i },
   { label: "pig", pattern: /\bpig\b|\bporcine\b/i },
   { label: "dog", pattern: /\bdog\b|\bcanine\b/i },
+  { label: "cat", pattern: /\bcat\b|\bfeline\b/i },
+  { label: "goat", pattern: /\bgoat\b|\bcaprine\b/i },
+  { label: "turkey", pattern: /\bturkey\b/i },
+  { label: "peccary", pattern: /\bpeccary\b/i },
   { label: "primate", pattern: /\bprimate\b|\bmonkey\b/i }
-];
-
-const OUTCOME_RULES: Array<{
-  outcomeClass: OutcomeClass;
-  strength: OutcomeStrength;
-  patterns: RegExp[];
-}> = [
-  {
-    outcomeClass: "transplantation",
-    strength: "strong",
-    patterns: [
-      /\btransplant(?:ation|ed)?\b/i,
-      /\bauto-?transplant(?:ation|ed)?\b/i,
-      /\bxeno-?graft(?:ed|s)?\b/i,
-      /\bauto-?graft(?:ed|s)?\b/i,
-      /\bgraft(?:ed|s)?\b/i
-    ]
-  },
-  {
-    outcomeClass: "function",
-    strength: "strong",
-    patterns: [
-      /\bfunction(?:al|ality)?\b/i,
-      /\binsulin secretion\b/i,
-      /\binsulin release\b/i,
-      /\bgraft function\b/i,
-      /\bglucose(?:-|\s)?stimulated\b/i,
-      /\bglucose control\b/i,
-      /\bnormoglyc/i,
-      /\beuglyc/i
-    ]
-  },
-  {
-    outcomeClass: "viability",
-    strength: "moderate",
-    patterns: [
-      /\bviability\b/i,
-      /\blive-dead assay\b/i,
-      /\bcell survival\b/i,
-      /\bsurvival\b/i,
-      /\brecovery\b/i,
-      /\byield\b/i,
-      /\btoxicit/i
-    ]
-  },
-  {
-    outcomeClass: "morphology",
-    strength: "moderate",
-    patterns: [
-      /\bmorpholog(?:y|ical)\b/i,
-      /\bhistolog(?:y|ical)\b/i,
-      /\bultrastruct(?:ure|ural)\b/i
-    ]
-  }
 ];
 
 const TEMPERATURE_REGEX = /-?\d+(?:\.\d+)?\s?(?:°\s?)?C\b/gi;
@@ -129,28 +66,39 @@ const DURATION_REGEX = /\b\d+(?:\.\d+)?\s?(?:min|mins|minutes|h|hr|hrs|hours|day
 const CONCENTRATION_REGEX = /\b\d+(?:\.\d+)?\s?(?:M|mM|%|mol\/L)\b/g;
 const COOLING_RATE_REGEX = /\b\d+(?:\.\d+)?\s?°?\s?C\s*\/\s*(?:min|hour|hr|h)\b/gi;
 
-const PHASE_RULES: Array<{
-  phase: ProtocolExtraction["protocolSteps"][number]["phase"];
-  patterns: RegExp[];
-}> = [
-  { phase: "perfusion", patterns: [/\bperfus/i] },
-  { phase: "equilibration", patterns: [/\bequilibr/i, /\bstepwise equilibration\b/i] },
-  {
-    phase: "loading",
-    patterns: [/\bloading\b/i, /\bcryoprotectant(?:s)? added\b/i, /\badded at \d+(?:\.\d+)?%/i, /\bpreincubat/i]
-  },
-  {
-    phase: "cooling",
-    patterns: [/\bcool/i, /\bfreez/i, /\bcooling rate\b/i, /\b0\.\d+\s?°?\s?c\/min\b/i]
-  },
-  { phase: "storage", patterns: [/\bstor/i, /\bliquid nitrogen/i, /\b-196\s?°?\s?c\b/i] },
-  { phase: "warming", patterns: [/\bwarm/i, /\bthaw/i, /\brewarm/i] },
-  { phase: "culture", patterns: [/\bculture/i, /\bincubat/i] },
-  {
-    phase: "assessment",
-    patterns: [/\bassess/i, /\bmorpholog/i, /\bviability/i, /\bfunction/i, /\binsulin secretion/i]
-  }
+const REVIEW_PATTERNS = [/\breview\b|\bmini-review\b|\bperspective\b|\bprospects?\b|\bthis review\b|\brecent advances\b/];
+const METHODS_PATTERNS = [/\bprotocol\b|\boptimization\b|\bthermophysical\b|\bcharacterization\b|\bcharacterisation\b/];
+const COMMENTARY_PATTERNS = [/\bcommentary\b|\beditorial\b/];
+const EXPERIMENTAL_ABSTRACT_PATTERNS = [
+  /\bthis study\b|\bwe evaluated\b|\bwe used\b|\bwere compared\b|\bafter thaw\b|\bafter warming\b|\bafter transplantation\b/i
 ];
+
+const STUDY_OUTCOME_TERMS =
+  /(result|found|observed|showed|demonstrated|improved|restored|viability|survival|recovery|yield|toxicit|function|functional|functionality|morpholog|histolog|ultrastruct)/i;
+
+type PhaseRule = { phase: ProtocolExtraction["protocolSteps"][number]["phase"]; patterns: RegExp[] };
+
+function phaseRulesFor(profile: ExtractionProfile): PhaseRule[] {
+  return [
+    { phase: "perfusion", patterns: [/\bperfus/i] },
+    { phase: "equilibration", patterns: [/\bequilibr/i, /\bstepwise equilibration\b/i] },
+    {
+      phase: "loading",
+      patterns: [/\bloading\b/i, /\bcryoprotectant(?:s)? added\b/i, /\badded at \d+(?:\.\d+)?%/i, /\bpreincubat/i]
+    },
+    {
+      phase: "cooling",
+      patterns: [/\bcool/i, /\bfreez/i, /\bcooling rate\b/i, /\b0\.\d+\s?°?\s?c\/min\b/i]
+    },
+    { phase: "storage", patterns: [/\bstor/i, /\bliquid nitrogen/i, /\b-196\s?°?\s?c\b/i] },
+    { phase: "warming", patterns: [/\bwarm/i, /\bthaw/i, /\brewarm/i] },
+    { phase: "culture", patterns: [/\bculture/i, /\bincubat/i] },
+    {
+      phase: "assessment",
+      patterns: [/\bassess/i, /\bmorpholog/i, /\bviability/i, /\bfunction/i, ...(profile.assessmentPatterns ?? [])]
+    }
+  ];
+}
 
 function splitSentences(text: string): string[] {
   return text
@@ -184,6 +132,10 @@ function containsRegex(sentence: string, pattern: RegExp): boolean {
 function collectMatches(sentence: string, pattern: RegExp): string[] {
   const clone = new RegExp(pattern.source, pattern.flags);
   return sentence.match(clone) ?? [];
+}
+
+function escapeRegex(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function inferProtocolFamily(text: string, title: string): {
@@ -223,49 +175,33 @@ function inferProtocolFamily(text: string, title: string): {
   return { protocolFamily: "unknown", evidence };
 }
 
-function classifyPaperType(paper: CryoPaper): PaperType {
+function classifyPaperType(paper: CryoPaper, profile: ExtractionProfile): PaperType {
   const title = paper.title.toLowerCase();
   const abstract = (paper.abstract ?? "").toLowerCase();
   const text = `${title} ${abstract}`;
+  const hints = profile.paperType ?? {};
 
-  if (
-    /\breview\b|\bmini-review\b|\bperspective\b|\bprospects?\b|\bthis review\b|\brecent advances\b/.test(text)
-  ) {
+  if ([...REVIEW_PATTERNS, ...(hints.extraReviewPatterns ?? [])].some((pattern) => pattern.test(text))) {
     return PaperTypeSchema.parse("review");
   }
 
-  if (/\bprotocol\b|\boptimization\b|\bthermophysical\b|\bcharacterization\b|\bcharacterisation\b/.test(text)) {
+  if ([...METHODS_PATTERNS, ...(hints.extraMethodsPatterns ?? [])].some((pattern) => pattern.test(text))) {
     return PaperTypeSchema.parse("methods");
   }
 
-  if (/\bcommentary\b|\beditorial\b/.test(text)) {
+  if (COMMENTARY_PATTERNS.some((pattern) => pattern.test(text))) {
     return PaperTypeSchema.parse("commentary");
   }
 
   if (
-    /\bthis study\b|\bwe evaluated\b|\bwe used\b|\bwere compared\b|\bafter thaw\b|\bafter warming\b|\bafter transplantation\b/i.test(
-      paper.abstract ?? ""
+    [...EXPERIMENTAL_ABSTRACT_PATTERNS, ...(hints.extraExperimentalAbstractPatterns ?? [])].some((pattern) =>
+      pattern.test(paper.abstract ?? "")
     )
   ) {
     return PaperTypeSchema.parse("experimental");
   }
 
-  if (
-    /\bcryopreserv/i.test(text) &&
-    /\bislet/i.test(text) &&
-    (/\bcomparison\b|\btechnique\b|\bsurvival\b|\brecovery\b|\bfunction\b|\byield\b|\bstorage\b|\btransplant/i.test(
-      text
-    ) ||
-      /\bmouse\b|\brat\b|\bporcine\b|\bpig\b|\bcanine\b|\bhuman\b/i.test(text))
-  ) {
-    return PaperTypeSchema.parse("experimental");
-  }
-
-  if (
-    /\bcryogenic\b|\bfreez(?:ing)?\b|\bfrozen-thawed\b|\bthaw(?:ing)?\b/i.test(text) &&
-    /\bislet/i.test(text) &&
-    /\bporcine\b|\bpig\b|\brat\b|\bmouse\b|\bcanine\b|\bhuman\b|\bchick\b/i.test(text)
-  ) {
+  if ((hints.extraExperimentalRules ?? []).some((rule) => rule(text))) {
     return PaperTypeSchema.parse("experimental");
   }
 
@@ -278,12 +214,12 @@ function isProtocolContext(sentence: string): boolean {
   );
 }
 
-function extractSpecimenTypes(title: string, sentences: string[]) {
+function extractSpecimenTypes(title: string, sentences: string[], profile: ExtractionProfile) {
   const scores = new Map<string, number>();
   const evidence: EvidenceSnippet[] = [];
   const loweredTitle = title.toLowerCase();
 
-  for (const { label, pattern, weight } of SPECIMEN_PATTERNS) {
+  for (const { label, pattern, weight } of profile.specimenPatterns) {
     if (containsRegex(loweredTitle, pattern)) {
       scores.set(label, (scores.get(label) ?? 0) + weight + 2);
       evidence.push(makeSnippet("specimen", title, 0.9));
@@ -334,24 +270,20 @@ function extractSpecies(title: string, sentences: string[]) {
   };
 }
 
-function escapeRegex(value: string): string {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+function aliasMatches(sentence: string, alias: string): boolean {
+  return containsRegex(sentence, new RegExp(`\\b${escapeRegex(alias)}\\b`, "i"));
 }
 
-function extractChemicals(sentences: string[]) {
-  return CHEMICAL_ALIASES.flatMap((entry) => {
-    const matchedSentences = sentences.filter((sentence) =>
-      entry.aliases.some((alias) => containsRegex(sentence, new RegExp(`\\b${escapeRegex(alias)}\\b`, "i")))
-    );
+function extractChemicals(sentences: string[], chemicalAliases: ChemicalAlias[]) {
+  return chemicalAliases.flatMap((entry) => {
+    const matchedSentences = sentences.filter((sentence) => entry.aliases.some((alias) => aliasMatches(sentence, alias)));
 
     if (matchedSentences.length === 0) {
       return [];
     }
 
     const aliasesMatched = dedupeStrings(
-      matchedSentences.flatMap((sentence) =>
-        entry.aliases.filter((alias) => containsRegex(sentence, new RegExp(`\\b${escapeRegex(alias)}\\b`, "i")))
-      )
+      matchedSentences.flatMap((sentence) => entry.aliases.filter((alias) => aliasMatches(sentence, alias)))
     );
 
     const concentrationMentions = dedupeStrings(
@@ -378,19 +310,15 @@ function extractMentions(sentences: string[], regex: RegExp, kind: EvidenceSnipp
   return { mentions, evidence };
 }
 
-function isStudyOutcomeSentence(sentence: string): boolean {
-  return /(result|found|observed|showed|demonstrated|improved|restored|viability|survival|recovery|yield|toxicit|function|functional|functionality|insulin|glucose|graft|transplant|morpholog|histolog|ultrastruct)/i.test(
-    sentence
-  );
-}
-
-function extractOutcomes(sentences: string[]) {
+function extractOutcomes(sentences: string[], profile: ExtractionProfile) {
+  const domainTerms = profile.outcomeSentenceTerms;
   const candidateSentences = sentences.filter(
     (sentence) =>
-      isStudyOutcomeSentence(sentence) ||
+      STUDY_OUTCOME_TERMS.test(sentence) ||
+      (domainTerms ? containsRegex(sentence, domainTerms) : false) ||
       /\benhances?\b|\bpreserves?\b|\bpreservation\b|\bsurvival\b|\brecovery\b|\bfunction\b/i.test(sentence)
   );
-  return OUTCOME_RULES.flatMap((rule) => {
+  return profile.outcomeRules.flatMap((rule) => {
     const matchedSentences = candidateSentences.filter((sentence) =>
       rule.patterns.some((pattern) => containsRegex(sentence, pattern))
     );
@@ -411,9 +339,9 @@ function extractOutcomes(sentences: string[]) {
   });
 }
 
-function sentenceHasProceduralDetail(sentence: string): boolean {
+function sentenceHasProceduralDetail(sentence: string, phaseRules: PhaseRule[]): boolean {
   return (
-    PHASE_RULES.some((rule) => rule.patterns.some((pattern) => containsRegex(sentence, pattern))) &&
+    phaseRules.some((rule) => rule.patterns.some((pattern) => containsRegex(sentence, pattern))) &&
     (containsRegex(sentence, CONCENTRATION_REGEX) ||
       containsRegex(sentence, TEMPERATURE_REGEX) ||
       containsRegex(sentence, DURATION_REGEX) ||
@@ -422,21 +350,21 @@ function sentenceHasProceduralDetail(sentence: string): boolean {
   );
 }
 
-function phasesForSentence(sentence: string) {
-  return PHASE_RULES.filter((rule) => rule.patterns.some((pattern) => containsRegex(sentence, pattern))).map(
-    (rule) => rule.phase
-  );
+function phasesForSentence(sentence: string, phaseRules: PhaseRule[]) {
+  return phaseRules
+    .filter((rule) => rule.patterns.some((pattern) => containsRegex(sentence, pattern)))
+    .map((rule) => rule.phase);
 }
 
-function buildProtocolSteps(sentences: string[]) {
+function buildProtocolSteps(sentences: string[], chemicalAliases: ChemicalAlias[], phaseRules: PhaseRule[]) {
   const candidates = sentences.filter(
-    (sentence) => isProtocolContext(sentence) && sentenceHasProceduralDetail(sentence)
+    (sentence) => isProtocolContext(sentence) && sentenceHasProceduralDetail(sentence, phaseRules)
   );
   const seen = new Set<string>();
   const steps: ProtocolExtraction["protocolSteps"] = [];
 
   for (const sentence of candidates) {
-    const phases = phasesForSentence(sentence);
+    const phases = phasesForSentence(sentence, phaseRules);
     const strongProceduralSentence =
       phases.length >= 2 &&
       (containsRegex(sentence, CONCENTRATION_REGEX) ||
@@ -454,12 +382,8 @@ function buildProtocolSteps(sentences: string[]) {
           phase,
           summary: sentence,
           chemicals: dedupeStrings(
-            CHEMICAL_ALIASES.flatMap((entry) =>
-              entry.aliases.some((alias) =>
-                containsRegex(sentence, new RegExp(`\\b${escapeRegex(alias)}\\b`, "i"))
-              )
-                ? [entry.canonicalName]
-                : []
+            chemicalAliases.flatMap((entry) =>
+              entry.aliases.some((alias) => aliasMatches(sentence, alias)) ? [entry.canonicalName] : []
             )
           ),
           concentrations: collectMatches(sentence, CONCENTRATION_REGEX),
@@ -483,22 +407,26 @@ function buildProtocolSteps(sentences: string[]) {
   return steps;
 }
 
-export function extractIsletProtocol(
+export function extractProtocol(
+  domain: DomainId,
   domainPaper: DomainPaper,
   sourceEnrichment?: SourceEnrichmentRecord
 ): ProtocolExtraction {
+  const profile = getDomain(domain).extraction;
+  const chemicalAliases = [...SHARED_CHEMICAL_ALIASES, ...(profile.extraChemicalAliases ?? [])];
+  const phaseRules = phaseRulesFor(profile);
   const paper = domainPaper.paper;
-  const sourceText = buildAugmentedSourceText("islets", paper, sourceEnrichment);
+  const sourceText = buildAugmentedSourceText(domain, paper, sourceEnrichment);
   const sentences = splitSentences(sourceText);
-  const paperType = classifyPaperType(paper);
+  const paperType = classifyPaperType(paper, profile);
   const protocolFamilyResult = inferProtocolFamily(paper.abstract ?? "", paper.title);
-  const specimen = extractSpecimenTypes(paper.title, sentences);
+  const specimen = extractSpecimenTypes(paper.title, sentences, profile);
   const species = extractSpecies(paper.title, sentences);
-  const chemicalMentions = extractChemicals(sentences);
+  const chemicalMentions = extractChemicals(sentences, chemicalAliases);
   const temperatureMentions = extractMentions(sentences, TEMPERATURE_REGEX, "temperature");
   const durationMentions = extractMentions(sentences, DURATION_REGEX, "duration");
-  const outcomeMentions = extractOutcomes(sentences);
-  const protocolSteps = buildProtocolSteps(sentences);
+  const outcomeMentions = extractOutcomes(sentences, profile);
+  const protocolSteps = buildProtocolSteps(sentences, chemicalAliases, phaseRules);
   const uniqueProceduralPhases = dedupeStrings(
     protocolSteps
       .map((step) => step.phase)
@@ -555,7 +483,7 @@ export function extractIsletProtocol(
   );
 
   return ProtocolExtractionSchema.parse({
-    domain: "islets",
+    domain,
     paper,
     paperType,
     protocolFamily: protocolFamilyResult.protocolFamily,

@@ -1,6 +1,7 @@
 import { z } from "zod";
+import { DOMAIN_IDS } from "./domains/index.js";
 
-export const DomainIdSchema = z.enum(["ovarian-tissue", "islets"]);
+export const DomainIdSchema = z.enum(DOMAIN_IDS);
 export type DomainId = z.infer<typeof DomainIdSchema>;
 export const ALL_DOMAINS = [...DomainIdSchema.options] as DomainId[];
 

@@ -1,35 +1,34 @@
-import {
-  DomainIdSchema,
-  type DomainId
-} from "../../../packages/shared/src/schema";
+import { getDomain, listDomains } from "../../../packages/shared/src/domains";
+import { ALL_DOMAINS, DomainIdSchema, type DomainId } from "../../../packages/shared/src/schema";
 
-export const DOMAIN_ORDER: DomainId[] = ["ovarian-tissue", "islets"];
+export const DOMAIN_ORDER: DomainId[] = [...ALL_DOMAINS];
 
-export const DOMAIN_META: Record<
-  DomainId,
-  {
-    label: string;
-    shortLabel: string;
-    strapline: string;
-    accent: string;
-    accentSoft: string;
-  }
-> = {
-  "ovarian-tissue": {
-    label: "Ovarian tissue",
-    shortLabel: "Ovarian",
-    strapline: "Fertility-preservation tissue workflows with unresolved depth gaps.",
-    accent: "#e36b4a",
-    accentSoft: "rgba(227, 107, 74, 0.18)"
-  },
-  islets: {
-    label: "Islets",
-    shortLabel: "Islets",
-    strapline: "Transplant-adjacent cryomix benchmarking with stronger benchmark depth.",
-    accent: "#0ea5a4",
-    accentSoft: "rgba(14, 165, 164, 0.18)"
-  }
+export type DomainMeta = {
+  label: string;
+  shortLabel: string;
+  strapline: string;
+  accent: string;
+  accentSoft: string;
+  plainWedgeSummary?: string;
+  commercialSignalBonus: number;
 };
+
+function metaFor(domain: DomainId): DomainMeta {
+  const definition = getDomain(domain);
+  return {
+    label: definition.label,
+    shortLabel: definition.console.shortLabel,
+    strapline: definition.console.strapline,
+    accent: definition.console.accent,
+    accentSoft: definition.console.accentSoft,
+    plainWedgeSummary: definition.console.plainWedgeSummary,
+    commercialSignalBonus: definition.research.commercialSignalBonus
+  };
+}
+
+export const DOMAIN_META: Record<DomainId, DomainMeta> = Object.fromEntries(
+  listDomains().map((definition) => [definition.id, metaFor(definition.id as DomainId)])
+) as Record<DomainId, DomainMeta>;
 
 export function parseDomainId(value: string): DomainId {
   return DomainIdSchema.parse(value);

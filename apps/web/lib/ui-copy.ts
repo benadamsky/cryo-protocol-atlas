@@ -1,5 +1,6 @@
 import type { DomainId, TranslationalSignal } from "../../../packages/shared/src/schema";
 import type { ConfidenceBand, WedgeClass } from "./decision-data";
+import { getDomainMeta } from "./domain";
 
 export function shortDate(value: string | null) {
   if (!value) {
@@ -57,15 +58,7 @@ export function wedgeClassLabel(wedgeClass: WedgeClass) {
 }
 
 export function plainEnglishWedgeSummary(domain: DomainId, title: string, claim: string) {
-  if (domain === "islets") {
-    return "Test whether additives around a standard cryomix improve post-thaw recovery more than changing the base CPA chemistry.";
-  }
-
-  if (domain === "ovarian-tissue") {
-    return "Run a head-to-head DMSO-centered benchmark in one species before treating ovarian tissue as a company wedge.";
-  }
-
-  return claim || title;
+  return getDomainMeta(domain).plainWedgeSummary ?? claim ?? title;
 }
 
 export function accessLabel(value: string) {

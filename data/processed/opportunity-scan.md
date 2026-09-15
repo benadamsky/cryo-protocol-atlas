@@ -10,8 +10,8 @@
 - recommended next move: Pressure-test "Additive-assisted islet recovery benchmark on a fixed base cryomix" as the next wedge-defining experiment.
 
 ## ovarian-tissue
-- readiness score: 0.571
-- evidence score: 0.65
+- readiness score: 0.561
+- evidence score: 0.637
 - commercial score: 0.809
 - standard pattern: slow-freezing via Dimethyl Sulfoxide, Sucrose, Ethylene Glycol
 - pain point: Promising protocols are still over-indexed on viability or in-vitro function rather than transplantation-grade outcomes.

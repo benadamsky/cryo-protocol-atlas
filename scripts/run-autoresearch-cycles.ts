@@ -2,10 +2,10 @@ import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   AutoresearchProposalFileSchema,
   BenchmarkProposalDecisionFileSchema,
-  DomainIdSchema,
   type AutoresearchProposalFile,
   type BenchmarkProposalDecisionFile,
   type DomainId
@@ -69,7 +69,7 @@ type CycleRunReport = {
 type ComparableCycleRunReport = Omit<CycleRunReport, "generatedAt">;
 
 function parseArgs(argv: string[]) {
-  const selectedDomain = DomainIdSchema.parse(argv[2] ?? "islets");
+  const selectedDomain = parseDomainArg(argv[2], "run-autoresearch-cycles <domain> [--max-cycles N] [--ingest]");
   let maxCycles = 5;
   let ingestFirstCycle = argv.includes("--ingest");
   let allowEnrichmentPending =

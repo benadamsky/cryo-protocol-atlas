@@ -417,7 +417,6 @@ async function main(): Promise<void> {
   const outputDir = join(process.cwd(), "data", "autoresearch");
   const jsonPath = join(outputDir, "run-health.json");
   const markdownPath = join(outputDir, "run-health.md");
-  const dashboardDataPath = join(process.cwd(), "apps", "web", "dashboard-data.json");
   const previousReport = await readOptionalJson<RunHealthReport>(jsonPath);
   const stableReport =
     previousReport &&
@@ -426,13 +425,11 @@ async function main(): Promise<void> {
       : report;
 
   await mkdir(outputDir, { recursive: true });
-  await mkdir(join(process.cwd(), "apps", "web"), { recursive: true });
   const nextJson = JSON.stringify(stableReport, null, 2);
   const nextMarkdown = renderMarkdown(stableReport);
-  const [previousJson, previousMarkdown, previousDashboardJson] = await Promise.all([
+  const [previousJson, previousMarkdown] = await Promise.all([
     readOptionalText(jsonPath),
-    readOptionalText(markdownPath),
-    readOptionalText(dashboardDataPath)
+    readOptionalText(markdownPath)
   ]);
 
   if (previousJson !== nextJson) {
@@ -440,9 +437,6 @@ async function main(): Promise<void> {
   }
   if (previousMarkdown !== nextMarkdown) {
     await writeFile(markdownPath, nextMarkdown, "utf8");
-  }
-  if (previousDashboardJson !== nextJson) {
-    await writeFile(dashboardDataPath, nextJson, "utf8");
   }
 
   console.log(JSON.stringify(stableReport, null, 2));

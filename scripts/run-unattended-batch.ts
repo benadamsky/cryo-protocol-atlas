@@ -1,18 +1,18 @@
 import { execFileSync } from "node:child_process";
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   AutoresearchProposalFileSchema,
   BenchmarkFileSchema,
   BenchmarkProposalDecisionFileSchema,
-  DomainIdSchema,
   ExtractionSnapshotSchema,
   NormalizedProtocolSnapshotSchema,
   SourceEnrichmentFileSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "run-unattended-batch <domain>");
 const includeIngest = process.argv.includes("--ingest");
 
 function runStep(script: string, args: string[] = []) {

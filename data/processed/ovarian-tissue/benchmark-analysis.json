@@ -2,7 +2,7 @@
   "domain": "ovarian-tissue",
   "baseline": {
     "domain": "ovarian-tissue",
-    "generatedAt": "2026-09-14T13:29:39.560Z",
+    "generatedAt": "2026-09-15T16:50:37.500Z",
     "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 28,
     "subsets": {
@@ -24,8 +24,8 @@
           "paperType": {
             "field": "paperType",
             "labeledCount": 16,
-            "exactMatchCount": 11,
-            "accuracy": 0.688,
+            "exactMatchCount": 10,
+            "accuracy": 0.625,
             "mismatches": [
               {
                 "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
@@ -55,6 +55,12 @@
                 "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
                 "title": "Ovarian and oocyte cryopreservation",
                 "expected": "review",
+                "actual": "unknown"
+              },
+              {
+                "paperId": "fd2cabdb-f442-4545-b312-845303c594c5",
+                "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+                "expected": "experimental",
                 "actual": "unknown"
               }
             ]
@@ -108,18 +114,31 @@
           "speciesMentions": {
             "field": "speciesMentions",
             "labeledCount": 16,
-            "exactMatchCount": 16,
-            "averageF1": 1,
-            "averagePrecision": 1,
+            "exactMatchCount": 15,
+            "averageF1": 0.979,
+            "averagePrecision": 0.969,
             "averageRecall": 1,
-            "mismatches": []
+            "mismatches": [
+              {
+                "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+                "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+                "expected": [
+                  "sheep"
+                ],
+                "actual": [
+                  "primate",
+                  "sheep"
+                ],
+                "f1": 0.667
+              }
+            ]
           },
           "specimenTypes": {
             "field": "specimenTypes",
             "labeledCount": 16,
-            "exactMatchCount": 14,
-            "averageF1": 0.958,
-            "averagePrecision": 1,
+            "exactMatchCount": 13,
+            "averageF1": 0.946,
+            "averagePrecision": 0.979,
             "averageRecall": 0.938,
             "mismatches": [
               {
@@ -145,28 +164,31 @@
                   "follicles"
                 ],
                 "f1": 0.667
+              },
+              {
+                "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+                "title": "Ovarian and oocyte cryopreservation",
+                "expected": [
+                  "oocytes",
+                  "whole ovary"
+                ],
+                "actual": [
+                  "follicles",
+                  "oocytes",
+                  "whole ovary"
+                ],
+                "f1": 0.8
               }
             ]
           },
           "outcomeClasses": {
             "field": "outcomeClasses",
             "labeledCount": 12,
-            "exactMatchCount": 10,
-            "averageF1": 0.833,
-            "averagePrecision": 0.833,
-            "averageRecall": 0.833,
+            "exactMatchCount": 8,
+            "averageF1": 0.831,
+            "averagePrecision": 0.847,
+            "averageRecall": 0.861,
             "mismatches": [
-              {
-                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
-                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
-                "expected": [
-                  "morphology",
-                  "transplantation",
-                  "viability"
-                ],
-                "actual": [],
-                "f1": 0
-              },
               {
                 "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
                 "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
@@ -178,16 +200,55 @@
                   "reproductive"
                 ],
                 "f1": 0
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": [
+                  "morphology",
+                  "transplantation",
+                  "viability"
+                ],
+                "actual": [
+                  "morphology"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "f062f014-b946-4592-a58e-cd0633082b85",
+                "title": "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+                "expected": [
+                  "morphology"
+                ],
+                "actual": [
+                  "morphology",
+                  "transplantation"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "e94731cb-3b60-464e-b981-2b1d0737dc61",
+                "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+                "expected": [
+                  "morphology",
+                  "viability"
+                ],
+                "actual": [
+                  "morphology",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.8
               }
             ]
           },
           "stepPhases": {
             "field": "stepPhases",
             "labeledCount": 13,
-            "exactMatchCount": 9,
-            "averageF1": 0.862,
-            "averagePrecision": 0.838,
-            "averageRecall": 0.923,
+            "exactMatchCount": 0,
+            "averageF1": 0.333,
+            "averagePrecision": 0.468,
+            "averageRecall": 0.306,
             "mismatches": [
               {
                 "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
@@ -197,11 +258,136 @@
                   "loading",
                   "warming"
                 ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": [
+                  "equilibration",
+                  "loading"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "d8fa8551-7088-4f7a-ba21-f3a7b113db47",
+                "title": "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+                "expected": [
+                  "cooling",
+                  "loading",
+                  "perfusion",
+                  "storage"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "f74836db-46fb-4ca6-b619-a505fc30d0a0",
+                "title": "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants",
+                "expected": [
+                  "loading",
+                  "warming"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "e60a5fab-5db3-49b5-99d8-badd40672abf",
+                "title": "Whole sheep ovary cryopreservation: evaluation of a slow freezing protocol with dimethylsulphoxide",
+                "expected": [
+                  "cooling",
+                  "culture",
+                  "perfusion"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "e60a0ee8-afa8-449c-bbab-60f04b2fdf09",
+                "title": "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+                "expected": [
+                  "perfusion",
+                  "storage"
+                ],
                 "actual": [
+                  "assessment",
+                  "cooling",
+                  "perfusion",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "da34cec8-3a6e-460b-ae3b-62afb90c6e4e",
+                "title": "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "equilibration",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "f062f014-b946-4592-a58e-cd0633082b85",
+                "title": "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+                "expected": [
+                  "culture",
+                  "loading",
+                  "storage"
+                ],
+                "actual": [
+                  "culture"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "fd2cabdb-f442-4545-b312-845303c594c5",
+                "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+                "expected": [
+                  "assessment",
+                  "loading",
+                  "storage",
                   "unknown",
                   "warming"
                 ],
-                "f1": 0.4
+                "actual": [
+                  "assessment",
+                  "culture",
+                  "warming"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "e94731cb-3b60-464e-b981-2b1d0737dc61",
+                "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+                "expected": [
+                  "culture",
+                  "loading"
+                ],
+                "actual": [
+                  "assessment",
+                  "culture"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "e0ce771b-2f1d-4b37-8c0f-8d0afda3ef26",
+                "title": "Vitrified turkey ovarian tissue cultured and assessed through gene expression patterns: A potential screening tool",
+                "expected": [
+                  "assessment",
+                  "culture",
+                  "loading"
+                ],
+                "actual": [
+                  "culture"
+                ],
+                "f1": 0.5
               },
               {
                 "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
@@ -212,28 +398,10 @@
                   "warming"
                 ],
                 "actual": [
-                  "assessment",
                   "storage",
-                  "unknown",
                   "warming"
                 ],
-                "f1": 0.571
-              },
-              {
-                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
-                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
-                "expected": [
-                  "equilibration",
-                  "loading"
-                ],
-                "actual": [
-                  "assessment",
-                  "equilibration",
-                  "loading",
-                  "storage",
-                  "unknown"
-                ],
-                "f1": 0.571
+                "f1": 0.8
               },
               {
                 "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
@@ -244,11 +412,10 @@
                 ],
                 "actual": [
                   "cooling",
-                  "storage",
-                  "unknown",
+                  "culture",
                   "warming"
                 ],
-                "f1": 0.667
+                "f1": 0.8
               }
             ]
           }
@@ -292,9 +459,9 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.713,
-          "averageOnCorrectIncluded": 0.713,
-          "averageOnIncorrectIncluded": 0.465
+          "averageOnExpectedIncluded": 0.779,
+          "averageOnCorrectIncluded": 0.779,
+          "averageOnIncorrectIncluded": 0.675
         },
         "unexpectedIncludedPaperIds": [
           "f18dbca4-01e4-46da-9416-ec324e26ca55",
@@ -414,18 +581,31 @@
           "speciesMentions": {
             "field": "speciesMentions",
             "labeledCount": 7,
-            "exactMatchCount": 7,
-            "averageF1": 1,
-            "averagePrecision": 1,
+            "exactMatchCount": 6,
+            "averageF1": 0.952,
+            "averagePrecision": 0.929,
             "averageRecall": 1,
-            "mismatches": []
+            "mismatches": [
+              {
+                "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
+                "title": "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep",
+                "expected": [
+                  "sheep"
+                ],
+                "actual": [
+                  "primate",
+                  "sheep"
+                ],
+                "f1": 0.667
+              }
+            ]
           },
           "specimenTypes": {
             "field": "specimenTypes",
             "labeledCount": 7,
-            "exactMatchCount": 5,
-            "averageF1": 0.905,
-            "averagePrecision": 1,
+            "exactMatchCount": 4,
+            "averageF1": 0.876,
+            "averagePrecision": 0.952,
             "averageRecall": 0.857,
             "mismatches": [
               {
@@ -451,6 +631,20 @@
                   "follicles"
                 ],
                 "f1": 0.667
+              },
+              {
+                "paperId": "f45485d1-4ae1-4952-87f5-c42f47e5d445",
+                "title": "Ovarian and oocyte cryopreservation",
+                "expected": [
+                  "oocytes",
+                  "whole ovary"
+                ],
+                "actual": [
+                  "follicles",
+                  "oocytes",
+                  "whole ovary"
+                ],
+                "f1": 0.8
               }
             ]
           },
@@ -458,21 +652,10 @@
             "field": "outcomeClasses",
             "labeledCount": 3,
             "exactMatchCount": 1,
-            "averageF1": 0.333,
-            "averagePrecision": 0.333,
-            "averageRecall": 0.333,
+            "averageF1": 0.5,
+            "averagePrecision": 0.667,
+            "averageRecall": 0.444,
             "mismatches": [
-              {
-                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
-                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
-                "expected": [
-                  "morphology",
-                  "transplantation",
-                  "viability"
-                ],
-                "actual": [],
-                "f1": 0
-              },
               {
                 "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
                 "title": "Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry",
@@ -484,6 +667,19 @@
                   "reproductive"
                 ],
                 "f1": 0
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": [
+                  "morphology",
+                  "transplantation",
+                  "viability"
+                ],
+                "actual": [
+                  "morphology"
+                ],
+                "f1": 0.5
               }
             ]
           },
@@ -491,9 +687,9 @@
             "field": "stepPhases",
             "labeledCount": 4,
             "exactMatchCount": 0,
-            "averageF1": 0.552,
-            "averagePrecision": 0.475,
-            "averageRecall": 0.75,
+            "averageF1": 0.4,
+            "averagePrecision": 0.417,
+            "averageRecall": 0.417,
             "mismatches": [
               {
                 "paperId": "eb7b902b-87b7-4169-8058-8818dfa71c48",
@@ -503,11 +699,18 @@
                   "loading",
                   "warming"
                 ],
-                "actual": [
-                  "unknown",
-                  "warming"
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
+                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
+                "expected": [
+                  "equilibration",
+                  "loading"
                 ],
-                "f1": 0.4
+                "actual": [],
+                "f1": 0
               },
               {
                 "paperId": "f9a6ac96-9b1f-406a-8e16-bc05e1a6b857",
@@ -518,28 +721,10 @@
                   "warming"
                 ],
                 "actual": [
-                  "assessment",
                   "storage",
-                  "unknown",
                   "warming"
                 ],
-                "f1": 0.571
-              },
-              {
-                "paperId": "f24fdc26-2071-4ae1-86d6-fa70a17a9574",
-                "title": "Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation",
-                "expected": [
-                  "equilibration",
-                  "loading"
-                ],
-                "actual": [
-                  "assessment",
-                  "equilibration",
-                  "loading",
-                  "storage",
-                  "unknown"
-                ],
-                "f1": 0.571
+                "f1": 0.8
               },
               {
                 "paperId": "efebd52e-704f-48b4-82e5-f41f971df210",
@@ -550,11 +735,10 @@
                 ],
                 "actual": [
                   "cooling",
-                  "storage",
-                  "unknown",
+                  "culture",
                   "warming"
                 ],
-                "f1": 0.667
+                "f1": 0.8
               }
             ]
           }
@@ -598,9 +782,9 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.577,
-          "averageOnCorrectIncluded": 0.577,
-          "averageOnIncorrectIncluded": 0.465
+          "averageOnExpectedIncluded": 0.714,
+          "averageOnCorrectIncluded": 0.714,
+          "averageOnIncorrectIncluded": 0.675
         },
         "unexpectedIncludedPaperIds": [
           "f18dbca4-01e4-46da-9416-ec324e26ca55",
@@ -636,9 +820,16 @@
           "paperType": {
             "field": "paperType",
             "labeledCount": 9,
-            "exactMatchCount": 9,
-            "accuracy": 1,
-            "mismatches": []
+            "exactMatchCount": 8,
+            "accuracy": 0.889,
+            "mismatches": [
+              {
+                "paperId": "fd2cabdb-f442-4545-b312-845303c594c5",
+                "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+                "expected": "experimental",
+                "actual": "unknown"
+              }
+            ]
           },
           "protocolFamily": {
             "field": "protocolFamily",
@@ -670,20 +861,166 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "labeledCount": 9,
-            "exactMatchCount": 9,
-            "averageF1": 1,
-            "averagePrecision": 1,
+            "exactMatchCount": 7,
+            "averageF1": 0.941,
+            "averagePrecision": 0.907,
             "averageRecall": 1,
-            "mismatches": []
+            "mismatches": [
+              {
+                "paperId": "f062f014-b946-4592-a58e-cd0633082b85",
+                "title": "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+                "expected": [
+                  "morphology"
+                ],
+                "actual": [
+                  "morphology",
+                  "transplantation"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "e94731cb-3b60-464e-b981-2b1d0737dc61",
+                "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+                "expected": [
+                  "morphology",
+                  "viability"
+                ],
+                "actual": [
+                  "morphology",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.8
+              }
+            ]
           },
           "stepPhases": {
             "field": "stepPhases",
             "labeledCount": 9,
-            "exactMatchCount": 9,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
+            "exactMatchCount": 0,
+            "averageF1": 0.304,
+            "averagePrecision": 0.491,
+            "averageRecall": 0.257,
+            "mismatches": [
+              {
+                "paperId": "d8fa8551-7088-4f7a-ba21-f3a7b113db47",
+                "title": "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+                "expected": [
+                  "cooling",
+                  "loading",
+                  "perfusion",
+                  "storage"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "f74836db-46fb-4ca6-b619-a505fc30d0a0",
+                "title": "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants",
+                "expected": [
+                  "loading",
+                  "warming"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "e60a5fab-5db3-49b5-99d8-badd40672abf",
+                "title": "Whole sheep ovary cryopreservation: evaluation of a slow freezing protocol with dimethylsulphoxide",
+                "expected": [
+                  "cooling",
+                  "culture",
+                  "perfusion"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "e60a0ee8-afa8-449c-bbab-60f04b2fdf09",
+                "title": "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+                "expected": [
+                  "perfusion",
+                  "storage"
+                ],
+                "actual": [
+                  "assessment",
+                  "cooling",
+                  "perfusion",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "da34cec8-3a6e-460b-ae3b-62afb90c6e4e",
+                "title": "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "equilibration",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "f062f014-b946-4592-a58e-cd0633082b85",
+                "title": "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+                "expected": [
+                  "culture",
+                  "loading",
+                  "storage"
+                ],
+                "actual": [
+                  "culture"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "fd2cabdb-f442-4545-b312-845303c594c5",
+                "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+                "expected": [
+                  "assessment",
+                  "loading",
+                  "storage",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [
+                  "assessment",
+                  "culture",
+                  "warming"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "e94731cb-3b60-464e-b981-2b1d0737dc61",
+                "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+                "expected": [
+                  "culture",
+                  "loading"
+                ],
+                "actual": [
+                  "assessment",
+                  "culture"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "e0ce771b-2f1d-4b37-8c0f-8d0afda3ef26",
+                "title": "Vitrified turkey ovarian tissue cultured and assessed through gene expression patterns: A potential screening tool",
+                "expected": [
+                  "assessment",
+                  "culture",
+                  "loading"
+                ],
+                "actual": [
+                  "culture"
+                ],
+                "f1": 0.5
+              }
+            ]
           }
         },
         "coverage": {
@@ -725,8 +1062,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.818,
-          "averageOnCorrectIncluded": 0.818,
+          "averageOnExpectedIncluded": 0.83,
+          "averageOnCorrectIncluded": 0.83,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -769,7 +1106,7 @@
       {
         "name": "reviewed specimen macro F1",
         "passed": true,
-        "actual": 0.905,
+        "actual": 0.876,
         "threshold": 0.75,
         "comparator": ">=",
         "notes": "Specimen context must remain anchored to the ovarian-tissue slice."
@@ -777,7 +1114,7 @@
       {
         "name": "reviewed species macro F1",
         "passed": true,
-        "actual": 1,
+        "actual": 0.952,
         "threshold": 0.75,
         "comparator": ">=",
         "notes": "Species leakage is another easy way for the system to look cleaner than it is."
@@ -793,7 +1130,7 @@
   },
   "resolved": {
     "domain": "ovarian-tissue",
-    "generatedAt": "2026-09-14T13:29:39.561Z",
+    "generatedAt": "2026-09-15T16:50:37.501Z",
     "benchmarkDescription": "Seed benchmark for the ovarian-tissue atlas. Reviewed entries come from explicit curation decisions; seeded entries are carried from the resolved atlas and should be upgraded to reviewed over time.",
     "benchmarkEntryCount": 28,
     "subsets": {
@@ -815,9 +1152,16 @@
           "paperType": {
             "field": "paperType",
             "labeledCount": 16,
-            "exactMatchCount": 16,
-            "accuracy": 1,
-            "mismatches": []
+            "exactMatchCount": 15,
+            "accuracy": 0.938,
+            "mismatches": [
+              {
+                "paperId": "fd2cabdb-f442-4545-b312-845303c594c5",
+                "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+                "expected": "experimental",
+                "actual": "unknown"
+              }
+            ]
           },
           "protocolFamily": {
             "field": "protocolFamily",
@@ -849,20 +1193,166 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "labeledCount": 12,
-            "exactMatchCount": 12,
-            "averageF1": 1,
-            "averagePrecision": 1,
+            "exactMatchCount": 10,
+            "averageF1": 0.956,
+            "averagePrecision": 0.931,
             "averageRecall": 1,
-            "mismatches": []
+            "mismatches": [
+              {
+                "paperId": "f062f014-b946-4592-a58e-cd0633082b85",
+                "title": "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+                "expected": [
+                  "morphology"
+                ],
+                "actual": [
+                  "morphology",
+                  "transplantation"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "e94731cb-3b60-464e-b981-2b1d0737dc61",
+                "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+                "expected": [
+                  "morphology",
+                  "viability"
+                ],
+                "actual": [
+                  "morphology",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.8
+              }
+            ]
           },
           "stepPhases": {
             "field": "stepPhases",
             "labeledCount": 13,
-            "exactMatchCount": 13,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
+            "exactMatchCount": 4,
+            "averageF1": 0.518,
+            "averagePrecision": 0.647,
+            "averageRecall": 0.486,
+            "mismatches": [
+              {
+                "paperId": "d8fa8551-7088-4f7a-ba21-f3a7b113db47",
+                "title": "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+                "expected": [
+                  "cooling",
+                  "loading",
+                  "perfusion",
+                  "storage"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "f74836db-46fb-4ca6-b619-a505fc30d0a0",
+                "title": "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants",
+                "expected": [
+                  "loading",
+                  "warming"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "e60a5fab-5db3-49b5-99d8-badd40672abf",
+                "title": "Whole sheep ovary cryopreservation: evaluation of a slow freezing protocol with dimethylsulphoxide",
+                "expected": [
+                  "cooling",
+                  "culture",
+                  "perfusion"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "e60a0ee8-afa8-449c-bbab-60f04b2fdf09",
+                "title": "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+                "expected": [
+                  "perfusion",
+                  "storage"
+                ],
+                "actual": [
+                  "assessment",
+                  "cooling",
+                  "perfusion",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "da34cec8-3a6e-460b-ae3b-62afb90c6e4e",
+                "title": "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "equilibration",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "f062f014-b946-4592-a58e-cd0633082b85",
+                "title": "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+                "expected": [
+                  "culture",
+                  "loading",
+                  "storage"
+                ],
+                "actual": [
+                  "culture"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "fd2cabdb-f442-4545-b312-845303c594c5",
+                "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+                "expected": [
+                  "assessment",
+                  "loading",
+                  "storage",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [
+                  "assessment",
+                  "culture",
+                  "warming"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "e94731cb-3b60-464e-b981-2b1d0737dc61",
+                "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+                "expected": [
+                  "culture",
+                  "loading"
+                ],
+                "actual": [
+                  "assessment",
+                  "culture"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "e0ce771b-2f1d-4b37-8c0f-8d0afda3ef26",
+                "title": "Vitrified turkey ovarian tissue cultured and assessed through gene expression patterns: A potential screening tool",
+                "expected": [
+                  "assessment",
+                  "culture",
+                  "loading"
+                ],
+                "actual": [
+                  "culture"
+                ],
+                "f1": 0.5
+              }
+            ]
           }
         },
         "coverage": {
@@ -904,8 +1394,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.795,
-          "averageOnCorrectIncluded": 0.795,
+          "averageOnExpectedIncluded": 0.799,
+          "averageOnCorrectIncluded": 0.799,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1018,8 +1508,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.766,
-          "averageOnCorrectIncluded": 0.766,
+          "averageOnExpectedIncluded": 0.76,
+          "averageOnCorrectIncluded": 0.76,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1043,9 +1533,16 @@
           "paperType": {
             "field": "paperType",
             "labeledCount": 9,
-            "exactMatchCount": 9,
-            "accuracy": 1,
-            "mismatches": []
+            "exactMatchCount": 8,
+            "accuracy": 0.889,
+            "mismatches": [
+              {
+                "paperId": "fd2cabdb-f442-4545-b312-845303c594c5",
+                "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+                "expected": "experimental",
+                "actual": "unknown"
+              }
+            ]
           },
           "protocolFamily": {
             "field": "protocolFamily",
@@ -1077,20 +1574,166 @@
           "outcomeClasses": {
             "field": "outcomeClasses",
             "labeledCount": 9,
-            "exactMatchCount": 9,
-            "averageF1": 1,
-            "averagePrecision": 1,
+            "exactMatchCount": 7,
+            "averageF1": 0.941,
+            "averagePrecision": 0.907,
             "averageRecall": 1,
-            "mismatches": []
+            "mismatches": [
+              {
+                "paperId": "f062f014-b946-4592-a58e-cd0633082b85",
+                "title": "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+                "expected": [
+                  "morphology"
+                ],
+                "actual": [
+                  "morphology",
+                  "transplantation"
+                ],
+                "f1": 0.667
+              },
+              {
+                "paperId": "e94731cb-3b60-464e-b981-2b1d0737dc61",
+                "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+                "expected": [
+                  "morphology",
+                  "viability"
+                ],
+                "actual": [
+                  "morphology",
+                  "transplantation",
+                  "viability"
+                ],
+                "f1": 0.8
+              }
+            ]
           },
           "stepPhases": {
             "field": "stepPhases",
             "labeledCount": 9,
-            "exactMatchCount": 9,
-            "averageF1": 1,
-            "averagePrecision": 1,
-            "averageRecall": 1,
-            "mismatches": []
+            "exactMatchCount": 0,
+            "averageF1": 0.304,
+            "averagePrecision": 0.491,
+            "averageRecall": 0.257,
+            "mismatches": [
+              {
+                "paperId": "d8fa8551-7088-4f7a-ba21-f3a7b113db47",
+                "title": "FUNCTIONAL PRESERVATION AFTER OVARIAN TISSUE AND WHOLE OVARY VITRIFICATION AND AUTO-TRANSPLANTATION IN LARGE ANIMAL MODELS",
+                "expected": [
+                  "cooling",
+                  "loading",
+                  "perfusion",
+                  "storage"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "f74836db-46fb-4ca6-b619-a505fc30d0a0",
+                "title": "Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants",
+                "expected": [
+                  "loading",
+                  "warming"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "e60a5fab-5db3-49b5-99d8-badd40672abf",
+                "title": "Whole sheep ovary cryopreservation: evaluation of a slow freezing protocol with dimethylsulphoxide",
+                "expected": [
+                  "cooling",
+                  "culture",
+                  "perfusion"
+                ],
+                "actual": [],
+                "f1": 0
+              },
+              {
+                "paperId": "e60a0ee8-afa8-449c-bbab-60f04b2fdf09",
+                "title": "Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide",
+                "expected": [
+                  "perfusion",
+                  "storage"
+                ],
+                "actual": [
+                  "assessment",
+                  "cooling",
+                  "perfusion",
+                  "warming"
+                ],
+                "f1": 0.333
+              },
+              {
+                "paperId": "da34cec8-3a6e-460b-ae3b-62afb90c6e4e",
+                "title": "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
+                "expected": [
+                  "assessment",
+                  "cooling",
+                  "equilibration",
+                  "unknown"
+                ],
+                "actual": [
+                  "cooling"
+                ],
+                "f1": 0.4
+              },
+              {
+                "paperId": "f062f014-b946-4592-a58e-cd0633082b85",
+                "title": "Evaluation of the effect of human testicular cell conditioned media on the in vitro development of follicles from cryopreserved human ovarian cortical pieces. A potential approach for fertility preservation for cancer patients",
+                "expected": [
+                  "culture",
+                  "loading",
+                  "storage"
+                ],
+                "actual": [
+                  "culture"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "fd2cabdb-f442-4545-b312-845303c594c5",
+                "title": "Viability and function of the cryopreserved whole rat ovary: comparison between slow-freezing and vitrification",
+                "expected": [
+                  "assessment",
+                  "loading",
+                  "storage",
+                  "unknown",
+                  "warming"
+                ],
+                "actual": [
+                  "assessment",
+                  "culture",
+                  "warming"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "e94731cb-3b60-464e-b981-2b1d0737dc61",
+                "title": "Vitrified sheep isolated secondary follicles are able to grow and form antrum after a short period of in vitro culture",
+                "expected": [
+                  "culture",
+                  "loading"
+                ],
+                "actual": [
+                  "assessment",
+                  "culture"
+                ],
+                "f1": 0.5
+              },
+              {
+                "paperId": "e0ce771b-2f1d-4b37-8c0f-8d0afda3ef26",
+                "title": "Vitrified turkey ovarian tissue cultured and assessed through gene expression patterns: A potential screening tool",
+                "expected": [
+                  "assessment",
+                  "culture",
+                  "loading"
+                ],
+                "actual": [
+                  "culture"
+                ],
+                "f1": 0.5
+              }
+            ]
           }
         },
         "coverage": {
@@ -1132,8 +1775,8 @@
           }
         },
         "confidence": {
-          "averageOnExpectedIncluded": 0.818,
-          "averageOnCorrectIncluded": 0.818,
+          "averageOnExpectedIncluded": 0.83,
+          "averageOnCorrectIncluded": 0.83,
           "averageOnIncorrectIncluded": null
         },
         "unexpectedIncludedPaperIds": [],
@@ -1267,8 +1910,8 @@
     "reviewedInclusionF1": 0.462,
     "reviewedProtocolFamilyAccuracy": 0.857,
     "reviewedPaperTypeAccuracy": 0.714,
-    "reviewedSpeciesMacroF1": 0,
-    "reviewedSpecimenMacroF1": 0.095,
+    "reviewedSpeciesMacroF1": 0.048,
+    "reviewedSpecimenMacroF1": 0.124,
     "reviewedOutcomeCoverage": 0,
     "reviewedStepPhaseCoverage": 0,
     "gatePassCount": 4

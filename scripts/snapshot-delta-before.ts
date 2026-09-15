@@ -1,8 +1,9 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { DomainIdSchema, type DomainId } from "../packages/shared/src/schema.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
+import { type DomainId } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "snapshot-delta-before <domain>");
 
 async function readOptionalFile(path: string): Promise<string | null> {
   try {

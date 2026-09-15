@@ -1,3 +1,4 @@
+import { getDomain, listDomains, type DiscoveryDomainInput, type KeywordConcept as RegistryConcept } from "../../shared/src/domains/index.js";
 import { DomainIdSchema, type DomainId, type LiveDiscoveryProvider } from "../../shared/src/schema.js";
 
 type KeywordConcept = {
@@ -6,26 +7,11 @@ type KeywordConcept = {
 };
 
 type DiscoveryDomainConfig = {
-  label: string;
   queryDescription: string;
   providerQueries: Record<LiveDiscoveryProvider, string>;
   anchorConcepts: KeywordConcept[];
   requiredSupportingConcepts: KeywordConcept[];
   contextualSupportingConcepts: KeywordConcept[];
-  titleMethodConcepts?: KeywordConcept[];
-  blockedTitleConcepts?: KeywordConcept[];
-  minimumTitleRequiredSupportingMatches?: number;
-  minimumTitleMethodMatches?: number;
-};
-
-type CryoDiscoveryDomainInput = {
-  label: string;
-  queryDescription: string;
-  cryodbQuery: string;
-  liveQueryAnchors: string[];
-  anchorConcepts: KeywordConcept[];
-  contextualSupportingConcepts: KeywordConcept[];
-  extraRequiredSupportingConcepts?: KeywordConcept[];
   titleMethodConcepts?: KeywordConcept[];
   blockedTitleConcepts?: KeywordConcept[];
   minimumTitleRequiredSupportingMatches?: number;
@@ -53,6 +39,10 @@ function concept(label: string, phrases: string[]): KeywordConcept {
     label,
     patterns: phrases.map(wordPattern)
   };
+}
+
+function compileConcepts(concepts: RegistryConcept[] | undefined): KeywordConcept[] | undefined {
+  return concepts?.map((entry) => concept(entry.label, entry.phrases));
 }
 
 const COMMON_REQUIRED_SUPPORTING_CONCEPTS = [
@@ -89,110 +79,30 @@ function buildProviderQueries(cryodbQuery: string, liveQueryAnchors: string[]): 
   };
 }
 
-function buildCryoDiscoveryDomainConfig(input: CryoDiscoveryDomainInput): DiscoveryDomainConfig {
+function buildDiscoveryDomainConfig(input: DiscoveryDomainInput): DiscoveryDomainConfig {
   return {
-    label: input.label,
     queryDescription: input.queryDescription,
     providerQueries: buildProviderQueries(input.cryodbQuery, input.liveQueryAnchors),
-    anchorConcepts: input.anchorConcepts,
+    anchorConcepts: compileConcepts(input.anchorConcepts) ?? [],
     requiredSupportingConcepts: [
       ...COMMON_REQUIRED_SUPPORTING_CONCEPTS,
-      ...(input.extraRequiredSupportingConcepts ?? [])
+      ...(compileConcepts(input.extraRequiredSupportingConcepts) ?? [])
     ],
-    contextualSupportingConcepts: input.contextualSupportingConcepts,
-    titleMethodConcepts: input.titleMethodConcepts,
-    blockedTitleConcepts: input.blockedTitleConcepts,
+    contextualSupportingConcepts: compileConcepts(input.contextualSupportingConcepts) ?? [],
+    titleMethodConcepts: compileConcepts(input.titleMethodConcepts),
+    blockedTitleConcepts: compileConcepts(input.blockedTitleConcepts),
     minimumTitleRequiredSupportingMatches: input.minimumTitleRequiredSupportingMatches,
     minimumTitleMethodMatches: input.minimumTitleMethodMatches
   };
 }
 
-const OVARIAN_TITLE_METHOD_CONCEPTS = [
-  concept("protocol", ["protocol", "procedure", "workflow", "method"]),
-  concept("comparison", ["comparison", "compare", "versus", "vs"]),
-  concept("culture", ["culture", "cultured", "in vitro growth", "ivg"]),
-  concept("cryoprotectant handling", [
-    "cryoprotectant",
-    "cryoprotective agent",
-    "cryoprotective agents",
-    "permeation",
-    "equilibration",
-    "warming"
-  ]),
-  concept("freezing method", ["slow freezing", "slow cooling", "vitrification", "vitrified"])
-];
-
-const OVARIAN_BLOCKED_TITLE_CONCEPTS = [
-  concept("review style", ["systematic review", "meta-analysis", "meta analysis"]),
-  concept("clinical outcome", ["live birth", "pregnancy", "pregnancies", "woman", "women", "children following"]),
-  concept("broad summary", ["overview", "state of the art"])
-];
-
-const DISCOVERY_DOMAIN_CONFIGS: Record<DomainId, DiscoveryDomainConfig> = {
-  "ovarian-tissue": buildCryoDiscoveryDomainConfig({
-    label: "ovarian tissue",
-    queryDescription:
-      "Cryopreservation literature for ovarian tissue, ovarian cortex, follicles, and whole-ovary workflows with explicit storage, freezing, vitrification, or thaw signal.",
-    cryodbQuery: "ovarian tissue cryopreservation",
-    liveQueryAnchors: [
-      "ovarian tissue",
-      "ovarian cortex",
-      "whole ovary",
-      "ovarian follicles",
-      "primordial follicles",
-      "preantral follicles"
-    ],
-    anchorConcepts: [
-      concept("ovarian tissue", ["ovarian tissue", "ovarian tissues"]),
-      concept("ovarian cortex", ["ovarian cortex", "ovarian cortical"]),
-      concept("whole ovary", ["whole ovary", "whole ovaries"]),
-      concept("follicles", [
-        "ovarian follicle",
-        "ovarian follicles",
-        "primordial follicle",
-        "primordial follicles",
-        "preantral follicle",
-        "preantral follicles"
-      ])
-    ],
-    extraRequiredSupportingConcepts: [concept("cryostorage", ["cryostorage", "liquid nitrogen"])],
-    contextualSupportingConcepts: [
-      concept("fertility preservation", ["fertility preservation"]),
-      concept("oocyte", ["oocyte", "oocytes"]),
-      concept("transplantation", ["transplantation", "transplant", "autotransplant", "graft"])
-    ],
-    titleMethodConcepts: OVARIAN_TITLE_METHOD_CONCEPTS,
-    blockedTitleConcepts: OVARIAN_BLOCKED_TITLE_CONCEPTS,
-    minimumTitleRequiredSupportingMatches: 2,
-    minimumTitleMethodMatches: 1
-  }),
-  islets: buildCryoDiscoveryDomainConfig({
-    label: "islets",
-    queryDescription:
-      "Cryopreservation literature for pancreatic islets with explicit freezing, vitrification, thaw, cryoprotectant, or post-thaw recovery signal.",
-    cryodbQuery: "islet cryopreservation",
-    liveQueryAnchors: ["pancreatic islets", "pancreatic islet", "islets"],
-    anchorConcepts: [
-      concept("pancreatic islets", ["pancreatic islets", "pancreatic islet"]),
-      concept("islets", ["islets", "islet"]),
-      concept("encapsulated islets", ["encapsulated islets", "encapsulated islet"])
-    ],
-    extraRequiredSupportingConcepts: [
-      concept("recovery", ["recovery", "viability", "post-thaw recovery"]),
-      concept("freezer bag", ["freezer bag"])
-    ],
-    contextualSupportingConcepts: [
-      concept("transplantation", ["transplantation", "transplant"]),
-      concept("graft", ["graft", "grafts"]),
-      concept("insulin", ["insulin"]),
-      concept("beta cell", ["beta cell", "beta cells"])
-    ]
-  })
-};
+const DISCOVERY_DOMAIN_CONFIGS = new Map<DomainId, DiscoveryDomainConfig>(
+  listDomains().map((definition) => [definition.id as DomainId, buildDiscoveryDomainConfig(definition.discovery)])
+);
 
 export function getDiscoveryDomainConfig(domain: DomainId): DiscoveryDomainConfig {
   DomainIdSchema.parse(domain);
-  return DISCOVERY_DOMAIN_CONFIGS[domain];
+  return DISCOVERY_DOMAIN_CONFIGS.get(domain) ?? buildDiscoveryDomainConfig(getDomain(domain).discovery);
 }
 
 function matchedConceptLabels(concepts: KeywordConcept[], haystack: string): string[] {

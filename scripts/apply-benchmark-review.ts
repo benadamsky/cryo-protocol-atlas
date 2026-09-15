@@ -1,12 +1,12 @@
 import { execFileSync } from "node:child_process";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   AutoresearchProposalFileSchema,
   BenchmarkFileSchema,
   BenchmarkProposalDecisionSchema,
   BenchmarkProposalDecisionFileSchema,
-  DomainIdSchema,
   type OutcomeClass,
   type OutcomeMention,
   type BenchmarkEntry,
@@ -14,7 +14,7 @@ import {
   type DomainId
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "apply-benchmark-review <domain>");
 
 function mergeNotes(existingNotes: string | undefined, proposalId: string): string {
   const patchNote = `Accepted benchmark autofill proposal ${proposalId}.`;

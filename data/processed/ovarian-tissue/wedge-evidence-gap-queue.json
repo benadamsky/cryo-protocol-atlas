@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T13:29:41.482Z",
+  "generatedAt": "2026-09-15T16:50:38.474Z",
   "domain": "ovarian-tissue",
   "wedgeId": "ovarian-tissue:head-to-head-dmso-centered-ovarian-tissue-benchmark",
   "queue": [
@@ -10,15 +10,15 @@
       "status": "pending",
       "decisionImpact": "medium",
       "decisionImpactScore": {
-        "score": 0.27,
+        "score": 0.412,
         "components": {
           "wedgeRelevance": 0.55,
           "blockerProximity": 0,
-          "experimentPacketEffect": 0,
+          "experimentPacketEffect": 0.708,
           "evidenceAuthorityUplift": 0.7,
           "contradictionResolution": 0
         },
-        "rationale": "currently abstract-only; enrichment could upgrade authority"
+        "rationale": "supports experiment packet \"Promote morphology-heavy protocols to viability endpoints\"; currently abstract-only; enrichment could upgrade authority"
       },
       "missingFields": [
         "outcomeClasses",
@@ -79,7 +79,8 @@
       "missingFields": [
         "outcomeClasses",
         "stepPhases",
-        "authority"
+        "authority",
+        "protocolDetail"
       ],
       "authorityProfile": "abstract-only",
       "translationalSignal": "research only",
@@ -107,7 +108,8 @@
       "missingFields": [
         "outcomeClasses",
         "stepPhases",
-        "authority"
+        "authority",
+        "protocolDetail"
       ],
       "authorityProfile": "abstract-only",
       "translationalSignal": "transplant relevant",

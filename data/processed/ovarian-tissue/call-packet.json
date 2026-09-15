@@ -1,8 +1,8 @@
 {
   "domain": "ovarian-tissue",
-  "title": "ovarian-tissue wedge call packet",
+  "title": "Ovarian tissue wedge call packet",
   "executiveSummary": [
-    "ovarian-tissue is currently anchored on slow-freezing protocols built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol.",
+    "ovarian-tissue is currently anchored on slow-freezing protocols built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol, with a normalized workflow backbone of cooling -> warming.",
     "The atlas is credible enough to use for wedge-finding: reviewed gates pass, reviewed outcome coverage is 0.429, and reviewed step-phase coverage is 0.571.",
     "The explicit active wedge is \"Head-to-head DMSO-centered ovarian tissue benchmark\", selected because it gives the clearest decision question and the most reviewable next experiment under the current evidence."
   ],
@@ -12,7 +12,7 @@
     "reviewedStepPhaseCoverage": 0.571,
     "reviewedMinimumDepthReady": true,
     "normalizedProtocolCount": 16,
-    "protocolsWithNormalizationWarnings": 3,
+    "protocolsWithNormalizationWarnings": 0,
     "pendingSourceEnrichments": 4,
     "reviewedSourceEnrichments": 0,
     "secondarySourceReviewedCount": 0,
@@ -32,31 +32,33 @@
       "follicles",
       "ovarian tissue"
     ],
-    "dominantTransitions": [],
+    "dominantTransitions": [
+      "cooling -> warming"
+    ],
     "representativeConditions": [
       "Dimethyl Sulfoxide 1.5 M"
     ],
-    "summary": "Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol in follicles, ovarian tissue workflows. Normalized workflow signal is still sparse, with repeated condition mentions such as Dimethyl Sulfoxide 1.5 M."
+    "summary": "Current default literature center of gravity is slow-freezing, usually built around Dimethyl Sulfoxide, Sucrose, Ethylene Glycol in follicles, ovarian tissue workflows. Normalized workflow signal is cooling -> warming, with repeated condition mentions such as Dimethyl Sulfoxide 1.5 M."
   },
   "bestWedge": {
     "title": "Head-to-head DMSO-centered ovarian tissue benchmark",
     "category": "benchmark",
     "whyThisWedge": "A matched-species ovarian tissue benchmark will separate protocol-family effects from paper-to-paper noise in DMSO-centered preservation.",
-    "currentPainPoint": "Literature looks directionally promising but still underspecified for a clean protocol decision.",
+    "currentPainPoint": "2 relevant papers still have sparse step structure",
     "whyNow": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows.",
-    "evidenceSummary": "scientific=0.673 | company=0.82 | confidence=0.5 | translational=0.8",
+    "evidenceSummary": "scientific=0.673 | company=0.82 | confidence=0.475 | translational=0.8",
     "firstExperiment": "Head-to-head DMSO-centered ovarian tissue benchmark"
   },
   "literatureGaps": [
-    "Literature looks directionally promising but still underspecified for a clean protocol decision.",
+    "2 relevant papers still have sparse step structure",
     "4 reviewed papers still lack explicit outcome labels.",
     "4 source-enrichment records are still pending.",
     "0 reviewed source-enrichment records rely on secondary-source evidence rather than the original abstract/full text.",
     "Top wedge evidence gap: Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep"
   ],
   "marketBridge": {
-    "currentStandardPattern": "slow-freezing via Dimethyl Sulfoxide, Sucrose, Ethylene Glycol",
-    "likelyPainPoint": "Literature looks directionally promising but still underspecified for a clean protocol decision.",
+    "currentStandardPattern": "slow-freezing via Dimethyl Sulfoxide, Sucrose, Ethylene Glycol with cooling -> warming",
+    "likelyPainPoint": "2 relevant papers still have sparse step structure",
     "whyOptimizationMightMatter": "Commercial relevance depends on whether better protocol evidence can bridge into organ banking, fertility, or transplant-adjacent workflows.",
     "likelyBuyerOrUser": "fertility preservation, ovarian tissue banking, and transplant-adjacent preservation groups"
   },
@@ -69,7 +71,7 @@
     "missingEvidence": [
       "Autologous transplantation of cryopreserved ovary induces the generation of antiovary antibodies in sheep: outcomeClasses, authority still need stronger evidence.",
       "Effect of cryoprotectants on the survival of follicles in frozen mouse ovaries: outcomeClasses, stepPhases, authority, protocolDetail still need stronger evidence.",
-      "Cryopreservation and in vitro culture of caprine preantral follicles: outcomeClasses, stepPhases, authority still need stronger evidence.",
+      "Cryopreservation and in vitro culture of caprine preantral follicles: outcomeClasses, stepPhases, authority, protocolDetail still need stronger evidence.",
       "4 reviewed in-scope papers still lack explicit outcome labels.",
       "0 reviewed labels currently depend on secondary-source evidence and should be treated as lower-authority than primary-source-backed rows."
     ],

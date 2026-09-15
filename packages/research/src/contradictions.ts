@@ -1,3 +1,4 @@
+import { getDomain } from "../../shared/src/domains/index.js";
 import {
   ContradictionSchema,
   type Contradiction,
@@ -11,7 +12,6 @@ function intersection(valuesA: string[], valuesB: string[]): string[] {
   return Array.from(new Set(valuesA.filter((value) => setB.has(value))));
 }
 
-const GENERIC_SPECIMEN_TYPES = new Set(["islets", "pancreatic islets", "ovarian tissue", "follicles"]);
 
 function outcomeClasses(extraction: ProtocolExtraction): OutcomeClass[] {
   return Array.from(new Set(extraction.outcomeMentions.map((entry) => entry.outcomeClass)));
@@ -31,11 +31,15 @@ function meaningfulPhases(extraction: ProtocolExtraction): string[] {
   );
 }
 
-function specificSpecimenTypes(extraction: ProtocolExtraction): string[] {
-  return extraction.specimenTypes.filter((specimen) => !GENERIC_SPECIMEN_TYPES.has(specimen));
+function specificSpecimenTypes(extraction: ProtocolExtraction, genericSpecimenTypes: Set<string>): string[] {
+  return extraction.specimenTypes.filter((specimen) => !genericSpecimenTypes.has(specimen));
 }
 
-function contradictionReason(paperA: ProtocolExtraction, paperB: ProtocolExtraction): string | null {
+function contradictionReason(
+  paperA: ProtocolExtraction,
+  paperB: ProtocolExtraction,
+  genericSpecimenTypes: Set<string>
+): string | null {
   const sharedChemicals = intersection(
     paperA.chemicalMentions.map((entry) => entry.canonicalName),
     paperB.chemicalMentions.map((entry) => entry.canonicalName)
@@ -45,8 +49,8 @@ function contradictionReason(paperA: ProtocolExtraction, paperB: ProtocolExtract
   const outcomesA = outcomeClasses(paperA);
   const outcomesB = outcomeClasses(paperB);
   const sharedOutcomes = intersection(outcomesA, outcomesB);
-  const specificSpecimensA = specificSpecimenTypes(paperA);
-  const specificSpecimensB = specificSpecimenTypes(paperB);
+  const specificSpecimensA = specificSpecimenTypes(paperA, genericSpecimenTypes);
+  const specificSpecimensB = specificSpecimenTypes(paperB, genericSpecimenTypes);
   const sharedSpecificSpecimens = intersection(specificSpecimensA, specificSpecimensB);
 
   if (!experimentalComparable(paperA) || !experimentalComparable(paperB)) {
@@ -92,13 +96,14 @@ function contradictionReason(paperA: ProtocolExtraction, paperB: ProtocolExtract
 }
 
 export function detectContradictions(snapshot: ExtractionSnapshot): Contradiction[] {
+  const genericSpecimenTypes = new Set(getDomain(snapshot.domain).research.genericSpecimenTypes);
   const contradictions: Contradiction[] = [];
 
   for (let indexA = 0; indexA < snapshot.extractions.length; indexA += 1) {
     for (let indexB = indexA + 1; indexB < snapshot.extractions.length; indexB += 1) {
       const paperA = snapshot.extractions[indexA];
       const paperB = snapshot.extractions[indexB];
-      const reason = contradictionReason(paperA, paperB);
+      const reason = contradictionReason(paperA, paperB, genericSpecimenTypes);
 
       if (!reason) {
         continue;

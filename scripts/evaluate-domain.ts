@@ -2,16 +2,16 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { applyProtocolOverrides, parseOverrideFile } from "../packages/normalize/src/overrides.js";
 import { evaluateBenchmark, renderBenchmarkMarkdown } from "../packages/research/src/evaluation.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   type BenchmarkFile,
   BenchmarkFileSchema,
-  DomainIdSchema,
   ExtractionSnapshotSchema,
   type ProtocolExtraction,
   type DomainId
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "evaluate-domain <domain>");
 
 type BenchmarkAnalysis = {
   domain: DomainId;

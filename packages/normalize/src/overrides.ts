@@ -1,5 +1,6 @@
 import {
   ProtocolOverrideFileSchema,
+  type DomainId,
   type ExtractionSnapshot,
   type ProtocolExtraction,
   type ProtocolOverride,
@@ -11,6 +12,7 @@ export function parseOverrideFile(input: unknown): ProtocolOverrideFile {
 }
 
 export function mergeProtocolOverrides(
+  domain: DomainId,
   baseOverrideFile: ProtocolOverrideFile | null,
   nextOverrides: ProtocolOverride[]
 ): ProtocolOverrideFile | null {
@@ -39,7 +41,7 @@ export function mergeProtocolOverrides(
 
   return ProtocolOverrideFileSchema.parse({
     generatedAt: new Date().toISOString(),
-    domain: baseOverrideFile?.domain ?? "ovarian-tissue",
+    domain: baseOverrideFile?.domain ?? domain,
     overrides: Array.from(merged.values()).sort((left, right) => left.paperId.localeCompare(right.paperId))
   });
 }

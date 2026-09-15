@@ -4,7 +4,7 @@
 - extraction count: 28
 - resolved extraction count: 16
 - normalized protocol count: 16
-- protocols with normalization warnings: 3
+- protocols with normalization warnings: 0
 - reviewed outcome coverage: 0.429
 - reviewed step-phase coverage: 0.571
 - reviewed minimum-depth ready: yes

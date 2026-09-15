@@ -2,15 +2,15 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { listAvailableProperties, listPapers, mapAdvancedSearchPaper } from "../packages/ingest/src/cryodb.js";
 import { scorePaperForDomain } from "../packages/ingest/src/domain.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   CryoPaperSchema,
-  DomainIdSchema,
   DomainSnapshotSchema,
   type DomainId,
   type DomainPaper
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "ingest-domain <domain>");
 const perPage = 100;
 
 async function main(selectedDomain: DomainId): Promise<void> {

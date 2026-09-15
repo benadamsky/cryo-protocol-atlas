@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T13:29:40.393Z",
+  "generatedAt": "2026-09-15T16:50:37.919Z",
   "domain": "ovarian-tissue",
   "wedgeId": "ovarian-tissue:head-to-head-dmso-centered-ovarian-tissue-benchmark",
   "status": "candidate",
@@ -14,7 +14,7 @@
   "recommendedNextStep": "DMSO appears repeatedly in ovarian tissue papers, but the corpus mixes unknown, slow-freezing, and vitrification contexts with morphology-heavy endpoints. A direct benchmark should reduce ambiguity faster than another literature pass.",
   "scientificRelevance": 0.673,
   "companyRelevance": 0.82,
-  "evidenceConfidence": 0.5,
+  "evidenceConfidence": 0.475,
   "translationalPotential": 0.8,
   "supportingPaperTitles": [
     "Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols",
@@ -36,7 +36,9 @@
       "ovarian tissue"
     ]
   },
-  "keyUncertainties": [],
+  "keyUncertainties": [
+    "2 relevant papers still have sparse step structure"
+  ],
   "authoritySummary": {
     "reviewedOutcomeCoverage": 0.429,
     "reviewedStepPhaseCoverage": 0.571,

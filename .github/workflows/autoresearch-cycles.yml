@@ -80,11 +80,11 @@ jobs:
 
       - name: Commit And Push Data Changes
         run: |
-          if [ -z "$(git status --porcelain -- data apps/web/dashboard-data.json)" ]; then
+          if [ -z "$(git status --porcelain -- data)" ]; then
             echo "No observer or data changes to commit."
             exit 0
           fi
 
-          git add data apps/web/dashboard-data.json
+          git add data
           git commit -m "chore(autoresearch): run bounded cycles"
           git push origin HEAD:main

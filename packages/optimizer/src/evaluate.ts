@@ -7,6 +7,7 @@ import {
   type OptimizerPolicy,
   type OptimizerScoredCandidate
 } from "./schema.js";
+import { ALL_DOMAINS } from "../../shared/src/schema.js";
 import { scoreCandidate } from "./score.js";
 
 function safeRatio(numerator: number, denominator: number): number {
@@ -138,7 +139,7 @@ function buildDomainMetrics(domainCandidates: OptimizerScoredCandidate[]): Optim
   const metrics = metricsFromCounts(counts);
 
   return {
-    domain: domainCandidates[0]?.domain ?? "islets",
+    domain: domainCandidates[0]?.domain ?? ALL_DOMAINS[0],
     candidateCount: counts.candidateCount,
     positiveCount: counts.positiveCount,
     negativeCount: counts.negativeCount,

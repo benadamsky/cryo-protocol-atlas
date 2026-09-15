@@ -17,7 +17,7 @@
 ## Confidence
 - scientific relevance: 0.673
 - company relevance: 0.82
-- evidence confidence: 0.5
+- evidence confidence: 0.475
 - translational potential: 0.8
 - reviewed outcome coverage: 0.429
 - reviewed step-phase coverage: 0.571
@@ -25,4 +25,4 @@
 - abstract-only papers: 6
 
 ## Key uncertainties
-- none surfaced yet
+- 2 relevant papers still have sparse step structure

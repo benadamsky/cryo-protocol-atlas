@@ -7,7 +7,7 @@ Wedge: Head-to-head DMSO-centered ovarian tissue benchmark
 - dominant base backbones: Dimethyl Sulfoxide + Ethylene Glycol + Propylene Glycol | Dimethyl Sulfoxide + Ethylene Glycol | Dimethyl Sulfoxide + Sucrose | Dimethyl Sulfoxide + Ethylene Glycol + Sucrose
 - main candidate adjuncts: none
 - best-supported signals: none
-- main confounds: none
+- main confounds: base only (Dimethyl Sulfoxide + Propylene Glycol) via Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols [sparse-protocol] | base only (Dimethyl Sulfoxide + Ethylene Glycol) via Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants [sparse-protocol]
 
 ## Candidate signals
 | signal | best paper | evidence read | endpoints | decision take |
@@ -25,5 +25,5 @@ Wedge: Head-to-head DMSO-centered ovarian tissue benchmark
 | Cryopreservation of human ovarian tissue: Comparison of novel direct cover vitriﬁcation and conventional vitriﬁcation | vitrification | Dimethyl Sulfoxide + Ethylene Glycol | none | human | morphology, viability, transplantation | abstract-only | none | 0.892 |
 | Optimization of freezing and thawing protocols for human ovarian tissue cryopreservation through thermophysical characterisation of freezing medium by differential scanning calorimetry | slow-freezing | Dimethyl Sulfoxide + Sucrose | none | human | viability, function | abstract-only | none | 0.892 |
 | Cat ovarian follicle ultrastructure after cryopreservation with ethylene glycol and dimethyl sulfoxide | slow-freezing | Dimethyl Sulfoxide + Ethylene Glycol + Sucrose | none | cat | viability, morphology | abstract-only | none | 0.86 |
-| Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols | slow-freezing | Dimethyl Sulfoxide + Propylene Glycol | none | sheep | viability, morphology | abstract-only | none | 0.86 |
-| Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants | vitrification | Dimethyl Sulfoxide + Ethylene Glycol | none | peccary | viability, morphology | abstract-only | none | 0.86 |
+| Follicular viability and morphology of sheep ovaries after exposure to cryoprotectant and cryopreservation with different freezing protocols | slow-freezing | Dimethyl Sulfoxide + Propylene Glycol | none | sheep | viability, morphology | abstract-only | sparse-protocol | 0.79 |
+| Vitrification of collared peccary ovarian tissue using open or closed systems and different intracellular cryoprotectants | vitrification | Dimethyl Sulfoxide + Ethylene Glycol | none | peccary | viability, morphology | abstract-only | sparse-protocol | 0.79 |

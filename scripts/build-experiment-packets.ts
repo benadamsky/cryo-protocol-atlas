@@ -1,8 +1,8 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   ActiveWedgeSchema,
-  DomainIdSchema,
   ExperimentPacketFileSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
@@ -12,7 +12,7 @@ import {
   renderExperimentPacketFileMarkdown
 } from "../packages/research/src/experiment-packets.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "build-experiment-packets <domain>");
 
 async function main(selectedDomain: DomainId): Promise<void> {
   const processedDir = join(process.cwd(), "data", "processed", selectedDomain);

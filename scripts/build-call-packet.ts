@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
-  DomainIdSchema,
   WedgeBenchmarkMatrixSchema,
   type DomainId
 } from "../packages/shared/src/schema.js";
@@ -11,7 +11,7 @@ import {
   renderDomainCallPacketMarkdown
 } from "../packages/research/src/call-packet.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "build-call-packet <domain>");
 
 async function maybeReadOpportunityScanEntry(
   rootDir: string,

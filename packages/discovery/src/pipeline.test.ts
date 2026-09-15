@@ -6,6 +6,7 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { ALL_DOMAINS } from "../../shared/src/schema.js";
 import {
   DiscoveryImportSummarySchema,
   DiscoveryPromotionQueueSchema,
@@ -239,96 +240,59 @@ test("queue carry-forward survives dedupe key changes and packet excludes newly 
   });
 });
 
+async function seedValidationArtifacts(cwd: string, domain: string, degradationReasons: string[]): Promise<void> {
+  const generatedAt = "2026-03-24T02:00:00.000Z";
+  const isDegraded = degradationReasons.length > 0;
+  await writeJson(join(cwd, "data", "discovery", domain, "import-summary.json"), {
+    domain,
+    importFileCount: 1,
+    importedRecordCount: 1,
+    mergedImportedRecordCount: 1,
+    manualOnlyRecordCount: 0,
+    importedSources: ["pubmed:seed.json"],
+    sourceBreakdown: { pubmed: 1 },
+    isDegraded: false,
+    degradationReasons: []
+  });
+  await writeJson(join(cwd, "data", "discovery", domain, "discovery-snapshot.json"), {
+    generatedAt,
+    domain,
+    queryDescription: "test",
+    totalCandidates: 1,
+    isDegraded,
+    degradationReasons,
+    providerSummaries: [],
+    papers: []
+  });
+  await writeJson(join(cwd, "data", "discovery", domain, "promotion-queue.json"), {
+    generatedAt: "2026-03-24T02:05:00.000Z",
+    domain,
+    sourceSnapshotGeneratedAt: generatedAt,
+    candidateCount: 1,
+    trackedCount: 0,
+    novelCandidateCount: 0,
+    isDegraded,
+    degradationReasons,
+    decisions: []
+  });
+  await writeJson(join(cwd, "data", "discovery", domain, "promotion-review-packet.json"), {
+    generatedAt: "2026-03-24T02:06:00.000Z",
+    domain,
+    sourceSnapshotGeneratedAt: generatedAt,
+    queueGeneratedAt: "2026-03-24T02:05:00.000Z",
+    candidateCount: 1,
+    reviewItemCount: 0,
+    isDegraded,
+    degradationReasons,
+    items: []
+  });
+}
+
 test("validation script accepts consistent non-degraded discovery artifacts", async () => {
   await withTempRepo(async (cwd) => {
-    const generatedAt = "2026-03-24T02:00:00.000Z";
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "import-summary.json"), {
-      domain: "ovarian-tissue",
-      importFileCount: 1,
-      importedRecordCount: 1,
-      mergedImportedRecordCount: 1,
-      manualOnlyRecordCount: 0,
-      importedSources: ["pubmed:seed.json"],
-      sourceBreakdown: { pubmed: 1 },
-      isDegraded: false,
-      degradationReasons: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "discovery-snapshot.json"), {
-      generatedAt,
-      domain: "ovarian-tissue",
-      queryDescription: "test",
-      totalCandidates: 1,
-      isDegraded: false,
-      degradationReasons: [],
-      providerSummaries: [],
-      papers: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "promotion-queue.json"), {
-      generatedAt: "2026-03-24T02:05:00.000Z",
-      domain: "ovarian-tissue",
-      sourceSnapshotGeneratedAt: generatedAt,
-      candidateCount: 1,
-      trackedCount: 0,
-      novelCandidateCount: 0,
-      isDegraded: false,
-      degradationReasons: [],
-      decisions: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "promotion-review-packet.json"), {
-      generatedAt: "2026-03-24T02:06:00.000Z",
-      domain: "ovarian-tissue",
-      sourceSnapshotGeneratedAt: generatedAt,
-      queueGeneratedAt: "2026-03-24T02:05:00.000Z",
-      candidateCount: 1,
-      reviewItemCount: 0,
-      isDegraded: false,
-      degradationReasons: [],
-      items: []
-    });
-
-    await writeJson(join(cwd, "data", "discovery", "islets", "import-summary.json"), {
-      domain: "islets",
-      importFileCount: 1,
-      importedRecordCount: 1,
-      mergedImportedRecordCount: 1,
-      manualOnlyRecordCount: 0,
-      importedSources: ["pubmed:seed.json"],
-      sourceBreakdown: { pubmed: 1 },
-      isDegraded: false,
-      degradationReasons: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "islets", "discovery-snapshot.json"), {
-      generatedAt,
-      domain: "islets",
-      queryDescription: "test",
-      totalCandidates: 1,
-      isDegraded: false,
-      degradationReasons: [],
-      providerSummaries: [],
-      papers: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "islets", "promotion-queue.json"), {
-      generatedAt: "2026-03-24T02:05:00.000Z",
-      domain: "islets",
-      sourceSnapshotGeneratedAt: generatedAt,
-      candidateCount: 1,
-      trackedCount: 0,
-      novelCandidateCount: 0,
-      isDegraded: false,
-      degradationReasons: [],
-      decisions: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "islets", "promotion-review-packet.json"), {
-      generatedAt: "2026-03-24T02:06:00.000Z",
-      domain: "islets",
-      sourceSnapshotGeneratedAt: generatedAt,
-      queueGeneratedAt: "2026-03-24T02:05:00.000Z",
-      candidateCount: 1,
-      reviewItemCount: 0,
-      isDegraded: false,
-      degradationReasons: [],
-      items: []
-    });
+    for (const domain of ALL_DOMAINS) {
+      await seedValidationArtifacts(cwd, domain, []);
+    }
 
     runScript(validateScript, cwd, ["all"]);
   });
@@ -336,95 +300,10 @@ test("validation script accepts consistent non-degraded discovery artifacts", as
 
 test("validation script accepts truncation-only degraded discovery artifacts", async () => {
   await withTempRepo(async (cwd) => {
-    const generatedAt = "2026-03-24T02:00:00.000Z";
     const truncationReason = "live-provider-truncation:openalex,crossref,europe-pmc";
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "import-summary.json"), {
-      domain: "ovarian-tissue",
-      importFileCount: 1,
-      importedRecordCount: 1,
-      mergedImportedRecordCount: 1,
-      manualOnlyRecordCount: 0,
-      importedSources: ["pubmed:seed.json"],
-      sourceBreakdown: { pubmed: 1 },
-      isDegraded: false,
-      degradationReasons: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "discovery-snapshot.json"), {
-      generatedAt,
-      domain: "ovarian-tissue",
-      queryDescription: "test",
-      totalCandidates: 1,
-      isDegraded: true,
-      degradationReasons: [truncationReason],
-      providerSummaries: [],
-      papers: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "promotion-queue.json"), {
-      generatedAt: "2026-03-24T02:05:00.000Z",
-      domain: "ovarian-tissue",
-      sourceSnapshotGeneratedAt: generatedAt,
-      candidateCount: 1,
-      trackedCount: 0,
-      novelCandidateCount: 0,
-      isDegraded: true,
-      degradationReasons: [truncationReason],
-      decisions: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "promotion-review-packet.json"), {
-      generatedAt: "2026-03-24T02:06:00.000Z",
-      domain: "ovarian-tissue",
-      sourceSnapshotGeneratedAt: generatedAt,
-      queueGeneratedAt: "2026-03-24T02:05:00.000Z",
-      candidateCount: 1,
-      reviewItemCount: 0,
-      isDegraded: true,
-      degradationReasons: [truncationReason],
-      items: []
-    });
-
-    await writeJson(join(cwd, "data", "discovery", "islets", "import-summary.json"), {
-      domain: "islets",
-      importFileCount: 1,
-      importedRecordCount: 1,
-      mergedImportedRecordCount: 1,
-      manualOnlyRecordCount: 0,
-      importedSources: ["pubmed:seed.json"],
-      sourceBreakdown: { pubmed: 1 },
-      isDegraded: false,
-      degradationReasons: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "islets", "discovery-snapshot.json"), {
-      generatedAt,
-      domain: "islets",
-      queryDescription: "test",
-      totalCandidates: 1,
-      isDegraded: true,
-      degradationReasons: [truncationReason],
-      providerSummaries: [],
-      papers: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "islets", "promotion-queue.json"), {
-      generatedAt: "2026-03-24T02:05:00.000Z",
-      domain: "islets",
-      sourceSnapshotGeneratedAt: generatedAt,
-      candidateCount: 1,
-      trackedCount: 0,
-      novelCandidateCount: 0,
-      isDegraded: true,
-      degradationReasons: [truncationReason],
-      decisions: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "islets", "promotion-review-packet.json"), {
-      generatedAt: "2026-03-24T02:06:00.000Z",
-      domain: "islets",
-      sourceSnapshotGeneratedAt: generatedAt,
-      queueGeneratedAt: "2026-03-24T02:05:00.000Z",
-      candidateCount: 1,
-      reviewItemCount: 0,
-      isDegraded: true,
-      degradationReasons: [truncationReason],
-      items: []
-    });
+    for (const domain of ALL_DOMAINS) {
+      await seedValidationArtifacts(cwd, domain, [truncationReason]);
+    }
 
     runScript(validateScript, cwd, ["all"]);
   });
@@ -432,95 +311,10 @@ test("validation script accepts truncation-only degraded discovery artifacts", a
 
 test("validation script rejects provider failure degradation", async () => {
   await withTempRepo(async (cwd) => {
-    const generatedAt = "2026-03-24T02:00:00.000Z";
     const failureReason = "live-provider-failures:openalex";
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "import-summary.json"), {
-      domain: "ovarian-tissue",
-      importFileCount: 1,
-      importedRecordCount: 1,
-      mergedImportedRecordCount: 1,
-      manualOnlyRecordCount: 0,
-      importedSources: ["pubmed:seed.json"],
-      sourceBreakdown: { pubmed: 1 },
-      isDegraded: false,
-      degradationReasons: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "discovery-snapshot.json"), {
-      generatedAt,
-      domain: "ovarian-tissue",
-      queryDescription: "test",
-      totalCandidates: 1,
-      isDegraded: true,
-      degradationReasons: [failureReason],
-      providerSummaries: [],
-      papers: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "promotion-queue.json"), {
-      generatedAt: "2026-03-24T02:05:00.000Z",
-      domain: "ovarian-tissue",
-      sourceSnapshotGeneratedAt: generatedAt,
-      candidateCount: 1,
-      trackedCount: 0,
-      novelCandidateCount: 0,
-      isDegraded: true,
-      degradationReasons: [failureReason],
-      decisions: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "ovarian-tissue", "promotion-review-packet.json"), {
-      generatedAt: "2026-03-24T02:06:00.000Z",
-      domain: "ovarian-tissue",
-      sourceSnapshotGeneratedAt: generatedAt,
-      queueGeneratedAt: "2026-03-24T02:05:00.000Z",
-      candidateCount: 1,
-      reviewItemCount: 0,
-      isDegraded: true,
-      degradationReasons: [failureReason],
-      items: []
-    });
-
-    await writeJson(join(cwd, "data", "discovery", "islets", "import-summary.json"), {
-      domain: "islets",
-      importFileCount: 1,
-      importedRecordCount: 1,
-      mergedImportedRecordCount: 1,
-      manualOnlyRecordCount: 0,
-      importedSources: ["pubmed:seed.json"],
-      sourceBreakdown: { pubmed: 1 },
-      isDegraded: false,
-      degradationReasons: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "islets", "discovery-snapshot.json"), {
-      generatedAt,
-      domain: "islets",
-      queryDescription: "test",
-      totalCandidates: 1,
-      isDegraded: false,
-      degradationReasons: [],
-      providerSummaries: [],
-      papers: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "islets", "promotion-queue.json"), {
-      generatedAt: "2026-03-24T02:05:00.000Z",
-      domain: "islets",
-      sourceSnapshotGeneratedAt: generatedAt,
-      candidateCount: 1,
-      trackedCount: 0,
-      novelCandidateCount: 0,
-      isDegraded: false,
-      degradationReasons: [],
-      decisions: []
-    });
-    await writeJson(join(cwd, "data", "discovery", "islets", "promotion-review-packet.json"), {
-      generatedAt: "2026-03-24T02:06:00.000Z",
-      domain: "islets",
-      sourceSnapshotGeneratedAt: generatedAt,
-      queueGeneratedAt: "2026-03-24T02:05:00.000Z",
-      candidateCount: 1,
-      reviewItemCount: 0,
-      isDegraded: false,
-      degradationReasons: [],
-      items: []
-    });
+    for (const [index, domain] of ALL_DOMAINS.entries()) {
+      await seedValidationArtifacts(cwd, domain, index === 0 ? [failureReason] : []);
+    }
 
     assert.throws(
       () => runScript(validateScript, cwd, ["all"]),

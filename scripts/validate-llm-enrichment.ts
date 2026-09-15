@@ -13,8 +13,8 @@
  */
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
-  DomainIdSchema,
   ExtractionSnapshotSchema,
   SourceEnrichmentFileSchema,
   type DomainId,
@@ -22,7 +22,7 @@ import {
 } from "../packages/shared/src/schema.js";
 import { draftEnrichments } from "../packages/extract/src/llm-enrichment.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "islets");
+const domain = parseDomainArg(process.argv[2], "validate-llm-enrichment <domain>");
 
 // ── Signal extraction helpers ────────────────────────────────────────
 

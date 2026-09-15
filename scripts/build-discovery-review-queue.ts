@@ -8,6 +8,7 @@ import {
   recommendationForPaper,
   titleKey
 } from "../packages/discovery/src/review.js";
+import { parseDomainArg } from "../packages/shared/src/domains/index.js";
 import {
   DiscoveryPromotionDecisionSchema,
   DiscoveryPromotionRecommendationSchema,
@@ -15,7 +16,6 @@ import {
   DiscoveryPromotionQueueSchema,
   DiscoverySourceSchema,
   DiscoverySnapshotSchema,
-  DomainIdSchema,
   DomainSnapshotSchema,
   FullTextAvailabilitySchema,
   type DiscoveryPaper,
@@ -23,7 +23,7 @@ import {
   type DomainId
 } from "../packages/shared/src/schema.js";
 
-const domain = DomainIdSchema.parse(process.argv[2] ?? "ovarian-tissue");
+const domain = parseDomainArg(process.argv[2], "build-discovery-review-queue <domain>");
 
 async function readOptionalFile(path: string): Promise<string | null> {
   try {

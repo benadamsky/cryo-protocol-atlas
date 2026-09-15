@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-14T13:29:43.984Z",
+  "generatedAt": "2026-09-15T16:50:39.738Z",
   "domain": "ovarian-tissue",
-  "comparedTo": "2026-09-14T02:40:19.530Z",
+  "comparedTo": "2026-09-14T13:29:40.393Z",
   "wedgeDelta": {
     "wedgeChanged": false,
     "previousWedgeTitle": "Head-to-head DMSO-centered ovarian tissue benchmark",
@@ -9,7 +9,7 @@
     "confidenceDeltas": {
       "scientificRelevance": 0,
       "companyRelevance": 0,
-      "evidenceConfidence": 0,
+      "evidenceConfidence": -0.025,
       "translationalPotential": 0
     },
     "supportingPaperCountDelta": 0,
@@ -38,5 +38,5 @@
   },
   "summary": "No material changes detected.",
   "productiveRun": false,
-  "progressAssessment": "flat"
+  "progressAssessment": "regressed"
 }
